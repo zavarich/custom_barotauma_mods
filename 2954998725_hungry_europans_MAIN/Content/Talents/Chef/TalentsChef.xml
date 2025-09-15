@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <!--COMMON TALENTS-->
+  <!--Bonus XP on Monster and Nest Missions-->
+  <Override>
+    <Talent identifier="he-poacher">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-poacher">
+        <Replace tag="[xpbonus]" value="15" color="gui.green" />
+        <Replace tag="[missiontype1]" value="missiontype.monster" color="gui.orange" />
+        <Replace tag="[missiontype2]" value="missiontype.nest" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionExperience">
+        <Conditions>
+          <AbilityConditionMission missiontype="Monster,Nest" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.15" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+  </Override>
+  <!--20% Chance to find salt in a container if opened for the first time-->
+  <Override>
+    <Talent identifier="he-saltybusiness">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-saltybusiness">
+        <Replace tag="[probability]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnOpenItemContainer">
+        <Conditions>
+          <AbilityConditionItemInSubmarine submarinetype="Wreck" />
+          <AbilityConditionItem tags="container" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilitySpawnItemsToContainer randomchance="0.2" oncepercontainer="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget">
+                <SpawnItem identifiers="he-salt" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilitySpawnItemsToContainer>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+  </Override>
+  <!--Increase Production Speed of Kitchen Fabricators-->
+  <Override>
+    <Talent identifier="he-fastfood">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-fastfood">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.doesnotstack" />
+      <AbilityGroupInterval interval="60">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="stove" stattype="FabricationSpeed" value="1.5" />
+          <CharacterAbilityGiveItemStatToTags tags="oven" stattype="FabricationSpeed" value="1.5" />
+          <CharacterAbilityGiveItemStatToTags tags="cuttingboard" stattype="FabricationSpeed" value="1.5" />
+          <CharacterAbilityGiveItemStatToTags tags="deepfryer" stattype="FabricationSpeed" value="1.5" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="stove" stattype="FabricationSpeed" value="1.5" />
+          <CharacterAbilityGiveItemStatToTags tags="oven" stattype="FabricationSpeed" value="1.5" />
+          <CharacterAbilityGiveItemStatToTags tags="cuttingboard" stattype="FabricationSpeed" value="1.5" />
+          <CharacterAbilityGiveItemStatToTags tags="deepfryer" stattype="FabricationSpeed" value="1.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+  </Override>
+  <!--Unlock Master Chef Attire Crafting Recipes-->
+  <Override>
+    <Talent identifier="he-chefattire">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-chefattire">
+        <Replace tag="[itemname1]" value="entityname.he-chefscapmaster1" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-chefsuniformmaster1" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-chefscapmaster1" />
+      <AddedRecipe itemidentifier="he-chefsuniformmaster1" />
+    </Talent>
+  </Override>
+  <!--Lazy Gardener | Unlock Sprinkler-->
+  <Override>
+    <Talent identifier="he-lazygardener">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-lazygardener" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.he-sprinkler" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-sprinkler" />
+    </Talent>
+  </Override>
+  <!--BUTCHER TREE-->
+  <!--Increase Damage with Butcher Knives-->
+  <Override>
+    <Talent identifier="he-frenzy">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-frenzy">
+        <Replace tag="[powerincrease]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="butcheritem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="butcheritem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+  </Override>
+  <!--Increase Sell Prices of Raw Meat by 50%-->
+  <Override>
+    <Talent identifier="he-butchershop">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <!--<Description tag="talentdescription.blackmarketgenes"/>-->
+      <Description tag="talentdescription.he-butchershop">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="meat" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="meat" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--<AddedStoreItem itemtag="blackmarketgenes" />-->
+    </Talent>
+  </Override>
+  <!--Disable meat rotting in inventory-->
+  <Override>
+    <Talent identifier="he-coldblood">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-coldblood"></Description>
+      <AbilityGroupInterval interval="0.8">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" tags="activecooling" setvalue="true" duration="0.9" />
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+  </Override>
+  <!--ENTERTAINER TREE-->
+  <!--40% Chance to not consume an ingredient-->
+  <Override>
+    <Talent identifier="he-favorite">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.family" />
+      <Description tag="talentdescription.family2" />
+      <Description tag="talentdescription.assistantsdontcount" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="family" min="1" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveTalentPointsToAllies amount="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="family" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+  </Override>
+  <Override>
+    <Talent identifier="he-tastyfood">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-tastyfood" />
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairtoolstructurerepairmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="5" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.movementspeed" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionHasTalent identifier="he-family" truthywhen="HasTalent" />
+          <AbilityConditionNoCrewDied />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="excellentmorale" amount="10.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+        <FallbackAbilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="highmorale" amount="10.0" />
+                <ReduceAffliction identifier="excellentmorale" strength="10.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </FallbackAbilities>
+      </AbilityGroupInterval>
+    </Talent>
+  </Override>
+  <Override>
+    <Talent identifier="he-piper">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-piper">
+        <Replace tag="[duration]" value="10" color="gui.green" />
+        <Replace tag="[buffamount]" value="100" color="gui.green" />
+        <Replace tag="[buffname]" value="afflictionname.psychosisresistance" color="gui.orange" />
+        <Replace tag="[buffduration]" value="60" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <Affliction identifier="he-battlemusic" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+                <Affliction identifier="he-battlemusic" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+  </Override>
+  <!--CHEF TREE-->
+  <Override>
+    <Talent identifier="he-lifesaver">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-lifesaver">
+        <Replace tag="[itemname1]" value="entityname.he-antistarve" color="gui.orange" />
+        <Replace tag="[skill]" value="skillname.medical" color="gui.orange" />
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="20" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="he-antistarve" />
+    </Talent>
+  </Override>
+  <Override>
+    <Talent identifier="he-delicacies">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-delicacies">
+        <Replace tag="[itemname1]" value="entityname.he-cookedhammerheadspawnpickled" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-molochsushi" color="gui.orange" />
+        <!--<Replace tag="[itemname3]" value="entityname.he-antistarve" color="gui.orange"/>
+        <Replace tag="[itemname4]" value="entityname.he-antistarve" color="gui.orange"/>-->
+      </Description>
+      <AddedRecipe itemidentifier="he-cookedhammerheadspawnpickled" />
+      <AddedRecipe itemidentifier="he-molochsushi" />
+    </Talent>
+  </Override>
+  <Override>
+    <Talent identifier="he-huskfood">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-huskfood">
+        <Replace tag="[itemname1]" value="character.husk" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-cookedhuskfilet" />
+      <AddedRecipe itemidentifier="he-cookedhusknugget" />
+      <AddedRecipe itemidentifier="he-huskburger" />
+      <AddedRecipe itemidentifier="he-huskhotdog" />
+      <AddedRecipe itemidentifier="he-rawhuskmeat" />
+      <AddedRecipe itemidentifier="he-rawhuskmeatpatty" />
+      <AddedRecipe itemidentifier="he-rawhusksausage" />
+      <AddedRecipe itemidentifier="he-rawhusknuggets" />
+    </Talent>
+  </Override>
+  <Override>
+    <Talent identifier="he-masterbrewer">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-masterbrewer">
+        <Replace tag="[itemname1]" value="entityname.he-kegpiraterum" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-kegwhiskey" color="gui.orange" />
+        <Replace tag="[itemname3]" value="entityname.he-keghalucinova" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-kegpiraterum" />
+      <AddedRecipe itemidentifier="he-kegwhiskey" />
+      <AddedRecipe itemidentifier="he-keghalucinova" />
+    </Talent>
+  </Override>
+</Talents>

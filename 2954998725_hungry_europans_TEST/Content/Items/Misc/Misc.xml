@@ -1,0 +1,1257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- Water Filter -->
+    <!-- TODO: Disabled hose/filter, they are useless and incomplete for now, reenable later when we figure out what to do with them. -->
+    <Item name="Hose" identifier="he-hose" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="" Tags="smallitem,hose" spritecolor="255,255,255,255" InventoryIconColor="255,255,255,255" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="storagecab" spawnprobability="0.0" />
+      <!-- TODO: Price -->
+      <!-- <Price baseprice="140" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price> -->
+      <!-- TODO: Sprites & Body -->
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <!-- TODO: Recipe & Deconstruct -->
+      <!-- <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="organicfiber" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate> -->
+      <Deconstruct time="5">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect"></Holdable>
+    </Item>
+    <!-- TODO: Disabled hose/filter, they are useless and incomplete for now, reenable later when we figure out what to do with them. -->
+    <Item name="Water Filter" identifier="he-waterfilter" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="" Tags="smallitem,waterfilter" spritecolor="255,255,255,255" InventoryIconColor="255,255,255,255" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="storagecab" spawnprobability="0.0" />
+      <!-- TODO: Price -->
+      <!-- <Price baseprice="140" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price> -->
+      <!-- TODO: Sprites & Body -->
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <!-- <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="organicfiber" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate> -->
+      <Deconstruct time="5">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect"></Holdable>
+    </Item>
+    <!-- Bagpipe item - created by Draconis13 for Hungry Europans -->
+    <Item name="Bagpipes" identifier="bagpipes" category="Misc" Tags="mediumitem,instrument" scale="0.5" description="An ancient instrument from earth consisting of an inflatable bladder, a mouthpiece and several metal pipes that produce haunting melodies." price="300" isshootable="true">
+      <Upgrade gameversion="0.9.2.0" scale="0.5" />
+      <Price baseprice="120">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Misc/bagpipes.png" sourcerect="0,0,112,154" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/bagpipes.png" sourcerect="0,0,112,154" origin="0.5,0.5" />
+      <Body radius="45" height="40" density="9" />
+      <RangedWeapon reload="1" />
+      <Holdable slots="RightHand+LeftHand" aimable="false" holdpos="15,-20" aimpos="12,1" handle1="23,-67" handle2="46,-18" aimangle="15" swingamount="3,1" swingspeed="0.18" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="Character">
+          <Conditional HasStatusTag="!equals clown" />
+          <sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/bagpipes1.ogg" type="OnUse" selectionmode="CharacterSpecific" range="600" loop="true" stream="true" />
+          <sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/bagpipes2.ogg" type="OnUse" selectionmode="CharacterSpecific" range="600" loop="true" stream="true" />
+          <sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/bagpipes3.ogg" type="OnUse" selectionmode="CharacterSpecific" range="600" loop="true" stream="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Conditional HasStatusTag="clown" />
+          <sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/clownbagpipes.ogg" type="OnUse" range="600" loop="true" stream="true" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item hideinmenus="true" name="Toilet Flood" identifier="toiletflooditem" category="Hidden" Tags="flood" scale="0.5" impactsoundtag="impact_metal_heavy" hideconditionbar="true">
+      <sprite texture="%ModDir:2954998725%/Content/Items/Misc/Toilet.png" sourcerect="0,0,1,1" depth="0.556" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body radius="45" density="40" friction="0.95" />
+      <Pump maxflow="60" IsOn="true" flowpercentage="100" currpowerconsumption="0" powerconsumption="0">
+        <Sound file="Content/Sounds/Water/FlowSmall.ogg" type="OnActive" range="600" loop="true" />
+      </Pump>
+      <Holdable slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,10" handle2="0,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="This">
+          <Conditional condition="gte 25" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Parent">
+          <ParticleEmitter particle="damagebubbles" particlespersecond="15" scalemin="0.5" scalemax="0.75" anglemin="60" anglemax="75" distancemin="20" distancemax="20" velocitymin="150" velocitymax="250" />
+          <ParticleEmitter particle="toiletwaterleak" anglemin="60" anglemax="75" distancemin="20" distancemax="20" velocitymin="375" velocitymax="450" particlespersecond="15" copyentityangle="true" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Toilet" identifier="he-toilet" tags="toilet" description="Relief yourself or get rid of something by flushing it down." type="Controller" width="152" height="240" scale="0.5" noninteractable="false" category="Misc" pickdistance="150" isshootable="true" requireaimtosecondaryuse="true" canflipy="false" GrabWhenSelected="false">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/Toilet.png" sourcerect="0,12,183,154" depth="0.556" premultiplyalpha="false" origin="0.46,0.5" />
+      <Price baseprice="580" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.7" minavailable="0" maxavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="1" maxavailable="3" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem identifier="steel" amount="5" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <Deconstruct time="25">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="titaniumaluminiumalloy" amount="1" />
+      </Deconstruct>
+      <Controller UserPos="-20,0" direction="Left" hidehud="false" AllowSelectingWhenSelectedByBot="true" AllowSelectingWhenSelectedByOther="false" canbeselected="true" drawuserbehind="false">
+        <limbposition limb="Head" position="-5,-20" />
+        <limbposition limb="Torso" position="50,48" />
+        <limbposition limb="RightHand" position="0,-10" />
+        <limbposition limb="LeftHand" position="0,-10" />
+        <limbposition limb="Waist" position="80,20" />
+        <limbposition limb="RightThigh" position="0,-10" />
+        <limbposition limb="LeftThigh" position="0,-10" />
+        <StatusEffect type="OnActive" target="Character" setvalue="true">
+          <Affliction identifier="ontoilet" amount="10" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" interval="0.1" duration="0.2" stackable="true" comparison="And" CheckConditionalAlways="true">
+          <Conditional ontoilet="gte 0.8" />
+          <ReduceAffliction identifier="bladder" amount="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" duration="0.1" stackable="true" comparison="And">
+          <Conditional ontoilet="gte 0.8" />
+          <Conditional bladder="gte 1" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Pee.ogg" loop="true" range="300" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" comparison="And" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional bladder="eq 5" />
+          <Conditional ontoilet="gte 0.8" />
+          <ReduceAffliction identifier="bladder" amount="10" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" delay="3" interval="7" stackable="false" comparison="And" CheckConditionalAlways="true" disabledeltatime="true">
+          <Conditional defecate="gte 25" />
+          <Conditional ontoilet="gt 0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart1.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart2.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart3.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart4.ogg" range="300" selectionmode="random" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1">
+          <Conditional HasStatusTag="eq pooping" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop1.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop2.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop3.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop4.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop5.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Spawnitem identifier="poop" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character,This" duration="0.1" tags="pooping" disabledeltatime="true" stackable="false" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional defecating="gte 99" />
+          <Conditional ontoilet="gt 0" />
+          <ReduceAffliction identifier="defecate" amount="100" />
+          <ReduceAffliction identifier="defecating" amount="100" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional defecate="gte 25" />
+          <Conditional ontoilet="gt 0" />
+          <Affliction identifier="defecating" amount="6" />
+        </StatusEffect>
+      </Controller>
+      <Body width="182" height="135" density="16" />
+      <Holdable canbepicked="true" selectkey="Select" pickkey="Aim" slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" msg="ItemMsgDetachWrench" PickingTime="5.0" aimpos="65,-10" attachable="true" AttachesToFloor="true" aimable="true">
+        <RequiredItem items="wrench" type="Equipped" />
+        <StatusEffect target="This" type="Always">
+          <Conditional attached="false" targetitemcomponentname="Holdable" />
+          <DropContainedItems />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.5" />
+        <StatValue stattype="SwimmingSpeed" value="-0.7" />
+      </Holdable>
+      <ItemContainer selectkey="Action" capacity="0" itemsperrow="0" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.15" absoluteoffset="0,0.15" anchor="BottomCenter" style="ItemUI" />
+        <Containable items="none" />
+        <SubContainer capacity="5" itemsperrow="5">
+          <Containable items="smallitem,mediumitem" />
+        </SubContainer>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true">
+        <Containable items="toiletflooditem" />
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="toiletflooditem" spawnposition="ThisInventory" count="1" spawnifinventoryfull="false" />
+        </StatusEffect>
+      </ItemContainer>
+      <CustomInterface selectkey="Select" canbeselected="true" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.flushtoilet">
+          <StatusEffect type="OnUse" target="Contained" disabledeltatime="true" comparison="And">
+            <Conditional HasStatusTag="neq flushing" targetcontainer="true" />
+            <Conditional attached="true" targetcontainer="true" />
+            <Remove />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="-4" stackable="false" comparison="And">
+            <Conditional attached="true" />
+            <Conditional HasStatusTag="neq flushing" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" delay="0.2" setvalue="true" stackable="false" comparison="And">
+            <Conditional attached="true" />
+            <Conditional HasStatusTag="neq flushing" />
+            <RequiredItem items="crowbar,mediumitem" type="Contained" />
+            <Sound file="Content/Sounds/Damage/StructureCrunch2.ogg" range="600" volume="3.0" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" delay="0.2" setvalue="true" stackable="false" comparison="And">
+            <Conditional attached="true" />
+            <Conditional HasStatusTag="neq flushing" />
+            <RequiredItem items="saltbulb" type="Contained" />
+            <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" selectionmode="Random" />
+            <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" selectionmode="Random" />
+            <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" selectionmode="Random" />
+            <Explosion range="50.0" force="5.0" flames="false" underwaterBubble="false" sparks="false" smoke="false" shockwave="true">
+              <Affliction identifier="burn" strength="20" />
+              <Affliction identifier="stun" strength="5" />
+            </Explosion>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" delay="0.2" setvalue="true" stackable="false" comparison="And">
+            <Conditional attached="true" />
+            <Conditional HasStatusTag="neq flushing" />
+            <RequiredItem items="badsaltbulb" type="Contained" />
+            <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="4000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="4000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="4000" />
+            <Explosion range="1000.0" ballastfloradamage="1000" structuredamage="500" itemdamage="1000" force="20" severlimbsprobability="1.0" decal="explosion" decalsize="3.0" penetration="0.5">
+              <Affliction identifier="burn" strength="90" />
+              <Affliction identifier="stun" strength="5" />
+              <Affliction identifier="lacerations" strength="50" />
+            </Explosion>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" duration="10" tags="flushing" setvalue="true" stackable="false" comparison="And">
+            <Conditional HasStatusTag="neq flushing" />
+            <Conditional attached="true" />
+            <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/ToiletFlush.ogg" loop="true" range="500" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="wrench" type="equipped" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+    <Item name="Toilet" nameidentifier="he-toilet" descriptionidentifier="he-outposttoilet" identifier="he-outposttoilet" tags="toilet" description="Variant of the toilet to be used on outpost modules that can't be picked up and moved by the player." type="Controller" width="152" height="240" scale="0.5" noninteractable="false" category="Misc" pickdistance="150" isshootable="true" requireaimtosecondaryuse="true" canflipy="false" GrabWhenSelected="false">
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Misc/ToiletOutpost.png" sourcerect="0,12,183,154" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/Toilet.png" sourcerect="0,12,183,154" depth="0.556" premultiplyalpha="false" origin="0.46,0.6" />
+      <Controller UserPos="-20,0" direction="Left" hidehud="false" AllowSelectingWhenSelectedByBot="true" AllowSelectingWhenSelectedByOther="false" canbeselected="true" selectkey="Select" drawuserbehind="false">
+        <limbposition limb="Head" position="-5,-20" />
+        <limbposition limb="Torso" position="50,48" />
+        <limbposition limb="RightHand" position="0,-10" />
+        <limbposition limb="LeftHand" position="0,-10" />
+        <limbposition limb="Waist" position="80,20" />
+        <limbposition limb="RightThigh" position="0,-10" />
+        <limbposition limb="LeftThigh" position="0,-10" />
+        <StatusEffect type="OnActive" target="Character" setvalue="true">
+          <Affliction identifier="ontoilet" amount="10" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" interval="0.1" duration="0.2" stackable="true" comparison="And" CheckConditionalAlways="true">
+          <Conditional ontoilet="gte 0.8" />
+          <ReduceAffliction identifier="bladder" amount="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" duration="0.1" stackable="true" comparison="And">
+          <Conditional ontoilet="gte 0.8" />
+          <Conditional bladder="gte 1" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Pee.ogg" loop="true" range="300" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" comparison="And" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional bladder="eq 5" />
+          <Conditional ontoilet="gte 0.8" />
+          <ReduceAffliction identifier="bladder" amount="10" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" delay="3" interval="7" stackable="false" comparison="And" CheckConditionalAlways="true" disabledeltatime="true">
+          <Conditional defecate="gte 25" />
+          <Conditional ontoilet="gt 0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart1.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart2.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart3.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart4.ogg" range="300" selectionmode="random" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" interval="1">
+          <Conditional HasStatusTag="eq pooping" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop1.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop2.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop3.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop4.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Poop5.ogg" loop="true" range="300" selectionmode="random" volume="2" />
+          <Spawnitem identifier="poop" spawnposition="ThisInventory" spawnifinventoryfull="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character,This" duration="0.1" tags="pooping" disabledeltatime="true" stackable="false" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional defecating="gte 99" />
+          <Conditional ontoilet="gt 0" />
+          <ReduceAffliction identifier="defecate" amount="100" />
+          <ReduceAffliction identifier="defecating" amount="100" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional defecate="gte 25" />
+          <Conditional ontoilet="gt 0" />
+          <Affliction identifier="defecating" amount="6" />
+        </StatusEffect>
+      </Controller>
+      <ItemContainer selectkey="Action" capacity="0" itemsperrow="0" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.15" absoluteoffset="0,0.15" anchor="BottomCenter" style="ItemUI" />
+        <Containable items="none" />
+        <SubContainer capacity="5" itemsperrow="5">
+          <Containable items="smallitem,mediumitem" />
+        </SubContainer>
+      </ItemContainer>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true">
+        <Containable items="toiletflooditem" />
+        <StatusEffect type="OnBroken" target="This">
+          <SpawnItem identifier="toiletflooditem" spawnposition="ThisInventory" count="1" spawnifinventoryfull="false" />
+        </StatusEffect>
+      </ItemContainer>
+      <CustomInterface selectkey="Select" canbeselected="true" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.flushtoilet">
+          <StatusEffect type="OnUse" target="Contained" disabledeltatime="true" comparison="And">
+            <Conditional HasStatusTag="neq flushing" targetcontainer="true" />
+            <Remove />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="-4" stackable="false" comparison="And">
+            <Conditional HasStatusTag="neq flushing" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" delay="0.2" setvalue="true" stackable="false" comparison="And">
+            <Conditional HasStatusTag="neq flushing" />
+            <RequiredItem items="crowbar,mediumitem" type="Contained" />
+            <Sound file="Content/Sounds/Damage/StructureCrunch2.ogg" range="600" volume="3.0" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" delay="0.2" setvalue="true" stackable="false" comparison="And">
+            <Conditional HasStatusTag="neq flushing" />
+            <RequiredItem items="saltbulb" type="Contained" />
+            <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" selectionmode="Random" />
+            <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" selectionmode="Random" />
+            <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" selectionmode="Random" />
+            <Explosion range="50.0" force="5.0" flames="false" underwaterBubble="false" sparks="false" smoke="false" shockwave="true">
+              <Affliction identifier="burn" strength="20" />
+              <Affliction identifier="stun" strength="5" />
+            </Explosion>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" delay="0.2" setvalue="true" stackable="false" comparison="And">
+            <Conditional HasStatusTag="neq flushing" />
+            <RequiredItem items="badsaltbulb" type="Contained" />
+            <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="4000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="4000" />
+            <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="4000" />
+            <Explosion range="1000.0" ballastfloradamage="1000" structuredamage="500" itemdamage="1000" force="20" severlimbsprobability="1.0" decal="explosion" decalsize="3.0" penetration="0.5">
+              <Affliction identifier="burn" strength="90" />
+              <Affliction identifier="stun" strength="5" />
+              <Affliction identifier="lacerations" strength="50" />
+            </Explosion>
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" duration="10" tags="flushing" setvalue="true" stackable="false" comparison="And">
+            <Conditional HasStatusTag="neq flushing" />
+            <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/ToiletFlush.ogg" loop="true" range="500" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="750" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="wrench" type="equipped" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+    <Item name="" identifier="poop" nameidentifier="poop" Tags="smallitem,fertilizeringredient" maxstacksize="32" maxstacksizecharacterinventory="8" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft" impacttolerance="6">
+      <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="387,15,53,41" origin="0.5,0.5" />
+      <InventoryIcon texture="Content/Characters/Pets/pets.png" sourcerect="387,15,53,41" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="Content/Characters/Pets/pets.png" sourcerect="387,15,53,41" depth="0.525" origin="0.5,0.7" />
+      <Deconstruct time="10">
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <!-- rectangular body to prevent the poop from rolling -->
+      <Body width="53" height="41" density="9" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <Conditional HasTag="neq smallitem" targetcontainer="true" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" shockwave="false" decal="fruitsplatter_brown" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="10" velocitymax="0" scalemin="1.5" scalemax="2" colormultiplier="185,122,87,255" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="15" impulsespread="0.01" sticktocharacters="true" sticktoitems="true" sticktostructures="true" sticktodoors="true">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="0" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="embarrassment" strength="150" />
+          <!--<Affliction identifier="hygiene" strength="100" />-->
+          <Affliction identifier="he-hitbypoop" strength="30" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="10" velocitymax="0" scalemin="1.5" scalemax="2" colormultiplier="185,122,87,255" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" shockwave="false" decal="fruitsplatter_brown" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="10" velocitymax="0" scalemin="1.5" scalemax="2" colormultiplier="185,122,87,255" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Conditional HasTag="neq smallitem" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- EMPTY CANS -->
+    <Item hideinmenus="true" DontCleanUp="true" name="Empty Can" identifier="trashcan_emptycanspawner" description="An empty aluminium can. Can be deconstructed into aluminium or thrown around." category="Hidden" Tags="smallitem" scale="0.5" impactsoundtag="impact_aluminiumcan">
+      <PreferredContainer primary="outposttrashcan" amount="1" spawnprobability="0.75" />
+      <Deconstruct time="1" chooserandom="true">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="aluminium" amount="0" />
+        <Item identifier="aluminium" amount="0" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="432,488,22,23" depth="0.502" origin="0.5,0.5" />
+      <Body radius="8" height="15" density="13" friction="1.0" restitution="0.15" angulardamping="1.0" />
+      <ItemComponent canbeselected="false" canbepicked="false" allowingameediting="false">
+        <StatusEffect type="OnContained" target="This" oneshot="true" comparison="And" spawnitemrandomly="true">
+          <Conditional HasTag="outposttrashcan" targetcontainer="true" />
+          <Conditional noninteractable="false" targetcontainer="true" />
+          <Conditional nonplayerteaminteractable="false" targetcontainer="true" />
+          <Conditional HiddenInGame="false" targetcontainer="true" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycantonic" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="200,0" />
+          <SpawnItem identifier="he-emptycanenergy1" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="150,0" />
+          <SpawnItem identifier="he-emptycancola" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="225,0" />
+          <SpawnItem identifier="he-emptycancolazero" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="110,0" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" oneshot="true" comparison="And" spawnitemrandomly="true">
+          <Conditional HasTag="outposttrashcan" targetcontainer="true" />
+          <Conditional noninteractable="false" targetcontainer="true" />
+          <Conditional nonplayerteaminteractable="false" targetcontainer="true" />
+          <Conditional HiddenInGame="false" targetcontainer="true" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycantonic" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" />
+          <SpawnItem identifier="he-emptycanenergy1" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" />
+          <SpawnItem identifier="he-emptycancola" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" />
+          <SpawnItem identifier="he-emptycancolazero" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" oneshot="true" comparison="And" spawnitemrandomly="true">
+          <Conditional HasTag="outposttrashcan" targetcontainer="true" />
+          <Conditional noninteractable="false" targetcontainer="true" />
+          <Conditional nonplayerteaminteractable="false" targetcontainer="true" />
+          <Conditional HiddenInGame="false" targetcontainer="true" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycantonic" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="-150,0" />
+          <SpawnItem identifier="he-emptycanenergy1" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="-200,0" />
+          <SpawnItem identifier="he-emptycancola" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="-225,0" />
+          <SpawnItem identifier="he-emptycancolazero" spawnposition="This" impulse="5" mincount="1" maxcount="2" aimspread="360" rotation="180" offset="-110,0" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" oneshot="true" comparison="And" spawnitemrandomly="true">
+          <Conditional HasTag="outposttrashcan" targetcontainer="true" />
+          <Conditional noninteractable="false" targetcontainer="true" />
+          <Conditional nonplayerteaminteractable="false" targetcontainer="true" />
+          <Conditional HiddenInGame="false" targetcontainer="true" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycantonic" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycanenergy1" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycancola" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycancolazero" spawnposition="SameInventory" spawnifinventoryfull="false" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" oneshot="true" comparison="And" spawnitemrandomly="true">
+          <Conditional HasTag="outposttrashcan" targetcontainer="true" />
+          <Conditional noninteractable="false" targetcontainer="true" />
+          <Conditional nonplayerteaminteractable="false" targetcontainer="true" />
+          <Conditional HiddenInGame="false" targetcontainer="true" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycantonic" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycanenergy1" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycancola" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycancolazero" spawnposition="SameInventory" spawnifinventoryfull="false" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" oneshot="true" comparison="And" spawnitemrandomly="true">
+          <Conditional HasTag="outposttrashcan" targetcontainer="true" />
+          <Conditional noninteractable="false" targetcontainer="true" />
+          <Conditional nonplayerteaminteractable="false" targetcontainer="true" />
+          <Conditional HiddenInGame="false" targetcontainer="true" />
+          <Remove />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="effect_none" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycantonic" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycanenergy1" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycancola" spawnposition="SameInventory" spawnifinventoryfull="false" />
+          <SpawnItem identifier="he-emptycancolazero" spawnposition="SameInventory" spawnifinventoryfull="false" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item DontCleanUp="true" name="Empty Can" identifier="he-emptycantonic" description="An empty aluminium can. Can be deconstructed into aluminium or thrown around." category="Misc" Tags="smallitem,emptycan" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_aluminiumcan">
+      <PreferredContainer secondary="wreckcrewcab,wreckstoragecab,wreckstorage,wreckengcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab,abandonedengcab,abandonedstoragecab" minamount="1" maxamount="2" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outposttrashcan" secondary="crewcab" />
+      <Deconstruct time="1" chooserandom="true">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="aluminium" amount="0" />
+        <Item identifier="aluminium" amount="0" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="432,488,22,23" depth="0.502" origin="0.5,0.5" />
+      <Body radius="8" height="15" density="13" friction="1.0" restitution="0.15" angulardamping="1.0" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.0" itemdamage="0" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item DontCleanUp="true" name="Empty Can" identifier="he-emptycanenergy1" description="An empty aluminium can. Can be deconstructed into aluminium or thrown around." category="Misc" Tags="smallitem,emptycan" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_aluminiumcan">
+      <PreferredContainer secondary="wreckcrewcab,wreckstoragecab,wreckstorage,wreckengcab" minamount="1" maxamount="2" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab,abandonedengcab,abandonedstoragecab" minamount="1" maxamount="2" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer primary="outposttrashcan" secondary="crewcab" />
+      <Deconstruct time="1" chooserandom="true">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="aluminium" amount="0" />
+        <Item identifier="aluminium" amount="0" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="455,484,19,27" depth="0.502" origin="0.5,0.5" />
+      <Body radius="8" height="19" density="13" friction="1.0" restitution="0.15" angulardamping="1.0" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.0" itemdamage="0" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item DontCleanUp="true" name="Empty Can" identifier="he-emptycancola" description="An empty aluminium can. Can be deconstructed into aluminium or thrown around." category="Misc" Tags="smallitem,emptycan" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_aluminiumcan">
+      <PreferredContainer secondary="wreckcrewcab,wreckstoragecab,wreckstorage,wreckengcab" minamount="1" maxamount="3" spawnprobability="0.03" />
+      <PreferredContainer secondary="abandonedcrewcab,abandonedengcab,abandonedstoragecab" minamount="1" maxamount="3" spawnprobability="0.03" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.03" />
+      <PreferredContainer primary="outposttrashcan" secondary="crewcab" />
+      <Deconstruct time="1" chooserandom="true">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="aluminium" amount="0" />
+        <Item identifier="aluminium" amount="0" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="494,480,17,31" depth="0.502" origin="0.5,0.5" />
+      <Body radius="8" height="23" density="13" friction="1.0" restitution="0.15" angulardamping="1.0" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.0" itemdamage="0" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item DontCleanUp="true" name="Empty Can" identifier="he-emptycancolazero" description="An empty aluminium can. Can be deconstructed into aluminium or thrown around." category="Misc" Tags="smallitem,emptycan" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_aluminiumcan">
+      <PreferredContainer secondary="wreckcrewcab,wreckstoragecab,wreckstorage,wreckengcab" minamount="1" maxamount="3" spawnprobability="0.03" />
+      <PreferredContainer secondary="abandonedcrewcab,abandonedengcab,abandonedstoragecab" minamount="1" maxamount="3" spawnprobability="0.03" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.03" />
+      <PreferredContainer primary="outposttrashcan" secondary="crewcab" />
+      <Deconstruct time="1" chooserandom="true">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="aluminium" amount="0" />
+        <Item identifier="aluminium" amount="0" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="475,486,18,25" depth="0.502" origin="0.5,0.5" />
+      <Body radius="8" height="17" density="13" friction="1.0" restitution="0.15" angulardamping="1.0" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.0" itemdamage="0" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- TOYS -->
+    <!-- Punch Gun made by UberPendragon (https://steamcommunity.com/profiles/76561197995266558) -->
+    <Item name="Punch-Gun" identifier="punchgun" description="Literally throwing punches!" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/punchgun.png" sourcerect="8,65,115,82" depth="0.55" origin="0.5,0.5" />
+      <PreferredContainer primary="crewcab" secondary="storagecab" />
+      <Body width="110" height="80" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="False" aimpos="60,-20" handle1="-45,-15" handle2="-45,-30" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="3" launchimpulse="5.0" barrelpos="50,15" spread="0" drawhudwhenequipped="true" crosshairscale="0.2">
+        <!-- <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" type="OnUse" range="1000" /> -->
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="150.0" force="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.8" checkconditionalalways="true">
+          <SpawnItem identifier="punch" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" itempos="80,15" containedspritedepths="0.55" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" containedstateindicatorslot="0" containedstateindicatorstyle="spear" spawnwithid="punch">
+        <Containable items="punch" />
+      </ItemContainer>
+    </Item>
+    <Item name="punch" identifier="punch" category="Weapon" maxstacksize="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,punch" Scale="0.5" impactsoundtag="impact_soft" hideinmenus="false" allowasextracargo="true" noninteractable="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/punchgun.png" sourcerect="371,70,50,53" depth="0.55" origin="0.5,0.5" />
+      <Body width="50" height="50" radius="0" friction="10" density="10" />
+      <Projectile characterusable="false" launchimpulse="5.0" maxtargetstohit="1" HitOnlyCharacters="true">
+        <Attack structuredamage="1" itemdamage="1" targetforce="40" severlimbsprobability="0">
+          <Affliction identifier="blunttrauma" strength="5" />
+          <Affliction identifier="stun" strength="3" />
+          <Affliction identifier="concussion" strength="1" probability="0.1" />
+          <sound file="Content/Sounds/Impact/SoftImpact1.ogg" range="500" />
+          <sound file="Content/Sounds/Impact/SoftImpact2.ogg" range="500" />
+          <sound file="Content/Sounds/Impact/SoftImpact3.ogg" range="500" />
+        </Attack>
+        <StatusEffect type="OnUse" target="This" delay="0.8">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="0.5">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Rope sourcepullforce="1" targetpullforce="1" projectilepullforce="15" maxlength="1000" snaponcollision="false" SnapWhenNotAimed="false" spritewidth="10" tile="true" origin="0.05,0.5" snapanimduration="1">
+        <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/punchgun.png" sourcerect="132,65,230,51" depth="0.57" origin="0.5,0.5" />
+        <StatusEffect type="OnUse" target="This" delay="0.5" projectilepullforce="30" setvalue="True" />
+      </Rope>
+    </Item>
+    <Item name="Whoopee Cushion" identifier="he-whoopeecushion" Category="Hidden" Tags="smallitem,toy" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" spritecolor="255,255,255,255" requireaimtouse="true" noninteractable="false" hideinmenus="false">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/WhoopeeCushion.png" sourcerect="0,0,45,13" depth="0.55" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/InventoryIcons.Png" sourcerect="80,426,85,85" origin="0.5,0.5" />
+      <Body width="38" radius="6" density="9.5" />
+      <Deconstruct time="5" />
+      <Throwable handle1="0,0" slots="Any,RightHand,LeftHand" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" condition="-3" disabledeltatime="true" interval="0.5">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart1.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart2.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart3.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart4.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/FartLong1.ogg" range="700" selectionmode="random" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart1.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart2.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart3.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart4.ogg" range="700" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/FartLong1.ogg" range="700" selectionmode="random" />
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <MotionSensor rangex="10" rangey="30" target="Human,Monster" minimumvelocity="1" detectownmotion="false" canbeselected="false">
+        <StatusEffect type="OnUse" target="This" condition="-3" disabledeltatime="true" conditionalcomparison="And" interval="0.5">
+          <Conditional Speed="lt 0.1" />
+          <Conditional IsContained="false" />
+          <Explosion range="20" force="1.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false">
+            <StatusEffect type="OnUse" target="Character" disabledeltatime="true" conditionalcomparison="And" multiplyafflictionsbymaxvitality="true">
+              <Conditional mass="lt 200" />
+              <Conditional stun="lte 0" />
+              <Affliction identifier="stun" strength="0.25" />
+              <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart1.ogg" range="700" selectionmode="random" />
+              <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart2.ogg" range="700" selectionmode="random" />
+              <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart3.ogg" range="700" selectionmode="random" />
+              <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart4.ogg" range="700" selectionmode="random" />
+              <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/FartLong1.ogg" range="700" selectionmode="random" />
+            </StatusEffect>
+          </Explosion>
+        </StatusEffect>
+      </MotionSensor>
+    </Item>
+    <!-- Paint -->
+    <redpaint name="" identifier="redpaint" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,paint" spritecolor="128,0,0,255" InventoryIconColor="255,0,0,255" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="6" isshootable="true" requireaimtouse="true" useinhealthinterface="true">
+      <PreferredContainer secondary="storagecab" minamount="1" maxamount="2" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <Price baseprice="140" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="tin" />
+        <RequiredItem identifier="alienblood" />
+      </Fabricate>
+      <Deconstruct time="5">
+        <Item identifier="tin" mincondition="0.0" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking -->
+        <StatusEffect type="OnUse" target="This" Condition="-20.0">
+          <Conditional InWater="false" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/Spray.ogg" loop="true" range="200" volume="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="10" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stomachache" strength="5.0" />
+          <Affliction identifier="he-drankpaint" amount="10.0" />
+          <ReduceAffliction type="thirst" amount="1.0" />
+          <Affliction identifier="fillbladder" amount="1.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-10.0" statuseffecttags="onfire" duration="1" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+          <Conditional HasStatusTag="onfire" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+          <Explosion range="150.0" force="3" debris="true">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </redpaint>
+    <greenpaint name="" identifier="greenpaint" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,paint" spritecolor="0,128,0,255" InventoryIconColor="0,255,0,255" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="6" isshootable="true" requireaimtouse="true" useinhealthinterface="true">
+      <PreferredContainer secondary="storagecab" minamount="1" maxamount="2" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <Price baseprice="90" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="tin" />
+        <RequiredItem identifier="copper" />
+      </Fabricate>
+      <Deconstruct time="5">
+        <Item identifier="tin" mincondition="0.0" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking -->
+        <StatusEffect type="OnUse" target="This" Condition="-20.0">
+          <Conditional InWater="false" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/Spray.ogg" loop="true" range="200" volume="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="10" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stomachache" strength="5.0" />
+          <Affliction identifier="he-drankpaint" amount="10.0" />
+          <ReduceAffliction type="thirst" amount="1.0" />
+          <Affliction identifier="fillbladder" amount="1.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-10.0" statuseffecttags="onfire" duration="1" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+          <Conditional HasStatusTag="onfire" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+          <Explosion range="150.0" force="3" debris="true">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </greenpaint>
+    <bluepaint name="" identifier="bluepaint" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,paint" spritecolor="0,0,128,255" InventoryIconColor="0,0,255,255" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="6" isshootable="true" requireaimtouse="true" useinhealthinterface="true">
+      <PreferredContainer secondary="storagecab" minamount="1" maxamount="2" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <Price baseprice="90" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="tin" />
+        <RequiredItem identifier="zinc" />
+      </Fabricate>
+      <Deconstruct time="5">
+        <Item identifier="tin" mincondition="0.0" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking -->
+        <StatusEffect type="OnUse" target="This" Condition="-20.0">
+          <Conditional InWater="false" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/Spray.ogg" loop="true" range="200" volume="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="10" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stomachache" strength="5.0" />
+          <Affliction identifier="he-drankpaint" amount="10.0" />
+          <ReduceAffliction type="thirst" amount="1.0" />
+          <Affliction identifier="fillbladder" amount="1.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-10.0" statuseffecttags="onfire" duration="1" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+          <Conditional HasStatusTag="onfire" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+          <Explosion range="150.0" force="3" debris="true">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </bluepaint>
+    <blackpaint name="" identifier="blackpaint" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,paint" spritecolor="20,20,20,255" InventoryIconColor="20,20,20,255" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="6" isshootable="true" requireaimtouse="true" useinhealthinterface="true">
+      <PreferredContainer secondary="storagecab" minamount="1" maxamount="2" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <Price baseprice="90" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="tin" />
+        <RequiredItem identifier="zinc" />
+      </Fabricate>
+      <Deconstruct time="5">
+        <Item identifier="tin" mincondition="0.0" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking -->
+        <StatusEffect type="OnUse" target="This" Condition="-20.0">
+          <Conditional InWater="false" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/Spray.ogg" loop="true" range="200" volume="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="10" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stomachache" strength="5.0" />
+          <Affliction identifier="he-drankpaint" amount="10.0" />
+          <ReduceAffliction type="thirst" amount="1.0" />
+          <Affliction identifier="fillbladder" amount="1.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-10.0" statuseffecttags="onfire" duration="1" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+          <Conditional HasStatusTag="onfire" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+          <Explosion range="150.0" force="3" debris="true">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </blackpaint>
+    <whitepaint name="" identifier="whitepaint" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" description="" Tags="smallitem,paint" spritecolor="128,128,128,255" InventoryIconColor="128,128,128,255" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="6" isshootable="true" requireaimtouse="true" useinhealthinterface="true">
+      <PreferredContainer secondary="storagecab" minamount="1" maxamount="2" spawnprobability="0.25" notcampaign="true" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <Price baseprice="90" minleveldifficulty="5">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="256,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="379,78,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="12" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="tin" />
+        <RequiredItem identifier="zinc" />
+      </Fabricate>
+      <Deconstruct time="5">
+        <Item identifier="tin" mincondition="0.0" />
+      </Deconstruct>
+      <Holdable characterusable="true" canBeCombined="true" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="26,24" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking -->
+        <StatusEffect type="OnUse" target="This" Condition="-20.0">
+          <Conditional InWater="false" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/Spray.ogg" loop="true" range="200" volume="3.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="10" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stomachache" strength="5.0" />
+          <Affliction identifier="he-drankpaint" amount="10.0" />
+          <ReduceAffliction type="thirst" amount="1.0" />
+          <Affliction identifier="fillbladder" amount="1.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-10.0" statuseffecttags="onfire" duration="1" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" delay="1" stackable="false">
+          <Conditional HasStatusTag="onfire" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="2000" />
+          <Explosion range="150.0" force="3" debris="true">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </whitepaint>
+    <!-- use tobaccoingredient instead of just tobaccobud? -->
+    <!-- <Item name="" identifier="pipetobacco" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,pipetobacco" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true">
+      <PreferredContainer primary="captainspipe" spawnprobability="1"/>
+      <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true"/>
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.1"/>  
+      <Price baseprice="120">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" minavailable="1"/>
+        <Price storeidentifier="merchantcity" multiplier="0.9"  minavailable="2"/>
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="190" fabricationlimitmin="0" fabricationlimitmax="10"/>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="helm" level="30" />
+        <RequiredItem tag="tobaccoingredient" amount="3" description="fabricationdescription.tobaccoingredient" />
+      </Fabricate>
+      <Deconstruct time="2">
+      </Deconstruct>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="192,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="848,774,44,58" depth="0.55" origin="0.5,0.5" />
+      <Body width="40" height="50" density="10.5"/>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" >
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item> -->
+    <!-- EVENT ITEMS -->
+    <Item name="5mk" identifier="money_5mk" description="Adds 5mk to your Bank Account" Category="Hidden" Tags="smallitem,money" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" scale="0.1" spritecolor="255,255,255,255" noninteractable="false" hideinmenus="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/InventoryIcons.Png" depth="0.55" sourcerect="166,390,143,122" />
+      <Body radius="2" density="10" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="3" requiredmoney="0" fabricationlimitmin="99999" fabricationlimitmax="99999" displayname="returnitem">
+        <RequiredItem tag="forkspoonreturn" amount="1" mincondition="0.0" maxcondition="1.0" UseCondition="false" />
+      </Fabricate>
+      <Holdable handle1="0,0" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" eventtargettag="moneyrecipient" disabledeltatime="true" setvalue="true" oneshot="true">
+          <Conditional IsPlayer="true" />
+          <TriggerEvent identifier="give5mk" />
+          <EventTarget eventidentifier="give5mk" tag="moneyrecipient" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This">
+          <Conditional IsPlayer="true" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="25mk" identifier="money_25mk" description="Adds 25mk to your Bank Account" Category="Hidden" Tags="smallitem,money" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" scale="0.1" spritecolor="255,255,255,255" noninteractable="false" hideinmenus="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/InventoryIcons.Png" depth="0.55" sourcerect="166,390,143,122" />
+      <Body radius="2" density="10" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="5" requiredmoney="0" fabricationlimitmin="99999" fabricationlimitmax="99999" displayname="returnitem">
+        <RequiredItem tag="platebowlreturn" amount="1" mincondition="0.0" maxcondition="1.0" UseCondition="false" />
+      </Fabricate>
+      <Holdable handle1="0,0" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" eventtargettag="moneyrecipient" disabledeltatime="true" setvalue="true" oneshot="true">
+          <Conditional IsPlayer="true" />
+          <TriggerEvent identifier="give25mk" />
+          <EventTarget eventidentifier="give25mk" tag="moneyrecipient" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This">
+          <Conditional IsPlayer="true" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--     <Item name="50mk" identifier="money_50mk" description="Adds 50mk to your Bank Account" Category="Hidden" Tags="smallitem,money" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" scale="0.1" spritecolor="255,255,255,255" noninteractable="false" hideinmenus="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/InventoryIcons.Png" depth="0.55" sourcerect="166,390,143,122" />
+      <Body radius="2" density="10" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="5" requiredmoney="0" fabricationlimitmin="99999" fabricationlimitmax="99999" displayname="returnitem">
+        <RequiredItem tag="platebowlreturn" amount="2" mincondition="0.0" maxcondition="1.0" UseCondition="false" />
+      </Fabricate>
+      <Holdable handle1="0,0" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" eventtargettag="moneyrecipient" disabledeltatime="true" setvalue="true" oneshot="true">
+          <Conditional IsPlayer="true" />
+          <TriggerEvent identifier="give50mk" />
+          <EventTarget eventidentifier="give50mk" tag="moneyrecipient"/>
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This">
+          <Conditional IsPlayer="true" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="75mk" identifier="money_75mk" description="Adds 75mk to your Bank Account" Category="Hidden" Tags="smallitem,money" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" scale="0.1" spritecolor="255,255,255,255" noninteractable="false" hideinmenus="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/InventoryIcons.Png" depth="0.55" sourcerect="166,390,143,122" />
+      <Body radius="2" density="10" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="5" requiredmoney="0" fabricationlimitmin="99999" fabricationlimitmax="99999" displayname="returnitem">
+        <RequiredItem tag="platebowlreturn" amount="3" mincondition="0.0" maxcondition="1.0" UseCondition="false" />
+      </Fabricate>
+      <Holdable handle1="0,0" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" eventtargettag="moneyrecipient" disabledeltatime="true" setvalue="true" oneshot="true">
+          <Conditional IsPlayer="true" />
+          <TriggerEvent identifier="give75mk" />
+          <EventTarget eventidentifier="give75mk" tag="moneyrecipient"/>
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This">
+          <Conditional IsPlayer="true" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="100mk" identifier="money_100mk" description="Adds 100mk to your Bank Account" Category="Hidden" Tags="smallitem,money" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" scale="0.1" spritecolor="255,255,255,255" noninteractable="false" hideinmenus="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/InventoryIcons.Png" depth="0.55" sourcerect="166,390,143,122" />
+      <Body radius="2" density="10" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="5" requiredmoney="0" fabricationlimitmin="99999" fabricationlimitmax="99999" displayname="returnitem">
+        <RequiredItem tag="platebowlreturn" amount="4" mincondition="0.0" maxcondition="1.0" UseCondition="false" />
+      </Fabricate>
+      <Holdable handle1="0,0" slots="RightHand,LeftHand,Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnContained" target="Character" eventtargettag="moneyrecipient" disabledeltatime="true" setvalue="true" oneshot="true">
+          <Conditional IsPlayer="true" />
+          <TriggerEvent identifier="give100mk" />
+          <EventTarget eventidentifier="give100mk" tag="moneyrecipient"/>
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This">
+          <Conditional IsPlayer="true" targetcontainer="true" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item> -->
+    <Item name="" identifier="shotgunshellsalt" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,handheldammo" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="shotgun" amount="6" spawnprobability="1" />
+      <PreferredContainer primary="autoshotgun" amount="8" spawnprobability="1" />
+      <PreferredContainer primary="shotgununique" amount="2" spawnprobability="1" />
+      <PreferredContainer secondary="secarmcab" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="2" requiresrecipe="true" amount="6">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.50" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Misc/Misc.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/Misc.png" sourcerect="65,0,23,11" depth="0.55" origin="0.5,0.5" />
+      <Body width="23" height="10" density="9.5" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <!--When fired, spawns 8 projectiles simultaneously.-->
+      <Projectile characterusable="false" hitscan="true" hitscancount="8" removeonhit="true" spread="15">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,115,100" scalemultiplier="1,0.5" />
+        <Attack structuredamage="1" targetforce="4" itemdamage="1" severlimbsprobability="0">
+          <Affliction identifier="gunshotwound" strength="6" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="stun" strength="0.1" probability="0.35" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="whiteshards" particleamount="5" distancemin="0" distancemax="10" anglemin="0" anglemax="360" velocitymin="10" velocitymax="30" scalemin="0.1" scalemax="0.2" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Simple Spawner" nameidentifier="spawner" identifier="spawner" description="A simple item/creature spawner that can be wired" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="Electrical" noninteractable="false" spritecolor="255,255,150,255">
+      <sprite texture="Content/Map/MapAtlas.png" sourcerect="784,526,100,100" depth="0.800" premultiplyalpha="false" origin="0.5,0.5" />
+      <EntitySpawnerComponent ItemIdentifier="" SpeciesName="" OnlySpawnWhenCrewInRange="False" CrewAreaShape="Rectangle" CrewAreaBounds="100,100" CrewAreaRadius="120" CrewAreaOffset="0,0" SpawnAreaShape="Rectangle" SpawnAreaBounds="25,25" SpawnAreaRadius="10" SpawnAreaOffset="0,0" SpawnTimerRange="1,1" SpawnAmountRange="1,1" MaximumAmount="0" MaximumAmountInArea="1" MaximumAmountRangePadding="0" PreloadCharacter="False" />
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="trigger_in" displayname="connection.turrettriggerin" />
+        <input name="toggle" displayname="connection.togglestate" />
+        <input name="set_state" displayname="connection.setstate" />
+        <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+      </ConnectionPanel>
+      <CustomInterface canbeselected="true" pickkey="Use" drawhudwhenequipped="true" allowuioverlap="false">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.2,0.13" />
+        <TextBox text="Item Identifier" propertyname="ItemIdentifier" maxtextlength="50" TargetOnlyParentProperty="true" />
+        <TextBox text="Species Name" propertyname="Speciesname" maxtextlength="50" ShouldSetProperty="false" />
+      </CustomInterface>
+    </Item>
+    <!-- Overriding pipe and cigar to give tobacco addiction -->
+    <Item name="" identifier="captainspipe" category="Misc" Tags="smallitem" scale="0.5" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light" isshootable="true" requireaimtouse="true">
+      <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true" />
+      <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.1" />
+      <Price baseprice="50">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="511,957,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="105,73,50,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="58" height="20" density="15" />
+      <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="28,10" handle1="10,-5" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="swirlysmoke" particlespersecond="1" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+          <RequiredItem items="pipetobacco" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" interval="8">
+          <Conditional InWater="false" />
+          <Sound file="Content/Items/Medical/ITEM_cigarette.ogg" range="250" selectionmode="Random" />
+          <Sound file="Content/Items/Medical/ITEM_cigaretteExtended.ogg" range="250" />
+          <RequiredItem items="pipetobacco" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This">
+          <Conditional InWater="true" />
+          <ParticleEmitter particle="bubbles" particlespersecond="3" scalemin="0.3" scalemax="0.5" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+          <RequiredItem items="pipetobacco" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Contained" Condition="-4.0" disabledeltatime="false">
+          <RequiredItem items="pipetobacco" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="Character">
+          <Affliction identifier="psychosisresistance" amount="15" />
+          <Affliction identifier="he-tobaccoaddiction" amount="4" />
+          <ReduceAffliction identifier="psychosis" amount="5" />
+          <ReduceAffliction identifier="hallucinating" amount="10" />
+          <RequiredItem items="pipetobacco" type="Contained" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer hideitems="true" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="6" itempos="74,-281" iteminterval="0,0" itemrotation="0" canbeselected="false" containedspritedepth="0.79">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="0,384,64,64" origin="0.5,0.5" />
+        <Containable items="pipetobacco" />
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="cigar" category="Misc" Tags="smallitem" scale="0.5" cargocontaineridentifier="metalcrate" allowasextracargo="true" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="130" sold="false" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="5" requiresrecipe="true">
+        <RequiredItem identifier="pipetobacco" />
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="174,234,42,50" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="0,60,50,12" depth="0.55" origin="0.5,0.5" />
+      <Body width="45" height="10" density="9.9" />
+      <Holdable slots="Any,RightHand,LeftHand" aimable="false" aimpos="30,14" handle1="0,-10" swingamount="0,0" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-4.0" />
+        <StatusEffect type="OnSecondaryUse" target="This">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="swirlysmoke" particlespersecond="1" scalemin="1" scalemax="2" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" interval="8">
+          <Conditional InWater="false" />
+          <Sound file="Content/Items/Medical/ITEM_cigarette.ogg" range="250" selectionmode="Random" />
+          <Sound file="Content/Items/Medical/ITEM_cigaretteExtended.ogg" range="250" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This">
+          <Conditional InWater="true" />
+          <ParticleEmitter particle="bubbles" particlespersecond="3" scalemin="0.3" scalemax="0.5" anglemin="0" anglemax="360" velocitymin="0" velocitymax="10" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnSecondaryUse" target="Character">
+          <Affliction identifier="psychosisresistance" amount="20" />
+          <Affliction identifier="he-tobaccoaddiction" amount="4" />
+          <ReduceAffliction identifier="psychosis" amount="6" />
+          <ReduceAffliction identifier="hallucinating" amount="10" />
+          <!-- LEGACY: Reaper's tax is here (for now) only in order to not break existing saves -->
+          <ReduceAffliction identifier="reaperstax" amount="1" />
+          <ReduceAffliction identifier="watchersgaze" amount="5" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- EFFEC ITEMS -->
+    <Item name="" identifier="effect_none" Category="Hidden" Tags="effect" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" spritecolor="255,255,255,0" noninteractable="true" hideinmenus="true">
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="0,0,1,1" />
+      <Body radius="1" density="10" />
+      <Holdable handle1="0,0" slots="Any" msg="ItemMsgPickUpSelect">
+        <!-- instantly remove the item when spawned -->
+        <StatusEffect type="Always" target="This" oneshot="true">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" identifier="effect_firestarter" Category="Hidden" Tags="effect" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" spritecolor="255,255,255,0" noninteractable="true" hideinmenus="true">
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="0,0,1,1" />
+      <Body radius="1" density="10" />
+      <Holdable handle1="0,0" slots="Any" msg="ItemMsgPickUpSelect">
+        <!-- instantly cause a fire and remove the item when spawned -->
+        <StatusEffect type="Always" target="This" oneshot="true">
+          <Fire size="10" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+  </Items>
+</Override>

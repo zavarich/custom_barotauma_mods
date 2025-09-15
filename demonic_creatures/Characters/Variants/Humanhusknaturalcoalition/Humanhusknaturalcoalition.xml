@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character genders="true" skincolors="(#fce1c6, 255); (#f3c696, 255); (#b89777, 255); (#f4be98, 255); (#d4ae77, 255); (#7d7666, 255); (#c9c9c9, 255); (#c8a583, 255); (#f5e4d3, 255); (#def0c9, 255); (#9e9e80, 255); (#ad9584, 255); (#e0bba2, 255); (#cbd4a1, 255); (#bec4ab, 255)" SpeciesName="Humanhusknaturalcoalition" SpeciesTranslationOverride="husk" DisplayName="" Group="husk" Humanoid="True" HasInfo="True" CanInteract="True" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" IsMachine="False" CanSpeak="True" ShowHealthBar="True" UseBossHealthBar="False" Noise="95" Visibility="80" BloodDecal="blackblood" BleedParticleAir="blackblood" BleedParticleWater="blackwaterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="8.5" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="despawncontainer">
+  <ragdolls folder="default" />
+  <animations folder="default" />
+  <huskappendage affliction="huskinfection" path="%ModDir%/Characters/Humanhusk/Huskappendage.xml" />
+  <huskappendage affliction="husksymbiosis" path="Content/Characters/Humanhusk/Huskappendagesymbiosis.xml" />
+  <huskappendage affliction="naturalmeleeweapon" path="Content/Characters/Humanhusk/Mudraptorbeak.xml" onlyfromafflictions="true" />
+  <huskappendage affliction="naturalrangedweapon" path="Content/Characters/Humanhusk/Spinelingspine.xml" onlyfromafflictions="true" />
+  <huskappendage affliction="huskinfectionaffinity" path="%ModDir%/Characters/Humanhusk/Huskappendage.xml" onlyfromafflictions="true" />
+  <bloodemitter Particle="blackblood" AngleMin="0" AngleMax="0" ScaleMin="1" ScaleMax="1" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="5" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <bloodemitter Particle="blackwaterblood" AngleMin="0" AngleMax="0" ScaleMin="1" ScaleMax="1" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="1" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <gibemitter Particle="blackgib" AngleMin="0" AngleMax="360" ScaleMin="1" ScaleMax="1" VelocityMin="50" VelocityMax="500" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <gibemitter Particle="blackgib" AngleMin="0" AngleMax="360" ScaleMin="1" ScaleMax="1" VelocityMin="50" VelocityMax="500" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+  <health Vitality="105" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="True" BleedingReduction="10" BurnReduction="0" ConstantHealthRegeneration="1" HealthRegenerationWhenEating="0" StunImmunity="False" PoisonImmunity="False" PoisonVulnerability="1" EmpVulnerability="0" ApplyAfflictionColors="False">
+    <MedUISilhouette texture="Content/UI/Health/MedUI_Silhouette.png" columns="8" rows="2" sourcerect="0,0,1008,748" />
+    <MedUIExtra texture="Content/UI/Health/MedUIExtra.png" columns="4" rows="4" sourcerect="0,0,1024,1024" />
+    <Limb name="Head">
+      <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="1,0,126,374" highlightarea="41,0,45,54" />
+      <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="1,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="2.0" />
+    </Limb>
+    <Limb name="Torso">
+      <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="631,0,126,374" highlightarea="29,56,70,134" />
+      <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="631,515,126,374" />
+    </Limb>
+    <Limb name="LeftArm">
+      <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="379,0,126,374" highlightarea="1,69,27,140" />
+      <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="379,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="RightArm">
+      <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="127,0,126,374" highlightarea="100,69,27,140" />
+      <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="127,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="LeftLeg">
+      <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="505,0,126,374" highlightarea="3,180,57,194" />
+      <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="505,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+    <Limb name="RightLeg">
+      <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="253,0,126,374" highlightarea="68,180,57,194" />
+      <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="253,515,126,374" />
+      <VitalityMultiplier type="damage" multiplier="0.5" />
+    </Limb>
+  </health>
+  <name firstname="Content/Characters/Human/firstnames_[GENDER].txt" lastname="Content/Characters/Human/lastnames.txt" />
+  <ai CombatStrength="60" Sight="1" Hearing="2" AggressionHurt="150" AggressionGreed="25" FleeHealthThreshold="0" AttackWhenProvoked="True" AvoidGunfire="True" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="True" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="False" RandomAttack="True" CanOpenDoors="True" UsePathFindingToGetInside="False" KeepDoorsClosed="False" AvoidAbyss="False" StayInAbyss="False" PatrolFlooded="False" PatrolDry="False" StartAggression="0" MaxAggression="100" AggressionCumulation="0" WallTargetingMethod="Target">
+    <target damagethreshold="0" Tag="decoy" State="Attack" Priority="500" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="provocative" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="weapon" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="crawler" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="human" State="Attack" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="weaker" State="Attack" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="stronger" State="Escape" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="nasonov" State="Attack" Priority="70" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="sonar" State="Attack" Priority="30" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="room" State="Attack" Priority="10" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target damagethreshold="0" Tag="turret" State="Attack" Priority="1" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    <target tag="huskinfected" state="Idle" priority="0" ignoreinside="True" ignoreoutside="True" ignoreifnotinsamesub="True" ignoreincapacitated="True" threshold="1" />
+  </ai>
+  <Vars>
+    <Var var="GENDER" tags="male" />
+  </Vars>
+  <MenuCategory var="GENDER" />
+  <Pronouns var="GENDER" />
+  <Heads>
+    <Head tags="head1,male" sheetindex="0,0" />
+    <Head tags="head2,male" sheetindex="1,0" />
+    <Head tags="head3,male" sheetindex="2,0" />
+    <Head tags="head4,male" sheetindex="3,0" />
+    <Head tags="head5,male" sheetindex="0,1" />
+    <Head tags="head6,male" sheetindex="1,1" />
+    <Head tags="head7,male" sheetindex="2,1" />
+    <Head tags="head8,male" sheetindex="3,1" />
+    <Head tags="head9,male" sheetindex="0,2" />
+    <Head tags="head10,male" sheetindex="1,2" />
+    <Head tags="head11,male" sheetindex="2,2" />
+    <Head tags="head12,male" sheetindex="3,2" />
+    <Head tags="head13,male" sheetindex="0,3" />
+    <Head tags="head14,male" sheetindex="1,3" />
+    <Head tags="head15,male" sheetindex="2,3" />
+    <Head tags="head16,male" sheetindex="3,3" />
+  </Heads>
+  <HeadAttachments />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle1.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle2.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle3.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle4.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle5.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle6.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle7.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle8.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle9.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle10.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt1.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt2.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt3.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt4.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt5.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt6.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt7.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt8.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack1.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack2.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack3.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack4.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack5.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack6.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack7.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack8.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die1.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die2.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die3.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+  <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die4.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle1.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle2.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle3.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle4.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle5.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle6.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle7.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle8.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle9.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle10.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt1.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt2.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt3.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt4.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt5.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt6.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt7.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt8.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack1.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack2.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack3.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack4.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack5.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack6.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack7.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack8.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die1.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die2.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die3.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+  <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die4.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+  <!-- husk reanimation sound -->
+  <StatusEffect type="OnSpawn" stackable="true" target="Character">
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate1.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate2.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate3.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate4.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate5.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate6.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+  </StatusEffect>
+  <!-- husk screen overlay -->
+  <StatusEffect type="OnSpawn" stackable="true" target="Character">
+    <Affliction identifier="applyhuskoverlay" amount="5" />
+  </StatusEffect>
+  <!-- Coalition [EHA] -->
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="Head" equip="true" identifier="sgt_fieldcap" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+  </inventory>
+  <!-- submachine gun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" identifier="scp_lightuniform" equip="true" />
+    <Item slot="Head" equip="true" identifier="sgt_fieldcap" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+    <Item identifier="scp_smg9" equip="false">
+      <Item identifier="scp_9mmsmgmag" />
+    </Item>
+    <Item identifier="scp_9mmsmgmag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+    <Item slot="Head" equip="true" identifier="ballistichelmet3" />
+  </inventory>
+  <!-- service revolver -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+    <Item slot="Head" equip="true" identifier="ballistichelmet3" />
+    <Item identifier="scp_python" equip="false">
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+    </Item>
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_softvest" />
+    <Item slot="Head" equip="true" identifier="scp_combathelmet" />
+  </inventory>
+  <!-- service repeater -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_softvest" />
+    <Item slot="Head" equip="true" identifier="scp_combathelmet" />
+    <Item identifier="sgt_levergun" equip="false">
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+    </Item>
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.3">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_heavyvest" />
+    <Item slot="Head" equip="true" identifier="scp_heavycombathelmet" />
+  </inventory>
+  <!-- assault rifle -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.12">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_heavyvest" />
+    <Item slot="Head" equip="true" identifier="scp_heavycombathelmet" />
+    <Item identifier="scp_sg550" equip="false">
+      <Item identifier="scp_556mag" />
+    </Item>
+    <Item identifier="scp_556mag" />
+    <Item identifier="scp_556mag" />
+  </inventory>
+  <!-- coalition heavy smg -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.12">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_heavyvest" />
+    <Item slot="Head" equip="true" identifier="scp_heavycombathelmet" />
+    <Item identifier="smg" equip="false">
+      <Item identifier="smgmag" />
+    </Item>
+    <Item identifier="smgmag" />
+    <Item identifier="smgmag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet1" />
+    <Item slot="Headset" equip="true" showpreview="false" identifier="headset" />
+  </inventory>
+  <!-- heavy pistol -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.2">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet1" />
+    <Item slot="Headset" equip="true" showpreview="false" identifier="headset" />
+    <Item identifier="scp_meusoc" equip="false">
+      <Item identifier="scp_45mag" />
+    </Item>
+    <Item identifier="scp_45mag" />
+    <Item identifier="scp_45mag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet2" />
+    <Item slot="Headset" equip="true" showpreview="false" identifier="headset" />
+  </inventory>
+  <!-- pistol -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet2" />
+    <Item slot="Headset" equip="true" showpreview="false" identifier="headset" />
+    <Item identifier="scp_p226" equip="false">
+      <Item identifier="scp_9mmmag" />
+    </Item>
+    <Item identifier="scp_9mmmag" equip="false" />
+    <Item identifier="scp_9mmmag" equip="false" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet3" />
+    <Item slot="Headset" equip="true" showpreview="false" identifier="headset" />
+  </inventory>
+  <!-- pump action shotgun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.12">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet3" />
+    <Item slot="Headset" equip="true" showpreview="false" identifier="headset" />
+    <Item identifier="scp_m590" equip="false">
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+    </Item>
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+  </inventory>
+</Character>

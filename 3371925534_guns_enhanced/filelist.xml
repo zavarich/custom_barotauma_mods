@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Guns Enhanced" modversion="0.0.70" corepackage="False" steamworkshopid="3371925534" gameversion="1.9.8.0" expectedhash="779851BBAB071022CC2280DF79BA22A5">
+  <Item file="%ModDir%/Revolver/Revolver.xml" />
+  <Item file="%ModDir%/Handcannon/Handcannon.xml" />
+  <Item file="%ModDir%/MachinePistol/MachinePistol.xml" />
+  <Item file="%ModDir%/SMG/SMG.xml" />
+  <Item file="%ModDir%/DeadeyeCarbine/DeadeyeCarbine.xml" />
+  <Item file="%ModDir%/RiotShotgun/RiotShotgun.xml" />
+  <Item file="%ModDir%/AutoShotgun/AutoShotgun.xml" />
+  <Item file="%ModDir%/Boomstick/Boomstick.xml" />
+  <Item file="%ModDir%/AssaultRifle/AssaultRifle.xml" />
+  <Item file="%ModDir%/Rifle/Rifle.xml" />
+  <Item file="%ModDir%/HMG/HMG.xml" />
+  <Item file="%ModDir%/GrenadeLauncher/GrenadeLauncher.xml" />
+  <Item file="%ModDir%/HarpoonGun/HarpoonGun.xml" />
+  <Item file="%ModDir%/HarpoonCoilRifle/HarpoonCoilRifle.xml" />
+  <Item file="%ModDir%/Flamer/Flamer.xml" />
+  <Item file="%ModDir%/PrototypeSteamCannon/PrototypeSteamCannon.xml" />
+  <Item file="%ModDir%/AlienPistol/AlienPistol.xml" />
+  <Item file="%ModDir%/AncientWeapon/AncientWeapon.xml" />
+  <Item file="%ModDir%/ArcEmitter/ArcEmitter.xml" />
+  <Item file="%ModDir%/GunAmmo.xml" />
+  <Item file="%ModDir%/Arsenal/ArsenalItems.xml" />
+  <Character file="%ModDir%/Arsenal/ArsenalCreatureCrawler.xml" />
+  <Character file="%ModDir%/Arsenal/ArsenalCreatureMudraptor.xml" />
+  <Character file="%ModDir%/Arsenal/ArsenalCreatureHuman.xml" />
+  <Particles file="%ModDir%/GunParticles.xml" />
+  <Submarine file="%ModDir%/Arsenal/Arsenal.sub" />
+</contentpackage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character specifiertags="true" SpeciesName="humancannibal" SpeciesTranslationOverride="" DisplayName="" Group="husk" Humanoid="true" HasInfo="True" CanInteract="True" Husk="True" UseHuskAppendage="True" NeedsAir="False" NeedsWater="False" IsMachine="False" CanSpeak="False" ShowHealthBar="True" UseBossHealthBar="False" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="True" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="True" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="despawncontainer">
+  <ragdolls folder="Content/Characters/Human/Ragdolls" />
+  <animations folder="Content/Characters/Human/Animations" />
+  <huskappendage affliction="he-cannibalmouth" path="%ModDir:2954998725%/Content/Afflictions/CannibalMouth.xml" onlyfromafflictions="true" />
+  <health Vitality="50" DoesBleed="True" CrushDepth="6000" UseHealthWindow="True" BleedingReduction="10" BurnReduction="0" ConstantHealthRegeneration="1" HealthRegenerationWhenEating="0" StunImmunity="False" PoisonImmunity="False" PoisonVulnerability="0.5" EmpVulnerability="0" ApplyAfflictionColors="True"></health>
+  <names path="Content/Characters/Human/names.xml" />
+  <ai CombatStrength="90" Sight="0.5" Hearing="1" AggressionHurt="150" AggressionGreed="5" FleeHealthThreshold="0" AttackWhenProvoked="True" AvoidGunfire="False" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="True" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="False" RandomAttack="False" CanOpenDoors="True" UsePathFindingToGetInside="False" KeepDoorsClosed="False" AvoidAbyss="True" StayInAbyss="True" PatrolFlooded="False" PatrolDry="False" StartAggression="0" MaxAggression="100" AggressionCumulation="0" WallTargetingMethod="Target"></ai>
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="True" Commonness="1" />
+  <Vars>
+    <Var var="GENDER" tags="female,male" />
+  </Vars>
+</Character>

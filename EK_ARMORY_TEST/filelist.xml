@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="EK Armory" modversion="1.0.80" corepackage="False" steamworkshopid="2995424153" gameversion="1.9.8.0">
+  <Afflictions file="%ModDir%/EKR_Afflictions.xml" />
+  <Item file="%ModDir%/Items/ammo_code/ek_coilgunammo.xml" />
+  <Item file="%ModDir%/Items/ammo_code/ek_shells.xml" />
+  <Item file="%ModDir%/Items/ammo_code/ek_chaingunammo.xml" />
+  <Item file="%ModDir%/Items/ammo_code/ek_pulselaserammo.xml" />
+  <Item file="%ModDir%/Items/ammo_code/ek_ammoR.xml" />
+  <Item file="%ModDir%/Items/ek_weapons.xml" />
+  <Character file="%ModDir%/Characters/Homing Shell/Homingshell.xml" />
+  <Character file="%ModDir%/Characters/Homing Shell/HomingshellQ1.xml" />
+  <Character file="%ModDir%/Characters/Homing Shell/HomingshellQ2.xml" />
+  <Character file="%ModDir%/Characters/Homing Shell/HomingshellQ3.xml" />
+  <Character file="%ModDir%/Characters/Nuclear Homing Shell/Nuclearhomingshell.xml" />
+  <Character file="%ModDir%/Characters/Nuclear Homing Shell/NuclearhomingshellQ1.xml" />
+  <Character file="%ModDir%/Characters/Nuclear Homing Shell/NuclearhomingshellQ2.xml" />
+  <Character file="%ModDir%/Characters/Nuclear Homing Shell/NuclearhomingshellQ3.xml" />
+  <Particles file="%ModDir%/Particles/ParticlePrefabs.xml" />
+  <Text file="%ModDir%/Texts/EnglishEkArmory.xml" />
+  <Text file="%ModDir%/Texts/RussianEkArmory.xml" />
+  <Text file="%ModDir%/Texts/TraditionalChineseEkArmory.xml" />
+  <Text file="%ModDir%/Texts/SimplifiedChineseEkArmory.xml" />
+  <Talents file="%ModDir%/Talents/override_TalentsSecurity.xml" />
+  <TalentTrees file="%ModDir%/Talents/override_TalentTreesSecurity.xml" />
+</contentpackage>

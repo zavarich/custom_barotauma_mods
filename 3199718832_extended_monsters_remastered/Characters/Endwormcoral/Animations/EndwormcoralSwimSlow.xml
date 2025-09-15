@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EndwormcoralSwimSlow type="Endwormcoral" UseSineMovement="False" Flip="False" FlipCooldown="1" FlipDelay="0.5" Mirror="False" MirrorLerp="True" WaveAmplitude="66.45749" WaveLength="26.635853" RotateTowardsMovement="True" TailTorque="50" TailTorqueMultiplier="1" FootAngles="" TailAngle="NaN" SteerTorque="200" LegTorque="25" MovementSpeed="5.63" CycleSpeed="1" HeadAngle="0" TorsoAngle="0" HeadTorque="200" TorsoTorque="200" FootTorque="25" AnimationType="SwimSlow" ArmIKStrength="1" HandIKStrength="1" />

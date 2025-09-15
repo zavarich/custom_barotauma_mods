@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <!-- TODO: move all the mission-triggered events in this file ? (and move missionevent_mission stuff in missionevents.xml)-->
+  <!-- Events defined in <EventPrefabs> can only be triggered via a console command or with a TriggerEventAction -->
+  <EventPrefabs>
+    <!-- ITEM EVENTS -->
+    <ScriptedEvent identifier="nuclearbombexplosion" commonness="0">
+      <TagAction criteria="itemtag:mudraptoregg" tag="egg" submarinetype="Outpost" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemidentifier:crawleregg" tag="egg" submarinetype="Outpost" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemidentifier:tigerthresheregg" tag="egg" submarinetype="Outpost" ContinueIfNoTargetsFound="true" />
+      <StatusEffectAction targettag="egg">
+        <StatusEffect target="This" condition="0.0" setvalue="true" />
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="defectivebotteamswap" commonness="0">
+      <TagAction criteria="SpeciesName:Defensebot_defective" tag="defectivebot" />
+      <!-- Turn hostile -->
+      <NPCChangeTeamAction npctag="defectivebot" teamid="None" />
+    </ScriptedEvent>
+    <!-- GENERIC EVENTS -->
+    <!-- BARTENDER -->
+    <ScriptedEvent identifier="de-triggerevents-bartender" commonness="100">
+      <TagAction criteria="player" tag="player" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemidentifier:bartenderchair" tag="bar" ContinueIfNoTargetsFound="true" />
+      <SpawnAction npcsetidentifier="DE_outpostnpcs" npcidentifier="bartender" targettag="bartender" requirespawnpointtag="true" spawnpointtag="bar" spawnlocation="Outpost" />
+      <NPCOperateItemAction npctag="bartender" targettag="bar" operate="true" />
+      <SetDataAction identifier="bartender_tipped" value="0" />
+      <!--randomize amount of available drinks-->
+      <!--Beer - Coalition Premium-->
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_coalitionbeer_amount" value="3" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_coalitionbeer_amount" value="6" />
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_coalitionbeer_amount" value="9" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_coalitionbeer_amount" value="12" />
+            </Failure>
+          </RNGAction>
+        </Failure>
+      </RNGAction>
+      <!--Beer - Jovian Force-->
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_separatistbeer_amount" value="3" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_separatistbeer_amount" value="6" />
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_separatistbeer_amount" value="9" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_separatistbeer_amount" value="12" />
+            </Failure>
+          </RNGAction>
+        </Failure>
+      </RNGAction>
+      <!--Beer - Liquid Ascension-->
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_huskbeer_amount" value="1" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_huskbeer_amount" value="3" />
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_huskbeer_amount" value="4" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_huskbeer_amount" value="5" />
+            </Failure>
+          </RNGAction>
+        </Failure>
+      </RNGAction>
+      <!--Beer - Clown Juice-->
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_clownbeer_amount" value="2" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_clownbeer_amount" value="3" />
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_clownbeer_amount" value="6" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_clownbeer_amount" value="8" />
+            </Failure>
+          </RNGAction>
+        </Failure>
+      </RNGAction>
+      <!--Whiskey-->
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_whiskey_amount" value="2" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_whiskey_amount" value="4" />
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_whiskey_amount" value="5" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_whiskey_amount" value="7" />
+            </Failure>
+          </RNGAction>
+        </Failure>
+      </RNGAction>
+      <!--Rum-->
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_rum_amount" value="1" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_rum_amount" value="4" />
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <RNGAction chance="0.5">
+            <Success>
+              <SetDataAction identifier="bt_rum_amount" value="5" />
+            </Success>
+            <Failure>
+              <SetDataAction identifier="bt_rum_amount" value="9" />
+            </Failure>
+          </RNGAction>
+        </Failure>
+      </RNGAction>
+      <CheckMissionAction MissionIdentifier="alcoholcontraband" Type="Current">
+        <Success>
+          <Goto name="end" />
+        </Success>
+      </CheckMissionAction>
+      <Label name="waitforinput" />
+      <WaitAction time="1" />
+      <TriggerAction target1tag="bartender" target2tag="player" applytotarget2="bt_trig_player" waitforinteraction="true" />
+      <!--check if player drank-->
+      <CheckAfflictionAction identifier="drunk" targettag="bt_trig_player" minstrength="1">
+        <Success>
+          <!--check if player is drunk enough to leave a generous tip-->
+          <CheckAfflictionAction identifier="drunk" targettag="bt_trig_player" minstrength="60">
+            <Success>
+              <CheckDataAction identifier="bartender_tipped" condition="eq 1">
+                <Success>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.offerdrink.drunk" dialogtype="Regular">
+                    <Option text="eventtext.bartender.buy.coalitionbeer">
+                      <CheckDataAction identifier="bt_coalitionbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="10">
+                            <Success>
+                              <MoneyAction amount="-10" />
+                              <SpawnAction itemidentifier="he-beercoalitionpremium" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_coalitionbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.separatistbeer">
+                      <CheckDataAction identifier="bt_separatistbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="10">
+                            <Success>
+                              <MoneyAction amount="-10" />
+                              <SpawnAction itemidentifier="he-beerjovianforce" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_separatistbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.huskbeer">
+                      <CheckDataAction identifier="bt_huskbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="59">
+                            <Success>
+                              <MoneyAction amount="-59" />
+                              <SpawnAction itemidentifier="he-beerliquidascension" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_huskbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.clownbeer">
+                      <CheckDataAction identifier="bt_clownbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="38">
+                            <Success>
+                              <MoneyAction amount="-38" />
+                              <SpawnAction itemidentifier="he-beerclownjuice" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_clownbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.whiskey">
+                      <CheckDataAction identifier="bt_whiskey_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="125">
+                            <Success>
+                              <MoneyAction amount="-125" />
+                              <SpawnAction itemidentifier="he-whiskey" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_whiskey_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.rum">
+                      <CheckDataAction identifier="bt_rum_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="150">
+                            <Success>
+                              <MoneyAction amount="-150" />
+                              <SpawnAction itemidentifier="rum" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_rum_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.option.decline">
+                      <ConversationAction text="eventtext.general.decline" dialogtype="Small" targettag="bt_trig_player" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Option>
+                  </ConversationAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.offerdrink.drunk" dialogtype="Regular">
+                    <Option text="eventtext.bartender.buy.coalitionbeer">
+                      <CheckDataAction identifier="bt_coalitionbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="10">
+                            <Success>
+                              <MoneyAction amount="-10" />
+                              <SpawnAction itemidentifier="he-beercoalitionpremium" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_coalitionbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.separatistbeer">
+                      <CheckDataAction identifier="bt_separatistbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="10">
+                            <Success>
+                              <MoneyAction amount="-10" />
+                              <SpawnAction itemidentifier="he-beerjovianforce" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_separatistbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.huskbeer">
+                      <CheckDataAction identifier="bt_huskbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="59">
+                            <Success>
+                              <MoneyAction amount="-59" />
+                              <SpawnAction itemidentifier="he-beerliquidascension" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_huskbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.clownbeer">
+                      <CheckDataAction identifier="bt_clownbeer_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="38">
+                            <Success>
+                              <MoneyAction amount="-38" />
+                              <SpawnAction itemidentifier="he-beerclownjuice" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_clownbeer_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.whiskey">
+                      <CheckDataAction identifier="bt_whiskey_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="125">
+                            <Success>
+                              <MoneyAction amount="-125" />
+                              <SpawnAction itemidentifier="he-whiskey" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_whiskey_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.buy.rum">
+                      <CheckDataAction identifier="bt_rum_amount" value="neq 0">
+                        <Success>
+                          <CheckMoneyAction Amount="150">
+                            <Success>
+                              <MoneyAction amount="-150" />
+                              <SpawnAction itemidentifier="rum" targetinventory="bt_trig_player" />
+                              <SetDataAction identifier="bt_rum_amount" operation="add" value="-1" />
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.drunk" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Success>
+                            <Failure>
+                              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                              <ClearTagAction tag="bt_trig_player" />
+                              <GoTo name="waitforinput" />
+                            </Failure>
+                          </CheckMoneyAction>
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckDataAction>
+                    </Option>
+                    <Option text="eventtext.bartender.tip">
+                      <CheckMoneyAction Amount="50">
+                        <Success>
+                          <MoneyAction amount="-50" />
+                          <SetDataAction identifier="bartender_tipped" value="1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.tip.success" />
+                          <MissionAction missiontag="salvageartifact" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.tip.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Option>
+                    <Option text="eventtext.option.decline">
+                      <ConversationAction text="eventtext.general.decline" dialogtype="Small" targettag="bt_trig_player" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Option>
+                  </ConversationAction>
+                </Failure>
+              </CheckDataAction>
+            </Success>
+            <Failure>
+              <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.offerdrink.slightdrunk" dialogtype="Regular">
+                <Option text="eventtext.bartender.buy.coalitionbeer">
+                  <CheckDataAction identifier="bt_coalitionbeer_amount" value="neq 0">
+                    <Success>
+                      <CheckMoneyAction Amount="10">
+                        <Success>
+                          <MoneyAction amount="-10" />
+                          <SpawnAction itemidentifier="he-beercoalitionpremium" targetinventory="bt_trig_player" />
+                          <SetDataAction identifier="bt_coalitionbeer_amount" operation="add" value="-1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.slightdrunk" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckDataAction>
+                </Option>
+                <Option text="eventtext.bartender.buy.separatistbeer">
+                  <CheckDataAction identifier="bt_separatistbeer_amount" value="neq 0">
+                    <Success>
+                      <CheckMoneyAction Amount="10">
+                        <Success>
+                          <MoneyAction amount="-10" />
+                          <SpawnAction itemidentifier="he-beerjovianforce" targetinventory="bt_trig_player" />
+                          <SetDataAction identifier="bt_separatistbeer_amount" operation="add" value="-1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.slightdrunk" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckDataAction>
+                </Option>
+                <Option text="eventtext.bartender.buy.huskbeer">
+                  <CheckDataAction identifier="bt_huskbeer_amount" value="neq 0">
+                    <Success>
+                      <CheckMoneyAction Amount="59">
+                        <Success>
+                          <MoneyAction amount="-59" />
+                          <SpawnAction itemidentifier="he-beerliquidascension" targetinventory="bt_trig_player" />
+                          <SetDataAction identifier="bt_huskbeer_amount" operation="add" value="-1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.slightdrunk" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckDataAction>
+                </Option>
+                <Option text="eventtext.bartender.buy.clownbeer">
+                  <CheckDataAction identifier="bt_clownbeer_amount" value="neq 0">
+                    <Success>
+                      <CheckMoneyAction Amount="38">
+                        <Success>
+                          <MoneyAction amount="-38" />
+                          <SpawnAction itemidentifier="he-beerclownjuice" targetinventory="bt_trig_player" />
+                          <SetDataAction identifier="bt_clownbeer_amount" operation="add" value="-1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.slightdrunk" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckDataAction>
+                </Option>
+                <Option text="eventtext.bartender.buy.whiskey">
+                  <CheckDataAction identifier="bt_whiskey_amount" value="neq 0">
+                    <Success>
+                      <CheckMoneyAction Amount="125">
+                        <Success>
+                          <MoneyAction amount="-125" />
+                          <SpawnAction itemidentifier="he-whiskey" targetinventory="bt_trig_player" />
+                          <SetDataAction identifier="bt_whiskey_amount" operation="add" value="-1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.slightdrunk" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckDataAction>
+                </Option>
+                <Option text="eventtext.bartender.buy.rum">
+                  <CheckDataAction identifier="bt_rum_amount" value="neq 0">
+                    <Success>
+                      <CheckMoneyAction Amount="150">
+                        <Success>
+                          <MoneyAction amount="-150" />
+                          <SpawnAction itemidentifier="rum" targetinventory="bt_trig_player" />
+                          <SetDataAction identifier="bt_rum_amount" operation="add" value="-1" />
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.slightdrunk" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Success>
+                        <Failure>
+                          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                          <ClearTagAction tag="bt_trig_player" />
+                          <GoTo name="waitforinput" />
+                        </Failure>
+                      </CheckMoneyAction>
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckDataAction>
+                </Option>
+                <Option text="eventtext.option.decline">
+                  <ConversationAction text="eventtext.general.decline" dialogtype="Small" targettag="bt_trig_player" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Option>
+              </ConversationAction>
+            </Failure>
+          </CheckAfflictionAction>
+        </Success>
+        <Failure>
+          <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.offerdrink.nodrunk" dialogtype="Regular">
+            <Option text="eventtext.bartender.buy.coalitionbeer">
+              <CheckDataAction identifier="bt_coalitionbeer_amount" value="neq 0">
+                <Success>
+                  <CheckMoneyAction Amount="10">
+                    <Success>
+                      <MoneyAction amount="-10" />
+                      <SpawnAction itemidentifier="he-beercoalitionpremium" targetinventory="bt_trig_player" />
+                      <SetDataAction identifier="bt_coalitionbeer_amount" operation="add" value="-1" />
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.coalitionbeer.success.nodrunk" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Failure>
+              </CheckDataAction>
+            </Option>
+            <Option text="eventtext.bartender.buy.separatistbeer">
+              <CheckDataAction identifier="bt_separatistbeer_amount" value="neq 0">
+                <Success>
+                  <CheckMoneyAction Amount="10">
+                    <Success>
+                      <MoneyAction amount="-10" />
+                      <SpawnAction itemidentifier="he-beerjovianforce" targetinventory="bt_trig_player" />
+                      <SetDataAction identifier="bt_separatistbeer_amount" operation="add" value="-1" />
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.separatistbeer.success.nodrunk" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Failure>
+              </CheckDataAction>
+            </Option>
+            <Option text="eventtext.bartender.buy.huskbeer">
+              <CheckDataAction identifier="bt_huskbeer_amount" value="neq 0">
+                <Success>
+                  <CheckMoneyAction Amount="59">
+                    <Success>
+                      <MoneyAction amount="-59" />
+                      <SpawnAction itemidentifier="he-beerliquidascension" targetinventory="bt_trig_player" />
+                      <SetDataAction identifier="bt_huskbeer_amount" operation="add" value="-1" />
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.huskbeer.success.nodrunk" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Failure>
+              </CheckDataAction>
+            </Option>
+            <Option text="eventtext.bartender.buy.clownbeer">
+              <CheckDataAction identifier="bt_clownbeer_amount" value="neq 0">
+                <Success>
+                  <CheckMoneyAction Amount="38">
+                    <Success>
+                      <MoneyAction amount="-38" />
+                      <SpawnAction itemidentifier="he-beerclownjuice" targetinventory="bt_trig_player" />
+                      <SetDataAction identifier="bt_clownbeer_amount" operation="add" value="-1" />
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.clownbeer.success.nodrunk" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Failure>
+              </CheckDataAction>
+            </Option>
+            <Option text="eventtext.bartender.buy.whiskey">
+              <CheckDataAction identifier="bt_whiskey_amount" value="neq 0">
+                <Success>
+                  <CheckMoneyAction Amount="125">
+                    <Success>
+                      <MoneyAction amount="-125" />
+                      <SpawnAction itemidentifier="he-whiskey" targetinventory="bt_trig_player" />
+                      <SetDataAction identifier="bt_whiskey_amount" operation="add" value="-1" />
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.whiskey.success.nodrunk" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Failure>
+              </CheckDataAction>
+            </Option>
+            <Option text="eventtext.bartender.buy.rum">
+              <CheckDataAction identifier="bt_rum_amount" value="neq 0">
+                <Success>
+                  <CheckMoneyAction Amount="150">
+                    <Success>
+                      <MoneyAction amount="-150" />
+                      <SpawnAction itemidentifier="rum" targetinventory="bt_trig_player" />
+                      <SetDataAction identifier="bt_rum_amount" operation="add" value="-1" />
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.success.nodrunk" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.buy.rum.failure" />
+                      <ClearTagAction tag="bt_trig_player" />
+                      <GoTo name="waitforinput" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Success>
+                <Failure>
+                  <ConversationAction targettag="bt_trig_player" eventsprite="guywithalcohol" text="eventtext.bartender.outofstock" />
+                  <ClearTagAction tag="bt_trig_player" />
+                  <GoTo name="waitforinput" />
+                </Failure>
+              </CheckDataAction>
+            </Option>
+            <Option text="eventtext.option.decline">
+              <ConversationAction text="eventtext.general.decline" dialogtype="Small" targettag="bt_trig_player" />
+              <ClearTagAction tag="bt_trig_player" />
+              <GoTo name="waitforinput" />
+            </Option>
+          </ConversationAction>
+        </Failure>
+      </CheckAfflictionAction>
+      <Label name="end" />
+    </ScriptedEvent>
+    <!-- MONSTER EVENTS - UNUSED, what are these for? -->
+    <!-- RANDOM -->
+    <ScriptedEvent identifier="de-triggerevents-random">
+      <RNGAction chance="0.5">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <RNGAction chance="0.5">
+                <Success>
+                  <TriggerEventAction identifier="de-triggerevents-mudraptors" />
+                </Success>
+                <Failure>
+                  <TriggerEventAction identifier="de-triggerevents-crawlers" />
+                </Failure>
+              </RNGAction>
+            </Success>
+            <Failure>
+              <RNGAction chance="0.99">
+                <Success>
+                  <TriggerEventAction identifier="de-triggerevents-husks" />
+                </Success>
+                <Failure>
+                  <!--<TriggerEventAction identifier="de-triggerevents-PLACEHOLDER" />-->
+                </Failure>
+              </RNGAction>
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure>
+          <!--<TriggerEventAction identifier="de-triggerevents-PLACEHOLDER" />-->
+        </Failure>
+      </RNGAction>
+    </ScriptedEvent>
+    <!-- MUDRAPTORS -->
+    <ScriptedEvent identifier="de-triggerevents-mudraptors">
+      <RNGAction chance="0.45">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <RNGAction chance="0.5">
+                <Success>
+                  <SpawnAction SpeciesName="DE-LairMudraptor_unarmored" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Success>
+                <Failure>
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_unarmored" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="smallmudraptoregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Failure>
+              </RNGAction>
+            </Success>
+            <Failure>
+              <RNGAction chance="0.5">
+                <Success>
+                  <SpawnAction SpeciesName="DE-LairMudraptor_veteran" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="boss" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Success>
+                <Failure>
+                  <SpawnAction SpeciesName="DE-LairMudraptor_veteran" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="boss" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_veteran" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="boss" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_unarmored" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairMudraptor_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="smallmudraptoregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="mediummudraptoregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="largemudraptoregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Failure>
+              </RNGAction>
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure></Failure>
+      </RNGAction>
+    </ScriptedEvent>
+    <!-- CRAWLERS -->
+    <ScriptedEvent identifier="de-triggerevents-crawlers">
+      <RNGAction chance="0.45">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <RNGAction chance="0.5">
+                <Success>
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Success>
+                <Failure>
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Failure>
+              </RNGAction>
+            </Success>
+            <Failure>
+              <RNGAction chance="0.5">
+                <Success>
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Success>
+                <Failure>
+                  <SpawnAction SpeciesName="DE-Lairbroodmother" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="boss" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-LairCrawler_hatchling" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction ItemIdentifier="crawleregg" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Failure>
+              </RNGAction>
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure></Failure>
+      </RNGAction>
+    </ScriptedEvent>
+    <!-- HUSKS -->
+    <ScriptedEvent identifier="de-triggerevents-husks">
+      <RNGAction chance="0.45">
+        <Success>
+          <RNGAction chance="0.5">
+            <Success>
+              <RNGAction chance="0.5">
+                <Success>
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Success>
+                <Failure>
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Failure>
+              </RNGAction>
+            </Success>
+            <Failure>
+              <RNGAction chance="0.5">
+                <Success>
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Success>
+                <Failure>
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="DE-Crawlerhusk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                  <SpawnAction SpeciesName="Husk" LootingIsStealing="False" SpawnLocation="Outpost" SpawnPointType="Enemy" SpawnPointTag="nest" RequireSpawnPointTag="True" />
+                </Failure>
+              </RNGAction>
+            </Failure>
+          </RNGAction>
+        </Success>
+        <Failure></Failure>
+      </RNGAction>
+    </ScriptedEvent>
+    <!--TRIGGERED VIA SIGNAL LOCATOR IF A WRECK IS FOUND TO ALERT YOU-->
+    <ScriptedEvent identifier="de-triggerevents-wreck">
+      <WaitAction time="30" />
+      <TagAction criteria="hullname:airlock" tag="activewreck" submarinetype="wreck" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="hullname:command" tag="activewreck" submarinetype="wreck" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemidentifier:signallocator" tag="signallocator" submarinetype="player" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="player" tag="player" ContinueIfNoTargetsFound="true" />
+      <TriggerAction target1tag="activewreck" target2tag="signallocator" applytotarget1="wreckfound" waitforinteraction="false" radius="500000" />
+      <Label name="checkeventstate" />
+      <CheckDataAction identifier="commsrelay_ruin_triggered" condition="neq 1">
+        <Success>
+          <TagAction criteria="player" tag="player" ContinueIfNoTargetsFound="true" />
+          <TagAction criteria="itemtag:navterminal" tag="commsrelay" submarinetype="player" ContinueIfNoTargetsFound="true" />
+          <TriggerAction target1tag="commsrelay" target2tag="player" applytotarget2="crw_trig_player" radius="100" waitforinteraction="true" />
+          <ConversationAction text="eventtext.commsrelay.wreck" dialogtype="Small" targettag="crw_trig_player">
+            <Option text="eventtext.option.investigate">
+              <StatusEffectAction targettag="crw_trig_player">
+                <StatusEffect target="NearbyItems" tags="commsrelay" duration="10.5">
+                  <Sound file="%ModDir:2532991202%/Sounds/Events/SOSBroadcast.ogg" volume="1" loop="true" />
+                </StatusEffect>
+              </StatusEffectAction>
+              <ConversationAction text="eventtext.commsrelay.wreck.answer" dialogtype="Small" targettag="crw_trig_player" />
+              <SpawnAction itemidentifier="broadcasterwreck" spawnlocation="wreck" />
+              <ClearTagAction tag="crw_trig_player" />
+            </Option>
+            <Option text="eventtext.option.ignore">
+              <ConversationAction text="eventtext.general.decline" dialogtype="Small" targettag="crw_trig_player" />
+              <ClearTagAction tag="crw_trig_player" />
+            </Option>
+          </ConversationAction>
+        </Success>
+        <Failure>
+          <WaitAction time="5" />
+          <GoTo name="checkeventstate" />
+        </Failure>
+      </CheckDataAction>
+    </ScriptedEvent>
+    <!--SPECIAL CHARACTER EVENTS-->
+    <!--jokster death-->
+    <ScriptedEvent identifier="jokerdeath">
+      <SetDataAction identifier="jokerdeath" operation="Set" value="1" />
+    </ScriptedEvent>
+    <!--track kumo kills-->
+    <ScriptedEvent identifier="kumokill">
+      <SetDataAction identifier="kumokill" operation="Add" value="1" />
+      <TagAction criteria="humanprefabidentifier:kazuyakumo" tag="kumo" _npos="18821.275,-4662.4336" />
+      <StatusEffectAction targettag="kumo">
+        <StatusEffect target="Character" oneshot="true" comparison="And" disabledeltatime="true">
+          <ReduceAffliction type="damage" amount="1000" />
+          <ReduceAffliction type="bleeding" amount="1000" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="kumodeath">
+      <SetDataAction identifier="kumodead" operation="Set" value="1" />
+      <TagAction criteria="humanprefabidentifier:captainsmith" tag="groupattack" ContinueIfNoTargetsFound="true" _npos="18821.275,-4662.4336" />
+      <TagAction criteria="humanprefabidentifier:loyalcommissar" tag="groupattack" ContinueIfNoTargetsFound="true" _npos="18849.65,-4276.0493" />
+      <StatusEffectAction targettag="groupattack">
+        <StatusEffect target="Character" oneshot="true" comparison="And" disabledeltatime="true">
+          <ReduceAffliction type="damage" amount="1000" />
+          <ReduceAffliction type="bleeding" amount="1000" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <!--call kumo with her radio-->
+    <ScriptedEvent identifier="callkumo">
+      <SetDataAction identifier="calledkumo" operation="Set" value="1" />
+      <WaitAction time="2" />
+      <SetDataAction identifier="calledkumo" operation="Set" value="0" />
+    </ScriptedEvent>
+  </EventPrefabs>
+</Randomevents>

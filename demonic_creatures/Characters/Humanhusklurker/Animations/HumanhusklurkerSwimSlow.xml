@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HumanhusklurkerSwimSlow UseSineMovement="False" Flip="True" FlipCooldown="1" FlipDelay="0.5" Mirror="True" MirrorLerp="True" WaveAmplitude="0.5488816" WaveLength="48.63448" RotateTowardsMovement="True" TailTorque="50" TailTorqueMultiplier="1" FootAngles="9: 0,10: 0" UpdateAnimationWhenNotMoving="False" TailAngle="NaN" SteerTorque="25" LegTorque="25" AnimationType="SwimSlow" MovementSpeed="1" CycleSpeed="1" HeadAngle="25" TorsoAngle="14" HeadTorque="50" TorsoTorque="50" FootTorque="25" ArmIKStrength="1" HandIKStrength="1" />

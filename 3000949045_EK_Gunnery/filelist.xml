@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="EK Gunnery" modversion="1.0.24" corepackage="False" steamworkshopid="3000949045" gameversion="1.7.7.0">
+  <Particles file="%ModDir%/Particles/ParticlePrefabs.xml" />
+  <Item file="%ModDir%/Items/Command/ekgunnery_command.xml" />
+  <Item file="%ModDir%/Items/Electricity/ekgunnery_devices.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_loaders_legacy.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_turrets_legacy.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_loaders.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_turrets.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_heavyturrets.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_spinalweapons.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_auxiliary.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_ammunition.xml" />
+  <Item file="%ModDir%/Items/Containers/ekgunnery_containers.xml" />
+  <Item file="%ModDir%/Items/Weapons/ekgunnery_melee.xml" />
+  <Item file="%ModDir%/Items/overwrite_items.xml" />
+  <Text file="%ModDir%/Texts/EnglishEkGunnery.xml" />
+  <Text file="%ModDir%/Texts/TraditionalChineseEkGunnery.xml" />
+  <Text file="%ModDir%/Texts/SimplifiedChineseEkGunnery.xml" />
+  <Text file="%ModDir%/Texts/RussianEkGunnery.xml" />
+</contentpackage>

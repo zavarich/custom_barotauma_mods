@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" allowsellingwhenbroken="true" identifier="revolver" HideConditionBar="true" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,gun,pistolitem,provocativetohumanai,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.25" />
+      <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+      <Price baseprice="150">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" minavailable="1" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Revolver/Revolver.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Revolver/Revolver.png" sourcerect="0,66,75,47" depth="0.55" origin="0.35,0.5" />
+      <!-- Several broken sprites, used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/Revolver/Revolver.png" sourcerect="0,160,75,47" depth="0.55" origin="0.35,0.5" maxcondition="66" />
+      <BrokenSprite texture="%ModDir%/Revolver/Revolver.png" sourcerect="0,113,75,47" depth="0.55" origin="0.35,0.5" maxcondition="33" />
+      <BrokenSprite texture="%ModDir%/Revolver/Revolver.png" sourcerect="0,207,75,47" depth="0.55" origin="0.35,0.5" maxcondition="1" />
+      <BrokenSprite texture="%ModDir%/Revolver/Revolver.png" sourcerect="0,66,75,47" depth="0.55" origin="0.35,0.5" maxcondition="0" />
+      <Body width="72" height="40" density="25" />
+      <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,0" handle1="-20,-8" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon barrelpos="44,11" spread="0.1" unskilledspread="6" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" reloadnoskill="0" reloadskillrequirement="0" reload="0.5" DualWieldReloadTimePenaltyMultiplier="1.75" DualWieldAccuracyPenalty="8">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="256,256,256,256" />
+        <!-- Gunfire sounds. -->
+        <Sound file="Content/Items/Weapons/Revolver1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/Revolver2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/Revolver3.ogg" type="OnUse" range="3000" />
+        <!-- Particles. -->
+        <!-- Visible only on air. -->
+        <ParticleEmitter particle="smallmuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="4,2" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="10,8" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="smallgunsmoke" particleamount="1" velocitymin="80" velocitymax="100" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="3" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="40" />
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,255" setvalue="true">
+          <Conditional InWater="False" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" delay="0.115">
+          <Conditional InWater="False" />
+        </StatusEffect>
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-2">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 75" />
+          <Explosion range="75.0" force="2.3" shockwave="false" smoke="false" flames="false" sparks="false" flash="false" underwaterbubble="false" applyfireeffects="false" camerashake="12.0" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-2">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 75" />
+          <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" flash="false" underwaterbubble="false" applyfireeffects="false" camerashake="6.0" />
+        </StatusEffect>
+        <!-- On fire, triggers all status effects, which all trigger one by one. -->
+        <!-- First one triggers with a delay to not break some status effects that work based off the condition conditional.
+        Sets condition to the first brokensprite's condition to trigger first animation sprite. -->
+        <StatusEffect type="OnUse" target="This" condition="33" delay="0.01" setvalue="true" forceplaysounds="true">
+          <Sound file="%ModDir%/Revolver/RevolverCylinderRotate.ogg" range="600" volume="0.5" />
+        </StatusEffect>
+        <!-- Triggers second brokensprite. -->
+        <StatusEffect type="OnUse" target="This" delay="0.1" condition="66" setvalue="true">
+          <Conditional targetcontainer="true" isplayer="true" />
+        </StatusEffect>
+        <!-- Now, listen carefully. I use 100-94 to store the information on how many bullets were fired. Do not ask me why.
+      100 - no bullets were fired, 99-94 is 1-6 bullets fired.
+      Checks the condition before it is changed by animation status effects, and sets the number to the same minus one. -->
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="99" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="98" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="99" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="97" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="98" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="96" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="97" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="95" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="96" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="94" setvalue="true" conditionalcomparison="and">
+          <Conditional targetcontainer="true" isplayer="true" />
+          <Conditional condition="95" />
+        </StatusEffect>
+        <!-- If the gun is used by a bot instead, just set the condition back to 100. -->
+        <StatusEffect type="OnUse" target="This" delay="0.45" condition="100" setvalue="true" />
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="revreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="revreloading" delay="1.7" condition="100" setvalue="true" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="revreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" aimpos="70,0" handle1="-20,-8" aimangle="0" holdpos="0,0" holdangle="0" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems items="revolverammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="revreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="40" />
+      </RangedWeapon>
+      <!-- Gun's muzzle which works like a light component. -->
+      <LightComponent range="20.0" lightcolor="255,255,75,0" IsOn="true">
+        <LightTexture texture="%ModDir%/Revolver/RevolverMuzzle.png" origin="0.35,0.51" size="1.0,1.0" />
+      </LightComponent>
+      <ItemContainer capacity="6" maxstacksize="1" hideitems="true" ShowTotalStackCapacityInContainedStateIndicator="true" containedstateindicatorstyle="bullet">
+        <SlotIcon slotindex="0" texture="%ModDir%/Revolver/Revolver.png" sourcerect="80,0,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="%ModDir%/Revolver/Revolver.png" sourcerect="80,0,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="2" texture="%ModDir%/Revolver/Revolver.png" sourcerect="80,0,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="3" texture="%ModDir%/Revolver/Revolver.png" sourcerect="80,0,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="4" texture="%ModDir%/Revolver/Revolver.png" sourcerect="80,0,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="5" texture="%ModDir%/Revolver/Revolver.png" sourcerect="80,0,64,64" origin="0.5,0.5" />
+        <Containable items="revolverammo">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="1.7" setvalue="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Reloading animation, with status effects setting the conditions to trigger brokensprites, changing aimposes and aimangles and such. -->
+          <!-- Pull down the revolver. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-20" holdpos="35,-20" aimangle="-20" aimpos="45,-15" condition="0" setvalue="true" delay="0.01" allowwhenbroken="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Open the revolver. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.4" condition="1" setvalue="true" allowwhenbroken="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-20" distancemax="20" />
+          </StatusEffect>
+          <!-- Revolver opening sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" forceplaysounds="true" allowwhenbroken="true">
+            <Sound file="%ModDir%/Revolver/RevolverCylinderRotate.ogg" range="1000" volume="1" />
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Pull up the revolver. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="80" holdpos="20,-40" aimangle="80" aimpos="35,10" setvalue="true" delay="0.5" allowwhenbroken="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- The casings fall. -->
+          <!-- Several status effects with only one triggered.
+	    If condition is 100, first status effect is triggered, with no revolver round ejecting sound nor any casing particles.
+        If condition is 94, the seveth status effect is triggered with revolver round ejecting sound and 6 casing particles. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 100" />
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional condition="eq 99" />
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="revolverroundcasing" particleamount="1" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 98" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="revolverroundcasing" particleamount="2" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 97" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="revolverroundcasing" particleamount="3" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 96" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="revolverroundcasing" particleamount="4" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 95" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="revolverroundcasing" particleamount="5" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="eq 94" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+            <ParticleEmitter particle="revolverroundcasing" particleamount="6" anglemin="160" anglemax="170" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <!-- A failsafe. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.8" forceplaysounds="true" stackable="false" conditionalcomparison="and" allowwhenbroken="true">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <Conditional condition="lt 94" />
+            <Sound file="%ModDir%/Revolver/RevolverRoundEjecting.ogg" range="600" />
+          </StatusEffect>
+          <!-- Pull down the revolver to insert the rounds. -->
+          <StatusEffect type="OnInserted" target="This" holdangle="-20" holdpos="35,-20" aimangle="-20" aimpos="45,-15" setvalue="true" delay="1.1" allowwhenbroken="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Round insert sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.2" forceplaysounds="true" allowwhenbroken="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-30" distancemax="30" stackable="false" />
+            <Sound file="%ModDir%/Handcannon/HandcannonLoading.ogg" range="600" />
+          </StatusEffect>
+          <!-- Aim the revolver. -->
+          <StatusEffect type="OnInserted" target="This" holdpos="0,0" aimangle="0" aimpos="70,0" delay="1.5" condition="33" setvalue="true" allowwhenbroken="true" forceplaysounds="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+          <!-- Last animation stage. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.7" holdangle="0" holdpos="0,0" condition="100" setvalue="true" allowwhenbroken="true" stackable="false">
+            <Conditional targetcontainer="true" isplayer="true" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="revreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="revreloading" hide="true" />
+      </ItemContainer>
+      <aitarget sightrange="2000" soundrange="5000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="40" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="revreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,revreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

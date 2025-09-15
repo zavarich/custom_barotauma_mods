@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Charactervariant inherit="Humanhusksprinter" speciesname="Humanhusksprinternaturalcoalition">
+  <!-- Coalition [EHA] -->
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="Head" equip="true" identifier="scp_fieldcap" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+  </inventory>
+  <!-- submachine gun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" identifier="scp_lightuniform" equip="true" />
+    <Item slot="Head" equip="true" identifier="scp_fieldcap" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+    <Item identifier="scp_smg9" equip="false">
+      <Item identifier="scp_9mmsmgmag" />
+    </Item>
+    <Item identifier="scp_9mmsmgmag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+    <Item slot="Head" equip="true" identifier="ballistichelmet3" />
+  </inventory>
+  <!-- service revolver -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_riotvest" />
+    <Item slot="Head" equip="true" identifier="ballistichelmet3" />
+    <Item identifier="scp_python" equip="false">
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+      <Item identifier="scp_357round" />
+    </Item>
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+    <Item identifier="scp_357round" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_softvest" />
+    <Item slot="Head" equip="true" identifier="scp_combathelmet" />
+  </inventory>
+  <!-- service repeater -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_softvest" />
+    <Item slot="Head" equip="true" identifier="scp_combathelmet" />
+    <Item identifier="scp_levergun" equip="false">
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+      <Item identifier="revolverround" />
+    </Item>
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+    <Item identifier="revolverround" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.3">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_heavyvest" />
+    <Item equip="true" identifier="scp_heavycombathelmet" />
+  </inventory>
+  <!-- assault rifle -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.12">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_heavyvest" />
+    <Item slot="Head" equip="true" identifier="scp_heavycombathelmet" />
+    <Item identifier="scp_sg550" equip="false">
+      <Item identifier="scp_556mag" />
+    </Item>
+    <Item identifier="scp_556mag" />
+    <Item identifier="scp_556mag" />
+  </inventory>
+  <!-- coalition heavy smg -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.12">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyuniform" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_heavyvest" />
+    <Item slot="Head" equip="true" identifier="scp_heavycombathelmet" />
+    <Item identifier="scp_ump45" equip="false">
+      <Item identifier="scp_umpmag" />
+    </Item>
+    <Item identifier="scp_umpmag" />
+    <Item identifier="scp_umpmag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet1" />
+    <Item equip="true" showpreview="false" identifier="headset" />
+  </inventory>
+  <!-- heavy pistol -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.2">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet1" />
+    <Item equip="true" showpreview="false" identifier="headset" />
+    <Item identifier="scp_meusoc" equip="false">
+      <Item identifier="scp_45mag" />
+    </Item>
+    <Item identifier="scp_45mag" />
+    <Item identifier="scp_45mag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet2" />
+    <Item equip="true" showpreview="false" identifier="headset" />
+  </inventory>
+  <!-- pistol -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet2" />
+    <Item equip="true" showpreview="false" identifier="headset" />
+    <Item identifier="scp_p226" equip="false">
+      <Item identifier="scp_9mmmag" />
+    </Item>
+    <Item identifier="scp_9mmmag" equip="false" />
+    <Item identifier="scp_9mmmag" equip="false" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet3" />
+    <Item equip="true" showpreview="false" identifier="headset" />
+  </inventory>
+  <!-- pump action shotgun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.12">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_lightuniform" />
+    <item slot="OuterClothes" equip="true" identifier="bodyarmor" />
+    <item slot="Head" equip="true" identifier="ballistichelmet3" />
+    <Item equip="true" showpreview="false" identifier="headset" />
+    <Item identifier="scp_m590" equip="false">
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+    </Item>
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+    <Item identifier="shotgunshell" equip="false" />
+  </inventory>
+</Charactervariant>

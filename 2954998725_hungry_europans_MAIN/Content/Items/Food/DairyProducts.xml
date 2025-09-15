@@ -1,0 +1,1135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- DAIRY PRODUCTS -->
+    <!--ICE CREAM - MILKY-->
+    <Item name="Box of Milky Ice Cream Base" identifier="he-icecreambasemilky" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="The base for Milky Ice Cream. Store it in a refrigerated container to make edible ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="1,79,108,55" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="30" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.5" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!--Increase condition when refrigerated-->
+        <StatusEffect type="OnContained" target="This" condition="2.0" delay="5" stackable="false" CheckConditionalAlways="true" disabledeltatime="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxmilky" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxmilky" spawnposition="This" count="1" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Box of Milky Ice Cream" identifier="he-icecreamboxmilky" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A box of Milky Ice Cream. People say they feel more resilient for a longer period of time after eating it. A full box can yield up to 16 scoops of ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="1,79,108,55" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="Take a scoop">
+          <StatusEffect type="OnUse" target="This" condition="-6.25" disabledeltatime="true">
+            <Sound file="%ModDir%/Content/Sounds/Items/Food/Scoop.ogg" volume="2" range="200" />
+            <SpawnItem identifier="he-icecreamballmilky" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Ball of Milky Ice Cream" identifier="he-icecreamballmilky" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A scoop of Milky Ice Cream. People say they feel more resilient for a longer period of time after eating it." Tags="smallitem,icecreamball,fooditem,canmelt" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="27,23,27,27" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body radius="13" density="10.5" />
+      <SuitableTreatment type="hunger" suitability="10" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stuffed" amount="1.43" />
+          <Affliction identifier="he-damageresistancemoloch" amount="114,4" />
+          <ReduceAffliction type="damage" amount="0.858" />
+          <ReduceAffliction type="hunger" amount="1.43" />
+          <ReduceAffliction identifier="he-starvation" amount="200" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="14.3" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="8" />
+          <ReduceAffliction type="damage" amount="0.06" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+          <ReduceAffliction identifier="he-starvation" amount="20" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular eating -->
+        <StatusEffect type="OnUse" target="This" Condition="-7">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!--Apply effects when eating-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="8" />
+          <ReduceAffliction type="damage" amount="0.06" />
+        </StatusEffect>
+        <!--Play eating sound only if not contained within a waffle cone-->
+        <StatusEffect type="OnUse" target="This">
+          <Conditional InWater="false" />
+          <Conditional HasTag="neq wafflecone" targetcontainer="true" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--Decrease hunger when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional hunger="gt 0.1" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="this">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--ICE CREAM - POMEGRENADE-->
+    <Item name="Box of Pomegrenade Ice Cream Base" identifier="he-icecreambasepomegrenade" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="The base for Pomegrenade Ice Cream. Store it in a refrigerated container to make edible ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="1,135,108,55" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="30" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="creepingorange" amount="3" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.5" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!--Increase condition when refrigerated-->
+        <StatusEffect type="OnContained" target="This" condition="2.0" delay="5" stackable="false" CheckConditionalAlways="true" disabledeltatime="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxpomegrenade" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxpomegrenade" spawnposition="This" count="1" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Box of Pomegrenade Ice Cream" identifier="he-icecreamboxpomegrenade" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A box of Pomegrenade Ice Cream. A tasty snack that apparently reduces a bit of pain and makes more resilient. A full box can yield up to 16 scoops of ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="1,135,108,55" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="Take a scoop">
+          <StatusEffect type="OnUse" target="This" condition="-6.25" disabledeltatime="true">
+            <Sound file="%ModDir%/Content/Sounds/Items/Food/Scoop.ogg" volume="2" range="200" />
+            <SpawnItem identifier="he-icecreamballpomegrenade" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Ball of Pomegrenade Ice Cream" identifier="he-icecreamballpomegrenade" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A scoop of Pomegrenade Ice Cream. A tasty snack that apparently reduces a bit of pain and makes more resilient." Tags="smallitem,icecreamball,fooditem,canmelt" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="27,51,27,27" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body radius="13" density="10.5" />
+      <SuitableTreatment type="hunger" suitability="10" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stuffed" amount="1.43" />
+          <Affliction identifier="he-damageresistancemoloch" amount="71.5" />
+          <ReduceAffliction type="damage" amount="1.0725" />
+          <ReduceAffliction type="hunger" amount="1.43" />
+          <ReduceAffliction identifier="he-starvation" amount="200" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="14.3" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+          <ReduceAffliction identifier="he-starvation" amount="20" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular eating -->
+        <StatusEffect type="OnUse" target="This" Condition="-7">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!--Apply effects when eating-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+        </StatusEffect>
+        <!--Play eating sound only if not contained within a waffle cone-->
+        <StatusEffect type="OnUse" target="This">
+          <Conditional InWater="false" />
+          <Conditional HasTag="neq wafflecone" targetcontainer="true" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--Decrease hunger when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional hunger="gt 0.1" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="this">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--ICE CREAM - Pop Nut-->
+    <Item name="Box of Pop Nut Ice Cream Base" identifier="he-icecreambasepopnut" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="The base for Pop Nut Ice Cream. Tastes kind of similar to what chocolate tasted like back on earth. Store it in a refrigerated container to make edible ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="110,79,108,55" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="30" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="popnutpopped" amount="3" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="1.0" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!--Increase condition when refrigerated-->
+        <StatusEffect type="OnContained" target="This" condition="2.0" delay="5" stackable="false" CheckConditionalAlways="true" disabledeltatime="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxpopnut" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxpopnut" spawnposition="This" count="1" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Box of Pop Nut Ice Cream" identifier="he-icecreamboxpopnut" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A box of Pop Nut Ice Cream. Tastes kind of similar to what chocolate tasted like back on earth. Apparently reduces a bit of pain and makes more resilient. A full box can yield up to 16 scoops of ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="110,79,108,55" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="Take a scoop">
+          <StatusEffect type="OnUse" target="This" condition="-6.25" disabledeltatime="true">
+            <Sound file="%ModDir%/Content/Sounds/Items/Food/Scoop.ogg" volume="2" range="200" />
+            <SpawnItem identifier="he-icecreamballpopnut" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Ball of Pop Nut Ice Cream" identifier="he-icecreamballpopnut" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A scoop of Pop Nut Ice Cream. Tastes kind of similar to what chocolate tasted like back on earth. Apparently reduces a bit of pain, makes more resilient and quenches thirst quite good." Tags="smallitem,icecreamball,fooditem,canmelt" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" isshootable="false" requireaimtouse="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="55,23,27,27" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body radius="13" density="10.5" />
+      <SuitableTreatment type="hunger" suitability="10" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stuffed" amount="1.43" />
+          <Affliction identifier="he-damageresistancemoloch" amount="71.5" />
+          <ReduceAffliction type="damage" amount="1.0725" />
+          <ReduceAffliction type="hunger" amount="1.43" />
+          <ReduceAffliction type="thirst" amount="14.3" />
+          <ReduceAffliction identifier="he-starvation" amount="200" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="14.3" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+          <ReduceAffliction type="thirst" amount="1" />
+          <ReduceAffliction identifier="he-starvation" amount="20" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular eating -->
+        <StatusEffect type="OnUse" target="This" Condition="-7">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!--Apply effects when eating-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+        </StatusEffect>
+        <!--Play eating sound only if not contained within a waffle cone-->
+        <StatusEffect type="OnUse" target="This">
+          <Conditional InWater="false" />
+          <Conditional HasTag="neq wafflecone" targetcontainer="true" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--Decrease hunger when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional hunger="gt 0.1" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+        </StatusEffect>
+        <!--Decrease thirst when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional thirst="gt 1" />
+          <ReduceAffliction type="thirst" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="this">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--ICE CREAM - Bubble Berry-->
+    <Item name="Box of Bubble Berry Ice Cream Base" identifier="he-icecreambasebubbleberry" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="The base for Bubble Berry Ice Cream. A very refreshing taste similar to how strawberries tasted like back on earth. Store it in a refrigerated container to make edible ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="110,135,108,55" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="30" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="bubbleberries" amount="3" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="1.0" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!--Increase condition when refrigerated-->
+        <StatusEffect type="OnContained" target="This" condition="2.0" delay="5" stackable="false" CheckConditionalAlways="true" disabledeltatime="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxbubbleberry" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="1" stackable="false">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-icecreamboxbubbleberry" spawnposition="This" count="1" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Box of Bubble Berry Ice Cream" identifier="he-icecreamboxbubbleberry" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A box of Bubble Berry Ice Cream. A very refreshing taste similar to how strawberries tasted like back on earth. Apparently reduces a bit of pain and makes more resilient. A full box can yield up to 16 scoops of ice cream." Tags="smallitem,fooditem,canmelt" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True" canflipx="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="110,135,108,55" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body width="81" radius="27" density="12" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="RightHand+LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="Take a scoop">
+          <StatusEffect type="OnUse" target="This" condition="-6.25" disabledeltatime="true">
+            <Sound file="%ModDir%/Content/Sounds/Items/Food/Scoop.ogg" volume="2" range="200" />
+            <SpawnItem identifier="he-icecreamballbubbleberry" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Ball of Bubble Berry Ice Cream" identifier="he-icecreamballbubbleberry" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A scoop of Bubble Berry Ice Cream. Tastes kind of similar to what chocolate tasted like back on earth. Apparently reduces a bit of pain, makes more resilient and quenches thirst a little bit." Tags="smallitem,icecreamball,fooditem,canmelt" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" isshootable="false" requireaimtouse="false">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="55,51,27,27" depth="0.6" origin="0.5,0.5" />
+      <Deconstruct time="1" />
+      <Body radius="13" density="10.5" />
+      <SuitableTreatment type="hunger" suitability="10" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-2.0" timeframe="-10" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stuffed" amount="1.43" />
+          <Affliction identifier="he-damageresistancemoloch" amount="71.5" />
+          <ReduceAffliction type="damage" amount="1.0725" />
+          <ReduceAffliction type="hunger" amount="1.43" />
+          <ReduceAffliction type="thirst" amount="5.72" />
+          <ReduceAffliction identifier="he-starvation" amount="200" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="14.3" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+          <ReduceAffliction type="thirst" amount="0.4" />
+          <ReduceAffliction identifier="he-starvation" amount="20" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular eating -->
+        <StatusEffect type="OnUse" target="This" Condition="-7">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!--Apply effects when eating-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+        </StatusEffect>
+        <!--Play eating sound only if not contained within a waffle cone-->
+        <StatusEffect type="OnUse" target="This">
+          <Conditional InWater="false" />
+          <Conditional HasTag="neq wafflecone" targetcontainer="true" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--Decrease hunger when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional hunger="gt 0.1" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+        </StatusEffect>
+        <!--Decrease thirst when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional thirst="gt 0.4" />
+          <ReduceAffliction type="thirst" amount="0.4" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="this">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--CHEESE-->
+    <Item name="Moloch Cheese Curd" identifier="he-molochcheesecurd" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="Slowly turns into cheese. A full block of cheese will yield 18 cheese slices." Tags="smallitem,fooditem" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="1,1,39,21" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="30" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="slimebacteria" amount="1" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body width="39" radius="21" density="10.5" />
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" condition="1.0" interval="10" stackable="false" disabledeltatime="true" AllowWhenBroken="true" />
+        <StatusEffect type="OnContained" target="This" interval="1">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-molochcheese" spawnposition="SameInventory" count="1" SpawnIfInventoryFull="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="1">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-molochcheese" spawnposition="This" count="1" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Moloch Cheese" identifier="he-molochcheese" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="Cheese made from moloch milk. Can be cut into 18 cheese slices." Tags="smallitem,fooditem,petfood1,petfood2,petfood3" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" spawnprobability="0.02" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.0" notcampaign="True" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="41,1,39,21" depth="0.6" origin="0.5,0.5" />
+      <Body width="39" height="21" density="10.5" />
+      <SuitableTreatment type="hunger" suitability="15" />
+      <Price baseprice="320">
+        <Price storeidentifier="merchantoutpost" sold="true" minamount="0" maxamount="3" />
+        <Price storeidentifier="merchantcity" sold="true" minamount="2" maxamount="9" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" />
+      </Price>
+      <Deconstruct time="1" />
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stuffed" amount="4.98" />
+          <ReduceAffliction type="damage" amount="1.66" />
+          <ReduceAffliction type="hunger" amount="13.28" />
+          <ReduceAffliction identifier="he-starvation" amount="200" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="16.6" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stuffed" amount="0.3" />
+          <ReduceAffliction type="damage" amount="0.1" />
+          <ReduceAffliction type="hunger" amount="0.8" />
+          <ReduceAffliction identifier="he-starvation" amount="20" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular eating -->
+        <StatusEffect type="OnUse" target="This" Condition="-6.0">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.3" />
+          <ReduceAffliction type="damage" amount="0.1" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional hunger="gt 0.8" />
+          <ReduceAffliction type="hunger" amount="0.8" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <!-- Food Effects -->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.3" />
+          <ReduceAffliction type="damage" amount="0.1" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!-- Poison Effects -->
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="morbusine" type="Contained" />
+          <Affliction identifier="morbusinepoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="chloralhydrate" type="Contained" />
+          <Affliction identifier="incrementalstun" amount="50" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="cyanide" type="Contained" />
+          <Affliction identifier="cyanidepoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="radiotoxin" type="Contained" />
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="sufforin" type="Contained" />
+          <Affliction identifier="sufforinpoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="deliriumine" type="Contained" />
+          <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="paralyzant" type="Contained" />
+          <Affliction identifier="paralysis" amount="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+          <ReduceAffliction identifier="paralysis" amount="6" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="sulphuricacid" type="Contained" />
+          <Affliction identifier="acidburn" amount="3.5" />
+          <Affliction identifier="organdamage" amount="5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="ethanol" type="Contained" />
+          <Affliction identifier="drunk" amount="1" />
+          <ReduceAffliction identifier="psychosis" amount="1" />
+          <ReduceAffliction identifier="hallucinating" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" interval="1">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="huskeggsbasic" type="Contained" />
+          <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" interval="1">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="huskeggs" type="Contained" />
+          <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+      <!-- Poison Container -->
+      <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+        <Containable items="poison,ethanol,huskeggsbasic,huskeggs" />
+      </ItemContainer>
+    </Item>
+    <Item name="Slice of Moloch Cheese" identifier="he-molochcheeseslice" category="Misc" maxstacksize="18" cargocontaineridentifier="metalcrate" description="A slice of moloch cheese." Tags="smallitem,fooditem,petfood1,petfood2,petfood3" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_soft" isshootable="True" requireaimtouse="True">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" spawnprobability="0.02" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.0" notcampaign="True" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="41,5,38,3" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/Content/UI/InventoryIcons.png" sourcerect="0,59,36,20" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="30" requiresrecipe="false" amount="18">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="he-molochcheese" amount="1" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body width="38" height="3" density="10.2" />
+      <SuitableTreatment type="hunger" suitability="20" />
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stuffed" amount="0.51" />
+          <ReduceAffliction type="damage" amount="0.17" />
+          <ReduceAffliction type="hunger" amount="1.36" />
+          <ReduceAffliction identifier="he-starvation" amount="200" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="1.7" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stuffed" amount="0.3" />
+          <ReduceAffliction type="damage" amount="0.1" />
+          <ReduceAffliction type="hunger" amount="0.8" />
+          <ReduceAffliction identifier="he-starvation" amount="20" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular eating -->
+        <StatusEffect type="OnUse" target="This" Condition="-60.0">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stuffed" amount="0.3" />
+          <ReduceAffliction type="damage" amount="0.1" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional hunger="gt 0.8" />
+          <ReduceAffliction type="hunger" amount="0.8" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <!-- Poison Effects -->
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="morbusine" type="Contained" />
+          <Affliction identifier="morbusinepoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="chloralhydrate" type="Contained" />
+          <Affliction identifier="incrementalstun" amount="50" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="cyanide" type="Contained" />
+          <Affliction identifier="cyanidepoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="radiotoxin" type="Contained" />
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="sufforin" type="Contained" />
+          <Affliction identifier="sufforinpoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="deliriumine" type="Contained" />
+          <Affliction identifier="deliriuminepoisoning" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="paralyzant" type="Contained" />
+          <Affliction identifier="paralysis" amount="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="hallucinogenicbufotoxin" type="Contained" />
+          <ReduceAffliction identifier="paralysis" amount="6" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" targetlimb="Torso" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="sulphuricacid" type="Contained" />
+          <Affliction identifier="acidburn" amount="3.5" />
+          <Affliction identifier="organdamage" amount="5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" delay="20">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="ethanol" type="Contained" />
+          <Affliction identifier="drunk" amount="1" />
+          <ReduceAffliction identifier="psychosis" amount="1" />
+          <ReduceAffliction identifier="hallucinating" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" interval="1">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="huskeggsbasic" type="Contained" />
+          <Affliction identifier="huskinfection" amount="1" probability="0.01" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" interval="1">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="huskeggs" type="Contained" />
+          <Affliction identifier="huskinfection" amount="1" probability="0.25" />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+      <!-- Poison Container -->
+      <ItemContainer capacity="11" maxstacksize="1" hideitems="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="false" removecontaineditemsondeconstruct="true">
+        <Containable items="poison,ethanol,huskeggsbasic,huskeggs" />
+      </ItemContainer>
+    </Item>
+    <!--WAFFLES-->
+    <Item name="Waffle Cone" identifier="he-wafflecone" category="Misc" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A cone shaped waffle for ice cream. Contained ice cream will melt if not contained within a refrigerated container." Tags="smallitem,fooditem,wafflecone,petfood1,petfood2,petfood3" showcontentsintooltip="true" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="True" requireaimtouse="True">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" spawnprobability="0.02" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.0" notcampaign="True" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir%/Content/Items/Food/DairyProducts.png" sourcerect="1,23,25,55" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="oven" requiredtime="180" requiresrecipe="false" amount="8">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.099" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.05" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.1" />
+        <RequiredItem identifier="he-flour" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem tag="mudraptoregg" amount="1" MinCondition="0.5" UseCondition="False" />
+      </Fabricate>
+      <Fabricate suitablefabricators="oven" requiredtime="180" requiresrecipe="false" amount="8">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.099" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.05" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.1" />
+        <RequiredItem identifier="he-flour" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="peanutegg" amount="1" MinCondition="0.5" UseCondition="False" />
+      </Fabricate>
+      <Fabricate suitablefabricators="oven" requiredtime="180" requiresrecipe="false" amount="8">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.099" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.05" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.1" />
+        <RequiredItem identifier="he-flour" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="psilotoadegg" amount="1" MinCondition="0.5" UseCondition="False" />
+      </Fabricate>
+      <Fabricate suitablefabricators="oven" requiredtime="180" requiresrecipe="false" amount="8">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.099" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.05" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.1" />
+        <RequiredItem identifier="he-flour" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="orangeboyegg" amount="1" MinCondition="0.5" UseCondition="False" />
+      </Fabricate>
+      <Fabricate suitablefabricators="oven" requiredtime="180" requiresrecipe="false" amount="8">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.099" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.05" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.1" />
+        <RequiredItem identifier="he-flour" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="balloonegg" amount="1" MinCondition="0.5" UseCondition="False" />
+      </Fabricate>
+      <Deconstruct time="1" />
+      <Body radius="12" height="55" density="7" />
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="22,-5" aimangle="0" holdangle="0" handle1="-6,0" holdpos="36,-20" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!--Reduce item condition while eating, only if no ice cream is contained-->
+        <StatusEffect type="OnUse" target="This" condition="-20.0" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional HasStatusTag="neq firstslot" />
+          <Conditional HasStatusTag="neq secondslot" />
+          <Conditional HasStatusTag="neq thirdslot" />
+        </StatusEffect>
+        <!--Reduce condition by 1 once if ice cream is contained to make the waffle non-stackable-->
+        <StatusEffect type="OnContaining" target="this" condition="-1" comparison="And" oneshot="true" disabledeltatime="true">
+          <RequiredItem tag="icecreamball" type="contained" />
+        </StatusEffect>
+        <!--Additional effects-->
+        <!--Decrease hunger depending on ice cream balls contained, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" targetslot="0" />
+          <Conditional hunger="gt 0.4" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" targetslot="1" />
+          <Conditional hunger="gt 0.4" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" targetslot="2" />
+          <Conditional hunger="gt 0.4" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+        </StatusEffect>
+        <!--Increase damage resistance affliction if milky ice cream ball is contained-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballmilky" type="contained" targetslot="0" />
+          <Affliction identifier="he-damageresistancemoloch" amount="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballmilky" type="contained" targetslot="1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballmilky" type="contained" targetslot="2" />
+          <Affliction identifier="he-damageresistancemoloch" amount="3" />
+        </StatusEffect>
+        <!--Decrease thirst when eating depending on the type of ice cream contained, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballpopnut" type="contained" targetslot="0" />
+          <Conditional thirst="gt 1" />
+          <ReduceAffliction type="thirst" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballpopnut" type="contained" targetslot="1" />
+          <Conditional thirst="gt 1" />
+          <ReduceAffliction type="thirst" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballpopnut" type="contained" targetslot="2" />
+          <Conditional thirst="gt 1" />
+          <ReduceAffliction type="thirst" amount="1" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballbubbleberry" type="contained" targetslot="0" />
+          <Conditional thirst="gt 0.4" />
+          <ReduceAffliction type="thirst" amount="0.4" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballbubbleberry" type="contained" targetslot="1" />
+          <Conditional thirst="gt 0.4" />
+          <ReduceAffliction type="thirst" amount="0.4" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem identifier="he-icecreamballbubbleberry" type="contained" targetslot="2" />
+          <Conditional thirst="gt 0.4" />
+          <ReduceAffliction type="thirst" amount="0.4" />
+        </StatusEffect>
+        <!--Increase stuffed and damage resistance while decreasing damage, if ice cream is contained-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" targetslot="0" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" targetslot="1" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" targetslot="2" />
+          <Affliction identifier="he-stuffed" amount="0.1" />
+          <Affliction identifier="he-damageresistancemoloch" amount="5" />
+          <ReduceAffliction type="damage" amount="0.075" />
+        </StatusEffect>
+        <!--Apply base effects-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional HasStatusTag="neq firstslot" />
+          <Conditional HasStatusTag="neq secondslot" />
+          <Conditional HasStatusTag="neq thirdslot" />
+          <Affliction identifier="he-stuffed" amount="0.05" />
+          <ReduceAffliction type="damage" amount="0.05" />
+        </StatusEffect>
+        <!--Play soft eating sound if containing ice cream-->
+        <StatusEffect type="OnUse" target="This">
+          <Conditional InWater="false" />
+          <RequiredItem tag="icecreamball" type="contained" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--Play crunchy eating sound if not containing ice cream-->
+        <StatusEffect type="OnUse" target="This" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional HasStatusTag="neq filled" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/EatingCrunchy.ogg" loop="True" range="200" volume="4.5" />
+        </StatusEffect>
+        <!--Decrease hunger when eating, only if needs are enabled-->
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional HasStatusTag="neq firstslot" />
+          <Conditional HasStatusTag="neq secondslot" />
+          <Conditional HasStatusTag="neq thirdslot" />
+          <Conditional hunger="gt 0.1" />
+          <ReduceAffliction type="hunger" amount="0.1" />
+        </StatusEffect>
+        <!--Use up contained ice cream from top to bottom-->
+        <StatusEffect type="OnUse" target="Contained" condition="-10" targetslot="0" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional HasStatusTag="neq secondslot" targetcontainer="true" />
+          <Conditional HasStatusTag="neq thirdslot" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-10" targetslot="1" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional HasStatusTag="neq thirdslot" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained" condition="-10" targetslot="2">
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!--Tag item if refrigerated to stop contained items from decreasing their condition-->
+        <StatusEffect type="OnContained" target="This" tags="activecooling" duration="0.1" CheckConditionalAlways="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <!--Tag item according to if ice cream is in first, second or third slot to prevent eating ice cream in previous slots first-->
+        <StatusEffect type="OnContained" target="This" tags="firstslot" duration="0.1" CheckConditionalAlways="true">
+          <RequiredItem tag="icecreamball" type="contained" targetslot="0" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" tags="secondslot" duration="0.1" CheckConditionalAlways="true">
+          <RequiredItem tag="icecreamball" type="contained" targetslot="1" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="This" tags="thirdslot" duration="0.1" CheckConditionalAlways="true">
+          <RequiredItem tag="icecreamball" type="contained" targetslot="2" />
+        </StatusEffect>
+        <!--Remove Item-->
+        <StatusEffect type="OnBroken" target="Contained" condition="0" setvalue="true" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This" delay="0.1">
+          <Remove />
+        </StatusEffect>
+        <!--Tag item if containing ice cream-->
+        <StatusEffect type="Always" target="This" tags="filled" duration="0.1">
+          <RequiredItem items="icecreamball" type="Contained" />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+      <!--Ice Cream Container-->
+      <ItemContainer name="icecreamcontainer" capacity="3" maxstacksize="1" hideitems="false" drawinventory="false" canbeselected="false" allowaccess="true" allowdraganddrop="true" ShowConditionInContainedStateIndicator="false" ShowContainedStateIndicator="true" removecontaineditemsondeconstruct="true" itempos="0,30" iteminterval="1,13" itemrotation="0" itemsperrow="1" slotsperrow="1" containedspritedepths="0.71,0.72,0.73,0.74,0.75,0.76,0.77,0.78,0.79,0.80,0.81,0.82,0.83,0.84,0.85" msg="ItemMsgInteractSelect">
+        <Containable items="icecreamball" />
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>

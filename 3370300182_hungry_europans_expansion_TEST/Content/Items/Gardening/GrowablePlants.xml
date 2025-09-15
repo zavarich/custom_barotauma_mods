@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Maple-basil seed" identifier="heexp-maplebasilseed" category="Misc" Tags="smallitem,seed,plantitem,maplebasilseed" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" spritecolor="48,122,245,255">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Gardening/Gardening.png" sourcerect="488,0,26,29" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Gardening/Gardening.png" sourcerect="488,0,26,29" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:3370300182%/Content/Items/Gardening/Gardening.png" sourcerect="488,0,26,29" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.3" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="heexp-maplebasil" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.065" pickingtime="3" maximumvines="4" maxhealth="500" hardiness="0.071" floodtolerance="0.5" seedrate="0" productrate="0.022" flowerquantity="0" baseflowerscale="0.25" LeafProbability="0.55" baseleafscale="0.75" leaftint="226,95,85,255" vinescale="0.25" vinetint="127,72,41,255" flowertint="48,122,245,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="heexp-maplebasil" probability="1.0" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="%ModDir:3370300182%/Content/Items/Gardening/Gardening.png" sourcerect="0,0,230,226" />
+          <LeafSprite texture="%ModDir:3370300182%/Content/Items/Gardening/Gardening.png" sourcerect="0,0,230,226" />
+          <VineSprite type="Stem" sourcerect="640,384,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,384,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,256,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,256,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,256,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,256,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,256,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,256,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,384,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,384,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,384,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,384,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,256,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,256,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,384,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,384,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.15.22.0">
+        <Growable growthspeed="0.005" hardiness="0.071" floodtolerance="0.5" productrate="0.0056" />
+      </Upgrade>
+    </Item>
+  </Items>
+</Override>

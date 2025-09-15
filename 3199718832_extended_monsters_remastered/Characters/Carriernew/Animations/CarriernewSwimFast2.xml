@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CarriernewSwimSlow movementspeed="4.0246468" waveamplitude="0.13696018" wavelength="189.45158" steertorque="25" flip="True" mirror="False" rotatetowardsmovement="True" footangle="NaN" headangle="0" torsoangle="NaN" animationtype="SwimSlow" torsotorque="25" headtorque="50" foottorque="25" tailtorque="50" footangles="" cyclespeed="1" usesinemovement="True" flipcooldown="2" flipdelay="1" mirrorlerp="False" tailtorquemultiplier="1" tailangle="NaN" />

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.searchlightdown>Search Light UpSideDown</entityname.searchlightdown>
+  <entitydescription.searchlightdown></entitydescription.searchlightdown>
+  <entityname.WeldingTable>Welding Table</entityname.WeldingTable>
+  <entitydescription.WeldingTable>Fabricator for all barocraftables+ items</entitydescription.WeldingTable>
+  <entityname.textdisplaysb>Text DisplayS</entityname.textdisplaysb>
+  <entitydescription.textdisplaysb></entitydescription.textdisplaysb>
+  <entityname.textdisplaylb>Text DisplayL</entityname.textdisplaylb>
+  <entitydescription.textdisplaylb></entitydescription.textdisplaylb>
+  <!-- Item Msgs -->
+  <ItemMsgDetachCrowbar>[[use]] Detach (Crowbar)</ItemMsgDetachCrowbar>
+</infotexts>

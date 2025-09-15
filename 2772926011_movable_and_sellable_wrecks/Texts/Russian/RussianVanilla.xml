@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Selling Text -->
+  <SellWreck>Обломки %s будут проданы за %s марок когда раунд закончится. Экипаж получит %s очков опыта для талантов.</SellWreck>
+  <entityname.railgunharpoon>Тяжёлый промышленный крюк</entityname.railgunharpoon>
+  <entitydescription.railgunharpoon>Тяжёлый промышленный крюк из титана для подъёма затонувших подводных лодок с морского дна. Убедитесь, что использовали достаточное количество крюков, иначе их тросы могут лопнуть!</entitydescription.railgunharpoon>
+</infotexts>

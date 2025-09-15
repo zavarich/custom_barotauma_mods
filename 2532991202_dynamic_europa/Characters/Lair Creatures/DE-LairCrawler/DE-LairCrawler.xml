@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character inherit="Crawler" speciesname="DE-LairCrawler" speciestranslationoverride="Crawler" usepathfinding="True">
+  <ai patrolflooded="True" patroldry="True" targetinnerwalls="False"></ai>
+</Character>

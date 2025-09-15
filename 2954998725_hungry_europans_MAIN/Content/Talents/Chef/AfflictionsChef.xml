@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <Affliction identifier="he-battlemusic" description="This music get's you going. You feel tougher, stronger, faster and more skilled with weapons. You're ready for battle!" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="1" duration="1.1" hideiconafterdelay="true" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.25" maxresistance="0.25">
+        <StatValue stattype="WeaponsSkillBonus" value="20" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.2" maxvalue="0.2" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.25" maxvalue="0.25" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

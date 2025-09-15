@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="creepingorangevineseed" category="Misc" Tags="smallitem,seed,plantitem,pomegrenadeseed" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" spritecolor="255,54,0,255">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="830,636,31,30" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.3" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="creepingorange" Amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="5">
+        <RequiredSkill identifier="cooking" level="15" />
+        <RequiredItem identifier="badcreepingorange" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.070" pickingtime="3" maximumvines="4" maxhealth="500" hardiness="0.15" floodtolerance="0.4" seedrate="0" productrate="0.022" flowertint="255,54,0,255" flowerquantity="2" baseflowerscale="0.35" LeafProbability="0.55" baseleafscale="0.85" vinescale="0.25" vinetint="244,172,132,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="creepingorange" probability="0.95" />
+        <ProducedItem identifier="badcreepingorange" probability="0.05" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,0,256,256" />
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,0,256,256" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,768,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="128,768,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,768,128,128" />
+          <VineSprite type="Stem" sourcerect="640,128,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,128,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,0,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,0,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,0,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,0,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,0,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,0,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,128,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,128,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,128,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,128,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,0,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,0,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,128,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,128,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.15.22.0">
+        <Growable growthspeed="0.070" hardiness="0.15" floodtolerance="0.4" productrate="0.022" />
+      </Upgrade>
+    </Item>
+    <Item name="" identifier="tobaccovineseed" category="Misc" Tags="smallitem,seed,plantitem,tobaccoseed" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" spritecolor="48,122,245,255">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="863,636,30,31" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.3" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="tobaccobud" Amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="5">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="badtobaccobud" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.065" pickingtime="3" maximumvines="4" maxhealth="500" hardiness="0.071" floodtolerance="0.5" seedrate="0" productrate="0.022" flowerquantity="2" baseflowerscale="0.25" LeafProbability="0.55" baseleafscale="0.75" leaftint="226,95,85,255" vinescale="0.25" vinetint="226,95,85,255" flowertint="48,122,245,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="tobaccobud" probability="0.9" />
+        <ProducedItem identifier="badtobaccobud" probability="0.1" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,256,256,256" />
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,256,256,256" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="384,896,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="512,896,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="640,896,128,128" />
+          <VineSprite type="Stem" sourcerect="640,384,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,384,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,256,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,256,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,256,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,256,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,256,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,256,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,384,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,384,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,384,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,384,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,256,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,256,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,384,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,384,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.15.22.0">
+        <Growable growthspeed="0.065" hardiness="0.071" floodtolerance="0.5" productrate="0.0056" />
+      </Upgrade>
+    </Item>
+    <Item name="" identifier="saltvineseed" category="Misc" Tags="smallitem,seed,plantitem,saltbulbseed" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" spritecolor="215,245,77,255">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="829,666,33,35" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.3" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="saltbulb" Amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="5">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="badsaltbulb" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.076" pickingtime="3" maximumvines="3" maxhealth="375" hardiness="0.162" floodtolerance="0.2" seedrate="0" productrate="0.022" flowerquantity="1" LeafProbability="0.55" baseflowerscale="0.40" vinescale="0.25" vinetint="135,187,61,255" flowertint="240,180,17,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="saltbulb" probability="0.95" />
+        <ProducedItem identifier="badsaltbulb" probability="0.05" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,512,256,256" />
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,512,256,256" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="384,768,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="512,768,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="640,768,128,128" />
+          <VineSprite type="Stem" sourcerect="640,640,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,640,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,512,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,512,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,512,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,512,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,512,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,512,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,640,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,640,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,640,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,640,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,512,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,512,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,640,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,640,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.15.22.0">
+        <Growable growthspeed="0.076" hardiness="0.162" floodtolerance="0.2" productrate="0.0056" />
+      </Upgrade>
+    </Item>
+    <Item name="" identifier="raptorbaneseed" category="Misc" Tags="smallitem,seed,plantitem,raptorbaneseed" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" spritecolor="238,36,98,255">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="863,668,30,33" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.3" />
+      <Price baseprice="30">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="raptorbane" Amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="5">
+        <RequiredSkill identifier="cooking" level="15" />
+        <RequiredItem identifier="badraptorbane" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.065" pickingtime="3" maximumvines="4" maxhealth="325" hardiness="0.062" floodtolerance="0.4" seedrate="0" productrate="0.022" flowerquantity="2" baseflowerscale="0.35" LeafProbability="0.55" baseleafscale="0.65" vinescale="0.25" leaftint="140,146,56,255" vinetint="140,146,56,255" flowertint="238,36,98,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="raptorbane" probability="0.4" />
+        <ProducedItem identifier="badraptorbane" probability="0.6"></ProducedItem>
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,256,256,256" />
+          <LeafSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,256,256,256" />
+          <FlowerSprite scale="0.25" texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,896,128,128" />
+          <FlowerSprite scale="0.25" texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="128,896,128,128" />
+          <FlowerSprite scale="0.25" texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,896,128,128" />
+          <VineSprite type="Stem" sourcerect="640,896,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,896,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,768,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,768,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,768,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,768,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,768,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,768,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,896,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,896,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,896,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,896,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,768,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,768,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,896,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,896,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+      <Upgrade gameversion="0.15.22.0">
+        <Growable growthspeed="0.065" hardiness="0.062" floodtolerance="0.4" productrate="0.022" />
+      </Upgrade>
+    </Item>
+    <Item name="Bubble Berry Vine Seed" identifier="bubbleberryvineseed" category="Misc" Tags="smallitem,seed,plantitem,bubbleberryseed" description="Plant it in a planter to grow bubble berries." maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Sprite texture="%ModDir%/Content/Items/Gardening/Gardening.png" depth="0.2" sourcerect="0,164,25,29" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.1" />
+      <Price baseprice="50">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="bubbleberries" Amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="5">
+        <RequiredSkill identifier="cooking" level="15" />
+        <RequiredItem identifier="badbubbleberries" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.070" pickingtime="3" maximumvines="3" maxhealth="500" hardiness="0.15" floodtolerance="0.4" seedrate="0" productrate="0.022" flowertint="255,54,0,255" flowerquantity="2" baseflowerscale="0.35" LeafProbability="0.55" baseleafscale="0.7" vinescale="0.25" vinetint="0,240,168,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="bubbleberries" probability="0.6" />
+        <ProducedItem identifier="bubbleberryleaf" probability="0.3" />
+        <ProducedItem identifier="badbubbleberries" probability="0.1" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="%ModDir%/Content/Items/Gardening/Gardening.png" sourcerect="64,60,230,226" />
+          <LeafSprite texture="%ModDir%/Content/Items/Gardening/Gardening.png" sourcerect="294,90,218,211" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,768,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="128,768,128,128" />
+          <FlowerSprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,768,128,128" />
+          <VineSprite type="Stem" sourcerect="640,128,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,128,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,0,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,0,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,0,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,0,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,0,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,0,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,128,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,128,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,128,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,128,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,0,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,0,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,128,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,128,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item name="Pop Nut Vine Seed" identifier="popnutvineseed" category="Misc" Tags="smallitem,seed,plantitem,popnutseed" description="Plant it in a planter to grow pop nuts." maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft">
+      <Sprite texture="%ModDir%/Content/Items/Gardening/Gardening.png" depth="0.2" sourcerect="25,164,19,18" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="seedbag" amount="1" spawnprobability="0.1" />
+      <Price baseprice="50">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="3">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="popnut" Amount="1" />
+      </Fabricate>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="5" requiresrecipe="false" amount="5">
+        <RequiredSkill identifier="cooking" level="15" />
+        <RequiredItem identifier="badpopnut" Amount="1" />
+      </Fabricate>
+      <Growable growthspeed="0.070" pickingtime="3" maximumvines="3" maxhealth="500" hardiness="0.15" floodtolerance="0.4" seedrate="0" productrate="0.022" flowertint="255,54,0,255" flowerquantity="1" baseflowerscale="0.65" baseleafscale="0.75" LeafProbability="0.55" vinescale="0.25" vinetint="222,86,145,255" GrowthWeights="1,0,0,0">
+        <ProducedItem identifier="popnut" probability="0.6" />
+        <ProducedItem identifier="popnutleaf" probability="0.3" />
+        <ProducedItem identifier="badpopnut" probability="0.1" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <LeafSprite texture="%ModDir%/Content/Items/Gardening/Gardening.png" sourcerect="64,286,230,226" />
+          <LeafSprite texture="%ModDir%/Content/Items/Gardening/Gardening.png" sourcerect="294,301,218,211" />
+          <FlowerSprite scale="0.25" texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="0,896,128,128" />
+          <FlowerSprite scale="0.25" texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="128,896,128,128" />
+          <FlowerSprite scale="0.25" texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="256,896,128,128" />
+          <VineSprite type="Stem" sourcerect="640,896,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,896,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,768,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,768,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,768,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,768,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,768,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,768,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,896,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,896,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,896,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,896,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,768,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,768,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,896,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,896,128,128" />
+        </VineSprites>
+      </Growable>
+      <Body radius="15" density="10.1" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <!-- STABILOBLOOM PLANT & SEED -->
+    <Item name="" identifier="stabiloseed" category="Misc" Tags="smallitem,seed,plantitem" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" spritecolor="90,255,0,255">
+      <Sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" depth="0.2" sourcerect="830,636,31,30" origin="0.5,0.5" />
+      <PreferredContainer primary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.06" />
+      <PreferredContainer primary="seedbag" />
+      <Price baseprice="80" minleveldifficulty="10">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Fabricate suitablefabricators="medicalfabricator" requiredtime="30">
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredItem identifier="stabilobloomwild" />
+        <RequiredItem identifier="stabilobloomwild" />
+        <RequiredItem identifier="stabilobloomwild" />
+        <RequiredItem identifier="potassium" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Growable growthspeed="0.025" pickingtime="3" growthweights="0.50,0.0,0.0,0.0" maximumvines="3" maxhealth="240" hardiness="0.192" floodtolerance="-0.1" firevulnerability="0.95" mutationprobability="0.0" seedrate="0.0" productrate="0.03" leafprobability="0.0" flowerquantity="2" flowerprobability="1.0" baseflowerscale="0.70" vinescale="0.35" vinetint="28,76,55,255" leaftint="22,120,127,255" flowertint="250,250,250,255">
+        <ProducedItem identifier="stabilobloom" probability="0.65" />
+        <ProducedItem identifier="stabilobloombad" probability="0.35" />
+        <VineSprites vineatlas="Content/Items/Gardening/branches.png" decayatlas="Content/Items/Gardening/branches_overlay.png">
+          <FlowerSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" sourcerect="160,1,44,44" />
+          <FlowerSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" sourcerect="213,8,35,32" />
+          <FlowerSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" sourcerect="255,6,44,36" />
+          <VineSprite type="Stem" sourcerect="640,640,128,128" />
+          <VineSprite type="CrossJunction" sourcerect="512,128,128,128" />
+          <VineSprite type="VerticalLane" sourcerect="512,0,128,128" />
+          <VineSprite type="HorizontalLane" sourcerect="640,0,128,128" />
+          <VineSprite type="TurnTopRight" sourcerect="0,0,128,128" />
+          <VineSprite type="TurnTopLeft" sourcerect="384,0,128,128" />
+          <VineSprite type="TurnBottomLeft" sourcerect="256,0,128,128" />
+          <VineSprite type="TurnBottomRight" sourcerect="128,0,128,128" />
+          <VineSprite type="TSectionTop" sourcerect="128,128,128,128" />
+          <VineSprite type="TSectionLeft" sourcerect="256,128,128,128" />
+          <VineSprite type="TSectionBottom" sourcerect="384,128,128,128" />
+          <VineSprite type="TSectionRight" sourcerect="0,128,128,128" />
+          <VineSprite type="StumpTop" sourcerect="768,0,128,128" />
+          <VineSprite type="StumpLeft" sourcerect="896,0,128,128" />
+          <VineSprite type="StumpBottom" sourcerect="768,128,128,128" />
+          <VineSprite type="StumpRight" sourcerect="896,128,128,128" />
+        </VineSprites>
+      </Growable>
+      <LightComponent lightcolor="15,250,55,100" range="20" powerconsumption="0" flicker="0.0" pulseamount="0" ison="true" drawbehindsubs="false">
+        <LightTexture texture="Content/Lights/pointlight_bright.png" origin="0.5,0.5" />
+      </LightComponent>
+      <Body radius="15" density="10.1" />
+      <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"></Holdable>
+    </Item>
+    <!-- WILD STABILOBLOOM -->
+    <Item name="" identifier="stabilobloomwild" category="Material" Tags="smallitem,plant,petfood1,petfood2,petfood3" maxstacksize="32" maxstacksizecharacterinventory="8" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" useinhealthinterface="true">
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <PreferredContainer secondary="wreckstoragecab" minamount="1" maxamount="2" spawnprobability="0.05" />
+      <Price baseprice="50" canbespecial="true" minleveldifficulty="7">
+        <Price storeidentifier="merchantoutpost" sold="true" multiplier="0.6" />
+        <Price storeidentifier="merchantcity" sold="false" multiplier="0.7" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="0.6" />
+        <Price storeidentifier="merchantmine" sold="true" multiplier="0.4" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="stabilozine" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" depth="0.2" sourcerect="55,1,51,46" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" usewhenattached="true" decorativespritebehavior="HideWhenNotVisible" depth="0.55" sourcerect="1,53,117,187" origin="0.5,0.5" />
+      <DecorativeSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" depth="0.49" sourcerect="1,53,117,187" offset="20,0" randomrotation="-20,20" randomscale="0.8,1.5" randomoffset="30,30" origin="0.5,0.5" randomgroupid="1" />
+      <DecorativeSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" depth="0.49" sourcerect="129,104,77,135" offset="20,0" randomrotation="-20,20" randomscale="0.8,1.8" randomoffset="30,30" origin="0.5,0.5" randomgroupid="1" />
+      <DecorativeSprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" depth="0.50" sourcerect="214,110,77,126" offset="-20,0" randomrotation="-20,20" randomscale="0.8,1.8" randomoffset="30,30" origin="0.5,0.5" randomgroupid="2" />
+      <Body radius="30" density="9" />
+      <LevelResource deattachduration="1" randomoffsetfromwall="40">
+        <Commonness commonness="0.3" cavecommonness="0.2" leveltype="coldcaverns" />
+        <Commonness commonness="0.5" cavecommonness="0.4" leveltype="europanridge" />
+        <Commonness commonness="0.6" cavecommonness="0.5" leveltype="theaphoticplateau" />
+        <Commonness commonness="0.6" cavecommonness="0.5" leveltype="thegreatsea" />
+        <Commonness commonness="0.7" cavecommonness="0.7" leveltype="hydrothermalwastes" />
+      </LevelResource>
+      <SuitableTreatment type="poison" suitability="0" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false">
+        <LightComponent lightcolor="217,231,197,220" range="100" powerconsumption="0" flicker="0.0" flickerspeed="0.5" pulsefrequency="0.4" pulseamount="0" ison="true" drawbehindsubs="true">
+          <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+          <StatusEffect type="InWater" target="This" IsActive="True">
+            <Conditional attached="true" targetitemcomponentname="Holdable" />
+          </StatusEffect>
+        </LightComponent>
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" duration="15">
+          <ReduceAffliction type="poison" amount="0.5" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- GROWABLE STABILOBLOOM -->
+    <Item name="" identifier="stabilobloom" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem,petfood1,petfood2,petfood3" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" useinhealthinterface="true" allowasextracargo="true">
+      <Sprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" depth="0.2" sourcerect="1,1,51,46" origin="0.5,0.5" />
+      <Body radius="30" density="9" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <Price baseprice="80" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="1.1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.3" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.75" />
+        <Price storeidentifier="merchantmine" multiplier="0.8" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="stabilozine" amount="2" />
+        <Item identifier="stabiloseed" />
+      </Deconstruct>
+      <SuitableTreatment type="poison" suitability="5" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false">
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" duration="30">
+          <ReduceAffliction type="poison" amount="0.5" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+    </Item>
+    <!-- MUTATED STABILOBLOOM -->
+    <Item name="" identifier="stabilobloombad" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem,petfood1,petfood2,petfood3" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" useinhealthinterface="true" allowasextracargo="true">
+      <Sprite texture="%ModDir%/Content/Items/Gardening/Stabiloplant.png" depth="0.2" sourcerect="108,1,51,46" origin="0.5,0.5" />
+      <Body radius="30" density="9" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <Price baseprice="40" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" multiplier="1.1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.5" />
+        <Price storeidentifier="merchantmine" multiplier="0.6" />
+        <Price storeidentifier="merchantclown" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="15" chooserandom="true" amount="1">
+        <Item identifier="ethanol" commonness="0.7" />
+        <Item identifier="meth" commonness="0.5" />
+        <Item identifier="carbon" commonness="0.3" />
+        <Item identifier="stabiloseed" commonness="0.1" />
+      </Deconstruct>
+      <SuitableTreatment type="psychosis" suitability="5" />
+      <SuitableTreatment type="chemwithdrawal" suitability="0" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false">
+        <StatusEffect type="OnFire" target="This" Condition="-50.0" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true">
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" delay="8" disabledeltatime="true">
+          <Affliction identifier="psychosisresistance" amount="600" />
+          <Affliction identifier="haste" amount="200" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" delay="5" duration="20">
+          <Affliction identifier="drunk" amount="1.75" />
+          <ReduceAffliction identifier="psychosis" amount="2.0" />
+          <ReduceAffliction identifier="chemwithdrawal" amount="1.0" />
+          <Affliction identifier="chemaddiction" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget" delay="5" duration="300">
+          <Affliction identifier="hallucinating" amount="3.0" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="true" />
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+\\\\\\\\\\
+IMPORTANT:
+//////////
+All food items that should be poisonable should be based on one of the poison presets found in "/Content/Items/#Presets/#ItemPresets.xml"
+It is important to define the following things in the <Item ...> line:
+
+HideInMenus="false" - To make the item appear in menus.
+Health="X" - If the item should feature a different max condition than 100 | See suggested values further below.
+MaxStackSize="X" - If the item should be stackable | Replace X with the amount of items a stack can hold.
+ImpactSoundTag="X" - If the item should make a sound when colliding with a wall/floor | Replace X with your desired impact sound tag found further below.
+isShootable="true" - If "OnUse" StatusEffects should trigger when left-clicking.
+RequireAimtoUse="true" - If the item should need to be aimed (holding right-click) before being able to trigger "OnUse" StatusEffects.
+
+\\\\\\\\\\\\\\\\\\
+IMPACT SOUND TAGS:
+//////////////////
+impact_soft,
+impact_metal_light,
+impact_metal_heavy,
+impact_jar,
+impact_shaker,
+impact_aluminiumcan,
+impact_aluminiumcan_full,
+impact_bottle_glass,
+impact_plastic_crate,
+impact_glassfragments,
+impact_softitem
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+SUGGESTED FOOD CONDITION VALUES:
+////////////////////////////////
+Filets/Roasts/Steaks:
+  Max Item Health: 120
+  Condition Reduction - Regular Eating: -4.0
+  Condition Reduction - Health Menu: -20 | DisableDeltaTime="true"
+
+Burgers:
+  Max Item Health: 100
+  Condition Reduction - Regular Eating: -4.0
+  Condition Reduction - Health Menu: -20 | DisableDeltaTime="true"
+
+Hotdogs:
+  Max Item Health: 80
+  Condition Reduction - Regular Eating: -4.0
+  Condition Reduction - Health Menu: -20 | DisableDeltaTime="true"
+
+Nuggets:
+  Max Item Health: 10
+  Condition Reduction - Regular Eating: -4.0
+  Condition Reduction - Health Menu: -20 | DisableDeltaTime="true"
+
+Salads:
+  Max Item Health: 100
+  Condition Reduction - Regular Eating: -4.0
+  Condition Reduction - Health Menu: -20 | DisableDeltaTime="true"
+
+Sandwiches:
+  Max Item Health: 80
+  Condition Reduction - Regular Eating: -4.0
+  Condition Reduction - Health Menu: -20 | DisableDeltaTime="true"
+
+
+
+
+
+
+
+
+-->

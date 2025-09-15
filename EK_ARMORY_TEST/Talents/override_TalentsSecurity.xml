@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <Talent identifier="GaussRifleCraft">
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,4" sheetelementsize="128,128"/>
+      <Description tag="talentdescription.gaussRifleCraft"/>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.ek_gaussrifle,entityname.ek_gaussrifle_mag" color="gui.orange"/></Description>
+      <AddedRecipe itemidentifier="ek_gaussrifle"/>
+      <AddedRecipe itemidentifier="ek_gaussrifle_mag"/>
+    </Talent>  
+  </Talents>
+</Override>

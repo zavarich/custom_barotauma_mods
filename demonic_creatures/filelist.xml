@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Demonic Creatures" modversion="1.7.2" corepackage="False" steamworkshopid="2782243462" gameversion="1.6.19.1" >
+  <Sounds file="%ModDir%/sounds.xml" />
+  <Text file="%ModDir%/Text/English.xml" />
+  <Text file="%ModDir%/Text/Russian.xml" />
+  <Item file="%ModDir%/Eggs/eggs.xml" />
+  <Item file="%ModDir%/Items/overrides.xml" />
+  <Item file="%ModDir%/Items/other.xml" />
+  <Particles file="%ModDir%/ParticlePrefabs.xml" />
+  <RandomEvents file="%ModDir%/Events/natural_spawning.xml" />
+  <Missions file="%ModDir%/Events/missions.xml" />
+  <Afflictions file="%ModDir%/Afflictions/afflictions.xml" />
+  <Character file="%ModDir%/Characters/Stalker/Stalker.xml" />
+  <Character file="%ModDir%/Characters/Humanhusk/Humanhusk.xml" />
+  <Character file="%ModDir%/Characters/Hellraptor/Hellraptor.xml" />
+  <Character file="%ModDir%/Characters/Abomination/Abomination.xml" />
+  <Character file="%ModDir%/Characters/Skullraptor/Skullraptor.xml" />
+  <Character file="%ModDir%/Characters/Lapidarismantis/Lapidarismantis.xml" />
+  <Character file="%ModDir%/Characters/Abyssalcrawler/Abyssalcrawler.xml" />
+  <Character file="%ModDir%/Characters/HuskJuggernaut/Huskjuggernaut.xml" />
+  <Character file="%ModDir%/Characters/Demonichammerheadlegacy/Demonichammerheadlegacy.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusknatural/Humanhusknatural.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusknaturalcoalition/Humanhusknaturalcoalition.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusknaturalrenegade/Humanhusknaturalrenegade.xml" />
+  <Character file="%ModDir%/Characters/Humanhusksprinter/Humanhusksprinter.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusksprinternatural.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusksprinternaturalcoalition.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusksprinternaturalrenegade.xml" />
+  <Character file="%ModDir%/Characters/Humanhusklurker/Humanhusklurker.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhusklurkernatural.xml" />
+  <Character file="%ModDir%/Characters/Humanbiohusk/Humanbiohusk.xml" />
+  <Character file="%ModDir%/Characters/Humanhuskbrute/Humanhuskbrute.xml" />
+  <Character file="%ModDir%/Characters/Variants/Humanhuskbrutecoalition.xml" />
+  <Character file="%ModDir%/Characters/Dreadnoughthammerhead/Dreadnoughthammerhead.xml" />
+  <Character file="%ModDir%/Characters/Rhinomantis/Rhinomantis.xml" />
+</contentpackage>

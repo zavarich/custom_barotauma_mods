@@ -1,0 +1,1860 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- CONDIMENTS -->
+    <Item name="Salt" identifier="he-salt" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="Don't get salty now!" Tags="smallitem,ingredient,condiment" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_shaker" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="69" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.7" minavailable="0" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="2" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="1" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="14" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="20" />
+        <RequiredItem identifier="saltbulb" amount="1" />
+        <RequiredItem tag="emptyshaker" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="52,104,15,30" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="52,104,15,30" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="52,104,15,30" depth="0.525" origin="0.5,0.7" />
+      <Body width="15" height="30" density="11" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whiteshards" colormultiplier="255,255,255,180" anglemin="0" anglemax="360" particleamount="4" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="0.5" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-emptyshaker" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Synthetic Pepper" identifier="he-pepper" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="Pepper be prepared!" Tags="smallitem,ingredient,condiment" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_shaker" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.08" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="139" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="1" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="oven" requiredtime="80" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem identifier="aquaticpoppy" amount="2" />
+        <RequiredItem identifier="he-emptyshaker" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="68,104,15,30" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="68,104,15,30" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="68,104,15,30" depth="0.525" origin="0.5,0.7" />
+      <Body width="15" height="30" density="11" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whiteshards" colormultiplier="255,255,255,180" anglemin="0" anglemax="360" particleamount="4" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="0.5" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-emptyshaker" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Sugar" identifier="he-sugar" category="Misc" subcategory="Ingredients" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Oh so sweet!" Tags="smallitem,ingredient,distilleringredient,powderbag" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" impacttolerance="5.5" canflipx="false">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="79" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="3" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Fabricate suitablefabricators="stove" requiredtime="40" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="sugary" amount="2" />
+        <RequiredItem identifier="tobaccobud" amount="1" />
+        <RequiredItem identifier="he-pot" UseCondition="True" MinCondition="0.0" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="85,67,41,67" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="85,67,41,67" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="85,67,41,67" depth="0.525" origin="0.5,0.87" />
+      <Body width="41" height="67" density="15" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Ketchup" identifier="he-ketchup" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="" Tags="smallitem,ingredient,condiment" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="140" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.1" minavailable="3" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="14" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem identifier="creepingorange" amount="2" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.5" />
+        <RequiredItem tag="emptybottle" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,67,21,67" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,67,21,67" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,67,21,67" depth="0.525" origin="0.5,0.87" />
+      <Body width="21" height="67" density="15" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="lacerations" strength="2" probability="0.25" />
+          <Affliction identifier="bleeding" strength="2" />
+          <Affliction identifier="bleeding" strength="2" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="120,20,20,255" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1.0" count="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Vinegar" identifier="he-vinegar" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="" Tags="smallitem,ingredient,condiment" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="85" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="3" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="distiller" requiredtime="140" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem identifier="ethanol" amount="2" />
+        <RequiredItem identifier="slimebacteria" amount="1" UseCondition="true" MinCondition="0" />
+        <RequiredItem tag="emptybottle" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="37,69,14,65" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="37,69,14,65" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="37,69,14,65" depth="0.525" origin="0.5,0.85" />
+      <Body width="14" height="65" density="15" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="lacerations" strength="2" probability="0.25" />
+          <Affliction identifier="bleeding" strength="2" />
+          <Affliction identifier="bleeding" strength="2" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="90,40,30,255" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1.0" count="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Cooking Oil" identifier="he-cookingoil" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="" Tags="smallitem,ingredient,cookingoil,oil,condiment" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="72" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="3" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="22" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="seed" amount="12" />
+        <RequiredItem tag="emptybottle" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="22,74,14,60" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="22,74,14,60" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="22,74,14,60" depth="0.525" origin="0.5,0.85" />
+      <Body width="14" height="60" density="15" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="lacerations" strength="2" probability="0.25" />
+          <Affliction identifier="bleeding" strength="2" />
+          <Affliction identifier="bleeding" strength="2" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="180,180,20,200" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1.0" count="1" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- FLOUR -->
+    <Item name="Flour" identifier="he-flour" category="Misc" subcategory="Ingredients" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Baking Bad." Tags="smallitem,ingredient,powderbag" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" canflipx="false">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.08" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="119" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="8" maxavailable="16" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="28" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="20" />
+        <RequiredItem tag="seed" amount="20" />
+        <RequiredItem identifier="sulphuricacid" amount="1" />
+        <RequiredItem identifier="he-emptybowl" amount="1" MinCondition="0" usecondition="true" />
+      </Fabricate>
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="127,67,45,67" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="127,67,45,67" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="127,67,45,67" depth="0.525" origin="0.5,0.87" />
+      <Body width="45" height="67" density="15" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Dough" identifier="he-dough" category="Misc" subcategory="Ingredients" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Baking Bad." Tags="smallitem,ingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" canflipx="false">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="22" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="cleanwater" mincondition="0.98" UseCondition="true" />
+        <RequiredItem identifier="he-flour" mincondition="0.5" UseCondition="true" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.1" />
+        <RequiredItem identifier="yeastshroom" amount="1" />
+      </Fabricate>
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="48,207,47,26" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="48,207,47,26" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="127,67,45,67" depth="0.525" origin="0.5,0.87" />
+      <Body width="33" radius="12" density="12" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- BEVERAGE MIX -->
+    <Item name="Bubbleberry Tea Mix" identifier="he-teamixbubbleberry" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" tags="smallitem,mix,teamix,cupmix" description="" scale="0.5" impactsoundtag="impact_soft" canflipx="false">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,367,45,57" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,367,45,57" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,367,45,57" depth="0.525" origin="0.5,0.85" />
+      <Body width="45" height="57" density="11" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="22" requiresrecipe="false" amount="1">
+        <RequiredItem tag="cleanwater" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="bubbleberryleaf" amount="5" />
+      </Fabricate>
+      <Holdable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="35,-10" swingwhenusing="true" holdangle="0" handle1="0,0" holdpos="36,-20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <!--<Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" holdangle="0" handle1="0,0" holdpos="36,-20" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>-->
+      <!--<Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>-->
+    </Item>
+    <Item name="Popnut Tea Mix" identifier="he-teamixpopnut" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" tags="smallitem,mix,teamix,cupmix" description="" scale="0.5" impactsoundtag="impact_soft" canflipx="false">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="46,367,45,57" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="46,367,45,57" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="46,367,45,57" depth="0.525" origin="0.5,0.85" />
+      <Body width="45" height="57" density="11" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="22" requiresrecipe="false" amount="1">
+        <RequiredItem tag="cleanwater" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="popnutleaf" amount="5" />
+      </Fabricate>
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" holdangle="0" handle1="0,0" holdpos="36,-20" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Coffee Mix" identifier="he-coffeemix" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" tags="smallitem,mix,coffeemix,mugmix" description="" scale="0.5" impactsoundtag="impact_soft" canflipx="false">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,309,45,57" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,309,45,57" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,309,45,57" depth="0.525" origin="0.5,0.85" />
+      <Body width="45" height="57" density="11" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="22" requiresrecipe="false" amount="1">
+        <RequiredItem tag="cleanwater" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="tobaccobud" amount="4" />
+      </Fabricate>
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" holdangle="0" handle1="0,0" holdpos="36,-20" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- TODO: different sprite for Chocolate mix -->
+    <Item name="Chocolate Mix" identifier="he-chocolatemix" category="Misc" subcategory="Ingredients" maxstacksize="8" maxstacksizecharacterinventory="1" tags="smallitem,mix,chocolatemix,mugmix" description="" scale="0.5" impactsoundtag="impact_soft" canflipx="false">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,309,45,57" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,309,45,57" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,309,45,57" depth="0.525" origin="0.5,0.85" />
+      <Body width="45" height="57" density="11" />
+      <Fabricate suitablefabricators="stove" requiredtime="40" requiresrecipe="false" amount="1">
+        <RequiredItem tag="milk" UseCondition="True" MinCondition="0.99" />
+        <RequiredItem identifier="popnutpopped" amount="2" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="he-pot" UseCondition="True" MinCondition="0.0" />
+      </Fabricate>
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" holdangle="0" handle1="0,0" holdpos="36,-20" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- JAMS -->
+    <Item name="Bubble Berry Jam" identifier="he-jambubbleberry" health="15" category="Misc" subcategory="Ingredients" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="Tasty jam made out of bubble berries. Known to quench a bit of thirst." Tags="smallitem,ingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" canflipx="true">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="60" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1.5" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="3" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="stove" requiredtime="25" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem identifier="bubbleberries" amount="4" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem tag="emptyjar" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="216,84,39,50" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="216,84,39,50" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="216,84,39,50" depth="0.525" origin="0.5,0.83" />
+      <Body width="39" height="50" density="13" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand+LeftHand,Any" holdangle="20" holdpos="30,-30" handle1="-10,-20" handle2="0,20" aimable="false" msg="ItemMsgPickUpSelect">
+        <!-- EVERYTHING RELATED TO POISONING FOOD IS HANDLED VIA THE POISON EFFECT PRESET ITEMS DEFINED IN - variantof="" AND THEIR CODE IS LOCATED IN - "/Content/Items/#Presets/#ItemPresets.xml" -->
+        <!--////////// BOT EATING \\\\\\\\\\-->
+        <!-- Bots "eat" by holding the food in their hands -->
+        <StatusEffect type="OnActive" target="This,Character" duration="1" condition="-1" stackable="false" comparison="And">
+          <Conditional hunger="gt 1" targetcontainer="true" />
+          <Conditional IsPlayer="false" targetcontainer="true" />
+          <Conditional IsHuman="true" targetcontainer="true" />
+          <Affliction identifier="ate_sweet" amount="1" />
+          <Affliction identifier="he-stuffed" amount="0.75" />
+          <Affliction identifier="he-sugarrich" amount="10" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--////////// REGULAR EATING \\\\\\\\\\-->
+        <!-- Use the item when it's held -->
+        <!-- -Condition -->
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-1" disabledeltatime="true" stackable="false" comparison="And">
+          <Conditional HasStatusTag="neq emptyhand" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!-- eating fries "animation" -->
+        <StatusEffect type="OnSecondaryUse" target="This" handle2="-20,55" setvalue="true" duration="0.5" stackable="false" comparison="And">
+          <Conditional HasStatusTag="neq emptyhand" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" handle2="0,20" delay="0.5" duration="0.1" setvalue="true" stackable="false" comparison="And">
+          <Conditional HasStatusTag="eq emptyhand" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!-- health effects -->
+        <StatusEffect type="OnSecondaryUse" target="Character" duration="1" stackable="false" comparison="And">
+          <Conditional HasStatusTag="neq emptyhand" />
+          <Conditional InWater="false" />
+          <Affliction identifier="ate_sweet" amount="1" />
+          <Affliction identifier="he-stuffed" amount="0.75" />
+          <Affliction identifier="he-sugarrich" amount="10" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="true" range="200" volume="5.0" selectionmode="Random" />
+        </StatusEffect>
+        <!-- Prevent using this item continuously by applying the tag "emptyhand" which prevents the StatusEffect that uses the item from triggering again, effectively only allowing it to trigger once per mouse-click -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" StatusEffecttags="emptyhand" duration="0.5" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <Remove />
+          <SpawnItem identifier="he-emptyjar" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Equip="true" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Pomegrenade Jam" identifier="he-jampomegrenade" health="15" category="Misc" subcategory="Ingredients" maxstacksize="1" maxstacksizecharacterinventory="1" cargocontaineridentifier="metalcrate" description="Tasty jam made out of pomegrenade. Known to be a bit more filling." Tags="smallitem,ingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" canflipx="true">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.02" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="60" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="3" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="stove" requiredtime="25" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem identifier="creepingorange" amount="3" />
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem tag="emptyjar" amount="1" />
+      </Fabricate>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="255,84,39,50" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="255,84,39,50" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="255,84,39,50" depth="0.525" origin="0.5,0.83" />
+      <Body width="39" height="50" density="13" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand+LeftHand,Any" holdangle="20" holdpos="30,-30" handle1="-10,-20" handle2="0,20" aimable="false" msg="ItemMsgPickUpSelect">
+        <!-- EVERYTHING RELATED TO POISONING FOOD IS HANDLED VIA THE POISON EFFECT PRESET ITEMS DEFINED IN - variantof="" AND THEIR CODE IS LOCATED IN - "/Content/Items/#Presets/#ItemPresets.xml" -->
+        <!--////////// BOT EATING \\\\\\\\\\-->
+        <!-- Bots "eat" by holding the food in their hands -->
+        <StatusEffect type="OnActive" target="This,Character" duration="1" condition="-1" stackable="false" comparison="And">
+          <Conditional hunger="gt 1" targetcontainer="true" />
+          <Conditional IsPlayer="false" targetcontainer="true" />
+          <Conditional IsHuman="true" targetcontainer="true" />
+          <Affliction identifier="ate_sweet" amount="1" />
+          <Affliction identifier="he-stuffed" amount="0.75" />
+          <Affliction identifier="he-sugarrich" amount="10" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="True" range="200" volume="5.0" />
+        </StatusEffect>
+        <!--////////// REGULAR EATING \\\\\\\\\\-->
+        <!-- Use the item when it's held -->
+        <!-- -Condition -->
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-1" disabledeltatime="true" stackable="false" comparison="And">
+          <Conditional HasStatusTag="neq emptyhand" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!-- eating fries "animation" -->
+        <StatusEffect type="OnSecondaryUse" target="This" handle2="-20,55" setvalue="true" duration="0.5" stackable="false" comparison="And">
+          <Conditional HasStatusTag="neq emptyhand" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" handle2="0,20" delay="0.5" duration="0.1" setvalue="true" stackable="false" comparison="And">
+          <Conditional HasStatusTag="eq emptyhand" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!-- health effects -->
+        <StatusEffect type="OnSecondaryUse" target="Character" duration="1" stackable="false" comparison="And">
+          <Conditional HasStatusTag="neq emptyhand" />
+          <Conditional InWater="false" />
+          <Affliction identifier="ate_sweet" amount="1" />
+          <Affliction identifier="he-stuffed" amount="0.75" />
+          <Affliction identifier="he-sugarrich" amount="10" />
+          <ReduceAffliction type="hunger" amount="0.4" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="true" range="200" volume="5.0" selectionmode="Random" />
+        </StatusEffect>
+        <!-- Prevent using this item continuously by applying the tag "emptyhand" which prevents the StatusEffect that uses the item from triggering again, effectively only allowing it to trigger once per mouse-click -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" StatusEffecttags="emptyhand" duration="0.5" stackable="false" />
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <Remove />
+          <SpawnItem identifier="he-emptyjar" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Equip="true" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- MISC -->
+    <Item name="Sea Weed Strip" identifier="he-seaweedstrip" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="Sea weed pressed and sliced. Let it dry into Nori." Tags="smallitem,fooditem" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,207,47,13" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="12" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredSkill identifier="cooking" level="40" />
+        <RequiredItem identifier="he-seaweed" />
+      </Fabricate>
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Body width="40" radius="6" density="10.2" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" condition="1.0" interval="10" stackable="false" disabledeltatime="true" AllowWhenBroken="true">
+          <Conditional InWater="eq false" />
+        </StatusEffect>
+        <StatusEffect type="InWater" target="This" condition="-1.0" interval="5" stackable="false" disabledeltatime="true" />
+        <StatusEffect type="OnContained" target="This" interval="1">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-nori" spawnposition="SameInventory" count="8" SpawnIfInventoryFull="true" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="1">
+          <Conditional condition="eq 100" />
+          <SpawnItem identifier="he-nori" spawnposition="This" count="8" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Nori" identifier="he-nori" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="Dried and prepared sea weed used for sushi." Tags="smallitem,fooditem" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,221,47,13" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="oven" requiredtime="180" requiresrecipe="false" amount="32">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem identifier="he-seaweedstrip" amount="4" MinCondition="0" UseCondition="false" />
+      </Fabricate>
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Body width="40" radius="6" density="10.2" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="0" holdpos="36,-20" aimangle="0" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <!-- EARTH INGREDIENTS | High value ingredients for delicacies only found in wrecks -->
+    <!-- TODO: Disabled for now. Find something to do with canned foods... -->
+    <Item name="Canned Tomatoes" identifier="he-cannedtomatoes" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckstoragecab" minamount="1" maxamount="4" spawnprobability="0.0" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="1500" sold="false" canbespecial="true">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,15,32,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,15,32,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="68,104,15,30" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="35" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+        <!-- TODO: leaving this here to simplify can opening if barodevs fix https://github.com/FakeFishGames/Barotrauma/issues/16240 -->
+        <!-- <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+          <RequiredItem items="sharptool" type="Picked" CharacterInventorySlotType="LeftHand,RightHand" /> 
+          <Conditional ConditionPercentage="equals 100" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Food/Unwrap.ogg" loop="false" range="200" volume="5.0" />
+        </StatusEffect> -->
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="true" AllowDragAndDrop="true" DrawInventory="false">
+        <Containable items="divingknifeunique,divingknife,cleaver,boardingaxe,canopener">
+          <!-- TODO: Add sound effects for opening the can and also for hurting the hands -->
+          <!-- open the can with a can opener (No damage, no condition loss) -->
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="he-canopener" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedtomatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="1.0" />
+            <SpawnItem identifier="he-canopener" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a unique diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedtomatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknifeunique" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a regular diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedtomatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknife" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a cleaver (Medium damage, medium amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem tag="cleaver" type="contained" />
+            <Affliction identifier="lacerations" amount="32" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem tags="cleaver" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedtomatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.6" />
+            <SpawnItem identifier="he-cleaver" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a boarding axe (Highest damage, least amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Affliction identifier="lacerations" amount="64" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedtomatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.2" />
+            <SpawnItem identifier="boardingaxe" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="Open Can of Tomatoes" identifier="he-cannedtomatoesopen" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="750" sold="false" canbespecial="false" mincondition="50">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,0,32,55" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,0,32,55" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,0,32,55" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="50" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Canned Mushrooms" identifier="he-cannedmushrooms" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckstoragecab" minamount="1" maxamount="4" spawnprobability="0.0" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="1500" sold="false" canbespecial="true">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="33,15,32,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="33,15,32,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="68,104,15,30" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="35" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="true" AllowDragAndDrop="true" DrawInventory="false">
+        <Containable items="divingknifeunique,divingknife,cleaver,boardingaxe,canopener">
+          <!-- TODO: Add sound effects for opening the can and also for hurting the hands -->
+          <!-- open the can with a can opener (No damage, no condition loss) -->
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="he-canopener" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedmushroomssopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="1.0" />
+            <SpawnItem identifier="he-canopener" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a unique diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedmushroomssopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknifeunique" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a regular diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedmushroomssopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknife" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a cleaver (Medium damage, medium amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem tag="cleaver" type="contained" />
+            <Affliction identifier="lacerations" amount="32" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem tags="cleaver" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedmushroomssopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.6" />
+            <SpawnItem identifier="he-cleaver" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a boarding axe (Highest damage, least amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Affliction identifier="lacerations" amount="64" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedmushroomssopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.2" />
+            <SpawnItem identifier="boardingaxe" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="Open Can of Mushrooms" identifier="he-cannedmushroomssopen" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="750" sold="false" canbespecial="false" mincondition="50">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="33,0,32,55" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="33,0,32,55" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,0,32,55" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="50" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Canned Potatoes" identifier="he-cannedpotatoes" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckstoragecab" minamount="1" maxamount="4" spawnprobability="0.0" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="1500" sold="false" canbespecial="true">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="66,15,32,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="66,15,32,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="68,104,15,30" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="35" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="true" AllowDragAndDrop="true" DrawInventory="false">
+        <Containable items="divingknifeunique,divingknife,cleaver,boardingaxe,canopener">
+          <!-- TODO: Add sound effects for opening the can and also for hurting the hands -->
+          <!-- open the can with a can opener (No damage, no condition loss) -->
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="he-canopener" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedpotatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="1.0" />
+            <SpawnItem identifier="he-canopener" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a unique diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedpotatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknifeunique" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a regular diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedpotatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknife" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a cleaver (Medium damage, medium amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem tag="cleaver" type="contained" />
+            <Affliction identifier="lacerations" amount="32" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem tags="cleaver" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedpotatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.6" />
+            <SpawnItem identifier="he-cleaver" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a boarding axe (Highest damage, least amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Affliction identifier="lacerations" amount="64" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedpotatoesopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.2" />
+            <SpawnItem identifier="boardingaxe" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="Open Can of Potatoes" identifier="he-cannedpotatoesopen" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="750" sold="false" canbespecial="false" mincondition="50">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="66,0,32,55" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="66,0,32,55" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="0,0,32,55" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="50" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Canned Corn" identifier="he-cannedcorn" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer secondary="wreckstoragecab" minamount="1" maxamount="4" spawnprobability="0.0" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="1500" sold="false" canbespecial="true">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="99,15,32,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="99,15,32,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="99,15,32,40" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="35" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="true" AllowDragAndDrop="true" DrawInventory="false">
+        <Containable items="divingknifeunique,divingknife,cleaver,boardingaxe,canopener">
+          <!-- TODO: Add sound effects for opening the can and also for hurting the hands -->
+          <!-- open the can with a can opener (No damage, no condition loss) -->
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="he-canopener" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedcornopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="1.0" />
+            <SpawnItem identifier="he-canopener" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a unique diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknifeunique" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedcornopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknifeunique" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a regular diving knife (Lowest damage, highest amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Affliction identifier="lacerations" amount="16" probability="0.1" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="divingknife" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedcornopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.8" />
+            <SpawnItem identifier="divingknife" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a cleaver (Medium damage, medium amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem tag="cleaver" type="contained" />
+            <Affliction identifier="lacerations" amount="32" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem tags="cleaver" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedcornopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.6" />
+            <SpawnItem identifier="he-cleaver" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+          <!-- open the can with a boarding axe (Highest damage, least amount of condition left) -->
+          <StatusEffect type="OnInserted" target="This,Character" targetlimbs="LeftHand,RightHand" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Affliction identifier="lacerations" amount="64" probability="0.3" />
+          </StatusEffect>
+          <StatusEffect type="OnInserted" target="This" disabledeltatime="true">
+            <RequiredItem identifier="boardingaxe" type="contained" />
+            <Remove />
+            <SpawnItem identifier="he-cannedcornopen" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" condition="0.2" />
+            <SpawnItem identifier="boardingaxe" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="Open Can of Corn" identifier="he-cannedcornopen" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="A rare can of tomatoes back from when supplies were still delivered from earth! High in value, these ingredients are used exclusively for delicacies these days." Tags="smallitem,ingredient,rareingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_metal_light" impacttolerance="5.5">
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="750" sold="false" canbespecial="false" mincondition="50">
+        <Price storeidentifier="merchantoutpost" minavailable="3" maxavailable="10" />
+        <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="6" maxavailable="16" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="carbon" amount="1" mincondition="50" />
+      </Deconstruct>
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="99,0,32,55" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="99,0,32,55" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:2954998725%/Content/Items/Food/FoodAndMeat.png" sourcerect="99,0,32,55" depth="0.525" origin="0.5,0.7" />
+      <Body width="27" height="50" density="11.5" />
+      <Throwable DisableWhenRangedWeaponEquipped="true" canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="lacerations" strength="1" probability="0.25" />
+          <Affliction identifier="bleeding" strength="1" />
+          <Affliction identifier="bleeding" strength="1" probability="0.5" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="1000" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="1000" />
+        </StatusEffect>
+        <!-- remove the bottle if broken and spawn glass fragments, but prevent contained projectile bottle from breaking as well if the bottle drops and shatters instead of being thrown -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--PSEUDO ITEM THAT REMOVES ITSELF IF SPAWNED IN | Only used to power the stove for the tea kettle to brew-->
+    <Item name="Brew" identifier="he-brewteaitem" category="Hidden" hideinmenus="true" maxstacksize="1" tags="" description="Start brewing whatever is in your kettle. Turn the stove off when you hear the kettle whistle.">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/DrinksAndIngredients.png" sourcerect="0,426,81,85" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="stove" requiredtime="7200" requiresrecipe="false" amount="1" outcondition="0.0">
+        <RequiredItem identifier="he-teakettle" UseCondition="True" MinCondition="0.0" />
+      </Fabricate>
+      <Holdable DisableWhenRangedWeaponEquipped="true" canbepicked="true" canBeCombined="false" removeOnCombined="false" slots="RightHand,LeftHand" aimpos="22,-5" aimangle="0" holdangle="0" handle1="-6,0" holdpos="36,-20" aimable="false" swingwhenaiming="true" swingamount="10,6" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- EGGS for omelette -->
+    <!-- EGGS for omelette -->
+    <!-- EGGS for omelette -->
+    <!-- Small eggs -->
+    <Item name="" identifier="peanutegg" nameidentifier="petegg" Tags="smallitem,monsterfood,egg,smallegg" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" amount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="265,5,43,55" origin="0.5,0.5" />
+      <Price baseprice="500" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.4" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+        <Item identifier="alienblood" />
+        <Item identifier="adrenalinegland" />
+      </Deconstruct>
+      <Body radius="25" friction="1.0" restitution="0.01" angulardamping="0.8" density="11" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand" holdpos="35,-30" handle1="0,-10" handle2="0,-20" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-1.0" />
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.7" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" hideitems="true" showcontainedstateindicator="false" maxstacksize="1">
+        <Containable items="antibloodloss1">
+          <StatusEffect type="OnContaining" target="Contained" Condition="-9" noninteractable="true" />
+          <StatusEffect type="OnContaining" target="This" Scale="0.025" />
+          <StatusEffect type="OnContaining" target="This" Condition="0" setvalue="true">
+            <Conditional Scale="gte 0.75" />
+            <SpawnCharacter speciesname="peanut" />
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="15" lightcolor="180,150,30,150" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="0.2" pulseamount="0.30" />
+    </Item>
+    <Item name="" identifier="psilotoadegg" nameidentifier="petegg" Tags="smallitem,monsterfood,egg,smallegg" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" amount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="265,133,43,55" origin="0.5,0.5" />
+      <Price baseprice="500" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.4" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+        <Item identifier="alienblood" />
+        <Item identifier="adrenalinegland" />
+      </Deconstruct>
+      <Body radius="25" friction="1.0" restitution="0.01" angulardamping="0.8" density="11" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand" holdpos="35,-30" handle1="0,-10" handle2="0,-20" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-1.0" />
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.7" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" hideitems="true" showcontainedstateindicator="false" maxstacksize="1">
+        <Containable items="antibloodloss1">
+          <StatusEffect type="OnContaining" target="Contained" Condition="-9" noninteractable="true" />
+          <StatusEffect type="OnContaining" target="This" Scale="0.025" />
+          <StatusEffect type="OnContaining" target="This" Condition="0" setvalue="true">
+            <Conditional Scale="gte 0.75" />
+            <SpawnCharacter speciesname="psilotoad" />
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="15" lightcolor="180,150,30,150" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="0.2" pulseamount="0.30" />
+    </Item>
+    <Item name="" identifier="orangeboyegg" nameidentifier="petegg" Tags="smallitem,monsterfood,egg,smallegg" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" amount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="266,259,44,56" origin="0.5,0.5" />
+      <Price baseprice="500" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.4" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+        <Item identifier="alienblood" />
+        <Item identifier="adrenalinegland" />
+      </Deconstruct>
+      <Body radius="25" friction="1.0" restitution="0.01" angulardamping="0.8" density="11" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand" holdpos="35,-30" handle1="0,-10" handle2="0,-20" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-1.0" />
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.7" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" hideitems="true" showcontainedstateindicator="false" maxstacksize="1">
+        <Containable items="antibloodloss1">
+          <StatusEffect type="OnContaining" target="Contained" Condition="-9" noninteractable="true" />
+          <StatusEffect type="OnContaining" target="This" Scale="0.025" />
+          <StatusEffect type="OnContaining" target="This" Condition="0" setvalue="true">
+            <Conditional Scale="gte 0.75" />
+            <SpawnCharacter speciesname="orangeboy" />
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="15" lightcolor="180,150,30,150" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="0.2" pulseamount="0.30" />
+    </Item>
+    <Item name="" identifier="balloonegg" nameidentifier="petegg" Tags="smallitem,monsterfood,egg,smallegg" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" amount="1" spawnprobability="0.05" />
+      <Sprite texture="Content/Characters/Pets/pets.png" depth="0.7" sourcerect="11,389,43,55" origin="0.5,0.5" />
+      <Price baseprice="500" sold="false" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.4" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+        <Item identifier="alienblood" />
+        <Item identifier="adrenalinegland" />
+      </Deconstruct>
+      <Body radius="25" friction="1.0" restitution="0.01" angulardamping="0.8" density="11" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand" holdpos="35,-30" handle1="0,-10" handle2="0,-20" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <particleemitter particle="brownchunks" particleamount="50" velocitymin="0" velocitymax="700" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-1.0" />
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.7" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" hideitems="true" showcontainedstateindicator="false" maxstacksize="1">
+        <Containable items="antibloodloss1">
+          <StatusEffect type="OnContaining" target="Contained" Condition="-9" noninteractable="true" />
+          <StatusEffect type="OnContaining" target="This" Scale="0.025" />
+          <StatusEffect type="OnContaining" target="This" Condition="0" setvalue="true">
+            <Conditional Scale="gte 0.75" />
+            <SpawnCharacter speciesname="balloon" />
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="15" lightcolor="180,150,30,150" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="0.2" pulseamount="0.30" />
+    </Item>
+    <Item name="" identifier="smallcrawleregg" nameidentifier="crawleregg" Tags="smallitem,ignorebyai,monsterfood,egg,smallegg" sonarsize="2" health="10" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="1" impactsoundtag="impact_soft" impacttolerance="0.05" hideinmenus="true" IsAITurretTarget="true" AITurretPriority="0.75" AISlowTurretPriority="0" AITurretTargetingMaxDistance="2000">
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="323,203,45,53" origin="0.5,0.5" />
+      <Body radius="20" mindensity="9" maxdensity="11" />
+      <Price baseprice="80" sold="false" />
+      <Deconstruct time="10">
+        <Item identifier="sulphuricacid" />
+      </Deconstruct>
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10" handle2="0,-10">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="30" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <particleemitter particle="acidmistsmall" particleamount="1" />
+          <particleemitter particle="eggsplashwater" particleamount="5" scalemin="0.7" scalemax="0.8" anglemin="0" anglemax="360" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit1.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit2.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit3.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit4.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit5.ogg" range="2000" selectionmode="Random" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="1" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-100" setvalue="true">
+          <Explosion range="100" structuredamage="200" itemdamage="75" smoke="false" flames="false" force="0" sparks="false" shockwave="true" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="stun" strength="0.5" probability="1" />
+            <Affliction identifier="acidburn" strength="25" probability="1" />
+          </Explosion>
+        </StatusEffect>
+      </Holdable>
+      <LightComponent range="20" lightcolor="127,196,196,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="327,165,35,38" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <aitarget sightrange="1000" static="true" />
+    </Item>
+    <Item name="" identifier="smallmudraptoregg" nameidentifier="mudraptoregg" Tags="smallitem,ignorebyai,mudraptoregg,egg,smallegg" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.5" impactsoundtag="impact_soft">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <!-- don't allow as a daily special or requested item, because there's 3 identical-looking variants of the egg and it can be confusing if your variant isn't accepted as the requested item -->
+      <Price baseprice="300" sold="false" canbespecial="false">
+        <Price storeidentifier="merchantoutpost" multiplier="0.85" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="true" multiplier="1.5" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.1" />
+        <Price storeidentifier="merchantmine" multiplier="0.85" />
+      </Price>
+      <PreferredContainer primary="toxcontainer" spawnprobability="0.01" notcampaign="true" notpvp="true" />
+      <PreferredContainer secondary="locker" spawnprobability="0.01" notcampaign="true" notpvp="true" />
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="164,3,42,49" origin="0.5,0.5" />
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+      </Deconstruct>
+      <Body width="40" height="45" friction="1.0" restitution="0.01" angulardamping="0.8" density="10.5" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10" handle2="0,-10">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="100" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="8" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-5.0" />
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
+        <Containable items="antibloodloss1">
+          <!-- increase scale -->
+          <StatusEffect type="OnContaining" target="This" Scale="0.005" />
+          <StatusEffect type="OnContaining" target="Contained" Condition="-1" />
+          <!-- remove and spawn a medium egg when scale is greater than or equal to 0.95 -->
+          <StatusEffect type="OnContaining" target="This">
+            <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+            <particleemitter particle="brownchunks" particleamount="10" emitinterval="1000" velocitymin="0" velocitymax="100" anglemin="0" anglemax="360" scalemin="0.1" scalemax="0.3" />
+            <Conditional Scale="gte 0.95" />
+            <SpawnItem identifier="mediummudraptoregg" spawnposition="SameInventory" inheriteventtags="true" SpawnIfInventoryFull="true" SpawnIfNotInInventory="true" />
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="5" lightcolor="127,196,196,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="1" pulseamount="0.30">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="164,3,42,49" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <LightComponent range="20" lightcolor="255,199,0,58" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="164,3,42,49" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="mediummudraptoregg" nameidentifier="mudraptoregg" Tags="mediumitem,ignorebyai,mudraptoregg,egg,smallegg" hideinmenus="true" health="40" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.4" impactsoundtag="impact_soft">
+      <Upgrade gameversion="0.20.15.0" scale="0.4" />
+      <Price baseprice="800" sold="false" />
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="235,156,67,82" origin="0.5,0.5" />
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+        <Item identifier="adrenalinegland" />
+      </Deconstruct>
+      <!-- rectangular body to prevent the egg from rolling -->
+      <Body width="65" height="75" friction="1.0" restitution="0.01" angulardamping="1.0" density="11" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand+LeftHand" holdpos="40,-80" handle1="-18,-12" handle2="18,-12" aimable="false">
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="100" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="8" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-5.0" />
+        <Containable items="antibloodloss1">
+          <!-- increase scale -->
+          <StatusEffect type="OnContaining" target="This" Scale="0.005" />
+          <StatusEffect type="OnContaining" target="Contained" Condition="-1" />
+          <StatusEffect type="OnContaining" target="This">
+            <Sound file="Content/Sounds/Damage/Gore6.ogg" range="500" />
+            <particleemitter particle="brownchunks" particleamount="10" emitinterval="1000" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+            <Conditional Scale="gte 0.75" />
+            <SpawnItem identifier="largemudraptoregg" spawnposition="SameInventory" inheriteventtags="true" SpawnIfInventoryFull="true" SpawnIfNotInInventory="true" />
+            <Remove />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="5" lightcolor="127,196,196,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="1" pulseamount="0.30">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="235,156,67,82" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <LightComponent range="30" lightcolor="255,199,0,58" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="235,156,67,82" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- Large eggs -->
+    <Item name="" identifier="largemudraptoregg" nameidentifier="mudraptoregg" Tags="largeitem,ignorebyai,mudraptoregg,egg,largeegg" hideinmenus="true" health="60" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" scale="0.4" impactsoundtag="impact_soft">
+      <Upgrade gameversion="0.20.15.0" scale="0.4" />
+      <Price baseprice="1000" sold="false" />
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="80,105,124,147" origin="0.5,0.5" />
+      <Deconstruct time="10">
+        <Item identifier="alienblood" amount="2" />
+        <Item identifier="adrenalinegland" amount="2" />
+      </Deconstruct>
+      <!-- rectangular body to prevent the egg from rolling -->
+      <Body width="120" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.47" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="100" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.4" scalemax="0.6" />
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <Sound file="Content/Sounds/Damage/Gore4.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="8" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-5.0" />
+        <StatusEffect type="Always" target="This" Condition="0" setvalue="true">
+          <Conditional Scale="gte 0.5" />
+          <Remove />
+          <SpawnCharacter speciesname="Mudraptor_hatchling" inheriteventtags="true" />
+        </StatusEffect>
+        <Containable items="antibloodloss1">
+          <!-- increase scale -->
+          <StatusEffect type="OnContaining" target="This" Scale="0.002" />
+          <StatusEffect type="OnContaining" target="Contained" Condition="-1" />
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="5" lightcolor="127,196,196,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="1" pulseamount="0.30">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="300,291,98,113" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <LightComponent range="40" lightcolor="255,199,0,58" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="410,301,88,95" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="crawleregg" Tags="largeitem,ignorebyai,monsterfood,egg,largeegg" hideinmenus="true" health="20" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" spritecolor="199,253,172,255" scale="0.5" impactsoundtag="impact_soft">
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="8,280,118,145" origin="0.5,0.5" />
+      <Price baseprice="200" sold="false" />
+      <Deconstruct time="10">
+        <Item identifier="alienblood" />
+        <Item identifier="sulphuricacid" />
+      </Deconstruct>
+      <!-- rectangular body to prevent the egg from rolling -->
+      <Body width="110" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand+LeftHand" holdpos="35,-30" handle1="0,-10" handle2="0,-20" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.7" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="100" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.4" scalemax="0.6" />
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <Sound file="Content/Sounds/Damage/Gore4.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="8" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-5.0" />
+        <!-- spawn a crawler and remove the item if scale is above 0.75 -->
+        <StatusEffect type="Always" target="This" Condition="0" setvalue="true">
+          <Conditional Scale="gte 0.75" />
+          <SpawnCharacter speciesname="Crawler_hatchling" />
+          <Remove />
+        </StatusEffect>
+        <Containable items="antibloodloss1">
+          <!-- increase scale -->
+          <StatusEffect type="OnContaining" target="This" Scale="0.005" />
+          <StatusEffect type="OnContaining" target="Contained" Condition="-1" />
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="5" lightcolor="255,0,0,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="1" pulseamount="0.30">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="300,291,98,113" origin="0.5,0.6" alpha="1.0" />
+      </LightComponent>
+      <LightComponent range="40" lightcolor="255,199,0,58" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="410,301,88,95" origin="0.5,0.6" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <Item name="" identifier="tigerthresheregg" Tags="largeitem,ignorebyai,monsterfood,egg,largeegg" hideinmenus="true" health="60" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" spritecolor="185,230,240,255" scale="0.5" impactsoundtag="impact_soft">
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="165,280,114,145" origin="0.5,0.5" />
+      <Price baseprice="370" sold="false" />
+      <Deconstruct time="10">
+        <Item identifier="adrenalinegland" />
+        <Item identifier="alienblood" />
+      </Deconstruct>
+      <!-- rectangular body to prevent the egg from rolling -->
+      <Body width="110" height="120" friction="1.0" restitution="0.01" angulardamping="1.0" density="12" />
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand+LeftHand" holdpos="35,-30" handle1="0,-10" handle2="0,-20" swingamount="15,15" swingspeed="2" swingwhenholding="True">
+        <StatusEffect type="OnActive" target="This" swingamount="100,100" swingspeed="5" setvalue="true">
+          <particleemitter particle="brownchunks" particlespersecond="5" velocitymin="0" velocitymax="500" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <Conditional Scale="gte 0.7" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false" canbeselected="true">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="100" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.4" scalemax="0.6" />
+          <particleemitter particle="whitegoosplash" particleamount="20" velocitymin="0" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1.0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+          <Sound file="Content/Sounds/Damage/Gore4.ogg" range="500" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="8" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" Condition="-5.0" />
+        <!-- spawn a thresher and remove the item if scale is above 0.95 -->
+        <StatusEffect type="Always" target="This" Condition="0" setvalue="true">
+          <Conditional Scale="gte 0.75" />
+          <SpawnCharacter speciesname="Tigerthresher_hatchling" />
+          <Remove />
+        </StatusEffect>
+        <Containable items="antibloodloss1,alienblood">
+          <!-- increase scale -->
+          <StatusEffect type="OnContaining" target="This" Scale="0.005" />
+          <StatusEffect type="OnContaining" target="Contained" Condition="-1" />
+        </Containable>
+      </ItemContainer>
+      <LightComponent range="5" lightcolor="217,157,0,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false" pulsefrequency="1" pulseamount="0.30">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="300,291,98,113" origin="0.5,0.6" alpha="1.0" />
+      </LightComponent>
+      <LightComponent range="40" lightcolor="255,199,0,58" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="410,301,88,95" origin="0.5,0.6" alpha="1.0" />
+      </LightComponent>
+    </Item>
+    <!-- Make the projectiles non-interactable and pop after 5 seconds. You want to grab crawlereggsmall instead -->
+    <Item name="" identifier="crawlereggprojectile" nameidentifier="crawleregg" Tags="ignorebyai" sonarsize="2" health="10" scale="1" damagedbyexplosions="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbyrepairtools="true" category="Misc" impactsoundtag="impact_soft" impacttolerance="0.05" hideinmenus="true" IsAITurretTarget="true" AITurretPriority="2" AISlowTurretPriority="0" noninteractable="true">
+      <Sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.18" sourcerect="323,203,45,53" origin="0.5,0.5" />
+      <Body radius="20" mindensity="9" maxdensity="11" />
+      <Deconstruct time="10">
+        <Item identifier="sulphuricacid" />
+      </Deconstruct>
+      <Holdable DisableWhenRangedWeaponEquipped="true" slots="RightHand,LeftHand,Any" holdpos="0,-70" handle1="0,10" handle2="0,-10" />
+      <Projectile characterusable="false" launchimpulse="18" deactivationtime="1" IgnoreProjectilesWhileActive="true" damagedoors="true">
+        <Attack structuredamage="10" itemdamage="10" targetforce="100">
+          <Affliction identifier="stun" strength="3" probability="1" />
+          <Affliction identifier="blunttrauma" strength="20" probability="1" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This" condition="-20">
+          <ParticleEmitter particle="bubbles" particlespersecond="10" scalemin="1" scalemax="2" anglemin="0" anglemax="360" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="30" velocitymin="100" velocitymax="2000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.5" />
+          <particleemitter particle="acidmistsmall" particleamount="1" />
+          <particleemitter particle="eggsplashwater" particleamount="5" scalemin="0.7" scalemax="0.8" anglemin="0" anglemax="360" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit1.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit2.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit3.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit4.ogg" range="2000" selectionmode="Random" />
+          <Sound file="Content/Characters/Crawlerbroodmother/CRAWLERBR_eggHit5.ogg" range="2000" selectionmode="Random" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <particleemitter particle="mudrapeggbrownchunks" particleamount="1" velocitymin="100" velocitymax="1000" anglemin="0" anglemax="360" scalemin="0.2" scalemax="0.3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-100" setvalue="true">
+          <Explosion range="100" structuredamage="200" itemdamage="75" smoke="false" flames="false" force="0" sparks="false" shockwave="true" underwaterbubble="false" camerashake="0" flash="false" playtinnitus="false">
+            <Affliction identifier="stun" strength="0.5" probability="1" />
+            <Affliction identifier="acidburn" strength="25" probability="1" />
+          </Explosion>
+        </StatusEffect>
+      </Projectile>
+      <LightComponent range="20" lightcolor="127,196,196,61" powerconsumption="0" IsOn="true" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/CreatureLoot/CreatureLoot.png" depth="0.025" sourcerect="327,165,35,38" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                           EXTENDED MONSTERS                               -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                               Set 1                                       -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Introduced Icecrab, Coralshrimp, Mantisshrimp, Shadowleech and Stonewanderer -->
+  <!-- Introduced Thalamuscarrier -->
+  <EventSet identifier="Extended Monsters Linear ColdCaverns" minleveldifficulty="1" maxleveldifficulty="15" chooserandom="false" allowatstart="true" additive="true" campaign="false">
+    <Commonness commonness="1" />
+    <!-- Populate the caves -->
+    <EventSet identifier="caves" chooserandom="true" percave="true" triggereventcooldown="false" allowatstart="true">
+      <MonsterEvent characterfile="Icecrab" minamount="0" maxamount="2" spawntype="cave" />
+      <MonsterEvent characterfile="Mantisnew" minamount="0" maxamount="2" spawntype="cave" />
+      <MonsterEvent characterfile="Shadowleech" minamount="0" maxamount="2" spawntype="cave" />
+    </EventSet>
+    <!-- Populate the beacon stations - Only spawn if there's spawnpoint with tag 'encounter' present! -->
+    <EventSet identifier="beaconstation_encounters" chooserandom="true" triggereventcooldown="false" allowatstart="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Mantisnews" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+    </EventSet>
+    <!-- populate the ruins -->
+    <EventSet identifier="ruins" chooserandom="false" allowatstart="true" perruin="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.25" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.25" spawnpointtag="swarmfeeder" />
+      <EventSet identifier="chambers1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="encounter_chambers1" />
+        <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="encounter_chambers1" />
+        <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="encounter_chambers1" />
+      </EventSet>
+      <MonsterEvent characterfile="Turretcarrier" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="encounter_entrance1" />
+      <MonsterEvent characterfile="Turretcarrier" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="encounter_entrance2" />
+      <MonsterEvent characterfile="Turretcarrier" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="encounter_entrance3" />
+    </EventSet>
+    <!-- Populate the wrecks -->
+    <EventSet identifier="wrecks" chooserandom="true" perwreck="true" allowatstart="true" triggereventcooldown="false">
+      <EventSet identifier="Icecrabs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Mantisnews" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+    </EventSet>
+    <!-- Populate the abyss -->
+    <EventSet identifier="abyss" chooserandom="true" allowatstart="true" triggereventcooldown="false" disableinhuntinggrounds="true">
+      <EventSet commonness="100">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="abyss" />
+      </EventSet>
+    </EventSet>
+    <!--20% or 3 min-->
+    <EventSet identifier="3min" chooserandom="true" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="0" maxamount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--40% or 6 min-->
+    <EventSet identifier="6min" chooserandom="true" mindistancetraveled="0.40" minmissiontime="360" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="0" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--60% or 12 min-->
+    <EventSet identifier="12min" chooserandom="true" mindistancetraveled="0.60" minmissiontime="720" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--80% or 24 min-->
+    <EventSet identifier="24min" chooserandom="true" mindistancetraveled="0.80" minmissiontime="1440" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="2" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                               Set 2                                       -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Introduced Brainmosses, Turretcarrier and Carriernew -->
+  <!-- Introduced Charybdissavage and Endwormcoral -->
+  <EventSet identifier="Extended Monsters Linear EuropanRidge" minleveldifficulty="15" maxleveldifficulty="35" chooserandom="false" allowatstart="true" additive="true" campaign="false">
+    <Commonness commonness="1" />
+    <!-- Populate the caves -->
+    <EventSet identifier="caves" chooserandom="true" percave="true" triggereventcooldown="false" allowatstart="true">
+      <MonsterEvent characterfile="Icecrab" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Mantisnew" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Shadowleech" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Brainmoss1" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Brainmoss2" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Brainmoss3" minamount="2" maxamount="3" spawntype="cave" />
+    </EventSet>
+    <!-- Populate the beacon stations - Only spawn if there's spawnpoint with tag 'encounter' present! -->
+    <EventSet identifier="beaconstation_encounters" chooserandom="true" triggereventcooldown="false" allowatstart="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Mantisnews" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+    </EventSet>
+    <!-- populate the ruins -->
+    <EventSet identifier="ruins" chooserandom="false" allowatstart="true" perruin="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="1" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.25" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="1" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="ruin" probability="0.25" spawnpointtag="swarmfeeder" />
+      <EventSet identifier="chambers1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Newcoelanth" amount="1" spawntype="ruin" probability="1" spawnpointtag="encounter_chambers1" />
+      </EventSet>
+      <MonsterEvent characterfile="Turretcarrier" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="encounter_entrance1" />
+      <MonsterEvent characterfile="Turretcarrier" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="encounter_entrance2" />
+      <MonsterEvent characterfile="Turretcarrier" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="encounter_entrance3" />
+    </EventSet>
+    <!-- Populate the wrecks -->
+    <EventSet identifier="wrecks" chooserandom="true" perwreck="true" allowatstart="true" triggereventcooldown="false">
+      <EventSet identifier="Icecrabs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Mantisnews" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+    </EventSet>
+    <!-- Populate the abyss -->
+    <EventSet identifier="abyss" chooserandom="true" allowatstart="true" triggereventcooldown="false" disableinhuntinggrounds="true" resettime="900">
+      <EventSet commonness="30">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="35">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="35">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="abyss" />
+      </EventSet>
+    </EventSet>
+    <!--20% or 3 min-->
+    <EventSet identifier="3min" chooserandom="true" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="3" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Brainmoss1" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Carriernew" amount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--40% or 6 min-->
+    <EventSet identifier="6min" chooserandom="true" mindistancetraveled="0.40" minmissiontime="360" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="3" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Brainmoss1" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Carriernew" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--60% or 12 min-->
+    <EventSet identifier="12min" chooserandom="true" mindistancetraveled="0.60" minmissiontime="720" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="6" maxamount="8" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Brainmoss1" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Carriernew" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--80% or 24 min-->
+    <EventSet identifier="24min" chooserandom="true" mindistancetraveled="0.80" minmissiontime="1440" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Icecrab" minamount="7" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Stonewanderer" minamount="4" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" minamount="6" maxamount="8" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Brainmoss1" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Carriernew" minamount="2" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                               Set 3                                       -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Introduced Abysswatcher, Magmalarva, Magmaworm, Paralyticshark, and Newcoelanth -->
+  <!-- Introduced Fractalannihilator and Fractaldestroyer -->
+  <EventSet identifier="Extended Monsters Linear AphoticPlateau" minleveldifficulty="35" maxleveldifficulty="50" chooserandom="false" allowatstart="true" additive="true" campaign="false">
+    <Commonness commonness="1" />
+    <!-- Populate the caves -->
+    <EventSet identifier="caves" chooserandom="true" percave="true" triggereventcooldown="false" allowatstart="true">
+      <MonsterEvent characterfile="Magmalarva" minamount="3" maxamount="5" spawntype="cave" />
+      <MonsterEvent characterfile="Magmaworm" minamount="5" maxamount="9" spawntype="cave" />
+      <MonsterEvent characterfile="Shadowleech" minamount="3" maxamount="5" spawntype="cave" />
+      <MonsterEvent characterfile="Brainmoss1" minamount="3" maxamount="4" spawntype="cave" />
+      <MonsterEvent characterfile="Brainmoss2" minamount="3" maxamount="4" spawntype="cave" />
+      <MonsterEvent characterfile="Brainmoss3" minamount="3" maxamount="4" spawntype="cave" />
+      <MonsterEvent characterfile="Paralyticshark" amount="1" spawntype="cave" />
+      <MonsterEvent characterfile="Newcoelanth" minamount="1" maxamount="2" spawntype="cave" />
+    </EventSet>
+    <!-- Populate the beacon stations - Only spawn if there's spawnpoint with tag 'encounter' present! -->
+    <EventSet identifier="beaconstation_encounters" chooserandom="true" triggereventcooldown="false" allowatstart="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Icecrab" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Mantisnews" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+    </EventSet>
+    <!-- populate the ruins -->
+    <EventSet identifier="ruins" chooserandom="false" allowatstart="true" perruin="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="ruin" probability="1" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="ruin" probability="1" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="ruin" probability="1" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="swarmfeeder" />
+      <EventSet identifier="chambers1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Thermaleel" amount="2" spawntype="ruin" probability="1" spawnpointtag="encounter_chambers1" />
+      </EventSet>
+      <MonsterEvent characterfile="Turretcarrier" amount="2" spawntype="ruin" probability="0.75" spawnpointtag="encounter_entrance1" />
+      <MonsterEvent characterfile="Turretcarrier" amount="2" spawntype="ruin" probability="0.75" spawnpointtag="encounter_entrance2" />
+      <MonsterEvent characterfile="Turretcarrier" amount="2" spawntype="ruin" probability="0.75" spawnpointtag="encounter_entrance3" />
+    </EventSet>
+    <!-- Populate the wrecks -->
+    <EventSet identifier="wrecks" chooserandom="true" perwreck="true" allowatstart="true" triggereventcooldown="false">
+      <EventSet identifier="Icecrabs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Icecrab" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Mantisnews" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Mantisnew" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Magmalarva" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmalarva" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmalarva" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+    </EventSet>
+    <!-- Populate the abyss -->
+    <EventSet identifier="abyss" chooserandom="true" allowatstart="true" triggereventcooldown="false" disableinhuntinggrounds="true" resettime="600">
+      <EventSet commonness="10">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="20">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="20">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="25">
+        <MonsterEvent characterfile="Fractalannihilator" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="25">
+        <MonsterEvent characterfile="Fractaldestroyer" amount="1" spawntype="abyss" />
+      </EventSet>
+    </EventSet>
+    <!--Recurring Abysswatcher-->
+    <EventSet identifier="Abysswatcher" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true" ignorecooldown="true" ResetTime="600">
+      <MonsterEvent characterfile="Abysswatcher" amount="1" spawntype="mainpath,sidepath" />
+    </EventSet>
+    <!--20% or 3 min-->
+    <EventSet identifier="3min" chooserandom="true" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Icecrab" minamount="8" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Stonewanderer" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Mantisnew" minamount="7" maxamount="8" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Brainmoss1" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Carriernew" minamount="2" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--40% or 6 min-->
+    <EventSet identifier="6min" chooserandom="true" mindistancetraveled="0.40" minmissiontime="360" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Icecrab" minamount="9" maxamount="10" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Stonewanderer" minamount="5" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Mantisnew" minamount="8" maxamount="9" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Brainmoss1" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Carriernew" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="5" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--60% or 12 min-->
+    <EventSet identifier="12min" chooserandom="true" mindistancetraveled="0.60" minmissiontime="720" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Icecrab" minamount="9" maxamount="13" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Stonewanderer" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Mantisnew" minamount="8" maxamount="12" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Brainmoss1" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Carriernew" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="3" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--80% or 24 min-->
+    <EventSet identifier="24min" chooserandom="true" mindistancetraveled="0.80" minmissiontime="1440" ignoreintensity="true">
+      <EventSet identifier="Icecrabs" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Icecrab" minamount="9" maxamount="17" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Stonewanderers" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Stonewanderer" minamount="5" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shrimps" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Mantisnew" minamount="8" maxamount="16" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Coralshrimp" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Brainmoss1" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="20">
+        <MonsterEvent characterfile="Carriernew" minamount="3" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="5" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                               Set 4                                       -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Introduced Shadowwhalebaby, Shadowwhale, Thermaleel and Charybdissmall -->
+  <!-- Introduced Epicentrum and Voidleviathan -->
+  <!-- Disappeared Icecrab, Coralshrimp, Mantisshrimp, Stonewanderer and Carriernew-->
+  <!-- Emerged from abyss to main route: Thalamuscarrier -->
+  <EventSet identifier="Extended Monsters Linear GreatSea" minleveldifficulty="50" maxleveldifficulty="65" chooserandom="false" allowatstart="true" additive="true" campaign="false">
+    <Commonness commonness="1" />
+    <!-- Populate the caves -->
+    <EventSet identifier="caves" chooserandom="true" percave="true" triggereventcooldown="false" allowatstart="true">
+      <MonsterEvent characterfile="Magmalarva" minamount="5" maxamount="6" spawntype="cave" />
+      <MonsterEvent characterfile="Magmaworm" minamount="7" maxamount="11" spawntype="cave" />
+      <MonsterEvent characterfile="Shadowwhalebaby" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Newcoelanth" amount="2" spawntype="cave" />
+      <MonsterEvent characterfile="Thermaleel" minamount="2" maxamount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Paralyticshark" amount="1" spawntype="cave" />
+      <MonsterEvent characterfile="Charybdissmall" amount="1" spawntype="cave" />
+    </EventSet>
+    <!-- Populate the beacon stations - Only spawn if there's spawnpoint with tag 'encounter' present! -->
+    <EventSet identifier="beaconstation_encounters" chooserandom="true" triggereventcooldown="false" allowatstart="true">
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Shadowleech" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+    </EventSet>
+    <!-- populate the ruins -->
+    <EventSet identifier="ruins" chooserandom="false" allowatstart="true" perruin="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="Brainmoss1" amount="2" spawntype="ruin" probability="1" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Brainmoss2" amount="2" spawntype="ruin" probability="1" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Brainmoss3" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Brainmoss3" amount="2" spawntype="ruin" probability="1" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Brainmoss2" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Brainmoss1" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="swarmfeeder" />
+      <EventSet identifier="chambers1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Shadowwhalebaby" amount="3" spawntype="ruin" probability="1" spawnpointtag="encounter_chambers1" />
+      </EventSet>
+      <MonsterEvent characterfile="Turretcarrier" amount="2" spawntype="ruin" probability="1" spawnpointtag="encounter_entrance1" />
+      <MonsterEvent characterfile="Turretcarrier" amount="2" spawntype="ruin" probability="1" spawnpointtag="encounter_entrance2" />
+      <MonsterEvent characterfile="Turretcarrier" amount="2" spawntype="ruin" probability="1" spawnpointtag="encounter_entrance3" />
+    </EventSet>
+    <!-- Populate the wrecks -->
+    <EventSet identifier="wrecks" chooserandom="true" perwreck="true" allowatstart="true" triggereventcooldown="false">
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="0.5" spawndistance="1500" />
+      </EventSet>
+    </EventSet>
+    <!-- Populate the abyss -->
+    <EventSet identifier="abyss" chooserandom="true" allowatstart="true" triggereventcooldown="false" disableinhuntinggrounds="true" resettime="300">
+      <EventSet commonness="10">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="10">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="15">
+        <MonsterEvent characterfile="Fractalannihilator" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="15">
+        <MonsterEvent characterfile="Fractaldestroyer" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="25">
+        <MonsterEvent characterfile="Epicentrum" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="25">
+        <MonsterEvent characterfile="Voidleviathan" amount="1" spawntype="abyss" />
+      </EventSet>
+    </EventSet>
+    <!--Recurring Abysswatcher-->
+    <EventSet identifier="Abysswatcher" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true" ignorecooldown="true" ResetTime="300">
+      <MonsterEvent characterfile="Abysswatcher" amount="1" spawntype="mainpath,sidepath" />
+    </EventSet>
+    <!--20% or 3 min-->
+    <EventSet identifier="3min" chooserandom="true" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true">
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Brainmoss1" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Magmalarva" minamount="9" maxamount="17" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="4" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thermaleel" minamount="6" maxamount="11" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="5" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdisbabies" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissmall" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--40% or 6 min-->
+    <EventSet identifier="6min" chooserandom="true" mindistancetraveled="0.40" minmissiontime="360" ignoreintensity="true">
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Brainmoss1" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Magmalarva" minamount="10" maxamount="17" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="5" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thermaleel" minamount="6" maxamount="12" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="6" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdisbabies" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissmall" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--60% or 12 min-->
+    <EventSet identifier="12min" chooserandom="true" mindistancetraveled="0.60" minmissiontime="720" ignoreintensity="true">
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Brainmoss1" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Magmalarva" minamount="11" maxamount="17" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="5" maxamount="10" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thermaleel" minamount="7" maxamount="12" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="7" maxamount="9" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="3" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdisbabies" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissmall" minamount="3" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--80% or 24 min-->
+    <EventSet identifier="24min" chooserandom="true" mindistancetraveled="0.80" minmissiontime="1440" ignoreintensity="true">
+      <EventSet identifier="Brainmosses" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Brainmoss1" minamount="6" maxamount="7" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss2" minamount="6" maxamount="7" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Brainmoss3" minamount="6" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Magmalarva" minamount="12" maxamount="17" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="6" maxamount="10" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thermaleel" minamount="7" maxamount="13" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Newcoelanth" minamount="7" maxamount="10" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="3" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdisbabies" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissmall" minamount="3" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Turretcarrier" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!--                               Set 5                                       -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- Disappeared Brainmosses; Carriernew made a return.  -->
+  <!-- Emerged from abyss to main route: Charybdissavage and Endwormcoral -->
+  <EventSet identifier="Extended Monsters Linear HydrothermalWastes" minleveldifficulty="65" maxleveldifficulty="100" chooserandom="false" allowatstart="true" additive="true" campaign="false">
+    <Commonness commonness="1" />
+    <!-- Populate the caves -->
+    <EventSet identifier="caves" chooserandom="true" percave="true" triggereventcooldown="false" allowatstart="true">
+      <MonsterEvent characterfile="Magmalarva" minamount="7" maxamount="8" spawntype="cave" />
+      <MonsterEvent characterfile="Magmaworm" minamount="9" maxamount="13" spawntype="cave" />
+      <MonsterEvent characterfile="Shadowwhalebaby" amount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Newcoelanth" amount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Thermaleel" amount="3" spawntype="cave" />
+      <MonsterEvent characterfile="Paralyticshark" minamount="1" maxamount="2" spawntype="cave" />
+      <MonsterEvent characterfile="Charybdissmall" minamount="1" maxamount="2" spawntype="cave" />
+    </EventSet>
+    <!-- Populate the beacon stations - Only spawn if there's spawnpoint with tag 'encounter' present! -->
+    <EventSet identifier="beaconstation_encounters" chooserandom="true" triggereventcooldown="false" allowatstart="true">
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Thermaleel" amount="2" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Magmalarva" amount="3" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+        <MonsterEvent characterfile="Magmaworm" amount="5" spawntype="beaconstation" spawnprobability="1" spawnpointtag="encounter" />
+      </EventSet>
+    </EventSet>
+    <!-- populate the ruins -->
+    <EventSet identifier="ruins" chooserandom="false" allowatstart="true" perruin="true" triggereventcooldown="false">
+      <MonsterEvent characterfile="Fractalguardian" amount="1" spawntype="ruin" probability="1" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Fractalguardian3" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Fractalguardian2" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="husk" />
+      <MonsterEvent characterfile="Fractalguardian2" amount="1" spawntype="ruin" probability="1" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Fractalguardian" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Fractalguardian3" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="fractalguardian" />
+      <MonsterEvent characterfile="Fractalguardian3" amount="1" spawntype="ruin" probability="1" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Fractalguardian2" amount="1" spawntype="ruin" probability="0.75" spawnpointtag="swarmfeeder" />
+      <MonsterEvent characterfile="Fractalguardian" amount="1" spawntype="ruin" probability="0.5" spawnpointtag="swarmfeeder" />
+      <EventSet identifier="chambers1" chooserandom="false" triggereventcooldown="false" allowatstart="true">
+        <MonsterEvent characterfile="Portalguardian" amount="1" spawntype="ruin" probability="1" spawnpointtag="encounter_chambers1" />
+      </EventSet>
+      <MonsterEvent characterfile="Turretcarrier" amount="3" spawntype="ruin" probability="1" spawnpointtag="encounter_entrance1" />
+      <MonsterEvent characterfile="Turretcarrier" amount="3" spawntype="ruin" probability="1" spawnpointtag="encounter_entrance2" />
+      <MonsterEvent characterfile="Turretcarrier" amount="3" spawntype="ruin" probability="1" spawnpointtag="encounter_entrance3" />
+    </EventSet>
+    <!-- Populate the wrecks -->
+    <EventSet identifier="wrecks" chooserandom="true" perwreck="true" allowatstart="true" triggereventcooldown="false">
+      <EventSet identifier="Shadowleechs" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Shadowleech" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Thermaleel" amount="1" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+      </EventSet>
+      <EventSet identifier="Magmas" chooserandom="false" triggereventcooldown="false" allowatstart="true" commonness="20">
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmalarva" amount="2" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+        <MonsterEvent characterfile="Magmaworm" amount="3" spawntype="wreck" spawnprobability="1" spawndistance="1500" />
+      </EventSet>
+    </EventSet>
+    <!-- Populate the abyss -->
+    <EventSet identifier="abyss" chooserandom="true" allowatstart="true" triggereventcooldown="false" disableinhuntinggrounds="true" resettime="180">
+      <EventSet commonness="15">
+        <MonsterEvent characterfile="Fractalannihilator" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="15">
+        <MonsterEvent characterfile="Fractaldestroyer" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="35">
+        <MonsterEvent characterfile="Epicentrum" amount="1" spawntype="abyss" />
+      </EventSet>
+      <EventSet commonness="35">
+        <MonsterEvent characterfile="Voidleviathan" amount="1" spawntype="abyss" />
+      </EventSet>
+    </EventSet>
+    <!--Recurring Abysswatcher-->
+    <EventSet identifier="Abysswatcher" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true" ignorecooldown="true" ResetTime="180">
+      <MonsterEvent characterfile="Abysswatcher" amount="1" spawntype="mainpath,sidepath" />
+    </EventSet>
+    <!--20% or 3 min-->
+    <EventSet identifier="3min" chooserandom="true" mindistancetraveled="0.20" minmissiontime="180" ignoreintensity="true">
+      <EventSet identifier="Magmas" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Magmalarva" minamount="12" maxamount="19" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="6" maxamount="15" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Thermaleel" minamount="8" maxamount="14" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Newcoelanth" minamount="8" maxamount="11" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="3" maxamount="4" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Carriernew" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdissavege" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Charybdissmall" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Endwormcoral" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--40% or 6 min-->
+    <EventSet identifier="6min" chooserandom="true" mindistancetraveled="0.40" minmissiontime="360" ignoreintensity="true">
+      <EventSet identifier="Magmas" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Magmalarva" minamount="14" maxamount="19" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="9" maxamount="15" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Thermaleel" minamount="9" maxamount="15" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Newcoelanth" minamount="9" maxamount="12" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="4" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Carriernew" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdissavege" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Charybdissmall" minamount="1" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Endwormcoral" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--60% or 12 min-->
+    <EventSet identifier="12min" chooserandom="true" mindistancetraveled="0.60" minmissiontime="720" ignoreintensity="true">
+      <EventSet identifier="Magmas" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Magmalarva" minamount="16" maxamount="19" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="12" maxamount="15" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Thermaleel" minamount="9" maxamount="16" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Newcoelanth" minamount="9" maxamount="13" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="2" maxamount="2" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Carriernew" minamount="1" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdissavege" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Charybdissmall" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Endwormcoral" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+    <!--80% or 24 min-->
+    <EventSet identifier="24min" chooserandom="true" mindistancetraveled="0.80" minmissiontime="1440" ignoreintensity="true">
+      <EventSet identifier="Magmas" chooserandom="false" commonness="5">
+        <MonsterEvent characterfile="Magmalarva" minamount="16" maxamount="21" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Magmaworm" minamount="12" maxamount="18" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Thermaleels" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Thermaleel" minamount="9" maxamount="18" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Newcoelanths" chooserandom="false" commonness="10">
+        <MonsterEvent characterfile="Newcoelanth" minamount="9" maxamount="15" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Paralyticsharks" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Paralyticshark" minamount="5" maxamount="7" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Shadows" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Shadowwhale" minamount="2" maxamount="3" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowwhalebaby" minamount="4" maxamount="5" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Shadowleech" minamount="5" maxamount="6" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Carriers" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Thalamuscarrier" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Carriernew" minamount="2" maxamount="2" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Charybdissavege" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Charybdissavage" amount="1" spawntype="mainpath,sidepath" />
+        <MonsterEvent characterfile="Charybdissmall" minamount="3" maxamount="3" spawntype="mainpath,sidepath" />
+      </EventSet>
+      <EventSet identifier="Endwormcoral" chooserandom="false" commonness="15">
+        <MonsterEvent characterfile="Endwormcoral" amount="1" spawntype="mainpath,sidepath" />
+      </EventSet>
+    </EventSet>
+  </EventSet>
+</Randomevents>

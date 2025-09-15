@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- TALENTS -->
+  <talentname.forbiddenknowledge>Обширные исследования</talentname.forbiddenknowledge>
+  <talentdescription.knowledgefrombeyond>Её преданность исследованиям дала ей знания, позволяющие использовать инопланетные материалы для создания инструментов из дементонита.</talentdescription.knowledgefrombeyond>
+  <talentname.stayingtipsy>Навеселе</talentname.stayingtipsy>
+  <talentdescription.stayingtipsy>Вы дали ей алкоголь — теперь живите с последствиями.</talentdescription.stayingtipsy>
+  <talentname.geneticalteration>Един с Хаском</talentname.geneticalteration>
+  <talentdescription.geneticalteration>Вы чувствуете, что ваше тело изменено неким препаратом, позволяющим проходить мимо хасков так, будто вы один из них. Однако препарат неблагоприятно влияет на вашу генетику.</talentdescription.geneticalteration>
+</infotext>

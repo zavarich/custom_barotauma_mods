@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <!--Adds a animated overlay to electric shock wearoff-->
+    <Affliction name="Woozy" identifier="electricshockwearoff" limbspecific="false" type="debuff" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" affectmachines="false" maxstrength="10">
+      <Effect minstrength="0" maxstrength="3" MinAfflictionOverlayAlphaMultiplier="0" MaxAfflictionOverlayAlphaMultiplier="0.8" minscreendistort="0.0" maxscreendistort="0.1" minscreenblur="0.0" maxscreenblur="0.1" convulseamount="0.5" strengthchange="-1.0" minspeedmultiplier="1" maxspeedmultiplier="0.35"></Effect>
+      <Effect minstrength="3" maxstrength="10" MinAfflictionOverlayAlphaMultiplier="0.8" MaxAfflictionOverlayAlphaMultiplier="1" minscreendistort="0.1" maxscreendistort="0.2" minscreenblur="0.1" maxscreenblur="0.2" convulseamount="0.8" strengthchange="-1.0" minspeedmultiplier="0.35" maxspeedmultiplier="0.1">
+        <StatusEffect target="Character">
+          <Conditional IsLocalPlayer="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Ambient/ShockLoop.ogg" volume="5" loop="true" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <Affliction identifier="nausea" amount="3" />
+        </StatusEffect>
+      </Effect>
+      <!-- TODO: NEXTUPDATE pick one or the other overlay, whichever looks better -->
+      <AfflictionOverlayAnimated texture="%ModDir:2532991202%/Afflictions/ShockAnimation2.png" sourcerect="0,0,2048,1280" origin="0.5,0.5" alpha="1.0" animspeed="12" columns="2" rows="2" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <!--Temporary Crewmember-->
+    <Affliction name="Temporary Crewmember" identifier="temporarycrew" description="Will leave your crew after 6 hours from the moment they joined." type="temporarycrew" hideiconafterdelay="true" limbspecific="false" maxstrength="21601" showiconthreshold="0" iconcolors="100,255,180,255;100,255,180,255" treatmentthreshold="100000" showicontoothersthreshold="0" showinhealthscannerthreshold="0" healableinmedicalclinic="false">
+      <Description textidentifier="afflictiondescription.temporarycrew.self" target="Self" minstrength="0" maxstrength="21601" />
+      <Description textidentifier="afflictiondescription.temporarycrew.other" target="OtherCharacter" minstrength="0" maxstrength="21601" />
+      <Effect minstrength="1" maxstrength="1" strengthchange="0">
+        <StatusEffect type="Always" target="Character" interval="1" stackable="false" multiplyafflictionsbymaxvitality="true">
+          <TriggerEvent identifier="removetempcrew" />
+          <ReduceAffliction identifier="temporarycrew" strength="100" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="2" maxstrength="21601" strengthchange="-1" />
+      <icon texture="%ModDir:2532991202%/UI/DE-IconsAtlas.png" sourcerect="0,160,171,171" color="100,255,180,255" origin="0,0" />
+    </Affliction>
+    <!-- Disease for medivac NPC -->
+    <Affliction name="Mysterious Disease" identifier="mysteriousdisease" description="The patient is afflicted with an unknown, contagious disease, and requires medical attention." type="poison" causeofdeathdescription="The patient did not survive." selfcauseofdeathdescription="You did not survive." limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="0" maxstrength="100" affectmachines="false" healcostmultiplier="0" basehealcost="50" iconcolors="135,175,130,255;70,85,80,255;60,90,60,255">
+      <Description textidentifier="afflictiondescription.mysteriousdisease.self" target="Self" minstrength="0" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.mysteriousdisease.others" target="OtherCharacter" minstrength="0" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="10" strengthchange="10" minspeedmultiplier="1.0" maxspeedmultiplier="1.0" tag="poisoned" resistancefor="mysteriousdiseaseplayer" minresistance="1" maxresistance="1"></Effect>
+      <Effect minstrength="10" maxstrength="100" strengthchange="0.75" minscreenblur="0.1" maxscreenblur="1.0" minfacetint="255,255,255,0" maxfacetint="255,255,0,80" minbodytint="255,255,255,0" maxbodytint="255,255,0,60" minspeedmultiplier="1.0" maxspeedmultiplier="0.5" tag="poisoned" resistancefor="mysteriousdiseaseplayer" minresistance="1" maxresistance="1"></Effect>
+      <!-- bad effects from letting affliction ramp up -->
+      <PeriodicEffect mininterval="10" maxinterval="30" minstrength="40" maxstrength="100">
+        <StatusEffect target="Character" targetlimbs="Torso" disabledeltatime="true">
+          <Affliction identifier="nausea" amount="15" probability="0.25" />
+          <Affliction identifier="internaldamage" amount="5" probability="0.25" />
+          <Affliction identifier="psychosis" amount="30" probability="0.25" />
+          <Affliction identifier="stun" amount="2" probability="0.25" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <!-- if affliction = 100, transmit disease to players  -->
+      <PeriodicEffect mininterval="5" maxinterval="10" minstrength="99" maxstrength="100">
+        <StatusEffect target="Character" SpeedMultiplier="0.1" setvalue="true" duration="1.7" />
+        <StatusEffect target="Character" comparison="and">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="Content/Characters/Human/male_damage9.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+          <Sound file="Content/Characters/Human/male_damage10.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="and">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="Content/Characters/Human/female_damage7.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+          <Sound file="Content/Characters/Human/female_damage8.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimbs="Head" duration="1">
+          <ParticleEmitter particle="bloodsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="5" velocitymin="50" velocitymax="200" scalemin="0.2" scalemax="0.35" lifetimemultiplier="0.5" distancemin="5" distancemax="10" colormultiplier="60,90,60,255" />
+          <ReduceAffliction identifier="mysteriousdisease" amount="5" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimbs="Head">
+          <Explosion range="150.0" DistanceFalloff="false" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="" decalsize="1.25" showeffects="false">
+            <Affliction identifier="mysteriousdiseaseplayer" amount="100" probability="1" dividebylimbcount="false" />
+          </Explosion>
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="193,162,122,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Sickness" identifier="mysteriousdiseaseplayer" description="You've caught the sickness. Try to tough it out." type="poison" causeofdeathdescription="The patient did not survive." selfcauseofdeathdescription="You did not survive." limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="0" maxstrength="10" affectmachines="false" healcostmultiplier="0" basehealcost="50" iconcolors="135,175,130,255;70,85,80,255;60,90,60,255">
+      <Description textidentifier="afflictiondescription.mysteriousdiseaseplayer.self" target="Self" minstrength="0" maxstrength="10" />
+      <Description textidentifier="afflictiondescription.mysteriousdiseaseplayer.others" target="OtherCharacter" minstrength="0" maxstrength="10" />
+      <Effect minstrength="0" maxstrength="10" strengthchange="-0.2" minscreenblur="0.1" maxscreenblur="0.6" minfacetint="255,255,255,0" maxfacetint="180,255,180,70" minbodytint="255,255,255,0" maxbodytint="180,255,180,60" minspeedmultiplier="1" maxspeedmultiplier="0.5" tag="poisoned"></Effect>
+      <!-- bad effects, cough and transmit the affliction. may cure itself if lucky intervals  -->
+      <PeriodicEffect mininterval="5" maxinterval="15" minstrength="1" maxstrength="10">
+        <StatusEffect target="Character" targetlimbs="Torso" disabledeltatime="true">
+          <Affliction identifier="nausea" amount="15" probability="0.35" />
+          <Affliction identifier="internaldamage" amount="5" probability="0.35" />
+          <Affliction identifier="hallucinating" amount="25" probability="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" SpeedMultiplier="0.1" setvalue="true" duration="1.2" />
+        <StatusEffect target="Character" comparison="and">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="Content/Characters/Human/male_damage9.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+          <Sound file="Content/Characters/Human/male_damage10.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="and">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="Content/Characters/Human/female_damage7.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+          <Sound file="Content/Characters/Human/female_damage8.ogg" selectionmode="Random" frequencymultiplier="0.75" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimbs="Head" duration="1">
+          <ParticleEmitter particle="bloodsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="5" velocitymin="50" velocitymax="200" scalemin="0.2" scalemax="0.35" lifetimemultiplier="0.5" distancemin="5" distancemax="10" colormultiplier="60,90,60,255" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimbs="Head">
+          <Explosion range="150.0" DistanceFalloff="false" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="" decalsize="1.25" showeffects="false">
+            <!-- probability for explosions is actually rolled for each limb hit (human has 15)! here roughly 37% assuming it hits all 15 -->
+            <Affliction identifier="mysteriousdiseaseplayer" amount="100" probability="0.03" dividebylimbcount="false" />
+          </Explosion>
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" origin="0,0" />
+    </Affliction>
+    <!-- just an event affliction, does nothing -->
+    <nastyscar identifier="nastyscar" limbspecific="false" indicatorlimb="Torso" maxstrength="1" showiconthreshold="0" showicontoothersthreshold="0" showinhealthscannerthreshold="0" healableinmedicalclinic="false" ShowBarInHealthMenu="false">
+      <Description textidentifier="afflictiondescription.nastyscar.self" target="Self" minstrength="0" maxstrength="1" />
+      <Description textidentifier="afflictiondescription.nastyscar.others" target="OtherCharacter" minstrength="0" maxstrength="1" />
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" />
+      <icon texture="Content/UI/TalentsIcons4.png" sourcerect="0,384,128,128" color="120,90,90,255" origin="0,0" />
+    </nastyscar>
+  </Override>
+  <Override>
+    <!-- COMPATIBILITY AFFLICTIONS -->
+    <!-- invisible afflictions for built-in Enhanced Reactors compatibility | Does nothing and removes itself if loaded above or without Enhanced Reactors -->
+    <Affliction name="" identifier="radiationsounds" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="radiationsoundlow" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="radiationsoundmedium" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="radiationsoundhigh" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="radiationsoundextreme" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="contaminated" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="" identifier="overheating" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" karmachangeonapplied="0" maxstrength="2" affectmachines="false" healableinmedicalclinic="false">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

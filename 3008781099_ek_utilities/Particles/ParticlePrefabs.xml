@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <prefabs>
+    <ekmetalfoammuzzle lifetime="0.4" angularvelocitymin="-90" angularvelocitymax="90" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0.6" waterdrag="0.8" velocitychange="0,-3" velocitychangewater="0,-1" collisionradius="10" usecollision="True" deleteoncollision="True" friction="0.9" restitution="0.7" startsizemin="0.5,0.5" startsizemax="1.2,1.2" sizechangemin="-1,-1" sizechangemax="-1,-1" growtime="0.01" startcolor="200,50,50,255" endcolor="100,80,80,0" drawtarget="Both" blendstate="AlphaBlend" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="0,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="32,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="64,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="96,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="128,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="160,64,48,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="208,64,48,32" />
+    </ekmetalfoammuzzle>
+    <ekmetalfoamspray lifetime="0.8" angularvelocitymin="-90" angularvelocitymax="90" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0.6" waterdrag="0.8" velocitychange="0,-3" velocitychangewater="0,-1" collisionradius="10" usecollision="True" deleteoncollision="false" friction="0.9" restitution="0.01" startsizemin="1.5,1.5" startsizemax="3,3" sizechangemin="-1.5,-1.5" sizechangemax="-2,-2" growtime="0.6" startcolor="150,50,50,255" endcolor="75,150,150,25" drawtarget="Both" blendstate="AlphaBlend" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="0,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="32,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="64,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="96,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="128,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="160,64,48,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="208,64,48,32" />
+    </ekmetalfoamspray>
+    <ekmetalfoamlumps lifetime="6" lifetimemin="3" angularvelocitymin="-90" angularvelocitymax="90" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0.6" waterdrag="0.8" velocitychange="0,-8" velocitychangewater="0,-6" collisionradius="10" usecollision="True" deleteoncollision="False" friction="0.9" restitution="0.01" startsizemin="0.5,0.5" startsizemax="1.2,1.2" sizechangemin="0.5,0.5" sizechangemax="1,1" growtime="0.01" startcolor="200,50,50,255" middlecolor="110,100,100,50" usemiddlecolor="True" endcolor="100,80,80,0" drawtarget="Both" blendstate="AlphaBlend" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="0,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="32,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="64,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="96,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="128,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="160,64,48,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="208,64,48,32" />
+    </ekmetalfoamlumps>
+    <ekmetalfoamimpact lifetime="3" angularvelocitymin="-90" angularvelocitymax="90" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0.6" waterdrag="0.8" velocitychange="0,-0.1" velocitychangewater="0,-0.1" collisionradius="2" usecollision="True" deleteoncollision="false" friction="0.9" restitution="0.0" startsizemin="4,4" startsizemax="5,5" sizechangemin="-2,-2" sizechangemax="-2,-2" growtime="1.5" startcolor="100,100,100,255" endcolor="100,100,100,0" drawtarget="Both" blendstate="AlphaBlend" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="0,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="32,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="64,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="96,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="128,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="160,64,48,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="208,64,48,32" />
+    </ekmetalfoamimpact>
+    <ekmetalfoamimpactcharacer lifetime="3" angularvelocitymin="-90" angularvelocitymax="90" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0.6" waterdrag="0.8" velocitychange="0,-2.5" velocitychangewater="0,-1.5" collisionradius="2" usecollision="True" deleteoncollision="false" friction="0.9" restitution="0.0" startsizemin="4,4" startsizemax="5,5" sizechangemin="-2,-2" sizechangemax="-2,-2" growtime="1.5" startcolor="100,100,100,255" endcolor="100,100,100,0" drawtarget="Both" blendstate="AlphaBlend" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="0,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="32,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="64,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="96,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="128,64,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="160,64,48,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="208,64,48,32" />
+    </ekmetalfoamimpactcharacer>
+    <ekpulsecutter lifetime="0.075" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="360" rotatetodirection="True" drag="0" waterdrag="0" velocitychange="0,-1" velocitychangewater="0,-1" collisionradius="1" usecollision="True" deleteoncollision="True" friction="0.5" restitution="0.5" startsizemin="0.5,0.4" startsizemax="1.0,0.8" sizechangemin="-0.5,-0.5" sizechangemax="-1,-1" growtime="0.05" startcolor="49,255,255,255" endcolor="255,89,85,200" drawtarget="Both" blendstate="Additive" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="392,83,106,16" />
+    </ekpulsecutter>
+    <ekpulsecuttersmoke startsizemin="0.5,0.5" startsizemax="0.7,0.7" sizechangemin="1.1,1.1" sizechangemax="1.3,1.3" startrotationmin="-180" startrotationmax="180" startcolor="190,250,255,255" endcolor="0,220,150,0" lifetime="0.5" growtime="0.3" drawtarget="Both" usecollision="True" blendstate="Additive" velocitychange="0,0" startdelaymin="0" startdelaymax="0" angularvelocitymin="0" angularvelocitymax="0" rotatetodirection="False" drag="0" waterdrag="0" velocitychangewater="0,1" collisionradius="1" deleteoncollision="False" friction="0.5" restitution="0.5" animduration="1" loopanim="True">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="384,254,128,128" />
+    </ekpulsecuttersmoke>
+    <eklaserborebreak lifetime="0.04" startdelaymin="0" startdelaymax="0" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="0" usecollision="False" deleteoncollision="False" friction="0.5" startsizemin="0.3,0.3" startsizemax="0.3,0.3" sizechangemin="-0.2,-0.2" sizechangemax="-0.2,-0.2" growtime="0" startcolor="255,200,200,200" endcolor="200,0,0,150" drawtarget="Both" blendstate="Additive" loopanim="False">
+      <sprite texture="%ModDir%/Particles/ek_muzzleflashlaser.png" sourcerect="0,0,256,256" premultiplyalpha="false" origin="0.5,0.5" />
+    </eklaserborebreak>
+    <eklaserboreflame lifetime="0.04" startdelaymin="0.01" startdelaymax="0.01" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="0" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="0" usecollision="False" deleteoncollision="False" friction="0.5" startsizemin="0.6,0.6" startsizemax="0.6,0.6" sizechangemin="0.8,0.8" sizechangemax="0.8,0.8" growtime="0.04" startcolor="255,200,200,200" endcolor="200,0,0,150" drawtarget="Both" blendstate="Additive" loopanim="False">
+      <sprite texture="%ModDir%/Particles/ek_muzzleflashgauss_flame.png" sourcerect="0,0,128,128" premultiplyalpha="false" origin="0,0.5" />
+      <sprite texture="%ModDir%/Particles/ek_muzzleflashgauss_flame.png" sourcerect="128,0,128,128" premultiplyalpha="false" origin="0,0.5" />
+      <sprite texture="%ModDir%/Particles/ek_muzzleflashgauss_flame.png" sourcerect="0,128,128,128" premultiplyalpha="false" origin="0,0.5" />
+      <sprite texture="%ModDir%/Particles/ek_muzzleflashgauss_flame.png" sourcerect="128,128,128,128" premultiplyalpha="false" origin="0,0.5" />
+    </eklaserboreflame>
+    <eklaserborespark lifetime="0.3" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="360" rotatetodirection="True" drag="0" waterdrag="0" velocitychange="0,-10" velocitychangewater="0,-10" collisionradius="1" usecollision="True" deleteoncollision="True" friction="0.5" restitution="0.5" startsizemin="0.2,0.1" startsizemax="0.4,0.2" sizechangemin="-0.25,-0.12" sizechangemax="-0.25,-0.12" growtime="0.05" startcolor="255,178,96,255" endcolor="255,178,96,255" drawtarget="Both" blendstate="Additive" startdelaymin="0" startdelaymax="0" animduration="1" loopanim="True">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="392,83,106,16" />
+    </eklaserborespark>
+    <eklaserboresmoke lifetime="1.5" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="360" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0.2" velocitychangewater="0,0.2" collisionradius="1" usecollision="False" deleteoncollision="False" friction="0.5" restitution="0.5" startsizemin="0.35,0.35" startsizemax="0.6,0.6" sizechangemin="0.1,0.1" sizechangemax="0.1,0.1" growtime="0.1" startcolor="202,231,255,255" endcolor="124,59,255,50" drawtarget="Both" drawontop="True" blendstate="AlphaBlend" animduration="1.5" loopanim="True" startdelaymin="0" startdelaymax="0">
+      <animatedsprite texture="Content/Particles/Smoke.png" sourcerect="0,0,4096,4096" columns="8" rows="8" origin="0.5,0.5" />
+    </eklaserboresmoke>
+    <eklaserboreflare lifetime="0.08" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="-2" startrotationmax="2" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" usecollision="False" deleteoncollision="False" friction="0.5" restitution="0.5" startsizemin="0.3,0.3" startsizemax="0.6,0.6" sizechangemin="0,0" sizechangemax="0,0" growtime="0" startcolor="255,100,50,225" endcolor="200,0,0,75" drawtarget="Both" blendstate="Additive" animduration="1" loopanim="False">
+      <sprite texture="%ModDir%/Particles/ek_lightflare1.png" sourcerect="0,0,256,256" origin="0.5,0.5" premultiplyalpha="false" />
+    </eklaserboreflare>
+    <ekutilitysmokefixed startsizemin="0.3,0.3" startsizemax="0.4,0.4" sizechangemin="0.1,0.1" sizechangemax="0.2,0.2" startrotationmin="0" startrotationmax="360" startcolor="255,255,255,255" endcolor="255,255,255,0" growtime="0.2" lifetime="2" usecollision="True" collisionradius="50" velocitychange="0,0.5" animduration="2" friction="0.01" restitution="0.01" loopanim="False" startdelaymin="0" startdelaymax="0" angularvelocitymin="0" angularvelocitymax="0" rotatetodirection="False" drag="0" waterdrag="0" velocitychangewater="0,0.5" deleteoncollision="False" drawtarget="Air" blendstate="AlphaBlend" drawontop="False" lifetimemin="0" middlecolor="255,255,255,255" usemiddlecolor="False" priority="0">
+      <animatedsprite texture="Content/Particles/SmokeParticleSheet.png" sourcerect="0,0,1024,1024" columns="5" rows="5" />
+    </ekutilitysmokefixed>
+    <ekutility_sprinklerdrops lifetime="3" lifetimemin="2" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="0" rotatetodirection="True" drag="0" waterdrag="0.3" velocitychange="0,-9" velocitychangewater="0,-5" collisionradius="15" usecollision="True" deleteoncollision="True" friction="0.5" restitution="0.2" startsizemin="0.6,0.4" startsizemax="0.6,0.4" sizechangemin="0.3,0.3" sizechangemax="0.3,0.3" growtime="0.05" startcolor="255,255,255,125" middlecolor="255,255,255,75" endcolor="255,255,255,0" usemiddlecolor="False" drawtarget="Air" blendstate="AlphaBlend" animduration="1" loopanim="True" startdelaymin="0" startdelaymax="0" drawontop="False" priority="0">
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="0,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="32,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="64,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="96,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="128,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="160,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="192,96,32,32" />
+      <sprite texture="Content/Particles/ParticleAtlas.png" sourcerect="224,96,32,32" />
+    </ekutility_sprinklerdrops>
+    <EKR_tracernucleargun lifetime="0.4" startdelaymin="0" startdelaymax="0" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="0" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="1" usecollision="False" deleteoncollision="False" friction="0.5" restitution="0.5" startsizemin="0.75,0.15" startsizemax="0.75,0.15" growtime="0.02" startcolor="200,255,255,180" endcolor="255,255,255,0" drawtarget="Both" drawontop="True" blendstate="Additive" loopanim="False" lifetimemin="0" sizechangemin="1,-1" sizechangemax="1,-1" middlecolor="255,255,255,255" usemiddlecolor="False" animduration="1" priority="0">
+      <sprite name="tracernucleargun" texture="Content/Particles/ParticleAtlas.png" sourcerect="144,440,1,68" origin="0.5,0.5" />
+    </EKR_tracernucleargun>
+  </prefabs>
+</Override>

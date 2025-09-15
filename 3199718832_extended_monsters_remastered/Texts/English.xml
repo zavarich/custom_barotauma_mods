@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- Loading Screen Tips -->
+  <loadingscreentip>The Ice crabs communicate with each other using unique ecolocation sounds that are very loud and could echo inside sailors ears.</loadingscreentip>
+  <loadingscreentip>Ice crab shells emits a high level of carbon dioxide that could suck the oxygen out of a room. Be sure to get rid of the shell if it dies inside!</loadingscreentip>
+  <loadingscreentip>Shadow Leeches can be invisible on sonar and break into doors easily. They are easily identifiable from the sounds they make.</loadingscreentip>
+  <loadingscreentip>Paralytic Sharks are keen predators of the Europan Ridge. Their bites can paralyze their prey and prevent them from escaping. Killing them will make their bulbous sacs blow up and paralyze any living thing around it.</loadingscreentip>
+  <loadingscreentip>The Shadow Whale are typical large creatures that can be found mostly in the abyss and Great Sea. However, due to their unique construction and sleek black body, it makes it almost unoticable on sonar.</loadingscreentip>
+  <loadingscreentip>The Great Sea is home to the very large and exquisite Void Leviathans. Their cries could be heard from very far away and their large gaping mouth could suck in almost anything in its path.</loadingscreentip>
+  <loadingscreentip>It said that the Heart of Europa is alive and angry. What do they mean by this?</loadingscreentip>
+  <loadingscreentip>Brain moss can poison divers with multiple toxins and come in different forms.</loadingscreentip>
+  <loadingscreentip>Magmalarva can burn indefinetly if inside the ship so great caution is advised if encountering multiple of them.</loadingscreentip>
+  <loadingscreentip>Stone Wanderers are strange exquisite creatures that could be encounter in many sizes from Cold Cavern to the Aphotic Plateau. However, their aggressive behavior towards ships and their rockhard shells make them very dangerous when traveling near them.</loadingscreentip>
+  <loadingscreentip>Thermal Eels are deep sea photic creatures that constantly hunt for ever existing game within the Hydrothermal Wastes. Their notorious for their terrifying looks and their bites transfers a mysterious toxin.</loadingscreentip>
+  <loadingscreentip>There are rumors that some missing submarines have reappeared, broadcasting distress beacon. Those who encountered them reported that the submarines were taken over by unknown creatures.</loadingscreentip>
+  <loadingscreentip>The Fractal Twins ruthlessly execute the program left within them — to eliminate all living organisms.</loadingscreentip>
+  <loadingscreentip>In the depths of Europa, where shallow waters rarely reach, enormous creatures roam freely, weaving between the channels.</loadingscreentip>
+  <!-- Afflictions -->
+  <afflictionname.Extendedcarrierbeacon>Distress Beacon</afflictionname.Extendedcarrierbeacon>
+  <afflictiondescription.Extendedcarrierbeacon>You heard a jumble of distress signals...</afflictiondescription.Extendedcarrierbeacon>
+  <afflictionname.consumed>Consumed</afflictionname.consumed>
+  <afflictiondescription.consumed>You are being eaten alive...</afflictiondescription.consumed>
+  <!-- Characters -->
+  <character.Abysswatcher>Abyss Gazer</character.Abysswatcher>
+  <character.Brainmoss>Brain Moss</character.Brainmoss>
+  <character.Carriernew>Husk Carrier</character.Carriernew>
+  <character.Charybdissavage>Savage Scylla</character.Charybdissavage>
+  <character.Charybdissmall>Scylla Baby</character.Charybdissmall>
+  <character.Endwormcoral>Glacial Crevice Worm</character.Endwormcoral>
+  <character.Coralshrimp>Coral Shrimp</character.Coralshrimp>
+  <character.Epicentrum>Epicentrum</character.Epicentrum>
+  <character.Fractalannihilator>Fractal Annihilator</character.Fractalannihilator>
+  <character.Fractaldestroyer>Fractal Destroyer</character.Fractaldestroyer>
+  <character.Icecrab>Ice Crab</character.Icecrab>
+  <character.Magmalarva>Magma Larva</character.Magmalarva>
+  <character.Magmaworm>Magma Worm</character.Magmaworm>
+  <character.Mantisnew>Mantis Shrimp</character.Mantisnew>
+  <character.Paralyticshark>Paralytic Shark</character.Paralyticshark>
+  <character.Shadowleech>Shadow Leech</character.Shadowleech>
+  <character.Shadowwhale>Shadow Whale</character.Shadowwhale>
+  <character.Shadowwhalebaby>Shadow Whale Baby</character.Shadowwhalebaby>
+  <character.Stonewanderer>Stone Wanderer</character.Stonewanderer>
+  <character.Thalamuscarrier>Thalamus Carrier</character.Thalamuscarrier>
+  <character.Thermaleel>Thermal Eel</character.Thermaleel>
+  <character.Turretcarrier>Turret Carrier</character.Turretcarrier>
+  <character.Voidleviathan>Void Leviathan</character.Voidleviathan>
+  <!-- Missions -->
+  <missionname.killicecrab>Migrating Ice Crabs</missionname.killicecrab>
+  <missiondescription.killicecrab>Scouts have reported of a swarm of Icecrabs wandering the area between [location1] and [location2]. We need this crabmeat to fill our bellies. The authorities are offering a reward of [reward] marks to any submarine that takes out the swarm.</missiondescription.killicecrab>
+  <missionsonarlabel.killicecrab>Ice Crab</missionsonarlabel.killicecrab>
+  <missionname.killbrainmoss>Moss Outbreak!</missionname.killbrainmoss>
+  <missiondescription.killbrainmoss>Scouts have reported of a large swarm of brainmosses breakout from a thalamus wreck, they are wandering the area between [location1] and [location2]. These Brainmosses can emit dangerous radiations and other unknown psychoactive effect. The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm.</missiondescription.killbrainmoss>
+  <missionsonarlabel.killbrainmoss>Brainmoss</missionsonarlabel.killbrainmoss>
+  <missionname.killmagmalarva>Mass Deworming</missionname.killmagmalarva>
+  <missiondescription.killmagmalarva>Scouts have reported of a large swarm of Magmalarva wandering the area between [location1] and [location2]. These creatures can cause high-temperature burns and even set submarines on fire! The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm.</missiondescription.killmagmalarva>
+  <missionsonarlabel.killmagmalarva>Magma Larva</missionsonarlabel.killmagmalarva>
+  <missionname.killthermaleel>Thermal Eels Removal</missionname.killthermaleel>
+  <missiondescription.killthermaleel>Scouts have reported of a large swarm of Thermal Eels wandering the area between [location1] and [location2]. These creatures are photosensitive creatures living in darkness. The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm.</missiondescription.killthermaleel>
+  <missionsonarlabel.killthermaleel>Thermal Eel</missionsonarlabel.killthermaleel>
+  <missionname.killshadowwhale>Into the shadows</missionname.killshadowwhale>
+  <missiondescription.killshadowwhale>Scouts have reported of a large swarm of Shadow Whales wandering the area between [location1] and [location2]. These Whales are invisible on sonar and can pose a big threat towards unprepared ships. The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm.</missiondescription.killshadowwhale>
+  <missionsonarlabel.killshadowwhale>Shadow Whale</missionsonarlabel.killshadowwhale>
+  <missionname.killstonewanderer>Floating Stones</missionname.killstonewanderer>
+  <missiondescription.killstonewanderer>Scouts have reported of some weird stones floating around the area between [location1] and [location2]. This situation had a negative impact on commercial lines, The authorities are offering a reward of [reward] marks to any submarine that clears these obstacles.</missiondescription.killstonewanderer>
+  <missionsonarlabel.killstonewanderer>Floating Stone</missionsonarlabel.killstonewanderer>
+  <missionname.killparalyticshark>Shark hunting</missionname.killparalyticshark>
+  <missiondescription.killparalyticshark>Scouts have reported of some Paralytic Sharks that wandering the area between [location1] and [location2]. They attack passing ships, paralyze the crew and eat them, causing huge losses. The authorities are offering a reward of [reward] marks to any submarine that eliminiates these creatures.</missiondescription.killparalyticshark>
+  <missionsonarlabel.killparalyticshark>Paralytic Shark</missionsonarlabel.killparalyticshark>
+  <missionname.killcarriernew>Silent Hope</missionname.killcarriernew>
+  <missiondescription.killcarriernew>Scouts have reported that several small shuttles carrying researchers have recently gone missing in the waters between [location1] and [location2]. The authorities are offering a reward of [reward] marks to any submarine that can investigate the matter.</missiondescription.killcarriernew>
+  <missionsonarlabel.killcarriernew>Lost Shuttles</missionsonarlabel.killcarriernew>
+  <missionname.killthalamuscarrier>Terminate a Infested Submarine</missionname.killthalamuscarrier>
+  <missiondescription.killthalamuscarrier>Scouts have reported of a large Wrecked Dugong that has been taken over by infestated growth. It is now still moving around [location1] and [location2] and the authorities are offering a reward of [reward] marks to any submarine that takes out the mobile thalamus. Be warned that it has a hook on its front side and must be approached carefully.</missiondescription.killthalamuscarrier>
+  <missionsonarlabel.killthalamuscarrier>Thalamus Carrier</missionsonarlabel.killthalamuscarrier>
+  <missionheader0.EMbeaconTroll>Wait, what was that noise?</missionheader0.EMbeaconTroll>
+  <missionmessage0.EMbeaconTroll>You feel something enormous approaching!</missionmessage0.EMbeaconTroll>
+  <missiondescription.EMhuntinggrounds1>Seismic readings in the area indicate an Leviathan size creature is within the area. All routes to [location1] and [location2] are closed off until the creature is eliminated. Administrators are rewarding a hefty [reward] marks to anyone who can kill the creature.</missiondescription.EMhuntinggrounds1>
+  <missiondescription.EMhuntinggrounds2>Nearby beacon stations have reported unusual Electromagnetic readings and massive electricity faults in their systems. They warned that there could be a Leviathan size creature between [location1] and [location2] emitting large amounts of electromagnetic pulses. Authorities have blocked off the route and are awarding [reward] marks to whoever can eliminate the creature.</missiondescription.EMhuntinggrounds2>
+  <missiondescription.EMhuntinggrounds3>Nearby beacon stations have reported unusual Pulse readings and massive electricity faults in their systems. They warned that there could be a Leviathan size creature between [location1] and [location2] emitting large amounts of electromagnetic pulses. Authorities have blocked off the route and are awarding [reward] marks to whoever can eliminate the creature.</missiondescription.EMhuntinggrounds3>
+  <missiondescription.EMhuntinggrounds4>Seismic readings in the area indicate an Colossal size creature is within the area. All routes to [location1] and [location2] are closed off until the creature is eliminated. Administrators are rewarding a hefty [reward] marks to anyone who can kill the creature.</missiondescription.EMhuntinggrounds4>
+  <missionsonarlabel.surprisecharybdis>Ultrasonic signal</missionsonarlabel.surprisecharybdis>
+  <missionsuccess.surprisecharybdis>It turns out the signal was emitted by a massive monster. The researchers of [location1] have agreed to pay you the reward of [reward] marks nevertheless for getting rid of the problem.</missionsuccess.surprisecharybdis>
+  <missionmessage0.surprisecharybdis>Turns out the signal was emitted by a Scylla! You should navigate out of the cavern and inform the researchers.</missionmessage0.surprisecharybdis>
+  <missionsonarlabel.surpriseendworm>Ultrasonic signal</missionsonarlabel.surpriseendworm>
+  <missionsuccess.surpriseendworm>It turns out the signal was emitted by a massive monster. The researchers of [location1] have agreed to pay you the reward of [reward] marks nevertheless for getting rid of the problem.</missionsuccess.surpriseendworm>
+  <missionmessage0.surpriseendworm>Turns out the signal was emitted by a Glacial Crevice Worm! You should navigate out of the cavern and inform the researchers.</missionmessage0.surpriseendworm>
+  <missionname.killvoidleviathan>Beast from the Abyss</missionname.killvoidleviathan>
+  <missiondescription.killvoidleviathan>Seismic readings are indicating that something enormous has emerged from the depths of Europa into the passageway between [location1] and [location2]. All transports through the passageway have been canceled for now and a reward of [reward] marks has been promised to those who get rid of whatever is causing the seismic activity.</missiondescription.killvoidleviathan>
+  <missionsonarlabel.killvoidleviathan>Seismic Activity</missionsonarlabel.killvoidleviathan>
+  <missionsuccess.killvoidleviathan>The Leviathan is dead and the passageway is open for transport again.</missionsuccess.killvoidleviathan>
+  <missionname.killepicentrum>Heart of Europa</missionname.killepicentrum>
+  <missiondescription.killepicentrum>An unprecedented strong seismic signal appeared between [location1] and [location2]. Rumors spread that the Heart of Europa has awakened. All commercial lines have been ceased and authorities are offering a hefty [reward] marks to whoever can investigate the incidence.</missiondescription.killepicentrum>
+  <missionsonarlabel.killepicentrum>Seismic Signal</missionsonarlabel.killepicentrum>
+  <missionsuccess.killepicentrum>The core of Europa has once again returned dormant.</missionsuccess.killepicentrum>
+  <missionname.killfractalannihilator>The Resurrection</missionname.killfractalannihilator>
+  <missiondescription.killfractalannihilator>Research vessels have reported a defeated large Fractal Annihilator has been brought back to life between [location1] and [location2]! Authorities are offering [reward] marks to whoever can eliminate the large mobile creature before it causes havoc on the nearby outposts.</missiondescription.killfractalannihilator>
+  <missionsonarlabel.killfractalannihilator>Electromagnetic Field</missionsonarlabel.killfractalannihilator>
+  <missionsuccess.killfractalannihilator>The Fractal Annihilator is incapacitated, it seems...</missionsuccess.killfractalannihilator>
+  <missionname.killfractaldestroyer>The Exterminator</missionname.killfractaldestroyer>
+  <missiondescription.killfractaldestroyer>A few days ago, some researchers removed an artifact from an Alienruin between [location1] and [location2], unexpectedly activating a dormant Fractal Destroyer, resulting in only a few people narrowly escaping death. Now it rampages through, eliminating all living beings it encounters, posing a significant threat to the safety of the outpost. Authorities are offering [reward] marks to anyone who can eliminate it.</missiondescription.killfractaldestroyer>
+  <missionsonarlabel.killfractaldestroyer>Electromagnetic Field</missionsonarlabel.killfractaldestroyer>
+  <missionsuccess.killfractaldestroyer>The rampaging Fractal Destroyer has finally been destroyed.</missionsuccess.killfractaldestroyer>
+  <missionname.didymos>Didymos</missionname.didymos>
+  <missiondescription.didymos>Legend has it that when the moons of Jupiter align, the powerful gravitational forces awaken the ancient Colossal Fractal Guardians placed in the depths of Europa's ocean. Now, the time for Ganymede and Europa to meet has arrived, and we should be prepared. Authorities will offer a reward of [reward] marks to anyone who neutralize the Fractal Guardians along the navigation route.</missiondescription.didymos>
+  <missionsonarlabel.didymos>Fractal Colossus</missionsonarlabel.didymos>
+  <missionsuccess.didymos>Let's hope we can be prepared before the next catastrophe arrives.</missionsuccess.didymos>
+  <missionmessage0.didymos>The twins are dead. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.didymos>
+  <!-- Items -->
+  <entityname.k_em_coelanthfang>Coelanth fang</entityname.k_em_coelanthfang>
+  <entitydescription.k_em_coelanthfang>The sharp teeth of Coelanth, getting bitten by this thing must be unpleasant...</entitydescription.k_em_coelanthfang>
+  <entityname.k_em_thalamusthorn>Thalamus thorn</entityname.k_em_thalamusthorn>
+  <entitydescription.k_em_thalamusthorn>The thorn grown by Thalamic creatures, can be deconstructed into useful materials.</entitydescription.k_em_thalamusthorn>
+  <entityname.k_em_thalamusstump>Thalamus stump</entityname.k_em_thalamusstump>
+  <entitydescription.k_em_thalamusstump>The stump grown by Thalamic creatures, can be deconstructed into useful materials.</entitydescription.k_em_thalamusstump>
+  <entityname.k_em_magmawormfin>Magmaworm fin</entityname.k_em_magmawormfin>
+  <entitydescription.k_em_magmawormfin>The fin of Magmaworm, still emiting residual warmth.</entitydescription.k_em_magmawormfin>
+  <entityname.k_em_magmalarvatendril>Heat tendril</entityname.k_em_magmalarvatendril>
+  <entitydescription.k_em_magmalarvatendril>The tendril of Magmalarva, seems it can still cause a fire...</entitydescription.k_em_magmalarvatendril>
+  <entityname.k_em_fractalsensor>Fractal sensor</entityname.k_em_fractalsensor>
+  <entitydescription.k_em_fractalsensor>The sensor of Fractal creatures, can be deconstructed into useful materials.</entitydescription.k_em_fractalsensor>
+  <entityname.k_em_fractalthorn>Fractal thorn</entityname.k_em_fractalthorn>
+  <entitydescription.k_em_fractalthorn>The thorn of Fractal creatures, can be deconstructed into useful materials.</entitydescription.k_em_fractalthorn>
+  <entityname.k_em_charybdisfang>Scylla Fang</entityname.k_em_charybdisfang>
+  <entitydescription.k_em_charybdisfang>The fang belonging to Scylla. It is large and spikey, can be used as a makeshift weapon.</entitydescription.k_em_charybdisfang>
+  <entityname.k_em_charybdissavagefang>Savage Scylla fang</entityname.k_em_charybdissavagefang>
+  <entitydescription.k_em_charybdissavagefang>The crimson fang of Savage Scylla, better not to wave this thing around in front of your teammates...</entitydescription.k_em_charybdissavagefang>
+  <entityname.k_em_endwormfang>Coralworm Chelicera</entityname.k_em_endwormfang>
+  <entitydescription.k_em_endwormfang>The huge Chelicera of Coralworm, this thing is bigger than you!</entitydescription.k_em_endwormfang>
+  <entityname.k_em_icecrabclaw>Ice Crab claw</entityname.k_em_icecrabclaw>
+  <entitydescription.k_em_icecrabclaw>The claw of Ice crab, Mmm, delicious crabmeat...</entitydescription.k_em_icecrabclaw>
+  <entityname.k_em_iceshell>Ice Shell</entityname.k_em_iceshell>
+  <entitydescription.k_em_iceshell>The shell of Ice crab, it feels so cold to touch, almost suffocating...</entitydescription.k_em_iceshell>
+  <entityname.k_em_shadowoil>Shadow Whale oil</entityname.k_em_shadowoil>
+  <entitydescription.k_em_shadowoil>The viscous oil of Shadow creatures, said to contain radioactive elements.</entitydescription.k_em_shadowoil>
+  <entityname.k_em_shadowthorn>Shadow thorn</entityname.k_em_shadowthorn>
+  <entitydescription.k_em_shadowthorn>The thorn grown by Shadow Leech, can be deconstructed into useful materials.</entitydescription.k_em_shadowthorn>
+  <entityname.k_em_wanderereye>Wanderer Eye</entityname.k_em_wanderereye>
+  <entitydescription.k_em_wanderereye>The eye of Wanderer, even though been removed, it seems to still be staring at you.</entitydescription.k_em_wanderereye>
+  <entityname.k_em_paragland>Paralysis gland</entityname.k_em_paragland>
+  <entitydescription.k_em_paragland>The large gland of Paralytic Shark, rich in paralyzing substances. Should be able to fetch a good price on the black market.</entitydescription.k_em_paragland>
+  <entityname.k_em_thereelmask>Thermal Eel head</entityname.k_em_thereelmask>
+  <entitydescription.k_em_thereelmask>The head of Thermal Eel, illusion or not, you can still hear that spine-chilling sound of its former owner.</entitydescription.k_em_thereelmask>
+</infotexts>

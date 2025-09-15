@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <!-- PUT ALL THE EVENTS FOR TESTING HERE -->
+  <EventPrefabs>
+    <!-- CHEAT COMMANDS -->
+    <!-- CHEAT COMMANDS -->
+    <!-- CHEAT COMMANDS -->
+    <!-- CHEAT COMMANDS -->
+    <!-- ONLY EXISTS FOR EASY UNLOCKING OF PATH IF PEOPLE BROKE THEIR MAP AND THERE'S NO BLOCKADE -->
+    <ScriptedEvent identifier="blockade_unstuck" commonness="0">
+      <TagAction criteria="player" tag="player" />
+      <UnlockPathAction />
+      <ConversationAction text="This command only works in an outpost bordering the new biome. If you have no outpost, open console and type togglecampaignteleport to teleport to the other biome" targettag="player" dialogtype="Regular" endconversation="true" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="getnewtakeovermission" commonness="0">
+      <TagAction criteria="player" tag="player" />
+      <ConversationAction text="Only use this if your takeover mission is unreachable. This will give you another mission (in another location hopefully), but will not remove the current one. You have to be ahead of the old mission for this to work." targettag="player" dialogtype="Regular" endconversation="true" />
+      <CheckReputationAction TargetType="Faction" identifier="coalition" condition="lte -30">
+        <Success>
+          <MissionAction missionidentifier="septakeover_coalitionoutpost" locationtype="city,research,military,colony,base,blockade,hospital,factory,shipyard" requiredfaction="coalition" minlocationdistance="1" CreateLocationIfNotFound="true" />
+        </Success>
+      </CheckReputationAction>
+      <CheckReputationAction TargetType="Faction" identifier="separatists" condition="lte -30">
+        <Success>
+          <MissionAction missionidentifier="cotakeover_separatistoutpost" locationtype="city,research,military,colony,base,blockade,hospital,factory,shipyard" requiredfaction="separatists" minlocationdistance="1" CreateLocationIfNotFound="true" />
+        </Success>
+      </CheckReputationAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="takeovertestcoal">
+      <MissionAction missionidentifier="cotakeover_separatistoutpost" locationtype="city,research,military,colony,base,blockade,hospital,factory,shipyard" requiredfaction="separatists" minlocationdistance="1" CreateLocationIfNotFound="true" />
+      <SpawnAction NPCSetIdentifier="de_coalitioncombat" NPCIdentifier="tempsoldiercoalition" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <WaitAction time="1" />
+      <SpawnAction NPCSetIdentifier="de_coalitioncombat" NPCIdentifier="tempsoldiercoalition" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <WaitAction time="1" />
+      <SpawnAction NPCSetIdentifier="de_coalitioncombat" NPCIdentifier="tempsoldiercoalition" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <WaitAction time="1" />
+      <SpawnAction NPCSetIdentifier="de_coalitioncombat" NPCIdentifier="tempsoldiercoalition" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <WaitAction time="1" />
+      <SpawnAction NPCSetIdentifier="de_coalitioncombat" NPCIdentifier="tempsoldiercoalition" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <TagAction criteria="hullname:airlock" tag="subairlock" submarinetype="Player" ContinueIfNoTargetsFound="true" />
+      <NPCFollowAction npctag="tempcrew" targettag="subairlock" follow="true" />
+      <WaitAction time="2" />
+      <NPCFollowAction npctag="tempcrew" targettag="subairlock" follow="false" />
+      <NPCChangeTeamAction npctag="tempcrew" teamtag="Team1" addtocrew="true" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="spawnescortboy">
+      <SpawnAction NPCSetIdentifier="customnpcs" NPCIdentifier="escortboy" TargetTag="tempcrew" SpawnLocation="MainSub" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <WaitAction time="1" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="forcesayTEST">
+      <TagAction criteria="player" tag="player" />
+      <Label name="keeptalking" />
+      <StatusEffectAction targettag="player">
+        <StatusEffect target="this">
+          <Forcesay message="eventtext.forcesayTEST.testing" sayinradio="true" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <WaitAction time="1" />
+      <Goto name="keeptalking" />
+    </ScriptedEvent>
+    <!-- change the missionidentifier and value to test mission "states" -->
+    <ScriptedEvent identifier="missionstateeventTEST">
+      <MissionStateAction missionidentifier="escortorangeboys" operation="Set" value="0" />
+    </ScriptedEvent>
+    <!-- test for militaryforces, unused -->
+    <!-- <PirateMission
+    type="Pirate"
+    identifier="militarypatrol2"
+    tags="militarypatrol"
+    showinmenus="false"
+    showstartmessage="false"
+    issideobjective="true"
+    achievementidentifier="combatmissionseparatistsvscoalition"
+    difficulty="4"
+    commonness="0"
+    reward="0"
+    addedmissiondifficultyperplayer="8">
+    <Reputation identifier="separatists" amount="10" amountforopposingfaction="-10" />
+    <SubmarineTypes>
+      <Submarine path="Content/Map/EnemySubmarines/DugongPirate.sub" faction="coalition" preferreddifficulty="10" alternatereward="3200"/>
+    </SubmarineTypes>
+    <Characters>
+      <Character typeidentifier="coalitioncaptain" minamount="1" maxamount="1"/>
+    </Characters>
+    <CharacterTypes>
+      <CharacterType typeidentifier="coalitioncaptain">
+        <Character identifier="coalitioncaptain" from="combatmissioncoalitionnpcs" preferreddifficulty="50" iscommander="true" />
+      </CharacterType>
+    </CharacterTypes>
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
+    <message header="missionheader0.pirate1" text="missionmessage0.pirate1"/>
+    <message header="missionheader1.pirate1" text="missionmessage1.pirate1"/>
+    <LocationType from="AnyOutpost" to="MilitaryForces" />
+  </PirateMission> -->
+    <ScriptedEvent identifier="testcheckselected">
+      <TagAction criteria="player" tag="player" />
+      <TagAction criteria="itemtag:hiddenalienpylon" tag="hiddenalienpylon" />
+      <TutorialHighlightAction targettag="hiddenalienpylon" />
+      <Label name="beforecheck" />
+      <WaitAction time="1" />
+      <CheckSelectedAction targettag="hiddenalienpylon" charactertag="player">
+        <Success>
+          <ConversationAction targettag="player" text="tutorial.basics.endmessage.1" eventsprite="captain" />
+        </Success>
+        <Failure>
+          <GoTo name="beforecheck" />
+        </Failure>
+      </CheckSelectedAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="TAKEOVERRADIODATATEST">
+      <SetDataAction identifier="completedcoalitiontakeover" operation="Add" value="1" />
+      <SetDataAction identifier="completedseparatiststakeover" operation="Add" value="1" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="MISSIONSTATEACTIONTEST">
+      <MissionStateAction missionidentifier="hostagesituation" operation="Set" value="5" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="soldierspawnTEST">
+      <SpawnAction NPCSetIdentifier="de_coalitioncombat" NPCIdentifier="soldiercoalition" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="Team1" addtocrew="true" />
+      <SpawnAction NPCSetIdentifier="de_separatistscombat" NPCIdentifier="soldierseparatists" LootingIsStealing="True" TargetTag="tempcrew" SpawnLocation="Outpost" TeamID="Team1" addtocrew="true" />
+      <NPCChangeTeamAction npctag="tempcrew" teamid="Team1" addtocrew="true" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_industrialincidentTEST" requiredDestinationTypes="factory,shipyard">
+      <MissionAction missionidentifier="industrialincident" locationtype="factory,shipyard" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="pinkindustrialsTEST" commonness="50">
+      <TagAction criteria="itemtag:junctionbox" tag="pinkthis" SubmarineType="Outpost" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemtag:fabricator" tag="pinkthis" SubmarineType="Outpost" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemtag:deconstructor" tag="pinkthis" SubmarineType="Outpost" ContinueIfNoTargetsFound="true" />
+      <TagAction criteria="itemtag:reactor" tag="pinkthis" SubmarineType="Outpost" ContinueIfNoTargetsFound="true" />
+      <StatusEffectAction targettag="pinkthis">
+        <StatusEffect target="This" spritecolor="255,0,255,255" setvalue="true" />
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_hostagesituationTEST" requiredDestinationTypes="settlement,colony,research,hospital,hydroponics,factory,shipyard">
+      <MissionAction missionidentifier="hostagesituation" locationtype="settlement,colony,research,hospital,hydroponics,factory,shipyard" requiredfaction="Coalition" minlocationdistance="1" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="eventiconsTEST">
+      <TagAction criteria="player" tag="player" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="GuyWithAlcohol" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="MysteryWoman" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="MysteryMan" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="MysteryMan2" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="ScrapMetal" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="piratehaven" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="bandittalk" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="radiocall" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="sonar" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="subblueprint" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="hitthelever" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="bloodycuffs" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="firefight" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="traitoress" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="hostage" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="huskoutbreak" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="brokenmachinery" endconversation="true" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="malfunction" endconversation="true" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="traitorlikeeventTEST">
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="256,0,256,256" color="200,150,0,255" />
+      <TagAction criteria="player" tag="player" />
+      <ConversationAction targettag="player" text="Testing" eventsprite="GuyWithAlcohol" dialogtype="Regular" endconversation="true" />
+      <EventLogAction targettag="player" id="initialinfo" text="EventText.bakingstation.objective1" />
+      <EventObjectiveAction targettag="player" type="add" id="traitorobjective.bakingstation.meltdown" />
+      <OnRoundEndAction>
+        <GiveExpAction targettag="player" amount="5000" />
+        <EventLogAction targettag="player" id="success" text="EventText.bakingstation.objective2" />
+        <EventObjectiveAction targettag="player" type="remove" id="traitorobjective.bakingstation.meltdown" />
+      </OnRoundEndAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="operateTEST">
+      <SpawnAction NPCSetIdentifier="customnpcs" NPCIdentifier="scrapdealer" targettag="controllernpc" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" targetmoduletags="crewmodule" />
+      <WaitAction time="1" />
+      <SpawnAction itemidentifier="rum" SpawnPointTag="controllernpc" targettag="controlleditem" offset="100" />
+      <WaitAction time="1" />
+      <NPCOperateItemAction npctag="controllernpc" targettag="controlleditem" ItemComponentName="Holdable" operate="true" OrderOption="" RequireEquip="true" />
+      <WaitAction time="1" />
+      <!-- <NPCOperateItemAction npctag="controllernpc" targettag="controlleditem" ItemComponentName="Holdable" operate="false" OrderOption="" RequireEquip="true"/> -->
+      <!-- <NPCWaitAction npctag="controllernpc" wait="true" priority="50"/> -->
+    </ScriptedEvent>
+    <ScriptedEvent identifier="jobboardTEST" commonness="100">
+      <TagAction criteria="itemidentifier:de-jobboard" tag="potentialjobboard" />
+      <TagAction criteria="player" tag="player" />
+      <StatusEffectAction targettag="potentialjobboard">
+        <StatusEffect target="This" noninteractable="false" setvalue="true" />
+      </StatusEffectAction>
+      <TriggerAction target1tag="potentialjobboard" target2tag="player" waitforinteraction="true" radius="500" />
+      <StatusEffectAction targettag="potentialjobboard">
+        <StatusEffect target="This" noninteractable="true" condition="-100" setvalue="true">
+          <Sound file="Content/Items/Medical/ITEM_proteinBarOpen.ogg" range="500" volume="1.5" frequencymultiplier="0.7" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="huskinfectionTEST">
+      <TagAction criteria="player" tag="player" />
+      <AfflictionAction affliction="husktransformimmunity" strength="100" targettag="player" />
+      <AfflictionAction affliction="huskinfection" strength="90" targettag="player" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="mudraptorracing_TEST">
+      <TagAction criteria="player" tag="player" />
+      <TagAction criteria="itemtag:petfoodgun" tag="petfoodgun" />
+      <TagAction criteria="itemtag:raptorracelever" tag="raptorracelever" />
+      <TagAction criteria="itemtag:confettilauncher" tag="confettilauncher" />
+      <StatusEffectAction targettag="raptorracelever">
+        <StatusEffect target="this" duration="10">
+          <Sound file="Content/Sounds/ClubMusic_transitionScratch.ogg" range="1500" volume="3" frequencymultiplier="0.5" loop="true" dontmuffle="true" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <StatusEffectAction targettag="confettilauncher">
+        <StatusEffect target="this" duration="10">
+          <ParticleEmitter particle="whitespark" particlespersecond="10" velocitymin="250" velocitymax="400" anglemin="70" anglemax="110" scalemin="1" scalemax="2" distancemin="5" distancemax="250" colormultiplier="30,30,255,255" lifetimemultiplier="2" HighQualityCollisionDetection="true" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <StatusEffectAction targettag="confettilauncher">
+        <StatusEffect target="this" duration="10">
+          <ParticleEmitter particle="steamspray" particlespersecond="5" velocitymin="50" velocitymax="100" anglemin="260" anglemax="280" scalemin="0.8" scalemax="1.2" distancemin="0" distancemax="0" colormultiplier="30,30,255,255" lifetimemultiplier="2" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <WaitAction time="10" />
+      <!--       <SpawnAction speciesname="Mudraptorred" targettag="raceraptor" spawnlocation="Outpost" spawnpointtag="raceraptors" offset="50" />
+      <SpawnAction speciesname="Mudraptorgreen" targettag="raceraptor" spawnlocation="Outpost" spawnpointtag="raceraptors" offset="50" />
+      <SpawnAction speciesname="Mudraptorblue" targettag="raceraptor" spawnlocation="Outpost" spawnpointtag="raceraptors" offset="50" />
+      <WaitAction time="3" />
+      <StatusEffectAction targettag="petfoodgun">
+        <StatusEffect target="This" offset="30,0"> 
+          <Sound file="Content/Items/Weapons/Shotgunshot2.ogg" range="1500" volume="3" frequencymultiplier="0.5" dontmuffle="true"/>
+          <ParticleEmitter particle="weldspark" particleamount="20" anglemin="-20" anglemax="20" velocitymin="250" velocitymax="500" distancemin="0" distancemax="30" scalemin="1.5" scalemax="1.9" colormultiplier="255,200,225,180" lifetimemultiplier="2" />
+          <SpawnItem identifier="raptorrubberduck" spawnposition="This" impulse="1.1" />
+        </StatusEffect>
+      </StatusEffectAction>
+      <TagAction criteria="eventtag:raceraptor" tag="slowerraptor" submarinetype="Outpost" ChooseRandomExcludingTag="slowerraptor"  chooserandom="true"/>
+      <TagAction criteria="eventtag:raceraptor" tag="slowerraptor" submarinetype="Outpost" ChooseRandomExcludingTag="slowerraptor"  chooserandom="true"/>
+      <StatusEffectAction targettag="slowerraptor">
+        <StatusEffect target="This" speedmultiplier="0.7" duration="4" setvalue="true">
+          <Affliction identifier="psychosis" strength="100" />
+          <Affliction identifier="burn" strength="20" />
+        </StatusEffect>
+      </StatusEffectAction> -->
+    </ScriptedEvent>
+    <ScriptedEvent identifier="npcspawnerTEST">
+      <SpawnAction NPCSetIdentifier="customnpcs" NPCIdentifier="suitcaseman" LootingIsStealing="True" TargetTag="suitcaseman" SpawnLocation="Outpost" TeamID="FriendlyNPC" AllowDuplicates="True" />
+      <WaitAction time="1" />
+    </ScriptedEvent>
+    <!-- <ScriptedEvent identifier="laircrawlersoutsideTEST">
+      <SpawnAction speciesname="crawler" amount="3" SpawnLocation="MainPath" offset="500" />
+    </ScriptedEvent> -->
+  </EventPrefabs>
+</Randomevents>

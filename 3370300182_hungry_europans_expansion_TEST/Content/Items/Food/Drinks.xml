@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!--Non alcoholic-->
+    <Item name="Kvass" identifier="heexp-kvass" health="20" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="A bottle of delicious kvass." Tags="smallitem,drinkitem,bottle" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Fabricate suitablefabricators="stove" requiredtime="140" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="he-sugar" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="he-bread" Amount="1" />
+        <RequiredItem tag="emptybottlecommon" Amount="1" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <Sprite texture="%:3370300182%/Content/Items/Food/Drinks.png" sourcerect="0,0,22,58" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="0,0,22,58" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir%/Content/Items/Food/Drinks.png" sourcerect="0,0,22,58" depth="0.525" origin="0.5,0.8" />
+      <BrokenSprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="22,2,22,56" depth="0.6" maxcondition="99" />
+      <ContainedSprite allowedcontainertags="liquorshelf" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="0,0,22,58" depth="0.55" origin="0.5,0.42" />
+      <Body width="22" height="58" density="15" />
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" aimpos="32,28" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- When used in Health GUI -->
+        <StatusEffect type="OnSuccess" target="This" Condition="-2.0" disabledeltatime="true">
+          <Sound file="Content/Sounds/Water/Splash1.ogg" range="500" volume="0.5" frequencymultiplier="2" selectionmode="random" />
+          <Sound file="Content/Sounds/Water/Splash4.ogg" range="500" volume="0.5" frequencymultiplier="2" selectionmode="random" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" duration="1" comparison="And">
+          <Conditional IsBot="true" />
+          <Conditional stun="gt 0" />
+          <ReduceAffliction identifier="drunk" amount="1.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="1.5" />
+          <ReduceAffliction identifier="hallucinating" amount="1.5" />
+          <Affliction identifier="haste" amount="15.0" />
+          <ReduceAffliction type="thirst" amount="2.5" />
+          <Affliction identifier="fillbladder" amount="2.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Unbottle -->
+        <StatusEffect type="OnUse" target="This" Condition="10" aimangle="120" setvalue="true" oneshot="true">
+          <Conditional condition="gte 11" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/OpenBeerBottle1.ogg" loop="false" range="200" volume="1.5" selectionmode="Random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/OpenBeerBottle2.ogg" loop="false" range="200" volume="1.5" selectionmode="Random" />
+        </StatusEffect>
+        <!-- Regular drinking RMB after unbottle -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" aimpos="28,24">
+          <Conditional condition="lt 11" />
+          <ReduceAffliction identifier="drunk" amount="1.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="1.5" />
+          <ReduceAffliction identifier="hallucinating" amount="1.5" />
+          <Affliction identifier="haste" amount="15.0" />
+          <ReduceAffliction type="thirst" amount="2.5" />
+          <Affliction identifier="fillbladder" amount="2.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-emptybottle" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-5" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+        <Button text="interaction.breakbottle">
+          <StatusEffect type="OnUse" target="This">
+            <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+            <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+            <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+            <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+            <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+            <Remove />
+            <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="0.5" />
+            <SpawnItem identifier="he-shivbeer" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Equip="true" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <!--Blender-->
+    <Item name="" identifier="heexp-glassofbananajuice" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="416,8,17,34" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="416,8,17,34" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="416,8,17,34" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="25" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="banana" amount="1" UseCondition="True" MinCondition="0.5" />
+        <RequiredItem identifier="he-emptyglass" amount="1" UseCondition="False" MinCondition="0.0" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="1.5" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.75" />
+          <ReduceAffliction identifier="drunk" amount="0.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="0.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.1" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.1" />
+          <Affliction identifier="he-sugarrich" amount="20.0" />
+          <Affliction identifier="fillbladder" amount="1.5" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="heexp-glassofpomegrenadejuice" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="438,8,17,34" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="438,8,17,34" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="438,8,17,34" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="10" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="creepingorange" amount="1" UseCondition="True" MinCondition="0.5" />
+        <RequiredItem identifier="he-emptyglass" amount="1" UseCondition="False" MinCondition="0.0" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="2.5" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.25" />
+          <ReduceAffliction identifier="drunk" amount="0.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="0.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.1" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.1" />
+          <Affliction identifier="he-sugarrich" amount="10.0" />
+          <Affliction identifier="fillbladder" amount="3.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="heexp-glassoflumofruitjuice" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="482,8,17,34" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="482,8,17,34" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="482,8,17,34" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="90" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="heexp-lumofruit" amount="1" UseCondition="True" MinCondition="0.5" />
+        <RequiredItem identifier="he-emptyglass" amount="1" UseCondition="False" MinCondition="0.0" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="5.5" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.15" />
+          <ReduceAffliction identifier="drunk" amount="1.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="1.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.25" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.25" />
+          <Affliction identifier="he-sugarrich" amount="45.0" />
+          <Affliction identifier="fillbladder" amount="1.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="heexp-glassofpomegrenademilkshake" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="396,53,22,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="396,53,22,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="396,53,22,40" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="65" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="he-emptyglass" amount="1" MinCondition="1.0" UseCondition="False" />
+        <RequiredItem identifier="he-milk" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="he-icecreamballpomegrenade" MinCondition="1" UseCondition="False" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="2.0" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.5" />
+          <ReduceAffliction identifier="drunk" amount="0.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="0.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.1" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.1" />
+          <Affliction identifier="he-sugarrich" amount="20.0" />
+          <Affliction identifier="fillbladder" amount="3.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="heexp-glassofmilkshake" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="424,53,22,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="424,53,22,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="424,53,22,40" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="50" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="he-emptyglass" amount="1" MinCondition="1.0" UseCondition="False" />
+        <RequiredItem identifier="he-milk" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="he-icecreamballmilky" MinCondition="1" UseCondition="False" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="2.0" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.5" />
+          <ReduceAffliction identifier="drunk" amount="0.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="0.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.1" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.1" />
+          <Affliction identifier="he-sugarrich" amount="17.5" />
+          <Affliction identifier="fillbladder" amount="3.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="heexp-glassofpopnutmilkshake" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="451,53,22,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="451,53,22,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="451,53,22,40" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="65" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="he-emptyglass" amount="1" MinCondition="1.0" UseCondition="False" />
+        <RequiredItem identifier="he-milk" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="he-icecreamballpopnut" MinCondition="1" UseCondition="False" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="2.0" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.5" />
+          <ReduceAffliction identifier="drunk" amount="0.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="0.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.1" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.1" />
+          <Affliction identifier="he-sugarrich" amount="25.0" />
+          <Affliction identifier="fillbladder" amount="3.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="" identifier="heexp-glassoflumofruitmilkshake" health="4" category="Misc" subcategory="Drinks" maxstacksize="1" cargocontaineridentifier="he-liquorcrate" description="" Tags="smallitem,drinkitem,cleanwater,water,glass,fullglass" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_bottle_glass" impacttolerance="5.5" isshootable="true" requireaimtouse="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="477,53,22,40" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="477,53,22,40" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Drinks.png" sourcerect="477,53,22,40" depth="0.525" origin="0.5,0.8" />
+      <Body width="21" height="58" density="15" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="crewcab" minamount="1" maxamount="3" spawnprobability="0.05" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="400" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.3" minavailable="0" maxavailable="12" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="6" maxavailable="24" />
+      </Price>
+      <Fabricate suitablefabricators="blender" requiredtime="5" requiresrecipe="false" amount="1">
+        <RequiredItem identifier="he-emptyglass" amount="1" MinCondition="1.0" UseCondition="False" />
+        <RequiredItem identifier="he-milk" UseCondition="True" MinCondition="0.25" />
+        <RequiredItem identifier="heexp-icecreamballlumofruit" MinCondition="1" UseCondition="False" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="he-glassfragments" amount="1" outcondition="1.0" />
+      </Deconstruct>
+      <SuitableTreatment type="thirst" suitability="90" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="false" slots="Any,RightHand,LeftHand" holdpos="20,-10" holdangle="0" handle1="-5,-10" aimpos="23,23" aimangle="90" aimable="false" swingwhenaiming="false" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Regular drinking - RMB -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-1.0" comparison="And">
+          <Conditional InWater="false" />
+          <ReduceAffliction type="thirst" amount="3.5" />
+          <ReduceAffliction identifier="he-stuffed" amount="0.5" />
+          <ReduceAffliction identifier="drunk" amount="0.5" />
+          <ReduceAffliction identifier="drunknodebuffs" amount="0.5" />
+          <ReduceAffliction identifier="hallucinating" amount="0.1" />
+          <ReduceAffliction identifier="he-halucinova" amount="0.1" />
+          <Affliction identifier="he-sugarrich" amount="55.0" />
+          <Affliction identifier="fillbladder" amount="3.0" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,100" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="1" />
+          <Sound file="Content/Sounds/Damage/GlassImpact1.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact2.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact3.ogg" selectionmode="Random" range="600" />
+          <Sound file="Content/Sounds/Damage/GlassImpact4.ogg" selectionmode="Random" range="600" />
+          <Remove />
+          <SpawnItem identifier="he-glassfragments" spawnposition="This" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="1" />
+        </StatusEffect>
+      </Holdable>
+      <Powered currpowerconsumption="0" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2" disabledeltatime="false" offset="0,-15">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="50" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" holdpos="-30,15" holdangle="180" aimpos="0,0" aimangle="180" setvalue="true" disabledeltatime="true" />
+      </Powered>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.emptybottle">
+          <StatusEffect type="OnUse" target="This" IsActive="true" targetitemcomponent="Powered" setvalue="true">
+            <Conditional IsActive="false" targetitemcomponent="Powered" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional InWater="True" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <RemoveItem />
+          <SpawnItem identifier="he-emptyglass" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Affliction name="Distress Beacon" identifier="Extendedcarrierbeacon" description="You heard a jumble of distress signals..." type="gaze" limbspecific="false" indicatorlimb="Head" activationthreshold="0" showinhealthscannerthreshold="0" showiconthreshold="5" showicontoothersthreshold="5" maxstrength="10">
+    <Effect minstrength="0" maxstrength="10" strengthchange="-1">
+      <StatusEffect target="Character" comparison="and" targetlimb="Head" checkconditionalalways="true">
+        <Conditional IsLocalPlayer="True" />
+        <Sound file="%ModDir%/Characters/Thalamuscarrier/RadioLoop2.ogg" loop="True" volume="1" dontmuffle="true" />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="512,128,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
+  <!-- <Affliction 
+    name="Consumed" 
+	identifier="consumed" 
+	target="human" 
+	description="You are being eaten alive" 
+	type="consumed" 
+	limbspecific="false" 
+	indicatorlimb="Torso" 
+	causeofdeathdescription="Consumed" 
+	selfcauseofdeathdescription="You've been consumed" 
+	activationthreshold="0" 
+	showinhealthscannerthreshold="1" 
+	showiconthreshold="1" 
+	showicontoothersthreshold="1" 
+	maxstrength="1">
+    <Effect minstrength="0" maxstrength="1" multiplybymaxvitality="true" strengthchange="0">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional speciesname="human" />
+        <Affliction identifier="Bleeding" strength="100" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character" targetlimb="AllLimbs">
+        <breaklimb />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,512,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction> -->
+</Afflictions>

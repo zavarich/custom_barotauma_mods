@@ -1,0 +1,1367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="German" nowhitespace="false" translatedname="Deutsch">
+  <Override>
+    <!-- Dialog -->
+    <eventtext.cocivtransport.interact>Du näherst dich einem sichtbar verängstigten Zivilist. Was wirst du tun?</eventtext.cocivtransport.interact>
+    <eventtext.cocivtransport.option.rob>"Du gibst mir jetzt besser schnell all dein Geld oder du kommst hier nicht lebend raus!"</eventtext.cocivtransport.option.rob>
+    <eventtext.cocivtransport.option.rob.answer>"Ok ok!... Das ist alles was ich habe!"</eventtext.cocivtransport.option.rob.answer>
+    <eventtext.cocivtransport.option.execute>"Irgendwelche letzten Worte?" (Hinrichten)</eventtext.cocivtransport.option.execute>
+    <eventtext.cocivtransport.option.execute.answer>"Nein nein nein bitte war..."</eventtext.cocivtransport.option.execute.answer>
+    <eventtext.cocivtransport.option.hire>"Schließ dich uns an oder stirb wie die Anderen!"</eventtext.cocivtransport.option.hire>
+    <eventtext.cocivtransport.option.hire.success>"Ok ok! Ich tue alles was ihr wollt, aber bitte tut mir nichts!"</eventtext.cocivtransport.option.hire.success>
+    <eventtext.cocivtransport.option.hire.failure>"Ich würde lieber sterben als bei ein paar abscheulichen Piraten anzuheuern!"</eventtext.cocivtransport.option.hire.failure>
+    <eventtext.option.accept>Akzeptieren</eventtext.option.accept>
+    <eventtext.option.listen>Anhören</eventtext.option.listen>
+    <eventtext.option.investigate>Untersuchen</eventtext.option.investigate>
+    <eventtext.option.decline>Ablehnen</eventtext.option.decline>
+    <eventtext.option.ignore>Ignorieren</eventtext.option.ignore>
+    <eventtext.option.leave>Weggehen</eventtext.option.leave>
+    <eventtext.general.decline>"Nicht jetzt."</eventtext.general.decline>
+    <eventtext.commsrelay.monster>Du empfängst ein seltsames Signal. Vielleicht lohnt es sich ja reinzuhören...</eventtext.commsrelay.monster>
+    <eventtext.commsrelay.monster.answer>Ein geisterhaftes heulendes Echo schallt von den Höhlenwänden. Irgendetwas muss diese seltsamen Signale von sich geben.</eventtext.commsrelay.monster.answer>
+    <eventtext.commsrelay.monster.answer>Ein schrilles Kreischen lässt dir das Mark gefrieren. Irgendetwas muss diese seltsamen Signale von sich geben.</eventtext.commsrelay.monster.answer>
+    <eventtext.commsrelay.wreck>Du empfängst ein automatisiertes Notrufsignal. Vielleicht lohnt es sich ja reinzuhören...</eventtext.commsrelay.wreck>
+    <eventtext.commsrelay.wreck.answer>Du empfängst eine SOS Übertragung von irgendwo nahe deiner derzeitigen Position.</eventtext.commsrelay.wreck.answer>
+    <eventtext.commsrelay.ruin>Du empfängst ein Signal, ähnlich wie die der Ruinen. Vielleicht lohnt es sich ja reinzuhören...</eventtext.commsrelay.ruin>
+    <eventtext.commsrelay.ruin.answer>Ein unheimliches, pfeifendes Geräusch füllt dich mit tiefer Angst. Irgendetwas muss diese seltsamen Signale von sich geben.</eventtext.commsrelay.ruin.answer>
+    <eventtext.commsrelay.closetosignal>Das Signal wird stärker. Es muss hier ganz in der Nähe sein...</eventtext.commsrelay.closetosignal>
+    <eventtext.commsrelay.generic.decline>"Wir haben dafür jetzt keine Zeit."</eventtext.commsrelay.generic.decline>
+    <eventtext.factionstowaway.separatist>Ein wilder Freiheitskämpfer springt aus der Kiste und fuchtelt dabei wild mit einer Schusswaffe herum.</eventtext.factionstowaway.separatist>
+    <eventtext.factionstowaway.coalition.good>Anscheinend handelt es sich um eine fehlplatzierte Fracht eines anderen Kapitäns. Wunderbar!</eventtext.factionstowaway.coalition.good>
+    <eventtext.factionstowaway.coalition.bad>Die Kiste enthielt einen kleinen Brief mit einem Koalitionssiegel. Er enthält einen Strafzettel mit einer Geldstrafe. Pech gehabt.</eventtext.factionstowaway.coalition.bad>
+    <eventtext.factionstowaway.cultist>Es stinkt nach verrottendem Fleisch und plötzlich beginnt sich ein verrosteter Taucheranzug aus der Kiste zu erheben.</eventtext.factionstowaway.cultist>
+    <eventtext.factionstowaway.clown>Ein heimtückisch grinsender Harlekin begrüßt deinen Blick mit einem Lächeln. Unter seiner Maske tropft langsam Sabber hervor.</eventtext.factionstowaway.clown>
+    <eventtext.jobboardde.interact>Eine Sammlung von Zetteln mit Aufträgen hängt an der Wand. Jeder bietet eine Belohung. Welchen Auftrag nimmst du an?</eventtext.jobboardde.interact>
+    <eventtext.jobboardde.accept>Akzeptieren</eventtext.jobboardde.accept>
+    <eventtext.jobboardde.decline>Ignorieren</eventtext.jobboardde.decline>
+    <eventtext.jobboardde.option.piratemission>Piraten Kopfgeld</eventtext.jobboardde.option.piratemission>
+    <eventtext.jobboardde.option.piratemission.info>-KOPFGELDAUFTRÄGE VERFÜGBAR FÜR LOKALE PIRATENJÄGER-</eventtext.jobboardde.option.piratemission.info>
+    <eventtext.jobboardde.option.piratemission.accept>Du denkst dir: "Die Koalition braucht echt Leute um ihre Drecksarbeit anonym zu erledigen."</eventtext.jobboardde.option.piratemission.accept>
+    <eventtext.jobboardde.option.monstermission>Fauna Beseitigung</eventtext.jobboardde.option.monstermission>
+    <eventtext.jobboardde.option.monstermission.info>-LOKALE FAUNA VERURSACHT CHAOS - WIR ZAHLEN FÜR IHREN UNTERGANG-</eventtext.jobboardde.option.monstermission.info>
+    <eventtext.jobboardde.option.monstermission.accept>Du denkst dir: "Jemand sollte sich wirklich um diese gefährlichen Biester kümmern."</eventtext.jobboardde.option.monstermission.accept>
+    <eventtext.jobboardde.option.miningmission>Erzabbau</eventtext.jobboardde.option.miningmission>
+    <eventtext.jobboardde.option.miningmission.info>-LOKALE HÖHLE ENTHÄLT WOMÖGLICH MINERALE - WIR ZAHLEN FÜR EINEN BEWEIS IHRER EXISTENZ-</eventtext.jobboardde.option.miningmission.info>
+    <eventtext.jobboardde.option.miningmission.accept>Du denkst dir: "Ein bisschen ehrliche Erzabbau-Arbeit. Was kann da schon schief gehen?"</eventtext.jobboardde.option.miningmission.accept>
+    <eventtext.jobboardde.option.cargomission>Frachttransport</eventtext.jobboardde.option.cargomission>
+    <eventtext.jobboardde.option.cargomission.info>-SUCHEN HARTEN SCHIFFSKAPITÄN FÜR FRACHTTRANSPORT-</eventtext.jobboardde.option.cargomission.info>
+    <eventtext.jobboardde.option.cargomission.accept>Du denkst dir: "Um ehrlich zu sein interessieren mich Tempolimits sowieso nicht!"</eventtext.jobboardde.option.cargomission.accept>
+    <eventtext.jobboardde.option.salvagemission>Bergungsarbeit</eventtext.jobboardde.option.salvagemission>
+    <eventtext.jobboardde.option.salvagemission.info>-EIN SIGNAL IST IN EINER LOKALEN HÖHLE AUFGETAUCHT - WIR BEZAHLEN JEDEN, DER NACHSIEHT UND ZURÜCKBRINGT, WAS ER FINDET-</eventtext.jobboardde.option.salvagemission.info>
+    <eventtext.jobboardde.option.salvagemission.accept>Du denkst dir: "Ich bin mir sicher, ich werde etwas nützliches dort unten finden!"</eventtext.jobboardde.option.salvagemission.accept>
+    <eventtext.shop.engineer.interact>"Ich habe ein paar Materialien übrig. Möchtest du welche kaufen? Ich kann dir aber nur 1 Packet verkaufen!"</eventtext.shop.engineer.interact>
+    <eventtext.shop.engineer.option.fuelrod>4x Brennstäbe (900 Mk)</eventtext.shop.engineer.option.fuelrod>
+    <eventtext.shop.engineer.option.fuelrod.buy.success>"Hier ein paar extra Brennstäbe für dich."</eventtext.shop.engineer.option.fuelrod.buy.success>
+    <eventtext.shop.engineer.option.fuelrod.buy.failure>"Tut mir Leid, aber ich bin nicht die Wohlfahrt."</eventtext.shop.engineer.option.fuelrod.buy.failure>
+    <eventtext.shop.engineer.option.fpga>2x FPGA Schaltkreis (250 Mk)</eventtext.shop.engineer.option.fpga>
+    <eventtext.shop.engineer.option.fpga.buy.success>"Man kann den Fabrikator noch förmlich riechen."</eventtext.shop.engineer.option.fpga.buy.success>
+    <eventtext.shop.engineer.option.fpga.buy.failure>"Dir ist schon klar, dass die auch Geld kosten?"</eventtext.shop.engineer.option.fpga.buy.failure>
+    <eventtext.shop.engineer.option.extinguisher>1x Feuerlöscher (100 Mk)</eventtext.shop.engineer.option.extinguisher>
+    <eventtext.shop.engineer.option.extinguisher.buy.success>"Praktisch in brennslichen Situationen!"</eventtext.shop.engineer.option.extinguisher.buy.success>
+    <eventtext.shop.engineer.option.extinguisher.buy.failure>"Kein Geld? Tja viel Spaß, wenn ein Feuer ausbricht!"</eventtext.shop.engineer.option.extinguisher.buy.failure>
+    <eventtext.shop.engineer.unfriedly>"Leuten wie dir helfen wir nicht!"</eventtext.shop.engineer.unfriedly>
+    <eventtext.shop.engineer.attack>"Heute wirst du zahlen! Viva la Revolution!"</eventtext.shop.engineer.attack>
+    <eventtext.shop.quartermaster.interact>"Ich habe etwas überschüssiges Schweißgas, falls du welches kaufen möchtest."</eventtext.shop.quartermaster.interact>
+    <eventtext.shop.quartermaster.option.weldingfuel>8x Schweißgastank (1000 Mk)</eventtext.shop.quartermaster.option.weldingfuel>
+    <eventtext.shop.quartermaster.option.weldingfuel.buy.success>"Denk daran: Hochentzündlich!"</eventtext.shop.quartermaster.option.weldingfuel.buy.success>
+    <eventtext.shop.quartermaster.option.weldingfuel.buy.failure>"Tut mir Leid, aber ich gebe nichts gratis raus."</eventtext.shop.quartermaster.option.weldingfuel.buy.failure>
+    <eventtext.shop.quartermaster.option.scrap>1x Schrott + Info (1000 Mk)</eventtext.shop.quartermaster.option.scrap>
+    <eventtext.shop.quartermaster.option.scrap.buy.success>"Hab das aus einem Wrack nicht weit von hier. Ich markiere es dir auf der Karte..."</eventtext.shop.quartermaster.option.scrap.buy.success>
+    <eventtext.shop.quartermaster.option.scrap.buy.failure>"Für mich ist es kein Schrott, also zahle gefälligst dafür!"</eventtext.shop.quartermaster.option.scrap.buy.failure>
+    <eventtext.shop.securityofficer.interact>"Ich habe überschüssige Munition, Falls du welche kaufen möchtest. Ich kann dir aber nur ein Packet verkaufen!"</eventtext.shop.securityofficer.interact>
+    <eventtext.shop.securityofficer.option.coilgunammo>1x Gaußkanonen-Munitionskiste (150 Mk)</eventtext.shop.securityofficer.option.coilgunammo>
+    <eventtext.shop.securityofficer.option.coilgunammo.buy.success>"Heiz ihnen richtig ein!"</eventtext.shop.securityofficer.option.coilgunammo.buy.success>
+    <eventtext.shop.securityofficer.option.coilgunammo.buy.failure>"Munition hat ihren Preis!"</eventtext.shop.securityofficer.option.coilgunammo.buy.failure>
+    <eventtext.shop.securityofficer.option.revolverammo>12x Revolvermunition (600 Mk)</eventtext.shop.securityofficer.option.revolverammo>
+    <eventtext.shop.securityofficer.option.revolverammo.buy.success>"Die gute alte .38."</eventtext.shop.securityofficer.option.revolverammo.buy.success>
+    <eventtext.shop.securityofficer.option.revolverammo.buy.failure>"Dir ist doch hoffentlich klar, dass Kugeln nicht kostenlos sind?"</eventtext.shop.securityofficer.option.revolverammo.buy.failure>
+    <eventtext.shop.securityofficer.option.smgmagazine>2x SMG Magazin (400 Mk)</eventtext.shop.securityofficer.option.smgmagazine>
+    <eventtext.shop.securityofficer.option.smgmagazine.buy.success>"Gut um die Feine zu durchsieben. Ich spreche aus Erfahrung."</eventtext.shop.securityofficer.option.smgmagazine.buy.success>
+    <eventtext.shop.securityofficer.option.smgmagazine.buy.failure>"Auch Magazine haben ihren Preis..."</eventtext.shop.securityofficer.option.smgmagazine.buy.failure>
+    <eventtext.securityofficer.interact>"Trägst du irgendwelche gestohlenen Gegenstände bei dir, von denen ich wissen sollte?"</eventtext.securityofficer.interact>
+    <eventtext.securityofficer.option.polite>"Nein Sir."</eventtext.securityofficer.option.polite>
+    <eventtext.securityofficer.option.polite.answer>"Besser so."</eventtext.securityofficer.option.polite.answer>
+    <eventtext.securityofficer.option.rude>"Keine von denen Sie wissen sollten."</eventtext.securityofficer.option.rude>
+    <eventtext.securityofficer.option.rude.answer>"Ein Witzbold also?"</eventtext.securityofficer.option.rude.answer>
+    <eventtext.securityofficer.bribe.interact>"Ich behalte dich im Auge!"</eventtext.securityofficer.bribe.interact>
+    <eventtext.securityofficer.bribe.option.polite>"Das ist ok. Ich werde mich benehmen."</eventtext.securityofficer.bribe.option.polite>
+    <eventtext.securityofficer.bribe.option.polite.answer>"Wir werden sehen..."</eventtext.securityofficer.bribe.option.polite.answer>
+    <eventtext.securityofficer.bribe.option.rude>"Alle Sicherheitsoffiziere sind Arschlöcher!"</eventtext.securityofficer.bribe.option.rude>
+    <eventtext.securityofficer.bribe.option.rude.answer>"Du willst es also auf die harte Tour, hm?"</eventtext.securityofficer.bribe.option.rude.answer>
+    <eventtext.securityofficer.bribe.option.leave.answer>"Habe hier einen Verdächtigen, Standby."</eventtext.securityofficer.bribe.option.leave.answer>
+    <eventtext.securityofficer.bribe.option.bribe.high>Bestechen (500 Mk)</eventtext.securityofficer.bribe.option.bribe.high>
+    <eventtext.securityofficer.bribe.option.bribe.medium>Bestechen (250 Mk)</eventtext.securityofficer.bribe.option.bribe.medium>
+    <eventtext.securityofficer.bribe.option.bribe.low>Bestechen (75 Mk)</eventtext.securityofficer.bribe.option.bribe.low>
+    <eventtext.securityofficer.bribe.option.bribe.success>"Wenn ich so darüber nachdenke, bist du gar nicht verdächtig."</eventtext.securityofficer.bribe.option.bribe.success>
+    <eventtext.securityofficer.bribe.option.bribe.failure>"Versuchst du mich mit dem Bisschen zu bestechen? Na warte!"</eventtext.securityofficer.bribe.option.bribe.failure>
+    <eventtext.securityofficer.bribe.option.bribe.rejected>"Versuchst du mich etwa zu bestechen? Na warte!"</eventtext.securityofficer.bribe.option.bribe.rejected>
+    <eventtext.securityofficer.option.insult>Beleidigen</eventtext.securityofficer.option.insult>
+    <eventtext.securityofficer.option.insult.answer>"Was hast du da gerade zu mir gesagt!? Ich werde einen Bericht über dich schreiben, wenn du nicht damit aufhörst!"</eventtext.securityofficer.option.insult.answer>
+    <eventtext.securityofficer.option.insult.answer.insult.answer>"Das reicht! Du bist verhaftet!"</eventtext.securityofficer.option.insult.answer.insult.answer>
+    <eventtext.securityofficer.option.insult.leave.answer>"Ja es ist besser, wenn du verschwindest!"</eventtext.securityofficer.option.insult.leave.answer>
+    <eventtext.shop.piratesecurityofficer.interact>"Ich hätt' hier scheiß-geile Feuerkraft! Ich verkauf dir'n Packet deiner Wahl!"</eventtext.shop.piratesecurityofficer.interact>
+    <eventtext.shop.piratesecurityofficer.option.hyperzine>Hyperzine (500 Mk)</eventtext.shop.piratesecurityofficer.option.hyperzine>
+    <eventtext.shop.piratesecurityofficer.option.hyperzine.buy.success>"Oh, das ist der gute Stoff!"</eventtext.shop.piratesecurityofficer.option.hyperzine.buy.success>
+    <eventtext.shop.piratesecurityofficer.option.hyperzine.buy.failure>"Du berauscht dich hier nich' kostenlos!"</eventtext.shop.piratesecurityofficer.option.hyperzine.buy.failure>
+    <eventtext.shop.piratesecurityofficer.option.handcannonammo>6x Handkanonenkugel (1000 Mk)</eventtext.shop.piratesecurityofficer.option.handcannonammo>
+    <eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.success>"Das penetriert garantiert jede kugelsichere Weste der Koalition und sogar Moloch-Rüstung. Ich schwör's!."</eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.success>
+    <eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.failure>"Glaubst du das hier ist eine Spendenaktion?"</eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.failure>
+    <eventtext.shop.piratesecurityofficer.option.assaultriflemagazine>2x Sturmgewehrmagazin (1000 Mk)</eventtext.shop.piratesecurityofficer.option.assaultriflemagazine>
+    <eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.success>"Geschmiedet mit Hass und einer Prise böser Absichten... Attackiere mit Verantwortung."</eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.success>
+    <eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.failure>"Kommst du etwa auch gerade von der verlassenen Station? Ich brauche etwas Geld hier..."</eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.failure>
+    <eventtext.piratesecurityofficer.toll.low.interact>"Dir's hoffentlich klar, wir lassen hier nich' Jeden einfach reinspazieren. Hier gibt's 'nen scheiß Tribut zu zahlen! Kleiner Tipp: Es is' besser wenn man zahlt!"</eventtext.piratesecurityofficer.toll.low.interact>
+    <eventtext.piratesecurityofficer.highrep.pay.high>Zolle Tribut (1000 Mk)</eventtext.piratesecurityofficer.highrep.pay.high>
+    <eventtext.piratesecurityofficer.highrep.paytoll.success>"Hah! Das seh ich doch gern! Kein Zögern oder Schwierigkeiten! \nDu kannst rein."</eventtext.piratesecurityofficer.highrep.paytoll.success>
+    <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation>"Weißt du was... Wenn du doppelt zahlst, lege ich 'n paar gute Worte für dich bei den anderen Crews ein!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation>
+    <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy>Zahle 1000Mk (Ansehen bei der Koalition -20)</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy>
+    <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.success>"Hah! Ich wusst' ich würd' dich mögen!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.success>
+    <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.failure>"Du hast nicht mal die Knete... Versuchst du mich hier über'n Tisch zu ziehen? Verpiss dich!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.failure>
+    <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.declined>"Pff! Schön... Geh weiter Stiefel der Koalition lecken!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.declined>
+    <eventtext.piratesecurityofficer.highrep.paytoll.failure>"Du hast nicht mal das Geld? Sicherlich besitzt du etwas für den Wert meiner Zeit."</eventtext.piratesecurityofficer.highrep.paytoll.failure>
+    <eventtext.piratesecurityofficer.highrep.pay.medium>Feilschen (750 Mk)</eventtext.piratesecurityofficer.highrep.pay.medium>
+    <eventtext.piratesecurityofficer.highrep.haggle.success>"Echt jetz'? Du verarscht mich oder? Meinetwegen! Geh rein..."</eventtext.piratesecurityofficer.highrep.haggle.success>
+    <eventtext.piratesecurityofficer.highrep.haggle.failure>"In deinen Träumen vielleicht."</eventtext.piratesecurityofficer.highrep.haggle.failure>
+    <eventtext.piratesecurityofficer.highrep.haggle.rejected>"Oh ich hab da 'nen besseren Vorschlag für dich..."</eventtext.piratesecurityofficer.highrep.haggle.rejected>
+    <eventtext.piratesecurityofficer.highrep.pay.low>Anflehen (100 Mk)</eventtext.piratesecurityofficer.highrep.pay.low>
+    <eventtext.piratesecurityofficer.highrep.plead.success>"Dein Geheule amüsiert micht... Na schön. Kein einziges Wort mehr. Verzieh dich aus meinen Augen und geh rein."</eventtext.piratesecurityofficer.highrep.plead.success>
+    <eventtext.piratesecurityofficer.highrep.plead.failure>"Das ist beleidigend du kleiner Scheißkerl!"</eventtext.piratesecurityofficer.highrep.plead.failure>
+    <eventtext.piratesecurityofficer.highrep.plead.rejected>"Deine traurige kleine Entschuldigung wird dir jetz' auch nicht weiterhelfen!"</eventtext.piratesecurityofficer.highrep.plead.rejected>
+    <eventtext.piratesecurityofficer.toll.option.leave.answer>"Ich kenne eine Sprache die du verstehen wirst."</eventtext.piratesecurityofficer.toll.option.leave.answer>
+    <eventtext.piratesecurityofficer.toll.option.insult>Beleidigen</eventtext.piratesecurityofficer.toll.option.insult>
+    <eventtext.piratesecurityofficer.toll.option.insult.answer>"Oh du bist sowas von tot!"</eventtext.piratesecurityofficer.toll.option.insult.answer>
+    <eventtext.piratesecurityofficer.attack>"Schnappt sie euch!"</eventtext.piratesecurityofficer.attack>
+    <eventtext.piratesecurityofficer.attack.coalition>Schnappt euch die Schweine der Koalition!</eventtext.piratesecurityofficer.attack.coalition>
+    <eventtext.piratesecurityofficer.toll.high.interact>"Oh was haben wir denn hier? Abschaum der Koalition!? Dir ist schon klar, hier gibt's nen Tribut zu zahlen! Bezahl mich Dumpfbacke!"</eventtext.piratesecurityofficer.toll.high.interact>
+    <eventtext.piratesecurityofficer.lowrep.pay.high>Zolle Tribut (2000 Mk)</eventtext.piratesecurityofficer.lowrep.pay.high>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.success>"Danke für's vorbeischauen, Schweinchen!"</eventtext.piratesecurityofficer.lowrep.paytoll.success>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation>"Ich geb' dir jetz' ein Spezialangebot. Zahl das doppelte und Ich verbreite ein paar gute Gerüchte über deine Crew unter den anderen Piraten hier."</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy>Zahle 1000Mk (Ansehen bei der Koalition -40)</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.success>"Hm hatte nich' erwartet, dass du wirklich zahlst. Na gut. Ich werde ein paar Gerüchte verbreiten. Wenn die Koalition davon erfährt, wird sie es nicht mögen! Hehe."</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.success>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.failure>"Ihr Koalitionsleute seid doch alle kernbehindert. Ihr Pfeifen könnt ja nicht mal rechnen. Verpiss dich!"</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.failure>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.declined>"Hätt' ich mir denken können. Bist'n scheiß treuer Stiefellecker. Geh mir aus den Augen, Dreckskerl!"</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.declined>
+    <eventtext.piratesecurityofficer.lowrep.paytoll.failure>"Du hast nicht mal das Geld? Sicherlich besitzt ihr Koalitionsschweine etwas für den Wert meiner Zeit."</eventtext.piratesecurityofficer.lowrep.paytoll.failure>
+    <eventtext.piratesecurityofficer.lowrep.pay.medium>Feilschen (1500 Mk)</eventtext.piratesecurityofficer.lowrep.pay.medium>
+    <eventtext.piratesecurityofficer.lowrep.haggle.success>"Mach schnell, Schweinchen oder ich werde es schnell machen."</eventtext.piratesecurityofficer.lowrep.haggle.success>
+    <eventtext.piratesecurityofficer.lowrep.haggle.failure>"Ich hatte mehr von jemanden wie dir erwartet... Komm her!"</eventtext.piratesecurityofficer.lowrep.haggle.failure>
+    <eventtext.piratesecurityofficer.toll.high.haggle.rejected>"Weißte was? Vergiss es! Du bist Geschichte!"</eventtext.piratesecurityofficer.toll.high.haggle.rejected>
+    <eventtext.piratesecurityofficer.lowrep.pay.low>Anflehen (1000 Mk)</eventtext.piratesecurityofficer.lowrep.pay.low>
+    <eventtext.piratesecurityofficer.lowrep.plead.success>"Haha Jungs! Schaut euch diese Heulsuse an! ...Ok na gut du hast mich zum Lachen gebracht, also lasse ich dich rein, aber jetzt geh mir aus den Augen, bevor ich meine Meinung ändere!"</eventtext.piratesecurityofficer.lowrep.plead.success>
+    <eventtext.piratesecurityofficer.lowrep.plead.failure>"Willste mich verarschen!? Ich nehm mir alles von deiner verschissenen Leiche!"</eventtext.piratesecurityofficer.lowrep.plead.failure>
+    <eventtext.piratesecurityofficer.lowrep.plead.rejected>"Deine traurige kleine Entschuldigung wird dir jetz' auch nicht weiterhelfen und deine Koalitionsfreunde können dir hier auch nicht helfen! Sprich deine letzten Worte!"</eventtext.piratesecurityofficer.lowrep.plead.rejected>
+    <eventtext.piratemissioninformant.interact>"Hm? Du suchst Arbeit sagste? Lass mich was klarstellen! Ich bin kein scheiß Arbeitsagentur! Aber... Hab hier 'ne Spur auf eine Lieferung der Koalition, die ganz in der Nähe vorbeikommt und ich bin nich' sicher, ob meine Crew bereit dafür ist. Ich verkauf dir die Spur, wennde das Kleingeld hast!"</eventtext.piratemissioninformant.interact>
+    <eventtext.piratemissioninformant.option.buy>Kaufen (1000mk)</eventtext.piratemissioninformant.option.buy>
+    <eventtext.piratemissioninformant.option.buy.success>"Hah großartig! Ich zeig dir wo sie vorbeikommen!"</eventtext.piratemissioninformant.option.buy.success>
+    <eventtext.piratemissioninformant.option.buy.failure>"Ich werd's dir bestimmt net umsonst geben, Dumpfbacke! Komm zurück, wennde die nötige Knete hast!"</eventtext.piratemissioninformant.option.buy.failure>
+    <!-- Items -->
+    <entityname.commlinkDE>Comm Link</entityname.commlinkDE>
+    <entitydescription.commlinkDE>Ein Kommunikationsgerät, welches erlaubt, Aufträge während Reisen von umliegenden Außenposten zu empfangen.</entitydescription.commlinkDE>
+    <!-- Structures -->
+    <entityname.labelslogocoalition>Logo der Koalition</entityname.labelslogocoalition>
+    <entityname.labelslogocoalitioncolor>Farbiges Logo der Koalition</entityname.labelslogocoalitioncolor>
+    <entityname.labelslogocoalitiondamaged>Beschädigtes Logo der Koalition</entityname.labelslogocoalitiondamaged>
+    <entityname.labelslogocoalitionbroken>Kaputtes Logo der Koalition</entityname.labelslogocoalitionbroken>
+    <entityname.labelslogoseparatists>Logo der Jovianischen Separatisten</entityname.labelslogoseparatists>
+    <entityname.labelslogoseparatistscolor>Farbiges Logo der Jovianischen Separatisten</entityname.labelslogoseparatistscolor>
+    <entityname.labelslogoseparatistsdamaged>Beschädigtes Logo der Jovianischen Separatisten</entityname.labelslogoseparatistsdamaged>
+    <entityname.labelslogoseparatistsbroken>Kaputtes Logo der Jovianischen Separatisten</entityname.labelslogoseparatistsbroken>
+    <!-- Missions -->
+    <locationdescription.militaryforces>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Stationsarzt\n-Läden: Militärvorräte, Waffenkammer</locationdescription.militaryforces>
+    <locationdescription.colony>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Läden: Allgemeines</locationdescription.colony>
+    <locationdescription.settlement>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum</locationdescription.settlement>
+    <locationdescription.outpost>Ein einzelnes Gebäude und der Beginn von neuem Leben in der Region.\nBietet:\n-Jobs</locationdescription.outpost>
+    <locationdescription.city>Bietet:\n-Jobs\n-Personalbüro\n-Stationsarzt\n-Maschinenraum\n-Forschungslabore\n-Läden: U-Boote, U-Boot-Teile, Allgemeines, Apotheke, Technikvorräte, Waffenkammer</locationdescription.city>
+    <locationdescription.camp>Bietet:\n-Jobs\n-Personalbüro</locationdescription.camp>
+    <locationdescription.base>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Läden: Militärvorräte</locationdescription.base>
+    <locationdescription.military>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Läden: U-Boote, U-Boot-Teile, Militärvorräte, Waffenkammer, Technikvorräte</locationdescription.military>
+    <locationdescription.clinic>Bietet:\n-Jobs\n-Stationsarzt</locationdescription.clinic>
+    <locationdescription.hospital>Bietet:\n-Jobs\n-Personalbüro\n-Stationsarzt\n-Maschinenraum\n-Läden: Apotheke</locationdescription.hospital>
+    <locationdescription.surgery>Bietet:\n-Jobs\n-Personalbüro\n-Stationsarzt\n-Maschinenraum\n-Forschungslabore\n-Läden: Apotheke</locationdescription.surgery>
+    <locationdescription.hydroponics>Bietet:\n-Jobs\n-Personalbüro\n-Forschungslabore\n-Läden: Schlachter</locationdescription.hydroponics>
+    <locationdescription.construction>Eine Baustelle für eine neue Station.\nBietet:\n-Jobs</locationdescription.construction>
+    <locationdescription.shipyard>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Läden: U-Boote, U-Boot-Teile, Allgemeines, Technikvorräte</locationdescription.shipyard>
+    <locationdescription.factory>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Läden: Allgemeines, Mineralien, U-Boot-Teile</locationdescription.factory>
+    <locationdescription.survey>Eine kleine Station die das umliegende Gebiet untersucht.\nBietet:\n-Informationen über nahegelegene Erzvorkommen</locationdescription.survey>
+    <locationdescription.mine>Eine Station für Erzabbau in trockenen Höhlen. Bietet:\n-Maschinenraum\n-Läden: Mineralien</locationdescription.mine>
+    <locationdescription.study>Bietet:\n-Jobs\n-Personalbüro\n-Forschungslabore</locationdescription.study>
+    <locationdescription.lab>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Forschungslabore\n-Läden: Forschungvorräte</locationdescription.lab>
+    <locationdescription.research>Bietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Forschungslabore\n-Läden: U-Boote, Forschungvorräte</locationdescription.research>
+    <locationdescription.blockade>Eine militärische Befestigung die den Zugang zu tiefergelegenen Regionen verschließt.\nBietet:\n-Jobs\n-Personalbüro\n-Stationsarzt\n-Läden: Militärvorräte, Waffenkammer</locationdescription.blockade>
+    <locationdescription.pirateoutpost>Ein sicherer Zufluchtsort, wo sich Piraten treffen und austauschen, anstatt sich zu erschießen.\nBietet:\n-Jobs\n-Personalbüro\n-Maschinenraum\n-Stationsarzt\n-Forschungslabore\n-Läden: U-Boote, U-Boot-Teile, Allgemeines, Apotheke, Technikvorräte, Waffenkammer, Piratenequipment</locationdescription.pirateoutpost>
+    <locationdescription.Lair>Brutstätte von Kreaturen, die sich schnell auf umliegende Gebiete verteilen.</locationdescription.Lair>
+    <locationdescription.HuskgroundsDE>Ein Hotspot von mit Hüllenparasit befallenen Kreaturen, die ihn schnell auf umliegende Gebiete verbreiten.</locationdescription.HuskgroundsDE>
+    <locationdescription.WasteyardDE>Ein Hotspot von mit der Waste-Infektion befallenen Kreaturen, die sie auf umliegende Gebiete verbreiten.</locationdescription.WasteyardDE>
+    <locationdescription.waypoint>Ein Ort ohne Monster oder Hindernisse. Bereit um kolonisiert zu werden.</locationdescription.waypoint>
+    <locationchange.construction.changeto.settlement>Die Bauarbeiten einer neuen Siedlung bei [previousname] wurden abgeschlossen. Mehr Siedler ziehen in ihr neues Zuhause.</locationchange.construction.changeto.settlement>
+    <locationchange.survey.changeto.extraction>Untersuchungen bei [previousname] ergaben ein Mineralvorkommen in der Nähe und Arbeiter beginnen nun mit der Ausgrabung.</locationchange.survey.changeto.extraction>
+    <locationchange.hydroponics.changeto.biosphere>Die Hydrokultur von [previousname] haben ihre Station erweitert und in eine Biosphäre entwickelt, um genug Fleisch für die umliegenden Stationen bieten zu können.</locationchange.hydroponics.changeto.biosphere>
+    <missionname.coalition_cargo2>Überfall auf einen Koalitionstransporter</missionname.coalition_cargo2>
+    <missiondescription.coalition_cargo2>Ein Transporter der Koalition passiert diese Route. Eliminiere dessen Besatzung und raube ihn aus!</missiondescription.coalition_cargo2>
+    <missionsuccess.coalition_cargo2>Du hast die Besatzung erfolgreich eliminiert und ihre Fracht gestohlen!</missionsuccess.coalition_cargo2>
+    <missionfailure.coalition_cargo2>Du hast die Besatzung nicht eliminiert!</missionfailure.coalition_cargo2>
+    <missionheader0.coalition_cargo2>Koalitionstransporter entdeckt</missionheader0.coalition_cargo2>
+    <missionmessage0.coalition_cargo2>Zeit anzugreifen! Sie haben die Beute, die du willst!</missionmessage0.coalition_cargo2>
+    <missionheader1.coalition_cargo2>Besatzung der Koalition eliminiert</missionheader1.coalition_cargo2>
+    <missionmessage1.coalition_cargo2>Raube ihre Fracht und setze dann deine Reise nach [location2] fort.</missionmessage1.coalition_cargo2>
+    <missionname.random_salvageskyholderartifactruins>Zufällige Begegnung</missionname.random_salvageskyholderartifactruins>
+    <missiondescription.random_salvageskyholderartifactruins>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_salvageskyholderartifactruins>
+    <missionsonarlabel.random_salvageskyholderartifactruins>Unbekanntes Signal</missionsonarlabel.random_salvageskyholderartifactruins>
+    <missionsuccess.random_salvageskyholderartifactruins>Du hast dich entschieden, das Artefakt mitzunehmen. Es könnte ja etwas Wert sein.</missionsuccess.random_salvageskyholderartifactruins>
+    <missionfailure.random_salvageskyholderartifactruins>Du hast nicht nachgesehen, was das Signal verursacht.</missionfailure.random_salvageskyholderartifactruins>
+    <missionheader0.random_salvageskyholderartifactruins>Artefakt geborgen</missionheader0.random_salvageskyholderartifactruins>
+    <missionmessage0.random_salvageskyholderartifactruins>Du hast das Signal untersucht und ein Artefakt gefunden.</missionmessage0.random_salvageskyholderartifactruins>
+    <missionname.random_salvagethermalartifactruins>Zufällige Begegnung</missionname.random_salvagethermalartifactruins>
+    <missiondescription.random_salvagethermalartifactruins>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_salvagethermalartifactruins>
+    <missionsonarlabel.random_salvagethermalartifactruins>Unbekanntes Signal</missionsonarlabel.random_salvagethermalartifactruins>
+    <missionsuccess.random_salvagethermalartifactruins>Du hast dich entschieden, das Artefakt mitzunehmen. Es könnte ja etwas Wert sein.</missionsuccess.random_salvagethermalartifactruins>
+    <missionfailure.random_salvagethermalartifactruins>Du hast nicht nachgesehen, was das Signal verursacht.</missionfailure.random_salvagethermalartifactruins>
+    <missionheader0.random_salvagethermalartifactruins>Artefakt geborgen</missionheader0.random_salvagethermalartifactruins>
+    <missionmessage0.random_salvagethermalartifactruins>Du hast das Signal untersucht und ein Artefakt gefunden.</missionmessage0.random_salvagethermalartifactruins>
+    <missionname.random_salvagethermalartifactcave>Zufällige Begegnung</missionname.random_salvagethermalartifactcave>
+    <missiondescription.random_salvagethermalartifactcave>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_salvagethermalartifactcave>
+    <missionsonarlabel.random_salvagethermalartifactcave>Unbekanntes Signal</missionsonarlabel.random_salvagethermalartifactcave>
+    <missionsuccess.random_salvagethermalartifactcave>Du hast dich entschieden, das Artefakt mitzunehmen. Es könnte ja etwas Wert sein.</missionsuccess.random_salvagethermalartifactcave>
+    <missionfailure.random_salvagethermalartifactcave>Du hast nicht nachgesehen, was das Signal verursacht.</missionfailure.random_salvagethermalartifactcave>
+    <missionheader0.random_salvagethermalartifactcave>Artefakt geborgen</missionheader0.random_salvagethermalartifactcave>
+    <missionmessage0.random_salvagethermalartifactcave>Du hast das Signal untersucht und ein Artefakt gefunden.</missionmessage0.random_salvagethermalartifactcave>
+    <missionname.random_salvagenasonovartifactcave>Zufällige Begegnung</missionname.random_salvagenasonovartifactcave>
+    <missiondescription.random_salvagenasonovartifactcave>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_salvagenasonovartifactcave>
+    <missionsonarlabel.random_salvagenasonovartifactcave>Unbekanntes Signal</missionsonarlabel.random_salvagenasonovartifactcave>
+    <missionsuccess.random_salvagenasonovartifactcave>Du hast dich entschieden, das Artefakt mitzunehmen. Es könnte ja etwas Wert sein.</missionsuccess.random_salvagenasonovartifactcave>
+    <missionfailure.random_salvagenasonovartifactcave>Du hast nicht nachgesehen, was das Signal verursacht.</missionfailure.random_salvagenasonovartifactcave>
+    <missionheader0.random_salvagenasonovartifactcave>Artefakt geborgen</missionheader0.random_salvagenasonovartifactcave>
+    <missionmessage0.random_salvagenasonovartifactcave>Du hast das Signal untersucht und ein Artefakt gefunden.</missionmessage0.random_salvagenasonovartifactcave>
+    <missionname.random_killmoloch>Zufällige Begegnung</missionname.random_killmoloch>
+    <missiondescription.random_killmoloch>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmoloch>
+    <missionsonarlabel.random_killmoloch>Unbekanntes Signal</missionsonarlabel.random_killmoloch>
+    <missionsuccess.random_killmoloch>Das Signal wurde untersucht und der Moloch getötet.</missionsuccess.random_killmoloch>
+    <missionheader0.random_killmoloch>Ziel eliminiert</missionheader0.random_killmoloch>
+    <missionmessage0.random_killmoloch>Es stellt sich heraus, das Signal kam von dem Moloch.</missionmessage0.random_killmoloch>
+    <missionname.random_killmolochblack>Zufällige Begegnung</missionname.random_killmolochblack>
+    <missiondescription.random_killmolochblack>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmolochblack>
+    <missionsonarlabel.random_killmolochblack>Unbekanntes Signal</missionsonarlabel.random_killmolochblack>
+    <missionsuccess.random_killmolochblack>Das Signal wurde untersucht und der Moloch getötet.</missionsuccess.random_killmolochblack>
+    <missionheader0.random_killmolochblack>Ziel eliminiert</missionheader0.random_killmolochblack>
+    <missionmessage0.random_killmolochblack>Es stellt sich heraus, das Signal kam von dem Moloch.</missionmessage0.random_killmolochblack>
+    <missionname.random_killlargecrawler>Zufällige Begegnung</missionname.random_killlargecrawler>
+    <missiondescription.random_killlargecrawler>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killlargecrawler>
+    <missionsonarlabel.random_killlargecrawler>Unbekanntes Signal</missionsonarlabel.random_killlargecrawler>
+    <missionsuccess.random_killlargecrawler>Das Signal wurde untersucht und die Kriecher getötet.</missionsuccess.random_killlargecrawler>
+    <missionname.random_killtigerthresher>Zufällige Begegnung</missionname.random_killtigerthresher>
+    <missiondescription.random_killtigerthresher>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killtigerthresher>
+    <missionsonarlabel.random_killtigerthresher>Unbekanntes Signal</missionsonarlabel.random_killtigerthresher>
+    <missionsuccess.random_killtigerthresher>Das Signal wurde untersucht und die Tigerflosser getötet.</missionsuccess.random_killtigerthresher>
+    <missionheader0.random_killtigerthresher>Ziel eliminiert</missionheader0.random_killtigerthresher>
+    <missionmessage0.random_killtigerthresher>Es stellt sich heraus, das Signal kam von den Tigerflossern.</missionmessage0.random_killtigerthresher>
+    <missionname.random_killcrawlerbroodmother1>Zufällige Begegnung</missionname.random_killcrawlerbroodmother1>
+    <missiondescription.random_killcrawlerbroodmother1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerbroodmother1>
+    <missionsonarlabel.random_killcrawlerbroodmother1>Unbekanntes Signal</missionsonarlabel.random_killcrawlerbroodmother1>
+    <missionsuccess.random_killcrawlerbroodmother1>Das Signal wurde untersucht und die Kriecher-Brutmutter getötet.</missionsuccess.random_killcrawlerbroodmother1>
+    <missionheader0.random_killcrawlerbroodmother1>Ziel eliminiert</missionheader0.random_killcrawlerbroodmother1>
+    <missionmessage0.random_killcrawlerbroodmother1>Es stellt sich heraus, das Signal kam von der Kriecher-Brutmutter.</missionmessage0.random_killcrawlerbroodmother1>
+    <missionname.random_killcrawlerbroodmother2>Zufällige Begegnung</missionname.random_killcrawlerbroodmother2>
+    <missiondescription.random_killcrawlerbroodmother2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerbroodmother2>
+    <missionsonarlabel.random_killcrawlerbroodmother2>Unbekanntes Signal</missionsonarlabel.random_killcrawlerbroodmother2>
+    <missionsuccess.random_killcrawlerbroodmother2>Das Signal wurde untersucht und die Kriecher-Brutmutter getötet.</missionsuccess.random_killcrawlerbroodmother2>
+    <missionname.random_killcrawlerbroodmother3>Zufällige Begegnung</missionname.random_killcrawlerbroodmother3>
+    <missiondescription.random_killcrawlerbroodmother3>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerbroodmother3>
+    <missionsonarlabel.random_killcrawlerbroodmother3>Unbekanntes Signal</missionsonarlabel.random_killcrawlerbroodmother3>
+    <missionsuccess.random_killcrawlerbroodmother3>Das Signal wurde untersucht und die Kriecher-Brutmutter getötet.</missionsuccess.random_killcrawlerbroodmother3>
+    <missionname.random_killcrawlerswarm1>Zufällige Begegnung</missionname.random_killcrawlerswarm1>
+    <missiondescription.random_killcrawlerswarm1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerswarm1>
+    <missionsonarlabel.random_killcrawlerswarm1>Unbekanntes Signal</missionsonarlabel.random_killcrawlerswarm1>
+    <missionsuccess.random_killcrawlerswarm1>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killcrawlerswarm1>
+    <missionheader0.random_killcrawlerswarm1>Ziele eliminiert</missionheader0.random_killcrawlerswarm1>
+    <missionmessage0.random_killcrawlerswarm1>Es stellt sich heraus, das Signal kam von dem Schwarm.</missionmessage0.random_killcrawlerswarm1>
+    <missionname.random_killcrawlerswarm1large>Zufällige Begegnung</missionname.random_killcrawlerswarm1large>
+    <missiondescription.random_killcrawlerswarm1large>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerswarm1large>
+    <missionsonarlabel.random_killcrawlerswarm1large>Unbekanntes Signal</missionsonarlabel.random_killcrawlerswarm1large>
+    <missionsuccess.random_killcrawlerswarm1large>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killcrawlerswarm1large>
+    <missionname.random_killcrawlerswarm1huge>Zufällige Begegnung</missionname.random_killcrawlerswarm1huge>
+    <missiondescription.random_killcrawlerswarm1huge>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerswarm1huge>
+    <missionsonarlabel.random_killcrawlerswarm1huge>Unbekanntes Signal</missionsonarlabel.random_killcrawlerswarm1huge>
+    <missionsuccess.random_killcrawlerswarm1huge>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killcrawlerswarm1huge>
+    <missionname.random_killcrawlerswarm2>Zufällige Begegnung</missionname.random_killcrawlerswarm2>
+    <missiondescription.random_killcrawlerswarm2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killcrawlerswarm2>
+    <missionsonarlabel.random_killcrawlerswarm2>Unbekanntes Signal</missionsonarlabel.random_killcrawlerswarm2>
+    <missionsuccess.random_killcrawlerswarm2>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killcrawlerswarm2>
+    <missionheader0.random_killcrawlerswarm2>Ziele eliminiert</missionheader0.random_killcrawlerswarm2>
+    <missionmessage0.random_killcrawlerswarm2>Es stellt sich heraus, das Signal kam von dem Schwarm.</missionmessage0.random_killcrawlerswarm2>
+    <missionname.random_killhammerhead_basic>Zufällige Begegnung</missionname.random_killhammerhead_basic>
+    <missiondescription.random_killhammerhead_basic>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killhammerhead_basic>
+    <missionsonarlabel.random_killhammerhead_basic>Unbekanntes Signal</missionsonarlabel.random_killhammerhead_basic>
+    <missionsuccess.random_killhammerhead_basic>Das Signal wurde untersucht und der Hammerkopf getötet.</missionsuccess.random_killhammerhead_basic>
+    <missionheader0.random_killhammerhead_basic>Ziel eliminiert</missionheader0.random_killhammerhead_basic>
+    <missionmessage0.random_killhammerhead_basic>Es stellt sich heraus, das Signal kam von dem Hammerkopf.</missionmessage0.random_killhammerhead_basic>
+    <missionname.random_killhammerhead>Zufällige Begegnung</missionname.random_killhammerhead>
+    <missiondescription.random_killhammerhead>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killhammerhead>
+    <missionsonarlabel.random_killhammerhead>Unbekanntes Signal</missionsonarlabel.random_killhammerhead>
+    <missionsuccess.random_killhammerhead>Das Signal wurde untersucht und die Hammerköpfe getötet.</missionsuccess.random_killhammerhead>
+    <missionheader0.random_killhammerhead>Ziele eliminiert</missionheader0.random_killhammerhead>
+    <missionmessage0.random_killhammerhead>Es stellt sich heraus, das Signal kam von den Hammerköpfen.</missionmessage0.random_killhammerhead>
+    <missionname.random_killhammerhead2>Zufällige Begegnung</missionname.random_killhammerhead2>
+    <missiondescription.random_killhammerhead2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killhammerhead2>
+    <missionsonarlabel.random_killhammerhead2>Unbekanntes Signal</missionsonarlabel.random_killhammerhead2>
+    <missionsuccess.random_killhammerhead2>Das Signal wurde untersucht und die Hammerköpfe getötet.</missionsuccess.random_killhammerhead2>
+    <missionheader0.random_killhammerhead2>Ziele eliminiert</missionheader0.random_killhammerhead2>
+    <missionmessage0.random_killhammerhead2>Es stellt sich heraus, das Signal kam von den Hammerköpfen.</missionmessage0.random_killhammerhead2>
+    <missionname.random_killmatriarch1>Zufällige Begegnung</missionname.random_killmatriarch1>
+    <missiondescription.random_killmatriarch1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmatriarch1>
+    <missionsonarlabel.random_killmatriarch1>Unbekanntes Signal</missionsonarlabel.random_killmatriarch1>
+    <missionsuccess.random_killmatriarch1>Das Signal wurde untersucht und die Hammerköpfe getötet. Die Route sollte nun wieder sicher sein.</missionsuccess.random_killmatriarch1>
+    <missionheader0.random_killmatriarch1>Ziele eliminiert</missionheader0.random_killmatriarch1>
+    <missionmessage0.random_killmatriarch1>Es stellt sich heraus, das Signal kam von den Hammerköpfen.</missionmessage0.random_killmatriarch1>
+    <missionname.random_killmatriarch2>Zufällige Begegnung</missionname.random_killmatriarch2>
+    <missiondescription.random_killmatriarch2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmatriarch2>
+    <missionsonarlabel.random_killmatriarch2>Unbekanntes Signal</missionsonarlabel.random_killmatriarch2>
+    <missionsuccess.random_killmatriarch2>Das Signal wurde untersucht und die Hammerkopf-Matriarchin getötet. Die Route sollte nun sicher sein.</missionsuccess.random_killmatriarch2>
+    <missionheader0.random_killmatriarch2>Ziel eliminiert</missionheader0.random_killmatriarch2>
+    <missionmessage0.random_killmatriarch2>Es stellt sich heraus, das Signal kam von der Matriarchin.</missionmessage0.random_killmatriarch2>
+    <missionname.random_killhammerheadgold>Zufällige Begegnung</missionname.random_killhammerheadgold>
+    <missiondescription.random_killhammerheadgold>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killhammerheadgold>
+    <missionsonarlabel.random_killhammerheadgold>Unbekanntes Signal</missionsonarlabel.random_killhammerheadgold>
+    <missionsuccess.random_killhammerheadgold>Das Signal wurde untersucht und der goldene Hammerkopf getötet.</missionsuccess.random_killhammerheadgold>
+    <missionheader0.random_killhammerheadgold>Ziel eliminiert</missionheader0.random_killhammerheadgold>
+    <missionmessage0.random_killhammerheadgold>Es stellt sich heraus, das Signal kam von dem goldenen Hammerkopf.</missionmessage0.random_killhammerheadgold>
+    <missionname.random_killgiantspineling1>Zufällige Begegnung</missionname.random_killgiantspineling1>
+    <missiondescription.random_killgiantspineling1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killgiantspineling1>
+    <missionsonarlabel.random_killgiantspineling1>Unbekanntes Signal</missionsonarlabel.random_killgiantspineling1>
+    <missionsuccess.random_killgiantspineling1>Das Signal wurde untersucht und der Riesengratling getötet.</missionsuccess.random_killgiantspineling1>
+    <missionheader0.random_killgiantspineling1>Ziel eliminiert</missionheader0.random_killgiantspineling1>
+    <missionmessage0.random_killgiantspineling1>Es stellt sich heraus, das Signal kam von dem Riesengratling.</missionmessage0.random_killgiantspineling1>
+    <missionname.random_killgiantspineling2>Zufällige Begegnung</missionname.random_killgiantspineling2>
+    <missiondescription.random_killgiantspineling2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killgiantspineling2>
+    <missionsonarlabel.random_killgiantspineling2>Unbekanntes Signal</missionsonarlabel.random_killgiantspineling2>
+    <missionsuccess.random_killgiantspineling2>Das Signal wurde untersucht und der Riesengratling getötet.</missionsuccess.random_killgiantspineling2>
+    <missionname.random_killspinelingswarm1>Zufällige Begegnung</missionname.random_killspinelingswarm1>
+    <missiondescription.random_killspinelingswarm1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killspinelingswarm1>
+    <missionsonarlabel.random_killspinelingswarm1>Unbekanntes Signal</missionsonarlabel.random_killspinelingswarm1>
+    <missionsuccess.random_killspinelingswarm1>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killspinelingswarm1>
+    <missionname.random_killthresherswarm1>Zufällige Begegnung</missionname.random_killthresherswarm1>
+    <missiondescription.random_killthresherswarm1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killthresherswarm1>
+    <missionsonarlabel.random_killthresherswarm1>Unbekanntes Signal</missionsonarlabel.random_killthresherswarm1>
+    <missionsuccess.random_killthresherswarm1>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killthresherswarm1>
+    <missionheader0.random_killthresherswarm1>Ziel eliminiert</missionheader0.random_killthresherswarm1>
+    <missionmessage0.random_killthresherswarm1>Es stellt sich heraus, das Signal kam von dem Schwarm.</missionmessage0.random_killthresherswarm1>
+    <missionname.random_killthresherswarm2>Zufällige Begegnung</missionname.random_killthresherswarm2>
+    <missiondescription.random_killthresherswarm2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killthresherswarm2>
+    <missionsonarlabel.random_killthresherswarm2>Unbekanntes Signal</missionsonarlabel.random_killthresherswarm2>
+    <missionsuccess.random_killthresherswarm2>Das Signal wurde untersucht und der Schwarm getötet.</missionsuccess.random_killthresherswarm2>
+    <missionname.random_killmudraptors_basic>Zufällige Begegnung</missionname.random_killmudraptors_basic>
+    <missiondescription.random_killmudraptors_basic>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmudraptors_basic>
+    <missionsonarlabel.random_killmudraptors_basic>Unbekanntes Signal</missionsonarlabel.random_killmudraptors_basic>
+    <missionsuccess.random_killmudraptors_basic>Das Signal wurde untersucht und die Schlammechsen getötet.</missionsuccess.random_killmudraptors_basic>
+    <missionname.random_killmudraptors1>Zufällige Begegnung</missionname.random_killmudraptors1>
+    <missiondescription.random_killmudraptors1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmudraptors1>
+    <missionsonarlabel.random_killmudraptors1>Unbekanntes Signal</missionsonarlabel.random_killmudraptors1>
+    <missionsuccess.random_killmudraptors1>Das Signal wurde untersucht und die Schlammechsen getötet.</missionsuccess.random_killmudraptors1>
+    <missionheader0.random_killmudraptors1>Ziel eliminiert</missionheader0.random_killmudraptors1>
+    <missionmessage0.random_killmudraptors1>Es stellt sich heraus, das Signal kam von den Schlammechsen.</missionmessage0.random_killmudraptors1>
+    <missionname.random_killmudraptors2>Zufällige Begegnung</missionname.random_killmudraptors2>
+    <missiondescription.random_killmudraptors2>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_killmudraptors2>
+    <missionsonarlabel.random_killmudraptors2>Unbekanntes Signal</missionsonarlabel.random_killmudraptors2>
+    <missionsuccess.random_killmudraptors2>Das Signal wurde untersucht und die Schlammechsen getötet.</missionsuccess.random_killmudraptors2>
+    <missionname.random_salvagewreck1>Zufällige Begegnung</missionname.random_salvagewreck1>
+    <missiondescription.random_salvagewreck1>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_salvagewreck1>
+    <missionsonarlabel.random_salvagewreck1>Unbekanntes Signal</missionsonarlabel.random_salvagewreck1>
+    <missionsuccess.random_salvagewreck1>Das Signal wurde untersucht und das Logbuch wurde geborgen.</missionsuccess.random_salvagewreck1>
+    <missionfailure.random_salvagewreck1>Das Signal wurde nicht untersucht.</missionfailure.random_salvagewreck1>
+    <missionheader0.random_salvagewreck1>Daten geborgen</missionheader0.random_salvagewreck1>
+    <missionmessage0.random_salvagewreck1>Es stellt sich heraus, das Signal kommt von dem Logbuch mit verschlüsselten Daten.</missionmessage0.random_salvagewreck1>
+    <missionname.random_pirate_heavy>Zufällige Begegnung</missionname.random_pirate_heavy>
+    <missiondescription.random_pirate_heavy>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_pirate_heavy>
+    <missionsuccess.random_pirate_heavy>Das Signal wurde untersucht und die Piratenbesatzung eliminiert.</missionsuccess.random_pirate_heavy>
+    <missionfailure.random_pirate_heavy>Das Signal wurde nicht untersucht.</missionfailure.random_pirate_heavy>
+    <missionsonarlabel.random_pirate_heavy>Unbekanntes Signal</missionsonarlabel.random_pirate_heavy>
+    <missionheader0.random_pirate_heavy>Begegnung mit Piraten</missionheader0.random_pirate_heavy>
+    <missionmessage0.random_pirate_heavy>Neutralisiere ihre Besatzung oder lasse ihr Uboot auf den Meeresgrund sinken!</missionmessage0.random_pirate_heavy>
+    <missionheader1.random_pirate_heavy>Piraten eliminiert</missionheader1.random_pirate_heavy>
+    <missionmessage1.random_pirate_heavy>Es stellt sich heraus, das Signal kam von den Piraten. Vielleicht haben sie ja wertvolle Fracht? Navigiere dein Uboot nach [location2], wenn du dazu bereit bist, die Gegend zu verlaseen.</missionmessage1.random_pirate_heavy>
+    <missionname.random_pirate_party>Zufällige Begegnung</missionname.random_pirate_party>
+    <missiondescription.random_pirate_party>Du hast das seltsame Gefühl, etwas interessantes wartet hier irgendwo auf dich...</missiondescription.random_pirate_party>
+    <missionsuccess.random_pirate_party>Das Signal wurde untersucht und die Piratenbesatzung eliminiert.</missionsuccess.random_pirate_party>
+    <missionfailure.random_pirate_party>Das Signal wurde nicht untersucht.</missionfailure.random_pirate_party>
+    <missionsonarlabel.random_pirate_party>Unbekanntes Signal</missionsonarlabel.random_pirate_party>
+    <missionheader0.random_pirate_party>Begegnung mit Piraten</missionheader0.random_pirate_party>
+    <missionmessage0.random_pirate_party>Neutralisiere ihre Besatzung oder lasse ihr Uboot auf den Meeresgrund sinken!</missionmessage0.random_pirate_party>
+    <missionheader1.random_pirate_party>Piraten eliminiert</missionheader1.random_pirate_party>
+    <missionmessage1.random_pirate_party>Es stellt sich heraus, das Signal kam von den Piraten. Vielleicht haben sie ja wertvolle Fracht? Navigiere dein Uboot nach [location2], wenn du dazu bereit bist, die Gegend zu verlaseen.</missionmessage1.random_pirate_party>
+    <locationchange.outpost.changeto.abandoned>Wir haben den Kontakt zu [previousname] verloren. Wir raten allen die nachsehen wollen, mit Vorsicht vorzugehen!</locationchange.outpost.changeto.abandoned>
+    <locationchange.outpost.changeto.abandoned>Die nahegelegene Signalboje bei [previousname] erhielt eine automatisierte SOS Übertragung der lokalen Station, erhielt aber keinerlei weitere Kommunikation.</locationchange.outpost.changeto.abandoned>
+    <locationchange.outpost.changeto.abandoned>Berichten zufolge ist [previousname] überrannt worden. Keine Überlebenden wurden gefunden.</locationchange.outpost.changeto.abandoned>
+    <locationchange.outpost.changeto.abandoned>Berichten zufolge wurde [previousname] angegriffen und stark beschädigt. Überlebende werden mit einem Shuttle eskortiert.</locationchange.outpost.changeto.abandoned>
+    <locationchange.none.changeto.waypoint>[previousname] wurde für die Kolonisierung markiert.</locationchange.none.changeto.waypoint>
+    <locationchange.none.changeto.waypoint>[previousname] verfügt über reichlich Platz um einen Außenposten zu errichten.</locationchange.none.changeto.waypoint>
+    <locationchange.none.changeto.waypoint>[previousname] ist bereit für die Kolonisierung.</locationchange.none.changeto.waypoint>
+    <locationchange.none.changeto.waypoint>Die Koalition markierte [previousname] als ein gutes Gebiet zum siedeln.</locationchange.none.changeto.waypoint>
+    <locationchange.none.changeto.lair>[previousname] wurde von Monstern übernommen.</locationchange.none.changeto.lair>
+    <locationchange.none.changeto.Huskswarm>Swarms of husk-infected monsters were spotted around [previousname].</locationchange.none.changeto.Huskswarm>
+    <locationchange.lair.changeto.none>[previousname] wurde durch das Militär der Koalition gesäubert.</locationchange.lair.changeto.none>
+    <locationchange.none.changeto.UnderAttack>[previousname] wird von Monstern angegriffen.</locationchange.none.changeto.UnderAttack>
+    <locationchange.UnderAttack.changeto.none>[previousname] wurde von den angreifenden Monstern befreit.</locationchange.UnderAttack.changeto.none>
+    <locationchange.Huskswarm.changeto.none>Husk activity has decreased around [previousname].</locationchange.Huskswarm.changeto.none>
+    <locationchange.UnderAttack.changeto.blockade>Die Koalition errichtet eine Blockade bei [previousname].</locationchange.UnderAttack.changeto.blockade>
+    <locationchange.UnderAttack.changeto.blockade>Die Koalition versetzt Truppen nach [previousname].</locationchange.UnderAttack.changeto.blockade>
+    <locationchange.UnderAttack.changeto.blockade>Die Koalition sammelt Truppen bei [previousname].</locationchange.UnderAttack.changeto.blockade>
+    <locationchange.colony.changeto.settlement>Kolonisten von [previousname] haben ihre Kolonie ausgebaut, um weitere Bewohner aufnehmen zu können.</locationchange.colony.changeto.settlement>
+    <locationchange.colony.changeto.settlement>Die Kolonie [previousname] ist gewachsen.</locationchange.colony.changeto.settlement>
+    <locationchange.colony.changeto.settlement>[previousname] wird weiter ausgebaut.</locationchange.colony.changeto.settlement>
+    <locationchange.colony.changeto.construction>Die Kolonisten von [previousname] beginnen weitere Ausbaumaßnahmen an ihrer Station.</locationchange.colony.changeto.construction>
+    <locationchange.colony.changeto.construction>Die Kolonisten von [previousname] bauen ihre Station weiter aus.</locationchange.colony.changeto.construction>
+    <locationchange.colony.changeto.construction>[previousname] befindet sich derzeit unter Bauarbeiten, um neue Infrastruktur zu erstellen.</locationchange.colony.changeto.construction>
+    <locationchange.construction.changeto.hydroponics>Ingenieure von [previousname] haben ihre Verkabelungsarbeiten an einem neuen Gewächshaus beendet.</locationchange.construction.changeto.hydroponics>
+    <locationchange.construction.changeto.hydroponics>Mechaniker von [previousname] haben ihre Schweißarbeiten an einem neuen Gewächshaus beendet.</locationchange.construction.changeto.hydroponics>
+    <locationchange.construction.changeto.hydroponics>[previousname] züchtet nun Pflanzen für die umliegenden Stationen.</locationchange.construction.changeto.hydroponics>
+    <locationchange.construction.changeto.factory>Die Ingenieure bei [previousname] haben die Fabrikatoren aufgestellt.</locationchange.construction.changeto.factory>
+    <locationchange.construction.changeto.factory>Die Mechaniker bei [previousname] haben mit arbeiten an Konsumgütern begonnen.</locationchange.construction.changeto.factory>
+    <locationchange.construction.changeto.factory>Die Industire bei [previousname] blüht auf!</locationchange.construction.changeto.factory>
+    <locationchange.construction.changeto.camp>Truppen der Koalition errichten ein Lager bei [previousname].</locationchange.construction.changeto.camp>
+    <locationchange.construction.changeto.camp>[previousname] wird nun von Truppen der Koalition kontrolliert.</locationchange.construction.changeto.camp>
+    <locationchange.construction.changeto.camp>Die Koalition errichtet ein Lager bei [previousname].</locationchange.construction.changeto.camp>
+    <locationchange.construction.changeto.study>Eine Studie der Umgebung von [previousname] weißt auf viele verschiedene Lebensformen in der Region hin.</locationchange.construction.changeto.study>
+    <locationchange.construction.changeto.study>[previousname] fanden eine faszinierende Pflanzenart in einer nahen Höhle.</locationchange.construction.changeto.study>
+    <locationchange.construction.changeto.study>Eine Pflanze nahe [previousname] sorgt für wissenschaftliche Neugierde.</locationchange.construction.changeto.study>
+    <locationchange.construction.changeto.survey>Untersuchungen um [previousname] weisen auf wertvolle Erze in der Region hin.</locationchange.construction.changeto.survey>
+    <locationchange.construction.changeto.survey>[previousname] haben Mineralien in der Nähe entdeckt.</locationchange.construction.changeto.survey>
+    <locationchange.construction.changeto.survey>Reichhaltige Mineralvorkommen wurden bei [previousname] gesichtet.</locationchange.construction.changeto.survey>
+    <locationchange.construction.changeto.fusion>Wissenschaftler und Ingenieure haben die Bauarbeiten des Fusionsreaktors bei [previousname] beendet.</locationchange.construction.changeto.fusion>
+    <locationchange.construction.changeto.fusion>[previousname] versorgt die umliegenden Stationen nun mit Fusionsenergie.</locationchange.construction.changeto.fusion>
+    <locationchange.construction.changeto.shipyard>[previousname] verkaufen nun alles rund ums Uboot.</locationchange.construction.changeto.shipyard>
+    <locationchange.construction.changeto.shipyard>[previousname] haben die Bauarbeiten am Trockendock beendet.</locationchange.construction.changeto.shipyard>
+    <locationchange.construction.changeto.shipyard>Die Werft [previousname] hat ihre Bauarbeiten beendet.</locationchange.construction.changeto.shipyard>
+    <locationchange.construction.changeto.clinic>Medizinische Versorgung ist nun bei [previousname] erhältlich.</locationchange.construction.changeto.clinic>
+    <locationchange.construction.changeto.clinic>[previousname] hat eine kleine Klinik errichtet.</locationchange.construction.changeto.clinic>
+    <locationchange.construction.changeto.clinic>Bauarbeiten einer Klinik wurden bei [previousname] fertiggestellt.</locationchange.construction.changeto.clinic>
+    <locationchange.camp.changeto.base>Truppen der Koalition haben [previousname] befestigt.</locationchange.camp.changeto.base>
+    <locationchange.camp.changeto.base>Das Lager [previousname] wurde zu einer Basis ausgebaut.</locationchange.camp.changeto.base>
+    <locationchange.camp.changeto.base>[previousname] has set up fortifications.</locationchange.camp.changeto.base>
+    <locationchange.base.changeto.military>Die Koalition errichtet eine Festung bei [previousname].</locationchange.base.changeto.military>
+    <locationchange.base.changeto.military>[previousname] wurde zu einer Festung ausgebaut, um umliegende Stationen zu schützen.</locationchange.base.changeto.military>
+    <locationname.colony>Kolonie</locationname.colony>
+    <locationnameformat.colony>[name] Territorium</locationnameformat.colony>
+    <locationnameformat.colony>[name] Grenzgebiet</locationnameformat.colony>
+    <locationnameformat.colony>[name] Kolonie</locationnameformat.colony>
+    <locationname.settlement>Siedlung</locationname.settlement>
+    <locationnameformat.settlement>[name] Posten</locationnameformat.settlement>
+    <locationnameformat.settlement>[name]</locationnameformat.settlement>
+    <locationnameformat.settlement>Siedlung [name]</locationnameformat.settlement>
+    <locationname.outpost>Außenposten</locationname.outpost>
+    <locationnameformat.outpost>[name] Station</locationnameformat.outpost>
+    <locationnameformat.outpost>[name] Residence</locationnameformat.outpost>
+    <locationnameformat.outpost>[name] Community</locationnameformat.outpost>
+    <locationnameformat.outpost>[name] Outpost</locationnameformat.outpost>
+    <locationname.city>Stadt</locationname.city>
+    <locationnameformat.city>[name] Metropolis</locationnameformat.city>
+    <locationnameformat.city>[name] Aquapolis</locationnameformat.city>
+    <locationnameformat.city>Großstadt [name]</locationnameformat.city>
+    <locationname.survey>Untersuchung</locationname.survey>
+    <locationnameformat.survey>[name] Reserve</locationnameformat.survey>
+    <locationnameformat.survey>[name] Felder</locationnameformat.survey>
+    <locationnameformat.survey>[name] Ablagerung</locationnameformat.survey>
+    <locationnameformat.survey>[name] Untersuchung</locationnameformat.survey>
+    <locationname.extraction>Extraktion</locationname.extraction>
+    <locationnameformat.extraction>[name] Steinbruch</locationnameformat.extraction>
+    <locationnameformat.extraction>[name] Ausgrabungsstätte</locationnameformat.extraction>
+    <locationnameformat.extraction>[name] Extraktion</locationnameformat.extraction>
+    <locationname.mine>Mine</locationname.mine>
+    <locationnameformat.mine>[name] Mine</locationnameformat.mine>
+    <locationnameformat.mine>[name] Bohrungen</locationnameformat.mine>
+    <locationname.camp>Lager</locationname.camp>
+    <locationnameformat.camp>[name] Barracken</locationnameformat.camp>
+    <locationnameformat.camp>[name] Garnison</locationnameformat.camp>
+    <locationnameformat.camp>[name] Lager</locationnameformat.camp>
+    <locationname.base>Basis</locationname.base>
+    <locationnameformat.base>[name] Bunker</locationnameformat.base>
+    <locationnameformat.base>[name] Bastion</locationnameformat.base>
+    <locationnameformat.base>[name] Basis</locationnameformat.base>
+    <locationname.military>Festung</locationname.military>
+    <locationnameformat.military>[name] Festung</locationnameformat.military>
+    <locationnameformat.military>[name] Militärische Fakultät</locationnameformat.military>
+    <locationname.study>Forschung</locationname.study>
+    <locationnameformat.study>[name] Biostudie</locationnameformat.study>
+    <locationnameformat.study>[name] Geostudie</locationnameformat.study>
+    <locationnameformat.study>[name] Observatorium</locationnameformat.study>
+    <locationnameformat.study>[name] Pflanzenforschung</locationnameformat.study>
+    <locationnameformat.study>[name] Kreaturenforschung</locationnameformat.study>
+    <locationname.lab>Labor</locationname.lab>
+    <locationnameformat.lab>[name] Sterile Forschungslabore</locationnameformat.lab>
+    <locationnameformat.lab>[name] Experimente</locationnameformat.lab>
+    <locationnameformat.lab>[name] Labore</locationnameformat.lab>
+    <locationnameformat.lab>[name] Forschungslabore</locationnameformat.lab>
+    <locationname.research>Institut</locationname.research>
+    <locationnameformat.research>[name] Universität</locationnameformat.research>
+    <locationnameformat.research>[name] Institution</locationnameformat.research>
+    <locationnameformat.research>[name] Institut</locationnameformat.research>
+    <locationname.hydroponics>Hydrokultur</locationname.hydroponics>
+    <locationnameformat.hydroponics>[name] Hydrokultur</locationnameformat.hydroponics>
+    <locationnameformat.hydroponics>[name] Landwirtschaft</locationnameformat.hydroponics>
+    <locationname.biosphere>Biosphäre</locationname.biosphere>
+    <locationnameformat.biosphere>[name] Zuchtstätte</locationnameformat.biosphere>
+    <locationnameformat.biosphere>[name] Biosphäre</locationnameformat.biosphere>
+    <locationname.nourishment>Ernährungszentrum</locationname.nourishment>
+    <locationnameformat.nourishment>[name] Ernährungszentrum</locationnameformat.nourishment>
+    <locationname.clinic>Klinik</locationname.clinic>
+    <locationnameformat.clinic>[name] Klinik</locationnameformat.clinic>
+    <locationname.hospital>Hospital</locationname.hospital>
+    <locationnameformat.hospital>[name] Krankenhaus</locationnameformat.hospital>
+    <locationname.surgery>Operationszentrum</locationname.surgery>
+    <locationnameformat.surgery>[name] Bio-Medizinisches Institut</locationnameformat.surgery>
+    <locationnameformat.surgery>[name] Operationszentrum</locationnameformat.surgery>
+    <locationname.forge>Schmiede</locationname.forge>
+    <locationnameformat.forge>[name] Schmiede</locationnameformat.forge>
+    <locationname.factory>Fabrik</locationname.factory>
+    <locationnameformat.factory>[name] Industrie</locationnameformat.factory>
+    <locationnameformat.factory>[name] Mühle</locationnameformat.factory>
+    <locationnameformat.factory>[name] Manufaktur</locationnameformat.factory>
+    <locationname.shipyard>Werft</locationname.shipyard>
+    <locationnameformat.shipyard>[name] Trockendock</locationnameformat.shipyard>
+    <locationnameformat.shipyard>[name] Werf</locationnameformat.shipyard>
+    <locationname.warehouse>Warenhaus</locationname.warehouse>
+    <locationnameformat.warehouse>[name] Lagerhaus</locationnameformat.warehouse>
+    <locationnameformat.warehouse>[name] Depot</locationnameformat.warehouse>
+    <locationnameformat.warehouse>[name] Warenhaus</locationnameformat.warehouse>
+    <locationname.fusion>Kraftwerk</locationname.fusion>
+    <locationnameformat.fusion>[name] Atomkraftwerk</locationnameformat.fusion>
+    <locationnameformat.fusion>[name] Thermonukleares Kraftwerk</locationnameformat.fusion>
+    <locationnameformat.fusion>[name] Fussionsreaktor</locationnameformat.fusion>
+    <locationname.construction>Baustelle</locationname.construction>
+    <locationnameformat.construction>[name] Baustelle</locationnameformat.construction>
+    <locationnameformat.construction>[name] Planungszone</locationnameformat.construction>
+    <locationname.blockade>Militärische Blockade</locationname.blockade>
+    <locationnameformat.blockade>[name] Blockade</locationnameformat.blockade>
+    <locationnameformat.blockade>[name] Stellung</locationnameformat.blockade>
+    <locationnameformat.blockade>[name] Kontrollpunkt</locationnameformat.blockade>
+    <locationnameformat.blockade>[name] Befestigung</locationnameformat.blockade>
+    <locationnameformat.UnderAttack>[name]</locationnameformat.UnderAttack>
+    <locationname.UnderAttack>Wird angegriffen</locationname.UnderAttack>
+    <locationname.Waypoint>Wegpunkt</locationname.Waypoint>
+    <locationname.HuskgroundsDE>Hüllengründe</locationname.HuskgroundsDE>
+    <locationnameformat.Waypoint>[name] Wegpunkt</locationnameformat.Waypoint>
+    <locationnameformat.Waypoint>[name] Signalboje</locationnameformat.Waypoint>
+    <locationnameformat.HuskGroundsDE>Hüllengründe von [name]</locationnameformat.HuskGroundsDE>
+    <locationname.WasteyardDE>Wasteyard</locationname.WasteyardDE>
+    <locationnameformat.WasteyardDE>Wasteyard of [name]</locationnameformat.WasteyardDE>
+    <EventText.DEgotoblockade.c1>"VERFÜGBARE AUFTRÄGE DER KOALITION", Die verfärbten und zerfledderten Poster an er Wand zeigen bereits verlorene Siedlungen und überrante Gegenden. Es scheint die Koalition ist etwas überfordert. Du findest nur eine leserliche Koordinate.</EventText.DEgotoblockade.c1>
+    <EventText.DEgotoblockade.o1>Ein von Steuern befreiter Gehaltsschein könnte nicht schaden...</EventText.DEgotoblockade.o1>
+    <eventtext.missionevent_lair.c1>“In der Nähe gibt es einen großen Bau voller Kreaturen und von Minute zu Minute werden es mehr. Wenn du den Bau säuberst, gibt's eine saftige Belohnung!”</eventtext.missionevent_lair.c1>
+    <EventText.missionevent_lair.o1>Verstanden</EventText.missionevent_lair.o1>
+    <entityname.giantrubberduck>Rießige Gummiente</entityname.giantrubberduck>
+    <entitydescription.giantrubberduck>Eine rießige Gummiente zum herumwerfen und zum beobachten, wie sie imm Wasser treibt.</entitydescription.giantrubberduck>
+    <entityname.bigrubberduck>Große Gummiente</entityname.bigrubberduck>
+    <entitydescription.bigrubberduck>Eine große Gummiente zum herumwerfen und zum beobachten, wie sie imm Wasser treibt.</entitydescription.bigrubberduck>
+    <entityname.rubberduck>Gummiente</entityname.rubberduck>
+    <entitydescription.rubberduck>Eine Gummiente zum herumwerfen und zum beobachten, wie sie imm Wasser treibt.</entitydescription.rubberduck>
+    <entityname.giantpiraterubberduck>Rießige Gummiente</entityname.giantpiraterubberduck>
+    <entitydescription.giantpiraterubberduck>Eine rießige Gummiente mit einem Piratenhut zum herumwerfen und zum beobachten, wie sie imm Wasser treibt.</entitydescription.giantpiraterubberduck>
+    <entityname.bigpiraterubberduck>Große Gummiente</entityname.bigpiraterubberduck>
+    <entitydescription.bigpiraterubberduck>Eine große Gummiente mit einem Piratenhut zum herumwerfen und zum beobachten, wie sie imm Wasser treibt.</entitydescription.bigpiraterubberduck>
+    <entityname.piraterubberduck>Gummiente</entityname.piraterubberduck>
+    <entitydescription.piraterubberduck>Eine Gummiente mit einem Piratenhut zum herumwerfen und zum beobachten, wie sie imm Wasser treibt.</entitydescription.piraterubberduck>
+    <entityname.exosuitPA>Piraten Exo-Anzug</entityname.exosuitPA>
+    <entitydescription.exosuitPA>Ein stark modifizierter Exo-Anzug. Es scheint als seien einige Piraten tatsächlich handwerklich begabt und haben es geschafft die Resistenz gegen Rückstöße und Betäubungen zu verringern. Außerdem wurde die Luftzufuhr modifiziert und erlaubt dem Nutzer nun das Atmen von Sauerstoff aus der Umgebung.</entitydescription.exosuitPA>
+    <entityname.dirtybombPA>Dreckige Bombe</entityname.dirtybombPA>
+    <entitydescription.dirtybombPA>Eine handgemachte Bombe, die man in einen Zünder, in Railgun-Granaten oder in Wasserbomben-Granaten packen kann. Es ist wohl besser etwas Abstand zu halten!</entitydescription.dirtybombPA>
+    <entityname.piratehelmetPA>Piratenhelm</entityname.piratehelmetPA>
+    <entityname.piratebodyarmorPA>Piratenrüstung</entityname.piratebodyarmorPA>
+    <entityname.piratebandanaPA>Piratenkopftuch</entityname.piratebandanaPA>
+    <entityname.piratecaptainhatPA>Piratenkapitänshut</entityname.piratecaptainhatPA>
+    <entityname.pirateclothesnovicePA>Piratenklamotten (Novize)</entityname.pirateclothesnovicePA>
+    <entitydescription.pirateclothesnovicePA>Ein von Piraten gefertigtes, robustes Outfit. Dieses Exemplar wird hauptsächlich an neue Rekruten und Besatzungsmitgliedern in niedrigen Positionen gegeben.</entitydescription.pirateclothesnovicePA>
+    <entityname.pirateclothesPA>Piratenklamotten</entityname.pirateclothesPA>
+    <entitydescription.pirateclothesPA>Ein von Piraten gefertigtes, robustes Outfit. Es wurde dazu gemacht, den rauen Bedingungen des Seelebens auf Europa standzuhalten. Dieses spezielle Exemplar wurde mit leichten Panzerungsplatten versehen.</entitydescription.pirateclothesPA>
+    <entityname.pirateclotheshardPA>Piratenklamotten (Kampf)</entityname.pirateclotheshardPA>
+    <entitydescription.pirateclotheshardPA>Ein von Piraten gefertigtes, robustes Outfit. Es wurde dazu gemacht, den rauen Bedingungen des Seelebens auf Europa standzuhalten. Dieses Exemplar wird von erfahreneren Besatzungsmitgliedern und Personen mit höheren Rängen getragen.</entitydescription.pirateclotheshardPA>
+    <locationnameformat.pirateoutpost>[name] Zuflucht</locationnameformat.pirateoutpost>
+    <locationnameformat.pirateoutpost>[name] Hafen</locationnameformat.pirateoutpost>
+    <locationnameformat.pirateoutpost>[name] Versteck</locationnameformat.pirateoutpost>
+    <locationchange.none.changeto.pirateoutpost>Piraten errichteten eine neue Zuflucht bei [previousname].</locationchange.none.changeto.pirateoutpost>
+    <locationchange.none.changeto.pirateoutpost>Einige Piraten ließen sich in [previousname] nieder und etablierten eine neue Zuflucht.</locationchange.none.changeto.pirateoutpost>
+    <EventText.missionevent_piratevscoalition.c1>Wir haben gehört, dass ein Schiff der Koalition hier in der Nähe vorbeikommt. Vielleicht haben sie ein paar Waren, die ihr ihnen abnehmen könntet, wenn ihr versteht was ich meine?</EventText.missionevent_piratevscoalition.c1>
+    <EventText.missionevent_piratevsseparatists.c1>Einige Separatisten scheinen in diesen Gewässern unterwegs zu sein. Vielleicht haben sie ein paar Waren, die ihr ihnen abnehmen könntet, wenn ihr versteht was ich meine?</EventText.missionevent_piratevsseparatists.c1>
+    <locationname.nonePA></locationname.nonePA>
+    <locationnameformat.nonePA>[name]</locationnameformat.nonePA>
+    <locationnameformat.pirateoutpost>[name]</locationnameformat.pirateoutpost>
+    <locationchange.nonePA.changeto.pirateoutpost>Piraten haben eine neue Zuflucht in [previousname] erbaut.</locationchange.nonePA.changeto.pirateoutpost>
+    <missionname.trespassing_coalition>Unbefugtes Betreten</missionname.trespassing_coalition>
+    <missiondescription.trespassing_coalition>Ihr dringt unbefugt in ein Gebiet ein. Haltet in dieser Gegend Ausschau nach patrouillierenden Schiffen der Koalition!</missiondescription.trespassing_coalition>
+    <missionsuccess.trespassing_coalition>Ihr habt die Koalitionspatrouille erfolgreich eliminiert!</missionsuccess.trespassing_coalition>
+    <missionfailure.trespassing_coalition>Ihr seid der Koalitionspatrouille erfolgreich ausgewichen!</missionfailure.trespassing_coalition>
+    <missionsonarlabel.trespassing_coalition>Koalitionspatrouille gesichtet</missionsonarlabel.trespassing_coalition>
+    <missionheader0.trespassing_coalition>Koalitionspatrouille entdeckt</missionheader0.trespassing_coalition>
+    <missionmessage0.trespassing_coalition>Entkomme der Patrouille oder neutralisiere die Gefahr!</missionmessage0.trespassing_coalition>
+    <missionheader1.trespassing_coalition>Koalitionspatrouille eliminiert</missionheader1.trespassing_coalition>
+    <missionmessage1.trespassing_coalition>Ihr könnt eure Reise nach [location2] fortsetzen.</missionmessage1.trespassing_coalition>
+    <missionname.pirate_vscoalition>Überfall auf ein Schiff der Koalition</missionname.pirate_vscoalition>
+    <missiondescription.pirate_vscoalition>Jagt das Schiff der Koalition, eliminiert dessen Besatzung und plündert seine Vorräte! Die markierten Stellen zeigen euch, wo sich das Schiff ungefähr aufhält.</missiondescription.pirate_vscoalition>
+    <missionsuccess.pirate_vscoalition>Die Besatzung der Koalition wurde erfolgreich eliminiert.</missionsuccess.pirate_vscoalition>
+    <missionfailure.pirate_vscoalition>Die Besatzung der Koalition wurde nicht eliminiert.</missionfailure.pirate_vscoalition>
+    <missionsonarlabel.pirate_vscoalition>Vermutete Position der Koalition</missionsonarlabel.pirate_vscoalition>
+    <missionheader0.pirate_vscoalition>Schiff der Koalition entdeckt</missionheader0.pirate_vscoalition>
+    <missionmessage0.pirate_vscoalition>Neutralisiert die Besatzung oder lasst das U-Boot auf den Meeresgrund sinken!</missionmessage0.pirate_vscoalition>
+    <missionheader1.pirate_vscoalition>Koalitionsbesatzung eliminiert</missionheader1.pirate_vscoalition>
+    <missionmessage1.pirate_vscoalition>Plündert ihr Schiff und macht euch auf den Weg nach [location2].</missionmessage1.pirate_vscoalition>
+    <missionname.pirate_vsseparatists>Überfall auf ein Schiff der Separatisten</missionname.pirate_vsseparatists>
+    <missiondescription.pirate_vsseparatists>Jagt das Schiff der Separatisten, eliminiert dessen Besatzung und plündert seine Vorräte! Die markierten Stellen zeigen euch, wo sich das Schiff ungefähr aufhält.</missiondescription.pirate_vsseparatists>
+    <missionsuccess.pirate_vsseparatists>Die Besatzung der Separatisten wurde erfolgreich eliminiert.</missionsuccess.pirate_vsseparatists>
+    <missionfailure.pirate_vsseparatists>Die Besatzung der Separatisten wurde nicht eliminiert.</missionfailure.pirate_vsseparatists>
+    <missionsonarlabel.pirate_vsseparatists>Vermutete Position der Separatisten</missionsonarlabel.pirate_vsseparatists>
+    <missionheader0.pirate_vsseparatists>Schiff der Separatisten entdeckt</missionheader0.pirate_vsseparatists>
+    <missionmessage0.pirate_vsseparatists>Neutralisiert die Besatzung oder lasst das U-Boot auf den Meeresgrund sinken!</missionmessage0.pirate_vsseparatists>
+    <missionheader1.pirate_vsseparatists>Separatisten eliminiert</missionheader1.pirate_vsseparatists>
+    <missionmessage1.pirate_vsseparatists>Plündert ihr Schiff und macht euch auf den Weg nach [location2].</missionmessage1.pirate_vsseparatists>
+    <missionname.pirate_heavy>Schweres Piratenschiff</missionname.pirate_heavy>
+    <missiondescription.pirate_heavy>Finde das Piratenschiff, das in dieser Gegend sein Unwesen treibt und eliminiere seine Besatzung, aber bedenke dass diese Piraten es geschafft haben ihre Hüllen zu verstärken. Also bringst du entweder ordentlich Feuerkraft mit oder du zielst auf die Türen und Luken! Die markierten Punkte zeigen, wo das Schiff zuletzt gesehen wurde.</missiondescription.pirate_heavy>
+    <missionsuccess.pirate_heavy>Die Besatzung des Piratenschiffs wurde erfolgreich eliminiert.</missionsuccess.pirate_heavy>
+    <missionfailure.pirate_heavy>Die Besatzung des Piratenschiffs wurde nicht eliminiert.</missionfailure.pirate_heavy>
+    <missionsonarlabel.pirate_heavy>Piraten gesichtet</missionsonarlabel.pirate_heavy>
+    <missionheader0.pirate_heavy>Piraten entdeckt</missionheader0.pirate_heavy>
+    <missionmessage0.pirate_heavy>Neutralisiere die Besatzung oder lasse das U-Boot auf den Meeresgrund sinken!</missionmessage0.pirate_heavy>
+    <missionheader1.pirate_heavy>Piraten eliminiert</missionheader1.pirate_heavy>
+    <missionmessage1.pirate_heavy>Navigiere dein U-Boot nach [location2], um deine Belohnung zu erhalten.</missionmessage1.pirate_heavy>
+    <missionname.pirate_party>Ravendes Piratenschiff</missionname.pirate_party>
+    <missiondescription.pirate_party>Es gab Sichtungen über ein Piratenschiff, welches andere Schiffe überfällt und deren Ethanol- und Rumvorräte plündert und dabei so laut Musik ballert, dass sie die Monster von ganz Europa vor unsere Tür locken. Werde diese Arschlöcher los, damit wir uns nicht mit Dingen auseinandersetzen müssen, die weitaus schlimmer wären als die! Die markierten Punkte zeigen dir, wo wir das Schiff derzeit vermuten.</missiondescription.pirate_party>
+    <missionsuccess.pirate_party>Die Besatzung des Piratenschiffs wurde erfolgreich eliminiert.</missionsuccess.pirate_party>
+    <missionfailure.pirate_party>Die Besatzung des Piratenschiffs wurde nicht eliminiert.</missionfailure.pirate_party>
+    <missionsonarlabel.pirate_party>Piraten gesichtet</missionsonarlabel.pirate_party>
+    <missionheader0.pirate_party>Piraten entdeckt</missionheader0.pirate_party>
+    <missionmessage0.pirate_party>Neutralisiere die Besatzung oder lasse das U-Boot auf den Meeresgrund sinken!</missionmessage0.pirate_party>
+    <missionheader1.pirate_party>Piraten eliminiert</missionheader1.pirate_party>
+    <missionmessage1.pirate_party>Navigiere dein U-Boot nach [location2], um deine Belohnung zu erhalten.</missionmessage1.pirate_party>
+    <missionname.pirate_piezo>Seltsames Piratenschiff</missionname.pirate_piezo>
+    <missiondescription.pirate_piezo>Gerüchten zufolge treibt sich hier ein Piratenschiff mit seltsamen Fähigkeiten herum. Anscheinend erschaffen sie eine Art Anomalie um sich zu schützen, also halte dein U-Boot lieber auf einer sicheren Distanz! Die markierten Punkte zeigen dir, wo wir das Schiff derzeit vermuten.</missiondescription.pirate_piezo>
+    <missionsuccess.pirate_piezo>Die Besatzung des Piratenschiffs wurde erfolgreich eliminiert.</missionsuccess.pirate_piezo>
+    <missionfailure.pirate_piezo>Die Besatzung des Piratenschiffs wurde nicht eliminiert.</missionfailure.pirate_piezo>
+    <missionsonarlabel.pirate_piezo>Piraten gesichtet</missionsonarlabel.pirate_piezo>
+    <missionheader0.pirate_piezo>Piraten entdeckt</missionheader0.pirate_piezo>
+    <missionmessage0.pirate_piezo>Neutralisiere die Besatzung oder lasse das U-Boot auf den Meeresgrund sinken!</missionmessage0.pirate_piezo>
+    <missionheader1.pirate_piezo>Piraten eliminiert</missionheader1.pirate_piezo>
+    <missionmessage1.pirate_piezo>Navigiere dein U-Boot nach [location2], um deine Belohnung zu erhalten.</missionmessage1.pirate_piezo>
+    <missionname.pirate_lord>Schiff eines Piratenlords</missionname.pirate_lord>
+    <missiondescription.pirate_lord>Es gibt Gerüchte, dass in dieser Gegend ein Schiff eines Piratenlords sein Unwesen treibt. Eliminiere seine Besatzung und du wirst stattlich belohnt, aber bedenke dass dies die Crew eines Piratenlords ist. Sie haben sehr starke Hüllen und enorme Feuerkraft, also sei gut vorbereitet! Die markierten Punkte zeigen, wo das Schiff zuletzt gesehen wurde.</missiondescription.pirate_lord>
+    <missionsuccess.pirate_lord>Die Besatzung des Piratenschiffs wurde erfolgreich eliminiert.</missionsuccess.pirate_lord>
+    <missionfailure.pirate_lord>Die Besatzung des Piratenschiffs wurde nicht eliminiert.</missionfailure.pirate_lord>
+    <missionsonarlabel.pirate_lord>Piraten gesichtet</missionsonarlabel.pirate_lord>
+    <missionheader0.pirate_lord>Piraten entdeckt</missionheader0.pirate_lord>
+    <missionmessage0.pirate_lord>Neutralisiere die Besatzung oder lasse das U-Boot auf den Meeresgrund sinken!</missionmessage0.pirate_lord>
+    <missionheader1.pirate_lord>Piraten eliminiert</missionheader1.pirate_lord>
+    <missionmessage1.pirate_lord>Navigiere dein U-Boot nach [location2], um deine Belohnung zu erhalten.</missionmessage1.pirate_lord>
+    <npctitle.pirateannihilator>Piratenvernichter</npctitle.pirateannihilator>
+    <npctitle.partypiratecaptain>Feiernder Piratenkapitän</npctitle.partypiratecaptain>
+    <npctitle.partypiratecaptainlord>Feiernder Piratenlord</npctitle.partypiratecaptainlord>
+    <npctitle.partypiratesecurityrecruit>Feiernder Piratenrekrut</npctitle.partypiratesecurityrecruit>
+    <npctitle.partypiratesecuritygunner>Feiernder Piratenschütze</npctitle.partypiratesecuritygunner>
+    <npctitle.partypiratesecuritybrute>Feiernder Piratenschläger</npctitle.partypiratesecuritybrute>
+    <npctitle.partypiratesecurityelite>Feiernder Piratenelite</npctitle.partypiratesecurityelite>
+    <npctitle.partypiratemechanicveteran>Feiernder Piratentechniker</npctitle.partypiratemechanicveteran>
+    <npctitle.partypirateengineerveteran>Feiernder Piratenphysiker</npctitle.partypirateengineerveteran>
+    <npctitle.partypiratemechanicrecruit>Feiernder Piratenmechaniker</npctitle.partypiratemechanicrecruit>
+    <npctitle.partypirateengineerrecruit>Feiernder Pirateningenieur</npctitle.partypirateengineerrecruit>
+    <lockedpathtooltippirate>Piraten haben einen weg um die Blockaden gefunden, die den Weg in die tieferen Bereiche von Europa versperren. Höre dich auf der Station um, um zu erfahren wie du an ihnen vorbei kommst.</lockedpathtooltippirate>
+    <eventtext.unlockpatheuropanridgepirate.c1>“Hm? Geheime Passage? Ohhh richtig! Wir haben einen Tunnel gefunden, der an den Blockaden vorbei führt. Hier, ich zeige es dir auf deiner Karte... Aber seid vorsichtig! Es könnten Schiffe auf Patrouille sein!”</eventtext.unlockpatheuropanridgepirate.c1>
+    <eventtext.unlockpathaphoticplateaupirate.c1>“Oh, du bist hier, um die Blockaden zu umgehen? Gib mir deine Karte... Also gut, hier findet Ihr einen Tunnel, durch den Ihr die Blockaden umgehen könnt, aber seid vorsichtig! Auf dem Weg dorthin könnte es Patrouillen geben! Viel Glück da draußen!”</eventtext.unlockpathaphoticplateaupirate.c1>
+    <eventtext.unlockpathgreatseapirate.c1>“Ahoi! Ihr wollt bestimmt auch an den Blockaden vorbei oder? Es gibt einen Tunnel, der an ihnen vorbeiführt. Hier, ich markiere ihn auf eurer Karte... Haltet aber nach patrouillierenden Schiffen Ausschau!”</eventtext.unlockpathgreatseapirate.c1>
+    <locationname.PirateOutpost>Piraten Zuflucht</locationname.PirateOutpost>
+    <locationname.PirateGateway>Piraten Zugang</locationname.PirateGateway>
+    <!-- /////////////////////////////////// -->
+    <!-- NEEDS TRANSLATION BELOW -->
+    <!-- /////////////////////////////////// -->
+    <!-- NEEDS TRANSLATION BELOW -->
+    <!-- /////////////////////////////////// -->
+    <!-- NEEDS TRANSLATION BELOW -->
+    <entityname.documents>Documents</entityname.documents>
+    <entitydescription.documents>A folder containing some documents.</entitydescription.documents>
+    <entityname.classifieddocuments>Classified Documents</entityname.classifieddocuments>
+    <entitydescription.classifieddocuments>An envelope containing classified documents.</entitydescription.classifieddocuments>
+    <entityname.classifieddocumentssep>Classified Documents</entityname.classifieddocumentssep>
+    <entitydescription.classifieddocumentssep>An envelope containing classified separatist documents.</entitydescription.classifieddocumentssep>
+    <Untangle>Untangle</Untangle>
+    <entityname.plantcluster>Plant Cluster</entityname.plantcluster>
+    <entitydescription.plantcluster>A cluster of entangled plants. It might be possible to untangle them when stabilizing them with stabilozine at a research table.</entitydescription.plantcluster>
+    <entityname.plantclusterresearched>Stabilized Plant Cluster</entityname.plantclusterresearched>
+    <entitydescription.plantclusterresearched>A cluster of entangled plants. It has been stabilized and can be untangled without harming all of the plants.</entitydescription.plantclusterresearched>
+    <missionname.cotakeover_separatistoutpost>Coalition Station-Takeover</missionname.cotakeover_separatistoutpost>
+    <missionname.septakeover_coalitionoutpost>Separatist Station-Takeover</missionname.septakeover_coalitionoutpost>
+    <missiondescription.cotakeover_separatistoutpost>A garrison of separatist rebels is staying at [location1]. Eliminate them and seize the outpost for the Coalition.</missiondescription.cotakeover_separatistoutpost>
+    <missiondescription.septakeover_coalitionoutpost>A garrison of coalition soldiers is staying at [location1]. Eliminate them and liberate the outpost in the name the Separatists.</missiondescription.septakeover_coalitionoutpost>
+    <missionheader0.coalitiontakeover>Outpost Claimed</missionheader0.coalitiontakeover>
+    <missionmessage0.coalitiontakeover>Seems like the separatists are surrendering.</missionmessage0.coalitiontakeover>
+    <missionheader0.separatisttakeover>Outpost Liberated</missionheader0.separatisttakeover>
+    <missionmessage0.separatisttakeover>Seems like the coalition is giving this station up.</missionmessage0.separatisttakeover>
+    <eventtext.gettakeovermission.option.accept.answer.acceptcrew>"Thank you! Some backup is always appreciated!"</eventtext.gettakeovermission.option.accept.answer.acceptcrew>
+    <eventtext.gettakeovermission.option.accept.answer.acceptcrew.answer>"Good luck!"</eventtext.gettakeovermission.option.accept.answer.acceptcrew.answer>
+    <eventtext.gettakeovermission.option.accept.answer.declinecrew>"That won't be necessary. Please order your soldiers to stay."</eventtext.gettakeovermission.option.accept.answer.declinecrew>
+    <eventtext.gettakeovermission.option.accept.answer.declinecrew.answer>"You seem quite determined... Alright, I'll order them to stay put. Good luck!"</eventtext.gettakeovermission.option.accept.answer.declinecrew.answer>
+    <EventText.mine.terminal.interact>The door is shut. The terminal says: "All external contractors must pay a security deposit of 250mk to access mining operations"</EventText.mine.terminal.interact>
+    <EventText.mine.terminal.interact.pay.success>Transaction received. Unlocking door...</EventText.mine.terminal.interact.pay.success>
+    <EventText.mine.terminal.interact.pay.failure>Transaction failed. Insufficient personal funds.</EventText.mine.terminal.interact.pay.failure>
+    <EventText.mine.breakin>You broke into the mine without paying the fee. Authorities were notified about your actions.</EventText.mine.breakin>
+    <EventText.option.pay>Pay</EventText.option.pay>
+    <entityname.mineterminal>Mineshaft access</entityname.mineterminal>
+    <afflictionname.temporarycrew>Temporary Crewmember</afflictionname.temporarycrew>
+    <afflictiondescription.temporarycrew.other>Will leave your crew after 6 hours from the moment they joined.</afflictiondescription.temporarycrew.other>
+    <afflictiondescription.temporarycrew.self>I'm here to support this crew for 6 hours from the moment I arrived. No more, no less.</afflictiondescription.temporarycrew.self>
+    <character.Lithomorph_Cassiterite>Lithomorph</character.Lithomorph_Cassiterite>
+    <character.Lithomorph_Chamosite>Lithomorph</character.Lithomorph_Chamosite>
+    <character.Lithomorph_Cryolite>Lithomorph</character.Lithomorph_Cryolite>
+    <character.Lithomorph_Galena>Lithomorph</character.Lithomorph_Galena>
+    <character.Lithomorph_Hydroxyapatite>Lithomorph</character.Lithomorph_Hydroxyapatite>
+    <character.Lithomorph_Pyromorphite>Lithomorph</character.Lithomorph_Pyromorphite>
+    <character.Lithomorph_Sphalerite>Lithomorph</character.Lithomorph_Sphalerite>
+    <character.Lithomorph_Sylvite>Lithomorph</character.Lithomorph_Sylvite>
+    <character.Lithomorph_Triphylite>Lithomorph</character.Lithomorph_Triphylite>
+    <character.Lithomorph>Lithomorph</character.Lithomorph>
+    <character.spineling_electric>Great Electric Spineling</character.spineling_electric>
+    <EventText.jailbreak_husk.c1>“Praise the Husk. We thought we'd never be getting out of here!”</EventText.jailbreak_husk.c1>
+    <huskterroristannounce>The depths will take the unbelievers!</huskterroristannounce>
+    <huskterroristannounce>Those who reject the gift must drown!</huskterroristannounce>
+    <huskterroristannounce>Perish and be reborn as Husk!</huskterroristannounce>
+    <EventText.missionevent_beaconhusk.quest>"This vessel is yours, correct? We lost contact with a nearby deep sea laboratory. The research team is supposed to send us a weekly detailed report, but now they do not respond to our calls. See if you can reestablish communication, the church will reward you accordingly."</EventText.missionevent_beaconhusk.quest>
+    <EventText.beaconhusk.transducerbroken>No signal... Maybe check the antenna? </EventText.beaconhusk.transducerbroken>
+    <EventText.beaconhusk.poweronline>The power is back online. The structure rumbles as machinery comes alive.  </EventText.beaconhusk.poweronline>
+    <EventText.beaconhusk.savedresearcher>The researcher coughs up an unnerving amount of fluids before catching his breath in a gasp. \n"Praise the husk you came! It seems you're not from the church..."  </EventText.beaconhusk.savedresearcher>
+    <EventText.beaconhusk.whathappened>"You were on the verge of turning, what happened here?"</EventText.beaconhusk.whathappened>
+    <EventText.beaconhusk.taintedgenes>"It's the genes we were using. Usually the church directly provides us with a fresh supply, but for the last shipment, we had to rely on a delivery from an outsider ship. Those infidels must've tampered with the product, trying to make a profit by reselling the rest." </EventText.beaconhusk.taintedgenes>
+    <EventText.beaconhusk.whynotransform>"But why didn't the parasite take over?" </EventText.beaconhusk.whynotransform>
+    <EventText.beaconhusk.explanation>"We put the symbiote in stasis by spreading chlorine through the ventilation system and shut the whole circuit down, it's a standard safety procedure in case of outbreak... We tried signaling the church, but nobody came, until you did." </EventText.beaconhusk.explanation>
+    <EventText.beaconhusk.sabotaged>"Your antenna was disconnected." </EventText.beaconhusk.sabotaged>
+    <EventText.beaconhusk.reward>"Bastards must have sabotaged it! I'll send a full report to the church... And bless your travels." </EventText.beaconhusk.reward>
+    <EventText.hiddenandclowngerous.thisistheplace>This is the place. The clown could be anywhere. Don't forget to honk your horn. </EventText.hiddenandclowngerous.thisistheplace>
+    <EventText.hiddenandclowngerous.psstoverhere>You suddenly hear a muffled voice calling out for you. "Pssst! Over here!"</EventText.hiddenandclowngerous.psstoverhere>
+    <EventText.hiddenandclowngerous.trashfound>As you approach, an orange wig emerges from under the garbage. "Thank the honkmother! Did my troupe sent you?"  </EventText.hiddenandclowngerous.trashfound>
+    <EventText.hiddenandclowngerous.whyintrash>"What are you even doing in there?"</EventText.hiddenandclowngerous.whyintrash>
+    <EventText.hiddenandclowngerous.hidingobivously>"Hiding, obviously. At first I thought sharing a few jokes incognito would lighten up the mood, you know, get those sinister fellows on the sillier side of life. But as soon as I snuck into the outpost, my cover was blown! Can you believe it?"</EventText.hiddenandclowngerous.hidingobivously>
+    <EventText.hiddenandclowngerous.whatdidyouexpect>"What did you expect?"</EventText.hiddenandclowngerous.whatdidyouexpect>
+    <EventText.hiddenandclowngerous.unbelievable>"I find the very concept of clowns unbelievable to begin with."</EventText.hiddenandclowngerous.unbelievable>
+    <EventText.hiddenandclowngerous.studiedhusks>The clown grumbles. "I spent weeks mastering the art of subterfuge to blend into the cult, and even read all of their honkin' lore, chalice, wine and all..."</EventText.hiddenandclowngerous.studiedhusks>
+    <EventText.hiddenandclowngerous.timetoleave>"Well, time to leave."</EventText.hiddenandclowngerous.timetoleave>
+    <EventText.hiddenandclowngerous.pullnose>"Should I pull you out by the nose?"</EventText.hiddenandclowngerous.pullnose>
+    <EventText.hiddenandclowngerous.cantgetout>"No way, if I get seen, they'll get their grabby appendices on me and strap me to a dissection table! You can't open up a clown, that's like explaining a joke, it's not funny!"</EventText.hiddenandclowngerous.cantgetout>
+    <EventText.hiddenandclowngerous.gotosecurity>"Stay here, I'll deal with security."</EventText.hiddenandclowngerous.gotosecurity>
+    <EventText.hiddenandclowngerous.timetonegociate>"Great! I've got a few jokes if you need an ice-breaker. So, a cultist, a clown and a separatist walk into a bar..." You close the lid. Time to negociate.</EventText.hiddenandclowngerous.timetonegociate>
+    <EventText.hiddenandclowngerous.sternsecurity>"This particularly stern cultist looks like the head of security."</EventText.hiddenandclowngerous.sternsecurity>
+    <EventText.hiddenandclowngerous.heardanysqueaks>"So... heard any squeaky noises recently?"</EventText.hiddenandclowngerous.heardanysqueaks>
+    <EventText.hiddenandclowngerous.lookingforclown>"The cultist sighs. Ah... so you've heard about our unwanted guest. We've been looking to oust this intruder, but the trickster has eluded us.?"</EventText.hiddenandclowngerous.lookingforclown>
+    <EventText.hiddenandclowngerous.nofanofclowns>"Not a big fan of clowns are you?"</EventText.hiddenandclowngerous.nofanofclowns>
+    <EventText.hiddenandclowngerous.clownsnottolerated>"Disruptions are not to be tolerated in this holy sanctuary. Xenoscience is not some trivial matter. It requires a honed mind, focused on the most noble goal of bettering humanity. None shall make a mockery of our precepts."</EventText.hiddenandclowngerous.clownsnottolerated>
+    <EventText.hiddenandclowngerous.allowclowntoleave>"Let's say I can convince the clown to leave the station for good, will you allow it?"</EventText.hiddenandclowngerous.allowclowntoleave>
+    <EventText.hiddenandclowngerous.fineclowncanleave>"Fine. We just want our peace of mind. Rid us of this disturbance and we will overlook the situation."</EventText.hiddenandclowngerous.fineclowncanleave>
+    <EventText.hiddenandclowngerous.didtheylikejoke>"So? Did they like my joke?"</EventText.hiddenandclowngerous.didtheylikejoke>
+    <EventText.hiddenandclowngerous.youcango>"They're willing to let you go"</EventText.hiddenandclowngerous.youcango>
+    <EventText.hiddenandclowngerous.clownleavestrash>"Some fresh air at last!" The clown clumsily squeezes out of the trash can, like a human-shaped sausage.</EventText.hiddenandclowngerous.clownleavestrash>
+    <EventText.hiddenandclowngerous.smellyclown>The inept infiltrator is emanating a foul stench from days spent in hiding. "Please don't tell my troupe, I don't want to be the butt of the joke!"</EventText.hiddenandclowngerous.smellyclown>
+    <EventText.hiddenandclowngerous.joinmycrew>"How about you join my crew?"</EventText.hiddenandclowngerous.joinmycrew>
+    <EventText.hiddenandclowngerous.joinsthecrew>"Great! I might not be the most subtle of jesters, but I know my way around a submarine."</EventText.hiddenandclowngerous.joinsthecrew>
+    <EventText.hiddenandclowngerous.laughatyourself>"You need to learn to laugh about yourself. It's part of the clown spirit."</EventText.hiddenandclowngerous.laughatyourself>
+    <EventText.hiddenandclowngerous.clowngrateful>"You're right. There's nothing to be ashamed of. I'll call my friends and wait for a shuttle to bring me back." The clown bows and pinches its large red nose as a sign of gratitude.</EventText.hiddenandclowngerous.clowngrateful>
+    <EventText.hiddenandclowngerous.seennoclown>"Oh well. Not that I've seen clowns around here, no sir."</EventText.hiddenandclowngerous.seennoclown>
+    <EventText.hiddenandclowngerous.dontbotherme>"Then don't bother me!". They don't need to know about the clown, you need to think of another way. </EventText.hiddenandclowngerous.dontbotherme>
+    <EventText.hiddenandclowngerous.nonegociation>"Nuh-uh. I don't negociate with horrorists." </EventText.hiddenandclowngerous.nonegociation>
+    <EventText.hiddenandclowngerous.escapeplan>"This place gives me the creeps." The clown pauses for a moment, and formulates a plan. "What do you say we play one final prank, a diversion while I make my escape?" </EventText.hiddenandclowngerous.escapeplan>
+    <EventText.hiddenandclowngerous.whatprank>"What do you have in mind?" </EventText.hiddenandclowngerous.whatprank>
+    <EventText.hiddenandclowngerous.givesgrenade>"Here, I prepared this party cracker." He hands you a... grenade? "Place it inside a cabinet, and when you're ready, honk the horn. It's going to be a blast, trust me!" </EventText.hiddenandclowngerous.givesgrenade>
+    <EventText.hiddenandclowngerous.honkit>Now's the time! Honk it!</EventText.hiddenandclowngerous.honkit>
+    <EventText.hiddenandclowngerous.pathoftrickster>You find the clown shaking from excitement. "That was some J-grade pranking! To hell with subtelty, take me on a tour around the moon, there are many tricks to be played!"</EventText.hiddenandclowngerous.pathoftrickster>
+    <EventText.hiddenandclowngerous.clowncanjoin>"Sure, just don't blow up the submarine."</EventText.hiddenandclowngerous.clowncanjoin>
+    <EventText.hiddenandclowngerous.snitchonclown>"I know where the heretic hides"</EventText.hiddenandclowngerous.snitchonclown>
+    <EventText.hiddenandclowngerous.luretheclown>"The church would greatly appreciate your cooperation. Lure the unbeliever out, and we will take care of the rest." </EventText.hiddenandclowngerous.luretheclown>
+    <EventText.hiddenandclowngerous.lietoclown>"They loved it. You can come out now." </EventText.hiddenandclowngerous.lietoclown>
+    <EventText.hiddenandclowngerous.clownarrested>You hear the head of security over the radio: "The church thanks you for your help. May the tides carry you to your destination". You're not very proud of what you've done, but you accept the reward nonetheless. </EventText.hiddenandclowngerous.clownarrested>
+    <EventText.missionevent_hiddenandclowngerous.worriedclown>You spot an unusually upset clown. Despite its colorful appearance, it seems worried about something. </EventText.missionevent_hiddenandclowngerous.worriedclown>
+    <EventText.missionevent_hiddenandclowngerous.steppedonrake>"What's the matter? Stepped on a rake lately?"</EventText.missionevent_hiddenandclowngerous.steppedonrake>
+    <EventText.missionevent_hiddenandclowngerous.helpclowns>"Believe it or not, this is no laughing matter. I could use some help from a crew like yours."</EventText.missionevent_hiddenandclowngerous.helpclowns>
+    <EventText.missionevent_hiddenandclowngerous.twodaysago>"Two days ago, a member of our troupe thought it'd be a good idea to board a shuttle to a nearby church, and we havent heard about him since. Our friend believed he could infiltrate the church, and pass himself as an adept. Naturally, I thought it was a joke!" </EventText.missionevent_hiddenandclowngerous.twodaysago>
+    <EventText.missionevent_hiddenandclowngerous.huskdontlaugh>"Husks can't speak, much less laugh."</EventText.missionevent_hiddenandclowngerous.huskdontlaugh>
+    <EventText.missionevent_hiddenandclowngerous.blasphemy>"To us it's fun and games, but to these people the very concept of humor is akin to blasphemy!"</EventText.missionevent_hiddenandclowngerous.blasphemy>
+    <EventText.missionevent_hiddenandclowngerous.clownspies>"Didn't know the honkmother had a spy network."</EventText.missionevent_hiddenandclowngerous.clownspies>
+    <EventText.missionevent_hiddenandclowngerous.avoidchurches>"I thought you guys avoided touring the church."</EventText.missionevent_hiddenandclowngerous.avoidchurches>
+    <EventText.missionevent_hiddenandclowngerous.takethebikehorn>"We go from station to station, raising morale, that is the mission of our dis-organization. Anyway, take this bike horn with you and go to these coordinates. Once you're there, honk around. Clowns always heed the call, you should be able to find our friend that way."</EventText.missionevent_hiddenandclowngerous.takethebikehorn>
+    <EventText.missionevent_hiddenandclowngerous.acceptmission>"I'll see what I can do."</EventText.missionevent_hiddenandclowngerous.acceptmission>
+    <EventText.missionevent_hiddenandclowngerous.refusemission>Let's not get involved in clown business.</EventText.missionevent_hiddenandclowngerous.refusemission>
+    <eventtext.missionevent_huskcultinterception.churchmakesmeds>“I believe you're familiar with those creepy husk cultists right? They're not just religious fanatics mind you, the church makes most of the medicine and biotech here on Europa."</eventtext.missionevent_huskcultinterception.churchmakesmeds>
+    <EventText.missionevent_huskcultinterception.dependentonmeds>"Until we can produce our own on a large scale, we are dependent on their shipments, but so is the coalition...”</EventText.missionevent_huskcultinterception.dependentonmeds>
+    <EventText.missionevent_huskcultinterception.takedowntransport>“Here's the plan: take down a church transport ship on route to a coalition outpost. This will keep our hands clean while dealing a blow to the coalition”</EventText.missionevent_huskcultinterception.takedowntransport>
+    <EventText.missionevent_huskcultinterception.Whataboutit>"I already knew that, what about it?"</EventText.missionevent_huskcultinterception.Whataboutit>
+    <EventText.missionevent_huskcultinterception.Whatnow>"What now?"</EventText.missionevent_huskcultinterception.Whatnow>
+    <EventText.missionevent_huskcultinterception.Consideritdone>"Consider it done."</EventText.missionevent_huskcultinterception.Consideritdone>
+    <EventText.missionevent_huskcultinterception.Notapirate>"Count us out, we're not pirates."</EventText.missionevent_huskcultinterception.Notapirate>
+    <EventText.missionevent_assassinatehuskresearcher.majorproblem>The coalition official waves at you. “Here you are. I've received a report... We have a major problem.”</EventText.missionevent_assassinatehuskresearcher.majorproblem>
+    <EventText.missionevent_assassinatehuskresearcher.huskpathogen>“Those fanatics of the church are on the verge of a scientific breakthrough: a new pathogen, unlike anything we've seen before. We think they're working on way to spread the virus on a large scale.”</EventText.missionevent_assassinatehuskresearcher.huskpathogen>
+    <EventText.missionevent_assassinatehuskresearcher.missionbrief>“We need to put an end to this research project. Their scientist must be eliminated. But we can't act on our own, sending one of our own agents would cause not only the Church to retaliate, but also Separatists to take their side. \nI need a freelance crew for this... and you just happen to be here.”</EventText.missionevent_assassinatehuskresearcher.missionbrief>
+    <EventText.missionevent_assassinatehuskresearcher.whatkindofproblem>What kind of problem?</EventText.missionevent_assassinatehuskresearcher.whatkindofproblem>
+    <EventText.missionevent_assassinatehuskresearcher.soundsbad>Sounds bad...</EventText.missionevent_assassinatehuskresearcher.soundsbad>
+    <EventText.missionevent_assassinatehuskresearcher.Iwilldoit>I will do it.</EventText.missionevent_assassinatehuskresearcher.Iwilldoit>
+    <EventText.missionevent_assassinatehuskresearcher.Noway>No way. This is too much of a risk.</EventText.missionevent_assassinatehuskresearcher.Noway>
+    <eventtext.missionevent_escorthuskterrorist.c1>“Some of the commoners here are looking for safe passage to a nearby station. Escort them over there safely and you'll be paid.”</eventtext.missionevent_escorthuskterrorist.c1>
+    <EventText.missionevent_jailbreak_husk.c1>The Deacon seems distressed. “You know all too well the gospel of the church can be too... enlightening for some. \nThose who spread the good word are never safe from bigotry and suspicion.”</EventText.missionevent_jailbreak_husk.c1>
+    <EventText.missionevent_jailbreak_husk.o1.c1>“A few proselytes are being unjustly detained in an outpost nearby. Free them from the jaws of intolerance and the Church will reward you.”</EventText.missionevent_jailbreak_husk.o1.c1>
+    <eventtext.missionevent_huskmedicalcargo.c1>“An epidemic broke out in a nearby outpost. \nDeliver these medical supplies and spread the good word of the church.”</eventtext.missionevent_huskmedicalcargo.c1>
+    <eventtext.missionevent_huskeggsmuggling.c1>“We need to spread the good faith, but the unbelievers are wary of our gifts. \nSmuggle these goods to our proselyte brothers in hiding.”</eventtext.missionevent_huskeggsmuggling.c1>
+    <eventtext.missionevent_escorthuskvip.c1>“A Cardinal is looking for transport to a nearby research laboratory”</eventtext.missionevent_escorthuskvip.c1>
+    <eventtext.missionevent_slimecollection.c1>“I've heard the church of the Husk is looking to develop a new vaccine. \nThey will pay good money for fresh samples of slime bacteria.”</eventtext.missionevent_slimecollection.c1>
+    <eventtext.openblockade.pathunlocked>You pull the lever and hear the gate rumbling: the passage is open.</eventtext.openblockade.pathunlocked>
+    <eventtext.blockadealarm.breakin>"Security alert: intruders are trying to force the gate open!"</eventtext.blockadealarm.breakin>
+    <eventtext.openblockade.blockade>You've reached a blockade. The path to the next biome must be unlocked to proceed.</eventtext.openblockade.blockade>
+    <eventtext.openblockade.gotolever>Reach the control room to open the blockade</eventtext.openblockade.gotolever>
+    <eventtext.missionevent_killmonster_regional.c1>“I posted about an assignment earlier. Some fauna exclusive to this region is causing us massive trouble. I've sent all the details to your onboard navigation system, in case you're interested.”</eventtext.missionevent_killmonster_regional.c1>
+    <eventtext.missionevent_piratemission1.c1>“We received multiple reports about a pirate vessel causing trouble. We need you to get rid of them by any means.”</eventtext.missionevent_piratemission1.c1>
+    <eventtext.missionevent_piratemission2.c1>“We received multiple reports about a pirate vessel blasting music into the depths and luring more monsters close to our stations. We need you to get rid of them by any means.”</eventtext.missionevent_piratemission2.c1>
+    <eventtext.missionevent_piratemission3.c1>“We recently lost contact to some of our vessels. We believe they got attacked by a strange vessel that was reported lurking around these parts. We need you to get rid of it to hopefully prevent other vessels getting lost in the future.”</eventtext.missionevent_piratemission3.c1>
+    <eventtext.troubledengine.monitor>The status monitor is displaying a warning about the engine malfunctioning. Better order a mechanic to take a look.</eventtext.troubledengine.monitor>
+    <eventtext.troubledengine.engine>The engine stopped working. Best to quickly get it back up and running.</eventtext.troubledengine.engine>
+    <eventtext.troubledengine.engine.success>You got the engine back up and running!</eventtext.troubledengine.engine.success>
+    <eventtext.troubledengine.engine.failure>The engine didn't start up. Try again?</eventtext.troubledengine.engine.failure>
+    <eventtext.troubledengine.engine.smack.failure>A part fell off. Surely nothing important... Just give it a bit of time and it'll probably start back up.</eventtext.troubledengine.engine.smack.failure>
+    <eventtext.option.useitem.wrench>Use Wrench</eventtext.option.useitem.wrench>
+    <eventtext.option.smack>Smack it!</eventtext.option.smack>
+    <eventtext.option.releasepressure>Release Pressure</eventtext.option.releasepressure>
+    <eventtext.option.dontbother>Let someone else deal with this...</eventtext.option.dontbother>
+    <eventtext.reactormalfunction.monitor>The status monitor is displaying a warning about a reactor malfunction. An engineer should probably take a look.</eventtext.reactormalfunction.monitor>
+    <eventtext.reactormalfunction.reactor>The automated control circuit seems to not be responding and the switch is stuck. Someone needs to manually operate the reactor!</eventtext.reactormalfunction.reactor>
+    <eventtext.reactormalfunction.reactor.success>You resolved the issue and the reactor is returning to normal values!</eventtext.reactormalfunction.reactor.success>
+    <eventtext.reactormalfunction.reactor.failure>You failed to release the pressure. Try again?</eventtext.reactormalfunction.reactor.failure>
+    <eventtext.reactormalfunction.reactor.smack.failure>A part fell off. Let's hope it's nothing important...</eventtext.reactormalfunction.reactor.smack.failure>
+    <eventtext.reactormalfunction.backtonormal>You hear a mechanical piece moving. Looks like the problem resolved itself somehow. The machine has a spirit of its own... </eventtext.reactormalfunction.backtonormal>
+    <eventtext.takeover.success>You hear someone tune into your frequency: "Enough! We yield! The station is yours... Just please stop with the bloodshed!". \nLeave the station to receive your reward.</eventtext.takeover.success>
+    <eventtext.takeover.success.info>Leave the station to receive your reward.</eventtext.takeover.success.info>
+    <eventtext.takeover.complete>"Great work! The station is now ours. We'll send some of our people there. It should be back up and running under our command in no time! For now you should leave the station. I'm sending you your reward..."</eventtext.takeover.complete>
+    <eventtext.takeover.attack>"We arrived! Make sure your weapons are loaded and safety is off! Let's do this!". There's no turning back now: You're at war.</eventtext.takeover.attack>
+    <eventtext.gettakeovermission.general.isactive>"We still have to take over the last station your crew was sent to before we can plan an attack on the next one."</eventtext.gettakeovermission.general.isactive>
+    <eventtext.gettakeovermission.coalition.highrep.askingforhelp>"Ah good to see you! Your crew is doing great! We planned another attack. Would your crew mind lending a hand at taking over another separatist station nearby?"</eventtext.gettakeovermission.coalition.highrep.askingforhelp>
+    <eventtext.gettakeovermission.coalition.medrep.askingforhelp>"Since your crew is doing good, we'd like to ask if your crew could aid us in another attack on a separatist station nearby?"</eventtext.gettakeovermission.coalition.medrep.askingforhelp>
+    <eventtext.gettakeovermission.coalition.lowrep.askingforhelp>"We have noticed your efforts to maintain a good reputation with us and would like to give your crew a chance to prove you're serious with us. Aid us in an attack on a separatist station nearby and you'll be working with our top men soon enough!"</eventtext.gettakeovermission.coalition.lowrep.askingforhelp>
+    <eventtext.gettakeovermission.separatists.highrep.askingforhelp>"Ah good to see you! Your crew is doing great! We planned another attack. Would your crew mind lending a hand at taking over another coalition station nearby?"</eventtext.gettakeovermission.separatists.highrep.askingforhelp>
+    <eventtext.gettakeovermission.separatists.medrep.askingforhelp>"Since your crew is doing good, we'd like to ask if your crew could aid us in another attack on a coalition station nearby?"</eventtext.gettakeovermission.separatists.medrep.askingforhelp>
+    <eventtext.gettakeovermission.separatists.lowrep.askingforhelp>"We have noticed your efforts to maintain a good reputation with us and would like to give your crew a chance to prove you're serious with us. Aid us in an attack on a coalition station nearby and you'll be working with our top men soon enough!"</eventtext.gettakeovermission.separatists.lowrep.askingforhelp>
+    <eventtext.gettakeovermission.option.accept>"Yes we would like to help. Which station is our target?"</eventtext.gettakeovermission.option.accept>
+    <eventtext.gettakeovermission.option.accept.answer>"Here, I'll mark it on your map... We've also ordered some of our soldiers to assist you and your crew during the attack. They'll be joining you in just a moment."</eventtext.gettakeovermission.option.accept.answer>
+    <eventtext.gettakeovermission.option.decline>"Sorry, but we currently got other business to take care of first."</eventtext.gettakeovermission.option.decline>
+    <eventtext.gettakeovermission.option.decline.answer>"Alright. Let me know when you dealt with your business or if you change your mind."</eventtext.gettakeovermission.option.decline.answer>
+    <eventtext.piratemissionbroadcast.receive>"Yarhahar, what do we have here? Me eyes spied some good loot! Hope ye came prepared..."</eventtext.piratemissionbroadcast.receive>
+    <eventtext.cocargobroadcast.receive>You're receiving a transmission from another vessel. What do you want to do?</eventtext.cocargobroadcast.receive>
+    <eventtext.cocargobroadcast.receive.accept.answer>"This is CO-CT-43. State your business in this area immediately!"</eventtext.cocargobroadcast.receive.accept.answer>
+    <eventtext.cocargobroadcast.receive.accept.answer.truth>(Tell the truth) "We're here to rob you obviously... Get ready to be boarded!"</eventtext.cocargobroadcast.receive.accept.answer.truth>
+    <eventtext.cocargobroadcast.receive.accept.answer.truth.answer>"At least your honest... *EVERYONE GET TO YOUR STATIONS! WE GOT HOSTILES INCOMING*"</eventtext.cocargobroadcast.receive.accept.answer.truth.answer>
+    <eventtext.cocargobroadcast.receive.accept.answer.lie>(Tell a lie) "We have official orders from Admiral Edward to check your cargo for potential stowaways. Please cooperate with us and stop your submarine."</eventtext.cocargobroadcast.receive.accept.answer.lie>
+    <eventtext.cocargobroadcast.receive.accept.answer.lie.success>"Oh Admiral Edward? Yes we'll stop our vessel immediately! Welcome on board!"</eventtext.cocargobroadcast.receive.accept.answer.lie.success>
+    <eventtext.cocargobroadcast.receive.accept.answer.lie.failure>"How stupid do you think we are? There is no Admiral Edward! Whoever you are, we suggest to turn around and get out of our way or face the consequences."</eventtext.cocargobroadcast.receive.accept.answer.lie.failure>
+    <eventtext.factionseparatist.meltdown>The reactor is buckling and whining with pressure, what do you do?</eventtext.factionseparatist.meltdown>
+    <eventtext.factionseparatist.meltdown.option.pressure>Release Pressure</eventtext.factionseparatist.meltdown.option.pressure>
+    <eventtext.factionseparatist.meltdown.option.pressure.success>The reactor shudders, but you hear the steam whistle out of the core. It seems someone wired something to it...</eventtext.factionseparatist.meltdown.option.pressure.success>
+    <eventtext.factionseparatist.meltdown.option.pressure.failure>The reactor gurgles as the steam swells the protective hoses leaving the core, it seems a qualified engineer is required.</eventtext.factionseparatist.meltdown.option.pressure.failure>
+    <eventtext.factionseparatist.smellofsulfur>The smell of sulfur burns your nostrils...</eventtext.factionseparatist.smellofsulfur>
+    <eventtext.factionseparatist.hiddenstash>Hidden in the walls, you notice a small metal box glimmers.</eventtext.factionseparatist.hiddenstash>
+    <eventtext.factionseparatist.hiddenstash.take>You find a note stashed in a detonator with detailed instructions on what needs to be done for democracy.</eventtext.factionseparatist.hiddenstash.take>
+    <eventtext.pirateoutpostevent>A pirate has stopped and is looking at you like he is waiting for you to do something. What will you do?</eventtext.pirateoutpostevent>
+    <eventtext.pirateoutpostevent.option.ignore>Keep walking.</eventtext.pirateoutpostevent.option.ignore>
+    <eventtext.pirateoutpostevent.option.ignore.answer>You don't care and go on with your business.</eventtext.pirateoutpostevent.option.ignore.answer>
+    <eventtext.pirateoutpostevent.option.ignore.answer.response>You hear someone calling out: "Hey wait a second!"</eventtext.pirateoutpostevent.option.ignore.answer.response>
+    <eventtext.pirateoutpostevent.option.attack>Attack (Destroy the Pirate Outpost)</eventtext.pirateoutpostevent.option.attack>
+    <eventtext.pirateoutpostevent.option.attack.answer>"I really don't like the looks of you filthy pirate scum... Time for pest control!"</eventtext.pirateoutpostevent.option.attack.answer>
+    <eventtext.pirateoutpostevent.option.attack2>Rip 'n' Tear (Destroy the Pirate Outpost)</eventtext.pirateoutpostevent.option.attack2>
+    <eventtext.pirateoutpostevent.option.attack2.answer>"It's time to send you all to hell!"</eventtext.pirateoutpostevent.option.attack2.answer>
+    <eventtext.piratesecurityofficer.highrep.plead.undress>"Can't afford our hospitality huh? Don't worry, I'll give you the royal treatment!"</eventtext.piratesecurityofficer.highrep.plead.undress>
+    <eventtext.piratesecurityofficer.highrep.plead.UhOh>"Uh Oh."</eventtext.piratesecurityofficer.highrep.plead.UhOh>
+    <eventtext.piratearmorylocked.doorlocked>You try pressing the button, but the door seems locked. You can hear a raspy voice from the other side: \n"Should've paid, the toll, chump. But if you REALLY want in... we can find an arrangement..."</eventtext.piratearmorylocked.doorlocked>
+    <eventtext.piratearmorylocked.howmuch>*Sigh...* How much?</eventtext.piratearmorylocked.howmuch>
+    <eventtext.piratearmorylocked.500mk>500Mk. Pay up or stay out.</eventtext.piratearmorylocked.500mk>
+    <eventtext.piratearmorylocked.Pay>Fine...</eventtext.piratearmorylocked.Pay>
+    <eventtext.piratearmorylocked.noway>No way. This is racket.</eventtext.piratearmorylocked.noway>
+    <eventtext.piratearmorylocked.dooropens>"Nice. Lookin' forward to doing business."</eventtext.piratearmorylocked.dooropens>
+    <eventtext.piratearmorylocked.nomoney>"Trying to swindle me? No cash, no guns."</eventtext.piratearmorylocked.nomoney>
+    <eventtext.piratearmorylocked.comeback>"Hah! Come back if you change your mind. I'm not going anywhere."</eventtext.piratearmorylocked.comeback>
+    <eventtext.piratearmoryalarm.breakin>"This guy's trying to steal our supplies!"</eventtext.piratearmoryalarm.breakin>
+    <eventtext.piratediversoutpost.meetambusher>As you walk down the hallway, an unsavory individual puts a hand on your shoulder. "Fancy ship you've got there. A real beauty... Bet it cost you a little fortune."</eventtext.piratediversoutpost.meetambusher>
+    <eventtext.piratediversoutpost.agree>It's just a hunk of junk.</eventtext.piratediversoutpost.agree>
+    <eventtext.piratediversoutpost.buggeroff>Bugger off</eventtext.piratediversoutpost.buggeroff>
+    <eventtext.piratediversoutpost.Iwascaptain>The man keeps following you. "Used to be a captain you know? Mine was sunk by one of those coalition dogs. Tried to run a blockade with a shipment of the good stuff, turns out Dugongs aren't known for their speed."</eventtext.piratediversoutpost.Iwascaptain>
+    <eventtext.piratediversoutpost.Iwascaptain2>The self-proclaimed pilot spits on the floor. "Took a straight hit by a railgun. Tore a hole in the amidships, but somehow me and my crew limped back to this rat hole of a station. Bet if I had yours, things would've been different..."</eventtext.piratediversoutpost.Iwascaptain2>
+    <eventtext.piratediversoutpost.goodluck>Tough luck mate, I wish you the best.</eventtext.piratediversoutpost.goodluck>
+    <eventtext.piratediversoutpost.dontcare>Not my problem.</eventtext.piratediversoutpost.dontcare>
+    <eventtext.piratediversoutpost.offersbooze>The involuntary landlubber is back again, and pulls something from under his coat. For a brief moment you think it's a gun, but it's just a bottle of rum. "You know what, I've got a good feeling business will resume. Pulled these babies from my personal stash. This one is on the house!" </eventtext.piratediversoutpost.offersbooze>
+    <eventtext.piratediversoutpost.takebooze>Never say no to free booze.</eventtext.piratediversoutpost.takebooze>
+    <eventtext.piratediversoutpost.getthehelloff>Get the hell off me. You're not my buddy, pal.</eventtext.piratediversoutpost.getthehelloff>
+    <eventtext.piratediversoutpost.drinkup>Drink up, and make sure to share with aaaaall your crew! To the last drop. Me, I won't be staying here for long..." \nYou catch a glimpse of a sinister chuckle.</eventtext.piratediversoutpost.drinkup>
+    <eventtext.piratediversoutpost.dontgetalong>"Whatever. Guess we just don't get along. Don't worry, I'll be leaving soon..."</eventtext.piratediversoutpost.dontgetalong>
+    <eventtext.piratediversoutpost.soundinairlock>There's a loud sound in the airlock...</eventtext.piratediversoutpost.soundinairlock>
+    <eventtext.piratediversoutpost.takeover>"We're taking over this ship!"</eventtext.piratediversoutpost.takeover>
+    <eventtext.piratemissioninformant.interact>"Hm? Ye lookin' for work ye say? Lemme tell ya somethin'! Ain't no administration service here! But... Got me a lead about a coalition transport passing near here and I'm not sure if me crew is ready for it. Imma sell it to ya if ye got the cash!"</eventtext.piratemissioninformant.interact>
+    <eventtext.piratemissioninformant.option.buy>Buy (1000mk)</eventtext.piratemissioninformant.option.buy>
+    <eventtext.piratemissioninformant.option.buy.success>"Hah great! Lemme show ya where they gonna pass!"</eventtext.piratemissioninformant.option.buy.success>
+    <eventtext.piratemissioninformant.option.buy.failure>"Ain't gonna give it to ya for free dumbass! Come back when ye got the scratch!"</eventtext.piratemissioninformant.option.buy.failure>
+    <EventText.DEgotoblockade.c1>"COALITION BOUNTY ISSUED", the discolored and damaged posters list off sites of destruction and infestation, seems like the coalition is in over their heads. You can only make out one set of coordinates.</EventText.DEgotoblockade.c1>
+    <EventText.DEgotoblockade.o1>A tax free paycheck couldn't hurt...</EventText.DEgotoblockade.o1>
+    <eventtext.missionevent_lair.c1>“There is a massive lair nearby bubbling over with more and more creatures by the minute, if you can take it out there is a reward in it for you!”</eventtext.missionevent_lair.c1>
+    <EventText.missionevent_lair.o1>Understood</EventText.missionevent_lair.o1>
+    <eventtext.survey.interact>This automated station scans the surrounding area for minerals. A message is displayed on the terminal: \n\n"PAY 1000MK TO ACCESS THIS UNIT'S SCANNING DATABASE"</eventtext.survey.interact>
+    <eventtext.survey.payup>Transfer the money</eventtext.survey.payup>
+    <eventtext.survey.givemissions>"ACCESS GRANTED. POTENTIAL MINERAL DEPOSITS CAN BE FOUND AT THESE LOCATIONS..."</eventtext.survey.givemissions>
+    <eventtext.survey.nomoney>"INSUFFICIENT FUNDS. ACCESS DENIED"</eventtext.survey.nomoney>
+    <eventtext.constructionrecipe.recipe>A panel displays a message from the outpost's taskmaster. \n\n"CONSTRUCTION UNITS REQUESTED. MAY BE FABRICATED AND PACKAGED USING THE FOLLOWING MATERIALS:" \n\n-Lead \n-Copper \n-Steel \n-Iron \n-Zinc \n-Aluminium</eventtext.constructionrecipe.recipe>
+    <eventtext.Constructionprogress.starterdialogue>"Hey you! We're running short on materials and the next delivery has been delayed a few days. We don't want to spend more time on this construction site than we have to... You don't happen to have 5 crates of building materials you could spare? We'll pay for them of course!"</eventtext.Constructionprogress.starterdialogue>
+    <eventtext.Constructionprogress.wehavecrates>We do. Let me go grab them for you.  </eventtext.Constructionprogress.wehavecrates>
+    <eventtext.Constructionprogress.speaktomeagain>"Oh wonderful! Speak to me again once you're done delivering them to the cargo unit over there to collect your payment."</eventtext.Constructionprogress.speaktomeagain>
+    <eventtext.Constructionprogress.letmecheck>I am not sure. Let me check our cargo first. </eventtext.Constructionprogress.letmecheck>
+    <eventtext.Constructionprogress.ifyoufindcrates>"Alright! If you happen to find some, deliver them to the cargo unit over there and talk to me once you're done."</eventtext.Constructionprogress.ifyoufindcrates>
+    <eventtext.Constructionprogress.notinterested>Not interested in selling.</eventtext.Constructionprogress.notinterested>
+    <eventtext.Constructionprogress.findmeagain>"I see... Well if you happen to change your mind, you know where to find me."</eventtext.Constructionprogress.findmeagain>
+    <eventtext.Constructionprogress.nomaterials>We're lacking the materials.</eventtext.Constructionprogress.nomaterials>
+    <eventtext.Constructionprogress.wellwait>"I see... Well then I guess we'll have to wait for the official delivery then."</eventtext.Constructionprogress.wellwait>
+    <eventtext.Constructionprogress.changeyourmind>"Oh hey! Did you guys change your mind? We really could use those 5 crates of building materials!"</eventtext.Constructionprogress.changeyourmind>
+    <eventtext.Constructionprogress.cratescoming>Yes, the crates are on their way.</eventtext.Constructionprogress.cratescoming>
+    <eventtext.Constructionprogress.cratesdelivered>"I see you've delivered the required amount. Here's your payment!"</eventtext.Constructionprogress.cratesdelivered>
+    <eventtext.Constructionprogress.thanks>Thank you.</eventtext.Constructionprogress.thanks>
+    <eventtext.Constructionprogress.youdecide>"Oh and since you're on good terms with us, administration stated to throw the current building plans out and let you decide on what type of station we should build here. So what's it going to be, boss?"</eventtext.Constructionprogress.youdecide>
+    <eventtext.Constructionprogress.settlement>A Settlement</eventtext.Constructionprogress.settlement>
+    <eventtext.Constructionprogress.settlementpicked>"Alright, a settlement it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.settlementpicked>
+    <eventtext.Constructionprogress.base>A Military Base</eventtext.Constructionprogress.base>
+    <eventtext.Constructionprogress.basepicked>"Alright, a military base it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.basepicked>
+    <eventtext.Constructionprogress.research>A Research Station</eventtext.Constructionprogress.research>
+    <eventtext.Constructionprogress.researchpicked>"Alright, a research station it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.researchpicked>
+    <eventtext.Constructionprogress.hospital>A Hospital</eventtext.Constructionprogress.hospital>
+    <eventtext.Constructionprogress.hospitalpicked>"Alright, a hospital it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.hospitalpicked>
+    <eventtext.Constructionprogress.backtowork>"I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.backtowork>
+    <eventtext.Constructionprogress.notenough>"I'm afraid that won't be enough. Check your cargo hold and see if can find some more."</eventtext.Constructionprogress.notenough>
+    <eventtext.Constructionprogress.checkagain>Alright, I'll go check again.</eventtext.Constructionprogress.checkagain>
+    <eventtext.Constructionprogress.allwegot>Sorry, but that's all we got...</eventtext.Constructionprogress.allwegot>
+    <eventtext.Constructionprogress.takecargoback>"In that case I recommend taking your cargo back. We'll be waiting on the official delivery then instead."</eventtext.Constructionprogress.takecargoback>
+    <faction.bandits>Bandits</faction.bandits>
+    <faction.bandits.description>Gangs of outlaws that roam the murky seas of Europa and engage in criminal activities. Dangerous, but open for business...</faction.bandits.description>
+    <faction.bandits.shortdescription>Opportunists, brigands, pirates... Truly a villainous bunch.  </faction.bandits.shortdescription>
+    <entityname.cultistrobeshoodless>Initiate Robes</entityname.cultistrobeshoodless>
+    <entitydescription.cultistrobeshoodless>A dark garment traditionally worn by acolytes of the Church of Husk. Imbued with pheromones that pacify feral husks, helping the acolytes stay safe until they're ready to ascend.</entitydescription.cultistrobeshoodless>
+    <entityname.huskchalice>Ritual Chalice</entityname.huskchalice>
+    <entitydescription.huskchalice>A decorated Chalice used in ascension rituals.</entitydescription.huskchalice>
+    <entityname.de_posterreligionisbad1>Poster - Religion is Poison</entityname.de_posterreligionisbad1>
+    <entityname.de_nuclearbomb>Nuclear Bomb</entityname.de_nuclearbomb>
+    <entitydescription.de_nuclearbomb>A nuclear bomb, causing a massive fallout after detonation, killing everything in its path. 60 seconds until detonation when armed.</entitydescription.de_nuclearbomb>
+    <entityname.lairbomb>Portable Nuclear Device</entityname.lairbomb>
+    <entityname.constructionmaterialcrate>Construction Material Crate</entityname.constructionmaterialcrate>
+    <entitydescription.constructionmaterialcrate>A crate full of processed construction materials. Can be delivered to construction sites.</entitydescription.constructionmaterialcrate>
+    <fabricationdescription.softmaterials>Soft, flexible metals</fabricationdescription.softmaterials>
+    <fabricationdescription.hardmaterials>Harder, sturdy metals</fabricationdescription.hardmaterials>
+    <locationchange.construction.changeto.none>Construction work at [name] was stopped due to nearby dangers.</locationchange.construction.changeto.none>
+    <locationchange.construction.changeto.none>Ongoing constructions at [name] were abandoned due to nearby dangers.</locationchange.construction.changeto.none>
+    <locationchange.construction.changeto.none>The construction site at [name] was closed down and abandoned due to nearby dangers.</locationchange.construction.changeto.none>
+    <locationname.huskchurch>Husk Temple</locationname.huskchurch>
+    <locationnameformat.huskchurch>Abbey of [name]</locationnameformat.huskchurch>
+    <locationnameformat.huskchurch>Cathedral of [name]</locationnameformat.huskchurch>
+    <locationnameformat.huskchurch>Chapel of [name]</locationnameformat.huskchurch>
+    <locationdescription.huskchurch>A scientific outpost of the Church of Husk.</locationdescription.huskchurch>
+    <locationname.sinkingcircus>Sinking Circus</locationname.sinkingcircus>
+    <locationnameformat.sinkingcircus>The Circus on tour at [name]</locationnameformat.sinkingcircus>
+    <locationchange.circus.changeto.none>The Sinking Circus has left the area.</locationchange.circus.changeto.none>
+    <locationchange.none.changeto.circus>The Sinking Circus has arrived in [previousname].</locationchange.none.changeto.circus>
+    <locationdescription.sinkingcircus>Entertainers, travelling the cold seas of Europa.</locationdescription.sinkingcircus>
+    <!-- Location Names -->
+    <locationname.huskchurch.0>St. Mendel</locationname.huskchurch.0>
+    <locationname.huskchurch.1>St. Darwin</locationname.huskchurch.1>
+    <locationname.huskchurch.2>St. Newton</locationname.huskchurch.2>
+    <locationname.huskchurch.3>St. Curie</locationname.huskchurch.3>
+    <locationname.huskchurch.4>St. Archimedes</locationname.huskchurch.4>
+    <locationname.huskchurch.5>St. Avogadro</locationname.huskchurch.5>
+    <locationname.huskchurch.6>St. Bohr</locationname.huskchurch.6>
+    <locationname.huskchurch.7>St. Einstein</locationname.huskchurch.7>
+    <locationname.huskchurch.8>St. Ohm</locationname.huskchurch.8>
+    <locationname.huskchurch.9>St. Kepler</locationname.huskchurch.9>
+    <locationname.huskchurch.10>St. Copernicus</locationname.huskchurch.10>
+    <locationname.huskchurch.11>Holy Bernoulli</locationname.huskchurch.11>
+    <locationname.huskchurch.12>Holy Fermi</locationname.huskchurch.12>
+    <locationname.huskchurch.13>Holy Mendeleev</locationname.huskchurch.13>
+    <locationname.huskchurch.14>Holy Al-Haytham</locationname.huskchurch.14>
+    <locationname.huskchurch.15>Pious Planck</locationname.huskchurch.15>
+    <locationname.huskchurch.16>Pious Pascal</locationname.huskchurch.16>
+    <locationname.huskchurch.17>Blessed Boyle</locationname.huskchurch.17>
+    <locationname.huskchurch.18>Sanctus Gauss</locationname.huskchurch.18>
+    <locationname.huskchurch.19>Guiding Galileo</locationname.huskchurch.19>
+    <locationname.huskchurch.20>Sacred Schrödinger</locationname.huskchurch.20>
+    <locationname.huskchurch.21>Hopeful Hypatia</locationname.huskchurch.21>
+    <locationname.huskchurch.22>Victorious Volta</locationname.huskchurch.22>
+    <locationname.huskchurch.23>Laplace's Grace</locationname.huskchurch.23>
+    <locationname.huskchurch.24>Faithful Fourier</locationname.huskchurch.24>
+    <locationname.huskchurch.25>Glorious Goodall</locationname.huskchurch.25>
+    <locationname.pirateoutpost.0>Port Royal</locationname.pirateoutpost.0>
+    <locationname.pirateoutpost.1>Tortuga</locationname.pirateoutpost.1>
+    <locationname.pirateoutpost.2>New Providence</locationname.pirateoutpost.2>
+    <locationname.pirateoutpost.3>Barataria</locationname.pirateoutpost.3>
+    <locationname.pirateoutpost.4>Matanzas</locationname.pirateoutpost.4>
+    <locationname.pirateoutpost.5>Eyl</locationname.pirateoutpost.5>
+    <locationname.pirateoutpost.6>Libertalia</locationname.pirateoutpost.6>
+    <locationname.pirateoutpost.7>Hai Tac</locationname.pirateoutpost.7>
+    <locationname.pirateoutpost.8>New Nassau</locationname.pirateoutpost.8>
+    <locationname.pirateoutpost.9>Clew</locationname.pirateoutpost.9>
+    <locationname.pirateoutpost.10>Barbary Rift</locationname.pirateoutpost.10>
+    <locationname.pirateoutpost.11>Campeche</locationname.pirateoutpost.11>
+    <locationname.pirateoutpost.12>Hodeidah</locationname.pirateoutpost.12>
+    <locationname.pirateoutpost.13>Emule</locationname.pirateoutpost.13>
+    <locationname.pirateoutpost.14>Plank</locationname.pirateoutpost.14>
+    <locationname.pirateoutpost.15>Bilgebath</locationname.pirateoutpost.15>
+    <locationname.pirateoutpost.16>Drunken Masts</locationname.pirateoutpost.16>
+    <locationname.pirateoutpost.17>Rumgone</locationname.pirateoutpost.17>
+    <locationname.pirateoutpost.18>Grim</locationname.pirateoutpost.18>
+    <missionsonarlabel.slimecollection>[resourcename1]</missionsonarlabel.slimecollection>
+    <missionname.gotoclownhuskoperative>Find the clown operative</missionname.gotoclownhuskoperative>
+    <missiondescription.gotoclownhuskoperative>Rescue a clown from a church outpost.</missiondescription.gotoclownhuskoperative>
+    <missionsuccess.gotoclownhuskoperative>A naive clown left his troupe and attempted to infiltrate [location1]. Investigate the situation.</missionsuccess.gotoclownhuskoperative>
+    <missionname.huskcultinterception>Intercept a church vessel</missionname.huskcultinterception>
+    <missiondescription.huskcultinterception>Prevent a delivery of medical supplies to a coalition outpost. Intercept the church's transport ship.</missiondescription.huskcultinterception>
+    <missionheader0.huskcultinterception>Transport ship located</missionheader0.huskcultinterception>
+    <missionmessage0.huskcultinterception>Neutralize the crew or sink the submarine to the bottom of the sea!</missionmessage0.huskcultinterception>
+    <missionmessage1.huskcultinterception>Navigate the submarine to [location2] to claim your reward.</missionmessage1.huskcultinterception>
+    <missionsuccess.huskcultinterception>The shipment has been seized.</missionsuccess.huskcultinterception>
+    <missionfailure.huskcultinterception>The shipment has not been intercepted.</missionfailure.huskcultinterception>
+    <missionheader0.huskcultinterception>Shipment recovered</missionheader0.huskcultinterception>
+    <missionmessage0.huskcultinterception>The cult's scientist has been successfully eliminated. Leave the outpost at once complete the mission.</missionmessage0.huskcultinterception>
+    <missionname.huskcultattack1>Cultist Ambush</missionname.huskcultattack1>
+    <missiondescription.huskcultattack1>Seek out the Jovian Separatist vessel that has been terrorizing this area and eliminate its crew. The marked locations show where the ship has last been sighted.</missiondescription.huskcultattack1>
+    <missionheader0.huskcultattack1>Incoming transmission</missionheader0.huskcultattack1>
+    <missionmessage0.huskcultattack1>“Your transgressions against our church will no longer be tolerated. May you find mercy into the depths!”</missionmessage0.huskcultattack1>
+    <missionname.assassinatehuskresearcher>Outpost assassination</missionname.assassinatehuskresearcher>
+    <missiondescription.assassinatehuskresearcher>An informant in the [location1] has told us a leading scientist of the church has been developping a devastating bioweapon prototype there. Kill the target and put an end to their research. </missiondescription.assassinatehuskresearcher>
+    <missionsuccess.assassinatehuskresearcher>The cult's scientist has been successfully eliminated.</missionsuccess.assassinatehuskresearcher>
+    <missionfailure.assassinatehuskresearcher>Eliminating the scientist failed.</missionfailure.assassinatehuskresearcher>
+    <missionheader0.assassinatehuskresearcher>Scientist killed</missionheader0.assassinatehuskresearcher>
+    <missionmessage0.assassinatehuskresearcher>The cult's scientist has been successfully eliminated. Leave the outpost at once complete the mission.</missionmessage0.assassinatehuskresearcher>
+    <missionname.escorthuskterrorist>Personnel Transport</missionname.escorthuskterrorist>
+    <missiondescription.escorthuskterrorist>Escort a number of personnel from [location1] to [location2] while ensuring their safety.</missiondescription.escorthuskterrorist>
+    <missionsuccess.escorthuskterrorist>Personnel transport successful, and the extremists have been dealt with.</missionsuccess.escorthuskterrorist>
+    <missionfailure.escorthuskterrorist>Escorted personnel did not reach their destination, or the extremists were not uncovered and neutralized.</missionfailure.escorthuskterrorist>
+    <missionheader0.escorthuskterrorist>Personnel died</missionheader0.escorthuskterrorist>
+    <missionmessage0.escorthuskterrorist>Too many of the escorted personnel have perished at sea. The mission is a failure.</missionmessage0.escorthuskterrorist>
+    <missionheader1.escorthuskterrorist>The threat has been subdued.</missionheader1.escorthuskterrorist>
+    <missionmessage1.escorthuskterrorist>Looks like that was the last of the extremists. Check on your crew and reach [location2].</missionmessage1.escorthuskterrorist>
+    <missionname.jailbreak_husk>Jailbreak</missionname.jailbreak_husk>
+    <missiondescription.jailbreak_husk>The Church of Husk has tasked you to free some of their proselytes who are being held captive.</missiondescription.jailbreak_husk>
+    <missionsuccess.jailbreak_husk>The proselytes have been rescued.</missionsuccess.jailbreak_husk>
+    <missionfailure.jailbreak_husk>Freeing the proselytes failed.</missionfailure.jailbreak_husk>
+    <missionsuccess.jailbreak_husk_singletarget>The proselyte has been rescued.</missionsuccess.jailbreak_husk_singletarget>
+    <missionfailure.jailbreak_husk_singletarget>Freeing the proselyte failed.</missionfailure.jailbreak_husk_singletarget>
+    <missionname.huskmedicalcargo>Delivering medical supplies</missionname.huskmedicalcargo>
+    <missiondescription.huskmedicalcargo>[location2] is in dire need of medical supplies, and the church has tasked you with the delivery.</missiondescription.huskmedicalcargo>
+    <missionsuccess.huskmedicalcargo>The medical supplies have been delivered.</missionsuccess.huskmedicalcargo>
+    <missionfailure.huskmedicalcargo>The supplies have not been delivered.</missionfailure.huskmedicalcargo>
+    <missionname.huskeggsmuggling>Smuggling calyx extract</missionname.huskeggsmuggling>
+    <missiondescription.huskeggsmuggling>The church wants you to smuggle husk eggs hidden among other medical supplies to their operatives in [location2].</missiondescription.huskeggsmuggling>
+    <missionsuccess.huskeggsmuggling>The calyx extract has been delivered.</missionsuccess.huskeggsmuggling>
+    <missionfailure.huskeggsmuggling>The supplies have not been delivered.</missionfailure.huskeggsmuggling>
+    <missionname.escorthuskvip>Escort a high-ranking ecclesiast</missionname.escorthuskvip>
+    <missiondescription.escorthuskvip>One of the church's researchers must be transfered to the [location2]. Ensure their safety.</missiondescription.escorthuskvip>
+    <missionsuccess.escorthuskvip>VIP transport successful.</missionsuccess.escorthuskvip>
+    <missionfailure.escorthuskvip>Escorted personnel did not reach their destination.</missionfailure.escorthuskvip>
+    <missionname.slimecollection>Gather Slime Samples</missionname.slimecollection>
+    <missiondescription.slimecollection>The church of husk will pay [reward] for samples of slime bacteria. Harvest and deliver them to the [location2].</missiondescription.slimecollection>
+    <missionheader0.slimecollection>Slime gathered </missionheader0.slimecollection>
+    <missionmessage0.slimecollection>Enough slime samples have been harvested. Head to the outpost for your reward.</missionmessage0.slimecollection>
+    <missionsuccess.slimecollection>All the samples have been delivered.</missionsuccess.slimecollection>
+    <missionfailure.slimecollection>You did not deliver the samples.</missionfailure.slimecollection>
+    <missionname.destroylair>Destroy a monster lair</missionname.destroylair>
+    <missiondescription.destroylair>Monsters have nested deeply into [location1] and are now spreading in the surrounding areas. Plant a nuclear device inside and blow up the place once and for all.</missiondescription.destroylair>
+    <missionsuccess.destroylair>The lair has been successfully destroyed.</missionsuccess.destroylair>
+    <missionfailure.destroylair>The location remains infested.</missionfailure.destroylair>
+    <missionheader0.destroylair>Lair destroyed</missionheader0.destroylair>
+    <missionmessage0.destroylair>The lair has been destroyed. A reward will be sent by the nearby authorities.</missionmessage0.destroylair>
+    <eventtext.destroylair.reachheart>Reach the heart of the lair with the bomb</eventtext.destroylair.reachheart>
+    <eventtext.destroylair.plantbomb>Plant the bomb near the heart</eventtext.destroylair.plantbomb>
+    <missionname.crawlerlair1>Crawler Lair</missionname.crawlerlair1>
+    <missiondescription.crawlerlair1>Crawlers are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.crawlerlair1>
+    <missionsuccess.crawlerlair1>The nests have been successfully destroyed.</missionsuccess.crawlerlair1>
+    <missionfailure.crawlerlair1>The location remains infested.</missionfailure.crawlerlair1>
+    <missionheader0.crawlerlair1>Nests destroyed</missionheader0.crawlerlair1>
+    <missionmessage0.crawlerlair1>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.crawlerlair1>
+    <missionname.crawlerlair2>Crawler Lair</missionname.crawlerlair2>
+    <missiondescription.crawlerlair2>Crawlers are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.crawlerlair2>
+    <missionsuccess.crawlerlair2>The nests have been successfully destroyed.</missionsuccess.crawlerlair2>
+    <missionfailure.crawlerlair2>The location remains infested.</missionfailure.crawlerlair2>
+    <missionheader0.crawlerlair2>Nests destroyed</missionheader0.crawlerlair2>
+    <missionmessage0.crawlerlair2>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.crawlerlair2>
+    <missionname.crawlerlair3>Crawler Lair</missionname.crawlerlair3>
+    <missiondescription.crawlerlair3>Crawlers are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.crawlerlair3>
+    <missionsuccess.crawlerlair3>The nests have been successfully destroyed.</missionsuccess.crawlerlair3>
+    <missionfailure.crawlerlair3>The location remains infested.</missionfailure.crawlerlair3>
+    <missionheader0.crawlerlair3>Nests destroyed</missionheader0.crawlerlair3>
+    <missionmessage0.crawlerlair3>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.crawlerlair3>
+    <missionname.mudraptorlair1>Mudraptor Lair</missionname.mudraptorlair1>
+    <missiondescription.mudraptorlair1>Mudraptors are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.mudraptorlair1>
+    <missionsuccess.mudraptorlair1>The nests have been successfully destroyed.</missionsuccess.mudraptorlair1>
+    <missionfailure.mudraptorlair1>The location remains infested.</missionfailure.mudraptorlair1>
+    <missionheader0.mudraptorlair1>Nests destroyed</missionheader0.mudraptorlair1>
+    <missionmessage0.mudraptorlair1>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.mudraptorlair1>
+    <missionname.mudraptorlair2>Mudraptor Lair</missionname.mudraptorlair2>
+    <missiondescription.mudraptorlair2>Mudraptors are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.mudraptorlair2>
+    <missionsuccess.mudraptorlair2>The nests have been successfully destroyed.</missionsuccess.mudraptorlair2>
+    <missionfailure.mudraptorlair2>The location remains infested.</missionfailure.mudraptorlair2>
+    <missionheader0.mudraptorlair2>Nests destroyed</missionheader0.mudraptorlair2>
+    <missionmessage0.mudraptorlair2>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.mudraptorlair2>
+    <missionname.mudraptorlair3>Mudraptor Lair</missionname.mudraptorlair3>
+    <missiondescription.mudraptorlair3>Mudraptors are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.mudraptorlair3>
+    <missionsuccess.mudraptorlair3>The nests have been successfully destroyed.</missionsuccess.mudraptorlair3>
+    <missionfailure.mudraptorlair3>The location remains infested.</missionfailure.mudraptorlair3>
+    <missionheader0.mudraptorlair3>Nests destroyed</missionheader0.mudraptorlair3>
+    <missionmessage0.mudraptorlair3>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.mudraptorlair3>
+    <missionname.thresherlair1>Thresher Lair</missionname.thresherlair1>
+    <missiondescription.thresherlair1>Threshers are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.thresherlair1>
+    <missionsuccess.thresherlair1>The nests have been successfully destroyed.</missionsuccess.thresherlair1>
+    <missionfailure.thresherlair1>The location remains infested.</missionfailure.thresherlair1>
+    <missionheader0.thresherlair1>Nests destroyed</missionheader0.thresherlair1>
+    <missionmessage0.thresherlair1>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.thresherlair1>
+    <missionname.thresherlair2>Thresher Lair</missionname.thresherlair2>
+    <missiondescription.thresherlair2>Threshers are nesting at [location1]. Find the heart of their lair and destroy it. We've marked all potential targets on your sonar. We need you to find the right one and plant a nuke on it. You should have one lying around somewhere. Word of advice: Only activate it once you know the shortest way back to your submarine!</missiondescription.thresherlair2>
+    <missionsuccess.thresherlair2>The nests have been successfully destroyed.</missionsuccess.thresherlair2>
+    <missionfailure.thresherlair2>The location remains infested.</missionfailure.thresherlair2>
+    <missionheader0.thresherlair2>Nests destroyed</missionheader0.thresherlair2>
+    <missionmessage0.thresherlair2>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.thresherlair2>
+    <missionname.thresherlair3>Thresher Lair</missionname.thresherlair3>
+    <missiondescription.thresherlair3>Threshers are nesting at [location1]. Help us to get rid of them by finding and destroying any of their eggs inside the cave.</missiondescription.thresherlair3>
+    <missionsuccess.thresherlair3>The nests have been successfully destroyed.</missionsuccess.thresherlair3>
+    <missionfailure.thresherlair3>The location remains infested.</missionfailure.thresherlair3>
+    <missionheader0.thresherlair3>Nests destroyed</missionheader0.thresherlair3>
+    <missionmessage0.thresherlair3>"Great work! Seems like you succesfully destroyed every single nest in there. Leave the area and we'll send you your pay."</missionmessage0.thresherlair3>
+    <missionname.huskcrawlerlair>Husked Crawler Lair</missionname.huskcrawlerlair>
+    <missiondescription.huskcrawlerlair>Husked Crawlers are spreading rapidly at [location1]. We can't let this spread further! Help us to get rid of them by eliminating every single one you can find in that cave! We've sent you something to help deal with them, check your cargo. Better place that bad boy far away!</missiondescription.huskcrawlerlair>
+    <missionsuccess.huskcrawlerlair>The husked crawlers have been successfully eliminated.</missionsuccess.huskcrawlerlair>
+    <missionfailure.huskcrawlerlair>The location remains infested.</missionfailure.huskcrawlerlair>
+    <missionheader0.huskcrawlerlair>Crawlers killed</missionheader0.huskcrawlerlair>
+    <missionmessage0.huskcrawlerlair>"Wow good job! Seems like you succesfully killed every single one of them in there. Leave the area and we'll send you your pay."</missionmessage0.huskcrawlerlair>
+    <missionname.surveyedminerals>Mineral Deposits</missionname.surveyedminerals>
+    <missiondescription.surveyedminerals>The survey outpost has located [resourcename1] and [resourcename2] on the way to [location2].</missiondescription.surveyedminerals>
+    <missionmessage0.surveyedminerals>That should be all of the surveyed minerals.</missionmessage0.surveyedminerals>
+    <missionsuccess.surveyedminerals>You have mined all of the [resourcename1] and [resourcename2] deposits.</missionsuccess.surveyedminerals>
+    <missionheader0.surveyedminerals>Minerals mined</missionheader0.surveyedminerals>
+    <missionsonarlabel.surveyedminerals>Mineral</missionsonarlabel.surveyedminerals>
+    <talentname.forbiddenknowledge>Extensive Research</talentname.forbiddenknowledge>
+    <talentdescription.knowledgefrombeyond>Her dedication to her research has given her the knowledge to use alien materials to craft dementonite tools.</talentdescription.knowledgefrombeyond>
+    <talentname.stayingtipsy>Tipsy</talentname.stayingtipsy>
+    <talentdescription.stayingtipsy>You provided her with alcohol, now live with the consequences.</talentdescription.stayingtipsy>
+    <eventtext.pantytheft.heyyou>"Pssst. Hey you, over here."</eventtext.pantytheft.heyyou>
+    <eventtext.pantytheft.opportunity>A suspicious figure speaks quietly: "I've heard of you. And I know you take odd jobs. Can I interest you in a most lucrative opportunity?"</eventtext.pantytheft.opportunity>
+    <eventtext.pantytheft.confidentiality>"See, people come and go around these outposts, but nobody knows when and where. That's captain confidentiality."</eventtext.pantytheft.confidentiality>
+    <eventtext.pantytheft.plantingtags>"Well me and my partners all over Europa came up with a little system. We plant tags in the clothes, and with a simple scanner in the airlock, we know exactly who docks and who leaves. Then we sell the information to whoever needs it. Separatist dissidents, coalition bigwigs, juicy merchants... you name em, we find em. That's where you help."</eventtext.pantytheft.plantingtags>
+    <eventtext.pantytheft.ifitpays>As long as you pay...</eventtext.pantytheft.ifitpays>
+    <eventtext.pantytheft.grabclothes>"I can't be seen rummaging around the crew quarters, so you're up to the job. Grab a bunch of clothes from the lockers, and bring them to me in that bag. I'll do my thing and put them right back in."</eventtext.pantytheft.grabclothes>
+    <eventtext.pantytheft.clothesdelivered>"Perfect. I'll get to work. Remember: We never spoke."</eventtext.pantytheft.clothesdelivered>
+    <eventtext.pantytheft.moreclothes>"Won't do. Get me more clothes."</eventtext.pantytheft.moreclothes>
+    <eventtext.vendingsmashing.heyyou>"Pssst. Hey you, over here."</eventtext.vendingsmashing.heyyou>
+    <eventtext.vendingsmashing.quickcash>A disheveled individual whispers: "Hey, looking for a bit of quick cash?"</eventtext.vendingsmashing.quickcash>
+    <eventtext.vendingsmashing.machinetrick>"Those vending machines man, they're a scam. But I know a trick to make them spill their insides."</eventtext.vendingsmashing.machinetrick>
+    <eventtext.vendingsmashing.hitemhard>"Hit em as hard as you can. That'll attract the attention"</eventtext.vendingsmashing.hitemhard>
+    <eventtext.vendingsmashing.Notsubtle>Not exactly subtle...</eventtext.vendingsmashing.Notsubtle>
+    <eventtext.vendingsmashing.Ilootyourun>"Yeah that's why you do the smashing and I do the looting. Keep security busy while I grab the goods. Now get to work." He hands you a crowbar. </eventtext.vendingsmashing.Ilootyourun>
+    <eventtext.vendingsmashing.readycrowbar>That one looks full. Ready your crowbar...</eventtext.vendingsmashing.readycrowbar>
+    <eventtext.vendingsmashing.Ilootyourun>"Yeah that's why you do the smashing and I do the looting. Keep security busy while I grab the goods. Now get to work."</eventtext.vendingsmashing.Ilootyourun>
+    <eventtext.vendingsmashing.yourshare>"Good job. Here's your share."</eventtext.vendingsmashing.yourshare>
+    <eventtext.circuswelcome.foundus>"You found us! A warm welcome to our guests."</eventtext.circuswelcome.foundus>
+    <missionname.vipnapping>Ransoming a VIP</missionname.vipnapping>
+    <missiondescription.vipnapping>A wealthy executive is conducting business in [location1]. Drag him to your submarine alive and escape the station.</missiondescription.vipnapping>
+    <missionsuccess.vipnapping>The VIP has been extracted.</missionsuccess.vipnapping>
+    <missionfailure.vipnapping>You didn't get the VIP.</missionfailure.vipnapping>
+    <missionheader0.vipnapping>Ransoming a VIP</missionheader0.vipnapping>
+    <missionmessage0.vipnapping>VIP secured, time to leave!</missionmessage0.vipnapping>
+    <vipkilled>The VIP has died.</vipkilled>
+    <eventtext.escortransom.findbeacon>Drop off the VIP at a beacon station. Alive.</eventtext.escortransom.findbeacon>
+    <eventtext.vipnapping.thatstarget>"Fancy clothes, expensive watch... That's the target."</eventtext.vipnapping.thatstarget>
+    <missionheader0.pirate1>Pirate Outpost</missionheader0.pirate1>
+    <missionname.destroypirateoutpost>Pirate Outpost</missionname.destroypirateoutpost>
+    <missiondescription.destroypirateoutpost>This place is a den of thieves. You're free to conduct business... but you could also rid Europa of this scum.</missiondescription.destroypirateoutpost>
+    <missionsuccess.destroypirateoutpost>You cleared the outpost of its undesirable inhabitants. Europa is a safer place now.</missionsuccess.destroypirateoutpost>
+    <missionfailure.destroypirateoutpost>The pirates still remain in control of the outpost.</missionfailure.destroypirateoutpost>
+    <missionheader0.destroypirateoutpost>Pirates Eliminated</missionheader0.destroypirateoutpost>
+    <missionmessage0.destroypirateoutpost>You cleared the outpost of its undesirable inhabitants. Europa is a safer place now.</missionmessage0.destroypirateoutpost>
+    <eventtext.piratehavenalarm.breakin>"These guys are trying to break in! Get 'em!"</eventtext.piratehavenalarm.breakin>
+    <eventtext.psychovisions.ghosts>A visibly distraught researcher stares intently at the research terminal. \n"Ghosts! They're speaking to me!"</eventtext.psychovisions.ghosts>
+    <eventtext.psychovisions.noghosts>"Ghosts? Aren't you a scientist?"</eventtext.psychovisions.noghosts>
+    <eventtext.psychovisions.insidemyhead>"It's those aliens! They're inside my head! I swear I saw them... the ancient scriptures! The song of the TRUE Europans!"</eventtext.psychovisions.insidemyhead>
+    <eventtext.psychovisions.psychotic>"You're clearly psychotic."</eventtext.psychovisions.psychotic>
+    <eventtext.psychovisions.panic>"Maybe YOU are not enough! If only you could see the things that I see..." The researcher scurries away in a panic.</eventtext.psychovisions.panic>
+    <eventtext.psychovisions.leave>Leave the madman to his ravings.</eventtext.psychovisions.leave>
+    <eventtext.psychovisions.listenalien>"Come. Listen. Deeper..."</eventtext.psychovisions.listenalien>
+    <eventtext.psychovisions.paranoid>You're not quite sure what you just witnessed. But somehow, you feel like you can see a ...path to the end of your journey. You're left perplexed, and also a little paranoid.</eventtext.psychovisions.paranoid>
+    <EventText.scrapdealer1.scrapseller>You hear a muffled voice calling out the passerbys: "Salvage, rare metals, I've got them all! Hey you traveller, interested into some first rate, former submarine parts?"</EventText.scrapdealer1.scrapseller>
+    <EventText.scrapdealer1.sellmescrap>"You're selling me ...scrap?"</EventText.scrapdealer1.sellmescrap>
+    <EventText.scrapdealer1.junktreasure>“One man's junk is another's treasure. You wouldn't believe what you can find patiently waiting at the bottom of the sea. Scrap could be anything: broken down engines, electronics... it could even be a boat! So, how about helping me kick off this business by being my first customer?"</EventText.scrapdealer1.junktreasure>
+    <EventText.scrapdealer1.buyscrap>"For 250 marks, all this scrap can be yours!"</EventText.scrapdealer1.buyscrap>
+    <EventText.scrapdealer1.deal>“Deal.”</EventText.scrapdealer1.deal>
+    <EventText.scrapdealer1.scrapbought>"Here you go! This is the start of a lucrative business venture!"</EventText.scrapdealer1.scrapbought>
+    <EventText.scrapdealer1.nomoney>"I'm not giving it for free! You gotta pay up!"</EventText.scrapdealer1.nomoney>
+    <EventText.scrapdealer2.scrapseller>The familiar glint of a metal bucket and the person wearing it catches your eye: "You again! As you can see, I'm still in the salvage business. And I got my hand on some brand new, high-quality scrap! Interested in buying?"</EventText.scrapdealer2.scrapseller>
+    <EventText.scrapdealer2.buyscrap>"For 250 marks, all this scrap can be yours! Again!"</EventText.scrapdealer2.buyscrap>
+    <EventText.scrapdealer2.scrapbought>"Never thought any sane person would buy that junk TWICE! Since you're my best and only customer, let me give you a tip as a bonus: Here's a wreck I found a while ago, but it proved too dangerous to loot. Maybe you can give it a shot..."</EventText.scrapdealer2.scrapbought>
+    <charactername.scrapdealer>Saul Väger</charactername.scrapdealer>
+    <EventText.missionevent_capturelivecrawler.periloustask>A hooded figure signs to you. "Blessings, dear traveller. I've been looking for a vessel capable enough to rid us of handling a most delicate task."</EventText.missionevent_capturelivecrawler.periloustask>
+    <EventText.missionevent_capturelivecrawler.whattask>"Sounds fishy."</EventText.missionevent_capturelivecrawler.whattask>
+    <EventText.missionevent_capturelivecrawler.experiments>“Our church is running crucial experiments on unique organisms and rare mutations, all for the good of humanity. But with the pursuit of progress comes unfortunate... incidents."</EventText.missionevent_capturelivecrawler.experiments>
+    <EventText.missionevent_capturelivecrawler.incidents>"Incidents?"</EventText.missionevent_capturelivecrawler.incidents>
+    <EventText.missionevent_capturelivecrawler.missionbrief>“Some of our test subjects escaped containement during transport to one of our churches. Save those lost souls and bring them back to our sanctuary. We will reward your effort... and your silence.”</EventText.missionevent_capturelivecrawler.missionbrief>
+    <EventText.missionevent_capturelivecrawler.Iwilldoit>"I will do it."</EventText.missionevent_capturelivecrawler.Iwilldoit>
+    <EventText.missionevent_capturelivecrawler.Noway>"No way. Clean up your own mistakes."</EventText.missionevent_capturelivecrawler.Noway>
+    <EventText.missionevent_capturelivecrawler.takethis>“Take these sedative implements. They will help keeping the beasts pacified. Remember: keep at least one of the subjects alive.”</EventText.missionevent_capturelivecrawler.takethis>
+    <missionname.livecapture>Capture a mutated crawler</missionname.livecapture>
+    <missiondescription.livecapture>Multiple test subjects have escaped from [location2], and the church has tasked you with recovering a specimen alive.</missiondescription.livecapture>
+    <missionheader0.livecapture>Target Captured</missionheader0.livecapture>
+    <missionmessage0.livecapture>Keep the target alive until you reach [location2].</missionmessage0.livecapture>
+    <missionmessage1.livecapture>Navigate the submarine to [location2] and keep the target alive.</missionmessage1.livecapture>
+    <entityname.livecapture>Capture target</entityname.livecapture>
+    <missionsuccess.livecapture>The specimen has been successfully captured and transported to destination.</missionsuccess.livecapture>
+    <missionfailure.livecapture>Failed to retrieve the specimen alive.</missionfailure.livecapture>
+    <character.Crawler_capture>Escaped Crawler</character.Crawler_capture>
+    <entityname.cavepest>Cave Pest</entityname.cavepest>
+    <entitydescription.cavepest>Disgusting! Throw it away!</entitydescription.cavepest>
+    <entityname.cavepestspawner>Pest Nest</entityname.cavepestspawner>
+    <entitydescription.cavepestspawner>A nest of cave pests. These worm-like organisms fall on unsuspecting prey and dissolve them with acid.</entitydescription.cavepestspawner>
+    <EventText.piratebodybag.smellyroom>Heaps of trash are piled up in a single place, saturating the damp air with the stench of mold. You didn't think this place could get any filthier.</EventText.piratebodybag.smellyroom>
+    <EventText.piratebodybag.hearthump>You hear an irregular thump coming from inside a suspiciously wrapped package...</EventText.piratebodybag.hearthump>
+    <EventText.piratebodybag.kickit>Kick it.</EventText.piratebodybag.kickit>
+    <EventText.piratebodybag.stayaway>Stay the hell away.</EventText.piratebodybag.stayaway>
+    <entityname.huskbodybag>Suspicious package</entityname.huskbodybag>
+    <EventText.missionevent_escortmedivac.needhelp>"You're part of the crew that just docked? Listen, we have an emergency here, and we could use your ship."</EventText.missionevent_escortmedivac.needhelp>
+    <EventText.missionevent_escortmedivac.myship>"My ship? How?"</EventText.missionevent_escortmedivac.myship>
+    <EventText.missionevent_escortmedivac.spaceflu>"One of our residents caught some kind of unknown space flu from a recent expedition. Luckily we immediately put the patient in quarantine, but can't figure out whatever the hell is incubating. Worse, this station doesn't have the means to treat it. So far only Stabilozine seems to have an effect, but it's just temporary."</EventText.missionevent_escortmedivac.spaceflu>
+    <EventText.missionevent_escortmedivac.lupus>"Maybe it's a Lupus?"</EventText.missionevent_escortmedivac.lupus>
+    <EventText.missionevent_escortmedivac.missionbrief>“No, and we're running low on supplies. That's why we need you to transport the patient to the medical facility nearby, before this situation turns into a potential outbreak."</EventText.missionevent_escortmedivac.missionbrief>
+    <EventText.missionevent_escortmedivac.accept>"Anything to save a life."</EventText.missionevent_escortmedivac.accept>
+    <EventText.missionevent_escortmedivac.refuse>"An infectious disease in an enclosed submarine? Not happening."</EventText.missionevent_escortmedivac.refuse>
+    <missionname.escortmedivac>Escort a patient to a medical facility</missionname.escortmedivac>
+    <missiondescription.escortmedivac>A resident of [location1] has contracted an unknown illness, and needs to be transported to [location2] for immediate treatment before the disease spreads.</missiondescription.escortmedivac>
+    <missionheader0.escortmedivac>Patient died</missionheader0.escortmedivac>
+    <missionmessage0.escortmedivac>The patient did not survive transport. The mission is a failure.</missionmessage0.escortmedivac>
+    <missionsuccess.escortmedivac>Medical facility reached. The patient has been taken into urgent care.</missionsuccess.escortmedivac>
+    <missionfailure.escortmedivac>The patient did not reach their destination.</missionfailure.escortmedivac>
+    <npctitle.sickpatient>Patient</npctitle.sickpatient>
+    <afflictionname.mysteriousdisease>Mysterious Disease</afflictionname.mysteriousdisease>
+    <afflictiondescription.mysteriousdisease.self>You're not feeling well, and you don't know why.</afflictiondescription.mysteriousdisease.self>
+    <afflictiondescription.mysteriousdisease.others>The patient is afflicted with an unknown, contagious disease, and requires medical attention.</afflictiondescription.mysteriousdisease.others>
+    <afflictionname.mysteriousdiseaseplayer>Sickness</afflictionname.mysteriousdiseaseplayer>
+    <afflictiondescription.mysteriousdiseaseplayer.self>You're now also sick. Try to isolate yourself and tough it out.</afflictiondescription.mysteriousdiseaseplayer.self>
+    <afflictiondescription.mysteriousdiseaseplayer.others>The mysterious disease has spread to the crew...</afflictiondescription.mysteriousdiseaseplayer.others>
+    <eventtext.missionevent_retrieveindustrialwaste>“A transport vessel has been illegally dumping barrels of dangerous industrial waste in the waters nearby. If we don't do something, they will contaminate the water and make the passage unsafe. We'll pay anyone for cleaning up the cave and properly disposing of the waste in a nearby outpost”</eventtext.missionevent_retrieveindustrialwaste>
+    <eventtext.missionevent_retrieveindustrialwaste.yuck>“Yuck.”</eventtext.missionevent_retrieveindustrialwaste.yuck>
+    <missionname.retrieveindustrialwaste>Cleaning Industrial Waste</missionname.retrieveindustrialwaste>
+    <missiondescription.retrieveindustrialwaste>Irradiated industrial waste was dumped by unscrupulous captains between [location1] and [location2], and is now polluting the area. Retrieve the waste and bring it to a nearby outpost for safe disposal.</missiondescription.retrieveindustrialwaste>
+    <missionsonarlabel.retrieveindustrialwaste>Industrial Waste</missionsonarlabel.retrieveindustrialwaste>
+    <missionsuccess.retrieveindustrialwaste>The waste has been successfully retrieved.</missionsuccess.retrieveindustrialwaste>
+    <missionfailure.retrieveindustrialwaste>Failed to retrieve the waste.</missionfailure.retrieveindustrialwaste>
+    <missionheader.retrieveindustrialwaste.allretrieved>Waste retrieved</missionheader.retrieveindustrialwaste.allretrieved>
+    <missionmessage.retrieveindustrialwaste.allretrieved>The barrels of waste have been retrieved. Bring them to [location2] to be processed safely.</missionmessage.retrieveindustrialwaste.allretrieved>
+    <missionmessage.retrieveindustrialwaste.partiallyretrieved>Some of the waste barrels are now on board the sub, but there is still more to retrieve.</missionmessage.retrieveindustrialwaste.partiallyretrieved>
+    <missionmessage.retrieveindustrialwaste.targetfound>Bring the waste back on board, but beware of its high dangerosity.</missionmessage.retrieveindustrialwaste.targetfound>
+    <eventtext.missionevent_industrialincident>A stressed out worker grabs your attention. "We've received a message from a nearby industrial outpost. Apparently they're short on labor and are overworking the machinery to meet production quotas. We have our hands full over here, but if you have extra manpower to spare, try and give them technical assistance. Some extra elbow grease wouldn't hurt...”</eventtext.missionevent_industrialincident>
+    <eventtext.missionevent_industrialincident.nopromises>“We might swing by the place, but no promises.”</eventtext.missionevent_industrialincident.nopromises>
+    <missionname.industrialincident>Industrial Stress</missionname.industrialincident>
+    <missiondescription.industrialincident>[location1] has trouble meeting its production quota, and the station workers are overwhelmed. See if you can help with the situation.</missiondescription.industrialincident>
+    <missionsuccess.industrialincident>The station has been repaired and is functional again.</missionsuccess.industrialincident>
+    <missionfailure.industrialincident>You didn't help repair the station.</missionfailure.industrialincident>
+    <missionheader0.industrialincident>Industrial Incident</missionheader0.industrialincident>
+    <missionmessage0.industrialincident>You hear screams around the station. A large fire has broken out and the station is erupting into chaos. Repair it!</missionmessage0.industrialincident>
+    <eventtext.industrialincidentevent.success>You've managed to repair the broken machinery. The outpost is functional again, although a little singed.</eventtext.industrialincidentevent.success>
+    <eventtext.outpostdestruction.npcsflee>You hear multiple docking ports disengaging as the remaining inhabitants of the station made their escape, leaving it abandoned.</eventtext.outpostdestruction.npcsflee>
+    <eventtext.outpostdestruction.placeruined>This place now lies in ruins...</eventtext.outpostdestruction.placeruined>
+    <eventtext.manualtakeover.call.nostation>According to the tracker you're not even at a station! Don't waste our time!</eventtext.manualtakeover.call.nostation>
+    <eventtext.manualtakeover.call.church>You're at a station of the church of husk. We have no intend on interfering with them. Permission denied!</eventtext.manualtakeover.call.church>
+    <eventtext.manualtakeover.call.bandits>You're at a pirate station. We are not interested in that facility. Do whatever, but we will not claim the station!</eventtext.manualtakeover.call.bandits>
+    <eventtext.manualtakeover.call.coalition>You're calling the coalition over the military frequency...</eventtext.manualtakeover.call.coalition>
+    <eventtext.manualtakeover.call.separatists>You're calling the separatists over the military frequency...</eventtext.manualtakeover.call.separatists>
+    <eventtext.manualtakeover.call.playerresponse>We'd like to take over a station for you...</eventtext.manualtakeover.call.playerresponse>
+    <eventtext.manualtakeover.call.permissiongranted>"Understood. You can proceed, but be aware that we won't be able to pay you much nor are we able to assist you with this, but you can keep whatever equipment you find! So best of luck to you and your crew!"</eventtext.manualtakeover.call.permissiongranted>
+    <eventtext.takeover.success>You hear someone tune into your frequency: "Enough! We yield! The station is yours... Just please stop with the bloodshed!"</eventtext.takeover.success>
+    <eventtext.takeover.success.reward>You're receiving a call from the seargent: "Good work! The station is now under our command! We've delivered a little gift to your submarine. Go check it out!"</eventtext.takeover.success.reward>
+    <eventtext.takeover.success.reward.check>You notice a crate. Upon opening it you find a military radio with a note: \n"Use this to call into our military frequency and inform us about any other takeovers!"</eventtext.takeover.success.reward.check>
+    <eventtext.gettakeovermission.newradio>"According to the tracker you've lost the military radio. Here's another one, but take good care of it! Those things don't come cheap!"</eventtext.gettakeovermission.newradio>
+    <locationchange.destroyedstation.changeto.abandoned>Movement was detected near the remnants of [name].</locationchange.destroyedstation.changeto.abandoned>
+    <locationname.destroyedstation>Destroyed Station</locationname.destroyedstation>
+    <locationnameformat.destroyedstation>[name] (Destroyed)</locationnameformat.destroyedstation>
+    <locationdescription.destroyedstation>
+  A recently destroyed station. Its entrance is inaccessible by submarines. 
+  It is impossible to dock here.
+  </locationdescription.destroyedstation>
+    <eventtext.missionevent_escortorangeboys>“A nearby habitation outpost has ordered a special delivery of fresh meat. We need someone to safely escort a pack of Orange Boys to the destination.”</eventtext.missionevent_escortorangeboys>
+    <eventtext.missionevent_escortorangeboys.sure>“Sure. They're so cute... and so delicious.”</eventtext.missionevent_escortorangeboys.sure>
+    <eventtext.missionevent_escortorangeboys.refuse>“Sorry, pets are friends, not food.”</eventtext.missionevent_escortorangeboys.refuse>
+    <missionname.escortorangeboys>Escort Orange Boys</missionname.escortorangeboys>
+    <missiondescription.escortorangeboys>[location2] has requested a delivery of fresh Orange Boy meat and you've been tasked with herding them to destination.</missiondescription.escortorangeboys>
+    <missionheader0.escortorangeboys>Mission failed</missionheader0.escortorangeboys>
+    <missionmessage0.escortorangeboys>Too many Orange Boys died.</missionmessage0.escortorangeboys>
+    <missionheader1.escortorangeboys>Mission success.</missionheader1.escortorangeboys>
+    <missionmessage1.escortorangeboys>Targets escorted succesfully.</missionmessage1.escortorangeboys>
+    <entityname.escortorangeboys>Escort targets</entityname.escortorangeboys>
+    <missionsuccess.escortorangeboys>Most of the Orange Boys have been safely transported to destination.</missionsuccess.escortorangeboys>
+    <missionfailure.escortorangeboys>Failed to transport Orange Boys to destination.</missionfailure.escortorangeboys>
+    <EventText.orangePETA.spotted>A person wearing an strange helmet shouts towards your direction: "Hey I think that's the guy!"</EventText.orangePETA.spotted>
+    <EventText.orangePETA.whatme>"Are you talking to me?"</EventText.orangePETA.whatme>
+    <EventText.orangePETA.OPSspeech1>The odd group presents itself as the Orange Protection Society. “We've heard word of an unscrupulous captain trafficking kind orange souls to slaughter them! Soon, the entire species will be endangered due to the gluttony of a few cruel flesh-eaters! They are the real monsters of Europa, as well as those who do their bidding for money!"</EventText.orangePETA.OPSspeech1>
+    <EventText.orangePETA.OPSspeech2>"Like humans, the Europan Lobscrab is an amazingly social, smart and kind animal. They can live to be more than 100 years old, most of them older than any of human on this moon! Do you have any idea how they feel, being boiled alive and devoured?"</EventText.orangePETA.OPSspeech2>
+    <EventText.orangePETA.lie>“You're mistaken, we were taking them to a loving forever home.”</EventText.orangePETA.lie>
+    <EventText.orangePETA.whatarelief>There's an awkward silence. "Oh, what a relief. I'm so glad they're safe and sound. I must apologize, there's still some good left in the world after all. Take this, as a token of the Orange Protection Society."</EventText.orangePETA.whatarelief>
+    <EventText.orangePETA.delicious>"They feel delicious, with a touch of Moloch butter."</EventText.orangePETA.delicious>
+    <EventText.orangePETA.getem>"That's the orange butcher in person! Get 'em!"</EventText.orangePETA.getem>
+    <locationchange.none.changeto.huskchurch>Chuch of Husk missionaries have baptized the new [name].</locationchange.none.changeto.huskchurch>
+    <missionname.silencewitness>Assassinate a key witness</missionname.silencewitness>
+    <missiondescription.silencewitness>An escaped member of the Red Mantis gang has been taken into custody inside a coalition outpost and is threatening to reveal secrets about the organisation. Silence the witness, permanently...</missiondescription.silencewitness>
+    <missionsuccess.silencewitness>The witness has been eliminated.</missionsuccess.silencewitness>
+    <missionfailure.silencewitness>The witness is still alive.</missionfailure.silencewitness>
+    <EventText.missionevent_silencewitness.gangbounty>"We got a bounty if you're interested. The Red Mantis gang has put a hit on a target."</EventText.missionevent_silencewitness.gangbounty>
+    <EventText.missionevent_silencewitness.tellmemore>"Tell me more..."</EventText.missionevent_silencewitness.tellmemore>
+    <EventText.missionevent_silencewitness.missionbrief>"One of their old lieutenants has caught cold feet and turned tail towards the neareast coalition outpost. Word is, they're going to rat out their old crew to the authorities. Of course, the gang doesn't really like that prospect, so they're paying a nice sum to keep that snitch from babbling."</EventText.missionevent_silencewitness.missionbrief>
+    <EventText.missionevent_silencewitness.accept>"I'll squash the rat."</EventText.missionevent_silencewitness.accept>
+    <EventText.missionevent_silencewitness.seacario>"That's a job for a sea-cario."</EventText.missionevent_silencewitness.seacario>
+    <EventText.missionevent_silencewitness.dotdotdot>"..."</EventText.missionevent_silencewitness.dotdotdot>
+    <EventText.missionevent_silencewitness.hitlocation>"Here's where you should find the hit. Probably waiting in a cell until they get a full confession out of the traitor."</EventText.missionevent_silencewitness.hitlocation>
+    <EventText.missionevent_silencewitness.nogangbusiness>"No thanks, we try to stay out of gang business."</EventText.missionevent_silencewitness.nogangbusiness>
+    <EventText.silencewitnessevent.whichone>The pirate mentioned the turncoat was here, but didn't expect to see several prisoners in the same place. You can't tell which one is your target...</EventText.silencewitnessevent.whichone>
+    <EventText.silencewitnessevent.whoareyou>"Who the hell are you? Am I finally getting out?"</EventText.silencewitnessevent.whoareyou>
+    <EventText.silencewitnessevent.whoareyou>"I don't know you. Am I leaving?"</EventText.silencewitnessevent.whoareyou>
+    <EventText.silencewitnessevent.regards>"The Red Mantis crew sends their regards."</EventText.silencewitnessevent.regards>
+    <EventText.silencewitnessevent.righttarget>"Red Mantis? Fuck! Security, there's a guy out to get me!"</EventText.silencewitnessevent.righttarget>
+    <EventText.silencewitnessevent.wrongtarget>“No really who the fuck are you? Security!”</EventText.silencewitnessevent.wrongtarget>
+    <EventText.silencewitnessevent.nevermind>"Nevermind. Stay inside."</EventText.silencewitnessevent.nevermind>
+    <EventText.silencewitnessevent.whatever>"Whatever you say, chief..."</EventText.silencewitnessevent.whatever>
+    <EventText.silencewitnessevent.whatever>"Quit givin' me false hope..."</EventText.silencewitnessevent.whatever>
+    <EventText.silencewitnessevent.outtahere>"Whoever you are chump, I'm outta here!"</EventText.silencewitnessevent.outtahere>
+    <EventText.oxygenfluidleak.monitor>The status monitor is displaying a warning about an oxygen generator malfunction. Better order a mechanic to take a look.</EventText.oxygenfluidleak.monitor>
+    <EventText.oxygenfluidleak.toolate>You're a little late, but the chemical scrubber was leaking a large quantity of ammonia through the vents all over the ship. Thankfully the liquid has ran out.</EventText.oxygenfluidleak.toolate>
+    <EventText.oxygenfluidleak.leakyscrubber>The chemical scrubber is leaking a large quantity of ammonia through the vents all over the ship.</EventText.oxygenfluidleak.leakyscrubber>
+    <EventText.oxygenfluidleak.waitorpurge>The remaining fluid should dissipate over time if you just wait... but you could also purge it all at once.</EventText.oxygenfluidleak.waitorpurge>
+    <EventText.oxygenfluidleak.purgeoption>Purge the fluid at your own risk.</EventText.oxygenfluidleak.purgeoption>
+    <EventText.oxygenfluidleak.goodpurge>You remember the purging procedure. Get the crew ready!</EventText.oxygenfluidleak.goodpurge>
+    <EventText.oxygenfluidleak.badpurge>You wish you hadn't traded the operating manual for opium. Here goes nothing...</EventText.oxygenfluidleak.badpurge>
+    <EventText.oxygenfluidleak.waititout>Wait for the problem to resolve itself.</EventText.oxygenfluidleak.waititout>
+    <EventText.beaconcommsjam.jammed>You hear scrambled noises coming from your headset. The beacon signal is active, but it's malfunctioning and jamming nearby communications. Better not stay around.</EventText.beaconcommsjam.jammed>
+    <entityname.railgunshellclown>Clown Delivery System</entityname.railgunshellclown>
+    <entitydescription.railgunshellclown>Through an impossible feat of clownpression technology, the children of the honkmother can somehow squeeze themselves inside a railgun shell to be shot across stations. A great way to kick off a surprise party!</entitydescription.railgunshellclown>
+    <eventtext.manualtakeover.call.friendlystation>"It looks like you're docked to a friendly station. Over."</eventtext.manualtakeover.call.friendlystation>
+    <eventtext.missionevent_cargodefensebots>“We've got a shipment of brand new defense bot models ready to be sent to a nearby outpost. They're fragile, so make sure to performance maintenance on them and keep the humidity away.”</eventtext.missionevent_cargodefensebots>
+    <eventtext.missionevent_cargodefensebots.accept>“Beep Boop.”</eventtext.missionevent_cargodefensebots.accept>
+    <missionname.cargodefensebots>Transport Defense Bots</missionname.cargodefensebots>
+    <missiondescription.cargodefensebots>A shipment of inactive defense bots must be transported to [location2]. Keep the defense bots repaired.</missiondescription.cargodefensebots>
+    <missionheader0.cargodefensebots>Cargo damage</missionheader0.cargodefensebots>
+    <missionmessage0.cargodefensebots>The defense bots broke during transport.</missionmessage0.cargodefensebots>
+    <missionsuccess.cargodefensebots>The defense bots have been transported safely.</missionsuccess.cargodefensebots>
+    <missionfailure.cargodefensebots>Failed to transport the cargo to destination.</missionfailure.cargodefensebots>
+    <missionheader0.cargodefensebots_defective>Cargo damage</missionheader0.cargodefensebots_defective>
+    <missionmessage0.cargodefensebots_defective>Too many defense bots broke during transport.</missionmessage0.cargodefensebots_defective>
+    <missionsuccess.cargodefensebots_defective>Despite a minor malfunction, the defense bots have been transported safely.</missionsuccess.cargodefensebots_defective>
+    <missionfailure.cargodefensebots_defective>Failed to transport the cargo to destination.</missionfailure.cargodefensebots_defective>
+    <entityname.cargodefensebot>Inactive Defense Bot</entityname.cargodefensebot>
+    <entitydescription.cargodefensebot>An inactive defense bot that needs to be transported to destination. Needs regular maintenance.</entitydescription.cargodefensebot>
+    <character.Defensebot_defective>Defective Bot</character.Defensebot_defective>
+    <EventText.missionevent_chimerasamples.request>You've overheard the head scientist of this outpost is looking for a well-armed vessel. "So you've come to help in our research, traveller. I have a mission that requires an adventurous spirit."</EventText.missionevent_chimerasamples.request>
+    <EventText.missionevent_chimerasamples.whatisit>"What is it?"</EventText.missionevent_chimerasamples.whatisit>
+    <EventText.missionevent_chimerasamples.newlifeform>“The almighty husk is ever changing, taking new forms and unifying all life. We have baptized such organisms Chimeras. To further study this new biological construct, we need blood samples, extracted from a subject."</EventText.missionevent_chimerasamples.newlifeform>
+    <EventText.missionevent_chimerasamples.interesting>"Interesting..."</EventText.missionevent_chimerasamples.interesting>
+    <EventText.missionevent_chimerasamples.worse>"You're saying it can get even WORSE?"</EventText.missionevent_chimerasamples.worse>
+    <EventText.missionevent_chimerasamples.givevial>The scientist hands you a vial with a needle. “Plunge this spike into the heart of the Chimera until the receptacle is full, then bring the container to a safe destination.”</EventText.missionevent_chimerasamples.givevial>
+    <EventText.missionevent_chimerasamples.Iwilldoit>"I will do it."</EventText.missionevent_chimerasamples.Iwilldoit>
+    <EventText.missionevent_chimerasamples.Noway>"No way."</EventText.missionevent_chimerasamples.Noway>
+    <missionname.chimerasamples>Gather a sample of Chimera blood</missionname.chimerasamples>
+    <missiondescription.chimerasamples>The church of the Husk has tasked you with collecting a sample of blood from a Husk Chimera. Extreme caution is advised.</missiondescription.chimerasamples>
+    <missionheader0.chimerasamples>Blood sample extracted</missionheader0.chimerasamples>
+    <missionmessage0.chimerasamples>Do not lose the samples until you reach [location2].</missionmessage0.chimerasamples>
+    <missionmessage1.chimerasamples>Reach [location2] with the samples.</missionmessage1.chimerasamples>
+    <entityname.chimerasamples>Husk Chimera</entityname.chimerasamples>
+    <missionsuccess.chimerasamples>The chimera blood samples have been secured.</missionsuccess.chimerasamples>
+    <missionfailure.chimerasamples>Failed to retrieve the blood samples.</missionfailure.chimerasamples>
+    <eventtext.generic.Iwilldoit>"I will do it."</eventtext.generic.Iwilldoit>
+    <eventtext.generic.noway>"No way."</eventtext.generic.noway>
+    <eventtext.generic.tellmemore>"Tell me more..."</eventtext.generic.tellmemore>
+    <eventtext.generic.accept>Accept</eventtext.generic.accept>
+    <eventtext.generic.agree>Agree</eventtext.generic.agree>
+    <eventtext.generic.disagree>Disagree</eventtext.generic.disagree>
+    <eventtext.generic.leave>Leave.</eventtext.generic.leave>
+  </Override>
+</infotext>

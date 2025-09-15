@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- Soups allow you to use lower condition meat than normal -->
+    <!-- POT -->
+    <Item name="Pot of rice" identifier="heexp-potrice" category="Misc" maxstacksize="1" Tags="smallitem,pot,fullpot,tableware" description="" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="kitchen" />
+      <PreferredContainer secondary="crewcab" />
+      <Deconstruct time="5" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/InventoryIcons.png" sourcerect="129,80,58,48" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Fabricators/Fabricators.png" sourcerect="1815,121,59,48" depth="0.55" />
+      <Body width="58" height="46" density="13.0" />
+      <Fabricate suitablefabricators="stove" requiredtime="60" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="5" />
+        <RequiredItem identifier="he-potwithwater" />
+        <RequiredItem identifier="heexp-bagofrice" />
+      </Fabricate>
+      <Holdable canbecombined="false" slots="RightHand+LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This">
+          <Conditional condition="gt 10" />
+          <ParticleEmitter particle="weldsmoke" particlespersecond="3" scalemin="0.15" scalemax="0.25" anglemin="0" anglemax="0" velocitymin="0" velocitymax="0" distancemin="-10" distancemax="10" lifetimemultiplier="0.5" colormultiplier="255,255,255,150" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-20" disabledeltatime="true" offset="0,10">
+          <Conditional condition="gt 21" />
+          <Sound file="Content/Sounds/Water/Splash1.ogg" range="500" volume="0.5" frequencymultiplier="2" selectionmode="random" />
+          <Sound file="Content/Sounds/Water/Splash4.ogg" range="500" volume="0.5" frequencymultiplier="2" selectionmode="random" />
+          <ParticleEmitter particle="whitegoosplash" colormultiplier="255,255,255,120" anglemin="80" anglemax="100" particleamount="3" velocitymin="100" velocitymax="200" scalemin="0.35" scalemax="0.6" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-dirtypot" spawnposition="SameInventory" spawnifcantbecontained="true" spawnifinventoryfull="true" />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--SOUP BOWLS-->
+  </Items>
+</Override>

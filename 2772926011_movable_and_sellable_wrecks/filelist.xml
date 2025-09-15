@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Movable and Sellable Wrecks" modversion="1.6" corepackage="False" steamworkshopid="2772926011" gameversion="1.8.8.1" expectedhash="6C0F8641208610FE961FAC684EFDDC1E">
+  <Item file="%ModDir%/wreckeditems.xml" />
+  <Item file="%ModDir%/Weapons/depthgrapple.xml" />
+  <Text file="%ModDir%/Texts/Russian/RussianVanilla.xml" />
+  <Text file="%ModDir%/Texts/English/EnglishVanilla.xml" />
+  <Text file="%ModDir%/Texts/SimplifiedChinese/SimplifiedChineseVanilla.xml" />
+  <Text file="%ModDir%/Texts/BrazilianPortuguese/BrazilianPortugueseVanilla.xml" />
+  <Other file="%ModDir%/Lua/Autorun/movablewrecks.lua" />
+  <Other file="%ModDir%/Lua/Autorun/sellablewrecks.lua" />
+  <Other file="%ModDir%/Lua/Autorun/unlockedwrecks.lua" />
+</contentpackage>

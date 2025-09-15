@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="opdeco_diningtable" scale="0.5" category="Decorative">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+      </Deconstruct>
+      <Body width="208" height="236" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1529,654,210,238" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    </Item>
+    <Item name="" identifier="opdeco_diningtablesmall" scale="0.5" category="Decorative">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Body width="144" height="160" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1744,656,144,160" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    </Item>
+    <!-- labels.xml -->
+    <!-- causes issues so removed -->
+    <!-- OutpostItems.xml -->
+    <Item name="" identifier="bunk" category="Decorative">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="173" height="129" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/MiscStructures.png" sourcerect="1416,1163,173,129" depth="0.85" origin="0.5,0.5" />
+      <Controller UserPos="0,-150" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+        <limbposition limb="Head" position="-13,-85" />
+        <limbposition limb="Torso" position="42,-70" />
+        <limbposition limb="Waist" position="112,-80" />
+        <limbposition limb="RightFoot" position="222,-80" />
+        <limbposition limb="LeftFoot" position="222,-80" />
+        <limbposition limb="RightHand" position="112,-80" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="112,-80" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+    </Item>
+    <Item name="" identifier="opdeco_bunkbeds" width="356" height="264" texturescale="1.0,1.0" scale="0.5" category="Decorative" spritecolor="255,255,255,255">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="384" height="264" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <Upgrade gameversion="0.12.0.0" noninteractable="false" />
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1600,1760,384,264" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+        <!-- don't allow laying in bed when wearing an exosuit -->
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        <limbposition limb="Head" position="-26,-170" />
+        <limbposition limb="Torso" position="84,-140" />
+        <limbposition limb="Waist" position="224,-160" />
+        <limbposition limb="RightFoot" position="444,-160" />
+        <limbposition limb="LeftFoot" position="444,-160" />
+        <limbposition limb="RightHand" position="224,-160" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="224,-160" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+      <Upgrade gameversion="0.20.8.0">
+        <Controller>
+          <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        </Controller>
+      </Upgrade>
+    </Item>
+    <Item name="" identifier="opdeco_bunks1" nameidentifier="opdeco_bunks1" allowattachitems="false" width="463" height="398" texturescale="1.0,1.0" scale="0.5" category="Decorative">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="463" height="387" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1296,1289,463,387" depth="0.85" premultiplyalpha="false" origin="0.5,0.5" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1390,1126,320,160" depth="0.86" origin="0.5,0.5" offset="40,-95" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1390,1126,320,160" depth="0.86" origin="0.5,0.5" offset="40,105" />
+      <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" drawuserbehind="true" noninteractablewhenflippedy="true">
+        <!-- don't allow laying in bed when wearing an exosuit -->
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        <limbposition limb="Head" position="14,-300" />
+        <limbposition limb="Torso" position="124,-270" />
+        <limbposition limb="Waist" position="264,-290" />
+        <limbposition limb="RightFoot" position="484,-290" />
+        <limbposition limb="LeftFoot" position="484,-290" />
+        <limbposition limb="RightHand" position="264,-290" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="264,-290" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+      <Upgrade gameversion="0.20.8.0">
+        <Controller>
+          <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        </Controller>
+      </Upgrade>
+    </Item>    
+    <Item name="" identifier="opdeco_prisonbed" allowattachitems="true" width="384" height="96" texturescale="1.0,1.0" scale="0.5" category="Decorative">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="384" height="96" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="864,1888,384,96" depth="0.98" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+        <!-- don't allow laying in bed when wearing an exosuit -->
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        <limbposition limb="Head" position="-6,-10" />
+        <limbposition limb="Torso" position="104,20" />
+        <limbposition limb="Waist" position="244,-60" />
+        <limbposition limb="RightFoot" position="380,0" />
+        <limbposition limb="LeftFoot" position="380,0" />
+        <limbposition limb="RightHand" position="234,10" allowusinglimb="false" />
+        <limbposition limb="LeftHand" position="234,10" allowusinglimb="false" />
+        <StatusEffect type="OnActive" target="Character">
+          <reduceaffliction type="damage" strength="0.05" />
+          <reduceaffliction identifier="bloodloss" strength="0.05" />
+          <reduceaffliction identifier="bleeding" strength="0.05" />
+          <reduceaffliction identifier="nausea" strength="0.05" />
+          <reduceaffliction identifier="opiatewithdrawal" strength="0.05" />
+          <reduceaffliction identifier="opiateaddiction" strength="0.05" />
+          <reduceaffliction identifier="drunk" strength="0.05" />
+        </StatusEffect>
+      </Controller>
+      <Upgrade gameversion="0.20.8.0">
+        <Controller>
+          <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+        </Controller>
+      </Upgrade>
+    </Item>
+    <Item name="" identifier="opdeco_officechair" tags="chair" allowattachitems="false" texturescale="1.0,1.0" scale="0.45" category="Decorative" canflipy="true">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="180" height="267" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/ManagerOfficeAssets.png" sourcerect="570,341,180,267" depth="0.55" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="10,30" direction="Right" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="90,15" />
+        <limbposition limb="Torso" position="85,-60" />
+        <limbposition limb="Waist" position="90,-130" />
+        <limbposition limb="RightFoot" position="140,-250" />
+        <limbposition limb="LeftFoot" position="140,-250" />
+        <limbposition limb="RightHand" position="140,-105" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="140,-105" allowusinglimb="true" />
+      </Controller>
+    </Item>
+    <Item name="" identifier="opdeco_chair1" nameidentifier="opdeco_officechair" tags="chair" allowattachitems="true" texturescale="1.0,1.0" scale="0.5" category="Decorative" canflipy="true">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="144" height="240" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1233,31,144,240" depth="0.55" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="-10,30" direction="Left" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="82,18" />
+        <limbposition limb="Torso" position="80,-52" />
+        <limbposition limb="Waist" position="73,-105" />
+        <limbposition limb="RightFoot" position="-10,-230" />
+        <limbposition limb="LeftFoot" position="-10,-230" />
+        <limbposition limb="RightHand" position="40,-120" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="40,-120" allowusinglimb="true" />
+      </Controller>
+    </Item>
+    <Item name="" identifier="opdeco_chair2" nameidentifier="opdeco_officechair" tags="chair" allowattachitems="true" texturescale="1.0,1.0" scale="0.5" category="Decorative" canflipy="true">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" amount="3" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="steel" amount="2" />
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <Body width="144" height="240" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <sprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="744,784,144,240" depth="0.55" premultiplyalpha="false" origin="0.5,0.5" />
+      <Controller UserPos="10,30" direction="Right" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="true">
+        <limbposition limb="Head" position="40,15" />
+        <limbposition limb="Torso" position="55,-60" />
+        <limbposition limb="Waist" position="60,-130" />
+        <limbposition limb="RightFoot" position="100,-230" />
+        <limbposition limb="LeftFoot" position="100,-230" />
+        <limbposition limb="RightHand" position="100,-100" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="100,-100" allowusinglimb="true" />
+      </Controller>
+    </Item>
+    <Item name="" identifier="opdeco_medcurtain" aliases="opdeco_medcurtainclosed,opdeco_medcurtainopen" Description="MedCurtain 1" category="Decorative" width="416" height="32" scale="0.5">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="15" />
+        <RequiredItem identifier="organicfiber" amount="3" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="organicfiber" amount="2" />
+      </Deconstruct>
+      <Body width="416" height="32" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <Sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,128,416,32" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="512,128,384,368" depth="0.48" premultiplyalpha="false" origin="0.5,0.05">
+        <Conditional targetitemcomponent="Controller" State="eq true" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="896,128,128,368" depth="0.48" premultiplyalpha="false" origin="1.5,0.05">
+        <Conditional targetitemcomponent="Controller" State="ne true" />
+      </DecorativeSprite>
+      <Controller direction="None" canbepicked="true" istoggle="true" msg="ItemMsgPressSelect" />
+    </Item>
+    <Item name="" identifier="opdeco_medcurtain2" aliases="opdeco_medcurtainclosed,opdeco_medcurtainopen" Description="MedCurtain 2" nameidentifier="opdeco_medcurtain" category="Decorative" width="416" height="32" scale="0.5">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="15">
+        <RequiredSkill identifier="mechanical" level="15" />
+        <RequiredItem identifier="organicfiber" amount="3" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="organicfiber" amount="2" />
+      </Deconstruct>
+      <Body width="416" height="32" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <Sprite texture="Content/Map/Outposts/Art/MedBayAssets.png" sourcerect="96,128,416,32" depth="0.49" premultiplyalpha="false" origin="0.5,0.5" />
+      <DecorativeSprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="391,0,373,364" depth="0.48" premultiplyalpha="false" origin="0.5,0.05">
+        <Conditional targetitemcomponent="Controller" State="eq true" />
+      </DecorativeSprite>
+      <DecorativeSprite texture="Content/Map/Outposts/Art/MedicalColonyAssets.png" sourcerect="764,0,104,364" depth="0.48" premultiplyalpha="false" origin="1.5,0.05">
+        <Conditional targetitemcomponent="Controller" State="ne true" />
+      </DecorativeSprite>
+      <Controller direction="None" canbepicked="true" istoggle="true" msg="ItemMsgPressSelect" />
+    </Item>
+  </Items>
+</Override>

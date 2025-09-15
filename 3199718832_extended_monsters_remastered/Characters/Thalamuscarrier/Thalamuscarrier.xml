@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Character SpeciesName="Thalamuscarrier" SpeciesTranslationOverride="" DisplayName="" Group="thalamus" Humanoid="False" HasInfo="False" CanInteract="False" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" IsMachine="False" CanSpeak="False" ShowHealthBar="True" UseBossHealthBar="True" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="10000" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1">
+    <ragdolls folder="default" />
+    <animations folder="default" />
+    <health Vitality="6000" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="False" BleedingReduction="0" BurnReduction="0" ConstantHealthRegeneration="0" HealthRegenerationWhenEating="0" StunImmunity="True" PoisonImmunity="False" PoisonVulnerability="0.3" EmpVulnerability="0" ApplyAfflictionColors="False" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_attack1.ogg" State="Attack" Range="3000" Volume="1" Tags="" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_attack2.ogg" State="Attack" Range="3000" Volume="1" Tags="" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_attack3.ogg" State="Attack" Range="3000" Volume="1" Tags="" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_idle1.ogg" State="Idle" Range="3000" Volume="1" Tags="" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_idle2.ogg" State="Idle" Range="3000" Volume="1" Tags="" />
+    <sound gender="None" dontmuffle="true" File="%ModDir%/Characters/Thalamuscarrier/SonarSweep1.ogg" State="Idle" Range="18000" Volume="1" Tags="" />
+    <sound gender="None" dontmuffle="true" File="%ModDir%/Characters/Thalamuscarrier/SonarSweep2.ogg" State="Idle" Range="18000" Volume="1" Tags="" />
+    <sound gender="None" dontmuffle="true" File="%ModDir%/Characters/Thalamuscarrier/SonarSweep3.ogg" State="Idle" Range="18000" Volume="1" Tags="" />
+    <sound gender="None" dontmuffle="true" File="%ModDir%/Characters/Thalamuscarrier/SonarSweep4.ogg" State="Idle" Range="18000" Volume="1" Tags="" />
+    <sound gender="None" dontmuffle="true" File="%ModDir%/Characters/Thalamuscarrier/SonarSweep5.ogg" State="Idle" Range="18000" Volume="1" Tags="" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_damage1.ogg" State="Damage" Range="3000" Volume="1" Tags="" />
+    <sound gender="None" File="Content/Characters/Carrier/CARRIER_damage2.ogg" State="Damage" Range="3000" Volume="1" Tags="" />
+    <!-- <StatusEffect type="OnActive" target="NearbyCharacters" tag="EMI" duration="0.1" stackable="false" range="20000" /> -->
+    <StatusEffect type="OnActive" target="NearbyCharacters" range="20000" multiplyafflictionsbymaxvitality="true">
+      <Affliction identifier="Extendedcarrierbeacon" strength="5" />
+    </StatusEffect>
+    <StatusEffect type="OnActive" target="This" delay="60" stackable="false">
+      <Conditional isDead="false" />
+      <SpawnCharacter speciesname="Turretcarrier" count="1" spread="100" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" target="NearbyCharacters" range="20000" multiplyafflictionsbymaxvitality="true">
+      <ReduceAffliction identifier="Extendedcarrierbeacon" strength="10" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" target="This" lifetime="60" targetlimb="Torso">
+      <Conditional isDead="True" />
+      <ParticleEmitter particle="bloodsplash" particlespersecond="40" scalemin="2" scalemax="8" velocitymin="0" velocitymax="50" anglemin="0" anglemax="360" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="1" target="This" targetlimb="Torso">
+      <Explosion range="1200" structuredamage="80" force="100" empstrength="0.5" smoke="false" sparks="false" shockwave="true" underwaterbubble="true" severlimbsprobability="1.0" camerashake="120" camerashakerange="5000" flashrange="0" flashduration="0" screencolor="255,255,255,32" screencolorrange="5000" screencolorduration="0.1">
+        <Affliction identifier="burn" strength="10" />
+        <Affliction identifier="stun" strength="0.5" />
+      </Explosion>
+      <ParticleEmitter particle="underwaterexplosion" drawontop="True" particleamount="1" scalemin="5" scalemax="5" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+      <sound file="Content/Characters/Carrier/CARRIER_death1.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="6" target="This" targetlimb="Torso" offset="0,100">
+      <ParticleEmitter particle="bubbles" particleamount="60" scalemin="1" scalemax="2" velocitymin="50" velocitymax="100" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="blackwaterblood" particleamount="10" scalemin="4" scalemax="10" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="organeruption" particleamount="50" scalemin="4" scalemax="8" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="heavygib" particleamount="12" scalemin="8" scalemax="16" velocitymin="100" velocitymax="300" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="gib" particleamount="12" scalemin="8" scalemax="16" velocitymin="100" velocitymax="300" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="shrapnel" drawontop="True" particleamount="50" scalemin="5" scalemax="5" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="underwaterexplosion" drawontop="True" particleamount="1" scalemin="7" scalemax="7" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+      <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="10000" volume="2" />
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictreactordie.ogg" range="8000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="12" target="This" targetlimb="Torso">
+      <Explosion range="1600" structuredamage="120" force="200" empstrength="1.25" smoke="false" sparks="false" shockwave="true" underwaterbubble="true" severlimbsprobability="1.0" camerashake="160" camerashakerange="10000" flashrange="0" flashduration="0" screencolor="255,255,255,64" screencolorrange="10000" screencolorduration="0.1">
+        <Affliction identifier="burn" strength="25" />
+        <Affliction identifier="stun" strength="1" />
+        <Affliction identifier="radiationsickness" strength="10" />
+      </Explosion>
+      <ParticleEmitter particle="blackwaterblood" drawontop="True" particleamount="10" scalemin="10" scalemax="20" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+      <ParticleEmitter particle="underwaterexplosion" drawontop="True" particleamount="1" scalemin="18" scalemax="18" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+      <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="10000" volume="2" />
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="14" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="16" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="18" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="20" target="This" targetlimb="Head">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="22" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="24" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="26" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="28" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="30" target="This" targetlimb="Head" offset="100,50">
+      <SpawnCharacter speciesname="Terminalcell" count="5" spread="100" />
+      <SpawnCharacter speciesname="Leucocyte" count="3" spread="100" />
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="32" target="This" targetlimb="Head" offset="100,0">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="34" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="36" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="38" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="40" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="42" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="44" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="46" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="48" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="50" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="52" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="54" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="56" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="58" target="This" targetlimb="Torso">
+      <sound file="%ModDir%/Characters/Thalamuscarrier/derelictalarm.ogg" range="10000" volume="2" />
+    </StatusEffect>
+    <StatusEffect type="OnDeath" delay="60" target="This" targetlimb="Head" offset="0,100">
+      <Explosion range="2000" structuredamage="180" force="300" empstrength="2" smoke="false" sparks="false" shockwave="true" underwaterbubble="true" severlimbsprobability="1.0" camerashake="200" camerashakerange="15000" flashrange="0" flashduration="0.0" screencolor="255,255,255,128" screencolorrange="15000" screencolorduration="0.1">
+        <Affliction identifier="burn" strength="60" />
+        <Affliction identifier="stun" strength="2" />
+        <Affliction identifier="radiationsickness" strength="20" />
+      </Explosion>
+      <ParticleEmitter particle="bubbles" particleamount="60" scalemin="1" scalemax="2" velocitymin="50" velocitymax="100" anglemin="0" anglemax="360" />
+      <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="10000" volume="2" />
+      <sound file="%ModDir%/Characters/Thalamuscarrier/ReactorBigBoom.ogg" range="10000" volume="2" />
+      <ParticleEmitter particle="underwaterexplosion" drawontop="True" particleamount="1" scalemin="7" scalemax="7" velocitymin="0" velocitymax="20" anglemin="0" anglemax="360" />
+    </StatusEffect>
+    <Inventory Slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="2">
+      <Item Identifier="k_em_thalamusthorn" />
+      <Item Identifier="k_em_thalamusstump" />
+      <Item Identifier="brockite" />
+      <Item Identifier="fuelrod" />
+      <Item Identifier="fuelrod" />
+      <Item Identifier="calyxanide" />
+      <Item Identifier="huskeggs" />
+      <Item Identifier="pulselaserammobox" forcetoslot="true" />
+      <Item Identifier="coilgunammoboxpiercing" forcetoslot="true" />
+    </Inventory>
+    <Inventory Slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="2">
+      <Item Identifier="k_em_thalamusthorn" />
+      <Item Identifier="k_em_thalamusstump" />
+      <Item Identifier="thorianite" />
+      <Item Identifier="fuelrod" />
+      <Item Identifier="fuelrod" />
+      <Item Identifier="calyxanide" />
+      <Item Identifier="huskeggs" />
+      <Item Identifier="coilgunammoboxpiercing" forcetoslot="true" />
+      <Item Identifier="flakcannonammoboxexplosive" forcetoslot="true" />
+    </Inventory>
+    <Inventory Slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="2">
+      <Item Identifier="k_em_thalamusthorn" />
+      <Item Identifier="k_em_thalamusstump" />
+      <Item Identifier="thorianite" />
+      <Item Identifier="amblygonite" />
+      <Item Identifier="pyromorphite" />
+      <Item Identifier="fuelrod" />
+      <Item Identifier="fuelrod" />
+      <Item Identifier="thoriumfuelrod" />
+      <Item Identifier="pulselaserammobox" forcetoslot="true" />
+    </Inventory>
+    <Inventory Slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="2">
+      <Item Identifier="k_em_thalamusthorn" />
+      <Item Identifier="k_em_thalamusstump" />
+      <Item Identifier="titanite" />
+      <Item Identifier="quartz" />
+      <Item Identifier="diamond" />
+      <Item Identifier="diamond" />
+      <Item Identifier="fulguriumfuelrod" />
+      <Item Identifier="fulguriumfuelrod" />
+      <Item Identifier="coilgunammoboxpiercing" forcetoslot="true" />
+      <Item Identifier="pulselaserammobox" forcetoslot="true" />
+    </Inventory>
+    <Inventory Slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="2">
+      <Item Identifier="k_em_thalamusthorn" />
+      <Item Identifier="k_em_thalamusstump" />
+      <Item Identifier="thoriumfuelrod" />
+      <Item Identifier="thoriumfuelrod" />
+      <Item Identifier="thoriumfuelrod" />
+      <Item Identifier="huskeggs" />
+      <Item Identifier="huskeggs" />
+      <Item Identifier="flakcannonammoboxexplosive" forcetoslot="true" />
+      <Item Identifier="coilgunammoboxpiercing" forcetoslot="true" />
+    </Inventory>
+    <ai CombatStrength="7500" Sight="7" Hearing="2" AggressionHurt="100" AggressionGreed="10" FleeHealthThreshold="0" AttackWhenProvoked="True" AvoidGunfire="False" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="False" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="True" RandomAttack="True" CanOpenDoors="False" UsePathFindingToGetInside="False" KeepDoorsClosed="False" AvoidAbyss="False" StayInAbyss="False" PatrolFlooded="False" PatrolDry="False" StartAggression="0" MaxAggression="100" AggressionCumulation="0" WallTargetingMethod="Target">
+      <target tag="decoy" state="Attack" priority="500" reactdistance="0" attackdistance="0" timer="5" ignorecontained="False" ignoreinside="False" ignoreoutside="False" ignoreincapacitated="False" threshold="0" attackpattern="Straight" sweepdistance="0" sweepstrength="10" sweepspeed="1" circlestartdistance="3800" circlerotationspeed="1" circlestrikedistancemultiplier="5" circlemaxrandomoffset="0" ignoreifnotinsamesub="True" thresholdmin="-1" thresholdmax="-1" offset="0,0" />
+      <target Tag="provocative" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="nasonov" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="stronger" State="PassiveAggressive" Priority="100" ReactDistance="2000" AttackDistance="700" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="equal" State="Aggressive" Priority="90" ReactDistance="2000" AttackDistance="700" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="weaker" State="Aggressive" Priority="80" ReactDistance="2000" AttackDistance="700" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="human" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="weapon" State="Attack" Priority="90" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="True" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="wall" State="Attack" Priority="90" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="door" State="Attack" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="sonar" State="Attack" Priority="20" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="turretcarrier" State="Protect" Priority="15" ReactDistance="2000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target Tag="thalamus" State="Protect" Priority="10" ReactDistance="2000" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+    </ai>
+  </Character>
+</Override>

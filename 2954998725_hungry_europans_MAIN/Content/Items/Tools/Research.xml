@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Hungry Europan (Enable Needs)" identifier="he-enableneeds" description="[RMB + E] Enables the hunger and thirst afflictions for the user, causing them to have to eat and drink regularly. This is completely optional and is NOT required to gain buffs from eating or drinking. Warning: Can't be disabled for your current character once it is enabled." category="Misc" maxstacksize="1" Tags="smallitem" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="medcab" />
+      <Price baseprice="0" sold="true">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+      </Price>
+      <Fabricate suitablefabricators="vendingmachinefood,vendingmachinedrinks,piratestore" requiredtime="0" requiredmoney="0" fabricationlimitmin="16" fabricationlimitmax="16" />
+      <Deconstruct time="3" />
+      <InventoryIcon texture="%ModDir%/Content/Items/Tools/Injector.png" sourcerect="0,67,56,56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Tools/Injector.png" sourcerect="0,0,36,66" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" />
+      <Holdable slots="Any,RightHand,LeftHand" aimpos="-26,-48" holdpos="30,-15" holdangle="0" aimangle="300" aimable="false" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This,Character" Condition="-100.0" setvalue="true" comparison="Or">
+          <Conditional hasspecifiertag="male" />
+          <Conditional hasspecifiertag="female" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="Content/Characters/Human/male_damage1.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Human/male_damage2.ogg" />
+          <Sound file="Content/Characters/Human/male_damage3.ogg" />
+          <Sound file="Content/Characters/Human/male_damage4.ogg" />
+          <Sound file="Content/Characters/Human/male_damage5.ogg" />
+          <Sound file="Content/Characters/Human/male_damage6.ogg" />
+          <Sound file="Content/Characters/Human/male_damage7.ogg" />
+          <Sound file="Content/Characters/Human/male_damage8.ogg" />
+          <Sound file="Content/Characters/Human/male_damage9.ogg" />
+          <Sound file="Content/Characters/Human/male_damage10.ogg" />
+          <Sound file="Content/Characters/Human/male_damage11.ogg" />
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-hungryeuropan" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="Content/Characters/Human/female_damage1.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Human/female_damage2.ogg" />
+          <Sound file="Content/Characters/Human/female_damage3.ogg" />
+          <Sound file="Content/Characters/Human/female_damage4.ogg" />
+          <Sound file="Content/Characters/Human/female_damage5.ogg" />
+          <Sound file="Content/Characters/Human/female_damage6.ogg" />
+          <Sound file="Content/Characters/Human/female_damage7.ogg" />
+          <Sound file="Content/Characters/Human/female_damage8.ogg" />
+          <Sound file="Content/Characters/Human/female_damage9.ogg" />
+          <Sound file="Content/Characters/Human/female_damage10.ogg" />
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-hungryeuropan" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Filthy Europan (Enable Extra Needs)" identifier="he-enableextraneeds" description="[RMB + E] Enables the bladder and defecate afflictions for the user, causing them to have to pee and poop depending on what or how much they eat and drink. This is completely optional and is NOT required to gain buffs from eating or drinking. Warning: Can't be disabled for your current character once it is enabled." category="Misc" maxstacksize="1" Tags="smallitem" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="medcab" />
+      <Fabricate suitablefabricators="vendingmachinefood,vendingmachinedrinks,piratestore" requiredtime="0" requiredmoney="0" fabricationlimitmin="16" fabricationlimitmax="16" />
+      <Deconstruct time="3" />
+      <InventoryIcon texture="%ModDir%/Content/Items/Tools/Injector2.png" sourcerect="0,67,56,56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Tools/Injector2.png" sourcerect="0,0,36,66" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" />
+      <Holdable slots="Any,RightHand,LeftHand" aimpos="-26,-48" holdpos="30,-15" holdangle="0" aimangle="300" aimable="false" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect type="OnUse" target="Character">
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-specialeuropan" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="Content/Characters/Human/male_damage1.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Human/male_damage2.ogg" />
+          <Sound file="Content/Characters/Human/male_damage3.ogg" />
+          <Sound file="Content/Characters/Human/male_damage4.ogg" />
+          <Sound file="Content/Characters/Human/male_damage5.ogg" />
+          <Sound file="Content/Characters/Human/male_damage6.ogg" />
+          <Sound file="Content/Characters/Human/male_damage7.ogg" />
+          <Sound file="Content/Characters/Human/male_damage8.ogg" />
+          <Sound file="Content/Characters/Human/male_damage9.ogg" />
+          <Sound file="Content/Characters/Human/male_damage10.ogg" />
+          <Sound file="Content/Characters/Human/male_damage11.ogg" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="Content/Characters/Human/female_damage1.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Human/female_damage2.ogg" />
+          <Sound file="Content/Characters/Human/female_damage3.ogg" />
+          <Sound file="Content/Characters/Human/female_damage4.ogg" />
+          <Sound file="Content/Characters/Human/female_damage5.ogg" />
+          <Sound file="Content/Characters/Human/female_damage6.ogg" />
+          <Sound file="Content/Characters/Human/female_damage7.ogg" />
+          <Sound file="Content/Characters/Human/female_damage8.ogg" />
+          <Sound file="Content/Characters/Human/female_damage9.ogg" />
+          <Sound file="Content/Characters/Human/female_damage10.ogg" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="The Europan Volume 66" identifier="he-skillbooktheeuropan" description="" category="Misc" Tags="smallitem,skillbook" maxstacksize="32" maxstacksizecharacterinventory="8" scale="0.5" impactsoundtag="impact_soft" cargocontaineridentifier="metalcrate">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="150" buyingpricemodifier="2.5" minleveldifficulty="0" sold="True">
+        <Price storeidentifier="merchantoutpost" minavailable="1" maxavailable="1" />
+        <Price storeidentifier="merchantcity" minavailable="1" maxavailable="4" />
+        <Price storeidentifier="merchantresearch" maxavailable="1" />
+        <Price storeidentifier="merchantmilitary" maxavailable="1" />
+        <Price storeidentifier="merchantmine" maxavailable="1" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="904,860,120,164" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="707,998,75,12" depth="0.6" origin="0.5,0.5" />
+      <Body width="75" height="12" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,10" handle1="5,0" aimangle="80" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-10" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <GiveSkill skillidentifier="cooking" amount="1" triggertalents="false" />
+          <GiveSkill skillidentifier="butchery" amount="1" triggertalents="false" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="&quot;The Art of Deep Sea Cooking&quot; by Aunt Doris" identifier="he-skillbookauntdoris" description="" category="Misc" Tags="smallitem,skillbook" maxstacksize="32" maxstacksizecharacterinventory="8" scale="0.5" impactsoundtag="impact_soft" cargocontaineridentifier="metalcrate">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="350" buyingpricemodifier="2.5" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" maxavailable="1" sold="True" />
+        <Price storeidentifier="merchantcity" maxavailable="1" sold="True" />
+        <Price storeidentifier="merchantresearch" sold="False" />
+        <Price storeidentifier="merchantmilitary" sold="False" />
+        <Price storeidentifier="merchantmine" sold="False" />
+      </Price>
+      <Deconstruct time="20">
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="783,868,121,156" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="707,1011,75,13" depth="0.6" origin="0.5,0.5" />
+      <Body width="75" height="12" density="8" />
+      <Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,10" handle1="5,0" aimangle="80" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-10" />
+        <StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+          <Conditional Condition="lte 0" />
+          <GiveSkill skillidentifier="cooking" amount="10" triggertalents="false" />
+          <GiveSkill skillidentifier="butchery" amount="10" triggertalents="false" />
+          <RemoveItem />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!--<Item name="Genetics Extractor" identifier="he-genesaw" category="Equipment" Tags="smallitem,cuttingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light" health="100">
+      <Fabricate suitablefabricators="fabricator" requiredtime="25" >
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" requiredtime="15" displayname="recycleitem">
+        <RequiredSkill identifier="medical" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="he-genesaw" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
+      </Fabricate>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="0,166,159,87" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="354,429,145,78" depth="0.7" origin="0.5,0.5" />
+      <Body radius="40" width="60" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-60,-21" handle2="-21,-20" msg="ItemMsgPickUpSelect" />
+      <RepairTool structurefixamount="0.0" range="10" barrelpos="35,10" combatpriority="90" spread="0" unskilledspread="10" targetforce="10">
+        <RequiredSkill identifier="medical" level="80" />
+        <StatusEffect type="OnUse" targettype="Contained" targets="battery" Condition="-1.0" />
+      -->
+    <!-- applies he-geneticextraction, more effective with high medical skill -->
+    <!--
+        <StatusEffect type="OnSuccess" targettype="Usetarget" comparison="And"> 
+      <Conditional isdead="true" />
+      <Conditional speciesname="neq human" />
+      <Conditional he-geneticextraction="gt 94" />
+          <Affliction identifier="lacerations" strength="1" probability="0.5" />
+          <Affliction identifier="bloodloss" strength="1" />
+      <Affliction identifier="he-geneticextraction" strength="5" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" targettype="Usetarget" comparison="And"> 
+      <Conditional isdead="true"/>
+      <Conditional speciesname="neq human" />
+          <Affliction identifier="lacerations" strength="1" probability="0.5" />
+          <Affliction identifier="bloodloss" strength="1" />
+      <Affliction identifier="he-geneticextraction" strength="5" />
+        </StatusEffect>
+      <StatusEffect type="OnSuccess" target="Usetarget" comparison="And">
+          <Conditional speciesname="neq human" /> 
+          <Conditional he-geneticextraction="gt 95" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+          <SpawnItem identifiers="extractedgene" spawnposition="ThisInventory" />
+          <ParticleEmitter particle="spark" particlespersecond="50" anglemin="0" anglemax="360" velocitymin="25" velocitymax="50"  />
+      <DropContainedItems />
+      <RemoveCharacter />
+        </StatusEffect>
+      <StatusEffect type="OnFailure" targettype="Usetarget" comparison="And"> 
+      <Conditional isdead="true"/>
+      <Conditional speciesname="neq human" />
+      <Conditional he-geneticextraction="eq 100" />
+      <Sound file="Content/Items/Sounds/Damage/Implode.ogg" range="500" />
+          <DropContainedItems />
+      <RemoveCharacter />
+        </StatusEffect>
+        <ParticleEmitterHitCharacter particle="heavygib" particlespersecond="2" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+        <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnUse" range="500.0" loop="true" volume="0.3" />
+        <LightComponent LightColor="0.8,0.7,1.0,1.0" Flicker="0.5" range="20">
+          <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+        </LightComponent>
+      </RepairTool>-->
+    <!-- the item breaks if filled with genetic material, and makes the inventory visible. JANKY as you can just transfer genetic material inside manually and break a fresh tool -->
+    <!--<ItemContainer capacity="1" maxstacksize="1" drawinventory="false" canbeselected="false" hideitems="false" hudpos="0.5, 0.4" slotsperrow="1" uilabel="" allowuioverlap="true" displaycontainedstatus="false" AllowDragAndDrop="false" >
+          <Containable items="extractedgene" />
+      <StatusEffect type="Always" target="This" condition="0" drawinventory="true" setvalue="true">
+        <RequiredItems identifier="extractedgene" type="Contained"/>
+      </StatusEffect>
+      </ItemContainer>
+    </Item>-->
+    <!-- variant with different tag so it's the only thing that can go inside a gene extractor -->
+    <!--
+    <Item name="Extracted Gene" identifier="extractedgene" variantof="geneticmaterial_unresearched" Tags="unidentifiedgeneticmaterial" >
+    </Item>-->
+  </Items>
+</Override>

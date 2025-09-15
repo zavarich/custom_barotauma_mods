@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- 強化氧氣罐，耐久變成125點，品質補正增加，滿級為200點耐久 -->
+    <!-- 本來要漲價，畢竟相當於直接得了稍弱的大師氧氣罐，但想了想，還是漲少一點 -->
+    <!-- 更新後耐久度翻倍，但攜帶上限變成一個，櫃中可存放8個 -->
+    <Item name="" identifier="ekutility_reinforcedtank_oxygen" category="Equipment,Diving" health="250" Tags="smallitem,oxygensource,refillableoxygensource,oxygentank,ekR_reinforcedtank_oxygen" subcategory="ekr_utility_r" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_light" maxstacksize="8" maxstacksizecharacterinventory="1" aliases="ekutility_heavytank_oxygen,heavy oxygen tank">
+      <PreferredContainer primary="oxygentankcontainer" spawnprobability="0" />
+      <PreferredContainer primary="oxygengenerator" maxcondition="100" />
+      <PreferredContainer primary="divingmask,plasmacutter,deepdiving" spawnprobability="0.0" mincondition="25" />
+      <Price baseprice="140" minleveldifficulty="25">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="6" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="6" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="10" minleveldifficulty="20" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="6" />
+        <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="5" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" displayname="emptyitem" outcondition="0.0" requiredtime="4" amount="2">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="ballisticfiber" />
+      </Fabricate>
+      <Deconstruct time="8">
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="64,0,64,64" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="0,0,48,112" depth="0.55" origin="0.5,0.5" />
+      <Body width="42" height="108" density="9.8" />
+      <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect" />
+      <Quality>
+        <QualityStat stattype="Condition" value="0.2" />
+      </Quality>
+    </Item>
+    <!-- 強化氧礦罐，耐久增加1.25倍，合成表修改，增加 -->
+    <!-- 更新後耐久度翻倍，但攜帶上限變成一個，櫃中可照常存放8個 -->
+    <Item name="" identifier="ekutility_reinforcedtank_oxygenite" category="Equipment,Diving" health="500" Tags="smallitem,oxygensource,oxygenitetank,ekR_reinforcedtank_oxygen" subcategory="ekr_utility_r" scale="0.3" impactsoundtag="impact_metal_light" maxstacksize="8" maxstacksizecharacterinventory="1" aliases="ekutility_heavytank_oxygenite,heavy oxygenite tank">
+      <PreferredContainer primary="oxygentankcontainer" spawnprobability="0" />
+      <Price baseprice="300" displaynonempty="true" soldeverywhere="false" minleveldifficulty="25">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" sold="false" multiplier="0.9" />
+        <Price storeidentifier="merchantresearch" sold="false" />
+        <Price storeidentifier="merchantmilitary" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" maxavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" outcondition="1.0" requiredtime="12" amount="2">
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="ballisticfiber" />
+        <RequiredItem identifier="liquidoxygenite" />
+        <RequiredItem identifier="liquidoxygenite" />
+        <RequiredItem identifier="liquidoxygenite" />
+        <RequiredItem identifier="liquidoxygenite" />
+      </Fabricate>
+      <!-- 讓任何有ekR_reinforcedtank_oxygen TAG的氧氣罐都能回收 -->
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" outcondition="1.0" requiredtime="6">
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem tag="ekR_reinforcedtank_oxygen" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+        <RequiredItem identifier="liquidoxygenite" />
+        <RequiredItem identifier="liquidoxygenite" />
+      </Fabricate>
+      <Deconstruct time="8">
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="liquidoxygenite" mincondition="0.15" />
+        <Item identifier="liquidoxygenite" mincondition="0.95" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="64,64,64,64" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="0,112,48,112" depth="0.55" origin="0.5,0.5" />
+      <Body width="42" height="108" density="9.8" />
+      <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect" />
+      <Quality>
+        <QualityStat stattype="Condition" value="0.20" />
+      </Quality>
+    </Item>
+    <!-- 循環呼吸器，材料更貴，但250耐久，且快速消耗耐久時回復速度更快，修改電池使用的邏輯，變成新版的用法，修復無耐久時不能使用的BUG -->
+    <!-- 12/16，耐久度變為2.5倍，恢復量不變 -->
+    <!-- 1/30，調整了一下判定，雖然效能稍微低了一點，但也比原作者的高多了，所以其實沒差 -->
+    <Item name="" identifier="ekutility_rebreatherunit" category="Equipment,Diving" health="250" Tags="smallitem,oxygensource,oxygentank,refillableoxygensource" subcategory="ekr_utility_r" showcontentsintooltip="true" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_light" aliases="rebreather,ekutility_rebreather">
+      <PreferredContainer primary="oxygentankcontainer" spawnprobability="0" />
+      <PreferredContainer primary="oxygengenerator" maxcondition="25" />
+      <!-- <PreferredContainer primary="divingmask,plasmacutter,deepdiving" spawnprobability="0.0" mincondition="25"/> -->
+      <Price baseprice="400" soldeverywhere="false" minleveldifficulty="45">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="0" maxavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1" minavailable="0" maxavailable="1" minleveldifficulty="35" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="1" maxavailable="1" minleveldifficulty="35" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" outcondition="0.25" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="60" />
+        <RequiredSkill identifier="medical" level="60" />
+        <RequiredItem tag="ekR_reinforcedtank_oxygen" mincondition="0.00" usecondition="false" />
+        <RequiredItem identifier="carbon" />
+        <RequiredItem identifier="carbon" />
+        <RequiredItem identifier="lithium" />
+        <RequiredItem identifier="lithium" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="carbon" />
+        <Item identifier="lithium" />
+        <Item identifier="fpgacircuit" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="128,0,64,64" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="64,128,96,80" depth="0.55" origin="0.5,0.55" />
+      <Body width="85" height="60" density="15" />
+      <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect">
+        <!-- 增加stackable="false" ，啟動條件更低 -->
+        <StatusEffect type="Always" target="This" targetitemcomponent="LightComponent" IsOn="true" disabledeltatime="true" checkconditionalalways="true" stackable="false" interval="2.0">
+          <Conditional Condition="lt 250" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" targetitemcomponent="LightComponent" IsOn="false" disabledeltatime="true" checkconditionalalways="true" stackable="false" interval="1.0">
+          <Conditional Condition="gte 249" />
+        </StatusEffect>
+        <!-- 當耐久為0時，如果欄位中還有有電量的電池，則回復自身耐久，成功修復無耐久時不能使用的BUG -->
+        <StatusEffect type="Always" target="this" disabledeltatime="true" condition="0.75" stackable="false" interval="2.0">
+          <Conditional condition="eq 0" />
+          <RequiredItem identifier="mobilebattery" type="Contained" />
+        </StatusEffect>
+      </Holdable>
+      <LightComponent characterusable="false" LightColor="0,0,0,0" range="1" IsOn="false">
+        <StatusEffect type="OnActive" target="This" Condition="0.75">
+          <RequiredItem identifier="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Contained" Condition="-0.18">
+          <RequiredItem identifier="mobilebattery" type="Contained" />
+        </StatusEffect>
+      </LightComponent>
+      <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorslot="0" containedstateindicatorstyle="battery">
+        <Containable identifiers="mobilebattery,batterycell,fulguriumbatterycell" />
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      </ItemContainer>
+    </Item>
+    <!-- 噴氣式水下推進器，推進力比一般的多50，修改電池使用的邏輯，變成新版的用法 -->
+    <!-- 大概懂了，requireaimtouse="True"不可以加，移除燈光的時候忘記拆掉了 -->
+    <!-- 12/16，調整聲納音調 -->
+    <!-- 1/7，重做了，現在可以正常的在舉起時開燈，並且不影響聲納的使用 -->
+    <!-- 2/23加強了推進能力，增加電力消耗 -->
+    <!-- 移除臨時的合成 -->
+    <Item name="" identifier="ekutility_jetscooter" category="Equipment,Diving" Tags="smallitem,sonar,provocative,scooter,underwaterscooter" cargocontaineridentifier="metalcrate" subcategory="ekr_utility_r" Scale="0.32" impactsoundtag="impact_metal_light" isshootable="true" aliases="ekutility_experimentalscooter">
+      <PreferredContainer primary="divingcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckdivingcab,beaconsupplycab" spawnprobability="0.0" />
+      <Price baseprice="440" soldeverywhere="false" minleveldifficulty="25">
+        <Price storeidentifier="merchantoutpost" multiplier="1.1" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1" minavailable="3" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25">
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="underwaterscooter" />
+        <RequiredItem identifier="handheldsonar" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <!-- <Fabricate suitablefabricators="fabricator" displayname="EKR_refreshitem" requiredtime="1"> -->
+      <!-- <RequiredItem identifier="ekutility_jetscooter" /> -->
+      <!-- </Fabricate> -->
+      <Deconstruct time="15">
+        <Item identifier="underwaterscooter" />
+        <Item identifier="handheldsonar" />
+        <Item identifier="copper" />
+        <Item identifier="steel" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="128,64,64,64" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" depth="0.55" sourcerect="192,0,320,160" />
+      <Body width="228" height="96" density="10" />
+      <AiTarget soundrange="3000" maxsightrange="3000" />
+      <Holdable slots="Any,RightHand+LeftHand" aimpos="90,0" handle1="-50,55" handle2="-54,59" msg="ItemMsgPickUpSelect">
+        <LightComponent LightColor="1.0,1.0,1.0,0.8" range="1000" powerconsumption="10" IsOn="true">
+          <LightTexture texture="Content/Lights/lightcone.png" origin="0.00, 0.5" size="1.0,1.0" />
+        </LightComponent>
+        <!-- 瞄準時啟動燈光 -->
+        <StatusEffect type="OnSecondaryUse" target="This" voltage="1.0" setvalue="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <!-- 使用燈時的電池消耗，與推進的電力消耗疊加 -->
+        <StatusEffect type="OnSecondaryUse" target="Contained" Condition="-0.05" />
+      </Holdable>
+      <!-- 推進系統 -->
+      <Propulsion force="250" usablein="water" particles="bubbles">
+        <!-- 需要電池 -->
+        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <!-- 有電池時使用會耗電 -->
+        <StatusEffect type="OnUse" target="Contained" Condition="-0.30">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <sound file="Content/Items/Diving/ScooterLoop.ogg" type="OnUse" range="500.0" loop="true" />
+      </Propulsion>
+      <!-- 聲納系統，耗電量為一般聲納的一半 -->
+      <Sonar range="6000.0" powerconsumption="0" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="true" allowuioverlap="true">
+        <IsActive hasstatustag="EKR_Voltage" />
+        <StatusEffect type="OnUse" targettype="Contained" Condition="-0.5" disabledeltatime="true">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
+        <GuiFrame relativesize="0.35,0.35" anchor="CenterLeft" relativeoffset="0.006,-0.01" />
+        <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+        <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+        <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+        <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+        <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+        <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+        <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+        <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+        <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+        <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5" />
+        <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5" />
+        <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5" />
+        <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5" />
+        <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5" />
+        <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5" />
+        <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5" />
+        <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5" />
+        <LightComponent LightColor="120,255,120,255" range="25" powerconsumption="10" pulsefrequency="0.5" pulseamount="0.8" castshadows="false" IsOn="false" canbeselected="false">
+          <IsActive TargetItemComponent="Sonar" CurrentMode="Active" />
+        </LightComponent>
+      </Sonar>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" tags="EKR_Voltage" duration="0.2" setvalue="true" stackable="false" />
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <!-- 高級聲納信標 -->
+    <!-- 增加範圍，不會引怪 -->
+    <!-- 1/30，這次是真不會引到怪物了 -->
+    <Item name="" identifier="ekutility_advancedsonarbeacon" category="Equipment,Diving" Tags="smallitem" cargocontaineridentifier="metalcrate" subcategory="ekr_utility_r" Scale="0.35" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="divingcab" spawnprobability="0" />
+      <PreferredContainer secondary="wreckstoragecab" amount="1" spawnprobability="0.01" />
+      <Price baseprice="260" soldeverywhere="false" minavailable="1" minleveldifficulty="25">
+        <Price storeidentifier="merchantoutpost" sold="false" />
+        <Price storeidentifier="merchantcity" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="2" minleveldifficulty="20" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="mechanical" level="35" />
+        <RequiredItem identifier="sonarbeacon" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="sonarbeacon" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="512,0,64,64" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" depth="0.55" sourcerect="512,64,48,128" origin="0.5,0.63" />
+      <Body width="40" height="100" density="10" />
+      <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+      <AiTarget soundrange="75000" sonarlabel="entityname.sonarbeacon" staticsight="true" />
+      <LightComponent LightColor="0.4,1.0,0.3,0.7" range="20" powerconsumption="10" Flicker="0.35" IsOn="false" canbeselected="false">
+        <StatusEffect type="OnActive" targettype="Contained" Condition="-0.05">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This" SoundRange="75000" setvalue="true">
+          <Conditional Voltage="gt 0.5" targetitemcomponent="LightComponent" />
+          <sound file="%ModDir%/Items/Diving/ek_advancedbeacon_ping.ogg" range="3000.0" loop="true" volume="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" targettype="This">
+          <sound file="%ModDir%/Items/Diving/ek_advancedbeacon_noise.ogg" range="750.0" loop="true" volume="0.3" />
+        </StatusEffect>
+      </LightComponent>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.16,0.15" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" />
+        <TickBox text="sonarbeacon.beaconactive">
+          <StatusEffect type="OnUse" targettype="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" />
+        </TickBox>
+        <TextBox text="sonarbeacon.beaconsignal" propertyname="SonarLabel" maxtextlength="64" />
+      </CustomInterface>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <!-- 多功能壓力服MK-1，整個重寫，以PUCS和安全背帶為基礎，增加藥物注射與室內用氧的功能，格子增加 -->
+    <!-- TAG更改 -->
+    <!-- 3/24，材料增加，並且給分離主義站點也可以買到(但較貴)，附加新能力 -->
+    <Item name="" identifier="ekutility_utility_hardsuit" category="Equipment,Diving" tags="diving,deepdiving,divingsuit,divinggear_wearableindoors,human,ekutility_utility_hardsuit" subcategory="ekr_utility_r" scale="0.5" fireproof="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="5" aliases="utility_hardsuit,industrial hardsuit,industrial_hardsuit,ekutility_Utility_hardsuit">
+      <PreferredContainer primary="divingsuitcontainer" spawnprobability="0.0" />
+      <Price baseprice="1500" sold="false" minleveldifficulty="30">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" minavailable="0" maxavailable="1" sold="true">
+          <Reputation faction="coalition" min="75" />
+        </Price>
+        <Price storeidentifier="merchantresearch" multiplier="1.2" minavailable="0" maxavailable="1" sold="true">
+          <Reputation faction="separatists" min="75" />
+        </Price>
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" multiplier="1.1" />
+        <Price storeidentifier="merchantengineering" multiplier="1" minavailable="0" maxavailable="1" minleveldifficulty="25" sold="true">
+          <Reputation faction="coalition" min="75" />
+        </Price>
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="60" />
+        <RequiredSkill identifier="electrical" level="60" />
+        <RequiredItem identifier="pucs" />
+        <RequiredItem identifier="safetyharness" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="fpgacircuit" amount="4" />
+        <RequiredItem identifier="rubber" amount="4" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="pucs" />
+        <Item identifier="safetyharness" />
+        <Item identifier="fpgacircuit" amount="2" />
+        <Item identifier="rubber" amount="4" />
+      </Deconstruct>
+      <!-- 染色...好像沒必要，分解就好 -->
+      <Sprite name="Diving Suit Item" texture="%ModDir%/Items/Diving/ekutility_divinglockersprites.png" sourcerect="130,0,124,128" depth="0.55" origin="0.5,0.5" />
+      <InventoryIcon name="Diving Suit Item" texture="%ModDir%/Items/Diving/ekutility_divinglockersprites.png" sourcerect="0,0,64,64" />
+      <ContainedSprite name="Diving Suit Behind Window" allowedcontainertags="divingsuitcontainerwindow" texture="%ModDir%/Items/Diving/utility_diving_suit_inlocker.png" sourcerect="12,30,77,209" depth="0.55" origin="-0.12,-0.13" />
+      <ContainedSprite name="Diving Suit In Horizontal Locker" allowedcontainertags="divingsuitcontainerhorizontal" texture="%ModDir%/Items/Diving/ekutility_divinglockersprites.png" sourcerect="134,134,248,59" depth="0.55" origin="0.58,0.5" />
+      <Holdable slots="RightHand+LeftHand" msg="ItemMsgPickUpUse" controlpose="true" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" canbeselected="false" canbepicked="true" pickkey="Use" allowswappingwhenpicked="false" />
+      <!-- 增加引怪 -->
+      <aitarget maxsightrange="1500" />
+      <Body radius="45" width="34" density="15" />
+      <!-- 開關燈 -->
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,138" />
+        <TickBox text="ekr.suitlights" IsOn="true">
+          <StatusEffect type="OnUse" target="This" IsOn="true" />
+          <StatusEffect type="OnSecondaryUse" target="This" IsOn="false" />
+        </TickBox>
+      </CustomInterface>
+      <!-- 裝備 -->
+      <Wearable slots="OuterClothes" msg="ItemMsgEquipSelect">
+        <sprite texture="%ModDir%/Items/Diving/ekutility_divinglockersprites.png" limb="Head" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inheritorigin="false" inherittexturescale="false" sourcerect="256,0,96,96" origin="0.55,0.53" scale="0.4">
+          <!-- 燈光 -->
+          <LightComponent range="400.0" lightcolor="250,200,170,40" powerconsumption="10" IsOn="true" allowingameediting="false" canbeselected="false">
+            <StatusEffect type="OnWearing" target="This,Character" Voltage="1.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+            <LightTexture texture="%ModDir%/Lights/pointlight_bright.png" origin="0.5, 0.56" size="1.0,1.0" />
+          </LightComponent>
+        </sprite>
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="Torso" inheritlimbdepth="true" hidelimb="true" hideotherwearables="false" inheritorigin="false" inherittexturescale="false" origin="0.6,0.48" sourcerect="0,0,128,256" scale="0.4">
+          <LightComponent canbeselected="false" allowingameediting="false" range="500.0" lightcolor="250,200,170,200" powerconsumption="10" IsOn="true">
+            <StatusEffect type="OnWearing" target="This,Character" Voltage="1.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+            <LightTexture texture="%ModDir%/Lights/utility_divingsuit_light.png" origin="0.002, 0.565" size="1.0,1.0" />
+          </LightComponent>
+        </sprite>
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="Waist" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.44,0.71" sourcerect="0,416,96,112" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="RightForearm" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.35" sourcerect="192,16,64,112" scale="0.43" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="LeftForearm" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.35" sourcerect="192,144,64,112" scale="0.43" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="RightHand" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="0,0,1,1" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="LeftHand" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="0,0,1,1" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="RightArm" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.45" sourcerect="128,0,64,128" scale="0.43" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="LeftArm" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.45" sourcerect="128,128,64,128" scale="0.43" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="RightThigh" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="80,256,96,160" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="LeftThigh" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="176,256,96,160" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="RightLeg" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="96,416,80,112" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="LeftLeg" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.5,0.5" sourcerect="176,416,80,112" scale="0.4" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="RightFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
+        <sprite texture="%ModDir%/Items/Diving/utility_diving_suit.png" limb="LeftFoot" sound="footstep_armor_heavy" inheritlimbdepth="true" hidelimb="true" hideotherwearables="true" inherittexturescale="false" origin="0.45,0.45" sourcerect="0,256,80,112" scale="0.4" rotation="90" />
+        <!-- 穿著時的速度 -->
+        <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" ObstructVision="false" PressureProtection="6200.0" SpeedMultiplier="1.0" PropulsionSpeedMultiplier="1.0" LowPassMultiplier="0.9" setvalue="true" disabledeltatime="true">
+          <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true" />
+          <Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="250" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnContained" target="Contained" Condition="1.0" targetslot="0" interval="1" disabledeltatime="true">
+          <Conditional Voltage="gt 0.01" targetcontainer="true" targetgrandparent="true" targetitemcomponent="Powered" />
+          <RequiredItem items="refillableoxygensource" type="Contained" excludebroken="false" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" comparison="And" targetslot="0">
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained" UseHullOxygen="false" Condition="-0.3" comparison="And" targetslot="0">
+          <Conditional targetcontainer="true" targetgrandparent="true" IsDead="false" />
+          <Conditional targetcontainer="true" targetgrandparent="true" DecreasedOxygenConsumption="lt 99" />
+          <Conditional targetcontainer="true" targetgrandparent="true" HullOxygenPercentage="lt 50" />
+          <Conditional targetcontainer="true" targetgrandparent="true" NeedsAir="true" />
+          <Conditional InWater="false" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained" UseHullOxygen="false" Condition="-0.3" comparison="And" targetslot="0">
+          <Conditional targetcontainer="true" targetgrandparent="true" IsDead="false" />
+          <Conditional targetcontainer="true" targetgrandparent="true" DecreasedOxygenConsumption="lt 99" />
+          <Conditional targetcontainer="true" targetgrandparent="true" NeedsAir="true" />
+          <Conditional InWater="true" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,bitewounds,lacerations,bleeding" damagemultiplier="0.65" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.1" damagesound="" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.6" probabilitymultiplier="0.95" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="electricshock" damagemultiplier="0.50" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="organdamage,internaldamage" damagemultiplier="0.9" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.9" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.6" damagemultiplier="0.9" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="paralysis" damagemultiplier="0.90" probabilitymultiplier="0.90" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="concussion" damagemultiplier="0.50" damagesound="" deflectprojectiles="true" />
+        <SkillModifier skillidentifier="mechanical" skillvalue="20" />
+        <SkillModifier skillidentifier="electrical" skillvalue="20" />
+        <StatValue stattype="deconstructorspeedmultiplier" value="0.30" />
+        <StatValue stattype="repairtoolstructurerepairmultiplier" value="0.10" />
+        <StatValue stattype="repairspeed" value="0.10" />
+        <StatValue stattype="FlowResistance" value="0.9" />
+        <StatValue stattype="MovementSpeed" value="-0.1" />
+        <StatusEffect type="OnWearing" target="Character" interval="0.9" disabledeltatime="true">
+          <Affliction identifier="EKR_PrecisionOperation" amount="1" multiplybymaxvitality="true" />
+        </StatusEffect>
+        <ItemComponent IsActiveConditionalComparison="Or">
+          <IsActive HullOxygenPercentage="lt 50" />
+          <IsActive InWater="eq true" />
+          <StatusEffect type="OnActive" target="Contained,Character" comparison="And">
+            <RequiredItem items="oxygensource" type="Contained" />
+            <Conditional condition="lt 5.0" />
+            <Sound file="Content/Items/WarningBeepSlow.ogg" range="250" loop="true" />
+          </StatusEffect>
+          <StatusEffect type="OnActive" target="Contained" playsoundonrequireditemfailure="true">
+            <RequiredItem items="oxygensource" type="Contained" matchonempty="true" />
+            <Conditional condition="lte 0.0" />
+            <Sound file="Content/Items/WarningBeep.ogg" range="250" loop="true" />
+          </StatusEffect>
+        </ItemComponent>
+      </Wearable>
+      <ItemContainer capacity="0" maxstacksize="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
+        <Containable items="none" />
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="384,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="oxygensource,weldingtoolfuel" excludeditems="oxygenitetank" />
+          <Containable items="oxygenitetank">
+            <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="1.3" setvalue="true" comparison="And" targetslot="0">
+              <Conditional IsDead="false" />
+              <Conditional HullOxygenPercentage="lt 50" />
+              <Conditional DecreasedOxygenConsumption="lt 99" />
+              <Conditional NeedsAir="true" />
+            </StatusEffect>
+          </Containable>
+          <Containable items="weldingfueltank" blameequipperfordeath="true">
+            <StatusEffect type="OnWearing" target="Contained" Condition="-0.5" comparison="And">
+              <Conditional TargetContainer="true" TargetGrandparent="true" IsDead="false" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" DecreasedOxygenConsumption="lt 99" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" NeedsAir="true" />
+            </StatusEffect>
+            <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" Oxygen="-5.0" comparison="And">
+              <Conditional IsDead="false" />
+              <Conditional DecreasedOxygenConsumption="lt 99" />
+              <Conditional NeedsAir="true" />
+            </StatusEffect>
+          </Containable>
+          <Containable items="incendiumfueltank" blameequipperfordeath="true">
+            <StatusEffect type="OnWearing" target="Contained" Condition="-0.5" comparison="And">
+              <Conditional TargetContainer="true" TargetGrandparent="true" IsDead="false" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" DecreasedOxygenConsumption="lt 99" />
+              <Conditional TargetContainer="true" TargetGrandparent="true" NeedsAir="true" />
+            </StatusEffect>
+            <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" comparison="And" targetlimb="Torso">
+              <Conditional IsDead="false" />
+              <Conditional DecreasedOxygenConsumption="lt 99" />
+              <Conditional NeedsAir="true" />
+              <Affliction identifier="burn" amount="20.0" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1" autoinject="true">
+          <Containable items="chem,syringe" />
+        </SubContainer>
+        <!-- 小口袋 -->
+        <SubContainer capacity="4" maxstacksize="64">
+          <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+        </SubContainer>
+      </ItemContainer>
+      <aitarget maxsightrange="1500" />
+    </Item>
+    <Item name="" identifier="ekutility_oxygencell1" category="Equipment,Diving" maxstacksize="8" maxstacksizecharacterinventory="1" health="875" Tags="smallitem,oxygensource,tag_oxygencell1" subcategory="ekr_utility_r" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="oxygentankcontainer" spawnprobability="0" />
+      <Price baseprice="160" soldeverywhere="false" minleveldifficulty="25">
+        <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1" sold="true" minavailable="3" maxavailable="4" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="true" minavailable="2" maxavailable="4" />
+        <Price storeidentifier="merchantarmory" multiplier="1.0" sold="true" minavailable="2" maxavailable="2" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+        <Item identifier="iron" mincondition="0.95" />
+        <Item identifier="calcium" mincondition="0.95" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="12">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredSkill identifier="medical" level="50" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="calcium" />
+        <RequiredItem identifier="sodium" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="6">
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredSkill identifier="medical" level="50" />
+        <RequiredItem identifier="ekutility_oxygencell1" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="calcium" />
+        <RequiredItem identifier="sodium" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="128,224,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="0,224,48,112" depth="0.55" origin="0.5,0.5" />
+      <Body width="22" height="64" density="9.9" />
+      <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect" />
+      <Quality>
+        <QualityStat stattype="Condition" value="0.20" />
+      </Quality>
+    </Item>
+    <!-- 氧氣單元 Mk-II -->
+    <!-- 更新後耐久度變為1250(2.5倍)，但攜帶上限變成一個，櫃中可存放8個 -->
+    <Item name="" identifier="ekutility_oxygencell2" category="Equipment,Diving" maxstacksize="8" maxstacksizecharacterinventory="1" health="1250" Tags="smallitem,oxygensource,tag_oxygencell2" subcategory="ekr_utility_r" cargocontaineridentifier="metalcrate" scale="0.3" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="oxygentankcontainer" spawnprobability="0" />
+      <Price baseprice="345" soldeverywhere="false" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="1.0" sold="true" minavailable="1" maxavailable="2" minleveldifficulty="30" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="aluminium" />
+        <Item identifier="ethanol" mincondition="0.95" />
+        <Item identifier="chlorine" mincondition="0.95" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="12">
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredSkill identifier="medical" level="75" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="chlorine" />
+        <RequiredItem identifier="potassium" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="6">
+        <RequiredSkill identifier="mechanical" level="50" />
+        <RequiredSkill identifier="medical" level="75" />
+        <RequiredItem identifier="ekutility_oxygencell2" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="chlorine" />
+        <RequiredItem identifier="potassium" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="128,288,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Items/Diving/ekutility_divinggear.png" sourcerect="64,224,48,112" depth="0.55" origin="0.5,0.5" />
+      <Body width="22" height="64" density="9.9" />
+      <Holdable canbecombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-15" handle1="0,5" handle2="0,-5" msg="ItemMsgPickUpSelect" />
+      <Quality>
+        <QualityStat stattype="Condition" value="0.25" />
+      </Quality>
+    </Item>
+  </Items>
+</Override>

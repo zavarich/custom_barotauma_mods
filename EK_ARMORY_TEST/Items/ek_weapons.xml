@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>    
+    <Item name="" identifier="ek_alienrifle" aliases="alien_rifle, alien rifle" subcategory="ekr_armory_individual_weapon" category="Alien,Weapon" tags="mediumitem,weapon,gun,alien,ek_ammotag_alienmag,mountableweapon" Scale="0.35" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="aliencontainer" minamount="0" maxamount="1" spawnprobability="0.1" />
+      <Price baseprice="1000" soldeverywhere="false">
+        <Price storeidentifier="merchantcity" multiplier="1" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="1.25" sold="false" />
+      </Price>
+      <Deconstruct time="30">
+        <Item identifier="steel" />
+        <Item identifier="steel" />
+        <Item identifier="physicorium" />
+        <Item identifier="fulgurium" />
+        <Item identifier="fulgurium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="192,256,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_ek.png" sourcerect="448,432,352,128" depth="0.55" />
+      <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="%ModDir%/Items/Weapons/weapons_ek.png" sourcerect="448,432,352,128" depth="0.83" />
+      <Body width="240" height="64" density="50" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-10" aimpos="50,0" handle1="-40,-30" handle2="80,-17" holdangle="-40" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon barrelpos="160,8" spread="9" unskilledspread="18" reload="0.175" reloadnoskill="0.2" reloadskillrequirement="50" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="ekmuzzleflamealien" particleamount="1" velocitymin="0" velocitymax="0" />
+        <ParticleEmitter particle="ekmuzzlebreakalien" particleamount="1" velocitymin="0" velocitymax="0" />
+        <Sound file="%ModDir%/Items/Weapons/ek_alienrifle.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse" target="This">
+          <Explosion range="140.0" force="0.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Contained">
+          <RequiredItem identifiers="ek_alienrifle_mag" type="Contained" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+          <Conditional skillrequirement="true" weapons="lt 50" />
+          <Conditional recoilstabilized="lte 0" />
+          <Affliction identifier="stun" strength="0.25" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+          <Conditional skillrequirement="true" weapons="lt 25" />
+          <Conditional recoilstabilized="lte 0" />
+          <Affliction identifier="stun" strength="0.5" />
+        </StatusEffect>
+        <RequiredItems identifier="ek_alienrifle_mag" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="50" />
+      </RangedWeapon>
+      <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="0,-48" itemrotation="-45">
+        <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+        <Containable identifier="ek_alienrifle_mag" />
+      </ItemContainer>
+      <SkillRequirementHint identifier="weapons" level="85" />
+    </Item>
+    <Item name="" identifier="ek_alienrifle_mag" scale="0.35" maxstacksize="16" maxstacksizecharacterinventory="4" subcategory="ekr_armory_individual_weapon" category="Alien,Weapon" cargocontaineridentifier="ek_ammocrate_physicorium" tags="smallitem,ek_smg_mags,magazine,alien" impactsoundtag="impact_metal_light" aliases="alien rifle mag, alien_rifle_mag, Physicorium_5.7x28mm_magazine">
+      <PreferredContainer primary="ek_ammotag_alienmag" />
+      <PreferredContainer primary="aliencontainer" minamount="0" maxamount="2" spawnprobability="0.1" />
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="85" />
+        <RequiredItem identifier="fulgurium" />
+        <RequiredItem identifier="alienpowercell" mincondition="0.4999" usecondition="true" />
+        <RequiredItem identifier="ek_alienrifle_mag" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="physicorium" mincondition="0.9" />
+        <Item identifier="fulgurium" mincondition="0.9" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_ek.png" sourcerect="800,64,32,64" depth="0.7" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Items/Weapons/weapons_ek.png" depth="0.7" sourcerect="832,64,32,64" origin="0.5,0.5" maxcondition="0" />
+      <Body radius="15" height="40" density="10" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" holdangle="-90" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" />
+      <!--<LightComponent AllowInGameEditing="false" lightcolor="112,146,190,30" canbeselected="false" range="30.0" IsOn="true" castshadows="false" />-->
+      <ItemContainer autofill="False" hideitems="true" capacity="1" maxstacksize="1" SpawnWithId="ek_alienrifle_round" removecontaineditemsondeconstruct="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true">
+        <Containable identifiers="ek_alienrifle_round" />
+        <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="0,184,120,32" />
+        <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <SpawnItem identifiers="ek_alienrifle_round" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <!--異星步槍子彈-->
+    <!-- 2023/11/4更新，增加直擊、爆炸給予小範圍EMP傷害(不損壞電器，只傷機械生物) -->
+    <!-- 待測試傷害，取消直擊流血，加入燒傷中 -->
+    <Item name="" identifier="ek_alienrifle_round" category="Misc" spritecolor="75,215,250,225" inventoryiconcolor="75,215,250,225" interactthroughwalls="true" tags="smallitem, round" impactsoundtag="impact_metal_light" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,384,64,64" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="1,1,16,9" depth="0.55" />
+      <Body width="8" height="3" density="40" />
+      <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="75,215,250,225" scalemultiplier="1,5" />
+        <Attack structuredamage="7.5" itemdamage="40" stun="0.10" targetforce="9" severlimbsprobability="0.3">
+          <!-- add 20 -->
+          <Affliction identifier="lacerations" strength="10" />
+          <Affliction identifier="gunshotwound" strength="1" />
+          <!-- add 20 -->
+          <Affliction identifier="burn" strength="6" />
+          <Affliction identifier="EKR_Laser_Burning_A" amount="1" />
+          <Affliction identifier="stun" strength="0.05" />
+          <Affliction identifier="emp" strength="1" multiplybymaxvitality="true" />
+          <!--能量燒傷效果(理論上應該要能穿甲...)-->
+          <StatusEffect type="OnUse" target="Limb" disabledeltatime="false">
+            <Affliction identifier="burn" amount="7.5" />
+            <Affliction identifier="gunshotwound" amount="7.5" />
+          </StatusEffect>
+        </Attack>
+        <!-- 修復可能炸到自己的問題 -->
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Explosion range="150.0" force="6" stun="0" shockwave="false" flames="false" smoke="false" underwaterbubble="false" camerashake="8">
+            <Affliction identifier="burn" strength="12" />
+            <Affliction identifier="emp" strength="1" multiplybymaxvitality="true" />
+          </Explosion>
+          <ParticleEmitter particle="ekfireballalien" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.25" scalemax="0.5" lifetime="0.2" />
+          <ParticleEmitter particle="plasmaspark" anglemin="0" anglemax="360" particleamount="8" velocitymin="250" velocitymax="500" scalemin="1.2" scalemax="2.0" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="5">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>    
+    <Item name="" identifier="ek_gaussrifle" aliases="coil rifle" subcategory="ekr_armory_individual_weapon" category="Weapon" cargocontaineridentifier="ek_weapons_case" tags="mediumitem,weapon,loadable,gun,ek_ammotag_gaussrifle,gunsmith,mountableweapon" Scale="0.30" impactsoundtag="impact_metal_light">
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" outcondition="0.0" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="75" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="fulguriumbatterycell" />
+      </Fabricate>
+      <Deconstruct time="20">
+        <Item identifier="plastic" />
+        <Item identifier="plastic" />
+        <Item identifier="aluminium" />
+        <Item identifier="aluminium" />
+        <Item identifier="fulguriumbatterycell" outcondition="0.00" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,64,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_ek.png" sourcerect="448,800,320,96" depth="0.55" />
+      <ContainedSprite name="Depth Fix" allowedcontainertags="weapons_cabinet" texture="%ModDir%/Items/Weapons/weapons_ek.png" sourcerect="448,800,320,96" depth="0.83" />
+      <Body width="176" height="64" density="50" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-5" aimpos="50,5" handle1="-30,-22" handle2="100,-10" holdangle="-40" msg="ItemMsgPickUpSelect" />
+      <!-- barrelpos="48,2" holdpos="45,-10" aimpos="50,10" handle1="-18,-21" handle2="102,-19" holdangle="-40" -->
+      <RangedWeapon barrelpos="156,8" spread="0.5" unskilledspread="18" reload="0.33" reloadnoskill="0.37" reloadskillrequirement="60" combatPriority="75" drawhudwhenequipped="true" crosshairscale="0.2">
+        <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+        <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+        <ParticleEmitter particle="ekmuzzleflamegausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+        <ParticleEmitter particle="ekmuzzlebreakgausspistol" particleamount="1" velocitymin="0" velocitymax="0" />
+        <Sound file="%ModDir%/Items/Weapons/ek_gaussrifle_mono.ogg" type="OnUse" range="3000" />
+        <StatusEffect type="OnUse" target="This">
+          <!-- <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" /> -->
+          <Explosion range="140.0" force="1.5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="4.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-1.0" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="Contained">
+          <RequiredItem identifiers="ek_gaussrifle_mags" type="Contained" />
+          <Use />
+        </StatusEffect>
+        <RequiredItems identifier="ek_gaussrifle_mags" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredSkill identifier="weapons" level="60" />
+      </RangedWeapon>
+      <ItemContainer autofill="False" capacity="1" maxstacksize="1" canbeselected="false" hideitems="false" itempos="-82,-28">
+        <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+        <Containable identifiers="ek_gaussrifle_mags" />
+      </ItemContainer>
+      <SkillRequirementHint identifier="weapons" level="80" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+        <QualityStat stattype="Condition" value="0.10" />
+      </Quality>
+    </Item>
+    <!-- 高斯步槍彈匣 -->
+    <Item name="" identifier="ek_gaussrifle_mag" maxstacksize="8" maxstacksizecharacterinventory="2" aliases="gauss rifle mag,coil rifle mag" scale="0.35" subcategory="ekr_armory_individual_weapon" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem, ek_gaussrifle_mags, magazine,ammo,smallarmsammo" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="ek_ammotag_gaussrifle" />      
+      <Fabricate suitablefabricators="fabricator" requiredtime="25" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem identifier="physicorium" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+      <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem identifier="physicorium" />
+        <RequiredItem identifier="ek_gaussrifle_mag" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+      </Deconstruct>
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_ek.png" depth="0.56" sourcerect="688,704,48,80" origin="0.5,0.5" />
+      <ContainedSprite name="Gauss Rifle Mag" allowedcontainertags="weapon" texture="%ModDir%/Items/Weapons/weapons_ek.png" depth="0.56" sourcerect="736,704,48,80" />
+      <Body width="36" height="70" density="50" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" holdangle="-5" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="true" />
+      <ItemContainer autofill="False" hideitems="true" capacity="1" maxstacksize="1" SpawnWithId="ek_gaussrifle_round" removecontaineditemsondeconstruct="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true">
+        <Containable identifiers="ek_gaussrifle_round" />
+        <ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+        <StatusEffect type="OnUse" target="This" condition="-2.5" disabledeltatime="true" />
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <SpawnItem identifiers="ek_gaussrifle_round" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <Item name="" identifier="ek_gaussrifle_round" category="Misc" spritecolor="150,140,120,255" inventoryiconcolor="150,140,120,255" scale="0.32" hideinmenus="true">
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="384,384,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/weapons_ek.png" sourcerect="336,688,48,16" depth="0.55" />
+      <Body width="40" height="14" density="40" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+      <Projectile characterusable="false" launchimpulse="80.0" hitscan="true" removeonhit="true">
+        <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,225,200,175" scalemultiplier="1,2" />
+        <Attack structuredamage="2" itemdamage="28" severlimbsprobability="0.6" targetforce="20" penetration="0.55">
+          <Affliction identifier="gunshotwound" strength="70" />
+          <Affliction identifier="bleeding" strength="45" />
+          <Affliction identifier="stun" strength="0.16" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2.5" />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2.5">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="eklaserspark" copyentityangle="true" particleamount="4" anglemin="-90" anglemax="90" velocitymin="-250" velocitymax="-750" />
+          <Explosion range="100.0" force="0" stun="0" shockwave="false" flames="false" smoke="false" sparks="false" underwaterbubble="false" camerashake="6" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="5">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>    
+  </Override>
+</Items>

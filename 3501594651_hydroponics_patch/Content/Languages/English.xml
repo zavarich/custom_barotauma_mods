@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.stabiloseed>Stabiloseed</entityname.stabiloseed>
+  <entitydescription.stabiloseed>A softly glowing stabilobloom seed, prepared for cultivation.</entitydescription.stabiloseed>
+  <entityname.stabilobloomwild>Wild stabilobloom</entityname.stabilobloomwild>
+  <entitydescription.stabilobloomwild>A fruit of the wild-growing stabilobloom. Contains some stabilozine. It's not adapted to lab conditions, but one with some medical knowledge could possibly develop a cultivar.</entitydescription.stabilobloomwild>
+  <entityname.stabilobloom>Stabilobloom</entityname.stabilobloom>
+  <entitydescription.stabilobloom>A large drupe, most similar to the earthy Rubus chamaemorus, or "cloudberry". While it's tasty and nutritious for a common folk — it's also a rich source of stabilozine for ones with medical occupation.</entitydescription.stabilobloom>
+  <entityname.stabilobloombad>Mutated stabilobloom</entityname.stabilobloombad>
+  <entitydescription.stabilobloombad>This curious stabilobloom mutation causes intense juice fermentation during the ripening stage, resulting in ethanol and several psychoactive substances accumulating in the fruit. Only a fool would consider this a disadvantage, though...</entitydescription.stabilobloombad>
+</infotexts>

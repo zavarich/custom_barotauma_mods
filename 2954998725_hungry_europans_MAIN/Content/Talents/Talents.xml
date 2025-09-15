@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+  <!--COMMON TALENTS-->
+  <Override>
+    <Talent identifier="he-hungryeuropan">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="0,385,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-hungryeuropan" />
+      <AbilityGroupInterval interval="1.0">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Conditional he-stuffed="eq 0" />
+                <Affliction identifier="hunger" strength="0.01" />
+              </StatusEffect>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Conditional quenched="lte 0" />
+                <Affliction identifier="thirst" strength="0.02" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+  </Override>
+  <Override>
+    <Talent identifier="he-specialeuropan">
+      <Icon texture="%ModDir%/Content/UI/HE-IconsAtlas.png" sourcerect="119,385,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-specialeuropan" />
+      <AbilityGroupInterval interval="1.0">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Conditional bladder="lt 0.1" />
+                <Affliction identifier="bladder" strength="0.01" />
+              </StatusEffect>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Conditional defecate="lt 0.1" />
+                <Affliction identifier="defecate" strength="0.01" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+  </Override>
+  <!--OVERRIDES-->
+  <!--Drunken Sailor to add recipes-->
+  <Override>
+    <Talent identifier="drunkensailor">
+      <Description tag="talentdescription.drunkensailor">
+        <Replace tag="[stunresistance]" value="75" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.he-kegrum" color="gui.orange" />
+      </Description>
+      <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,0" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="drunk" replacewith="drunknodebuffs" />
+        </Abilities>
+        <FallbackAbilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="drunk" replacewith="drunknodebuffs" />
+        </FallbackAbilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="drunknodebuffs" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.25" />
+          <CharacterAbilityModifyResistance resistanceid="nausea" multiplier="0" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="he-kegrum" />
+    </Talent>
+  </Override>
+</Talents>

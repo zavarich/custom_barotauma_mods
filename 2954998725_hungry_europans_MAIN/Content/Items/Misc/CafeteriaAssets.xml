@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Cafeteria Table" identifier="he-cafeteriatable" tags="largeitem,table" width="252" height="171" scale="0.5" linkable="true" allowedlinks="kitchen,container,table" noninteractable="false" category="Misc" pickdistance="150" canflipy="false" canflipx="false" isshootable="true" GrabWhenSelected="false">
+      <sprite texture="%ModDir%/Content/Items/Misc/CafeteriaAssets.png" sourcerect="1,0,252,171" depth="0.520" premultiplyalpha="false" origin="0.5,0.445" />
+      <Body width="252" height="171" density="30" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="40" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="aluminium" amount="4" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <Deconstruct time="20" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="2" />
+        <Item identifier="plastic" amount="1" />
+      </Deconstruct>
+      <ItemContainer capacity="8" maxstacksize="1" canbeselected="true" hideitems="false" itempos="50,0" iteminterval="50,1" itemrotation="0" itemsperrow="4" slotsperrow="4" containedspritedepths="0.528,0.529,0.528,0.529,0.526,0.527,0.526,0.527" msg="ItemMsgInteractSelect" canflipx="false">
+        <GuiFrame relativesize="0.20,0.20" absoluteoffset="0,0.15" anchor="BottomCenter" style="ItemUI" />
+        <Containable items="smallitem,fooditem" excludeditems="meatchunk,syringe,weapon" />
+      </ItemContainer>
+      <Holdable canbepicked="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" PickingTime="5.0" aimpos="65,-10" attachable="true" aimable="true">
+        <!--<RequiredItem items="wrench" type="Equipped" />-->
+        <StatusEffect target="This" type="Always" interval="1">
+          <Conditional attached="false" targetitemcomponentname="Holdable" />
+          <DropContainedItems />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Dining Table" identifier="he-diningtable1" tags="largeitem,table" width="152" height="171" scale="0.5" linkable="true" allowedlinks="kitchen,container,table" noninteractable="false" category="Misc" pickdistance="150" canflipy="false" canflipx="false" isshootable="true" GrabWhenSelected="false">
+      <sprite texture="%ModDir%/Content/Items/Misc/CafeteriaAssets.png" sourcerect="592,0,152,171" depth="0.521" premultiplyalpha="false" origin="0.5,0.445" />
+      <ItemContainer capacity="8" maxstacksize="1" canbeselected="true" hideitems="false" itempos="23,0" iteminterval="35,1" itemrotation="0" itemsperrow="4" slotsperrow="4" containedspritedepths="0.528,0.529,0.528,0.529,0.526,0.527,0.526,0.527" msg="ItemMsgInteractSelect" canflipx="false">
+        <GuiFrame relativesize="0.20,0.20" absoluteoffset="0,0.15" anchor="BottomCenter" style="ItemUI" />
+        <Containable items="smallitem,fooditem" excludeditems="meatchunk,syringe,weapon" />
+      </ItemContainer>
+    </Item>
+    <Item name="Dining Table (Large)" identifier="he-diningtable1large" tags="largeitem,table" width="337" height="171" scale="0.5" linkable="true" allowedlinks="kitchen,container,table" noninteractable="false" category="Misc" pickdistance="150" canflipy="false" canflipx="false" isshootable="true" GrabWhenSelected="false">
+      <sprite texture="%ModDir%/Content/Items/Misc/CafeteriaAssets.png" sourcerect="254,0,337,171" depth="0.522" premultiplyalpha="false" origin="0.5,0.445" />
+      <ItemContainer capacity="16" maxstacksize="1" canbeselected="true" hideitems="false" itempos="27,0" iteminterval="40,1" itemrotation="0" itemsperrow="8" slotsperrow="8" containedspritedepths="0.528,0.529,0.528,0.529,0.528,0.529,0.528,0.529,0.526,0.527,0.526,0.527,0.526,0.527,0.526,0.527" msg="ItemMsgInteractSelect" canflipx="false">
+        <GuiFrame relativesize="0.35,0.20" absoluteoffset="0,0.15" anchor="BottomCenter" style="ItemUI" />
+        <Containable items="smallitem,fooditem" excludeditems="meatchunk,syringe,weapon" />
+      </ItemContainer>
+    </Item>
+    <Item name="Dining Table" identifier="he-diningtable2" tags="largeitem,table" width="156" height="171" scale="0.5" linkable="true" allowedlinks="kitchen,container,table" noninteractable="false" category="Misc" pickdistance="150" canflipy="false" canflipx="false" isshootable="true" GrabWhenSelected="false">
+      <sprite texture="%ModDir%/Content/Items/Misc/CafeteriaAssets.png" sourcerect="745,0,156,171" depth="0.523" premultiplyalpha="false" origin="0.5,0.445" />
+      <ItemContainer capacity="8" maxstacksize="1" canbeselected="true" hideitems="false" itempos="25,0" iteminterval="35,1" itemrotation="0" itemsperrow="4" slotsperrow="4" containedspritedepths="0.528,0.529,0.528,0.529,0.526,0.527,0.526,0.527" msg="ItemMsgInteractSelect" canflipx="false">
+        <GuiFrame relativesize="0.20,0.20" absoluteoffset="0,0.15" anchor="BottomCenter" style="ItemUI" />
+        <Containable items="smallitem,fooditem" excludeditems="meatchunk,syringe,weapon" />
+      </ItemContainer>
+    </Item>
+    <!-- CHAIRS -->
+    <Item name="Cafeteria Chair" identifier="he-cafeteriachair" tags="largeitem,chair" width="149" height="219" scale="0.5" noninteractable="false" category="Misc" pickdistance="150" canflipy="false" canflipx="true" isshootable="true" GrabWhenSelected="false">
+      <sprite texture="%ModDir%/Content/Items/Misc/CafeteriaAssets.png" sourcerect="0,172,149,219" depth="0.524" premultiplyalpha="false" origin="0.5,0.56" />
+      <Body width="149" height="219" density="25" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="organicfiber" amount="2" />
+        <RequiredItem identifier="plastic" amount="1" />
+      </Fabricate>
+      <Deconstruct time="20" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="1" />
+        <Item identifier="organicfiber" amount="1" />
+        <Item identifier="plastic" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <Controller selectkey="Select" UserPos="-10,30" direction="Left" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="false">
+        <limbposition limb="Head" position="82,64" />
+        <limbposition limb="Torso" position="80,-6" />
+        <limbposition limb="Waist" position="73,-59" />
+        <limbposition limb="RightFoot" position="-10,-184" />
+        <limbposition limb="LeftFoot" position="-10,-184" />
+        <limbposition limb="RightHand" position="40,-74" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="40,-74" allowusinglimb="true" />
+      </Controller>
+      <Holdable canbepicked="true" selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" PickingTime="3.0" aimpos="65,-10" attachable="true" aimable="true">
+        <!--<RequiredItem items="wrench" type="Equipped" />-->
+      </Holdable>
+    </Item>
+    <Item name="Chair" identifier="he-chair" tags="largeitem,chair" width="144" height="240" scale="0.5" noninteractable="false" category="Misc" pickdistance="150" canflipy="false" canflipx="true" isshootable="true" GrabWhenSelected="false">
+      <sprite texture="%ModDir%/Content/Items/Misc/CafeteriaAssets.png" sourcerect="150,172,144,240" depth="0.524" premultiplyalpha="false" origin="0.5,0.5" />
+      <Body width="144" height="240" density="25" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,-20" handle2="10,-20" holdangle="45" PickingTime="3.0" aimpos="65,-10" attachable="true" aimable="true">
+        <RequiredItem items="NonExsitingItem" type="Equipped" />
+      </Holdable>
+      <Controller UserPos="-10,30" direction="Left" hidehud="false" canbeselected="true" issecondaryitem="true" drawuserbehind="false">
+        <limbposition limb="Head" position="82,18" />
+        <limbposition limb="Torso" position="80,-52" />
+        <limbposition limb="Waist" position="73,-105" />
+        <limbposition limb="RightFoot" position="-10,-230" />
+        <limbposition limb="LeftFoot" position="-10,-230" />
+        <limbposition limb="RightHand" position="40,-120" allowusinglimb="true" />
+        <limbposition limb="LeftHand" position="40,-120" allowusinglimb="true" />
+      </Controller>
+    </Item>
+  </Items>
+</Override>

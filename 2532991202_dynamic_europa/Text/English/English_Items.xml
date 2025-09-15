@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="English" nowhitespace="false" translatedname="English">
+  <!-- Items -->
+  <entityname.portablemusicplayer>Portable Music Player</entityname.portablemusicplayer>
+  <entitydescription.portablemusicplayer>A portable music player capable of playing cassettes and CDs.\nKeep away from water!\nCan be repaired with a screwdriver.</entitydescription.portablemusicplayer>
+  <entityname.contrabandrum>Mariner's Moonshine</entityname.contrabandrum>
+  <entitydescription.contrabandrum>A special brand of rum, made with a concotion of sea mushrooms, psilotoad juices and matured in a rusty bathtub.</entitydescription.contrabandrum>
+  <entityname.raverplayer>Music Player</entityname.raverplayer>
+  <entitydescription.raverplayer>A bass boosted placeable music player. Uses a brand new, state-of-the-art CD-reader technology.</entitydescription.raverplayer>
+  <entityname.cd_album_piraterave1>CD: Pirate Rave</entityname.cd_album_piraterave1>
+  <entitydescription.cd_album_piraterave1>A CD featuring a variety of tracks often heard when dealing with pirates. \nTrack-List:\n1. Alien Syndicate (Re_]|M|[_ix) by _]|M|[_\n2. Abandon Ship by Simon Chylinski\n3. Scavenger Hunt Techno (EurocorpFx Remake) by EurocorpFx\n4. The Rebel Path by P.T. Adamczyk\n5. Contra la Luna by P.T. Adamczyk\n6. Cyborg by Full Kontakt</entitydescription.cd_album_piraterave1>
+  <entityname.cd_album_subnautica>CD: Subnautica OST</entityname.cd_album_subnautica>
+  <entitydescription.cd_album_subnautica>A CD featuring some tracks from the Subnautica OST. \nTrack-List:\n1. Abandon Ship by Simon Chylinski\n2. Exosuit by Simon Chylinski\n3. Red Alert by Simon Chylinski\n4. Seamoth by Simon Chylinski</entitydescription.cd_album_subnautica>
+  <entityname.cd_album_grip>CD: GRIP OST</entityname.cd_album_grip>
+  <entitydescription.cd_album_grip>A CD featuring some tracks from the GRIP OST. \nTrack-List:\n1. Clock Watch by Full Kontakt\n2. Cerbera by Imperium\n3. Cyborg by Full Kontakt\n4. Black Out by Full Kontakt</entitydescription.cd_album_grip>
+  <entityname.cd_album_forgivemefather>CD: Forgive Me Father OST</entityname.cd_album_forgivemefather>
+  <entitydescription.cd_album_forgivemefather>A CD featuring some tracks from the Forgive Me Father OST. \nTrack-List:\n1. Forgiveness Is Divine by Tim Fialka\n2. Good Time For You To Get Angry by Tim Fialka\n3. Big Ugly Fish Pt.1 by Tim Fialka\n4. Big Ugly Fish Pt.2 by Tim Fialka\n5. Rain And Pain by Tim Fialka\n6. Sweetie, Get Me Bazooka by Tim Fialka\n7. Welcome To Pestisville by Tim Fialka\n8. A Crow's Breakfast by Tim Fialka</entitydescription.cd_album_forgivemefather>
+  <entityname.documents>Documents</entityname.documents>
+  <entitydescription.documents>A folder containing some documents.</entitydescription.documents>
+  <entityname.classifieddocuments>Classified Documents</entityname.classifieddocuments>
+  <entitydescription.classifieddocuments>An envelope containing classified documents.</entitydescription.classifieddocuments>
+  <entityname.classifieddocumentssep>Classified Documents</entityname.classifieddocumentssep>
+  <entitydescription.classifieddocumentssep>An envelope containing classified separatist documents.</entitydescription.classifieddocumentssep>
+  <entityname.militaryradio>Military Radio</entityname.militaryradio>
+  <entitydescription.militaryradio>A radio capable of calling into military frequency. Can be used to take over a station of your choice for the enemy of the currently residing faction.</entitydescription.militaryradio>
+  <entitydescription.militaryradiocoalition>A radio capable of calling into a Coalition military frequency. Can be used to take over a Separatist station of your choice.</entitydescription.militaryradiocoalition>
+  <entitydescription.militaryradioseparatists>A radio capable of calling into a Separatist military frequency. Can be used to take over a Coalition station of your choice.</entitydescription.militaryradioseparatists>
+  <entityname.plantcluster>Plant Cluster</entityname.plantcluster>
+  <entitydescription.plantcluster>A cluster of entangled plants. It might be possible to untangle them when stabilizing them with stabilozine at a research table.</entitydescription.plantcluster>
+  <entityname.plantclusterresearched>Stabilized Plant Cluster</entityname.plantclusterresearched>
+  <entitydescription.plantclusterresearched>A cluster of entangled plants. It has been stabilized and can be untangled without harming all of the plants.</entitydescription.plantclusterresearched>
+  <entityname.cultistrobeshoodless>Initiate Robes</entityname.cultistrobeshoodless>
+  <entitydescription.cultistrobeshoodless>A dark garment traditionally worn by acolytes of the Church of Husk. Imbued with pheromones that pacify feral husks, helping the acolytes stay safe until they're ready to ascend.</entitydescription.cultistrobeshoodless>
+  <entityname.huskchalice>Ritual Chalice</entityname.huskchalice>
+  <entitydescription.huskchalice>A decorated Chalice used in ascension rituals.</entitydescription.huskchalice>
+  <entityname.de_posterreligionisbad1>Poster - Religion is Poison</entityname.de_posterreligionisbad1>
+  <entityname.de_nuclearbomb>Nuclear Bomb</entityname.de_nuclearbomb>
+  <entitydescription.de_nuclearbomb>A nuclear bomb, causing a massive fallout after detonation, killing everything in its path. 60 seconds until detonation when armed.</entitydescription.de_nuclearbomb>
+  <entityname.lairbomb>Portable Nuclear Device</entityname.lairbomb>
+  <entityname.kazuyakumoradio>Kumo's Radio</entityname.kazuyakumoradio>
+  <entitydescription.kazuyakumoradio>A radio Kazuya Kumo gave to you with a pre-configured frequency to call in a favor from her when docked to a separatist station.</entitydescription.kazuyakumoradio>
+  <entityname.duckysuit>Ducky Diving Suit</entityname.duckysuit>
+  <entitydescription.duckysuit>A strange suit offered to you by your friend Jokster. It seems to be a custom modified PUCS suit with some swimming speed enhancements from the slipsuit.</entitydescription.duckysuit>
+  <entityname.de-jobboard>Job Board</entityname.de-jobboard>
+  <entityname.commsrelay>Communications Relay</entityname.commsrelay>
+  <entitydescription.commsrelayDE>A radio communication relay device which allows you to receive radio signals and communication.</entitydescription.commsrelayDE>
+  <entityname.giantrubberduck>Giant Rubber Duck</entityname.giantrubberduck>
+  <entitydescription.giantrubberduck>A giant rubber duck to throw around and watch it float in water.</entitydescription.giantrubberduck>
+  <entityname.bigrubberduck>Big Rubber Duck</entityname.bigrubberduck>
+  <entitydescription.bigrubberduck>A big rubber duck to throw around and watch it float in water.</entitydescription.bigrubberduck>
+  <entityname.rubberduck>Rubber Duck</entityname.rubberduck>
+  <entitydescription.rubberduck>A rubber duck to throw around and watch it float in water.</entitydescription.rubberduck>
+  <entityname.giantpiraterubberduck>Giant Rubber Duck</entityname.giantpiraterubberduck>
+  <entitydescription.giantpiraterubberduck>A giant rubber duck with a pirate hat and an eye patch to throw around and watch it float in water.</entitydescription.giantpiraterubberduck>
+  <entityname.bigpiraterubberduck>Big Rubber Duck</entityname.bigpiraterubberduck>
+  <entitydescription.bigpiraterubberduck>A big rubber duck with a pirate hat and an eye patch to throw around and watch it float in water.</entitydescription.bigpiraterubberduck>
+  <entityname.piraterubberduck>Rubber Duck</entityname.piraterubberduck>
+  <entitydescription.piraterubberduck>A rubber duck with a pirate hat and an eye patch to throw around and watch it float in water.</entitydescription.piraterubberduck>
+  <entityname.exosuitPA>Pirate Exosuit</entityname.exosuitPA>
+  <entitydescription.exosuitPA>FOR NPCS ONLY. YOU ARE NOT SUPPOSED TO BE ABLE TO WEAR THIS.</entitydescription.exosuitPA>
+  <entityname.exosuitplayerPA>Pirate Exosuit</entityname.exosuitplayerPA>
+  <entitydescription.exosuitplayerPA>A heavily modified exosuit. It seems some pirates are quite crafty and managed to increase the stun resistance of this exosuit and allow the user to breath hull oxygen if available.</entitydescription.exosuitplayerPA>
+  <entityname.exosuitpartsPA>Damaged Pirate Exosuit Parts</entityname.exosuitpartsPA>
+  <entitydescription.exosuitpartsPA>Damaged parts from a modified pirate exosuit.</entitydescription.exosuitpartsPA>
+  <entityname.dirtybombPA>Dirty Bomb</entityname.dirtybombPA>
+  <entitydescription.dirtybombPA>An hand-crafted radioactive bomb to put inside a detonator, railgun ammunition or a depthcharge. Better keep your distance!</entitydescription.dirtybombPA>
+  <entityname.piratehelmetPA>Pirate Helmet</entityname.piratehelmetPA>
+  <entityname.piratebodyarmorPA>Pirate Body Armor</entityname.piratebodyarmorPA>
+  <entityname.piratebandanaPA>Pirate Bandana</entityname.piratebandanaPA>
+  <entityname.piratecaptainhatPA>Pirate Captain Hat</entityname.piratecaptainhatPA>
+  <entityname.pirateclothesnovicePA>Pirate Clothes (Novice)</entityname.pirateclothesnovicePA>
+  <entitydescription.pirateclothesnovicePA>A rugged outfit hand-crafted by the pirates, designed to endure the harsh conditions of seabound life on Europa. This specific outfit is mostly given to new hires and crew in lower positions.</entitydescription.pirateclothesnovicePA>
+  <entityname.pirateclothesPA>Pirate Clothes</entityname.pirateclothesPA>
+  <entitydescription.pirateclothesPA>A rugged outfit hand-crafted by the pirates, designed to endure the harsh conditions of seabound life on Europa. This specific outfit has been improved with light armor plating.</entitydescription.pirateclothesPA>
+  <entityname.pirateclotheshardPA>Pirate Clothes (Combat)</entityname.pirateclotheshardPA>
+  <entitydescription.pirateclotheshardPA>A rugged outfit hand-crafted by the pirates, designed to endure the harsh conditions of seabound life on Europa. This specific outfit is worn by more experienced crew members and higher-ups to protect them during combat.</entitydescription.pirateclotheshardPA>
+  <entityname.constructionmaterialcrate>Construction Material Crate</entityname.constructionmaterialcrate>
+  <entitydescription.constructionmaterialcrate>A crate full of processed construction materials. Can be delivered to construction sites.</entitydescription.constructionmaterialcrate>
+  <fabricationdescription.softmaterials>Soft, flexible metals</fabricationdescription.softmaterials>
+  <fabricationdescription.hardmaterials>Harder, sturdy metals</fabricationdescription.hardmaterials>
+  <entityname.cavepest>Cave Pest</entityname.cavepest>
+  <entitydescription.cavepest>Disgusting! Throw it away!</entitydescription.cavepest>
+  <entityname.cavepestspawner>Pest Nest</entityname.cavepestspawner>
+  <entitydescription.cavepestspawner>A nest of cave pests. These worm-like organisms fall on unsuspecting prey and dissolve them with acid.</entitydescription.cavepestspawner>
+  <entityname.huskbodybag>Suspicious package</entityname.huskbodybag>
+  <entityname.radioactivewaste>Radioactive Waste</entityname.radioactivewaste>
+  <entitydescription.radioactivewaste>An illegally dumped barrel full of radioactive waste, now leaking into the ocean.</entitydescription.radioactivewaste>
+  <entityname.piezochipper>Old Piezo Pick-Chisel</entityname.piezochipper>
+  <entitydescription.piezochipper>An ancient tool supposedly used to chip off chunks of piezo crystals, a practice long deemed too dangerous.</entitydescription.piezochipper>
+  <entityname.piezochunk>Piezo chunk</entityname.piezochunk>
+  <entitydescription.piezochunk>A chunk of piezo crystal that emits electricity. Can be used as a makeshift battery, but you better not drop it...</entitydescription.piezochunk>
+  <entityname.railgunshellclown>Clown Delivery System</entityname.railgunshellclown>
+  <entitydescription.railgunshellclown>Through an impossible feat of clownpression technology, the children of the honkmother can somehow squeeze themselves inside a railgun shell to be shot across stations. A great way to kick off a surprise party!</entitydescription.railgunshellclown>
+  <entityname.hammerheadmucus>Hammerhead Mucus</entityname.hammerheadmucus>
+  <entitydescription.hammerheadmucus>A disgusting ball of organic matter secreted by Hammerhead Matriarchs to feed their young while they're away hunting. Rich in proteins, enzymes and bacteria, they are sought after for their medicinal properties. Can be deconstructed.</entitydescription.hammerheadmucus>
+  <entityname.raceticket>Mudraptor Race Ticket</entityname.raceticket>
+  <entitydescription.raceticket>You've placed good money on a mudraptor. Your captain would surely approve of this investment.</entitydescription.raceticket>
+  <entityname.securebriefcase>Secure Briefcase</entityname.securebriefcase>
+  <entitydescription.securebriefcase>This sturdy briefcase is secured by a keypad and a lock. The only way to open it is to find the code...</entitydescription.securebriefcase>
+  <entityname.brokenweapon>Rusty Weapon</entityname.brokenweapon>
+  <entitydescription.brokenweapon>A worn-out weapon of poor quality, most likely smuggled. You feel like it's about to break between your fingers.</entitydescription.brokenweapon>
+  <GUI.button.activenuke>Arm</GUI.button.activenuke>
+  <GUI.button.inactivenuke>Disarm</GUI.button.inactivenuke>
+  <entityname.laircore>Heart of the lair</entityname.laircore>
+  <entityname.vendingmachine1PA>Pirate Store</entityname.vendingmachine1PA>
+  <entityname.mineralspawner>Mineral Deposit</entityname.mineralspawner>
+  <entityname.frentestmedicine>Sample VAX</entityname.frentestmedicine>
+  <entitydescription.frentestmedicine>A genetically modified husk sample created by Dr. Seynomor. He claims that he "perfected" the formula and whoever uses it can gain the abilities of a husk without losing their mental capability. The instruction says, "To use it on yourself, hold right click and then press E."”</entitydescription.frentestmedicine>
+  <entityname.pressurestabilizersecurity>Biometrically Locked Pressure Stabilizer</entityname.pressurestabilizersecurity>
+  <entityname.revolverbroken>Revolver (Broken)</entityname.revolverbroken>
+  <entityname.smgbroken>SMG (Broken)</entityname.smgbroken>
+  <entityname.shotgunbroken>Riot Shotgun (Broken)</entityname.shotgunbroken>
+  <entityname.assaultriflebroken>Assault Rifle (Broken)</entityname.assaultriflebroken>
+  <entityname.machinepistolbroken>Machine Pistol (Broken)</entityname.machinepistolbroken>
+  <entityname.piratedivingsuitmakeshift>Makeshift Pirate Diving Suit</entityname.piratedivingsuitmakeshift>
+  <entityname.invisibleholder>Take Item</entityname.invisibleholder>
+  <entityname.vineladder>Vine Ladder</entityname.vineladder>
+</infotext>

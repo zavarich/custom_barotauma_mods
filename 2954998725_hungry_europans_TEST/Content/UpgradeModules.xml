@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UpgradeModules>
+  <!--
+  NB. DecorativeSprites are not used in vanilla (currently) but they are available for modders.
+
+  DecorativeSprites can be overwritten in item prefabs using <UpgradeOverride> tag. Example:
+
+  <Item identifier="E">
+    ...
+    <UpgradeOverride identifier="increasewallhealth">
+      <DecorativeSprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,64,64" depth="0.75" origin="0.5,0.5"/>
+    </UpgradeOverride>
+    ...
+  </Item>
+
+  <Sprite> element defines the sprite that is shown in the store interface while <DecorativeSprites> are
+  rendered on the item the upgrade is applied to.
+
+  Decorative sprites support conditionals so different items can have different sprites
+
+  <DecorativeSprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,64,64" depth="0.75" origin="0.5,0.5" >
+    <IsActiveConditional hastag="eq junctionbox"/>
+  </DecorativeSprite>
+
+  <DecorativeSprite texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,0,64,64" depth="0.75" origin="0.5,0.5" >
+    <IsActiveConditional hastag="eq reactor"/>
+  </DecorativeSprite>
+
+  The <Price> element takes 3 attributes, BasePrice, IncreaseLow and IncreaseHigh. Both IncreaseLow and IncreaseHigh
+  should be a percentage and IncreaseHigh should always be more than IncreaseLow.
+
+  The price is increased by lerping from IncreaseLow to IncreaseHigh depending on the level, so say you have max level of
+  10 and IncreaseLow of 10% and IncreaseHigh of 20% then first upgrade level will increase the price by 10%, level 5 will
+  increase by 15% and the last level will increase by 20%.
+
+  If you are a modder and are reading this and want to add your own item to already existing upgrade category you can add
+  allowedupgrades="XXX" attribute to your item where XXX corresponds to an upgrade category identifier, see how legacy pump does it.
+
+  Upgrade modules can have both name="" and description="" attributes but they are not used in vanilla because of localization.
+
+  Upgrade categories take items="" attribute which match either a tag or an identifier of an item. If wallupgrade="true"
+  is specified instead of items the upgrade will target all hulls on the submarine.
+
+  Overriding upgrade modules is supported the usual way however upgrade categories CANNOT be overridden because why would you? 
+  if you have a valid reason why you would want to override categories submit an issue report on GitHub. 
+  You can define your own categories though in the same file you define upgrade modules.
+  -->
+  <!-- Categories -->
+  <UpgradeCategory name="Utility" identifier="utilitypoint" items="utilitypoint" />
+  <!--   <UpgradeModule nameidentifier="increasemaxcondition" descriptionidentifier="increasemaxcondition" identifier="testing" maxlevel="3" categories="utilitypoint" increaseontooltip="20" >
+    <Price baseprice="1500" increaselow="+0%" increasehigh="+200%"/>
+    <MaxLevel tier="1" level="1"/>
+    <MaxLevel tier="2" level="2"/>
+    <Item healthmultiplier="+0.2"/>
+    <Sprite texture="Content/UI/CampaignUIAtlas2.png" sourcerect="128,896,128,128" origin="0.5,0.5"/>
+  </UpgradeModule> -->
+</UpgradeModules>

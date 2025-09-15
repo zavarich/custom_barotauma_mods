@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Parasitic Worms" identifier="parasiticworms" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,parasiticworms,worms" description="" cargocontaineridentifier="mediccrate" scale="0.5" useinhealthinterface="true" RequireAimToUse="True">
+      <PreferredContainer primary="toxcontainer" secondary="medcontainer" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,704,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="263,142,36,68" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="Tapeworm" identifier="tapeworm" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,tapeworm,worms" description="" cargocontaineridentifier="mediccrate" scale="0.5" useinhealthinterface="true" RequireAimToUse="True">
+      <PreferredContainer primary="toxcontainer" secondary="medcontainer" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="576,704,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="263,142,36,68" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <Holdable canBeCombined="false" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- Sulphuric Acid override to make it drinkable and add distiller tag -->
+    <!-- changed health to 100 to enable compatibility -->
+    <SulphuricAcid name="" identifier="sulphuricacid" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem,chem,poison,distilleradditive" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" RequireAimToUse="True" health="100">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="wrecktoxcab,abandonedtoxcab" spawnprobability="0.5" />
+      <PreferredContainer primary="toxcab" secondary="toxcontainer" />
+      <Price baseprice="80">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.1" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="346,452,33,60" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" holdangle="30" handle1="0,-10" aimpos="35,-15" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- When used in Health GUI -->
+        <StatusEffect type="OnSuccess" target="This" setvalue="true" oneshot="true" aimpos="28,24" aimangle="120" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-2.0" disabledeltatime="true">
+          <Sound file="Content/Sounds/Water/Splash1.ogg" range="500" volume="0.5" frequencymultiplier="2" selectionmode="random" />
+          <Sound file="Content/Sounds/Water/Splash4.ogg" range="500" volume="0.5" frequencymultiplier="2" selectionmode="random" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="Limb" duration="10">
+          <Affliction identifier="acidburn" amount="2" />
+        </StatusEffect>
+        <!-- Unbottle -->
+        <StatusEffect type="OnUse" target="This" Condition="99" aimangle="120" setvalue="true" oneshot="true">
+          <Conditional condition="gte 100" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/OpenBottle.ogg" loop="false" range="200" volume="5.0" />
+        </StatusEffect>
+        <!-- Regular drinking RMB after unbottle -->
+        <StatusEffect type="OnSecondaryUse" target="This,Character" Condition="-20.0" aimpos="28,24">
+          <Conditional condition="lt 100" />
+          <Affliction identifier="he-stomachache" strength="20.0" />
+          <Affliction identifier="he-internalburn" amount="15" />
+          <Affliction identifier="organdamage" amount="14" />
+          <ReduceAffliction identifier="worminfection" amount="15" />
+          <ReduceAffliction identifier="tapeworminfection" amount="15" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This,Character" comparison="And">
+          <Conditional condition="lt 100" />
+          <Conditional huskinfection="lt 75" />
+          <ReduceAffliction identifier="huskinfection" amount="5" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/CanCrush1.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/CanCrush2.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/CanCrush3.ogg" range="350" volume="3" selectionmode="Random" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </SulphuricAcid>
+  </Items>
+</Override>

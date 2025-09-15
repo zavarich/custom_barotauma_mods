@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="VGM Guns Enhanced" modversion="prototype" corepackage="False" gameversion="1.9.8.0" expectedhash="FD25192157D36EB382C6D86BE27C22FF">
+  <Item file="%ModDir%/Revolver/Revolver.xml" />
+  <Item file="%ModDir%/Handcannon/Handcannon.xml" />
+  <Item file="%ModDir%/MachinePistol/MachinePistol.xml" />
+  <Item file="%ModDir%/SMG/SMG.xml" />
+  <Item file="%ModDir%/DeadeyeCarbine/DeadeyeCarbine.xml" />
+  <Item file="%ModDir%/RiotShotgun/RiotShotgun.xml" />
+  <Item file="%ModDir%/AutoShotgun/AutoShotgun.xml" />
+  <Item file="%ModDir%/Boomstick/Boomstick.xml" />
+  <Item file="%ModDir%/AssaultRifle/AssaultRifle.xml" />
+  <Item file="%ModDir%/Rifle/Rifle.xml" />
+  <Item file="%ModDir%/HMG/HMG.xml" />
+  <Item file="%ModDir%/GunMods/gunmods_alphaDev.xml" />
+</contentpackage>

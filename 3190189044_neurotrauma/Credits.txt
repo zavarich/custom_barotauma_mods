@@ -1,0 +1,18 @@
+
+Evil Factory - Lua help
+Ydrec - Code contributions
+Nebual - Code contributions
+_[|M|]_ - Bag overlays
+peelz - Bloodpack conversion code
+Vetinarix - Propofol maintenance
+themanyfaceddemon - meta data for barotrauma mod loader
+Viktor Livingshield - Russian localization
+Brian Damage - Russian localization
+Kaofan - Polish localization
+Krzeszny - Polish localization
+rermi - French localization
+JellyQoo - Korean localization
+MEI - Portuguese localization
+Oskar - Spanish localization
+mefy - Turkish localization
+profole - German localization

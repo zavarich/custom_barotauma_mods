@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Structures -->
+  <entityname.labelslogocoalition>Эмблема коалиции</entityname.labelslogocoalition>
+  <entityname.labelslogocoalitioncolor>Цветная эмблема коалиции</entityname.labelslogocoalitioncolor>
+  <entityname.labelslogocoalitiondamaged>Поврежденная эмблема коалиции</entityname.labelslogocoalitiondamaged>
+  <entityname.labelslogocoalitionbroken>Уничтоженная эмблема коалиции</entityname.labelslogocoalitionbroken>
+  <entityname.labelslogoseparatists>Эмблема сепаратистов</entityname.labelslogoseparatists>
+  <entityname.labelslogoseparatistscolor>Цветная эмблема сепаратистов</entityname.labelslogoseparatistscolor>
+  <entityname.labelslogoseparatistsdamaged>Поврежденная эмблема сепаратистов</entityname.labelslogoseparatistsdamaged>
+  <entityname.labelslogoseparatistsbroken>Уничтоженная эмблема сепаратистов</entityname.labelslogoseparatistsbroken>
+</infotext>

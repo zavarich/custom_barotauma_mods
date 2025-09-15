@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Hungry Europans - Hydroponic" modversion="1.1" corepackage="False" steamworkshopid="3501594651" gameversion="1.9.8.0">
+  <Item file="%ModDir%/Content/Items/Fabricators/Fabricators.xml" />
+  <Item file="%ModDir%/Content/Items/Gardening/GrowablePlants.xml" />
+  <Text file="%ModDir%/Content/Languages/Russian.xml" />
+  <Text file="%ModDir%/Content/Languages/English.xml" />
+</contentpackage>

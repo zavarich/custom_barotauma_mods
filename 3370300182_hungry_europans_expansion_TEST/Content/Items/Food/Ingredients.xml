@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- Other -->
+    <Item name="Bag of rice" identifier="heexp-bagofrice" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="" Tags="smallitem,ingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" canflipx="false">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.08" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="200" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.7" minavailable="0" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="2" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantbutcher" multiplier="2.0" minavailable="0" maxavailable="8" sold="true" />
+      </Price>
+      <Deconstruct time="1" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="0,418,33,60" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="0,418,33,60" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="0,418,33,60" depth="0.525" origin="0.5,0.87" />
+      <Body width="45" height="67" density="15" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="2" />
+          <Affliction identifier="blunttrauma" strength="2" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <Item name="Vanillin" identifier="heexp-vanillin" category="Misc" subcategory="Ingredients" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="metalcrate" description="Nostalgic taste" Tags="smallitem,ingredient" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" canflipx="false">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="1" maxamount="2" spawnprobability="0.1" />
+      <PreferredContainer secondary="crewcab" amount="1" spawnprobability="0.08" notcampaign="true" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Price baseprice="75" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="0" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="2" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantbutcher" multiplier="2.0" minavailable="0" maxavailable="8" sold="true" />
+      </Price>
+      <Deconstruct time="1" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="28,0,23,30" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="28,0,23,30" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="28,0,23,30" depth="0.525" origin="0.5,0.87" />
+      <Body width="45" height="67" density="15" />
+      <Throwable canbepicked="true" characterusable="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" throwforce="4.0" aimpos="35,-10" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" delay="0.01">
+          <Use />
+        </StatusEffect>
+      </Throwable>
+      <Projectile characterusable="false" launchimpulse="0.0" impulsespread="0.0" sticktocharacters="false" sticktoitems="false" sticktostructures="false" sticktodoors="false">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="1" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="blunttrauma" strength="1" />
+          <Affliction identifier="blunttrauma" strength="1" probability="0.25" />
+          <Affliction identifier="stun" strength="0.2" />
+        </Attack>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="Character" />
+          <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="1000" />
+          <Sound file="Content/Items/Weapons/Smack2.ogg" range="1000" />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- Meat -->
+    <Item name="Ground meat" identifier="heexp-groundmeat" category="Misc" subcategory="Ingredients" maxstacksize="8" cargocontaineridentifier="he-coolercrate" description="" Tags="smallitem,meat,ingredient,canspoil,petfood1,petfood2,petfood3" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_soft" isshootable="true" requireaimtouse="true">
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" spawnprobability="0.02" />
+      <PreferredContainer secondary="abandonedcrewcab" minamount="0" maxamount="1" spawnprobability="0.02" />
+      <PreferredContainer primary="refrigerator" secondary="refrigeratedcontainer" />
+      <Price baseprice="150" sold="false">
+        <Price storeidentifier="merchantbutcher" multiplier="2.0" minavailable="0" maxavailable="8" sold="true" />
+      </Price>
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Ingredients.png" sourcerect="0,481,77,31" depth="0.6" origin="0.5,0.5" />
+      <Fabricate suitablefabricators="cuttingboard" requiredtime="20" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="butchery" level="25" />
+        <RequiredItem tag="rawmeatpiece" amount="2" MinCondition="0.5" MaxCondition="1.0" UseCondition="False" />
+        <RequiredItem identifier="he-salt" UseCondition="True" MinCondition="0.05" />
+        <RequiredItem identifier="he-pepper" UseCondition="True" MinCondition="0.05" />
+      </Fabricate>
+      <Deconstruct time="3">
+        <Item identifier="alienblood" amount="3" />
+      </Deconstruct>
+      <Body width="51" radius="8" density="9" />
+      <GreaterComponent canbepicked="false" canbeselected="false" allowingameediting="false" drawhudwhenequipped="false" timeframe="0">
+        <StatusEffect type="Always" target="This" timeframe="2" interval="2" disabledeltatime="true" />
+        <StatusEffect type="Always" target="This" timeframe="0" interval="2" disabledeltatime="true" setvalue="true">
+          <Conditional HasStatusTag="eq activecooling" targetcontainer="true" />
+          <Conditional HasTag="eq kitchenfabricator" targetcontainer="true" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" Condition="-0.5" timeframe="-10.0" disabledeltatime="true" interval="0.9">
+          <Conditional timeframe="gte 10" />
+        </StatusEffect>
+      </GreaterComponent>
+      <Holdable canbepicked="true" canBeCombined="false" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="28,18" holdangle="30" aimangle="0" aimable="false" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This" Condition="-4.0" />
+        <StatusEffect type="OnUse" target="Character">
+          <Affliction identifier="deliriuminepoisoning" probability="0.001" amount="8" />
+          <Affliction identifier="nausea" amount="4" />
+          <Affliction identifier="he-hungryforhumanmeat" amount="0.075" />
+          <Affliction identifier="worminfection" amount="1" probability="0.02" />
+          <Affliction identifier="tapeworminfection" amount="1" probability="0.02" />
+          <Affliction identifier="spill" amount="1000" probability="0.0005" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/EatingSoft.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character">
+          <Conditional hunger="gt 0.5" />
+          <ReduceAffliction type="hunger" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <AiTarget sightrange="1000" static="True" />
+    </Item>
+  </Items>
+</Override>

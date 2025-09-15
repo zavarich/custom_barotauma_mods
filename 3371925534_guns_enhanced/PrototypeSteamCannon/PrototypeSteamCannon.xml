@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" HideConditionBar="true" identifier="flamerunique" category="Equipment" Tags="smallitem,weapon,gun,mountableweapon" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true" allowasextracargo="true">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab" spawnprobability="0.02" />
+      <PreferredContainer secondary="wreckarmcab" spawnprobability="0.05" />
+      <Price baseprice="755" sold="false" canbespecial="false" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,256,62,64" />
+      <Sprite texture="%ModDir%/PrototypeSteamCannon/PrototypeSteamCannon.png" sourcerect="0,0,144,74" depth="0.55" origin="0.5,0.5" />
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Body width="150" height="77" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-30" holdangle="-30" aimpos="50,-10" handle1="-62,-16" handle2="-11,-6" msg="ItemMsgPickUpSelect" />
+      <RepairTool firedamage="20.0" structurefixamount="0.0" range="500" barrelpos="20,13" fireprobability="0.0" repairmultiple="true" repairthroughwalls="false" repairthroughholes="true" combatpriority="60" spread="25" unskilledspread="25">
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="steamreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="50,-30" holdangle="-30" aimpos="50,-10" handle1="-62,-16" handle2="-11,-6" aimangle="0" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" target="This" hideitems="false" setvalue="true" />
+        <!-- Particles. -->
+        <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="355" anglemax="275" velocitymin="0" velocitymax="50" />
+        <ParticleEmitter particle="muzzlebubbles" particlespersecond="30" anglemin="-15" anglemax="5" velocitymin="400" velocitymax="500" scalemultipler="2,2" />
+        <ParticleEmitter particle="lotbubbles" particlespersecond="10" anglemin="-5" anglemax="5" velocitymin="1500" velocitymax="2000" distancemin="10" distancemax="10" />
+        <ParticleEmitter particle="steamspray" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="1500" velocitymax="2000" highqualitycollisiondetection="true" />
+        <sound file="Content/Items/Weapons/FlameThrowerLoop.ogg" type="OnUse" range="750.0" loop="true" />
+        <!-- when using, the contained welding fuel tank will detoriate (= lose fuel) -->
+        <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" Condition="-10.0" />
+        <StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" Condition="-2.0" />
+        <!-- do burn damage to characters -->
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <Affliction identifier="burn" amount="1.5" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="UseTarget">
+          <RequiredItem items="incendiumfueltank" type="Contained" />
+          <Affliction identifier="burn" amount="3.0" />
+          <Affliction identifier="stun" strength="1" probability="0.1" />
+        </StatusEffect>
+        <!-- explode if oxygen tanks are inserted -->
+        <StatusEffect type="OnUse" targettype="Contained" targets="oxygentank" delay="1.0" stackable="false" Condition="-100.0" disabledeltatime="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+          <Explosion range="150.0" force="3" applyfireeffects="false">
+            <Affliction identifier="burn" strength="25" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="Contained" targets="oxygenitetank" delay="1.0" stackable="false" Condition="-100.0" disabledeltatime="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+          <Explosion range="150.0" force="6" applyfireeffects="false">
+            <Affliction identifier="burn" strength="50" />
+            <Affliction identifier="stun" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- Self-damage on fail -->
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Affliction identifier="burn" strength="7.5" probability="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <RequiredItem items="incendiumfueltank" type="Contained" />
+          <Affliction identifier="burn" strength="5.0" probability="0.5" />
+        </StatusEffect>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="steamreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="steamreloading" delay="2.6" condition="100" setvalue="true" />
+        <!-- Flamer requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="steamreloading" type="Contained" />
+        <!-- Requires fuel to use. -->
+        <RequiredItems items="weldingtoolfuel,oxygensource" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+        <RequiredSkill identifier="weapons" level="40" />
+      </RepairTool>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-23" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <Containable items="weldingtoolfuel,oxygensource" excludebroken="false">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true" />
+          <!-- Unhides the slots, allowing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="2.0" setvalue="true" />
+          <!-- Plays the sound of the can is removed. -->
+          <StatusEffect type="OnRemoved" target="This" delay="0.01" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerUnload.ogg" volume="10.0" range="1000" />
+          </StatusEffect>
+          <!-- Makes the fuel tank invisible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="true" handle2="8,-6" aimangle="10" holdangle="10" holdpos="30,-20" condition="0" delay="0.01" setvalue="true" stackable="false" />
+          <!-- Sound and hand animation. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" handle2="8,-30" setvalue="true" stackable="false">
+            <Sound file="%ModDir%/Flamer/FlamerLoad.ogg" volume="10.0" range="1000" />
+          </StatusEffect>
+          <!-- Hand animation. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.2" handle2="8,-11" stackable="false" />
+          <!-- Makes the fuel tank visible. -->
+          <StatusEffect type="OnInserted" target="This" hideitems="false" delay="1.3" aimangle="20" holdangle="20" setvalue="true" stackable="false">
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="330" anglemax="330" velocitymin="20" velocitymax="50" distancemin="3" distancemax="5" />
+          </StatusEffect>
+          <!-- Last animation stage. -->
+          <StatusEffect type="OnInserted" target="This" delay="2" holdpos="50,-30" holdangle="-30" aimpos="50,-10" aimangle="0" handle1="-62,-16" handle2="-11,-6" condition="100" setvalue="true" />
+        </Containable>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="steamreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->&gt;
+        <Containable items="steamreloading" hide="true" /></ItemContainer>
+      <aitarget sightrange="5000" soundrange="500" fadeouttime="5" />
+      <SkillRequirementHint identifier="weapons" level="40" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="steamreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,steamreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Brazilian Portuguese" nowhitespace="false">
+  <!-- Characters -->
+  <character.gundrone>Drone Sentinela</character.gundrone>
+  <character.walkerdrone>Drone de Bordo</character.walkerdrone>
+  <character.homingshell>Projétil Teleguiado de Canhão Elétrico</character.homingshell>
+  <character.nuclearhomingshell>Projétil Nuclear Teleguiado</character.nuclearhomingshell>
+  <!-- ek_containers.xml -->
+  <entityname.ek_weapons_cabinet>Armário de Armas</entityname.ek_weapons_cabinet>
+  <entitydescription.ek_weapons_cabinet></entitydescription.ek_weapons_cabinet>
+  <entityname.ek_weapons_cabinet_bottomhalf>Armário de Armas</entityname.ek_weapons_cabinet_bottomhalf>
+  <entitydescription.ek_weapons_cabinet_bottomhalf></entitydescription.ek_weapons_cabinet_bottomhalf>
+  <entityname.ek_weapons_case>Caixa de Armas</entityname.ek_weapons_case>
+  <entitydescription.ek_weapons_case></entitydescription.ek_weapons_case>
+  <entityname.ek_ammocrate_9mm>Caixa de Munição 9mm</entityname.ek_ammocrate_9mm>
+  <entitydescription.ek_ammocrate_9mm></entitydescription.ek_ammocrate_9mm>
+  <entityname.ek_ammocrate_smg>Caixa de Munição 5.7x28mm</entityname.ek_ammocrate_smg>
+  <entitydescription.ek_ammocrate_smg></entitydescription.ek_ammocrate_smg>
+  <entityname.ek_ammocrate_rifle>Caixa de Munição 5.56x45mm</entityname.ek_ammocrate_rifle>
+  <entitydescription.ek_ammocrate_rifle></entitydescription.ek_ammocrate_rifle>
+  <entityname.ek_ammocrate_shotgun>Caixa de Munição de Escopeta</entityname.ek_ammocrate_shotgun>
+  <entitydescription.ek_ammocrate_shotgun></entitydescription.ek_ammocrate_shotgun>
+  <entityname.ek_ammocrate_microtorpedo>Caixa de Microtorpedo</entityname.ek_ammocrate_microtorpedo>
+  <entitydescription.ek_ammocrate_microtorpedo></entitydescription.ek_ammocrate_microtorpedo>
+  <entityname.ek_ammocrate_physicorium>Caixa de Munição de Fisicorium</entityname.ek_ammocrate_physicorium>
+  <entitydescription.ek_ammocrate_physicorium></entitydescription.ek_ammocrate_physicorium>
+  <entityname.ek_ammobox_shotgun_shells>Munição Calibre 12</entityname.ek_ammobox_shotgun_shells>
+  <entitydescription.ek_ammobox_shotgun_shells>Munição chumbo grosso para escopetas.</entitydescription.ek_ammobox_shotgun_shells>
+  <entityname.ek_ammobox_shotgun_beanbag>Munição Calibre 12 Não-Letal</entityname.ek_ammobox_shotgun_beanbag>
+  <entitydescription.ek_ammobox_shotgun_beanbag>Munição de "feijão" para escopetas. Apenas um projétil, não tão letal.</entitydescription.ek_ammobox_shotgun_beanbag>
+  <entityname.ek_ammobox_shotgun_slug>Munição Calibre 12 (Balote)</entityname.ek_ammobox_shotgun_slug>
+  <entitydescription.ek_ammobox_shotgun_slug>Munição de balote para escopetas. Apenas um projétil, efetivo contra alvos blindados.</entitydescription.ek_ammobox_shotgun_slug>
+  <entityname.ek_ammobox_shotgun_hollowpoint>Munição Calibre 12 (Ponta Oca)</entityname.ek_ammobox_shotgun_hollowpoint>
+  <entitydescription.ek_ammobox_shotgun_hollowpoint>Munição de balote com ponta oca para escopetas. Apenas um projétil, efetivo contra alvos sem blindagem.</entitydescription.ek_ammobox_shotgun_hollowpoint>
+  <entityname.ek_ammobox_shotgun_flechette>Munição Calibre 12 (Flechette)</entityname.ek_ammobox_shotgun_flechette>
+  <entitydescription.ek_ammobox_shotgun_flechette>Munição flechette para escopetas. Atira dardos metálicos com boa precisão, efetivo contra alvos sem blindagem.</entitydescription.ek_ammobox_shotgun_flechette>
+  <entityname.ek_ammobox_shotgun_grenade>Granadas Calibre 12</entityname.ek_ammobox_shotgun_grenade>
+  <entitydescription.ek_ammobox_shotgun_grenade>Munição de granada para escopetas. Granadas de fogo-direto que explodem no impacto.</entitydescription.ek_ammobox_shotgun_grenade>
+  <entityname.ek_ammobox_shotgun_physicorium>Munição Calibre 12 (Fisicorium)</entityname.ek_ammobox_shotgun_physicorium>
+  <entitydescription.ek_ammobox_shotgun_physicorium>Munição de balote feita de fisicorium para escopetas. Apenas um projétil, efetivo contra alvos blindados.</entitydescription.ek_ammobox_shotgun_physicorium>
+  <entityname.ek_weaponparts>Componentes de Armas</entityname.ek_weaponparts>
+  <entitydescription.ek_weaponparts>Peças mecânicas de alta precisão usadas para o funcionamento interno da maioria das armas de fogo.</entitydescription.ek_weaponparts>
+  <entityname.ek_loadingkit>Kit de Carregamento</entityname.ek_loadingkit>
+  <entitydescription.ek_loadingkit>Uma caixa de ferramentas e espoletas de reserva usada para carregar e pressionar a maioria dos cartuchos usados pela Coalizão Europa.</entitydescription.ek_loadingkit>
+  <entityname.ek_ammocrate_rockets>Caixas de Foguetes</entityname.ek_ammocrate_rockets>
+  <entitydescription.ek_ammocrate_rockets></entitydescription.ek_ammocrate_rockets>
+  <entityname.ek_handcuff_container>Caixa de Algemas</entityname.ek_handcuff_container>
+  <entitydescription.ek_handcuff_container></entitydescription.ek_handcuff_container>
+  <!-- ek_divinggear.xml -->
+  <entityname.ek_armored_hardsuit>Traje de Proteção Militar Mk-I</entityname.ek_armored_hardsuit>
+  <entitydescription.ek_armored_hardsuit>Traje de pressão pesado usado em operações militares da Coalizão. Foi projetado com proteção balística considerável para o corpo todo, porém, a adição de blindagem dificulta o movimento drasticamente. [ Efetivo até 6000m ]</entitydescription.ek_armored_hardsuit>
+  <entityname.ek_armored_hardsuit_paintbandit>Traje de Proteção Militar Mk-I (Saqueador)</entityname.ek_armored_hardsuit_paintbandit>
+  <entitydescription.ek_armored_hardsuit_paintbandit>Traje de pressão pesado usado em operações militares da Coalizão. Foi projetado com proteção balística considerável para o corpo todo, porém, a adição de blindagem dificulta o movimento drasticamente. [ Efetivo até 6000m ]</entitydescription.ek_armored_hardsuit_paintbandit>
+  <entityname.ek_armored_hardsuit_paintmercenary>Traje de Proteção Militar Mk-I (Mercenário)</entityname.ek_armored_hardsuit_paintmercenary>
+  <entitydescription.ek_armored_hardsuit_paintmercenary>Traje de pressão pesado usado em operações militares da Coalizão. Foi projetado com proteção balística considerável para o corpo todo, porém, a adição de blindagem dificulta o movimento drasticamente. [ Efetivo até 6000m ]</entitydescription.ek_armored_hardsuit_paintmercenary>
+  <entityname.ek_armored_hardsuit2>Traje de Proteção Militar Mk-II</entityname.ek_armored_hardsuit2>
+  <entitydescription.ek_armored_hardsuit2>Traje de pressão pesado usado em operações militares da Coalizão. O design aprimorado resulta em restrição menor na mobilidade e maior durabilidade no geral. [ Efetivo até 10000m ]</entitydescription.ek_armored_hardsuit2>
+  <entityname.ek_armored_hardsuit2_paintbandit>Traje de Proteção Militar Mk-II (Saqueador)</entityname.ek_armored_hardsuit2_paintbandit>
+  <entitydescription.ek_armored_hardsuit2_paintbandit>Traje de pressão pesado usado em operações militares da Coalizão. O design aprimorado resulta em restrição menor na mobilidade e maior durabilidade no geral. [ Efetivo até 10000m ]</entitydescription.ek_armored_hardsuit2_paintbandit>
+  <entityname.ek_armored_hardsuit2_paintmercenary>Traje de Proteção Militar Mk-II (Mercenário)</entityname.ek_armored_hardsuit2_paintmercenary>
+  <entitydescription.ek_armored_hardsuit2_paintmercenary>Traje de pressão pesado usado em operações militares da Coalizão. O design aprimorado resulta em restrição menor na mobilidade e maior durabilidade no geral. [ Efetivo até 10000m ]</entitydescription.ek_armored_hardsuit2_paintmercenary>
+  <entityname.ek_shearclaw_outfit>Armadura 'Shearclaw' Mk-I</entityname.ek_shearclaw_outfit>
+  <entitydescription.ek_shearclaw_outfit>Roupa de mergulho experimental feita de escamas shearclaw com mobilidade aquática inigualável. O tecido blindado interno fornece uma leve resistência a lacerações e queimaduras. [ Efetivo até 4000m ]</entitydescription.ek_shearclaw_outfit>
+  <entityname.ek_shearclaw_helmet>Capacete 'Shearclaw' Mk-I</entityname.ek_shearclaw_helmet>
+  <entitydescription.ek_shearclaw_helmet></entitydescription.ek_shearclaw_helmet>
+  <!-- ek_jobgear.xml -->
+  <entityname.ek_marine_armor>Armadura de Combate de Fuzileiro</entityname.ek_marine_armor>
+  <entitydescription.ek_marine_armor></entitydescription.ek_marine_armor>
+  <entityname.ek_marine_armor_uniform>Roupa de Combate de Fuzileiro</entityname.ek_marine_armor_uniform>
+  <entitydescription.ek_marine_armor_uniform></entitydescription.ek_marine_armor_uniform>
+  <entityname.ek_marine_helmet>Capacete de Fuzileiro</entityname.ek_marine_helmet>
+  <entitydescription.ek_marine_helmet></entitydescription.ek_marine_helmet>
+  <entityname.ek_renegade_armor>Armadura de Combate de Renegado</entityname.ek_renegade_armor>
+  <entitydescription.ek_renegade_armor></entitydescription.ek_renegade_armor>
+  <entityname.ek_renegade_armor_uniform>Roupa de Combate de Renegado</entityname.ek_renegade_armor_uniform>
+  <entitydescription.ek_renegade_armor_uniform></entitydescription.ek_renegade_armor_uniform>
+  <entityname.ek_renegade_helmet>Capacete de Renegado</entityname.ek_renegade_helmet>
+  <entitydescription.ek_renegade_helmet></entitydescription.ek_renegade_helmet>
+  <entityname.ek_merc_armor>Armadura de Combate de Mercenário</entityname.ek_merc_armor>
+  <entitydescription.ek_merc_armor></entitydescription.ek_merc_armor>
+  <entityname.ek_merc_armor_uniform>Roupa de Combate de Mercenário</entityname.ek_merc_armor_uniform>
+  <entitydescription.ek_merc_armor_uniform></entitydescription.ek_merc_armor_uniform>
+  <entityname.ek_merc_helmet>Capacete de Mercenário</entityname.ek_merc_helmet>
+  <entitydescription.ek_merc_helmet></entitydescription.ek_merc_helmet>
+  <entityname.ek_fire_jumpsuit>Macacão de Bombeiro</entityname.ek_fire_jumpsuit>
+  <entitydescription.ek_fire_jumpsuit></entitydescription.ek_fire_jumpsuit>
+  <entityname.ek_fire_helmet>Capacete de Bombeiro</entityname.ek_fire_helmet>
+  <entitydescription.ek_fire_helmet>Um capacete resistente ao calor com uma máscara de respiração.</entitydescription.ek_fire_helmet>
+  <entityname.ek_mechanic_armor>Armadura Balística Improvisada</entityname.ek_mechanic_armor>
+  <entitydescription.ek_mechanic_armor>Armadura improvisada construída a partir de placas balísticas e estofamento reciclados. Alguns bolsos foram costurados no colete.</entitydescription.ek_mechanic_armor>
+  <entityname.ek_security_radio>Rádio de Segurança</entityname.ek_security_radio>
+  <entitydescription.ek_security_radio>Um sistema de comunicação por rádio discreto usado primariamente por oficiais de segurança de submarinos e estações.</entitydescription.ek_security_radio>
+  <entityname.ek_ammobandolier>Bandoleira Simples</entityname.ek_ammobandolier>
+  <entitydescription.ek_ammobandolier>Uma bandoleira de munição, a peça perfeita para o uniforme de um bom commando.</entitydescription.ek_ammobandolier>
+  <entityname.ek_tacticalbackpack>Mochila Tática</entityname.ek_tacticalbackpack>
+  <entitydescription.ek_tacticalbackpack>Uma mochila compacta com capacidade de armazenamento moderada para equipamento e munição.</entitydescription.ek_tacticalbackpack>
+  <!-- ek_materials.xml -->
+  <entityname.ek_weapontritium>Trítio</entityname.ek_weapontritium>
+  <entitydescription.ek_weapontritium>Isótopo de hidrogênio. Material para armas de fissão.</entitydescription.ek_weapontritium>
+  <entityname.ek_gaussparts>Bobina de Gauss</entityname.ek_gaussparts>
+  <entitydescription.ek_gaussparts>Supercondutor de fulgurium. Um componente primário na produção de armas de gauss.</entitydescription.ek_gaussparts>
+  <entityname.ek_laserparts>Diodo de Laser</entityname.ek_laserparts>
+  <entitydescription.ek_laserparts>Bomba laser de alta potência. Um componente primário na produção de armas de laser.</entitydescription.ek_laserparts>
+  <!-- ek_attachments.xml -->
+  <entityname.ek_suppressor>Supressor Tático</entityname.ek_suppressor>
+  <entitydescription.ek_suppressor>Supressor de barulho para armas de fogo, equipe e remova usando o fabricador.</entitydescription.ek_suppressor>
+  <entityname.ek_lightattachment>Lanterna Tática</entityname.ek_lightattachment>
+  <entitydescription.ek_lightattachment>Dispositivo de iluminação tático, equipe e remova usando o fabricador.</entitydescription.ek_lightattachment>
+  <entityname.ek_laserattachment>Mira Laser</entityname.ek_laserattachment>
+  <entitydescription.ek_laserattachment>Dispositivo de laser encaixável, equipe e remova usando o fabricador.</entitydescription.ek_laserattachment>
+  <entityname.ek_sonarattachment>Sonar Tático</entityname.ek_sonarattachment>
+  <entitydescription.ek_sonarattachment>Dispositivo de detecção e rastreamento de sonar, equipe e remova usando o fabricador.</entitydescription.ek_sonarattachment>
+  <entityname.ek_piperifle_flashlight>Rifle de Cano (Lanterna)</entityname.ek_piperifle_flashlight>
+  <entitydescription.ek_piperifle_flashlight>Uma arma improvisada criada a partir de peças de máquinas. Longe de ser perfeita mas dá pro gasto.</entitydescription.ek_piperifle_flashlight>
+  <entityname.ek_piperifle_laser>Rifle de Cano (Laser)</entityname.ek_piperifle_laser>
+  <entitydescription.ek_piperifle_laser>Uma arma improvisada criada a partir de peças de máquinas. Longe de ser perfeita mas dá pro gasto.</entitydescription.ek_piperifle_laser>
+  <entityname.ek_piperifle_suppressed>Rifle de Cano (Supressor)</entityname.ek_piperifle_suppressed>
+  <entitydescription.ek_piperifle_suppressed>Uma arma improvisada criada a partir de peças de máquinas. Longe de ser perfeita mas dá pro gasto.</entitydescription.ek_piperifle_suppressed>
+  <entityname.ek_piperifle_suppressed_flashlight>Rifle de Cano (Supressor,Lanterna)</entityname.ek_piperifle_suppressed_flashlight>
+  <entitydescription.ek_piperifle_suppressed_flashlight>Uma arma improvisada criada a partir de peças de máquinas. Longe de ser perfeita mas dá pro gasto.</entitydescription.ek_piperifle_suppressed_flashlight>
+  <entityname.ek_piperifle_suppressed_laser>Rifle de Cano (Supressor,Laser)</entityname.ek_piperifle_suppressed_laser>
+  <entitydescription.ek_piperifle_suppressed_laser>Uma arma improvisada criada a partir de peças de máquinas. Longe de ser perfeita mas dá pro gasto.</entitydescription.ek_piperifle_suppressed_laser>
+  <entityname.ek_handgun_flashlight>Pistola (Lanterna)</entityname.ek_handgun_flashlight>
+  <entitydescription.ek_handgun_flashlight>Pistola compacta de 9mm concedida a forças de segurança de postos avançados e embarcações, embora destinada ao uso contra tripulantes hostis, pode servir como forma de defesa contra os horrores que espreitam nas profundezas.</entitydescription.ek_handgun_flashlight>
+  <entityname.ek_handgun_laser>Pistola (Laser)</entityname.ek_handgun_laser>
+  <entitydescription.ek_handgun_laser>Pistola compacta de 9mm concedida a forças de segurança de postos avançados e embarcações, embora destinada ao uso contra tripulantes hostis, pode servir como forma de defesa contra os horrores que espreitam nas profundezas.</entitydescription.ek_handgun_laser>
+  <entityname.ek_handgun_suppressed>Pistola (Supressor)</entityname.ek_handgun_suppressed>
+  <entitydescription.ek_handgun_suppressed>Pistola compacta de 9mm concedida a forças de segurança de postos avançados e embarcações, embora destinada ao uso contra tripulantes hostis, pode servir como forma de defesa contra os horrores que espreitam nas profundezas.</entitydescription.ek_handgun_suppressed>
+  <entityname.ek_handgun_suppressed_flashlight>Pistola (Supressor,Lanterna)</entityname.ek_handgun_suppressed_flashlight>
+  <entitydescription.ek_handgun_suppressed_flashlight>Pistola compacta de 9mm concedida a forças de segurança de postos avançados e embarcações, embora destinada ao uso contra tripulantes hostis, pode servir como forma de defesa contra os horrores que espreitam nas profundezas.</entitydescription.ek_handgun_suppressed_flashlight>
+  <entityname.ek_handgun_suppressed_laser>Pistola (Supressor,Laser)</entityname.ek_handgun_suppressed_laser>
+  <entitydescription.ek_handgun_suppressed_laser>Pistola compacta de 9mm concedida a forças de segurança de postos avançados e embarcações, embora destinada ao uso contra tripulantes hostis, pode servir como forma de defesa contra os horrores que espreitam nas profundezas.</entitydescription.ek_handgun_suppressed_laser>
+  <entityname.ek_mini_smg_flashlight>SMG Compacta (Lanterna)</entityname.ek_mini_smg_flashlight>
+  <entitydescription.ek_mini_smg_flashlight>Uma SMG 10mm simples para a defesa de embarcações e postos avançados, é imprecisa e gasta muita munição, mas dá conta do trabalho.</entitydescription.ek_mini_smg_flashlight>
+  <entityname.ek_mini_smg_laser>SMG Compacta (Laser)</entityname.ek_mini_smg_laser>
+  <entitydescription.ek_mini_smg_laser>Uma SMG 10mm simples para a defesa de embarcações e postos avançados, é imprecisa e gasta muita munição, mas dá conta do trabalho.</entitydescription.ek_mini_smg_laser>
+  <entityname.ek_mini_smg_suppressed>SMG Compacta (Supressor)</entityname.ek_mini_smg_suppressed>
+  <entitydescription.ek_mini_smg_suppressed>Uma SMG 10mm simples para a defesa de embarcações e postos avançados, é imprecisa e gasta muita munição, mas dá conta do trabalho.</entitydescription.ek_mini_smg_suppressed>
+  <entityname.ek_mini_smg_suppressed_flashlight>SMG Compacta (Supressor,Lanterna)</entityname.ek_mini_smg_suppressed_flashlight>
+  <entitydescription.ek_mini_smg_suppressed_flashlight>Uma SMG 10mm simples para a defesa de embarcações e postos avançados, é imprecisa e gasta muita munição, mas dá conta do trabalho.</entitydescription.ek_mini_smg_suppressed_flashlight>
+  <entityname.ek_mini_smg_suppressed_laser>SMG Compacta (Supressor,Laser)</entityname.ek_mini_smg_suppressed_laser>
+  <entitydescription.ek_mini_smg_suppressed_laser>Uma SMG 10mm simples para a defesa de embarcações e postos avançados, é imprecisa e gasta muita munição, mas dá conta do trabalho.</entitydescription.ek_mini_smg_suppressed_laser>
+  <entityname.ek_smg_flashlight>SMG de Fuzileiro (Lanterna)</entityname.ek_smg_flashlight>
+  <entitydescription.ek_smg_flashlight>Uma SMG militar avançada desenvolvida pela Coalizão Europa para a defesa de embarcações e postos avançados. Dispara projéteis 5.7x28mm supercavitantes autopropulsados, bastante eficaz para eliminar criaturas sem blindagem.</entitydescription.ek_smg_flashlight>
+  <entityname.ek_smg_laser>SMG de Fuzileiro (Laser)</entityname.ek_smg_laser>
+  <entitydescription.ek_smg_laser>Uma SMG militar avançada desenvolvida pela Coalizão Europa para a defesa de embarcações e postos avançados. Dispara projéteis 5.7x28mm supercavitantes autopropulsados, bastante eficaz para eliminar criaturas sem blindagem.</entitydescription.ek_smg_laser>
+  <entityname.ek_smg_suppressed>SMG de Fuzileiro (Supressor)</entityname.ek_smg_suppressed>
+  <entitydescription.ek_smg_suppressed>Uma SMG militar avançada desenvolvida pela Coalizão Europa para a defesa de embarcações e postos avançados. Dispara projéteis 5.7x28mm supercavitantes autopropulsados, bastante eficaz para eliminar criaturas sem blindagem.</entitydescription.ek_smg_suppressed>
+  <entityname.ek_smg_suppressed_flashlight>SMG de Fuzileiro (Supressor,Lanterna)</entityname.ek_smg_suppressed_flashlight>
+  <entitydescription.ek_smg_suppressed_flashlight>Uma SMG militar avançada desenvolvida pela Coalizão Europa para a defesa de embarcações e postos avançados. Dispara projéteis 5.7x28mm supercavitantes autopropulsados, bastante eficaz para eliminar criaturas sem blindagem.</entitydescription.ek_smg_suppressed_flashlight>
+  <entityname.ek_smg_suppressed_laser>SMG de Fuzileiro (Supressor,Laser)</entityname.ek_smg_suppressed_laser>
+  <entitydescription.ek_smg_suppressed_laser>Uma SMG militar avançada desenvolvida pela Coalizão Europa para a defesa de embarcações e postos avançados. Dispara projéteis 5.7x28mm supercavitantes autopropulsados, bastante eficaz para eliminar criaturas sem blindagem.</entitydescription.ek_smg_suppressed_laser>
+  <entityname.ek_tactical_shotgun_flashlight>Escopeta Tática de Fuzileiro (Lanterna)</entityname.ek_tactical_shotgun_flashlight>
+  <entitydescription.ek_tactical_shotgun_flashlight>Escopeta com carregador de tubo padrão da Coalizão. Capacidade de 5 balas.</entitydescription.ek_tactical_shotgun_flashlight>
+  <entityname.ek_tactical_shotgun_laser>Escopeta Tática de Fuzileiro (Laser)</entityname.ek_tactical_shotgun_laser>
+  <entitydescription.ek_tactical_shotgun_laser>Escopeta com carregador de tubo padrão da Coalizão. Capacidade de 5 balas.</entitydescription.ek_tactical_shotgun_laser>
+  <entityname.ek_tazer_flashlight>Pistola Taser (Lanterna)</entityname.ek_tazer_flashlight>
+  <entitydescription.ek_tazer_flashlight>Fornece um choque elétrico que é comparável a um bastão de choque, mas sem seu alcance um tanto precário.</entitydescription.ek_tazer_flashlight>
+  <entityname.ek_drumlmg_flashlight>Metralhadora Leve (Lanterna)</entityname.ek_drumlmg_flashlight>
+  <entitydescription.ek_drumlmg_flashlight>Arma automática pesada usando cartuchos 5.56x45mm com capacidade de fogo incessante suprema.</entitydescription.ek_drumlmg_flashlight>
+  <entityname.ek_dartgun_flashlight>Arma de Dardos (Lanterna)</entityname.ek_dartgun_flashlight>
+  <entitydescription.ek_dartgun_flashlight>Uma arma de dardos compacta operada a gás para administrar medicamentos e outros produtos químicos.</entitydescription.ek_dartgun_flashlight>
+  <entityname.ek_gausspistol_flashlight>Pistola de Gauss (Lanterna)</entityname.ek_gausspistol_flashlight>
+  <entitydescription.ek_gausspistol_flashlight>Arma de fulgurium, utiliza bobinas magnéticas para impulsionar projéteis de metal em grandes velocidades. Precisa ser carregada periodicamente.</entitydescription.ek_gausspistol_flashlight>
+  <entityname.ek_gausspistol_laser>Pistola de Gauss (Laser)</entityname.ek_gausspistol_laser>
+  <entitydescription.ek_gausspistol_laser>Arma de fulgurium, utiliza bobinas magnéticas para impulsionar projéteis de metal em grandes velocidades. Precisa ser carregada periodicamente.</entitydescription.ek_gausspistol_laser>
+  <entityname.ek_gaussrifle_flashlight>Rifle de Gauss (Lanterna)</entityname.ek_gaussrifle_flashlight>
+  <entitydescription.ek_gaussrifle_flashlight>Arma de fulgurium, utiliza bobinas magnéticas para impulsionar projéteis de metal em grandes velocidades. Precisa ser carregada periodicamente.</entitydescription.ek_gaussrifle_flashlight>
+  <entityname.ek_gaussrifle_laser>Rifle de Gauss (Laser)</entityname.ek_gaussrifle_laser>
+  <entitydescription.ek_gaussrifle_laser>Arma de fulgurium, utiliza bobinas magnéticas para impulsionar projéteis de metal em grandes velocidades. Precisa ser carregada periodicamente.</entitydescription.ek_gaussrifle_laser>
+  <entityname.ek_torpedorifle_sonarscope>Canhão de Torpedo (Sonar)</entityname.ek_torpedorifle_sonarscope>
+  <entitydescription.ek_torpedorifle_sonarscope>Um canhão sem recuo submarino avançado, desenvolvido para o uso contra embarcações ou monstros extremamente blindados, dispara microtorpedos altamente explosivos com alcance considerável.</entitydescription.ek_torpedorifle_sonarscope>
+  <entityname.ek_rocketlauncher_sonarscope>Lança-Foguetes Marinho (Sonar)</entityname.ek_rocketlauncher_sonarscope>
+  <entitydescription.ek_rocketlauncher_sonarscope>Lançador marinho pesado apoiado pelo ombro desenvolvido para operações especiais da Coalizão, muito pesado e de alto custo, mas faz um grande estrago.</entitydescription.ek_rocketlauncher_sonarscope>
+  <entityname.ek_beast_ssl_flashlight>SSL 'Besta' (Lanterna)</entityname.ek_beast_ssl_flashlight>
+  <entitydescription.ek_beast_ssl_flashlight>Um canhão automático experimental calibre 30mm-FC, para poder de fogo massivo portátil.</entitydescription.ek_beast_ssl_flashlight>
+  <entityname.ek_battlerifle_flashlight>Fuzil de Combate (Lanterna)</entityname.ek_battlerifle_flashlight>
+  <entitydescription.ek_battlerifle_flashlight>A arma longa padrão em 5.56x45mm da Coalizão Europa, tão precisa quanto confiável. Um favorito das empresas de mercenários em toda Europa.</entitydescription.ek_battlerifle_flashlight>
+  <entityname.ek_battlerifle_laser>Fuzil de Combate (Laser)</entityname.ek_battlerifle_laser>
+  <entitydescription.ek_battlerifle_laser>A arma longa padrão em 5.56x45mm da Coalizão Europa, tão precisa quanto confiável. Um favorito das empresas de mercenários em toda Europa.</entitydescription.ek_battlerifle_laser>
+  <entityname.ek_battlerifle_suppressed>Fuzil de Combate (Supressor)</entityname.ek_battlerifle_suppressed>
+  <entitydescription.ek_battlerifle_suppressed>A arma longa padrão em 5.56x45mm da Coalizão Europa, tão precisa quanto confiável. Um favorito das empresas de mercenários em toda Europa.</entitydescription.ek_battlerifle_suppressed>
+  <entityname.ek_battlerifle_suppressed_flashlight>Fuzil de Combate (Supressor,Lanterna)</entityname.ek_battlerifle_suppressed_flashlight>
+  <entitydescription.ek_battlerifle_suppressed_flashlight>A arma longa padrão em 5.56x45mm da Coalizão Europa, tão precisa quanto confiável. Um favorito das empresas de mercenários em toda Europa.</entitydescription.ek_battlerifle_suppressed_flashlight>
+  <entityname.ek_battlerifle_suppressed_laser>Fuzil de Combate (Supressor,Laser)</entityname.ek_battlerifle_suppressed_laser>
+  <entitydescription.ek_battlerifle_suppressed_laser>A arma longa padrão em 5.56x45mm da Coalizão Europa, tão precisa quanto confiável. Um favorito das empresas de mercenários em toda Europa.</entitydescription.ek_battlerifle_suppressed_laser>
+  <entityname.ek_laserpistol_flashlight>Pistola Laser (Lanterna)</entityname.ek_laserpistol_flashlight>
+  <entitydescription.ek_laserpistol_flashlight>Arma a laser de pulso amplificado. Projetada para funcionar com células de bateria especializadas e de alta potência.</entitydescription.ek_laserpistol_flashlight>
+  <entityname.ek_laserpistol_laser>Pistola Laser (Laser)</entityname.ek_laserpistol_laser>
+  <entitydescription.ek_laserpistol_laser>Arma a laser de pulso amplificado. Projetada para funcionar com células de bateria especializadas e de alta potência.</entitydescription.ek_laserpistol_laser>
+  <entityname.ek_laserrifle_flashlight>Rifle Laser (Lanterna)</entityname.ek_laserrifle_flashlight>
+  <entitydescription.ek_laserrifle_flashlight>Arma a laser de pulso amplificado. Projetada para funcionar com células de bateria especializadas e de alta potência.</entitydescription.ek_laserrifle_flashlight>
+  <entityname.ek_laserrifle_laser>Rifle Laser (Laser)</entityname.ek_laserrifle_laser>
+  <entitydescription.ek_laserrifle_laser>Arma a laser de pulso amplificado. Projetada para funcionar com células de bateria especializadas e de alta potência.</entitydescription.ek_laserrifle_laser>
+  <entityname.ek_revolver_flashlight>Revólver .357 (Lanterna)</entityname.ek_revolver_flashlight>
+  <entitydescription.ek_revolver_flashlight>Revólver de ação simples de padrão vintage, um favorito entre os capitães com um toque dramático.</entitydescription.ek_revolver_flashlight>
+  <entityname.ek_revolver_laser>Revólver .357 (Laser)</entityname.ek_revolver_laser>
+  <entitydescription.ek_revolver_laser>Revólver de ação simples de padrão vintage, um favorito entre os capitães com um toque dramático.</entitydescription.ek_revolver_laser>
+  <entityname.ek_revolver_suppressed>Revólver .357 (Supressor)</entityname.ek_revolver_suppressed>
+  <entitydescription.ek_revolver_suppressed>Revólver de ação simples de padrão vintage, um favorito entre os capitães com um toque dramático.</entitydescription.ek_revolver_suppressed>
+  <entityname.ek_revolver_suppressed_flashlight>Revólver .357 (Supressor,Lanterna)</entityname.ek_revolver_suppressed_flashlight>
+  <entitydescription.ek_revolver_suppressed_flashlight>Revólver de ação simples de padrão vintage, um favorito entre os capitães com um toque dramático.</entitydescription.ek_revolver_suppressed_flashlight>
+  <entityname.ek_revolver_suppressed_laser>Revólver .357 (Supressor,Laser)</entityname.ek_revolver_suppressed_laser>
+  <entitydescription.ek_revolver_suppressed_laser>Revólver de ação simples de padrão vintage, um favorito entre os capitães com um toque dramático.</entitydescription.ek_revolver_suppressed_laser>
+  <!-- ek_chaingunammo.xml -->
+  <entityname.ek_chaingunammo_large>Caixa de Munição de Metralhadora Rotativa Estendida</entityname.ek_chaingunammo_large>
+  <entitydescription.ek_chaingunammo_large></entitydescription.ek_chaingunammo_large>
+  <entityname.ek_chaingunammophysicorium_large>Caixa de Munição de Metralhadora Rotativa Fisicorium Estendida</entityname.ek_chaingunammophysicorium_large>
+  <entitydescription.ek_chaingunammophysicorium_large></entitydescription.ek_chaingunammophysicorium_large>
+  <entityname.ek_chaingunammoexplosive>Caixa de Munição de Metralhadora Rotativa Explosiva</entityname.ek_chaingunammoexplosive>
+  <entitydescription.ek_chaingunammoexplosive></entitydescription.ek_chaingunammoexplosive>
+  <entityname.ek_chaingunammoexplosive_large>Caixa de Munição de Metralhadora Rotativa Explosiva Estendida</entityname.ek_chaingunammoexplosive_large>
+  <entitydescription.ek_chaingunammoexplosive_large></entitydescription.ek_chaingunammoexplosive_large>
+  <entityname.ek_chaingunboltexplosive>Projétil Explosivo de Metralhadora Rotativa</entityname.ek_chaingunboltexplosive>
+  <entitydescription.ek_chaingunboltexplosive></entitydescription.ek_chaingunboltexplosive>
+  <entityname.ek_chaingunammoheavy>Caixa de Munição de Metralhadora Rotativa HEFC</entityname.ek_chaingunammoheavy>
+  <entitydescription.ek_chaingunammoheavy>Munição para a metralhadora rotativa. Cartuchos "High Explosive Fragmentation Composite" com imenso poder de fogo contra alvos com ou sem blindagem.</entitydescription.ek_chaingunammoheavy>
+  <entityname.ek_chaingunammoheavy_large>Caixa de Munição de Metralhadora Rotativa HEFC Estendida</entityname.ek_chaingunammoheavy_large>
+  <entitydescription.ek_chaingunammoheavy_large>Munição para a metralhadora rotativa. Cartuchos "High Explosive Fragmentation Composite" com imenso poder de fogo contra alvos com ou sem blindagem.</entitydescription.ek_chaingunammoheavy_large>
+  <entityname.ek_chaingunboltheavy>Projétil HEFC de Metralhadora Rotativa</entityname.ek_chaingunboltheavy>
+  <entitydescription.ek_chaingunboltheavy></entitydescription.ek_chaingunboltheavy>
+  <!-- ek_coilgunammo.xml -->
+  <entityname.ek_coilgunammo_large>Caixa de Munição de Canhão Eletromagnético Estendida</entityname.ek_coilgunammo_large>
+  <entitydescription.ek_coilgunammo_large></entitydescription.ek_coilgunammo_large>
+  <entityname.ek_coilgunammoexplosive_large>Caixa de Munição Explosiva Estendida</entityname.ek_coilgunammoexplosive_large>
+  <entitydescription.ek_coilgunammoexplosive_large></entitydescription.ek_coilgunammoexplosive_large>
+  <entityname.ek_coilgunammopiercing_large>Caixa de Munição Perfurante Estendida</entityname.ek_coilgunammopiercing_large>
+  <entitydescription.ek_coilgunammopiercing_large></entitydescription.ek_coilgunammopiercing_large>
+  <entityname.ek_coilgunammophysicorium_large>Caixa de Munição de Fisicorium Estendida</entityname.ek_coilgunammophysicorium_large>
+  <entitydescription.ek_coilgunammophysicorium_large></entitydescription.ek_coilgunammophysicorium_large>
+  <entityname.ek_coilgunammoboxheavy>Caixa de Munição HEFC</entityname.ek_coilgunammoboxheavy>
+  <entitydescription.ek_coilgunammoboxheavy>Munição para o canhão eletromagnético. Cartuchos "High Explosive Fragmentation Composite" com imenso poder de fogo contra alvos com ou sem blindagem.</entitydescription.ek_coilgunammoboxheavy>
+  <entityname.ek_coilgunammoheavy_large>Caixa de Munição HEFC Estendida</entityname.ek_coilgunammoheavy_large>
+  <entitydescription.ek_coilgunammoheavy_large>Munição para o canhão eletromagnético. Cartuchos "High Explosive Fragmentation Composite" com imenso poder de fogo contra alvos com ou sem blindagem.</entitydescription.ek_coilgunammoheavy_large>
+  <entityname.ek_coilgunboltheavy>Projétil HEFC de Canhão Eletromagnético</entityname.ek_coilgunboltheavy>
+  <entitydescription.ek_coilgunboltheavy></entitydescription.ek_coilgunboltheavy>
+  <entityname.ek_coilgunammohybrid>Caixa de Munição Híbrida</entityname.ek_coilgunammohybrid>
+  <entitydescription.ek_coilgunammohybrid>Munição para o canhão eletromagnético. Conversão de calibre pesado, cartuchos de canhão eletromagnético híbridos com poder de fogo aprimorado.</entitydescription.ek_coilgunammohybrid>
+  <entityname.ek_coilgunammohybrid_large>Caixa de Munição Híbrida Estendida</entityname.ek_coilgunammohybrid_large>
+  <entitydescription.ek_coilgunammohybrid_large></entitydescription.ek_coilgunammohybrid_large>
+  <entityname.ek_coilgunbolt_hybrid>Projétil de Canhão Eletromagnético Híbrido</entityname.ek_coilgunbolt_hybrid>
+  <entitydescription.ek_coilgunbolt_hybrid></entitydescription.ek_coilgunbolt_hybrid>
+  <entityname.ek_coilgunammohybridflak>Caixa de Munição Híbrida Flak</entityname.ek_coilgunammohybridflak>
+  <entitydescription.ek_coilgunammohybridflak>Munição para o canhão eletromagnético. Conversão de calibre pesado, cartuchos de canhão eletromagnético híbridos equipados com ogivas flak.</entitydescription.ek_coilgunammohybridflak>
+  <entityname.ek_coilgunammohybridflak_large>Caixa de Munição Híbrida Flak Estendida</entityname.ek_coilgunammohybridflak_large>
+  <entitydescription.ek_coilgunammohybridflak_large></entitydescription.ek_coilgunammohybridflak_large>
+  <entityname.ek_coilgunbolt_hybridflak>Projétil de Canhão Eletromagnético Híbrido Flak</entityname.ek_coilgunbolt_hybridflak>
+  <entitydescription.ek_coilgunbolt_hybridflak></entitydescription.ek_coilgunbolt_hybridflak>
+  <entityname.ek_coilgunammohybridflak_smartfuse>Caixa de Munição Híbrida Flak de Proximidade</entityname.ek_coilgunammohybridflak_smartfuse>
+  <entitydescription.ek_coilgunammohybridflak_smartfuse>Munição para o canhão eletromagnético. Conversão de calibre pesado, cartuchos de canhão eletromagnético híbridos equipados com ogivas flak.</entitydescription.ek_coilgunammohybridflak_smartfuse>
+  <entityname.ek_coilgunammohybridflak_smartfuse_large>Caixa de Munição Híbrida Flak de Proximidade Estendida</entityname.ek_coilgunammohybridflak_smartfuse_large>
+  <entitydescription.ek_coilgunammohybridflak_smartfuse_large></entitydescription.ek_coilgunammohybridflak_smartfuse_large>
+  <entityname.ek_coilgunbolt_hybridflak_smartfuse>Projétil de Canhão Elétrico Híbrido Flak de Proximidade</entityname.ek_coilgunbolt_hybridflak_smartfuse>
+  <entitydescription.ek_coilgunbolt_hybridflak_smartfuse></entitydescription.ek_coilgunbolt_hybridflak_smartfuse>
+  <entityname.ek_coilgunammohybridap>Caixa de Munição Híbrida Perfurante</entityname.ek_coilgunammohybridap>
+  <entitydescription.ek_coilgunammohybridap>Munição para o canhão eletromagnético. Conversão de calibre pesado, cartuchos de canhão eletromagnético híbridos com carga-focada anti-blindagem.</entitydescription.ek_coilgunammohybridap>
+  <entityname.ek_coilgunammohybridap_large>Caixa de Munição Híbrida Perfurante Estendida</entityname.ek_coilgunammohybridap_large>
+  <entitydescription.ek_coilgunammohybridap_large></entitydescription.ek_coilgunammohybridap_large>
+  <entityname.ek_coilgunbolt_hybridap>Projétil de Canhão Eletromagnético Híbrido Perfurante</entityname.ek_coilgunbolt_hybridap>
+  <entitydescription.ek_coilgunbolt_hybridap></entitydescription.ek_coilgunbolt_hybridap>
+  <entityname.ek_coilgunammo_laser>Emissor de Laser para Canhão Eletromagnético</entityname.ek_coilgunammo_laser>
+  <entitydescription.ek_coilgunammo_laser>Conversão de hardware de canhão eletromagnético experimental. Grande matriz de laser que extrai diretamente de uma fonte de alimentação de Canhão Eletromagnético padrão da Coalizão.</entitydescription.ek_coilgunammo_laser>
+  <entityname.ek_coilgunbolt_laser>Projétil de Laser de Canhão Eletromagnético</entityname.ek_coilgunbolt_laser>
+  <entitydescription.ek_coilgunbolt_laser></entitydescription.ek_coilgunbolt_laser>
+  <entityname.ek_coilgunammohybridtoxin>Caixa de Munição Híbrida Tóxica</entityname.ek_coilgunammohybridtoxin>
+  <entitydescription.ek_coilgunammohybridtoxin>Munição para o canhão eletromagnético. Conversão de calibre pesado, cartuchos de canhão eletromagnético híbridos com poder de fogo aprimorado.</entitydescription.ek_coilgunammohybridtoxin>
+  <entityname.ek_coilgunbolt_hybridtoxin>Projétil Híbrido Tóxico</entityname.ek_coilgunbolt_hybridtoxin>
+  <entitydescription.ek_coilgunbolt_hybridtoxin></entitydescription.ek_coilgunbolt_hybridtoxin>
+  <entityname.ek_coilgunammohybridflare>Caixa de Munição Híbrida Sinalizadora</entityname.ek_coilgunammohybridflare>
+  <entitydescription.ek_coilgunammohybridflare>Uma solução para o disparo de sinalizadores na forma do canhão eletromagnético. Quando disparada, cria um sinal brilhante para avistar inimigos.</entitydescription.ek_coilgunammohybridflare>
+  <entityname.ek_coilgunbolt_hybridflare>Projétil Híbrido Sinalizador</entityname.ek_coilgunbolt_hybridflare>
+  <entitydescription.ek_coilgunbolt_hybridflare></entitydescription.ek_coilgunbolt_hybridflare>
+  <entityname.ek_coilgunammohighvelocity>Caixa de Munição de Alta-Velocidade</entityname.ek_coilgunammohighvelocity>
+  <entitydescription.ek_coilgunammohighvelocity>Munição para o canhão eletromagnético. Cartucho de alta-velocidade compostos.</entitydescription.ek_coilgunammohighvelocity>
+  <entityname.ek_coilgunammohighvelocity_large>Caixa de Munição de Alta-Velocidade Estendida</entityname.ek_coilgunammohighvelocity_large>
+  <entitydescription.ek_coilgunammohighvelocity_large></entitydescription.ek_coilgunammohighvelocity_large>
+  <entityname.ek_coilgunbolthighvelocity>Projétil de Canhão Eletromagnético de Alta-Velocidade</entityname.ek_coilgunbolthighvelocity>
+  <entitydescription.ek_coilgunbolthighvelocity></entitydescription.ek_coilgunbolthighvelocity>
+  <!-- ek_drones.xml -->
+  <entityname.ek_drone_beacon>Sinalizador de Agrupamento para Drones</entityname.ek_drone_beacon>
+  <entitydescription.ek_drone_beacon>Sinalizador de rádio de curto alcance. Drones tentarão seguir o sinalizador quando disponíveis e atacarão ameaças próximas. Flutua se largado na água.</entitydescription.ek_drone_beacon>
+  <entityname.ek_drone_beaconattack>Sinalizador de Ataque para Drones</entityname.ek_drone_beaconattack>
+  <entitydescription.ek_drone_beaconattack>Sinalizador de rádio de curto alcance. Drones irão priorizar atacar alvos próximos. Flutua se largado na água.</entitydescription.ek_drone_beaconattack>
+  <entityname.ek_gundrone>Drone Sentinela Mk-I</entityname.ek_gundrone>
+  <entitydescription.ek_gundrone>Um drone de combate experimental projetado para ser pequeno o suficiente para acompanhar times de mergulho em operações de longa distância.</entitydescription.ek_gundrone>
+  <entityname.ek_gundrone_wreck>Destroços de Drone Sentinela</entityname.ek_gundrone_wreck>
+  <entitydescription.ek_gundrone_wreck>Um drone sentinela destruído, pode ser reciclado.</entitydescription.ek_gundrone_wreck>
+  <entityname.ek_walkerdrone>Drone de Bordo Mk-I</entityname.ek_walkerdrone>
+  <entitydescription.ek_walkerdrone>Um drone de combate experimental projetado para a defesa de postos avançados e invasão de submarinos.</entitydescription.ek_walkerdrone>
+  <entityname.ek_walkerdrone_turret>Torreta do Drone de Bordo Mk-I</entityname.ek_walkerdrone_turret>
+  <entityname.ek_walkerdrone_wreck>Destroços de Drone de Bordo</entityname.ek_walkerdrone_wreck>
+  <entitydescription.ek_walkerdrone_wreck>Um drone de bordo destruído, pode ser reciclado.</entitydescription.ek_walkerdrone_wreck>
+  <entityname.ek_drone_multitool>Ferramenta para Manuntenção de Drones</entityname.ek_drone_multitool>
+  <entitydescription.ek_drone_multitool>Aparelho de rádio de curto alcance usado para desligar drones remotos.</entitydescription.ek_drone_multitool>
+  <!-- ek_pulselaserammo.xml -->
+  <entityname.ek_pulselaserplasmaammobox>Caixa de Plasma de Laser de Pulso</entityname.ek_pulselaserplasmaammobox>
+  <entitydescription.ek_pulselaserplasmaammobox>Um cartucho de laser de pulso que gera raios helicoidais de plasma. Resulta em maior dano, mas reduz seu alcance efetivo.</entitydescription.ek_pulselaserplasmaammobox>
+  <entityname.ek_pulselaserplasmabolt>Projétil de Pulso de Plasma</entityname.ek_pulselaserplasmabolt>
+  <entitydescription.ek_pulselaserplasmabolt></entitydescription.ek_pulselaserplasmabolt>
+  <!-- ek_shells.xml -->
+  <entityname.ek_depthcharge_container>Projétil de Carga de Profundidade</entityname.ek_depthcharge_container>
+  <entitydescription.ek_depthcharge_container>Um contêiner resistente à pressão projetado para ser compatível com a maioria dos sistemas capazes de lançar bombas de profundidade. Útil para descartar materiais perigosos de forma segura ou entregar suprimentos de forma rápida para o exterior do submarino.</entitydescription.ek_depthcharge_container>
+  <entityname.ek_railshell_decoy>Projétil Chamariz de Canhão Elétrico</entityname.ek_railshell_decoy>
+  <entitydescription.ek_railshell_decoy>Uma plataforma experimental de chamariz e contramedida, o projétil desacelera até parar depois de viajar por volta de 100m e emite um sinal de sonar capaz de distrair a maioria dos monstros.</entitydescription.ek_railshell_decoy>
+  <entityname.ek_railshell_nucleardecoy>Projétil Chamariz Nuclear de Canhão Elétrico</entityname.ek_railshell_nucleardecoy>
+  <entitydescription.ek_railshell_nucleardecoy>Uma plataforma experimental de chamariz e contramedida, o projétil desacelera até parar depois de viajar por volta de 100m e emite um sinal de sonar capaz de distrair a maioria dos monstros.</entitydescription.ek_railshell_nucleardecoy>
+  <entityname.ek_railshell_flechette>Projétil de Flechette</entityname.ek_railshell_flechette>
+  <entitydescription.ek_railshell_flechette>Um projétil de canhão elétrico especializado que, quando disparado, explode em múltiplos projéteis perfurantes.</entitydescription.ek_railshell_flechette>
+  <entityname.ek_railgun_flechette_pellet>ek_railgun_flechette_pellet</entityname.ek_railgun_flechette_pellet>
+  <entitydescription.ek_railgun_flechette_pellet></entitydescription.ek_railgun_flechette_pellet>
+  <entityname.ek_railgun_halfshells>Meio-Projéteis de Canhão Elétrico</entityname.ek_railgun_halfshells>
+  <entitydescription.ek_railgun_halfshells>Dois projéteis de canhão elétrico com metade do tamanho. Embora com poder de fogo reduzido comparado a um projétil normal, são úteis para reduzir gastos e economizar espaço.</entitydescription.ek_railgun_halfshells>
+  <entityname.ek_railgun_halfshell>Meio-Projétil de Canhão Elétrico</entityname.ek_railgun_halfshell>
+  <entitydescription.ek_railgun_halfshell>Um projétil de canhão elétrico com metade do tamanho. Embora com poder de fogo reduzido comparado a um projétil normal, é útil para reduzir gastos e economizar espaço.</entitydescription.ek_railgun_halfshell>
+  <entityname.ek_railgun_halfshells_piercingslug>Meio-Projéteis Perfurantes</entityname.ek_railgun_halfshells_piercingslug>
+  <entitydescription.ek_railgun_halfshells_piercingslug>Dois projéteis perfurantes com metade do tamanho. Embora com poder de fogo reduzido comparado a um projétil normal, são úteis para reduzir gastos e economizar espaço.</entitydescription.ek_railgun_halfshells_piercingslug>
+  <entityname.ek_railgun_halfshell_piercingslug>Meio-Projétil Perfurante</entityname.ek_railgun_halfshell_piercingslug>
+  <entitydescription.ek_railgun_halfshell_piercingslug>Um projétil perfurante com metade do tamanho. Embora com poder de fogo reduzido comparado a um projétil normal, é útil para reduzir gastos e economizar espaço.</entitydescription.ek_railgun_halfshell_piercingslug>
+  <entityname.ek_railgun_halfshells_alien>Meio-Projéteis de Fisicorium</entityname.ek_railgun_halfshells_alien>
+  <entitydescription.ek_railgun_halfshells_alien>Dois projéteis de fisicorium com metade do tamanho. Embora com poder de fogo reduzido comparado a um projétil normal, são úteis para reduzir gastos e economizar espaço.</entitydescription.ek_railgun_halfshells_alien>
+  <entityname.ek_railgun_halfshell_alien>Meio-Projétil de Fisicorium</entityname.ek_railgun_halfshell_alien>
+  <entitydescription.ek_railgun_halfshell_alien>Um projétil de fisicorium com metade do tamanho. Embora com poder de fogo reduzido comparado a um projétil normal, é útil para reduzir gastos e economizar espaço.</entitydescription.ek_railgun_halfshell_alien>
+  <entityname.ek_railshell_homing>Projétil Teleguiado de Canhão Elétrico</entityname.ek_railshell_homing>
+  <entitydescription.ek_railshell_homing>Um projétil de canhão elétrico altamente avançado com rastreamento termal e sistema de orientação, irá automaticamente seguir formas de vida hostil em sua proximidade ao disparar.</entitydescription.ek_railshell_homing>
+  <entityname.ek_railshell_nuclearhoming>Projétil Nuclear Teleguiado</entityname.ek_railshell_nuclearhoming>
+  <entitydescription.ek_railshell_nuclearhoming>Um projétil de canhão elétrico altamente avançado com rastreamento termal e sistema de orientação, irá automaticamente seguir formas de vida hostil em sua proximidade ao disparar.</entitydescription.ek_railshell_nuclearhoming>
+  <entityname.ek_railshell_flak>Projétil Flak</entityname.ek_railshell_flak>
+  <entitydescription.ek_railshell_flak>Um projétil de canhão elétrico projetado com múltiplas cargas explosivas voltadas para o exterior que detonam em sequência. Produz ondas de choque capazes de danificar órgãos internos de criaturas pequenas e desorientar criaturas maiores de forma significante.</entitydescription.ek_railshell_flak>
+  <entityname.ek_railshell_flak_smartfuse>Projétil Flak de Proximidade</entityname.ek_railshell_flak_smartfuse>
+  <entitydescription.ek_railshell_flak_smartfuse>Um projétil de canhão elétrico projetado com múltiplas cargas explosivas voltadas para o exterior que detonam ao chegar perto do alvo. Produz ondas de choque capazes de danificar órgãos internos de criaturas pequenas e desorientar criaturas maiores de forma significante.</entitydescription.ek_railshell_flak_smartfuse>
+  <entityname.ek_railshell_piercingslug>Projétil Perfurante</entityname.ek_railshell_piercingslug>
+  <entitydescription.ek_railshell_piercingslug>Um projétil de canhão elétrico com núcleo anti-blindagem cinético.</entitydescription.ek_railshell_piercingslug>
+  <entityname.ek_railshell_armorpiercing>Projétil Explosivo Perfurante</entityname.ek_railshell_armorpiercing>
+  <entitydescription.ek_railshell_armorpiercing>Um projétil de canhão elétrico equipado com uma ogiva de carga-focada anti-blindagem.</entitydescription.ek_railshell_armorpiercing>
+  <entityname.ek_railshell_fusion_effect>ek_railshell_fusion_effect</entityname.ek_railshell_fusion_effect>
+  <entitydescription.ek_railshell_fusion_effect></entitydescription.ek_railshell_fusion_effect>
+  <entityname.ek_railshell_fusion>Projétil de Fissão</entityname.ek_railshell_fusion>
+  <entitydescription.ek_railshell_fusion>Projétil de canhão elétrico carregado com uma ogiva de fissão intensificada devastadora. O pavio de atraso detona após aproximadamente 70m de distância.</entitydescription.ek_railshell_fusion>
+  <entityname.ek_railshell_fusion_smartfuse>Projétil de Fissão de Proximidade</entityname.ek_railshell_fusion_smartfuse>
+  <entitydescription.ek_railshell_fusion_smartfuse>Projétil de canhão elétrico carregado com uma ogiva de fissão intensificada devastadora. O pavio de proximidade detona quando um inimigo é detectado.</entitydescription.ek_railshell_fusion_smartfuse>
+  <entityname.ek_depthcharge_radiation>Bomba de Profundidade Radioativa</entityname.ek_depthcharge_radiation>
+  <entitydescription.ek_depthcharge_radiation>Bomba de profundidade experimental carregada com um emissor de radiação de alta potência. Uso desse aparelho em combate é considerado um crime de guerra dentro das leis da Coalizão.</entitydescription.ek_depthcharge_radiation>
+  <entityname.ek_railgun_flare_effect>ek_railgun_flare_effect</entityname.ek_railgun_flare_effect>
+  <entitydescription.ek_railgun_flare_effect></entitydescription.ek_railgun_flare_effect>
+  <entityname.ek_railshell_flare>Projétil Sinalizador</entityname.ek_railshell_flare>
+  <entitydescription.ek_railshell_flare>Uma solução para o disparo de sinalizadores na forma de um projétil de canhão elétrico. Quando disparado, cria uma coluna curta de sinalizadores.</entitydescription.ek_railshell_flare>
+  <entityname.ek_railshell_incendiary>Projétil Incendiário</entityname.ek_railshell_incendiary>
+  <entitydescription.ek_railshell_incendiary>Um projétil de canhão elétrico equipado com uma ogiva incendiária.</entitydescription.ek_railshell_incendiary>
+  <entityname.ek_railshell_highvelocity>Projétil de Alta-Velocidade</entityname.ek_railshell_highvelocity>
+  <entitydescription.ek_railshell_highvelocity>Um projétil de canhão elétrico com uma trajetória plana e de longa distância.</entitydescription.ek_railshell_highvelocity>
+  <entityname.ek_depthcharge_cyanide_cloud>ek_depthcharge_cyanide_cloud</entityname.ek_depthcharge_cyanide_cloud>
+  <entitydescription.ek_depthcharge_cyanide_cloud></entitydescription.ek_depthcharge_cyanide_cloud>
+  <entityname.ek_depthcharge_cyanide>Bomba de Profundidade de Cianeto</entityname.ek_depthcharge_cyanide>
+  <entitydescription.ek_depthcharge_cyanide>Bomba de profundidade equipada com uma carga de cianeto, é dispersada nos arredores logo após ser disparada.</entitydescription.ek_depthcharge_cyanide>
+  <entityname.ek_depthcharge_paralyzant_cloud>ek_depthcharge_paralyzant_cloud</entityname.ek_depthcharge_paralyzant_cloud>
+  <entitydescription.ek_depthcharge_paralyzant_cloud></entitydescription.ek_depthcharge_paralyzant_cloud>
+  <entityname.ek_depthcharge_paralyzant>Bomba de Profundidade Paralisante</entityname.ek_depthcharge_paralyzant>
+  <entitydescription.ek_depthcharge_paralyzant>Bomba de profundidade equipada com uma carga de paralisante, é dispersada nos arredores logo após ser disparada.</entitydescription.ek_depthcharge_paralyzant>
+  <entityname.ek_depthcharge_radiotoxin_cloud>ek_depthcharge_radiotoxin_cloud</entityname.ek_depthcharge_radiotoxin_cloud>
+  <entitydescription.ek_depthcharge_radiotoxin_cloud></entitydescription.ek_depthcharge_radiotoxin_cloud>
+  <entityname.ek_depthcharge_radiotoxin>Bomba de Profundidade de Radiotoxina</entityname.ek_depthcharge_radiotoxin>
+  <entitydescription.ek_depthcharge_radiotoxin>Bomba de profundidade equipada com uma carga de radiotoxina, é dispersada nos arredores logo após ser disparada.</entitydescription.ek_depthcharge_radiotoxin>
+  <entityname.ek_depthcharge_flare>Sinalizador de Profundidade</entityname.ek_depthcharge_flare>
+  <entitydescription.ek_depthcharge_flare>Uma solução para o disparo de sinalizadores na forma de uma bomba de profundidade. Quando disparado, cria uma coluna curta de sinalizadores.</entitydescription.ek_depthcharge_flare>
+  <entityname.ek_depthcharge_chaff_cloud>ek_depthcharge_chaff_cloud</entityname.ek_depthcharge_chaff_cloud>
+  <entitydescription.ek_depthcharge_chaff_cloud></entitydescription.ek_depthcharge_chaff_cloud>
+  <entityname.ek_depthcharge_chaff_aitarget>ek_depthcharge_chaff_aitarget</entityname.ek_depthcharge_chaff_aitarget>
+  <entitydescription.ek_depthcharge_chaff_aitarget></entitydescription.ek_depthcharge_chaff_aitarget>
+  <entityname.ek_depthcharge_chaff>Bomba Chaff de Profundidade</entityname.ek_depthcharge_chaff>
+  <entitydescription.ek_depthcharge_chaff>Contramedida de sonar passiva na forma de bomba de profundidade. Dispersa uma nuvem de material para atrapalhar sonares em uma grande área.</entitydescription.ek_depthcharge_chaff>
+  <entityname.ek_railshell_chaff>Projétil Chaff de Canhão Elétrico</entityname.ek_railshell_chaff>
+  <entitydescription.ek_railshell_chaff>Contramedida de sonar passiva na forma de projétil de canhão elétrico. Dispersa uma nuvem de material para atrapalhar sonares em uma grande área.</entitydescription.ek_railshell_chaff>
+  <!-- ek_weapons.xml -->
+  <entityname.ek_piperifle>Rifle de Cano</entityname.ek_piperifle>
+  <entitydescription.ek_piperifle>Uma arma improvisada criada a partir de peças de máquinas. Longe de ser perfeita mas dá pro gasto.</entitydescription.ek_piperifle>
+  <entityname.ek_piperound>Bala de Rifle de Cano</entityname.ek_piperound>
+  <entitydescription.ek_piperound></entitydescription.ek_piperound>
+  <entityname.ek_piperound_alien>Bala de Fisicorium de Rifle de Cano</entityname.ek_piperound_alien>
+  <entitydescription.ek_piperound_alien></entitydescription.ek_piperound_alien>
+  <entityname.ek_revolver_flare>Sinalizador de Revólver</entityname.ek_revolver_flare>
+  <entitydescription.ek_revolver_flare>Sinalizador de Revólver a prova d'água que ilumina uma pequena área.</entitydescription.ek_revolver_flare>
+  <entityname.ek_handgun>Pistola</entityname.ek_handgun>
+  <entitydescription.ek_handgun>Pistola compacta de 9mm concedida a forças de segurança de postos avançados e embarcações, embora destinada ao uso contra tripulantes hostis, pode servir como forma de defesa contra os horrores que espreitam nas profundezas.</entitydescription.ek_handgun>
+  <entityname.ek_handgun_mag>Carregador 9mm</entityname.ek_handgun_mag>
+  <entitydescription.ek_handgun_mag></entitydescription.ek_handgun_mag>
+  <entityname.ek_handgun_magextended>Carregador 9mm (Alta-Capacidade)</entityname.ek_handgun_magextended>
+  <entitydescription.ek_handgun_magextended></entitydescription.ek_handgun_magextended>
+  <entityname.ek_handgun_round>Bala 9mm</entityname.ek_handgun_round>
+  <entitydescription.ek_handgun_round></entitydescription.ek_handgun_round>
+  <entityname.ek_handgun_alienmag>Carregador 9mm (Fisicorium)</entityname.ek_handgun_alienmag>
+  <entitydescription.ek_handgun_alienmag></entitydescription.ek_handgun_alienmag>
+  <entityname.ek_handgun_alienround>Bala de Fisicorium 9mm</entityname.ek_handgun_alienround>
+  <entitydescription.ek_handgun_alienround></entitydescription.ek_handgun_alienround>
+  <entityname.ek_handgun_riot_mag>Carregador 9mm (Não-Letal)</entityname.ek_handgun_riot_mag>
+  <entitydescription.ek_handgun_riot_mag></entitydescription.ek_handgun_riot_mag>
+  <entityname.ek_handgun_riot_round>Bala de Borracha 9mm</entityname.ek_handgun_riot_round>
+  <entitydescription.ek_handgun_riot_round></entitydescription.ek_handgun_riot_round>
+  <entityname.ek_smg>SMG de Fuzileiro</entityname.ek_smg>
+  <entitydescription.ek_smg>Uma SMG militar avançada desenvolvida pela Coalizão Europa para a defesa de embarcações e postos avançados. Dispara projéteis 5.7x28mm supercavitantes autopropulsados, bastante eficaz para eliminar criaturas sem blindagem.</entitydescription.ek_smg>
+  <entityname.ek_smg_mag>Carregador 5.7x28mm</entityname.ek_smg_mag>
+  <entitydescription.ek_smg_mag>5.7x28mm Coalizão</entitydescription.ek_smg_mag>
+  <entityname.ek_smg_round>Bala 5.7x28mm</entityname.ek_smg_round>
+  <entitydescription.ek_smg_round></entitydescription.ek_smg_round>
+  <entityname.ek_smg_alienmag>Carregador 5.7x28mm (Fisicorium)</entityname.ek_smg_alienmag>
+  <entitydescription.ek_smg_alienmag>5.7x28mm Coalizão</entitydescription.ek_smg_alienmag>
+  <entityname.ek_smg_alienround>Bala de Fisicorium 5.7x28mm</entityname.ek_smg_alienround>
+  <entitydescription.ek_smg_alienround></entitydescription.ek_smg_alienround>
+  <entityname.ek_smg_riot_mag>Carregador 5.7x28mm (Não-Letal)</entityname.ek_smg_riot_mag>
+  <entitydescription.ek_smg_riot_mag>5.7x28mm Coalizão</entitydescription.ek_smg_riot_mag>
+  <entityname.ek_smg_riot_round>Bala de Borracha 5.7x28mm</entityname.ek_smg_riot_round>
+  <entitydescription.ek_smg_riot_round></entitydescription.ek_smg_riot_round>
+  <entityname.ek_riotshield>Escudo Balístico Leve</entityname.ek_riotshield>
+  <entitydescription.ek_riotshield>Um escudo leve para tumultos, construído com uma resina balística transparente.</entitydescription.ek_riotshield>
+  <entityname.ek_torpedorifle>Canhão de Torpedo</entityname.ek_torpedorifle>
+  <entitydescription.ek_torpedorifle>Um canhão sem recuo submarino avançado, desenvolvido para o uso contra embarcações ou monstros extremamente blindados, dispara microtorpedos altamente explosivos com alcance considerável.</entitydescription.ek_torpedorifle>
+  <entityname.ek_torpedorifle_round_slug>Microtorpedo (Balote)</entityname.ek_torpedorifle_round_slug>
+  <entitydescription.ek_torpedorifle_round_slug>Balote cinético miniaturizado, sem rastreamento, lançado de um canhão de torpedo.</entitydescription.ek_torpedorifle_round_slug>
+  <entityname.ek_torpedorifle_round>Microtorpedo (Alto Explosivo)</entityname.ek_torpedorifle_round>
+  <entitydescription.ek_torpedorifle_round>Ogiva miniaturizada, sem rastreamento, lançada de um canhão de torpedo.</entitydescription.ek_torpedorifle_round>
+  <entityname.ek_torpedorifle_round_shortfuse>Microtorpedo (Pavio Curto)</entityname.ek_torpedorifle_round_shortfuse>
+  <entitydescription.ek_torpedorifle_round_shortfuse>Ogiva com pavio de atraso miniaturizada, sem rastreamento, lançada de um canhão de torpedo.</entitydescription.ek_torpedorifle_round_shortfuse>
+  <entityname.ek_torpedorifle_round_tazer>Microtorpedo (Pulso Elétrico)</entityname.ek_torpedorifle_round_tazer>
+  <entitydescription.ek_torpedorifle_round_tazer>Sonda de atordoamento miniaturizada, lançada de um canhão de torpedo.</entitydescription.ek_torpedorifle_round_tazer>
+  <entityname.ek_torpedorifle_round_alien>Microtorpedo (Fisicorium)</entityname.ek_torpedorifle_round_alien>
+  <entitydescription.ek_torpedorifle_round_alien>Ogiva experimental de alto rendimento, lançada de um canhão de torpedo.</entitydescription.ek_torpedorifle_round_alien>
+  <entityname.ek_flaregun>Pistola Sinalizadora</entityname.ek_flaregun>
+  <entitydescription.ek_flaregun>Uma pistola de sinalização de emergência destinada a sinalizar embarcações. Dispara sinalizadores para fornecer iluminação.</entitydescription.ek_flaregun>
+  <entityname.ek_flare_round>Cartucho de Sinalizador</entityname.ek_flare_round>
+  <entitydescription.ek_flare_round>Sinalizador à prova d'água que ilumina uma grande área. Disparado de uma pistola sinalizadora.</entitydescription.ek_flare_round>
+  <entityname.ek_flareshell_effect>ek_flareshell_effect</entityname.ek_flareshell_effect>
+  <entitydescription.ek_flareshell_effect></entitydescription.ek_flareshell_effect>
+  <entityname.ek_impact_mine>Mina de Impacto</entityname.ek_impact_mine>
+  <entitydescription.ek_impact_mine>Mina flutuante acionada por contato. Sensores ativam 3 segundos após a implantação.</entitydescription.ek_impact_mine>
+  <entityname.ek_proximity_mine>Mina de Proximidade</entityname.ek_proximity_mine>
+  <entitydescription.ek_proximity_mine>Mina flutuante acionada por movimento. Sensores ativam 3 segundos após a implantação.</entitydescription.ek_proximity_mine>
+  <entityname.ek_double_shotgun>Escopeta Cano-Duplo</entityname.ek_double_shotgun>
+  <entitydescription.ek_double_shotgun>Escopa cano-duplo curta. Favorita dos guardas da Coalizão como uma arma barata, mas eficaz.</entitydescription.ek_double_shotgun>
+  <entityname.ek_tactical_shotgun>Escopeta Tática de Fuzileiro</entityname.ek_tactical_shotgun>
+  <entitydescription.ek_tactical_shotgun>Escopeta com carregador de tubo padrão da Coalizão. Capacidade de 5 balas.</entitydescription.ek_tactical_shotgun>
+  <entityname.ek_shotgun_shell>Cartucho Calibre 12</entityname.ek_shotgun_shell>
+  <entitydescription.ek_shotgun_shell>Munição chumbo grosso para escopetas.</entitydescription.ek_shotgun_shell>
+  <entityname.ek_shotgun_beanbag>Cartucho Calibre 12 Não-Letal</entityname.ek_shotgun_beanbag>
+  <entitydescription.ek_shotgun_beanbag>Munição de "feijão" para escopetas. Apenas um projétil, não tão letal.</entitydescription.ek_shotgun_beanbag>
+  <entityname.ek_shotgun_slug>Cartucho Calibre 12 (Balote)</entityname.ek_shotgun_slug>
+  <entitydescription.ek_shotgun_slug>Munição de balote para escopetas. Apenas um projétil, efetivo contra alvos blindados.</entitydescription.ek_shotgun_slug>
+  <entityname.ek_shotgun_hollowpoint>Cartucho Calibre 12 (Ponta Oca)</entityname.ek_shotgun_hollowpoint>
+  <entitydescription.ek_shotgun_hollowpoint>Munição de balote com ponta oca para escopetas. Apenas um projétil, efetivo contra alvos sem blindagem.</entitydescription.ek_shotgun_hollowpoint>
+  <entityname.ek_shotgun_alien_slug>Cartucho Calibre 12 (Fisicorium)</entityname.ek_shotgun_alien_slug>
+  <entitydescription.ek_shotgun_alien_slug>Munição de balote de fisicorium para escopetas. Apenas um projétil, efetivo contra alvos blindados.</entitydescription.ek_shotgun_alien_slug>
+  <entityname.ek_shotgun_grenade>Granada Calibre 12</entityname.ek_shotgun_grenade>
+  <entitydescription.ek_shotgun_grenade>Munição de granada para escopetas. Granadas de fogo-direto que explodem no impacto.</entitydescription.ek_shotgun_grenade>
+  <entityname.ek_shotgun_flechette>Cartucho Calibre 12 (Flechette)</entityname.ek_shotgun_flechette>
+  <entitydescription.ek_shotgun_flechette>Munição flechette para escopetas. Atira dardos metálicos com boa precisão, efetivo contra alvos sem blindagem.</entitydescription.ek_shotgun_flechette>
+  <entityname.ek_tazer>Pistola Taser</entityname.ek_tazer>
+  <entitydescription.ek_tazer>Fornece um choque elétrico que é comparável a um bastão de choque, mas sem seu alcance um tanto precário.</entitydescription.ek_tazer>
+  <entityname.ek_tazer_mag>Cartucho Taser</entityname.ek_tazer_mag>
+  <entitydescription.ek_tazer_mag></entitydescription.ek_tazer_mag>
+  <entityname.ek_tazer_round>Taser</entityname.ek_tazer_round>
+  <entitydescription.ek_tazer_round></entitydescription.ek_tazer_round>
+  <entityname.ek_flamethrower>Lança-Chamas</entityname.ek_flamethrower>
+  <entitydescription.ek_flamethrower>Impulsiona um fluxo de combustível incendiado para produzir uma intensa bola de fogo capaz de cobrir uma grande área.</entitydescription.ek_flamethrower>
+  <entityname.ek_flamer_fuel>Tanque de Combustível de Lança-Chamas</entityname.ek_flamer_fuel>
+  <entitydescription.ek_flamer_fuel></entitydescription.ek_flamer_fuel>
+  <entityname.ek_flame_fuel>Gota de Combustível</entityname.ek_flame_fuel>
+  <entitydescription.ek_flame_fuel></entitydescription.ek_flame_fuel>
+  <entityname.ek_flamer_incendium>Tanque de Incendium de Lança-Chamas</entityname.ek_flamer_incendium>
+  <entitydescription.ek_flamer_incendium></entitydescription.ek_flamer_incendium>
+  <entityname.ek_flame_incendium>Gota de Combustível de Incendium</entityname.ek_flame_incendium>
+  <entitydescription.ek_flame_incendium></entitydescription.ek_flame_incendium>
+  <entityname.ek_alienrifle>Rifle Alienígena</entityname.ek_alienrifle>
+  <entitydescription.ek_alienrifle></entitydescription.ek_alienrifle>
+  <entityname.ek_alienrifle_mag>Célula de Rifle Alienígena</entityname.ek_alienrifle_mag>
+  <entitydescription.ek_alienrifle_mag></entitydescription.ek_alienrifle_mag>
+  <entityname.ek_alienrifle_round>Bala de Rifle Alienígena</entityname.ek_alienrifle_round>
+  <entitydescription.ek_alienrifle_round></entitydescription.ek_alienrifle_round>
+  <entityname.ek_petrobomb>Coquetel Molotov</entityname.ek_petrobomb>
+  <entitydescription.ek_petrobomb>Uma garrafa de etanol com um pavio de bandagem encharcada, um dispositivo incendiário grosseiro, mas eficaz.</entitydescription.ek_petrobomb>
+  <entityname.ek_micro_dartgun>Arma de Dardos Compacta</entityname.ek_micro_dartgun>
+  <entitydescription.ek_micro_dartgun>Uma pequena arma de dardos operada à mão frequentemente usada por assassinos renegados.</entitydescription.ek_micro_dartgun>
+  <entityname.ek_dartgun>Arma de Dardos</entityname.ek_dartgun>
+  <entitydescription.ek_dartgun>Uma arma de dardos compacta operada a gás para administrar medicamentos e outros produtos químicos.</entitydescription.ek_dartgun>
+  <entityname.ek_dart_hemostat>Dardo (Hemostato)</entityname.ek_dart_hemostat>
+  <entitydescription.ek_dart_hemostat></entitydescription.ek_dart_hemostat>
+  <entityname.ek_dart_stabilozine>Dardo (Estabilozina)</entityname.ek_dart_stabilozine>
+  <entitydescription.ek_dart_stabilozine></entitydescription.ek_dart_stabilozine>
+  <entityname.ek_dart_morphine>Dardo (Morfina)</entityname.ek_dart_morphine>
+  <entitydescription.ek_dart_morphine></entitydescription.ek_dart_morphine>
+  <entityname.ek_dart_fentanyl>Dardo (Fentanil)</entityname.ek_dart_fentanyl>
+  <entitydescription.ek_dart_fentanyl></entitydescription.ek_dart_fentanyl>
+  <entityname.ek_dart_deusizine>Dardo (Deusizina)</entityname.ek_dart_deusizine>
+  <entitydescription.ek_dart_deusizine></entitydescription.ek_dart_deusizine>
+  <entityname.ek_dart_calyxanide>Dardo (Calyxanida)</entityname.ek_dart_calyxanide>
+  <entitydescription.ek_dart_calyxanide></entitydescription.ek_dart_calyxanide>
+  <entityname.ek_dart_haloperidol>Dardo (Haloperidol)</entityname.ek_dart_haloperidol>
+  <entitydescription.ek_dart_haloperidol></entitydescription.ek_dart_haloperidol>
+  <entityname.ek_dart_oxygenite>Dardo (Oxigenita)</entityname.ek_dart_oxygenite>
+  <entitydescription.ek_dart_oxygenite></entitydescription.ek_dart_oxygenite>
+  <entityname.ek_dart_steroids>Dardo (Esteróides)</entityname.ek_dart_steroids>
+  <entitydescription.ek_dart_steroids></entitydescription.ek_dart_steroids>
+  <entityname.ek_dart_antiparalysis>Dardo (Anti-Paralisante)</entityname.ek_dart_antiparalysis>
+  <entitydescription.ek_dart_antiparalysis></entitydescription.ek_dart_antiparalysis>
+  <entityname.ek_dart_ethanol>Dardo (Etanol)</entityname.ek_dart_ethanol>
+  <entitydescription.ek_dart_ethanol></entitydescription.ek_dart_ethanol>
+  <entityname.ek_dart_chloralhydrate>Dardo (Sedativo)</entityname.ek_dart_chloralhydrate>
+  <entitydescription.ek_dart_chloralhydrate></entitydescription.ek_dart_chloralhydrate>
+  <entityname.ek_dart_deliriumine>Dardo (Psicose)</entityname.ek_dart_deliriumine>
+  <entitydescription.ek_dart_deliriumine></entitydescription.ek_dart_deliriumine>
+  <entityname.ek_dart_acid>Dardo (Ácido)</entityname.ek_dart_acid>
+  <entitydescription.ek_dart_acid></entitydescription.ek_dart_acid>
+  <entityname.ek_dart_cyanide>Dardo (Cianeto)</entityname.ek_dart_cyanide>
+  <entitydescription.ek_dart_cyanide></entitydescription.ek_dart_cyanide>
+  <entityname.ek_dart_radiotoxin>Dardo (Radiotoxina)</entityname.ek_dart_radiotoxin>
+  <entitydescription.ek_dart_radiotoxin></entitydescription.ek_dart_radiotoxin>
+  <entityname.ek_dart_morbusine>Dardo (Morbusina)</entityname.ek_dart_morbusine>
+  <entitydescription.ek_dart_morbusine></entitydescription.ek_dart_morbusine>
+  <entityname.ek_dart_sufforin>Dardo (Sofrina)</entityname.ek_dart_sufforin>
+  <entitydescription.ek_dart_sufforin></entitydescription.ek_dart_sufforin>
+  <entityname.ek_dart_paralyzant>Dardo (Paralisante)</entityname.ek_dart_paralyzant>
+  <entitydescription.ek_dart_paralyzant></entitydescription.ek_dart_paralyzant>
+  <entityname.ek_dart_raptorbane>Dardo (Mata-Raptor)</entityname.ek_dart_raptorbane>
+  <entitydescription.ek_dart_raptorbane></entitydescription.ek_dart_raptorbane>
+  <entityname.ek_dart_explosive>Dardo (Explosivo)</entityname.ek_dart_explosive>
+  <entitydescription.ek_dart_explosive>Um dispositivo macabro que injeta uma sonda explosiva em miniatura que detona após um atraso moderado.</entitydescription.ek_dart_explosive>
+  <entityname.ek_mini_smg>SMG Compacta</entityname.ek_mini_smg>
+  <entitydescription.ek_mini_smg>Uma SMG 10mm simples para a defesa de embarcações e postos avançados, é imprecisa e gasta muita munição, mas dá conta do trabalho.</entitydescription.ek_mini_smg>
+  <entityname.ek_mini_smg_mag>Carregador 10mm-Auto</entityname.ek_mini_smg_mag>
+  <entitydescription.ek_mini_smg_mag></entitydescription.ek_mini_smg_mag>
+  <entityname.ek_mini_smg_round>Bala 10mm-Auto</entityname.ek_mini_smg_round>
+  <entitydescription.ek_mini_smg_round></entitydescription.ek_mini_smg_round>
+  <entityname.ek_mini_smg_alienmag>Carregador 10mm-Auto (Fisicorium)</entityname.ek_mini_smg_alienmag>
+  <entitydescription.ek_mini_smg_alienmag></entitydescription.ek_mini_smg_alienmag>
+  <entityname.ek_mini_smg_alienround>Bala de Fisicorium 10mm-Auto</entityname.ek_mini_smg_alienround>
+  <entitydescription.ek_mini_smg_alienround></entitydescription.ek_mini_smg_alienround>
+  <entityname.ek_mini_smg_riot_mag>Carregador 10mm-Auto (Não-Letal)</entityname.ek_mini_smg_riot_mag>
+  <entitydescription.ek_mini_smg_riot_mag></entitydescription.ek_mini_smg_riot_mag>
+  <entityname.ek_mini_smg_riot_round>Bala de Borracha 10mm-Auto</entityname.ek_mini_smg_riot_round>
+  <entitydescription.ek_mini_smg_riot_round></entitydescription.ek_mini_smg_riot_round>
+  <entityname.ek_rocketlauncher>Lança-Foguetes Marinho</entityname.ek_rocketlauncher>
+  <entitydescription.ek_rocketlauncher>Lançador marinho pesado apoiado pelo ombro desenvolvido para operações especiais da Coalizão, muito pesado e de alto custo, mas faz um grande estrago.</entitydescription.ek_rocketlauncher>
+  <entityname.ek_rocketammo_explosive>Foguete (Alto Explosivo)</entityname.ek_rocketammo_explosive>
+  <entitydescription.ek_rocketammo_explosive>Foguete sem rastreamento com uma ogiva explosiva substancial.</entitydescription.ek_rocketammo_explosive>
+  <entityname.ek_rocketammo_shortfuse>Foguete (Pavio Curto)</entityname.ek_rocketammo_shortfuse>
+  <entitydescription.ek_rocketammo_shortfuse>Foguete com pavio de atraso com uma ogiva explosiva substancial.</entitydescription.ek_rocketammo_shortfuse>
+  <entityname.ek_rocketammo_armorpiercing>Foguete (Anti-Blindagem)</entityname.ek_rocketammo_armorpiercing>
+  <entitydescription.ek_rocketammo_armorpiercing>Foguete sem rastreamento com uma ogiva anti-blindagem.</entitydescription.ek_rocketammo_armorpiercing>
+  <entityname.ek_rocketammo_alien>Foguete (Fisicorium)</entityname.ek_rocketammo_alien>
+  <entitydescription.ek_rocketammo_alien>Foguete sem rastreamento com uma ogiva experimental de alto rendimento.</entitydescription.ek_rocketammo_alien>
+  <entityname.ek_gausspistol>Pistola de Gauss</entityname.ek_gausspistol>
+  <entitydescription.ek_gausspistol>Arma de fulgurium, utiliza bobinas magnéticas para impulsionar projéteis de metal em grandes velocidades. Precisa ser carregada periodicamente.</entitydescription.ek_gausspistol>
+  <entityname.ek_gausspistol_mag>Carregador de Pistola de Gauss</entityname.ek_gausspistol_mag>
+  <entitydescription.ek_gausspistol_mag></entitydescription.ek_gausspistol_mag>
+  <entityname.ek_gausspistol_round>Projétil de Pistola de Gauss</entityname.ek_gausspistol_round>
+  <entitydescription.ek_gausspistol_round></entitydescription.ek_gausspistol_round>
+  <entityname.ek_gaussrifle>Rifle de Gauss</entityname.ek_gaussrifle>
+  <entitydescription.ek_gaussrifle>Arma de fulgurium, utiliza bobinas magnéticas para impulsionar projéteis de metal em grandes velocidades. Precisa ser carregada periodicamente.</entitydescription.ek_gaussrifle>
+  <entityname.ek_gaussrifle_mag>Carregador de Rifle de Gauss</entityname.ek_gaussrifle_mag>
+  <entitydescription.ek_gaussrifle_mag></entitydescription.ek_gaussrifle_mag>
+  <entityname.ek_gaussrifle_round>Projétil de Rifle de Gauss</entityname.ek_gaussrifle_round>
+  <entitydescription.ek_gaussrifle_round></entitydescription.ek_gaussrifle_round>
+  <entityname.ek_drumlmg>Metralhadora Leve</entityname.ek_drumlmg>
+  <entitydescription.ek_drumlmg>Arma automática pesada usando cartuchos 5.56x45mm com capacidade de fogo incessante suprema.</entitydescription.ek_drumlmg>
+  <entityname.ek_drumlmg_mag>Tambor de 5.56x45mm</entityname.ek_drumlmg_mag>
+  <entitydescription.ek_drumlmg_mag>5.56x45mm Coalizão</entitydescription.ek_drumlmg_mag>
+  <entityname.ek_drumlmg_round>Bala 5.56x45mm</entityname.ek_drumlmg_round>
+  <entitydescription.ek_drumlmg_round></entitydescription.ek_drumlmg_round>
+  <entityname.ek_drumlmg_alienmag>Tambor de 5.56x45mm (Fisicorium)</entityname.ek_drumlmg_alienmag>
+  <entitydescription.ek_drumlmg_alienmag></entitydescription.ek_drumlmg_alienmag>
+  <entityname.ek_drumlmg_alienround>Bala de Fisicorium 5.56x45mm</entityname.ek_drumlmg_alienround>
+  <entitydescription.ek_drumlmg_alienround></entitydescription.ek_drumlmg_alienround>
+  <entityname.ek_smokegrenade>Granada de Fumaça</entityname.ek_smokegrenade>
+  <entitydescription.ek_smokegrenade></entitydescription.ek_smokegrenade>
+  <entityname.ek_battlerifle>Fuzil de Combate</entityname.ek_battlerifle>
+  <entitydescription.ek_battlerifle>A arma longa padrão em 5.56x45mm da Coalizão Europa, tão precisa quanto confiável. Um favorito das empresas de mercenários em toda Europa.</entitydescription.ek_battlerifle>
+  <entityname.ek_battlerifle_mag>Carregador 5.56x45mm</entityname.ek_battlerifle_mag>
+  <entitydescription.ek_battlerifle_mag>5.56x45mm Coalizão</entitydescription.ek_battlerifle_mag>
+  <entityname.ek_battlerifle_alien_mag>Carregador 5.56x45mm (Fisicorium)</entityname.ek_battlerifle_alien_mag>
+  <entitydescription.ek_battlerifle_alien_mag>5.56x45mm Coalizão</entitydescription.ek_battlerifle_alien_mag>
+  <entityname.ek_battlerifle_riot_mag>Carregador 5.56x45mm (Não-Letal)</entityname.ek_battlerifle_riot_mag>
+  <entitydescription.ek_battlerifle_riot_mag>5.56x45mm Coalizão</entitydescription.ek_battlerifle_riot_mag>
+  <entityname.ek_beast_ssl>SSL 'Besta'</entityname.ek_beast_ssl>
+  <entitydescription.ek_beast_ssl>Um canhão automático experimental calibre 30mm-FC, para poder de fogo massivo portátil.</entitydescription.ek_beast_ssl>
+  <entityname.ek_ssl_magazine>Clipe de Munição 30mm-FC</entityname.ek_ssl_magazine>
+  <entitydescription.ek_ssl_magazine>Clipe de munição 30mm composite SSL. Usado pelo SSL portátil experimental 'Besta'.</entitydescription.ek_ssl_magazine>
+  <entityname.ek_ssl_round>Bala 30mm-FC</entityname.ek_ssl_round>
+  <entitydescription.ek_ssl_round></entitydescription.ek_ssl_round>
+  <entityname.ek_ied>Explosivo Improvisado</entityname.ek_ied>
+  <entitydescription.ek_ied>Uma bomba de estilhaços improvisada construída com componentes eletrônicos e um tanque de combustível.</entitydescription.ek_ied>
+  <entityname.ek_breachingcharge>Carga de Demolição</entityname.ek_breachingcharge>
+  <entitydescription.ek_breachingcharge>Dispositivo de carga-focada leve com uma pequena área de efeito. Útil para demolir portas e seções de casco pequenas.</entitydescription.ek_breachingcharge>
+  <entityname.ek_breachingcharge_effect>ek_breachingcharge_effect</entityname.ek_breachingcharge_effect>
+  <entitydescription.ek_breachingcharge_effect></entitydescription.ek_breachingcharge_effect>
+  <entityname.ek_explosivecharge_uex>Pacote Explosivo (UEX)</entityname.ek_explosivecharge_uex>
+  <entitydescription.ek_explosivecharge_uex>Pacote explosivo controlado por temporizador.</entitydescription.ek_explosivecharge_uex>
+  <entityname.ek_explosivecharge_c4>Pacote Explosivo (C-4)</entityname.ek_explosivecharge_c4>
+  <entitydescription.ek_explosivecharge_c4>Pacote explosivo controlado por temporizador.</entitydescription.ek_explosivecharge_c4>
+  <entityname.ek_thermiteblock>Termite</entityname.ek_thermiteblock>
+  <entitydescription.ek_thermiteblock></entitydescription.ek_thermiteblock>
+  <entityname.ek_thermite_effect>ek_thermite_effect</entityname.ek_thermite_effect>
+  <entitydescription.ek_thermite_effect></entitydescription.ek_thermite_effect>
+  <entityname.ek_thermitegrenade>Granada de Termite</entityname.ek_thermitegrenade>
+  <entitydescription.ek_thermitegrenade></entitydescription.ek_thermitegrenade>
+  <entityname.ek_explosivecharge_thermite>Pacote Explosivo (Termite)</entityname.ek_explosivecharge_thermite>
+  <entitydescription.ek_explosivecharge_thermite>Pacote explosivo controlado por temporizador.</entitydescription.ek_explosivecharge_thermite>
+  <entityname.ek_thermite_effect_large>ek_thermite_effect_large</entityname.ek_thermite_effect_large>
+  <entitydescription.ek_thermite_effect_large></entitydescription.ek_thermite_effect_large>
+  <entityname.ek_laserpistol>Pistola Laser</entityname.ek_laserpistol>
+  <entitydescription.ek_laserpistol>Arma a laser de pulso amplificado. Projetada para funcionar com células de bateria especializadas e de alta potência.</entitydescription.ek_laserpistol>
+  <entityname.ek_laserpistol_mag>Célula de Pistola Laser</entityname.ek_laserpistol_mag>
+  <entitydescription.ek_laserpistol_mag></entitydescription.ek_laserpistol_mag>
+  <entityname.ek_laserpistol_round>Projétil de Pistola Laser</entityname.ek_laserpistol_round>
+  <entitydescription.ek_laserpistol_round></entitydescription.ek_laserpistol_round>
+  <entityname.ek_laserrifle>Rifle Laser</entityname.ek_laserrifle>
+  <entitydescription.ek_laserrifle>Arma a laser de pulso amplificado. Projetada para funcionar com células de bateria especializadas e de alta potência.</entitydescription.ek_laserrifle>
+  <entityname.ek_laserrifle_mag>Célula de Rifle Laser</entityname.ek_laserrifle_mag>
+  <entitydescription.ek_laserrifle_mag></entitydescription.ek_laserrifle_mag>
+  <entityname.ek_laserrifle_round>Projétil de Rifle Laser</entityname.ek_laserrifle_round>
+  <entitydescription.ek_laserrifle_round></entitydescription.ek_laserrifle_round>
+  <entityname.ek_hypergolic_fuel>Tanque Hipergólico de Lança-Chamas</entityname.ek_hypergolic_fuel>
+  <entitydescription.ek_hypergolic_fuel>Mistura de combustível auto-oxidante instável, utilizável debaixo d'água.</entitydescription.ek_hypergolic_fuel>
+  <entityname.ek_flame_hypergolic>Gota Hipergólica</entityname.ek_flame_hypergolic>
+  <entitydescription.ek_flame_hypergolic></entitydescription.ek_flame_hypergolic>
+  <entityname.ek_dynamite>Dinamite</entityname.ek_dynamite>
+  <entitydescription.ek_dynamite>Um dos primeiros compostos explosivos "estáveis", feito de produtos químicos orgânicos comuns. (Use enquanto estiver segurando para acender)</entitydescription.ek_dynamite>
+  <entityname.ek_explosivecharge_dynamite>Pacote Explosivo (Dinamite)</entityname.ek_explosivecharge_dynamite>
+  <entitydescription.ek_explosivecharge_dynamite>Pacote explosivo controlado por temporizador.</entitydescription.ek_explosivecharge_dynamite>
+  <entityname.ek_revolver>Revólver .357</entityname.ek_revolver>
+  <entitydescription.ek_revolver>Revólver de ação simples de padrão vintage, um favorito entre os capitães com um toque dramático.</entitydescription.ek_revolver>
+  <entityname.ek_revolverammo>Bala de Revólver .357</entityname.ek_revolverammo>
+  <entitydescription.ek_revolverammo></entitydescription.ek_revolverammo>
+  <entityname.ek_revolverspeedloader>Carregador de Balas .357</entityname.ek_revolverspeedloader>
+  <entitydescription.ek_revolverspeedloader></entitydescription.ek_revolverspeedloader>
+  <entityname.ek_revolverammo_physicorium>Bala de Revólver .357 (Fisicorium)</entityname.ek_revolverammo_physicorium>
+  <entitydescription.ek_revolverammo_physicorium></entitydescription.ek_revolverammo_physicorium>
+  <entityname.ek_revolverspeedloader_physicorium>Carregador de Balas .357 (Fisicorium)</entityname.ek_revolverspeedloader_physicorium>
+  <entitydescription.ek_revolverspeedloader_physicorium></entitydescription.ek_revolverspeedloader_physicorium>
+  <entityname.ek_revolverammo_riot>Bala de Revólver .357 (Não-Letal)</entityname.ek_revolverammo_riot>
+  <entitydescription.ek_revolverammo_riot></entitydescription.ek_revolverammo_riot>
+  <entityname.ek_revolverspeedloader_riot>Carregador de Balas .357 (Não-Letal)</entityname.ek_revolverspeedloader_riot>
+  <entitydescription.ek_revolverspeedloader_riot></entitydescription.ek_revolverspeedloader_riot>
+  <entityname.ek_flashgrenade>Granada de Atordoamento</entityname.ek_flashgrenade>
+  <entitydescription.ek_flashgrenade></entitydescription.ek_flashgrenade>
+  <entityname.ek_spear_rocket>Arpão Foguete</entityname.ek_spear_rocket>
+  <entitydescription.ek_spear_rocket>Um arpão para a arma de arpão, impulsionado por um pequeno motor de foguete para maior alcance e impacto.</entitydescription.ek_spear_rocket>
+  <entityname.ek_divinggrenade>Granada de Mergulho</entityname.ek_divinggrenade>
+  <entitydescription.ek_divinggrenade>Uma granada de flutuabilidade neutra projetada para uso subaquático. Tem um pavio de detonação mais rápido do que uma granada padrão.</entitydescription.ek_divinggrenade>
+  <entityname.ek_40mmsmoke>Granada de Fumaça 40mm</entityname.ek_40mmsmoke>
+  <entitydescription.ek_40mmsmoke>Munição para o lança-granada que explode em fumaça no impacto.</entitydescription.ek_40mmsmoke>
+  <entityname.ek_40mmbeehive>Granada 'Colméia' 40mm</entityname.ek_40mmbeehive>
+  <entitydescription.ek_40mmbeehive>Munição para o lança-granada que dispara vários projéteis sólidos.</entitydescription.ek_40mmbeehive>
+  <entityname.ek_40mmthermite>Granada de Termite 40mm</entityname.ek_40mmthermite>
+  <entitydescription.ek_40mmthermite>Munição para o lança-granada que explode termite no impacto.</entitydescription.ek_40mmthermite>
+  <!-- ek_weapons_melee.xml -->
+  <entityname.ek_hatchet>Machadinha</entityname.ek_hatchet>
+  <entitydescription.ek_hatchet>Tradicionalmente usado para cortar madeira no velho planeta água, agora é usado principalmente para remover colônias de fungos indesejadas. Pode ser uma arma decente.</entitydescription.ek_hatchet>
+  <entityname.ek_captains_sabre>Sabre de Capitão</entityname.ek_captains_sabre>
+  <entitydescription.ek_captains_sabre>Uma arma entregue aos antigos capitães do mar. Uma arma antiquada, mas ainda mortífera nas mãos certas.</entitydescription.ek_captains_sabre>
+  <entityname.ek_tonfa>Cassetete</entityname.ek_tonfa>
+  <entitydescription.ek_tonfa>Um bastão de segurança sem os sinos e apitos extras.</entitydescription.ek_tonfa>
+  <entityname.ek_throwingknife>Facas de Arremesso</entityname.ek_throwingknife>
+  <entitydescription.ek_throwingknife>Rolo compressor não está incluído.</entitydescription.ek_throwingknife>
+</infotexts>

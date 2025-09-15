@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!--———————————————————————-->
+  <!--       Medical         -->
+  <!--———————————————————————-->
+  <entityname.hellraptoregg>Яйцо демонического раптора</entityname.hellraptoregg>
+  <entitydescription.hellraptoregg>Зловещее пульсирующее яйцо с красным оттенком, немного напоминающее яйцо грязевого раптора.</entitydescription.hellraptoregg>
+  <!--———————————————————————-->
+  <!--       Missions        -->
+  <!--———————————————————————-->
+  <!-- Hellraptor -->
+  <character.hellraptor>Демонический раптор</character.hellraptor>
+  <missionname.killhellraptor1>Уничтожение демонического раптора</missionname.killhellraptor1>
+  <missiondescription.killhellraptor1>Демоническое существо неизвестного происхождения терроризирует воды между [location1] и [location2]. Команда, которая его уничтожит, получит достойную награду в размере [reward] кред.</missiondescription.killhellraptor1>
+  <missionheader0.killhellraptor1>Цель уничтожена</missionheader0.killhellraptor1>
+  <missionmessage0.killhellraptor1>Демонический раптор уничтожен. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killhellraptor1>
+
+  <missionname.killhellraptorgroup1>Уничтожение стаи демонических рапторов</missionname.killhellraptorgroup1>
+  <missiondescription.killhellraptorgroup1>Небольшая стая демонических существ неизвестного происхождения терроризирует воды между [location1] and [location2]. Команда, которая их уничтожит, получит достойную награду в размере [reward] кред.</missiondescription.killhellraptorgroup1>
+  <missionheader0.killhellraptorgroup1>Стая уничтожена</missionheader0.killhellraptorgroup1>
+  <missionmessage0.killhellraptorgroup1>Стая уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killhellraptorgroup1>
+  <!-- Dreadnought Hammerhead -->
+  <character.dreadnoughthammerhead>Молотоглав-дредноут</character.dreadnoughthammerhead>
+  <missionname.killdreadnought1>Уничтожение молотоглава-дредноута</missionname.killdreadnought1>
+  <missiondescription.killdreadnought1>Молотоглав-дредноут был замечен в окрестностях [location2]. Неизвестно где сейчас находится демоническая тварь, но команда, которая их уничтожит, получит достойную награду в размере [reward] кред.</missiondescription.killdreadnought1>
+  <missionheader0.killdreadnought1>Цель уничтожена</missionheader0.killdreadnought1>
+  <missionmessage0.killdreadnought1>Дредноут уничтожен. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killdreadnought1>
+  <!-- Abyssal Crawler -->
+  <character.abyssalcrawler>Демонический ползун</character.abyssalcrawler>
+  <missionname.killabyssalcrawlergroup1>Уничтожение небольшой стаи демонических ползунов</missionname.killabyssalcrawlergroup1>
+  <missiondescription.killabyssalcrawlergroup1>В этом районе была замечена небольшая стая демонических ползунов. Команда судна получит [reward] кредитов, если избавится от них.</missiondescription.killabyssalcrawlergroup1>
+  <missionheader0.killabyssalcrawlergroup1>Стая уничтожена</missionheader0.killabyssalcrawlergroup1>
+  <missionmessage0.killabyssalcrawlergroup1>Стая демонических ползунов унитожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killabyssalcrawlergroup1>
+  <missionname.killabyssalcrawlersquadron1>Уничтожение стаи демонических ползунов</missionname.killabyssalcrawlersquadron1>
+  <missionname.killabyssalcrawlersquadron1>В этом районе была замечена приличная стая демонических ползунов. Команда судна получит [reward] кредитов, если избавится от них.</missionname.killabyssalcrawlersquadron1>
+  <missionmessage0.killabyssalcrawlersquadron1>Стая демонических ползунов унитожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killabyssalcrawlersquadron1>
+  <missionname.killabyssalcrawlerswarm1>Уничтожение большой стаи демонических ползунов</missionname.killabyssalcrawlerswarm1>
+  <missionname.killabyssalcrawlerswarm1>В этом районе была замечена большая стая демонических ползунов. Команда судна получит [reward] кредитов, если избавится от них.</missionname.killabyssalcrawlerswarm1>
+  <missionmessage0.killabyssalcrawlerswarm1>Стая демонических ползунов унитожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killabyssalcrawlerswarm1>
+  <!-- Lapidaris Mantis -->
+  <character.lapidarismantis>Демонический богомол</character.lapidarismantis>
+  <missionname.killlapidarismantisgroup1>Уничтожение небольшой стаи демонических богомолов</missionname.killlapidarismantisgroup1>
+  <missiondescription.killlapidarismantisgroup1>Небольшая стая демонических богомолов терроризирует окрестности. Команда, которая их уничтожит, получит достойную награду в размере [reward] кред.</missiondescription.killlapidarismantisgroup1>
+  <missionheader0.killlapidarismantisgroup1>Стая уничтожена</missionheader0.killlapidarismantisgroup1>
+  <missionmessage0.killlapidarismantisgroup1>Стая демонических богомолов уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killlapidarismantisgroup1>
+  <missionname.killlapidarismantissquadron1>Уничтожение стаи демонических богомолов</missionname.killlapidarismantissquadron1>
+  <missiondescription.killlapidarismantissquadron1>Приличная стая демонических богомолов терроризирует окрестности. Команда судна получит [reward] кредитов, если избавится от них.</missiondescription.killlapidarismantissquadron1>
+  <missionmessage0.killlapidarismantissquadron1>Стая демонических богомолов уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killlapidarismantissquadron1>
+  <missionname.killlapidarismantisswarm1>Уничтожение большой стаи демонических богомолов</missionname.killlapidarismantisswarm1>
+  <missiondescription.killlapidarismantisswarm1>В этом районе была замечена большая стая демонических богомолов. Команда судна получит [reward] кредитов, если избавится от них.</missiondescription.killlapidarismantisswarm1>
+  <missionmessage0.killlapidarismantisswarm1>Стая демонических богомолов уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killlapidarismantisswarm1>
+  <!-- Rhino Mantis -->
+  <character.rhinomantis>Демонический богомол-носорог</character.rhinomantis>
+  <missionname.killrhinomantisgroup1>Уничтожение небольшой стаи демонических богомолов-носорогов</missionname.killrhinomantisgroup1>
+  <missiondescription.killrhinomantisgroup1>Небольшая стая демонических богомолов-носорогов терроризирует окрестности. Команда судна получит [reward] кредитов, если избавится от них.</missiondescription.killrhinomantisgroup1>
+  <missionheader0.killrhinomantisgroup1>Стая уничтожена</missionheader0.killrhinomantisgroup1>
+  <missionmessage0.killrhinomantisgroup1>Стая демонических богомолов-носорогов уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killrhinomantisgroup1>
+  <missionname.killrhinomantissquadron1>Уничтожение стаи демонических богомолов-носорогов</missionname.killrhinomantissquadron1>
+  <missiondescription.killrhinomantissquadron1>Приличная стая демонических богомолов терроризирует воды между [location1] и [location2]. Команда, которая их уничтожит, получит достойную награду в размере [reward] кред.</missiondescription.killrhinomantissquadron1>
+  <missionmessage0.killrhinomantissquadron1>Стая демонических богомолов-носорогов уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killrhinomantissquadron1>
+  <missionname.killrhinomantisswarm1>Уничтожение большой стаи демонических богомолов-носорогов</missionname.killrhinomantisswarm1>
+  <missiondescription.killrhinomantisswarm1>Большая стая демонических богомолов терроризирует воды между [location1] и [location2]. Команда, которая их уничтожит, получит достойную награду в размере [reward] кред.</missiondescription.killrhinomantisswarm1>
+  <missionmessage0.killrhinomantisswarm1>Стая демонических богомолов-носорогов уничтожена. Выведите подлодку из пещеры, чтобы получить награду.</missionmessage0.killrhinomantisswarm1>
+  <!-- Mission Dialogue
+  <eventtext.missionevent_killswarm.c1>“No transport ship can leave without running into a swarm of monsters. Take care of the problem and there's a reward in it for you.”</eventtext.missionevent_killswarm.c1>
+  <eventtext.missionevent_killmonstercommon.c1>“There's this especially mean monster terrorizing the caves near here. I've put a little reward aside for the crew that takes it down.”</eventtext.missionevent_killmonstercommon.c1>
+  <eventtext.missionevent_killmonsterrare.c1>“I've heard reports of a gargantuan monster somewhere in the vicinity. If you want to try hunting it down, be my guest. Just make sure you're prepared. It's a dangerous one.”</eventtext.missionevent_killmonsterrare.c1>
+  -->
+</infotexts>

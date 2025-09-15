@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TalentTrees>
+  <TalentTree jobidentifier="he-chef">
+    <SubTree identifier="chef_primary" nameidentifier="talenttree.primary" type="primary">
+      <TalentOptions requiredtalents="2" maxchosentalents="5">
+        <TalentOption identifier="he-poacher" />
+        <TalentOption identifier="he-saltybusiness" />
+        <TalentOption identifier="nonthreatening" />
+        <TalentOption identifier="he-fastfood" />
+        <TalentOption identifier="egghead" />
+        <!--<TalentOption identifier="selfcare"/>
+        <TalentOption identifier="stayinalive"/>-->
+      </TalentOptions>
+      <TalentOptions requiredtalents="2" maxchosentalents="5">
+        <TalentOption identifier="firemanscarry" />
+        <TalentOption identifier="drunkensailor" />
+        <TalentOption identifier="he-lazygardener" />
+        <TalentOption identifier="daringdolphin" />
+        <TalentOption identifier="peerlearning" />
+        <!--
+        <TalentOption identifier="dontdieonme"/>
+        <TalentOption identifier="nopressure"/>
+        <TalentOption identifier="blooddonor"/>-->
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="butcher" type="specialization" requires="chef_primary">
+      <TalentOptions>
+        <TalentOption identifier="he-frenzy" />
+        <TalentOption identifier="swole" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="crustyseaman" />
+        <TalentOption identifier="he-coldblood" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="implacable" />
+      </TalentOptions>
+      <!--<TalentOptions>
+      </TalentOptions>-->
+    </SubTree>
+    <SubTree identifier="entertainer" type="specialization" requires="chef_primary">
+      <TalentOptions requiredtalents="1" maxchosentalents="2">
+        <TalentOption identifier="steadytune" />
+        <TalentOption identifier="melodicrespite" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="he-piper" />
+      </TalentOptions>
+      <TalentOptions>
+        <ShowCaseTalent identifier="apprenticeship">
+          <TalentOption identifier="apprenticeship_captain" />
+          <TalentOption identifier="apprenticeship_doctor" />
+          <TalentOption identifier="apprenticeship_security" />
+          <TalentOption identifier="apprenticeship_mechanic" />
+          <TalentOption identifier="apprenticeship_engineer" />
+        </ShowCaseTalent>
+        <TalentOption identifier="he-tastyfood" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="graduationceremony" />
+        <TalentOption identifier="he-favorite" />
+      </TalentOptions>
+    </SubTree>
+    <SubTree identifier="chef" type="specialization" requires="chef_primary">
+      <TalentOptions requiredtalents="1" maxchosentalents="2">
+        <TalentOption identifier="he-chefattire" />
+        <TalentOption identifier="he-huskfood" />
+      </TalentOptions>
+      <TalentOptions requiredtalents="1" maxchosentalents="2">
+        <TalentOption identifier="he-delicacies" />
+        <TalentOption identifier="he-masterbrewer" />
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="he-lifesaver" />
+      </TalentOptions>
+      <!--
+      <TalentOptions>
+        <TalentOption identifier="supersoldiers"/>
+        <TalentOption identifier="whatastench"/>
+      </TalentOptions>
+      <TalentOptions>
+        <TalentOption identifier="macrodosing"/>
+      </TalentOptions>-->
+    </SubTree>
+  </TalentTree>
+</TalentTrees>

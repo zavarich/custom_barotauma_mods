@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- HATS START -->
+    <Item name="Chef's Hat" identifier="he-chefscap1" aliases="chefscap" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="" scale="0.4">
+      <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
+      <Price baseprice="75" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="false">
+        <RequiredItem identifier="organicfiber" amount="1" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Sprite name="Chef's Cap 1" texture="%ModDir%/Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="0,0,94,86" origin="0.5,0.5" />
+      <Body width="94" height="86" density="9" />
+      <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+        <sprite name="Chef's Cap 1 Wearable" texture="%ModDir%/Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidelimb="false" sourcerect="0,0,94,86" origin="0.65,1.0" />
+        <SkillModifier skillidentifier="cooking" skillvalue="5" />
+        <damagemodifier afflictionidentifiers="blunttrauma,lacerations,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.9" />
+      </Wearable>
+    </Item>
+    <Item name="Chef's Hat" identifier="he-chefscap2" aliases="chefscap" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="" scale="0.4">
+      <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
+      <Price baseprice="75" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="false">
+        <RequiredItem identifier="organicfiber" amount="1" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Sprite name="Chef's Cap 2" texture="%ModDir%/Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="188,0,73,52" origin="0.5,0.5" />
+      <Body width="94" height="86" density="9" />
+      <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+        <sprite name="Chef's Cap 2 Wearable" texture="%ModDir%/Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.75" hidelimb="false" sourcerect="188,0,73,62" origin="0.6,1.0" />
+        <SkillModifier skillidentifier="cooking" skillvalue="5" />
+        <damagemodifier afflictionidentifiers="blunttrauma,lacerations,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.9" />
+      </Wearable>
+    </Item>
+    <Item name="Master Chef's Hat" identifier="he-chefscapmaster1" aliases="chefscap" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" description="" scale="0.4">
+      <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
+      <Price baseprice="275" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" minavailable="1" />
+        <Price storeidentifier="merchantmine" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10" />
+      <Sprite name="Master Chef's Cap 1" texture="%ModDir%/Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="94,0,94,86" origin="0.5,0.5" />
+      <Body width="94" height="86" density="9" />
+      <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+        <sprite name="Master Chef's Cap 1 Wearable" texture="%ModDir%/Content/Items/Jobgear/headgears.png" limb="Head" hidewearablesoftype="Hair" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hidelimb="false" sourcerect="94,0,94,86" origin="0.65,1.0" />
+        <SkillModifier skillidentifier="cooking" skillvalue="10" />
+        <SkillModifier skillidentifier="butchery" skillvalue="10" />
+        <damagemodifier afflictionidentifiers="blunttrauma,lacerations,bitewounds" armorsector="0.0,360.0" damagemultiplier="0.9" />
+      </Wearable>
+    </Item>
+    <!-- HATS END -->
+    <!-- UNIFORMS START -->
+    <Item name="Chef's Uniform" identifier="he-chefsuniform1" aliases="chefsuniform" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="150" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmilitary" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmine" maxavailable="1" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="false">
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <InventoryIcon name="Chef's Uniform 1 Icon" texture="%ModDir%/Content/Items/Jobgear/OutfitIcons.png" sourcerect="131,42,123,86" origin="0.5,0.5" />
+      <Sprite name="Chef's Uniform 1" texture="%ModDir%/Content/Items/Jobgear/MiscJobGear.png" sourcerect="376,227,117,56" depth="0.6" origin="0.5,0.5" />
+      <Body width="117" height="50" density="15" friction="0.8" restitution="0.01" />
+      <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+        <sprite name="Chef's Uniform 1 Torso" texture="chef1.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Right Hand" texture="chef1.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Left Hand" texture="chef1.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Right Lower Arm" texture="chef1.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Left Lower Arm" texture="chef1.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Right Upper Arm" texture="chef1.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Left Upper Arm" texture="chef1.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Waist" texture="chef1.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Right Thigh" texture="chef1.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Left Thigh" texture="chef1.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Right Leg" texture="chef1.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Left Leg" texture="chef1.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Left Shoe" texture="chef1.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 1 Right Shoe" texture="chef1.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations" damagemultiplier="0.9" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, blunttrauma" damagemultiplier="0.95" />
+        <SkillModifier skillidentifier="cooking" skillvalue="5" />
+      </Wearable>
+    </Item>
+    <Item name="Chef's Uniform" identifier="he-chefsuniform2" aliases="chefsuniform" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="150" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmilitary" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmine" maxavailable="1" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="false">
+        <RequiredItem identifier="organicfiber" amount="2" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <InventoryIcon name="Chef's Uniform 2 Icon" texture="%ModDir%/Content/Items/Jobgear/OutfitIcons.png" sourcerect="260,42,121,86" origin="0.5,0.5" />
+      <Sprite name="Chef's Uniform 2" texture="%ModDir%/Content/Items/Jobgear/MiscJobGear.png" sourcerect="376,227,117,56" depth="0.6" origin="0.5,0.5" />
+      <Body width="117" height="50" density="15" friction="0.8" restitution="0.01" />
+      <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+        <sprite name="Chef's Uniform 2 Torso" texture="Chef2[GENDER].png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Right Hand" texture="Chef2[GENDER].png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Left Hand" texture="Chef2[GENDER].png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Right Lower Arm" texture="Chef2[GENDER].png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Left Lower Arm" texture="Chef2[GENDER].png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Right Upper Arm" texture="Chef2[GENDER].png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Left Upper Arm" texture="Chef2[GENDER].png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Waist" texture="Chef2[GENDER].png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Right Thigh" texture="Chef2[GENDER].png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Left Thigh" texture="Chef2[GENDER].png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Right Leg" texture="Chef2[GENDER].png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Left Leg" texture="Chef2[GENDER].png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Left Shoe" texture="Chef2[GENDER].png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Chef's Uniform 2 Right Shoe" texture="Chef2[GENDER].png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations" damagemultiplier="0.9" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, blunttrauma" damagemultiplier="0.95" />
+        <SkillModifier skillidentifier="cooking" skillvalue="5" />
+      </Wearable>
+    </Item>
+    <Item name="Master Chef's Uniform" identifier="he-chefsuniformmaster1" aliases="chefsuniform" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,clothing" scale="0.5" impactsoundtag="impact_soft">
+      <PreferredContainer primary="crewcab" />
+      <Price baseprice="350" sold="false">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantresearch" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmilitary" maxavailable="1" sold="false" />
+        <Price storeidentifier="merchantmine" maxavailable="1" sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30" requiresrecipe="true">
+        <RequiredItem identifier="organicfiber" amount="3" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="organicfiber" />
+      </Deconstruct>
+      <InventoryIcon name="Master Chef's Uniform 1 Icon" texture="%ModDir%/Content/Items/Jobgear/OutfitIcons.png" sourcerect="2,42,123,86" origin="0.5,0.5" />
+      <Sprite name="Master Chef's Uniform 1" texture="%ModDir%/Content/Items/Jobgear/MiscJobGear.png" sourcerect="251,227,117,56" depth="0.6" origin="0.5,0.5" />
+      <Body width="117" height="50" density="15" friction="0.8" restitution="0.01" />
+      <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+        <sprite name="Master Chef's Uniform 1 Torso" texture="chefmaster1.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Right Hand" texture="chefmaster1.png" limb="RightHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Left Hand" texture="chefmaster1.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Right Lower Arm" texture="chefmaster1.png" limb="RightArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Left Lower Arm" texture="chefmaster1.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Right Upper Arm" texture="chefmaster1.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Left Upper Arm" texture="chefmaster1.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Waist" texture="chefmaster1.png" limb="Waist" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Right Thigh" texture="chefmaster1.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Left Thigh" texture="chefmaster1.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Right Leg" texture="chefmaster1.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Left Leg" texture="chefmaster1.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Left Shoe" texture="chefmaster1.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Master Chef's Uniform 1 Right Shoe" texture="chefmaster1.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations" damagemultiplier="0.9" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bitewounds, blunttrauma" damagemultiplier="0.95" />
+        <SkillModifier skillidentifier="cooking" skillvalue="10" />
+        <SkillModifier skillidentifier="butchery" skillvalue="10" />
+      </Wearable>
+    </Item>
+    <!-- UNIFORMS END -->
+  </Items>
+</Override>

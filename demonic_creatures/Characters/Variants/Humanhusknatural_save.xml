@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Charactervariant inherit="Humanhusk" speciesname="Humanhusknatural">
+  <!-- civilian -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="commonerclothes1" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="commonerclothes2" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="commonerclothes3" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="commonerclothes4" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="commonerclothes5" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="outpostoutfit1" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="orangejumpsuit1" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="orangejumpsuit2" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="bluejumpsuit1" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.6">
+    <item identifier="bluejumpsuit2" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <item identifier="vipclothes1" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <item identifier="vipclothes2" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <item identifier="vipclothes3" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <item identifier="prisonerclothes" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <Item identifier="quartermasterclothes" equip="true" outfit="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <Item identifier="watchmanclothes" equip="true" outfit="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.4">
+    <Item identifier="baseballcap" equip="true" />
+    <Item identifier="crewchiefclothes" equip="true" outfit="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+    <Item identifier="toolbelt" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.3">
+    <item identifier="minerclothes" equip="true" />
+    <item identifier="toolbelt" equip="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+  </inventory>
+  <!-- separatist -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="pirateclothes" equip="true" outfit="true" />
+    <Item identifier="piratehelmet" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="banditclothes1" equip="true" outfit="true" />
+    <Item identifier="piratebandana" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="banditclothes2" equip="true" outfit="true" />
+    <Item identifier="piratecaptainhat" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <Item identifier="banditclothes1" equip="true" outfit="true" />
+    <Item identifier="piratebodyarmor" equip="true" />
+    <Item identifier="piratehelmet" equip="true" />
+  </inventory>
+  <!-- Renegade [EHA] -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.3">
+    <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+    <Item identifier="scp_renegadehelmet" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="scp_renegadeuniform" equip="true" outfit="true" />
+    <Item identifier="scp_renegadehelmet" equip="true" />
+    <Item identifier="scp_renegadevest" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <Item identifier="scp_renegadecaptainuniform" equip="true" outfit="true" />
+    <Item identifier="scp_renegadecaptainhat" equip="true" />
+    <Item identifier="scp_renegadespecialrig" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <Item identifier="scp_heavyrenuniform" equip="true" outfit="true" />
+    <Item identifier="scp_renegadeplatecarrier" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="scp_simplehelmet" equip="true" />
+  </inventory>
+  <!-- Coalition [EHA] -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.3">
+    <Item identifier="sgt_lightuniform" equip="true" outfit="true" />
+    <Item identifier="sgt_fieldcap" equip="true" />
+    <Item identifier="idcard" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.3">
+    <Item identifier="scp_lightuniform" equip="true" outfit="true" nonplayerteaminteractable="true" />
+    <Item identifier="scp_riotvest" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="ballistichelmet3" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="idcard" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="scp_lightuniform" equip="true" outfit="true" nonplayerteaminteractable="true" />
+    <Item identifier="scp_softvest" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="scp_combathelmet" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="idcard" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <Item identifier="scp_heavyuniform" equip="true" outfit="true" nonplayerteaminteractable="true" />
+    <Item identifier="scp_heavyvest" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="scp_heavycombathelmet" equip="true" nonplayerteaminteractable="true" />
+    <Item identifier="idcard" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <!-- medical doctor -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.4">
+    <Item identifier="healthscanner" equip="true" />
+    <Item identifier="researcherclothes" equip="true" outfit="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.4">
+    <Item identifier="healthscanner" equip="true" />
+    <Item identifier="doctorsuniform1" equip="true" outfit="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.4">
+    <Item identifier="healthscanner" equip="true" />
+    <Item identifier="doctorsuniform2" equip="true" outfit="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.4">
+    <Item identifier="healthscanner" equip="true" />
+    <Item identifier="medicalofficeroutfit" equip="true" outfit="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.3">
+    <Item identifier="administratorclothes" equip="true" outfit="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="healthscanner" equip="true" />
+    <Item identifier="scp_combatmedicuniform" equip="true" outfit="true" nonplayerteaminteractable="true" />
+    <Item identifier="idcard" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.2">
+    <Item identifier="healthscanner" equip="true" />
+    <Item identifier="scp_renegadecombatmedicuniform" equip="true" outfit="true" nonplayerteaminteractable="true" />
+    <Item identifier="idcard" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <!-- armored -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <item identifier="prisonerclothes" equip="true" />
+    <item identifier="toolbelt" equip="true" />
+    <Item identifier="bodyarmor" equip="true" />
+    <Item identifier="ballistichelmet1" equip="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.5">
+    <Item identifier="watchmanclothes" equip="true" outfit="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+    <Item identifier="bodyarmor" equip="true" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <item identifier="securitypatrolclothes" equip="true" />
+    <item identifier="bodyarmor" equip="true" />
+    <item identifier="ballistichelmet1" equip="true" />
+    <item identifier="idcard" equip="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <item identifier="securitypatrolclothes" equip="true" />
+    <item identifier="bodyarmor" equip="true" />
+    <item identifier="ballistichelmet2" equip="true" />
+    <item identifier="idcard" equip="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <item identifier="securitypatrolclothes" equip="true" />
+    <item identifier="bodyarmor" equip="true" />
+    <item identifier="ballistichelmet3" equip="true" />
+    <item identifier="idcard" equip="true" />
+    <Item identifier="headset" equip="true" showpreview="false" />
+  </inventory>
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <item identifier="ironhelmet" equip="true" nonplayerteaminteractable="true" />
+    <item identifier="makeshiftarmor" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+  <!-- other -->
+  <inventory slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" accessiblewhenalive="False" commonness="0.1">
+    <item identifier="nevmaidoutfit" equip="true" outfit="true" nonplayerteaminteractable="true" />
+    <item identifier="nevmaidears" equip="true" nonplayerteaminteractable="true" />
+  </inventory>
+</Charactervariant>

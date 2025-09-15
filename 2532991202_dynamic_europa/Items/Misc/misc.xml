@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <!-- An invisible holder that deletes itself after taking an item from it -->
+    <Item name="Take Item" identifier="invisibleholder" description="An invisible item holder that deletes itself when interacted with. Good for making items hold in place without using platforms" SpriteColor="195,136,60,100" IntentoryIconColor="255,255,255,255" category="misc" tags="holder" canflipx="true" canflipy="true" scale="0.5" noninteractable="False">
+      <InventoryIcon texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="716,951,70,70" />
+      <Sprite texture="Content/UI/Focusindicator.png" sourcerect="228,124,105,89" depth="0.85" origin="0.5,0.5" />
+      <ItemContainer hideitems="false" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="1" itempos="40,-40" containedspritedepth="0.831" canbeselected="True" autointeractwithcontained="true" allowdraganddrop="false" QuickUseMovesItemsInside="false" msg="">
+        <Containable items="smallitem,mediumitem,bigitem,crate">
+          <Statuseffect type="OnRemoved" target="This">
+            <Remove />
+          </Statuseffect>
+        </Containable>
+        <!-- makes itself invisible + you can't see inside inventory on startup. Needed to make this useable in subeditor -->
+        <Statuseffect type="Always" target="This" oneshot="true" spritecolor="0,0,0,0" drawinventory="false" setvalue="True" />
+      </ItemContainer>
+    </Item>
+    <Item name="Poster - Religion is Poison" identifier="de_posterreligionisbad1" width="143" height="200" scale="0.5" noninteractable="true" category="Decorative">
+      <sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="861,330,162,219" depth="0.855" premultiplyalpha="false" origin="0.5,0.5" />
+    </Item>
+    <!-- Pre-placed in cave modules and unlocked and randomized by an event. Spawns a random mineral when mined. -->
+    <Item name="Mineral Deposit" identifier="mineralspawner" category="Material" Tags="smallitem,ore,mineralspawner" maxstacksize="1" description="used in rock cave to spawn mineral" scale="0.5" spritecolor="255,255,255,255" damagedbyrepairtools="true" damagedbyprojectiles="true" health="50" noninteractable="false">
+      <Upgrade gameversion="2.0.0.0" noninteractable="false" />
+      <Body radius="40" width="20" density="25" />
+      <LightComponent lightcolor="255,255,180,120" range="50" ison="true" castshadows="false" drawbehindsubs="false">
+        <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+      </LightComponent>
+      <Sprite texture="Content/Items/Materials/Minerals.png" depth="0.711" sourcerect="810,893,173,131" origin="0.5,0.5" />
+      <DecorativeSprite texture="Content/Map/Biomes/rockcave/WallEdgeChunks.png" sourcerect="0,0,512,512" depth="0.707" offset="20,0" randomrotation="-20,20" randomscale="0.15,0.35" randomoffset="30,30" origin="0.5,0.5" randomgroupid="1" />
+      <DecorativeSprite texture="Content/Map/Biomes/rockcave/WallEdgeChunks.png" sourcerect="512,0,512,512" depth="0.708" offset="20,0" randomrotation="-20,20" randomscale="0.15,0.35" randomoffset="30,30" origin="0.5,0.5" randomgroupid="1" />
+      <DecorativeSprite texture="Content/Map/Biomes/rockcave/WallEdgeChunks.png" sourcerect="0,512,512,512" depth="0.709" offset="-20,0" randomrotation="-20,20" randomscale="0.15,0.35" randomoffset="30,30" origin="0.5,0.5" randomgroupid="2" />
+      <DecorativeSprite texture="Content/Map/Biomes/rockcave/WallEdgeChunks.png" sourcerect="512,512,512,512" depth="0.710" offset="-20,0" randomrotation="-20,20" randomscale="0.15,0.35" randomoffset="30,30" origin="0.5,0.5" randomgroupid="2" />
+      <LevelResource deattachduration="4">
+        <Commonness commonness="0.0" abysscommonness="0" />
+        <RequiredItem items="cuttingequipment" type="Equipped" />
+      </LevelResource>
+      <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="1000000.0" attached="true" attachable="true" reattachable="false" />
+      <ItemComponent>
+        <StatusEffect type="OnNotContained" target="This" condition="0" setvalue="true">
+          <Conditional IsAttached="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" spawnitemrandomly="true">
+          <particleemitter particleamount="20" particle="brownchunks" drawontop="true" velocitymin="100" velocitymax="300" anglemin="-120" anglemax="60" copyentitangle="false" distancemin="0" distancemax="30" scalemin="0.35" scalemax="0.6" colormultiplier="80,80,80,255" />
+          <Sound file="Content/Sounds/Damage/Armorbreak1.ogg" selectionmode="Random" volume="1" range="500" frequencymultiplier="2" />
+          <Sound file="Content/Sounds/Damage/Armorbreak2.ogg" selectionmode="Random" volume="1" range="500" frequencymultiplier="2" />
+          <Sound file="Content/Sounds/Damage/Armorbreak4.ogg" selectionmode="Random" volume="1" range="500" frequencymultiplier="2" />
+          <SpawnItem identifier="titanite" spawnposition="This" />
+          <SpawnItem identifier="brockite" spawnposition="This" />
+          <SpawnItem identifier="thorianite" spawnposition="This" />
+          <SpawnItem identifier="amblygonite" spawnposition="This" />
+          <SpawnItem identifier="sphalerite" spawnposition="This" />
+          <SpawnItem identifier="pyromorphite" spawnposition="This" />
+          <SpawnItem identifier="quartz" spawnposition="This" />
+          <SpawnItem identifier="diamond" spawnposition="This" />
+          <SpawnItem identifier="hydroxyapatite" spawnposition="This" />
+          <SpawnItem identifier="uraniumore" spawnposition="This" />
+          <SpawnItem identifier="ilmenite" spawnposition="This" />
+          <SpawnItem identifier="stannite" spawnposition="This" />
+          <SpawnItem identifier="chalcopyrite" spawnposition="This" />
+          <SpawnItem identifier="esperite" spawnposition="This" />
+          <SpawnItem identifier="galena" spawnposition="This" />
+          <SpawnItem identifier="triphylite" spawnposition="This" />
+          <SpawnItem identifier="langbeinite" spawnposition="This" />
+          <SpawnItem identifier="chamosite" spawnposition="This" />
+          <SpawnItem identifier="ironore" spawnposition="This" />
+          <SpawnItem identifier="polyhalite" spawnposition="This" />
+          <SpawnItem identifier="graphite" spawnposition="This" />
+          <SpawnItem identifier="sylvite" spawnposition="This" />
+          <SpawnItem identifier="lazulite" spawnposition="This" />
+          <SpawnItem identifier="bornite" spawnposition="This" />
+          <SpawnItem identifier="cassiterite" spawnposition="This" />
+          <SpawnItem identifier="cryolite" spawnposition="This" />
+          <SpawnItem identifier="aragonite" spawnposition="This" />
+          <SpawnItem identifier="chrysoprase" spawnposition="This" />
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!-- TODO: if barodevs ever ACCEPT MY FUCKING PR, no need for the unbundle jank, just use deconstruction -->
+    <!-- Pre-placed in pools of water or flooded cave modules and unlocked and randomized by an event. Gives plantclusterresearched when researched that needs to be "unbundled", we only do that to avoid stuff falling on the floor because research tables only have 1 output slot IT'S SO STUPID -->
+    <Item name="Plant Cluster" identifier="plantcluster" category="Material" Tags="mediumitem,plantspawner,researchmaterial" maxstacksize="8" description="A cluster of entangled plants. It might be possible to untangle them when stabilizing them with stabilozine at a research table." scale="0.5" spritecolor="255,255,255,255" noninteractable="false" allowstealingalways="true">
+      <Upgrade gameversion="2.0.0.0" noninteractable="false" />
+      <Body radius="30" width="20" density="10.5" />
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" depth="0.71" sourcerect="130,139,108,118" origin="0.5,0.5" />
+      <LightComponent lightcolor="255,255,180,120" range="50" ison="true" castshadows="false" drawbehindsubs="false">
+        <LightTexture texture="Content/Lights/pointlight_rays.png" origin="0.5,0.5" />
+      </LightComponent>
+      <Deconstruct time="3" requireddeconstructor="deconstructor" />
+      <Deconstruct time="8" chooserandom="true" amount="1" requireddeconstructor="geneticresearchstation">
+        <Item identifier="plantclusterresearched" requiredotheritem="stabilozine" outcondition="1.0" activatebuttontext="researchstation.research" infotext="researchstation.research.infotext" />
+      </Deconstruct>
+      <LevelResource deattachduration="1" randomoffsetfromwall="40">
+        <Commonness commonness="0.0" abysscommonness="0" />
+      </LevelResource>
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" holdpos="30,-30" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false">
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <!-- Gives random medical plants when "untangled".  -->
+    <Item hideinmenus="true" name="Stabilized Plant Cluster" identifier="plantclusterresearched" category="Material" Tags="mediumitem,plantspawner,researchmaterial" maxstacksize="8" description="A cluster of entangled plants. It has been stabilized and can be untangled without harming all of the plants." scale="0.5" spritecolor="255,255,255,255">
+      <Body radius="30" width="20" density="10.5" />
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" depth="0.71" sourcerect="130,139,108,118" origin="0.5,0.5" />
+      <Deconstruct time="3" requireddeconstructor="deconstructor" />
+      <Holdable canBeCombined="true" slots="RightHand+LeftHand" holdpos="30,-30" handle1="0,0" pickingtime="5.0">
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="GUI.button.untangle">
+          <!-- Generate a random serum inside this artifact when it was researched again -->
+          <StatusEffect type="OnUse" target="This" spawnitemrandomly="true">
+            <!-- spawn a random medical plant -->
+            <SpawnItem identifier="fiberplant" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="elastinplant" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="aquaticpoppy" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="yeastshroom" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="slimebacteria" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" spawnitemrandomly="true">
+            <!-- ~70% chance to spawn another random medical plant -->
+            <SpawnItem identifier="fiberplant" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="elastinplant" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="aquaticpoppy" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="yeastshroom" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="slimebacteria" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" spawnitemrandomly="true">
+            <!-- 50% chance to spawn another random medical plant -->
+            <SpawnItem identifier="fiberplant" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="elastinplant" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="aquaticpoppy" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="yeastshroom" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="slimebacteria" spawnposition="SameInventory" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+            <SpawnItem identifier="effect_none" spawnposition="This" spawnifinventoryfull="true" spawnifcantbecontained="true" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" target="This" condition="0" setvalue="true" />
+        </Button>
+      </CustomInterface>
+    </Item>
+    <!-- Pressure Stabilizer for Outpost Security | Non-Player-Team-Interactable -->
+    <Item name="Biometrically Locked Pressure Stabilizer" identifier="pressurestabilizersecurity" category="Hidden" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="" allowasextracargo="false" description="" scale="0.5" impactsoundtag="impact_metal_light" nonplayerteaminteractable="true" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/Genetic/Genetic.png" sourcerect="244,62,76,65" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Genetic/Genetic.png" depth="0.6" sourcerect="67,85,73,35" origin="0.5,0.5" />
+      <Body radius="15" width="45" density="25" />
+      <Wearable slots="HealthInterface" msg="ItemMsgPickUpSelect">
+        <sprite name="Gene Splicer Wearable" texture="Content/Items/Genetic/Genetic.png" limb="Head" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.5" hideotherwearables="false" sourcerect="258,131,64,54" origin="0.6,0.0" />
+        <StatusEffect type="OnNotContained" target="This">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Character" disabledeltatime="true" interval="900" multiplyafflictionsbymaxvitality="true" comparison="And">
+          <Conditional InWater="true" />
+          <Affliction identifier="pressurestabilized" amount="900.0" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+      </Wearable>
+    </Item>
+    <!-- A railgun shell that allows shooting clowns inside it (people wearing clowngear), much like a boarding pod -->
+    <Item name="Clown Delivery System" identifier="railgunshellclown" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.01" />
+      <Price baseprice="500">
+        <Price storeidentifier="merchantclown" multiplier="1" minavailable="3" sold="true" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="dementonite" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="162,382,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="161,340,216,31" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="20" />
+      <Holdable canbecombined="false" slots="LeftHand,RightHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <!-- slow down the character when holding the item -->
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- adjust hold position when swimming -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- revert hold position adjustment when walking -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="3" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="100" severlimbsprobability="5" penetration="0.6" targetforce="1000">
+          <Affliction identifier="explosiondamage" strength="250" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+          <sound file="Content/Items/Misc/GuitarClown.ogg" range="800" loop="true" volume="2" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/honk.ogg" range="5000" volume="2" frequencymultiplier="0.5" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="250.0" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="stun" strength="3" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <!-- short-range explosion to destroy walls immediately around the pod, making it less likely for the character to get stuck e.g. between multiple walls or inside some weird wall setup -->
+          <Explosion range="150.0" structuredamage="600" force="10.0" debris="true" decalsize="1.0" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" distancemin="0" distancemax="100" particleamount="100" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.5" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedspritedepth="0.81">
+        <SlotIcon slotindex="0" texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="1489,287,205,181" />
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="clowngear,clowns" />
+      </ItemContainer>
+      <Controller UserPos="0,-20" direction="Right" canbeselected="true" AllowSelectingWhenSelectedByBot="false" AllowSelectingWhenSelectedByOther="false" selectkey="Use" drawuserbehind="true" forceusertostayattached="true" msg="itemmsggoinside">
+        <RequiredItem items="clowngear" type="Picked" CharacterInventorySlotType="InnerClothes" />
+        <limbposition limb="Head" position="74,-40" />
+        <limbposition limb="Torso" position="74,-40" />
+        <limbposition limb="Waist" position="74,-40" />
+        <limbposition limb="LeftHand" position="74,-40" />
+        <limbposition limb="RightHand" position="74,-40" />
+        <limbposition limb="RightLeg" position="74,-40" />
+        <limbposition limb="LeftLeg" position="74,-40" />
+        <limbposition limb="RightFoot" position="74,-40" />
+        <limbposition limb="LeftFoot" position="74,-40" />
+        <StatusEffect type="OnActive" targettype="Character" delay="0.25" stackable="true" indetectable="true" DisableFocusingOnEntities="true" invisibletimer="0.1" IgnoreMeleeWeapons="true" PressureProtection="6500.0" oxygenavailable="1000" setvalue="true" />
+        <LightComponent range="10" castshadows="false" PowerConsumption="0" lightcolor="150,0,0,0" blinkfrequency="1" AllowInGameEditing="false" IsOn="true">
+          <sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="817,809,108,31" origin="-0.42,0.5" alpha="1" />
+          <IsActiveConditional IsContained="false" />
+        </LightComponent>
+      </Controller>
+    </Item>
+    <!-- Overriding vanilla beers to remove them from the mod - they're unfinished and worse than Hungry Europan drinks -->
+    <Item name="" nameidentifier="beerbottle" identifier="beerbottle1" category="Medical,Misc" maxstacksize="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light">
+      <Sprite texture="Content/Map/Outposts/Art/AdminResidentAssets.png" sourcerect="835,0,20,63" depth="0.6" origin="0.5,0.5" />
+      <SuitableTreatment type="psychosis" suitability="12" />
+      <Body width="20" height="63" density="20" />
+      <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdangle="30" aimangle="120" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-30.0" />
+        <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+        <!-- When beer is drunk -->
+        <StatusEffect type="OnSecondaryUse" target="This,UseTarget" duration="20" disabledeltatime="true">
+          <Conditional Condition="lte 1" />
+          <Use />
+        </StatusEffect>
+        <!-- When beer is used in Health GUI -->
+        <StatusEffect type="OnUse" target="UseTarget" duration="12" stackable="false">
+          <ReduceAffliction identifier="psychosis" amount="1" />
+          <ReduceAffliction identifier="hallucinating" amount="1" />
+          <Affliction identifier="drunk" amount="2" />
+          <ReduceAffliction type="damage" amount="0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+    <Item name="" nameidentifier="beerbottle" identifier="beerbottle2" variantof="beerbottle1">
+      <Sprite texture="Content/Map/Outposts/Art/AdminResidentAssets.png" sourcerect="856,0,21,63" depth="0.6" origin="0.5,0.5" />
+    </Item>
+    <!-- TEST item that instantly heals and gives more health -->
+    <Item name="SUPERHEALINGSYRINGE" identifier="SUPERHEALINGSYRINGE" description="FOR TESTING PURPOSES ONLY, IF YOU SOMEHOW GET THIS IN CAMPAIGN THROW IT OUT AND REPORT IT" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="cheatitem" allowasextracargo="false" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" colormultiplier="255,0,255,255" hideinmenus="true">
+      <InventoryIcon texture="Content/Items/Medical/Medicines.png" sourcerect="448,256,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="303,310,35,67" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <StatusEffect type="Onuse" target="UseTarget">
+          <GiveTalentInfo giverandom="true" talentidentifiers="crustyseaman,exampleofhealth,swole,genetampering" />
+          <Affliction identifier="healdamage" amount="100" />
+          <Affliction identifier="husksymbiosis" amount="100" />
+          <ReduceAffliction type="damage" amount="100" />
+          <ReduceAffliction type="burn" amount="100" />
+          <ReduceAffliction type="poison" amount="100" />
+        </StatusEffect>
+      </MeleeWeapon>
+    </Item>
+    <!-- Hazmat Suit - Spawned on reactoroperator NPC for Enhanced Reactors compatibility - Does nothing and removes itself if Enhanced Reactors is not installed and loaded above DE -->
+    <Item hideinmenus="true" name="Hazmat Suit" identifier="hazmatsuit1" aliases="orangejumpsuit" category="Equipment" tags="smallitem,clothing,radiationproof,deepdiving,divinggear_wearableindoors" fireproof="true" cargocontaineridentifier="metalcrate" description="ONLY EXISTS FOR 'ENHANCED REACTORS' COMPATIBILITY" scale="0.5" impactsoundtag="impact_soft">
+      <Sprite texture="Content/UI/Focusindicator.png" sourcerect="0,0,1,1" depth="0.85" origin="0.5,0.5" />
+      <Body width="40" radius="27" density="15" friction="0.8" restitution="0.01" />
+      <Wearable slots="OuterClothes" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="Always" target="This" oneshot="true" delay="1" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </Wearable>
+      <Holdable slots="LeftHand,RightHand" holdpos="0,-30" handle1="0,-30" aimable="false" pickkey="Use" msg="ItemMsgPickUpUse" />
+    </Item>
+    <!-- 
+  RUBBER DUCKS
+  RUBBER DUCKS
+  RUBBER DUCKS -->
+    <Item name="Rubber Duck" identifier="rubberduck" category="Material" maxstacksize="8" Tags="toy,smallitem" canbepicked="true" scale="0.5" impactsoundtag="impact_rubberduck">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="0,768,37,35" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" radius="15" density="0.75" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="1" />
+      </Deconstruct>
+      <Throwable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <Item name="Rubber Duck" identifier="piraterubberduck" category="Material" maxstacksize="8" Tags="toy,smallitem" canbepicked="true" scale="0.5" impactsoundtag="impact_rubberduck">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="38,763,37,40" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" radius="15" density="0.75" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="1" />
+      </Deconstruct>
+      <Throwable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <Item name="Big Rubber Duck" identifier="bigrubberduck" category="Material" maxstacksize="8" Tags="toy,mediumitem" canbepicked="true" scale="0.5" impactsoundtag="impact_rubberduck">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="0,804,107,102" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" radius="45" density="0.6" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="3" />
+      </Deconstruct>
+      <Throwable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <Item name="Big Rubber Duck" identifier="bigpiraterubberduck" category="Material" maxstacksize="8" Tags="toy,mediumitem" canbepicked="true" scale="0.5" impactsoundtag="impact_rubberduck">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="0,907,107,116" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" radius="45" density="0.6" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="3" />
+      </Deconstruct>
+      <Throwable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <Item name="Giant Rubber Duck" identifier="giantrubberduck" category="Material" maxstacksize="8" Tags="toy,largeitem" canbepicked="true" scale="0.5" impactsoundtag="impact_rubberduck">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="108,733,303,290" depth="0.55" origin="0.5,0.5" />
+      <Body width="50" radius="138" density="0.3" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="6" />
+      </Deconstruct>
+      <Throwable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" canBeCombined="true" removeOnCombined="true" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <Item name="Giant Rubber Duck" identifier="giantpiraterubberduck" category="Material" maxstacksize="8" Tags="toy,largeitem" canbepicked="true" scale="0.5" impactsoundtag="impact_rubberduck">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="412,694,303,329" depth="0.55" origin="0.5,0.5" />
+      <Body width="50" radius="138" density="0.3" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="6" />
+      </Deconstruct>
+      <Throwable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" canBeCombined="true" removeOnCombined="true" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="1000" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="1000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+    </Item>
+    <!--Mudraptor race tickets-->
+    <Item maxstacksize="10" identifier="raceticket_red" nameidentifier="raceticket" cargocontaineridentifier="metalcrate" tags="smallitem,raceticket" scale="0.35" impactsoundtag="impact_soft" hideinmenus="true">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" depth="0.54" sourcerect="138,448,66,32" origin="0.5,0.5" />
+      <Body width="66" height="32" density="11" gravityscale="0.75" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="2.0" holdangle="0" handle1="-8,0" aimpos="35,-200" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item maxstacksize="10" identifier="raceticket_blue" nameidentifier="raceticket" cargocontaineridentifier="metalcrate" tags="smallitem,raceticket" scale="0.35" impactsoundtag="impact_soft" hideinmenus="true">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" depth="0.54" sourcerect="138,480,66,32" origin="0.5,0.5" />
+      <Body width="66" height="32" density="11" gravityscale="0.75" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="2.0" holdangle="0" handle1="-8,0" aimpos="35,-200" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <Item maxstacksize="10" identifier="raceticket_green" nameidentifier="raceticket" cargocontaineridentifier="metalcrate" tags="smallitem,raceticket" scale="0.35" impactsoundtag="impact_soft" hideinmenus="true">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" depth="0.54" sourcerect="138,512,66,32" origin="0.5,0.5" />
+      <Body width="66" height="32" density="11" gravityscale="0.75" />
+      <Throwable slots="Any,RightHand,LeftHand" throwforce="2.0" holdangle="0" handle1="-8,0" aimpos="35,-200" msg="ItemMsgPickUpSelect" />
+    </Item>
+    <!-- only used in raptor race -->
+    <Item name="Raptor rubber duck" identifier="raptorrubberduck" category="Material" maxstacksize="1" Tags="toy,mediumitem,monsterfood,bait" scale="0.35" impactsoundtag="impact_rubberduck" noninteractable="false" hideinmenus="true" impacttolerance="0.2" health="50" damagedbymonsters="true">
+      <Sprite texture="%ModDir:2532991202%/Items/DE-ItemsAtlas.png" sourcerect="0,804,107,102" depth="0.55" origin="0.5,0.5" />
+      <Body width="20" radius="45" density="0.6" />
+      <Deconstruct time="10">
+        <Item identifier="rubber" amount="3" />
+      </Deconstruct>
+      <Throwable slots="Any,RightHand,LeftHand" handle1="0,0" throwforce="4.0" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnImpact" target="This" setvalue="true" soundrange="10000" sightrange="6000">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck4.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck5.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck1.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck2.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/Rubberduck3.ogg" selectionmode="Random" range="700" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <particleemitter particleamount="20" particle="brownchunks" drawontop="true" velocitymin="100" velocitymax="300" anglemin="0" anglemax="360" copyentitangle="false" distancemin="0" distancemax="30" scalemin="0.35" scalemax="0.6" colormultiplier="255,255,0,255" />
+          <Sound file="%ModDir:2532991202%/Sounds/Impact/NovevaSqueak.ogg" range="1000" dontmuffle="true" />
+        </StatusEffect>
+      </Throwable>
+      <AiTarget sightrange="2000" soundrange="2000" static="True" />
+      <ItemComponent isactive="true"></ItemComponent>
+    </Item>
+    <Item name="Boarding pod (husk)" identifier="boardingpodhusk" nameidentifier="boardingpod" descriptionidentifier="boardingpod" tags="depthchargeammo,autointeractabledepthchargeammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="" AllowDeselectWhenIdling="false">
+      <PreferredContainer primary="depthchargeloader" />
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,320,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="629,0,279,142" depth="0.55" origin="0.5,0.5" />
+      <ContainedSprite name="Boarding Pod Contained" allowedcontainertags="depthchargeammosource" texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="489,90,119,95" depth="0.54" origin="0.5,0.5" />
+      <Body width="250" height="120" density="30" />
+      <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-30,14" handle2="30,14" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnPicked" target="This" canbepicked="false" setvalue="true" oneshot="true">
+          <Sound file="Content/Characters/Husk/Husk_Idle1.ogg" type="OnUse" range="500" />
+          <Dropitem />
+          <SpawnCharacter speciesname="husk" count="1" />
+        </StatusEffect>
+        <StatusEffect type="OnPicked" target="This" delay="5" stackable="false" oneshot="true">
+          <Explosion range="150" force="10" flash="true" shockwave="true" sparks="true" flames="false" smoke="true" underwaterbubble="true" structuredamage="10" itemdamage="0" decal="explosion"></Explosion>
+          <ParticleEmitter particle="shrapnel" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="30" velocitymin="100" velocitymax="500" scalemin="1" scalemax="2" />
+          <ParticleEmitter particle="weldspark" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="10" velocitymin="100" velocitymax="500" scalemin="1" scalemax="2" />
+          <sound file="Content/Items/Door/DoorBreak1.ogg" selectionmode="Random" range="800" frequencymultiplier="0.7" />
+          <sound file="Content/Items/Door/DoorBreak2.ogg" selectionmode="Random" range="800" frequencymultiplier="0.7" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnNotContained" target="This" interval="25">
+          <Conditional targetitemcomponent="Holdable" Attached="eq true" />
+          <particleemitter particle="shockwavesmall" particleamount="1" scalemin="0.5" scalemax="0.5" />
+          <Sound file="Content/Characters/Husk/Husk_Idle1.ogg" type="OnUse" range="300" selectionmode="Random" />
+          <Sound file="Content/Characters/Husk/Husk_Idle2.ogg" type="OnUse" range="300" />
+          <Sound file="Content/Characters/Husk/Husk_Idle3.ogg" type="OnUse" range="300" />
+          <Sound file="Content/Characters/Husk/Husk_Idle4.ogg" type="OnUse" range="300" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="20" maxtargetstohit="3" damagedoors="true">
+        <Attack structuredamage="300" itemdamage="100" severlimbsprobability="5" penetration="0.6" targetforce="1000">
+          <Affliction identifier="lacerations" strength="40" />
+          <Affliction identifier="stun" strength="1" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-34.0">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+        </StatusEffect>
+        <!-- break immediately (instead of going through) if the wall has very high durability or is indestructible-->
+        <StatusEffect type="OnImpact" target="UseTarget,This" condition="0" setvalue="true" comparison="Or">
+          <Conditional Health="gte 3000" />
+          <Conditional Indestructible="true" />
+        </StatusEffect>
+        <!-- break (and throw the character out) when inside a hull, with a very brief delay -->
+        <StatusEffect type="OnActive" target="This" OnlyInside="true" Condition="0" setvalue="true" delay="0.1" />
+        <!-- Trigger explosions on contained items -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- Remove the item after exploding -->
+        <StatusEffect type="OnBroken" target="This">
+          <!-- short-range explosion to destroy walls immediately around the pod, making it less likely for the character to get stuck e.g. between multiple walls or inside some weird wall setup -->
+          <Explosion range="150.0" structuredamage="600" force="10.0" debris="true" decalsize="1.0" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" distancemin="0" distancemax="100" particleamount="100" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.5" />
+          <SpawnCharacter speciesname="husk" count="1" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <!-- child of the Controller = active when someone's using it -->
+      <!-- <LightComponent range="100" PowerConsumption="0" lightcolor="255,100,80,0" lightoffset="0,-15" blinkfrequency="1" AllowInGameEditing="false" IsOn="true">
+      <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" sourcerect="700,55,33,30" depth="0.54" origin="0.5,0.5" alpha="1.0" />
+      <IsActiveConditional ContainerIdentifier="depthchargeloader"/>
+    </LightComponent> -->
+      <LightComponent range="100" PowerConsumption="0" lightcolor="255,100,80,0" lightoffset="0,-15" scale="0.12" pulsefrequency="1" pulseamount="0.5" AllowInGameEditing="false" IsOn="true">
+        <Sprite texture="Content/Map/Outposts/Art/GenericAssets2.png" sourcerect="1250,299,175,163" depth="0.54" origin="0.5,0.5" alpha="1.0" />
+        <IsActiveConditional ContainerIdentifier="depthchargeloader" />
+      </LightComponent>
+    </Item>
+  </Override>
+</Items>

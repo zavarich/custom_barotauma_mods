@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- KEGS -->
+    <Item name="Empty Keg" identifier="he-kegempty" Tags="keg,emptykeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="false">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="0,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="0,0,91,138" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="0,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="9" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="15" requiresrecipe="false" amount="1" outcondition="1">
+        <RequiredSkill identifier="mechanical" level="30" />
+        <RequiredItem identifier="aluminium" amount="6" />
+      </Fabricate>
+      <Deconstruct time="2">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Holdable pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" handle1="0,53" handle2="0,53" holdangle="3" msg="ItemMsgPickUpSelect" PickingTime="0" aimpos="65,-10">
+        <StatusEffect type="OnSecondaryUse" target="This" interval="0.1">
+          <Conditional InWater="true" />
+          <Sound file="Content/Sounds/Water/Splash0.ogg" range="200" volume="0.5" />
+          <Remove />
+          <SpawnItem identifier="he-kegseawater" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" condition="0.01" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.2" />
+        <StatValue stattype="SwimmingSpeed" value="-0.3" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Sea Water" identifier="he-kegseawater" Tags="keg,filledkeg,waterkeg,seawaterkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="546,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="546,0,91,138" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="546,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <!-- <Fabricate suitablefabricators="sink" requiredtime="900" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="hose" amount="1" />
+      </Fabricate> -->
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="255,255,255,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <!-- Exclusive to salt keg: Reload in salt water -->
+        <StatusEffect type="OnSecondaryUse" target="This" condition="10" comparison="And">
+          <Conditional Condition="lt 100" />
+          <Conditional InWater="true" />
+          <ParticleEmitter particle="bubbles" particlespersecond="2" scalemin="0.25" scalemax="0.5" distancemin="30" distancemax="35" velocitymin="20" velocitymax="50" copyentityangle="true" anglemin="90" anglemax="90" colormultiplier="255,255,255,255" lifetimemultiplier="1" />
+          <Sound file="Content/Sounds/Water/SplashLoop.ogg" range="200" volume="1" loop="true" frequencymultiplier="2" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" Equip="true" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Water" identifier="he-kegwater" Tags="keg,filledkeg,waterkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="637,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="637,0,91,138" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="637,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="200" sold="true">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="1" maxavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="3" maxavailable="3" />
+      </Price>
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="20" />
+        <RequiredItem identifier="he-kegseawater" amount="1" />
+      </Fabricate>
+      <!-- <Fabricate suitablefabricators="sink" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="hose" amount="1" />
+        <RequiredItem tag="waterfilter" UseCondition="True" MinCondition="0.2" />
+      </Fabricate> -->
+      <!-- <Fabricate suitablefabricators="stove" requiredtime="600" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="10" />
+        <RequiredItem identifier="he-kegseawater" amount="1" />
+      </Fabricate> -->
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="255,255,255,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Coalition Premium Beer" identifier="he-kegcoalitionpremium" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="91,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="91,0,91,138" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="91,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <PreferredContainer primary="kitchen" secondary="crewcab" />
+      <Body width="91" height="136" density="10.1" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="4" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="300" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="0" maxavailable="2">
+          <Reputation faction="Coalition" min="30" />
+        </Price>
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="1" maxavailable="2">
+          <Reputation faction="Coalition" min="30" />
+        </Price>
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="200,130,60,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Jovian Force Beer" identifier="he-kegjovianforce" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="819,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="819,0,91,138" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="819,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="4" />
+        <RequiredItem identifier="flashpowder" amount="2" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="300" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="0" maxavailable="2">
+          <Reputation faction="Separatists" min="30" />
+        </Price>
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="1" maxavailable="2">
+          <Reputation faction="Separatists" min="30" />
+        </Price>
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="200,130,60,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Liquid Ascension Beer" identifier="he-kegliquidascension" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="910,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="910,0,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="910,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="4" />
+        <RequiredItem identifier="huskeggsbasic" amount="1" />
+        <RequiredItem identifier="bubbleberries" amount="1" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="850" sold="false">
+        <Price storeidentifier="merchanthusk" multiplier="1" minavailable="0" maxavailable="2">
+          <Reputation faction="huskchurch" min="30" />
+        </Price>
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="20,180,125,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Clown Juice Beer" identifier="he-kegclownjuice" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="0,138,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="0,138,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="0,138,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="4" />
+        <RequiredItem identifier="banana" amount="8" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="420" sold="false">
+        <Price storeidentifier="merchantclown" multiplier="1" minavailable="1" maxavailable="2">
+          <Reputation faction="clowns" min="30" />
+        </Price>
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="180,70,60,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Reaper's Tribute Beer" identifier="he-kegreaperstribute" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="728,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="728,0,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="728,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="false" amount="1">
+        <RequiredSkill identifier="cooking" level="25" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="5" />
+        <RequiredItem identifier="badtobaccobud" amount="1" />
+        <RequiredItem identifier="bubbleberries" amount="3" />
+        <RequiredItem identifier="popnut" amount="1" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="450" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="0" maxavailable="2" />
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="1" maxavailable="2" />
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="155,80,175,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Rum" identifier="he-kegrum" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="182,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="182,0,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="182,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.1" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="true" amount="1">
+        <RequiredSkill identifier="cooking" level="30" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="8" />
+        <RequiredItem identifier="ethanol" amount="1" />
+        <RequiredItem identifier="raptorbane" amount="8" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="800" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="0" maxavailable="2" />
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="1" maxavailable="2" />
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="190,175,105,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Pirate Rum" identifier="he-kegpiraterum" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="273,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="273,0,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="273,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="10.5" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="true" amount="1">
+        <RequiredSkill identifier="cooking" level="35" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="8" />
+        <RequiredItem identifier="ethanol" amount="3" />
+        <RequiredItem identifier="badraptorbane" amount="3" />
+        <RequiredItem identifier="uranium" amount="1" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="1000" sold="false">
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="0" maxavailable="1" />
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="125,140,55,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Whiskey" identifier="he-kegwhiskey" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="364,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="364,0,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="364,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="11" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="true" amount="1">
+        <RequiredSkill identifier="cooking" level="40" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="7" />
+        <RequiredItem identifier="badraptorbane" amount="1" />
+        <RequiredItem identifier="bubbleberries" amount="1" />
+        <RequiredItem identifier="slimebacteria" amount="1" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="1100" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1" minavailable="0" maxavailable="2" />
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="1" maxavailable="2" />
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="230,100,60,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+    <Item name="Keg of Halucinova" identifier="he-keghalucinova" Tags="keg,filledkeg,crate" category="Misc" subcategory="Kegs" maxstacksize="1" scale="0.5" impactsoundtag="impact_metal_heavy" canflipx="false" isshootable="true">
+      <PreferredContainer primary="kitchen" secondary="cargocontainer" />
+      <!-- JANK JANK JANK Instead of just using containedsprite and rotating it 90°, I have to
+      -add a 1x1 invisible containedsprite, enabled in crate shelves
+      -add an inventoryicon, otherwise the icon becomes invisible in shelves
+      -add a decorativesprite that is the main sprite rotated 90°, because containedsprite doesnt handle rotation
+      -use decorativespritebehavior="HideWhenNotVisible" in the containedsprite to HIDE the decorativesprite when not contained 
+      TODO: simplify with rotation="90" if it ever gets added https://github.com/FakeFishGames/Barotrauma/discussions/16174 -->
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="455,0,91,138" depth="0.699" origin="0.5,0.5" canflipx="false" />
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="455,0,91,138" depth="0.699" origin="0.5,0.5" />
+      <ContainedSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" allowedcontainertags="cargocontainer" usewhenattached="false" sourcerect="0,0,1,1" depth="0.699" origin="0.5,0.5" decorativespritebehavior="HideWhenNotVisible" />
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Food/Kegs.png" sourcerect="455,0,91,138" depth="0.699" origin="0.5,0.5" rotation="90" />
+      <Body width="91" height="136" density="11.5" />
+      <Fabricate suitablefabricators="brewkettle" requiredtime="300" requiresrecipe="true" amount="1">
+        <RequiredSkill identifier="cooking" level="50" />
+        <RequiredItem tag="waterkeg" amount="1" />
+        <RequiredItem identifier="ethanol" amount="7" />
+        <RequiredItem identifier="badbubbleberries" amount="1" />
+        <RequiredItem identifier="badpopnut" amount="1" />
+        <RequiredItem identifier="dementonite" amount="2" />
+      </Fabricate>
+      <Deconstruct time="2" requireddeconstructor="deconstructor">
+        <Item identifier="aluminium" amount="3" outcondition="1.0" />
+      </Deconstruct>
+      <Price baseprice="1200" sold="false">
+        <Price storeidentifier="merchantcity" multiplier="1" minavailable="0" maxavailable="1" />
+      </Price>
+      <Holdable canBeCombined="true" removeOnCombined="false" pickkey="Select" slots="RightHand+LeftHand" holdpos="40,-40" holdangle="3" aimpos="65,-10" handle1="0,53" handle2="0,53" aimable="false" characterusable="true" msg="ItemMsgPickUpSelect" PickingTime="0">
+        <!-- Revert position if not emptying -->
+        <StatusEffect type="OnActive" target="This" holdpos="40,-40" holdangle="3" aimpos="65,-10" aimangle="0" setvalue="true">
+          <Conditional hasstatustag="neq emptying" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-7" />
+        <StatusEffect type="OnUse" target="This" duration="0.1" statuseffecttags="emptying" holdpos="-40,0" holdangle="176" aimpos="0,0" aimangle="180" offset="0,-36" setvalue="true" comparison="and">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="300" loop="true" />
+          <ParticleEmitter particle="waterdrop" velocitymin="0.0" velocitymax="10.0" particlespersecond="10" distancemin="-3" distancemax="3" colormultiplier="20,90,45,255" />
+          <Conditional InWater="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+          <SpawnItem identifier="he-kegempty" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" Count="1" />
+        </StatusEffect>
+        <StatValue stattype="WalkingSpeed" value="-0.3" />
+        <StatValue stattype="SwimmingSpeed" value="-0.4" />
+      </Holdable>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <!-- 写在前面 -->
+    <!-- 这个游戏的引擎对于这种OOP的写法支持有限：不仅是语法上的支持，更多的是性能上的支持，后者是比较致命的。但是为了能给我在和GunEnhanced兼容时少点工作，我还是硬着头皮尝试了一下OOP写法。如果你遇到了性能问题，请附上日志联系我。我考虑一下改回文档的最佳实践 -->
+    <!-- 枪管 -->
+    <!-- 声音控制逻辑，如果能装消音器的话 -->
+    <!-- <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+    <Conditional HasStatusTag="neq suppressed" />
+</StatusEffect>
+<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_1.ogg" type="OnUse" range="300" selectionmode="Random" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_2.ogg" type="OnUse" range="300" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_3.ogg" type="OnUse" range="300" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_4.ogg" type="OnUse" range="300" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="300" />
+    <Conditional HasStatusTag="suppressed" />
+</StatusEffect> -->
+    <!-- 无任何改造时候的屏幕晃动 -->
+    <!-- <StatusEffect type="OnUse" target="This" conditional="and">
+    <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="20.0" />
+    <Conditional HasStatusTag="neq suppressed" />
+    <Conditional HasStatusTag="neq flashHided" />
+</StatusEffect> -->
+    <!-- 消焰器，伤害增加5%，可以加装在小型武器上，有效减少屏幕晃动 -->
+    <Item name="" identifier="flashHiderMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" depth="0.55" origin="0.0,0.5" />
+      <Body width="16" height="8" density="15" />
+      <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.35" setvalue="true" interval="1">
+          <Conditional HasTag="smg" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" setvalue="true" interval="1" conditional="or">
+          <Conditional HasTag="rifle" />
+          <Conditional HasTag="hmg" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.85" setvalue="true" interval="1">
+          <Conditional HasTag="machinepistol" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.55" setvalue="true" interval="1">
+          <Conditional HasTag="smgunique" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" setvalue="true" interval="1">
+          <Conditional HasTag="assaultrifle" />
+        </StatusEffect>
+      </Holdable>
+      <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="50" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="steel" />
+      </Fabricate>
+    </Item>
+    <!-- 物品栏逻辑 -->
+    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+    <!-- tag触发，写在holdable下面 -->
+    <!-- <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
+    <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+    <!-- 晃动控制，写在rangedweapon下面 -->
+    <!-- <StatusEffect type="OnUse" target="This">
+    <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+    <Conditional HasStatusTag="flashHided" />
+</StatusEffect> -->
+    <!-- 延长枪管,延长枪管位置60单位,并增加10%伤害,增加10%穿甲 -->
+    <Item name="" identifier="longBarrelMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="1,11,64,8" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="1,11,64,8" depth="0.55" origin="0.0,0.5" />
+      <Body width="64" height="8" density="15" />
+      <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.1" penetration="0.10" barrelpos="190,0" setvalue="true" interval="1">
+          <Conditional HasTag="rifle" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.6" penetration="0.40" barrelpos="131,-1" setvalue="true" interval="1">
+          <Conditional HasTag="smgunique" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.1" penetration="0.10" barrelpos="170,-5" setvalue="true" interval="1">
+          <Conditional HasTag="assaultrifle" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.1" penetration="0.10" barrelpos="140,-12" setvalue="true" interval="1">
+          <Conditional HasTag="hmg" />
+        </StatusEffect>
+      </Holdable>
+      <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="steel" amount="2" />
+      </Fabricate>
+    </Item>
+    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.10" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+</StatusEffect>
+<StatusEffect type="OnInserted" target="This" barrelpos="105,-15" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+    <!-- 长枪消音器，减少噪声，增加20%伤害，延长枪管位置70单位，一定程度减少屏幕晃动，需要高级材料制作 -->
+    <Item name="" identifier="longSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" depth="0.55" origin="0.0,0.5" />
+      <Body width="60" height="12" density="15" />
+      <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="200,0" setvalue="true" interval="1">
+          <Conditional HasTag="rifle" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.7" barrelpos="141,-1" setvalue="true" interval="1">
+          <Conditional HasTag="smgunique" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="180,-5" setvalue="true" interval="1">
+          <Conditional HasTag="assaultrifle" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="150,-12" setvalue="true" interval="1">
+          <Conditional HasTag="hmg" />
+        </StatusEffect>
+      </Holdable>
+      <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="70" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="aluminium" amount="2" />
+        <RequiredItem identifier="fulgurium" />
+      </Fabricate>
+    </Item>
+    <!-- 物品栏逻辑 -->
+    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.15" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+</StatusEffect>
+<StatusEffect type="OnInserted" target="This" barrelpos="145,12" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+    <!-- tag激活 -->
+    <!-- <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+    <!-- 晃动控制 -->
+    <!-- <StatusEffect type="OnUse" target="This">
+    <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+    <Conditional HasStatusTag="suppressed" />
+</StatusEffect> -->
+    <!-- 紧凑消音器，减少噪声，增加5%伤害，一定程度减少屏幕晃动，延长枪管位置30单位 -->
+    <Item name="" identifier="shortSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" depth="0.55" origin="0.0,0.5" />
+      <Body width="36" height="12" density="15" />
+      <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="94,3" setvalue="true" interval="1">
+          <Conditional HasTag="smg" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="101,-1" setvalue="true" interval="1">
+          <Conditional HasTag="rifle" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.85" barrelpos="84,9" setvalue="true" interval="1">
+          <Conditional HasTag="machinepistol" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="110,-12" setvalue="true" interval="1">
+          <Conditional HasTag="hmg" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="140,-5" setvalue="true" interval="1">
+          <Conditional HasTag="assaultrifle" />
+        </StatusEffect>
+      </Holdable>
+      <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="titaniumaluminiumalloy" />
+        <RequiredItem identifier="aluminium" />
+      </Fabricate>
+    </Item>
+  </Override>
+</Items>

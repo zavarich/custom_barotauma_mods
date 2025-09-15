@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <!-- "RUSTY" weapons, prevents players from using them and get endgame weapons from NPCs too early. -->
+    <!-- THESE ARE VARIANTS, MAKE SURE THEY CANT BE LOOTED,BOUGHT OR FABRICATED. 
+    THE WEAPON TAKES DAMAGE WHEN SHOT AND BREAKS APART AT 0 CONDITION. ADJUST THE -CONDITION BASED ON HOW MUCH IT SHOOTS.
+    If a pirate has 20 bullets in its loadout, -5 condition per shot will allow it to shoot all of its bullets  -->
+    <Item name="" identifier="revolverbroken" variantof="revolver" nameidentifier="brokenweapon" descriptionidentifier="brokenweapon" hideconditionbar="true" spritecolor="240,180,140,255" InventoryIconColor="240,180,140,255">
+      <ClearAll>
+        <PreferredContainer />
+        <Price />
+        <Fabricate />
+      </ClearAll>
+      <RangedWeapon>
+        <StatusEffect type="OnUse" target="This" condition="-7" disabledeltatime="true">
+          <sound file="Content/Sounds/Impact/MetalimpactLight1.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight2.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight3.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight4.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <ParticleEmitter particle="weldspark" anglemin="190" anglemax="350" distancemin="0" distancemax="0" particleamount="2" velocitymin="50" velocitymax="100" scalemin="0.35" scalemax="0.65" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <ParticleEmitter particle="shrapnel" anglemin="190" anglemax="350" distancemin="0" distancemax="50" particleamount="10" velocitymin="20" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+          <ParticleEmitter particle="weldspark" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="5" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="1" />
+          <sound file="Content/Items/Door/DoorBreak1.ogg" selectionmode="Random" range="300" frequencymultiplier="1.5" />
+          <RemoveItem />
+        </StatusEffect>
+      </RangedWeapon>
+    </Item>
+    <Item name="" identifier="smgbroken" variantof="smg" nameidentifier="brokenweapon" descriptionidentifier="brokenweapon" hideconditionbar="true" spritecolor="240,180,140,255" InventoryIconColor="240,180,140,255">
+      <ClearAll>
+        <PreferredContainer />
+        <Price />
+        <Fabricate />
+      </ClearAll>
+      <RangedWeapon>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-2" disabledeltatime="true">
+          <sound file="Content/Sounds/Impact/MetalimpactLight1.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight2.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight3.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight4.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <ParticleEmitter particle="weldspark" anglemin="190" anglemax="350" distancemin="0" distancemax="0" particleamount="2" velocitymin="50" velocitymax="100" scalemin="0.35" scalemax="0.65" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <ParticleEmitter particle="shrapnel" anglemin="190" anglemax="350" distancemin="0" distancemax="50" particleamount="10" velocitymin="20" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+          <ParticleEmitter particle="weldspark" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="5" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="1" />
+          <sound file="Content/Items/Door/DoorBreak1.ogg" selectionmode="Random" range="300" frequencymultiplier="1.5" />
+          <RemoveItem />
+        </StatusEffect>
+      </RangedWeapon>
+    </Item>
+    <Item name="" identifier="shotgunbroken" variantof="shotgun" nameidentifier="brokenweapon" descriptionidentifier="brokenweapon" hideconditionbar="true" spritecolor="240,180,140,255" InventoryIconColor="240,180,140,255">
+      <ClearAll>
+        <PreferredContainer />
+        <Price />
+        <Fabricate />
+      </ClearAll>
+      <RangedWeapon>
+        <StatusEffect type="OnUse" target="This" condition="-7" disabledeltatime="true">
+          <sound file="Content/Sounds/Impact/MetalimpactLight1.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight2.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight3.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight4.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <ParticleEmitter particle="weldspark" anglemin="190" anglemax="350" distancemin="0" distancemax="0" particleamount="2" velocitymin="50" velocitymax="100" scalemin="0.35" scalemax="0.65" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <ParticleEmitter particle="shrapnel" anglemin="190" anglemax="350" distancemin="0" distancemax="50" particleamount="10" velocitymin="20" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+          <ParticleEmitter particle="weldspark" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="5" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="1" />
+          <sound file="Content/Items/Door/DoorBreak1.ogg" selectionmode="Random" range="300" frequencymultiplier="1.5" />
+          <RemoveItem />
+        </StatusEffect>
+      </RangedWeapon>
+    </Item>
+    <Item name="" identifier="assaultriflebroken" variantof="assaultrifle" nameidentifier="brokenweapon" descriptionidentifier="brokenweapon" hideconditionbar="true" spritecolor="240,180,140,255" InventoryIconColor="240,180,140,255">
+      <ClearAll>
+        <PreferredContainer />
+        <Price />
+        <Fabricate />
+      </ClearAll>
+      <RangedWeapon>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-3" disabledeltatime="true">
+          <sound file="Content/Sounds/Impact/MetalimpactLight1.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight2.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight3.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight4.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <ParticleEmitter particle="weldspark" anglemin="190" anglemax="350" distancemin="0" distancemax="0" particleamount="2" velocitymin="50" velocitymax="100" scalemin="0.35" scalemax="0.65" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <ParticleEmitter particle="shrapnel" anglemin="190" anglemax="350" distancemin="0" distancemax="50" particleamount="10" velocitymin="20" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+          <ParticleEmitter particle="weldspark" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="5" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="1" />
+          <sound file="Content/Items/Door/DoorBreak1.ogg" selectionmode="Random" range="300" frequencymultiplier="1.5" />
+          <RemoveItem />
+        </StatusEffect>
+      </RangedWeapon>
+    </Item>
+    <Item name="" identifier="machinepistolbroken" variantof="machinepistol" nameidentifier="brokenweapon" descriptionidentifier="brokenweapon" hideconditionbar="true" spritecolor="240,180,140,255" InventoryIconColor="240,180,140,255">
+      <ClearAll>
+        <PreferredContainer />
+        <Price />
+        <Fabricate />
+      </ClearAll>
+      <RangedWeapon>
+        <StatusEffect type="OnUse" target="Contained">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-2" disabledeltatime="true">
+          <sound file="Content/Sounds/Impact/MetalimpactLight1.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight2.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight3.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <sound file="Content/Sounds/Impact/MetalimpactLight4.ogg" range="250.0" frequencymultiplier="2" volume="3" selectionmode="Random" />
+          <ParticleEmitter particle="weldspark" anglemin="190" anglemax="350" distancemin="0" distancemax="0" particleamount="2" velocitymin="50" velocitymax="100" scalemin="0.35" scalemax="0.65" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <ParticleEmitter particle="shrapnel" anglemin="190" anglemax="350" distancemin="0" distancemax="50" particleamount="10" velocitymin="20" velocitymax="50" scalemin="0.25" scalemax="0.5" />
+          <ParticleEmitter particle="weldspark" anglemin="0" anglemax="360" distancemin="0" distancemax="50" particleamount="5" velocitymin="100" velocitymax="200" scalemin="0.5" scalemax="1" />
+          <sound file="Content/Items/Door/DoorBreak1.ogg" selectionmode="Random" range="300" frequencymultiplier="1.5" />
+          <RemoveItem />
+        </StatusEffect>
+      </RangedWeapon>
+    </Item>
+  </Override>
+</Items>

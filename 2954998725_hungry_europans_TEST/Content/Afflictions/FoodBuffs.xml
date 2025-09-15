@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Afflictions>
+    <!-- 
+    NEW GENERAL FOOD BUFFS (WIP):
+    merges effect into these
+            
+    - "Calcium Rich"          (blunt+stuffed resistance)         cheese, mudraptor meat
+    - "Lean fats"            (swim speed)                        crawler, spineling
+    - "Protein Rich"         (melee damage,weapons skill)        hammerhead, cheese
+    - "Vitamin Rich"         (O2 capacity, bloodloss reduction)  threshers, salads 
+    - "Sugar Rich"          (skill learning, fatigue res)        sugary meals
+    - "Fiber Rich"          (defecation, stomachache res)        vegetables
+       
+    NOTE: if you want a food item to reach the 1800% cap of foodbuffs, use a 20/1  foodbuff/stuffed ratio
+          stuffed makes you vomit above 80, so you want to gain 1800 foodbuff at 80 stuffed
+          when hunger is factored (allows you to stack more foodbuff before reaching stuffed), then 20 is a good number
+          Only the BEST foods should make you cap before getting fully stuffed
+          
+    
+    like this:    
+          <Affliction identifier="he-proteinrich" amount="20" />
+          <Affliction identifier="he-stuffed" amount="1" />
+       
+       All foodbuff effects ramp up from 0-100 and then have their full effect above 100
+       
+    -->
+    <!-- Calcium rich diet, gives resistance to bone damage and helps digesting -->
+    <Affliction name="Calcium Rich Diet" identifier="he-calciumrich" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="100" showinhealthscannerthreshold="100" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" resistancefor="blunttrauma" minresistance="0.0" maxresistance="0.25">
+        <StatusEffect target="Character">
+          <ReduceAffliction identifier="he-stuffed" strength="0.010" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1" resistancefor="blunttrauma" minresistance="0.25" maxresistance="0.25">
+        <StatusEffect target="Character">
+          <ReduceAffliction identifier="he-stuffed" strength="0.025" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Lean fat diet, makes you run/swim faster -->
+    <Affliction name="Fat Rich Diet" identifier="he-fatrich" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="100" showinhealthscannerthreshold="100" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1">
+        <StatValue stattype="SwimmingSpeed" minvalue="0.0" maxvalue="0.15" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.0" maxvalue="0.15" />
+      </Effect>
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1">
+        <StatValue stattype="SwimmingSpeed" minvalue="0.15" maxvalue="0.15" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.15" maxvalue="0.15" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Protein Rich Diet, gives extra melee damage and weapons skill  -->
+    <Affliction name="Potein Rich Diet" identifier="he-proteinrich" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="100" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1">
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.0" maxvalue="0.15" />
+        <StatValue stattype="WeaponsSkillBonus" value="0" />
+      </Effect>
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1">
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.15" maxvalue="0.15" />
+        <StatValue stattype="WeaponsSkillBonus" value="5" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Vitamin Rich Diet, increases the amount of red blood cells in the body -->
+    <Affliction name="Vitamin Rich Diet" identifier="he-vitaminrich" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="100" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" resistancefor="oxygenlow,bloodloss" minresistance="0.0" maxresistance="0.25" />
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1" resistancefor="oxygenlow,bloodloss" minresistance="0.25" maxresistance="0.25" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Sugar Rich Diet, helps with skill gain and mood -->
+    <Affliction name="Sugar Rich Diet" identifier="he-sugarrich" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="100" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" resistancefor="mood,fatigue" minresistance="0.0" maxresistance="0.25" minskillgainmultiplier="1.0" maxskillgainmultiplier="1.25" />
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1" resistancefor="mood,fatigue" minresistance="0.25" maxresistance="0.25" minskillgainmultiplier="1.25" maxskillgainmultiplier="1.25" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Fiber Rich Diet, slows down defecation and stomachache -->
+    <Affliction name="Fiber Rich Diet" identifier="he-fiberrich" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="100" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" resistancefor="defecate,stomachache" minresistance="0.0" maxresistance="0.5" />
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1" resistancefor="defecate,stomachache" minresistance="0.5" maxresistance="0.5" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!--  //////////////
+  //////////////
+  //////////////
+  //////////////
+  //////////////
+  //////////////
+  ////////////// -->
+    <!-- FOOD AFFLICTIONS -->
+    <!-- Psilotoad -->
+    <Affliction name="Heightened Adrenalin (Food)" identifier="he-alwaysconscious" description="Your adrenaline levels are heightened, preventing your from falling unconcious when severely wounded." type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="1800" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="1800" strengthchange="-1">
+        <AbilityFlag flagtype="AlwaysStayConscious" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Orangeboy -->
+    <Affliction name="Heightened Senses (Food)" identifier="he-maxweaponskill" description="Your senses are temporarily heightened, allowing you to operate every weapon to its full potential." type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="1800" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="1800" strengthchange="-1">
+        <StatValue stattype="WeaponsSkillOverride" value="100" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Husk -->
+    <Affliction name="Husk Stench (Food)" identifier="he-disguisedashusk" description="Ugh... you reek of husk infected flesh! Husks will probably accept you as one of their own." type="foodbuff" isbuff="true" limbspecific="false" showiconthreshold="0" showinhealthscannerthreshold="0" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0">
+      <Description textidentifier="afflictiondescription.he-disguisedashusk.self" target="Self" />
+      <Description textidentifier="afflictiondescription.he-disguisedashusk.others" target="OtherCharacter" />
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" />
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1" tag="huskinfected">
+        <StatusEffect target="Character">
+          <ParticleEmitter particle="plasmasmoke" anglemin="60" anglemax="120" particlespersecond="4" distancemin="-30" distancemax="30" velocitymin="30" velocitymax="50" scalemin="1" scalemax="2" scalemultiplier="1,1" lifetimemultiplier="0.25" colormultiplier="255,180,255,120" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- Watcher, extra skill gain + thermal vision at the cost of psychosis -->
+    <Affliction name="Watcher's sight (Food)" identifier="he-watchermindsense" type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" showiconthreshold="0" treatmentthreshold="100" maxstrength="1800" iconcolors="150,255,150;75,255,75;0,255,0" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" minskillgainmultiplier="1.0" maxskillgainmultiplier="1.25" MinAfflictionOverlayAlphaMultiplier="0" MaxAfflictionOverlayAlphaMultiplier="0.2" />
+      <Effect minstrength="100" maxstrength="1800" strengthchange="-1" minskillgainmultiplier="1.25" maxskillgainmultiplier="1.25" MinAfflictionOverlayAlphaMultiplier="0.2" MaxAfflictionOverlayAlphaMultiplier="1" minfacetint="255,255,255,0" maxfacetint="255,100,255,150" ThermalOverlayRange="1500" ThermalOverlayColor="130,70,145,150">
+        <StatusEffect target="Character" targetlimb="Head">
+          <Affliction identifier="hallucinating" amount="1.5" />
+          <ParticleEmitter particle="muzzleflashpulselaser" particleamount="1" emitinterval="3" scalemin="0.2" scalemax="0.3" velocitymin="0" velocitymax="0" anglemin="0" anglemax="360" copyentityangle="false" lifetimemultiplier="1" colormultiplier="50,0,150,255" />
+        </StatusEffect>
+      </Effect>
+      <AfflictionOverlay texture="%ModDir:2954998725%/Content/UI/HalucinovaOverlayBase.png" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- ENDWORM -->
+    <Affliction name="Pressure Resistance (Food)" identifier="he-pressureresistance" description="Pressure be gone." type="foodbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="1800" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="1800" strengthchange="-1" resistancefor="pressure" minresistance="1" maxresistance="1">
+        <AbilityFlag flagtype="ImmuneToPressure" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- 
+    //// BEVERAGES ////
+    //// BEVERAGES ////
+    //// BEVERAGES ////
+    //// BEVERAGES //// -->
+    <!-- CLOWN JUICE -->
+    <Affliction name="Clown Juice" identifier="he-clownjuice" description="You can feel the Honkmother's grace." type="drinkbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="1800" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="1800" strengthchange="-1">
+        <StatusEffect tags="clown" type="Always" target="Character" HideFace="true" duration="0.5" stackable="false">
+          <Affliction identifier="clownpower" strength="1" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- COALITION PREMIUM -->
+    <Affliction name="Coalition Premium" identifier="he-coalitionpremium" description="Your turret operating skills are temporarily increased. Turrets you operate use up to 50% less power depending on the strength of the effect." type="drinkbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="1800" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="250" strengthchange="-1">
+        <StatValue stattype="TurretPowerCostReduction" minvalue="0.0" maxvalue="0.25" />
+      </Effect>
+      <Effect minstrength="250" maxstrength="1800" strengthchange="-1">
+        <StatValue stattype="TurretPowerCostReduction" minvalue="0.25" maxvalue="0.5" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <!-- JOVIAN FORCE -->
+    <Affliction name="Jovian Force" identifier="he-jovianforce" description="Your turret operating skills are temporarily increased. Turrets you operate shoot up to 50% faster depending on the strength of the effect." type="drinkbuff" isbuff="true" limbspecific="false" indicatorlimb="Torso" maxstrength="1800" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="250" strengthchange="-1">
+        <StatValue stattype="TurretAttackSpeed" minvalue="0.0" maxvalue="0.25" />
+        <StatValue stattype="TurretChargeSpeed" minvalue="0.0" maxvalue="0.25" />
+      </Effect>
+      <Effect minstrength="250" maxstrength="1800" strengthchange="-1">
+        <StatValue stattype="TurretAttackSpeed" minvalue="0.25" maxvalue="0.5" />
+        <StatValue stattype="TurretChargeSpeed" minvalue="0.25" maxvalue="0.5" />
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="909,0,115,123" color="40,255,20,255" origin="0.5,0.5" />
+    </Affliction>
+    <Affliction name="Caffeine Rush" identifier="caffeinated" description="" type="buff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" activationthreshold="0" showinhealthscannerthreshold="0" maxstrength="1800" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.quenched.other" target="OtherCharacter" minstrength="0" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="1800" minresistance="1.0" maxresistance="1.0" resistancefor="fatigue" strengthchange="-1">
+        <StatValue stattype="WalkingSpeed" minvalue="0.1" maxvalue="0.1" />
+        <StatusEffect type="OnActive" target="Character" interval="1" disabledeltatime="true">
+          <ReduceAffliction type="sleep" amount="0.05" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="384,256,128,128" origin="0,0" />
+    </Affliction>
+  </Afflictions>
+</Override>

@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Afflictions>
+    <!-- TODO: Make all of these affectmachines="false"? -->
+    <!-- NEEDS INTEGRATION -->
+    <Affliction name="Fatigue" identifier="fatigue" description="" type="sleep" limbspecific="false" indicatorlimb="Head" maxstrength="100" affectmachines="false" showiconthreshold="25" showinhealthscannerthreshold="0.5" hideiconafterdelay="true" healableinmedicalclinic="false" iconcolors="0,100,0,255;100,0,0,255">
+      <Description textidentifier="afflictiondescription.fatigue.self.medium" target="Self" minstrength="25" maxstrength="50" />
+      <Description textidentifier="afflictiondescription.fatigue.self.high" target="Self" minstrength="50" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.fatigue.other.low" target="OtherCharacter" minstrength="0" maxstrength="25" />
+      <Description textidentifier="afflictiondescription.fatigue.other.medium" target="OtherCharacter" minstrength="25" maxstrength="50" />
+      <Description textidentifier="afflictiondescription.fatigue.other.high" target="OtherCharacter" minstrength="50" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="25" dialogflag="tiredlight" strengthchange="0.0"></Effect>
+      <Effect minstrength="25" maxstrength="50" dialogflag="tiredmedium" strengthchange="0.0" />
+      <Effect minstrength="50" maxstrength="100" dialogflag="tiredheavy" strengthchange="0.0" minscreenblur="0.0" maxscreenblur="0.1" minchromaticaberration="0.0" maxchromaticaberration="1.0">
+        <StatusEffect type="OnActive" target="Character" interval="1">
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.05" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="30" maxinterval="120">
+        <StatusEffect type="OnActive" target="Character" comparison="and" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional fatigue="gte 80" />
+          <Affliction identifier="he-exhaustedsleep" amount="8" probability="0.2" />
+          <Affliction identifier="he-exhaustedsleep" amount="6" probability="0.2" />
+          <Affliction identifier="he-exhaustedsleep" amount="4" probability="0.2" />
+          <Affliction identifier="he-exhaustedsleep" amount="2" probability="0.2" />
+          <Affliction identifier="he-exhaustedsleep" amount="1" probability="0.2" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" comparison="and" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+          <Conditional fatigue="gte 100" />
+          <Affliction identifier="he-exhaustedsleep" amount="20" probability="0.5" />
+          <Affliction identifier="he-exhaustedsleep" amount="15" probability="0.75" />
+          <Affliction identifier="he-exhaustedsleep" amount="10" probability="0.75" />
+          <Affliction identifier="he-exhaustedsleep" amount="5" probability="1" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="768,256,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Mood" identifier="mood" description="" type="mood" limbspecific="false" indicatorlimb="Head" maxstrength="100" affectmachines="true" showiconthreshold="0" showinhealthscannerthreshold="1000" hideiconafterdelay="true" healableinmedicalclinic="false" iconcolors="0,100,0,255;100,0,0,255">
+      <Description textidentifier="afflictiondescription.mood.goodmood" minstrength="0" maxstrength="25" />
+      <Description textidentifier="afflictiondescription.mood.mediummood" minstrength="25" maxstrength="50" />
+      <Description textidentifier="afflictiondescription.mood.badmood" minstrength="50" maxstrength="75" />
+      <Description textidentifier="afflictiondescription.mood.awfulmood" minstrength="75" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="25" dialogflag="goodmood" minskillmultiplier="1.1" maxskillmultiplier="1.1"></Effect>
+      <Effect minstrength="25" maxstrength="50" dialogflag="mediummood" minskillmultiplier="1.1" maxskillmultiplier="0.9"></Effect>
+      <Effect minstrength="50" maxstrength="75" dialogflag="badmood" minskillmultiplier="0.9" maxskillmultiplier="0.8"></Effect>
+      <Effect minstrength="75" maxstrength="100" dialogflag="awfulmood" minskillmultiplier="0.8" maxskillmultiplier="0.7"></Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="896,256,128,128" origin="0,0" />
+    </Affliction>
+    <!-- HUNGER AND THIRST -->
+    <!-- HUNGER AND THIRST -->
+    <!-- TODO: when barodevs fix the treatment threshold literally not working, remove vitality loss from hunger https://github.com/FakeFishGames/Barotrauma/discussions/16221 -->
+    <Affliction identifier="hunger" name="Hunger" description="The stomach is happy." type="hunger" causeofdeathdescription="Starved" selfcauseofdeathdescription="You have died of starvation." limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" activationthreshold="0" treatmentthreshold="20" TreatmentSuggestionThreshold="1000" iconcolors="0,180,0,255;180,0,0,255" showinhealthscannerthreshold="0" maxstrength="100" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.he-hunger.self" target="Self" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.he-hunger.lethal.self" target="Self" minstrength="80" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.he-hunger.other.low" target="OtherCharacter" minstrength="0" maxstrength="30" />
+      <Description textidentifier="afflictiondescription.he-hunger.other" target="OtherCharacter" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.he-hunger.lethal.other" target="OtherCharacter" minstrength="80" maxstrength="100" />
+      <!-- Foodbuff effects should be worse the hungrier you are. Find a way to make that work -->
+      <!-- <Effect minstrength="0" maxstrength="100" minresistance="1.0" maxresistance="0.0" resistancefor="foodbuff" /> -->
+      <!-- No effects at this point -->
+      <Effect minstrength="0" maxstrength="30" minresistance="1.0" maxresistance="1.0" resistancefor="he-stuffed" strengthchange="0" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.0" />
+      <!-- Hunger decreases skills slightly -->
+      <Effect minstrength="30" maxstrength="60" minresistance="1.0" maxresistance="1.0" resistancefor="he-stuffed" dialogflag="hungrylight" strengthchange="0" minvitalitydecrease="0" maxvitalitydecrease="0" minskillmultiplier="1.0" maxskillmultiplier="0.8" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.0" />
+      <Effect minstrength="60" maxstrength="80" minresistance="1.0" maxresistance="1.0" resistancefor="he-stuffed" dialogflag="hungrymedium" minvitalitydecrease="0" maxvitalitydecrease="25" minskillmultiplier="0.8" maxskillmultiplier="0.6" minscreendistort="0" maxscreendistort="0" minradialdistort="0" maxradialdistort="0.1" strengthchange="0" minspeedmultiplier="1.0" maxspeedmultiplier="0.8" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="1.0">
+        <!-- Apply various debuffs -->
+        <StatValue stattype="RepairSpeed" minvalue="0" maxvalue="-0.2" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0" maxvalue="-0.2" />
+      </Effect>
+      <!-- Hunger starts to get lethal -->
+      <Effect minstrength="80" maxstrength="100" minresistance="1.0" maxresistance="1.0" resistancefor="he-stuffed" dialogflag="hungryheavy" minvitalitydecrease="25" maxvitalitydecrease="25" minskillmultiplier="0.6" maxskillmultiplier="0.2" minscreendistort="0" maxscreendistort="0" minscreenblur="0" maxscreenblur="3.0" minradialdistort="0.1" maxradialdistort="1.0" strengthchange="0" minspeedmultiplier="0.8" maxspeedmultiplier="0.5" MinAfflictionOverlayAlphaMultiplier="1.0" MaxAfflictionOverlayAlphaMultiplier="1.0">
+        <!-- Apply various debuffs -->
+        <StatValue stattype="RepairSpeed" minvalue="-0.2" maxvalue="-0.3" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.2" maxvalue="-0.5" />
+        <StatValue stattype="MedicalItemEffectivenessMultiplier" minvalue="0" maxvalue="-0.25" />
+        <StatValue stattype="BuffDurationMultiplier" minvalue="0" maxvalue="-0.5" />
+        <StatValue stattype="DebuffDurationMultiplier" minvalue="0" maxvalue="0.25" />
+        <StatusEffect target="Character">
+          <Conditional hunger="gte 100" />
+          <Affliction identifier="he-starvation" strength="0.5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="0,128,128,128" origin="0,0" />
+      <AfflictionOverlay texture="%ModDir:2954998725%/Content/UI/HungerOverlay.png" />
+    </Affliction>
+    <!-- invisible affliction that makes food buffs less effective at higher hunger levels -->
+    <!-- used to avoid starving to death to max out on buffs -->
+    <Affliction identifier="hungerfoodbuffresistance" name="Hunger Foodbuff Resistance" description="The hungrier you are the less food buffs are effective." type="hunger" limbspecific="false" hideiconafterdelay="true" activationthreshold="0" showiconthreshold="1000" showinhealthscannerthreshold="1000" TreatmentSuggestionThreshold="1000" maxstrength="100" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Effect minstrength="0" maxstrength="100" minresistance="0.0" maxresistance="1" resistancefor="foodbuff" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="0,128,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Thirst" identifier="thirst" description="You feel refreshed." type="thirst" causeofdeathdescription="Died of thirst" selfcauseofdeathdescription="You have died of thirst." limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" iconcolors="0,120,200,255;180,0,0,255" activationthreshold="0" showinhealthscannerthreshold="0" treatmentthreshold="20" maxstrength="100" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.he-thirst.self" target="Self" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.he-thirst.lethal.self" target="Self" minstrength="80" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.he-thirst.other.low" target="OtherCharacter" minstrength="0" maxstrength="30" />
+      <Description textidentifier="afflictiondescription.he-thirst.other" target="OtherCharacter" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.he-thirst.lethal.other" target="OtherCharacter" minstrength="80" maxstrength="100" />
+      <!-- No effects at this point -->
+      <Effect minstrength="0" maxstrength="25" strengthchange="0" />
+      <Effect minstrength="25" maxstrength="50" strengthchange="0" dialogflag="thirstylight" />
+      <!-- Thirst decreases vitality and speed slightly -->
+      <Effect minstrength="50" maxstrength="65" strengthchange="0" minvitalitydecrease="0" maxvitalitydecrease="15" minskillmultiplier="1.0" maxskillmultiplier="0.8" />
+      <Effect minstrength="65" maxstrength="80" dialogflag="thirstymedium" minvitalitydecrease="15" maxvitalitydecrease="25" minskillmultiplier="0.8" maxskillmultiplier="0.6" minscreendistort="0" maxscreendistort="0" minradialdistort="0" maxradialdistort="0.1" strengthchange="0" minspeedmultiplier="1.0" maxspeedmultiplier="0.8" />
+      <!-- Thirst starts to get lethal -->
+      <Effect minstrength="80" maxstrength="100" dialogflag="thirstyheavy" minvitalitydecrease="25" maxvitalitydecrease="25" minskillmultiplier="0.6" maxskillmultiplier="0.2" minscreendistort="0" maxscreendistort="1" minscreenblur="0" maxscreenblur="0.2" minradialdistort="0.1" maxradialdistort="0.2" strengthchange="0" minspeedmultiplier="0.8" maxspeedmultiplier="0.5">
+        <StatusEffect target="Character">
+          <Conditional thirst="gte 100" />
+          <Affliction identifier="he-dieofthirst" strength="0.1" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="128,128,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="he-starvation" name="Starvation" description="Starving" type="debuff" causeofdeathdescription="Starved" selfcauseofdeathdescription="You have died of starvation." limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="false" activationthreshold="0" showinhealthscannerthreshold="0" treatmentthreshold="0" maxstrength="100" affectmachines="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.he-starvation.self" target="Self" minstrength="0" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.he-starvation.other" target="OtherCharacter" minstrength="0" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="100" dialogflag="starving" minvitalitydecrease="0" maxvitalitydecrease="200" minscreendistort="0" maxscreendistort="0" minscreenblur="0" maxscreenblur="3.0" minradialdistort="0.0" maxradialdistort="1.0" strengthchange="0">
+        <StatusEffect target="Character">
+          <Conditional hunger="lt 100" />
+          <ReduceAffliction identifier="he-starvation" strength="20" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="256,128,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Dying of thirst" identifier="he-dieofthirst" description="Dying of thirst." type="debuff" causeofdeathdescription="Died of thirst" selfcauseofdeathdescription="You have died of thirst." limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="false" activationthreshold="0" showinhealthscannerthreshold="0" treatmentthreshold="0" maxstrength="100" affectmachines="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.he-dieofthirst.self" target="Self" minstrength="0" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.he-dieofthirst.other" target="OtherCharacter" minstrength="0" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="100" dialogflag="thirsting" minvitalitydecrease="0" maxvitalitydecrease="200" minscreendistort="0" maxscreendistort="0" minscreenblur="0" maxscreenblur="3.0" minradialdistort="0.0" maxradialdistort="1.0" strengthchange="0">
+        <StatusEffect target="Character">
+          <Conditional thirst="lt 100" />
+          <ReduceAffliction identifier="he-dieofthirst" strength="20" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="256,128,128,128" origin="0,0" />
+    </Affliction>
+    <!-- GENERIC -->
+    <Affliction name="Stuffed" identifier="he-stuffed" description="The stomach is full." type="nausea" causeofdeathdescription="Choked on vomit." selfcauseofdeathdescription="You have choked on your own vomit." showiconthreshold="1" showicontoothersthreshold="1" showinhealthscannerthreshold="1" limbspecific="false" maxstrength="100" affectmachines="false" treatmentthreshold="10000" karmachangeonapplied="0" damageoverlayalpha="0" healcostmultiplier="2.25" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="advancedafflictiondescription.self.he-stuffed" target="Self" minstrength="0" maxstrength="30" />
+      <Description textidentifier="advancedafflictiondescription.self.he-stuffed.2" target="Self" minstrength="50" maxstrength="80" />
+      <Description textidentifier="advancedafflictiondescription.self.he-stuffed.3" target="Self" minstrength="80" maxstrength="100" />
+      <Description textidentifier="advancedafflictiondescription.others.he-stuffed" target="OtherCharacter" minstrength="0" maxstrength="30" />
+      <Description textidentifier="advancedafflictiondescription.others.he-stuffed.2" target="OtherCharacter" minstrength="50" maxstrength="80" />
+      <Description textidentifier="advancedafflictiondescription.others.he-stuffed.3" target="OtherCharacter" minstrength="80" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="80" minresistance="1.0" maxresistance="1.0" resistancefor="hunger" strengthchange="-0.05" dialogflag="stuffedlight">
+        <StatusEffect target="Character" disabledeltatime="true" interval="1">
+          <Conditional defecate="gte 0.01" />
+          <Affliction identifier="defecate" strength="0.1" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" minresistance="1.0" maxresistance="1.0" resistancefor="hunger" strengthchange="-0.05" minfacetint="230,255,230,0" maxfacetint="210,255,210,150" minbodytint="230,255,230,0" maxbodytint="210,255,210,100" minspeedmultiplier="1.0" maxspeedmultiplier="0.6" dialogflag="stuffedheavy">
+        <StatusEffect target="Character" disabledeltatime="true" interval="1">
+          <Conditional defecate="gte 0.01" />
+          <Affliction identifier="defecate" strength="0.1" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="60" maxinterval="180" minstrength="80" maxstrength="100">
+        <StatusEffect target="Character" SpeedMultiplier="0.0" setvalue="true" duration="1.7">
+          <Conditional he-stuffed="gte 80" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Conditional he-stuffed="gte 80" />
+          <Sound file="Content/Sounds/HUMAN_chokeMale1.ogg" selectionmode="Random" />
+          <Sound file="Content/Sounds/HUMAN_chokeMale2.ogg" />
+          <Sound file="Content/Sounds/HUMAN_chokeMale3.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Conditional he-stuffed="gte 80" />
+          <Sound file="Content/Sounds/HUMAN_chokeFemale1.ogg" selectionmode="Random" />
+          <Sound file="Content/Sounds/HUMAN_chokeFemale2.ogg" />
+          <Sound file="Content/Sounds/HUMAN_chokeFemale3.ogg" />
+        </StatusEffect>
+        <StatusEffect target="Character" duration="2">
+          <Conditional he-stuffed="gte 80" />
+          <TriggerAnimation Type="Walk" filename="Vomit" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <Conditional he-stuffed="gte 80" />
+          <Affliction identifier="organdamage" strength="0.5" />
+          <ReduceAffliction identifier="he-stuffed" strength="50" />
+          <ReduceAffliction type="foodbuff" strength="300" />
+          <ReduceAffliction type="drinkbuff" strength="300" />
+        </StatusEffect>
+        <StatusEffect target="Character" targetlimbs="Head" duration="1" comparison="And">
+          <Conditional he-stuffed="gte 80" />
+          <Conditional HideFace="eq False" />
+          <ParticleEmitter particle="vomitsplash" copyentityangle="true" anglemin="-10" anglemax="10" particlespersecond="50" velocitymin="50" velocitymax="200" scalemin="0.1" scalemax="0.2" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="vomitsplatter" decalsize="0.5" shockwave="false" underwaterbubble="false" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="256,128,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Quenched" identifier="quenched" description="You don't get thirsty." type="buff" isbuff="true" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="true" activationthreshold="0" showinhealthscannerthreshold="0" maxstrength="1800" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.quenched.other" target="OtherCharacter" minstrength="0" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="1800" minresistance="1.0" maxresistance="1.0" resistancefor="thirst" strengthchange="-1" dialogflag="quenched" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="384,256,128,128" origin="0,0" />
+    </Affliction>
+    <!-- ALOHOLIC -->
+    <Affliction name="Alcoholic" identifier="he-alcoholism" description="The patient is happy enough... so long as they get what they need." type="debuff" limbspecific="false" indicatorlimb="Head" showiconthreshold="20" showinhealthscannerthreshold="0" hideiconafterdelay="true" treatmentthreshold="1000" maxstrength="100" affectmachines="false" karmachangeonapplied="0.0" healcostmultiplier="2.85" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="advancedafflictiondescription.self.he-alcoholism" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-alcoholism" target="OtherCharacter" />
+      <Effect minstrength="0" maxstrength="20" strengthchange="-0.003">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunknodebuffs="gte 1" />
+          <ReduceAffliction identifier="he-alcoholism" strength="100" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="20" maxstrength="40" dialogflag="alcoholiclight" strengthchange="0.0">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunk="lte 0" />
+          <Affliction identifier="he-alcoholwithdrawal" strength="0.05" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunknodebuffs="gte 1" />
+          <ReduceAffliction identifier="he-alcoholism" strength="100" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="40" maxstrength="80" dialogflag="alcoholicmedium" strengthchange="0.0">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunk="lte 0" />
+          <Affliction identifier="he-alcoholwithdrawal" strength="0.1" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunknodebuffs="gte 1" />
+          <ReduceAffliction identifier="he-alcoholism" strength="100" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" dialogflag="alcoholicheavy" strengthchange="0.0" minvitalitydecrease="0" maxvitalitydecrease="20">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunk="lte 0" />
+          <Affliction identifier="he-alcoholwithdrawal" strength="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional drunknodebuffs="gte 1" />
+          <ReduceAffliction identifier="he-alcoholism" strength="100" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="768,128,128,128" color="195,180,60,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Alcohol withdrawal" identifier="he-alcoholwithdrawal" description="Agitation and a tremor are obvious, as are the signs of nausea." type="debuff" causeofdeathdescription="Died of alcohol withdrawal" selfcauseofdeathdescription="You have died of alcohol withdrawal." limbspecific="false" indicatorlimb="Torso" showiconthreshold="20" showinhealthscannerthreshold="0" treatmentthreshold="30" maxstrength="100" affectmachines="false" MedicalSkillGain="0.0">
+      <Description textidentifier="advancedafflictiondescription.self.he-alcoholwithdrawal" minstrength="0" maxstrength="50" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-alcoholwithdrawal" minstrength="0" maxstrength="50" target="OtherCharacter" />
+      <Description textidentifier="advancedafflictiondescription.self.he-alcoholwithdrawal.2" minstrength="50" maxstrength="100" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-alcoholwithdrawal.2" minstrength="50" maxstrength="100" target="OtherCharacter" />
+      <!-- no effects at this point -->
+      <Effect minstrength="0" maxstrength="20" />
+      <!-- Slow down the character and slightly decrease vitality -->
+      <Effect minstrength="20" maxstrength="40" minvitalitydecrease="0" maxvitalitydecrease="20" strengthchange="0.00" minchromaticaberration="0.0" maxchromaticaberration="1.0" dialogflag="OpiateWithdrawalLow" minfacetint="255,255,255,0" maxfacetint="255,255,255,50" minspeedmultiplier="1.0" maxspeedmultiplier="0.8">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="nausea" strength="5" probability="0.05" />
+          <Affliction identifier="psychosis" strength="2" probability="0.02" />
+          <ReduceAffliction identifier="he-alcoholism" strength="0.025" probability="1.0" />
+        </StatusEffect>
+        <!-- only increase (worsen) the mood if it's enabled -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" strength="0.03" />
+        </StatusEffect>
+      </Effect>
+      <!-- Decrease vitality more. The strength of the affliction drops faster, meaning that 
+      the character needs a stronger opiate addiction for the withdrawal symptoms to stay at this level -->
+      <Effect minstrength="40" maxstrength="80" minvitalitydecrease="20" maxvitalitydecrease="50" strengthchange="0.0" minchromaticaberration="1.0" maxchromaticaberration="5.0" dialogflag="OpiateWithdrawalMedium" minfacetint="255,255,255,50" maxfacetint="255,255,255,100" minspeedmultiplier="0.8" maxspeedmultiplier="0.7">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="nausea" strength="20" probability="0.1" />
+          <Affliction identifier="psychosis" strength="4" probability="0.1" />
+          <ReduceAffliction identifier="he-alcoholism" strength="0.05" probability="1.0" />
+        </StatusEffect>
+        <!-- only increase (worsen) the mood if it's enabled -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" strength="0.06" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" minvitalitydecrease="50" maxvitalitydecrease="180" minscreendistort="0.0" maxscreendistort="3.0" strengthchange="0.0" minchromaticaberration="5.0" maxchromaticaberration="10.0" minradialdistort="10.0" maxradialdistort="40.0" dialogflag="OpiateWithdrawalHigh" minfacetint="255,255,255,100" maxfacetint="255,255,255,150" minspeedmultiplier="0.7" maxspeedmultiplier="0.5">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="nausea" strength="50" probability="0.25" />
+          <Affliction identifier="psychosis" strength="10" probability="0.15" />
+          <ReduceAffliction identifier="he-alcoholism" strength="0.1" probability="1.0" />
+        </StatusEffect>
+        <!-- only increase (worsen) the mood if it's enabled -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" strength="0.09" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="896,128,128,128" color="209,121,84,255" origin="0,0" />
+    </Affliction>
+    <!-- CANNIBAL -->
+    <Affliction name="Cannibalism" identifier="he-cannibalism" description="The patient is happy enough... so long as they get what they need." type="debuff" limbspecific="false" indicatorlimb="Head" showiconthreshold="20" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" hideiconafterdelay="true" treatmentthreshold="1000" maxstrength="100" affectmachines="false" karmachangeonapplied="0.0" healcostmultiplier="2.85" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="advancedafflictiondescription.self.he-cannibalism" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-cannibalism" target="OtherCharacter" />
+      <Effect minstrength="0" maxstrength="19.999" strengthchange="-0.002" />
+      <Effect minstrength="20" maxstrength="100" strengthchange="0.0">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="he-hungryforhumanmeat" strength="0.01" />
+        </StatusEffect>
+      </Effect>
+      <!--<AfflictionOverlay texture="%ModDir:2954998725%/Content/UI/CannibalInfoOverlay.png" />-->
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="640,128,128,128" color="195,180,60,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="Craving Human Meat" identifier="he-hungryforhumanmeat" description="Agitation and a tremor are obvious, the eyes stare empty." type="spaceherpes" causeofdeathdescription="Lost their mind over human meat." selfcauseofdeathdescription="You lost your mind over human meat." limbspecific="false" indicatorlimb="Torso" showiconthreshold="20" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" treatmentthreshold="20" maxstrength="100" affectmachines="false" MedicalSkillGain="0.0">
+      <Description textidentifier="advancedafflictiondescription.self.he-hungryforhumanmeat" minstrength="0" maxstrength="50" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-hungryforhumanmeat" minstrength="0" maxstrength="50" target="OtherCharacter" />
+      <Description textidentifier="advancedafflictiondescription.self.he-hungryforhumanmeat.2" minstrength="50" maxstrength="90" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-hungryforhumanmeat.2" minstrength="50" maxstrength="90" target="OtherCharacter" />
+      <Description textidentifier="advancedafflictiondescription.self.he-hungryforhumanmeat.3" minstrength="90" maxstrength="100" target="Self" />
+      <Description textidentifier="advancedafflictiondescription.others.he-hungryforhumanmeat.3" minstrength="90" maxstrength="100" target="OtherCharacter" />
+      <!-- no effects at this point -->
+      <Effect minstrength="0" maxstrength="20" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.0" resistancefor="damage,stun" minresistance="0.0" maxresistance="0.1">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional he-cannibalism="lte 0.0" />
+          <ReduceAffliction identifier="he-hungryforhumanmeat" strength="0.05" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="20" maxstrength="40" minvitalitydecrease="0" maxvitalitydecrease="20" strengthchange="0.00" minchromaticaberration="0.0" maxchromaticaberration="1.0" dialogflag="HungryForHumanMeatLow" minfacetint="255,255,255,0" maxfacetint="255,255,255,50" minspeedmultiplier="1.0" maxspeedmultiplier="0.8" resistancefor="damage,stun" minresistance="0.1" maxresistance="0.2" MinAfflictionOverlayAlphaMultiplier="0.0" MaxAfflictionOverlayAlphaMultiplier="0.1">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <ReduceAffliction identifier="he-cannibalism" strength="0.005" probability="1.0" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional he-cannibalism="lte 0.0" />
+          <ReduceAffliction identifier="he-hungryforhumanmeat" strength="0.05" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.2" maxvalue="0.3" />
+      </Effect>
+      <Effect minstrength="40" maxstrength="90" minvitalitydecrease="20" maxvitalitydecrease="50" strengthchange="0.0" minchromaticaberration="1.0" maxchromaticaberration="5.0" dialogflag="HungryForHumanMeatMedium" minfacetint="255,255,255,50" maxfacetint="255,255,255,100" minspeedmultiplier="0.8" maxspeedmultiplier="0.7" resistancefor="damage,stun" minresistance="0.2" maxresistance="0.3" minskillmultiplier="1" maxskillmultiplier="0.8" MinAfflictionOverlayAlphaMultiplier="0.1" MaxAfflictionOverlayAlphaMultiplier="0.1">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <ReduceAffliction identifier="he-cannibalism" strength="0.005" probability="1.0" />
+          <ReduceAffliction identifier="bleeding" strength="2" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional he-cannibalism="lte 0.0" />
+          <ReduceAffliction identifier="he-hungryforhumanmeat" strength="0.05" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.3" maxvalue="0.5" />
+      </Effect>
+      <Effect minstrength="90" maxstrength="100" minvitalitydecrease="25" maxvitalitydecrease="25" minscreendistort="0.0" maxscreendistort="3.0" strengthchange="0.05" minchromaticaberration="5.0" maxchromaticaberration="10.0" minradialdistort="2.0" maxradialdistort="5.0" dialogflag="HungryForHumanMeatHigh" minfacetint="255,255,255,100" maxfacetint="255,255,255,150" minspeedmultiplier="0.7" maxspeedmultiplier="0.5" resistancefor="damage,stun" minresistance="0.3" maxresistance="0.3" minskillmultiplier="0.8" maxskillmultiplier="0.5" MinAfflictionOverlayAlphaMultiplier="1.0" MaxAfflictionOverlayAlphaMultiplier="1.0">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <ReduceAffliction identifier="he-cannibalism" strength="0.01" probability="1.0" />
+          <ReduceAffliction identifier="bleeding" strength="5" />
+          <Affliction identifier="hunger" strength="0.2" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" multiplyafflictionsbymaxvitality="true">
+          <Affliction identifier="he-cannibalmouth" amount="1" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.5" maxvalue="1.0" />
+      </Effect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 20" />
+          <Conditional he-hungryforhumanmeat="lt 25" />
+          <Affliction identifier="he-hungryforhumanmeatveins10" strength="300" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 25" />
+          <Conditional he-hungryforhumanmeat="lt 30" />
+          <Affliction identifier="he-hungryforhumanmeatveins30" strength="300" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 30" />
+          <Conditional he-hungryforhumanmeat="lt 35" />
+          <Affliction identifier="he-hungryforhumanmeatveins60" strength="300" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 35" />
+          <Conditional he-hungryforhumanmeat="lt 40" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="400" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 40" />
+          <Conditional he-hungryforhumanmeat="lt 45" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="500" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 45" />
+          <Conditional he-hungryforhumanmeat="lt 50" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="600" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 50" />
+          <Conditional he-hungryforhumanmeat="lt 60" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="700" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 60" />
+          <Conditional he-hungryforhumanmeat="lt 70" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="800" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 70" />
+          <Conditional he-hungryforhumanmeat="lt 80" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="900" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect interval="1.5">
+        <StatusEffect target="Character" comparison="And">
+          <Conditional he-hungryforhumanmeat="gte 80" />
+          <Affliction identifier="he-hungryforhumanmeatveins" strength="1000" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <AfflictionOverlay texture="%ModDir:2954998725%/Content/UI/HungerForHumanMeatRedOverlay.png" />
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="512,128,128,128" color="209,121,84,255" origin="0,0" />
+    </Affliction>
+    <AfflictionHusk name="Cannibal Mouth" identifier="he-cannibalmouth" description="So hungry for human meat you feel like biting people." healableinmedicalclinic="false" type="alieninfection" huskedspeciesname="cannibal" targets="human" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" treatmentthreshold="1000" maxstrength="1" affectmachines="false" MedicalSkillGain="0.0" sendmessages="false">
+      <Effect minstrength="0" maxstrength="1" strengthchange="-1"></Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="512,128,128,128" color="209,121,84,255" origin="0,0" />
+    </AfflictionHusk>
+    <!--EXTRA NEEDS-->
+    <Affliction name="Bladder" identifier="bladder" description="You need to urinate." type="extra" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="false" iconcolors="180,180,0,255;180,0,0,255" activationthreshold="0" showiconthreshold="50" showinhealthscannerthreshold="0" maxstrength="100" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.bladder.self" target="Self" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.bladder.self.high" target="Self" minstrength="80" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.bladder.other.low" target="OtherCharacter" minstrength="0" maxstrength="30" />
+      <Description textidentifier="afflictiondescription.bladder.other" target="OtherCharacter" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.bladder.other.high" target="OtherCharacter" minstrength="80" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="50" dialogflag="bladderlight" strengthchange="0">
+        <StatusEffect target="Character" interval="5" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="bladder" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="50" maxstrength="80" dialogflag="bladdermedium" strengthchange="0" minspeedmultiplier="1.0" maxspeedmultiplier="0.8">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.1" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="5" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="bladder" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" dialogflag="bladderheavy" strengthchange="0" minspeedmultiplier="0.8" maxspeedmultiplier="0.5">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.2" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="5" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="bladder" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="30" maxinterval="120" minstrength="99" maxstrength="100">
+        <StatusEffect type="OnActive" target="Character" duration="26" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional bladder="gte 1" />
+          <ReduceAffliction identifier="bladder" strength="10" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/DrainLiquid.ogg" volume="3" range="500" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" tags="peeing" duration="26" setvalue="true" stackable="false">
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" interval="1" multiplyafflictionsbymaxvitality="true">
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="embarrassment" strength="900" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional hygiene="gt 0" />
+          <Affliction identifier="hygiene" strength="100" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" interval="1" disabledeltatime="true" stackable="false">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="bladder" strength="100" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="0,256,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Need to defecate" identifier="defecate" description="You need to take a dump." type="extra" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="false" iconcolors="0,180,0,255;180,0,0,255" activationthreshold="0" showiconthreshold="50" showinhealthscannerthreshold="0" maxstrength="100" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.defecate.self" target="Self" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.defecate.self.high" target="Self" minstrength="80" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.defecate.other.low" target="OtherCharacter" minstrength="0" maxstrength="30" />
+      <Description textidentifier="afflictiondescription.defecate.other" target="OtherCharacter" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.defecate.other.high" target="OtherCharacter" minstrength="80" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="50" strengthchange="0" dialogflag="defecatelight" />
+      <Effect minstrength="50" maxstrength="80" dialogflag="defecatemedium" strengthchange="0" minspeedmultiplier="1.0" maxspeedmultiplier="0.8">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.1" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="5" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="defecate" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" dialogflag="defecateheavy" strengthchange="0" minspeedmultiplier="0.8" maxspeedmultiplier="0.5">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.2" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="5" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="defecate" amount="1000" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="50" maxinterval="600" minstrength="50" maxstrength="99">
+        <StatusEffect type="OnActive" target="Character">
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart1.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart2.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart3.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/Fart4.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/FartLong1.ogg" range="300" selectionmode="random" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <PeriodicEffect mininterval="30" maxinterval="120" minstrength="99" maxstrength="100">
+        <StatusEffect type="OnActive" target="Character" duration="26" offset="-15,0" multiplyafflictionsbymaxvitality="true">
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="embarrassment" strength="900" />
+          <ReduceAffliction identifier="defecate" strength="100" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/FartWet1.ogg" range="300" selectionmode="random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/FartWet2.ogg" range="300" selectionmode="random" />
+          <Spawnitem identifier="poop" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional hygiene="gt 0" />
+          <Affliction identifier="hygiene" strength="100" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional IsBot="true" />
+          <ReduceAffliction identifier="defecate" amount="1000" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="128,256,128,128" origin="0,0" />
+    </Affliction>
+    <Affliction name="Hygiene" identifier="hygiene" description="You need to clean yourself." type="extra" limbspecific="false" indicatorlimb="Torso" hideiconafterdelay="false" iconcolors="0,180,0,255;190,160,0,255" activationthreshold="0" showiconthreshold="30" showinhealthscannerthreshold="0" maxstrength="100" healableinmedicalclinic="false" MedicalSkillGain="0.0">
+      <Description textidentifier="afflictiondescription.hygiene.self.medium" target="Self" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.hygiene.self.high" target="Self" minstrength="80" maxstrength="100" />
+      <Description textidentifier="afflictiondescription.hygiene.other.low" target="OtherCharacter" minstrength="0" maxstrength="30" />
+      <Description textidentifier="afflictiondescription.hygiene.other.medium" target="OtherCharacter" minstrength="30" maxstrength="80" />
+      <Description textidentifier="afflictiondescription.hygiene.other.high" target="OtherCharacter" minstrength="80" maxstrength="100" />
+      <Effect minstrength="0" maxstrength="50" dialogflag="filthylight" strengthchange="0">
+        <!-- TODO: BUGGED, RequireEmpty="true" does not work if the inventory is... empty https://github.com/FakeFishGames/Barotrauma/discussions/16238 -->
+        <!-- Reduce the hygiene each second if the character is in water -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <RequiredItem item="clothing" type="Equipped" requireempty="true" CharacterInventorySlotType="InnerClothes" />
+          <RequiredItem item="deepdiving" type="Equipped" requireempty="true" CharacterInventorySlotType="OuterClothes" />
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="hygiene" amount="4" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="50" maxstrength="80" dialogflag="filthymedium" strengthchange="0" minspeedmultiplier="1.0" maxspeedmultiplier="0.9">
+        <!-- particles -->
+        <StatusEffect target="Character">
+          <ParticleEmitter particle="acidmistgrenade" anglemin="80" anglemax="100" particlespersecond="3" distancemin="0" distancemax="30" velocitymin="0" velocitymax="30" scalemin="0.25" scalemax="0.5" scalemultiplier="1,0.5" lifetimemultiplier="0.25" colormultiplier="255,255,255,255" />
+        </StatusEffect>
+        <!-- Increase the mood -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.15" />
+        </StatusEffect>
+        <!-- TODO: BUGGED, RequireEmpty="true" does not work if the inventory is... empty https://github.com/FakeFishGames/Barotrauma/discussions/16238 -->
+        <!-- Reduce the hygiene each second if the character is in water -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <RequiredItem item="clothing" type="Equipped" requireempty="true" CharacterInventorySlotType="InnerClothes" />
+          <RequiredItem item="deepdiving" type="Equipped" requireempty="true" CharacterInventorySlotType="OuterClothes" />
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="hygiene" amount="4.0" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="80" maxstrength="100" dialogflag="filthyheavy" strengthchange="0" minspeedmultiplier="0.9" maxspeedmultiplier="0.8">
+        <!-- particles -->
+        <StatusEffect target="Character">
+          <ParticleEmitter particle="acidmistgrenade" anglemin="80" anglemax="100" particlespersecond="3" distancemin="0" distancemax="30" velocitymin="0" velocitymax="30" scalemin="0.25" scalemax="0.5" scalemultiplier="1,0.5" lifetimemultiplier="0.25" colormultiplier="255,255,255,255" />
+        </StatusEffect>
+        <!-- Increase the mood -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Conditional mood="gt 0" />
+          <Affliction identifier="mood" amount="0.25" />
+        </StatusEffect>
+        <!-- BUGGED, impossible to make the effect check for conditionals on individual targets. As a result it applies the effect on every target if one of the NearbyCharacters checks the conditional -->
+        <!-- makes nearby characters gain nausea in your presence up to a point -->
+        <!-- <StatusEffect target="Character,NearbyCharacters" range="150" interval="1" disabledeltatime="true" comparison="And">
+          <Conditional IsPlayer="true" />
+          <Conditional nausea="lt 20" />
+          <Affliction identifier="nausea" amount="2" />
+        </StatusEffect> -->
+        <!-- Reduce the hygiene each second if the character is in water -->
+        <StatusEffect target="Character" interval="1" disabledeltatime="true" comparison="And">
+          <RequiredItem item="clothing" type="Equipped" requireempty="true" CharacterInventorySlotType="InnerClothes" />
+          <RequiredItem item="deepdiving" type="Equipped" requireempty="true" CharacterInventorySlotType="OuterClothes" />
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="hygiene" amount="4.0" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="896,384,128,128" origin="0,0" />
+    </Affliction>
+  </Afflictions>
+</Override>

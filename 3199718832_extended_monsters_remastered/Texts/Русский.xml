@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Loading Screen Tips -->
+  <loadingscreentip>Ледяные крабы общаются друг с другом, используя уникальные звуки эхолокации, которые очень громкие и могут отражаться в ушах моряков.</loadingscreentip>
+  <loadingscreentip>Панцири ледяных крабов выделяют большое количество углекислого газа, который может вытянуть кислород из помещения. Убедитесь избавиться от панциря, если он умирает внутри!</loadingscreentip>
+  <loadingscreentip>Теневые пиявки могут быть невидимыми на сонаре и легко взламывать двери. Их легко узнаваемо по звукам, которые они издают.</loadingscreentip>
+  <loadingscreentip>Паралитические акулы - опытные хищники Европейского хребта. Их укусы могут парализовать добычу и предотвратить ее побег. Убийство их заставит их пузырчатые мешки взорваться и парализовать все живое вокруг.</loadingscreentip>
+  <loadingscreentip>Теневые киты - типичные крупные существа, которые в основном можно найти в бездне и Большом море. Однако из-за их уникальной конструкции и гладкого черного тела, их почти невозможно заметить на сонаре.</loadingscreentip>
+  <loadingscreentip>Великое море - дом для очень крупных и изысканных Левиафанов Пустоты. Их крики могут быть услышаны с очень далеких расстояний, а их огромные раскрытые пасти могут всасывать почти все на своем пути.</loadingscreentip>
+  <loadingscreentip>Говорят, что Сердце Европы живое и злобное. Что они этим имеют в виду?</loadingscreentip>
+  <loadingscreentip>Мох мозга может отравить дайверов множеством токсинов и принимать различные формы.</loadingscreentip>
+  <loadingscreentip>Магмаларва может гореть бесконечно, если она находится внутри корабля, поэтому при встрече с несколькими из них рекомендуется проявлять большую осторожность.</loadingscreentip>
+  <loadingscreentip>Каменные скитальцы - это странные изысканные существа, которые могут встречаться в разных размерах, от Холодной пещеры до Темное плато. Однако их агрессивное поведение по отношению к кораблям и их каменно-твердые панцири делают их очень опасными при путешествии неподалеку от них.</loadingscreentip>
+  <loadingscreentip>Термальные угри - это глубоководные световые существа, которые постоянно охотятся на бесконечно существующую добычу в гидротермальных пустошах. Они известны своими пугающими внешними данными, а их укусы передают загадочный яд.</loadingscreentip>
+  <loadingscreentip>Имеются слухи, что некоторые пропавшие подводные лодки снова появились, передавая сигнал бедствия. Те, кто сталкивался с ними, сообщали, что подводные лодки были захвачены неизвестными существами.</loadingscreentip>
+  <loadingscreentip>Фрактальные близнецы безжалостно выполняют программу, оставленную в них - уничтожить всех живых организмов.</loadingscreentip>
+  <loadingscreentip>В глубинах Европы, куда редко доходят мелкие воды, огромные существа свободно бродят, переплетаясь между каналами.</loadingscreentip>
+  <!-- Afflictions -->
+  <afflictionname.Extendedcarrierbeacon>Сигнал бедствия</afflictionname.Extendedcarrierbeacon>
+  <afflictiondescription.Extendedcarrierbeacon>Вы услышали перемешанный гул сигналов бедствия...</afflictiondescription.Extendedcarrierbeacon>
+  <afflictionname.consumed>Поглощенный</afflictionname.consumed>
+  <afflictiondescription.consumed>Тебя съедают живьем...</afflictiondescription.consumed>
+  <!-- Characters -->
+  <character.Abysswatcher>Взор Бездны</character.Abysswatcher>
+  <character.Brainmoss>Мох мозга</character.Brainmoss>
+  <character.Carriernew>Переносчик</character.Carriernew>
+  <character.Charybdissavage>Дикая Сцилла</character.Charybdissavage>
+  <character.Charybdissmall>Малыш Сциллы</character.Charybdissmall>
+  <character.Coralshrimp>Коралловая креветка</character.Coralshrimp>
+  <character.Endwormcoral>Ледниковый трещинный червь</character.Endwormcoral>
+  <character.Epicentrum>Эпицентр</character.Epicentrum>
+  <character.Fractalannihilator>Фрактальный аннигилятор</character.Fractalannihilator>
+  <character.Fractaldestroyer>Фрактальный разрушитель</character.Fractaldestroyer>
+  <character.Icecrab>Ледяной краб</character.Icecrab>
+  <character.Magmalarva>Магмовая личинка</character.Magmalarva>
+  <character.Magmaworm>Магмовый червь</character.Magmaworm>
+  <character.Mantisnew>Богомол креветка</character.Mantisnew>
+  <character.Paralyticshark>Паралитическая акула</character.Paralyticshark>
+  <character.Shadowleech>Теневой пиявка</character.Shadowleech>
+  <character.Shadowwhale>Теневой кит</character.Shadowwhale>
+  <character.Shadowwhalebaby>Малыш теневого кита</character.Shadowwhalebaby>
+  <character.Stonewanderer>Каменный странник</character.Stonewanderer>
+  <character.Thalamuscarrier>Переносчик таламуса</character.Thalamuscarrier>
+  <character.Thermaleel>Термальный угорь</character.Thermaleel>
+  <character.Turretcarrier>Переносчик турелей</character.Turretcarrier>
+  <character.Voidleviathan>Левиафан Пустоты</character.Voidleviathan>
+  <!-- Missions -->
+  <missionname.killicecrab>Мигрирующие ледяные крабы</missionname.killicecrab>
+  <missiondescription.killicecrab>Разведчики сообщили о стае ледяных крабов, бродящих по району между [location1] и [location2]. Нам нужно это мясо крабов, чтобы насытить наши животы. Власти предлагают вознаграждение в размере [reward] марок любой подводной лодке, которая уничтожит стаю.</missiondescription.killicecrab>
+  <missionsonarlabel.killicecrab>Ледяной краб</missionsonarlabel.killicecrab>
+  <missionname.killbrainmoss>Вспышка мха!</missionname.killbrainmoss>
+  <missiondescription.killbrainmoss>Разведчики сообщили о крупном стае мозгового мха, выбравшегося из обломков таламуса, они бродят в районе между [location1] и [location2]. Эти мозговые мхи могут излучать опасное излучение и другие неизвестные психоактивные эффекты. Власти предлагают награду в [reward] марок любой подводной лодке, которая уничтожит крупную стаю.</missiondescription.killbrainmoss>
+  <missionsonarlabel.killbrainmoss>Мох мозга</missionsonarlabel.killbrainmoss>
+  <missionname.killmagmalarva>Массовое глистогонное лечение</missionname.killmagmalarva>
+  <missiondescription.killmagmalarva>Разведчики сообщили о крупной стае магмоличинок, бродящих по району между [location1] и [location2]. Эти существа способны вызвать ожоги высокой температуры и даже поджечь подводные лодки! Власти предлагают вознаграждение в размере [reward] марок любой подводной лодке, которая уничтожит крупную стаю.</missiondescription.killmagmalarva>
+  <missionsonarlabel.killmagmalarva>Магмовая личинка</missionsonarlabel.killmagmalarva>
+  <missionname.killthermaleel>Удаление термальных угрей</missionname.killthermaleel>
+  <missiondescription.killthermaleel>Разведчики сообщили о крупной стае термальных угрей, бродящих по району между [location1] и [location2]. Эти существа - фоточувствительные животные, обитающие во тьме. Власти предлагают вознаграждение в [reward] марок любой подводной лодке, которая уничтожит эту крупную стаю.</missiondescription.killthermaleel>
+  <missionsonarlabel.killthermaleel>Термальный угорь</missionsonarlabel.killthermaleel>
+  <missionname.killshadowwhale>В глубины теней</missionname.killshadowwhale>
+  <missiondescription.killshadowwhale>Разведчики сообщили о крупной стае теневых китов, бродящих по району между [location1] и [location2]. Эти киты невидимы на сонаре и могут представлять серьезную угрозу для неподготовленных кораблей. Власти предлагают вознаграждение в размере [reward] марок любой подводной лодке, которая уничтожит крупную стаю.</missiondescription.killshadowwhale>
+  <missionsonarlabel.killshadowwhale>Теневой кит</missionsonarlabel.killshadowwhale>
+  <missionname.killstonewanderer>Плавающие камни</missionname.killstonewanderer>
+  <missiondescription.killstonewanderer>Разведчики сообщили о странных камнях, плавающих в районе между [location1] и [location2]. Эта ситуация негативно сказалась на коммерческих маршрутах. Власти предлагают вознаграждение в размере [reward] марок любой подводной лодке, которая очистит эти препятствия.</missiondescription.killstonewanderer>
+  <missionsonarlabel.killstonewanderer>Плавающий камень</missionsonarlabel.killstonewanderer>
+  <missionname.killparalyticshark>Охота на акул</missionname.killparalyticshark>
+  <missiondescription.killparalyticshark>Разведчики сообщили о парализующих акулах, бродящих по району между [location1] и [location2]. Они нападают на проходящие корабли, парализуют экипаж и поедают их, вызывая огромные потери. Власти предлагают вознаграждение в размере [reward] марок любой подводной лодке, которая уничтожит этих существ.</missiondescription.killparalyticshark>
+  <missionsonarlabel.killparalyticshark>Паралитическая акула</missionsonarlabel.killparalyticshark>
+  <missionname.killcarriernew>Тихая Надежда</missionname.killcarriernew>
+  <missiondescription.killcarriernew>Разведчики сообщили, что несколько небольших шаттлов с исследователями недавно пропали в водах между [location1] и [location2]. Власти предлагают награду в размере [reward] марок любой подводной лодке, которая сможет расследовать этот инцидент.</missiondescription.killcarriernew>
+  <missionsonarlabel.killcarriernew>Пропавшие шаттлы</missionsonarlabel.killcarriernew>
+  <missionname.killthalamuscarrier>Уничтожить зараженную подводную лодку</missionname.killthalamuscarrier>
+  <missiondescription.killthalamuscarrier>Разведчики сообщили о крупном поврежденном дюгоне, который был захвачен зараженным ростом. Он все еще перемещается в районе между [location1] и [location2], и власти предлагают вознаграждение в размере [reward] марок любой подводной лодке, которая уничтожит подвижный таламус. Будьте осторожны, у него есть крюк на передней стороне, и к нему нужно подходить осторожно.</missiondescription.killthalamuscarrier>
+  <missionsonarlabel.killthalamuscarrier>Переносчик таламуса</missionsonarlabel.killthalamuscarrier>
+  <missionheader0.EMbeaconTroll>Подождите, что это был за шум?</missionheader0.EMbeaconTroll>
+  <missionmessage0.EMbeaconTroll>Вы чувствуете, что что-то огромное приближается!</missionmessage0.EMbeaconTroll>
+  <missiondescription.EMhuntinggrounds1>Сейсмические данные в районе указывают на наличие существа размером с Левиафан. Все маршруты к [location1] и [location2] закрыты до устранения существа. Администраторы предлагают щедрую награду в размере [reward] марок любому, кто сможет убить существо.</missiondescription.EMhuntinggrounds1>
+  <missiondescription.EMhuntinggrounds2>Близлежащие станции маяков сообщили о необычных электромагнитных отклонениях и массовых сбоях в электросистемах. Они предупредили, что между [location1] и [location2] может находиться существо размером с Левиафан, излучающее большие количества электромагнитных импульсов. Власти заблокировали маршрут и обещают награду в размере [reward] марок тому, кто сможет уничтожить существо.</missiondescription.EMhuntinggrounds2>
+  <missiondescription.EMhuntinggrounds3>Близлежащие станции маяков сообщили о необычных импульсных отклонениях и массовых сбоях в электросистемах. Они предупредили, что между [location1] и [location2] может находиться существо размером с Левиафан, излучающее большие количества электромагнитных импульсов. Власти заблокировали маршрут и обещают награду в размере [reward] марок тому, кто сможет уничтожить существо.</missiondescription.EMhuntinggrounds3>
+  <missiondescription.EMhuntinggrounds4>Сейсмические данные в районе указывают на наличие существа колоссальных размеров. Все маршруты к [location1] и [location2] закрыты до устранения существа. Администраторы обещают щедрую награду в размере [reward] марок тому, кто сможет убить существо.</missiondescription.EMhuntinggrounds4>
+  <missionsonarlabel.surprisecharybdis>Ультразвуковой сигнал</missionsonarlabel.surprisecharybdis>
+  <missionsuccess.surprisecharybdis>Оказывается, сигнал излучался огромным монстром. Исследователи из [location1] все равно согласились заплатить вам вознаграждение в размере [reward] марок за устранение проблемы.</missionsuccess.surprisecharybdis>
+  <missionmessage0.surprisecharybdis>Оказывается, сигнал излучала Сцилла! Вам следует выбраться из пещеры и сообщить исследователям.</missionmessage0.surprisecharybdis>
+  <missionsonarlabel.surpriseendworm>Ультразвуковой сигнал</missionsonarlabel.surpriseendworm>
+  <missionsuccess.surpriseendworm>Оказывается, сигнал излучался огромным монстром. Исследователи из [location1] все равно согласились заплатить вам вознаграждение в размере [reward] марок за устранение проблемы.</missionsuccess.surpriseendworm>
+  <missionmessage0.surpriseendworm>Оказывается, сигнал излучал Ледниковый трещинный червь! Вам следует выбраться из пещеры и сообщить исследователям.</missionmessage0.surpriseendworm>
+  <missionname.killvoidleviathan>Зверь из Бездны</missionname.killvoidleviathan>
+  <missiondescription.killvoidleviathan>Сейсмические измерения указывают на то, что из глубин Европы в проходе между [location1] и [location2] появилось что-то гигантское. Все транспортные перевозки через проход временно приостановлены, и обещана награда в размере [reward] марок тем, кто устранит причину сейсмической активности.</missiondescription.killvoidleviathan>
+  <missionsonarlabel.killvoidleviathan>Сейсмическая активность</missionsonarlabel.killvoidleviathan>
+  <missionsuccess.killvoidleviathan>Левиафан мертв, и проход снова открыт для транспорта.</missionsuccess.killvoidleviathan>
+  <missionname.killepicentrum>Сердце Европы</missionname.killepicentrum>
+  <missiondescription.killepicentrum>Между [location1] и [location2] появился беспрецедентно сильный сейсмический сигнал. Распространились слухи, что Сердце Европы пробудилось. Все коммерческие линии приостановлены, и власти предлагают щедрую награду в размере [reward] марок тому, кто сможет расследовать это происшествие.</missiondescription.killepicentrum>
+  <missionsonarlabel.killepicentrum>Сейсмический сигнал</missionsonarlabel.killepicentrum>
+  <missionsuccess.killepicentrum>Ядро Европы снова вернулось в состояние покоя.</missionsuccess.killepicentrum>
+  <missionname.killfractalannihilator>Воскрешение</missionname.killfractalannihilator>
+  <missiondescription.killfractalannihilator>Исследовательские суда сообщили, что поверженный крупный Фрактальный Аннигилятор возродился между [location1] и [location2]! Власти предлагают [reward] марок тем, кто сможет уничтожить этого крупного подвижного существа, прежде чем оно наводит хаос на близлежащие форпосты.</missiondescription.killfractalannihilator>
+  <missionsonarlabel.killfractalannihilator>Электромагнитное поле</missionsonarlabel.killfractalannihilator>
+  <missionsuccess.killfractalannihilator>Фрактальный аннигилятор обездвижен, кажется...</missionsuccess.killfractalannihilator>
+  <missionname.killfractaldestroyer>Истребитель</missionname.killfractaldestroyer>
+  <missiondescription.killfractaldestroyer>Несколько дней назад некоторые исследователи извлекли артефакт из инопланетной руины между [location1] и [location2], неожиданно активируя спящего Разрушителя Фракталов, в результате чего только немногие едва избежали смерти. Теперь он бродит, уничтожая всех живых существ, с которыми встречается, представляя значительную угрозу для безопасности форпоста. Власти предлагают [reward] марок любому, кто сможет его уничтожить.</missiondescription.killfractaldestroyer>
+  <missionsonarlabel.killfractaldestroyer>Электромагнитное поле</missionsonarlabel.killfractaldestroyer>
+  <missionsuccess.killfractaldestroyer>Буйствующий Разрушитель Фракталов наконец был уничтожен.</missionsuccess.killfractaldestroyer>
+  <missionname.didymos>близнецы</missionname.didymos>
+  <missiondescription.didymos>Легенда гласит, что когда спутники Юпитера выстраиваются в ряд, мощные гравитационные силы будят древних Колоссальных Фрактальных Стражей, размещенных в глубинах океана Европы. Теперь наступило время встречи Ганимеда и Европы, и мы должны быть готовы. Власти предложат награду в [reward] марок любому, кто обезвредит Фрактальных Стражей вдоль маршрута навигации.</missiondescription.didymos>
+  <missionsonarlabel.didymos>Фрактальный Колосс</missionsonarlabel.didymos>
+  <missionsuccess.didymos>Давайте надеяться, что мы сможем быть готовы к приходу следующей катастрофы.</missionsuccess.didymos>
+  <missionmessage0.didymos>Близнецы мертвы. Наведите подводную лодку из пещеры, чтобы получить награду.</missionmessage0.didymos>
+  <!-- Items -->
+  <entityname.k_em_coelanthfang>клык целаканта</entityname.k_em_coelanthfang>
+  <entitydescription.k_em_coelanthfang>Острые зубы целаканта. Быть укушенным этим существом, должно быть неприятно...</entitydescription.k_em_coelanthfang>
+  <entityname.k_em_thalamusthorn>шип таламуса</entityname.k_em_thalamusthorn>
+  <entitydescription.k_em_thalamusthorn>Шип, выращенный таламическими существами, можно разложить на полезные материалы.</entitydescription.k_em_thalamusthorn>
+  <entityname.k_em_thalamusstump>пень таламуса</entityname.k_em_thalamusstump>
+  <entitydescription.k_em_thalamusstump>Пень, выращенный таламическими существами, можно разложить на полезные материалы.</entitydescription.k_em_thalamusstump>
+  <entityname.k_em_magmawormfin>плавник магмового червя</entityname.k_em_magmawormfin>
+  <entitydescription.k_em_magmawormfin>Плавник магмового червя все еще излучает остаточное тепло.</entitydescription.k_em_magmawormfin>
+  <entityname.k_em_magmalarvatendril>Тепловой щуп</entityname.k_em_magmalarvatendril>
+  <entitydescription.k_em_magmalarvatendril>Щуп магмового личинки, кажется, все еще может вызвать пожар...</entitydescription.k_em_magmalarvatendril>
+  <entityname.k_em_fractalsensor>Фрактальный сенсор</entityname.k_em_fractalsensor>
+  <entitydescription.k_em_fractalsensor>Сенсор, принадлежащий фрактальным существам, можно разложить на полезные материалы.</entitydescription.k_em_fractalsensor>
+  <entityname.k_em_fractalthorn>фрактальный шип</entityname.k_em_fractalthorn>
+  <entitydescription.k_em_fractalthorn>Шип, принадлежащий фрактальным существам, можно разложить на полезные материалы.</entitydescription.k_em_fractalthorn>
+  <entityname.k_em_charybdisfang>Клык Сциллы</entityname.k_em_charybdisfang>
+  <entitydescription.k_em_charybdisfang>Клык, принадлежащий Сцилле. Он большой и колючий, может использоваться в качестве самодельного оружия.</entitydescription.k_em_charybdisfang>
+  <entityname.k_em_charybdissavagefang>Клык дикой Сциллы</entityname.k_em_charybdissavagefang>
+  <entitydescription.k_em_charybdissavagefang>Малиновый клык дикой Сциллы, лучше не размахивать этой штукой перед своими товарищами...</entitydescription.k_em_charybdissavagefang>
+  <entityname.k_em_endwormfang>Хелицеры кораллового червя</entityname.k_em_endwormfang>
+  <entitydescription.k_em_endwormfang>Огромные хелицеры кораллового червя, эта штука больше вас!</entitydescription.k_em_endwormfang>
+  <entityname.k_em_icecrabclaw>Клешня ледяного краба</entityname.k_em_icecrabclaw>
+  <entitydescription.k_em_icecrabclaw>Клешня ледяного краба. Ммм, вкусное крабовое мясо...</entitydescription.k_em_icecrabclaw>
+  <entityname.k_em_iceshell>Ледяная раковина</entityname.k_em_iceshell>
+  <entitydescription.k_em_iceshell>Панцирь ледяного краба. Он такой холодный на ощупь, почти душит...</entitydescription.k_em_iceshell>
+  <entityname.k_em_shadowoil>Масло теневого кита</entityname.k_em_shadowoil>
+  <entitydescription.k_em_shadowoil>Вязкое масло теневых существ, говорят, содержит радиоактивные элементы.</entitydescription.k_em_shadowoil>
+  <entityname.k_em_shadowthorn>Тень колючка</entityname.k_em_shadowthorn>
+  <entitydescription.k_em_shadowthorn>Колю́чка, выращенная Теневой пиявкой, может быть разобрана на полезные материалы.</entitydescription.k_em_shadowthorn>
+  <entityname.k_em_wanderereye>Глаз скитальца</entityname.k_em_wanderereye>
+  <entitydescription.k_em_wanderereye>Глаз скитальца, даже после удаления, кажется, все еще смотрит на вас.</entitydescription.k_em_wanderereye>
+  <entityname.k_em_paragland>Железа паралича</entityname.k_em_paragland>
+  <entitydescription.k_em_paragland>Большая железа паралитической акулы, богатая парализующими веществами. Должна приносить хорошую цену на черном рынке.</entitydescription.k_em_paragland>
+  <entityname.k_em_thereelmask>Голова термальной угря</entityname.k_em_thereelmask>
+  <entitydescription.k_em_thereelmask>Голова термальной угря, иллюзия или нет, все еще можно услышать тот мурашки по коже звук его бывшего владельца.</entitydescription.k_em_thereelmask>
+</infotexts>

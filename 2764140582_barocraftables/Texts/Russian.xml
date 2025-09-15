@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+    <talentname.FabricatorsFabric>Собственное производство</talentname.FabricatorsFabric>
+    <talentdescription.fabricators>Вы можете изготовить промышленный фабрикатор для создания производственных станций.</talentdescription.fabricators>
+    <talentname.FabricatorsFabricAdvanced>Продвинутое производство</talentname.FabricatorsFabricAdvanced>
+    <talentdescription.fabricatorsAdvanced>Вы можете изготавливать продвинутый фабрикатор, который требует меньшие навыки для создания предметов.</talentdescription.fabricatorsAdvanced>
+    <talentname.FabricatorsNuclear>Сила атома</talentname.FabricatorsNuclear>
+    <talentdescription.FabricatorsNuclear>Вы можете изготовить стойкий к радиации деконструктор и фабрикатор для безопасного создания стержней.</talentdescription.FabricatorsNuclear>
+    <entityname.searchlightdown>Прожектор (перевернутый)</entityname.searchlightdown>
+    <entitydescription.searchlightdown>Это прожектор.</entitydescription.searchlightdown>
+    <entityname.WeldingTable>Промышленный фабрикатор</entityname.WeldingTable>
+    <entitydescription.WeldingTable>Фабрикатор для создания множества других фабрикаторов и оборудования.</entitydescription.WeldingTable>
+    <entityname.textdisplaysb>Текстовое табло (малое)</entityname.textdisplaysb>
+    <entitydescription.textdisplaysb></entitydescription.textdisplaysb>
+    <entityname.textdisplaylb>Текстовое табло (большое)</entityname.textdisplaylb>
+    <entitydescription.textdisplaylb></entitydescription.textdisplaylb>
+      <!-- Item Msgs -->
+  <ItemMsgDetachCrowbar>[[use]] Снять (лом)</ItemMsgDetachCrowbar>
+</infotexts>

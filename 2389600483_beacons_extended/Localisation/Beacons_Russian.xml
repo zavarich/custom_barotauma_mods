@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Item interaction messages -->
+  <ItemMsgRotate>[[use]] Повернуть</ItemMsgRotate>
+  <ItemMsgDetachScrewdriver>[[use]] Отсоединить (Отвертка)</ItemMsgDetachScrewdriver>
+  <ItemMsgDetachKnife>[[use]] Отсоединить (Нож)</ItemMsgDetachKnife>
+  <ItemMsgUseKnife>[[shoot]] Резать (Нож)</ItemMsgUseKnife>
+  <ItemMsgForceOpenKnife>[[use]] Вскрыть (Нож)</ItemMsgForceOpenKnife>
+  <ItemMsgBreatheUse>[[use]] Дышать</ItemMsgBreatheUse>
+  <ItemMsgNoCrowbar>Этот объект нельзя вскрыть с помощью лома.</ItemMsgNoCrowbar>
+  <!-- Beacon Labels -->
+  <!-- SING Beacon Labels -->
+  <label.beacon_exhaust>ВЫПУСК</label.beacon_exhaust>
+  <label.beacon_coolant>ОХЛАДИТЕЛЬ</label.beacon_coolant>
+  <label.beacon_communications>ПУНКТ СВЯЗИ</label.beacon_communications>
+  <label.beacon_antennae_power_on>Радиопередатчик активирован</label.beacon_antennae_power_on>
+  <label.beacon_antennae_power_off>Радиопередатчик отключен. Необходимо активировать передатчик на вершине антенны.</label.beacon_antennae_power_off>
+  <!-- UBER Beacon Labels -->
+  <label.beacon_subjectstat_friendly>Поведение особи: дружелюбное</label.beacon_subjectstat_friendly>
+  <label.beacon_powercell_docked>ЭНЕРГОЯЧЕЙКА ПРИСТЫКОВАНА</label.beacon_powercell_docked>
+  <label.beacon_powercell_undocked>ЭНЕРГОЯЧЕЙКА ОТСТЫКОВАНА</label.beacon_powercell_undocked>
+  <label.beacon_power_on>ПИТАНИЕ ВКЛЮЧЕНО</label.beacon_power_on>
+  <label.beacon_power_off>ПИТАНИЕ ОТКЛЮЧЕНО</label.beacon_power_off>
+  <label.beacon_code_require>Требуется код</label.beacon_code_require>
+  <label.beacon_code_right>Передача данных активирована</label.beacon_code_right>
+  <label.beacon_code_wrong>ОШИБКА - Неверный код</label.beacon_code_wrong>
+  <label.beacon_shuttle_loc>Поиск челнока снабжения... Расстояние:</label.beacon_shuttle_loc>
+  <label.beacon_shuttle_distaway>метров</label.beacon_shuttle_distaway>
+  <label.beacon_shuttle_code>АВАРИЙНЫЙ КОД МАЯКА:</label.beacon_shuttle_code>
+  <label.beacon_shuttle_distress>СИГНАЛ БЕДСТВИЯ</label.beacon_shuttle_distress>
+  <!-- CRO Beacon Labels -->
+  <label.beacon_camera>КАМЕРА</label.beacon_camera>
+  <label.beacon_dischargecoils>РАЗРЯДНАЯ КАТУШКА</label.beacon_dischargecoils>
+  <label.beacon_state_on_01>ВКЛ</label.beacon_state_on_01>
+  <label.beacon_state_on_02>вкл</label.beacon_state_on_02>
+  <label.beacon_state_off_01>ВЫКЛ</label.beacon_state_off_01>
+  <label.beacon_state_off_02>выкл</label.beacon_state_off_02>
+  <!-- RYR Beacon Labels -->
+  <label.beacon_lockdown>БЛОКИРОВКА</label.beacon_lockdown>
+  <label.beacon_maintenanceaccess>СЕРВИСНЫЙ ШЛЮЗ</label.beacon_maintenanceaccess>
+  <terminalwelcomemsg.beacon_uber_01_shuttle>В зоне действия обнаружен маяк.\nВведите команду !code для генерации кода активации маяка.</terminalwelcomemsg.beacon_uber_01_shuttle>
+  <terminalwelcomemsg.beacon_uber_01_beacon>ТРЕБУЕТСЯ КОД ПЕРЕДАТЧИКА - ОЖИДАНИЕ ЧЕЛНОКА\nОШИБКА - КОНТАКТ С ЧЕЛНОКОМ ПОТЕРЯН... ТРЕБУЕТСЯ КОД АКТИВАЦИИ\n...\nОШИБКА\n...\nОШИБКА\n...</terminalwelcomemsg.beacon_uber_01_beacon>
+  <terminalwelcomemsg.beacon_cro_01_shieldcontrol>УПРАВЛЕНИЕ ЭНЕРГОЩИТОМ\nДОСТУПНЫЕ КОМАНДЫ: on / off</terminalwelcomemsg.beacon_cro_01_shieldcontrol>
+  <terminalwelcomemsg.beacon_cro_01_lore>ОБЪЕДИНЁННАЯ КОАЛИЦИЯ ЕВРОПЫ\nПОЛЬЗОВАТЕЛЬ: Ньель Стюарт\nИД#: 225138693\nВходящие:\nОт: Карин Провски\nПривет Ньель, Печально было узнать о том, что случилось с Дарнеллом, я знаю что Бекки порой может быть сплошная головной болью, но постарайся быть с ней помягче. Я понимаю твоё беспокойство и мне приятно что тебе не всё равно.\nИсходящие:\nКому: Карин Провски\nПривет Карин, Дарнеллу всё ещё не хорошо, а от Бекки у меня уже начинает болеть голова. В любом случае надеюсь что ответ застал тебя в добром здравии. Я беспокоюсь за тебя, из-за тех радикалов с которыми ты работаешь, будь осторожна.</terminalwelcomemsg.beacon_cro_01_lore>
+  <terminalwelcomemsg.beacon_ryr_04_doorcontrol>[1] - ОТКРЫТЬ ДВЕРЬ\n[0] - ЗАКРЫТЬ ДВЕРЬ</terminalwelcomemsg.beacon_ryr_04_doorcontrol>
+  <terminalwelcomemsg.beacon_ryr_08_beacon>=======СТАЦИОНАРНЫЙ РЕЖИМ=======\nМОБИЛЬНАЯ СОНАРНАЯ СТАНЦИЯ 'ШМЕЛЬ' АКТИВИРОВАНА В СТАЦИОНАРНОМ РЕЖИМЕ\nФУНКЦИИ ДВИЖЕНИЯ НЕДОСТУПНЫ</terminalwelcomemsg.beacon_ryr_08_beacon>
+  <terminalwelcomemsg.beacon_sing_11b_keylocation>Ключ-карта за тех. панелью в основании антенны.</terminalwelcomemsg.beacon_sing_11b_keylocation>
+</infotexts>

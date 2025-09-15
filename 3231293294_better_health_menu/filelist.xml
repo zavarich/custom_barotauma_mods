@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="BetterHealthUI (Updated)" modversion="1.0.1" corepackage="False" steamworkshopid="3231293294" gameversion="1.9.7.0" expectedhash="773A33B913735006B0B451698924A1DC">
+  <Other file="%ModDir%/CSharp/Client/BetterHealthUIMod.cs" />
+  <Other file="%ModDir%/CSharp/Shared/BetterHealthUIMod.cs" />
+</contentpackage>

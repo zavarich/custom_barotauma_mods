@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- REGULAR VARIANTS -->
+    <Item name="Spotshroom" identifier="heexp-spotshroom" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="8" damagedbyexplosions="false" allowasextracargo="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Gardening/Vegetables.png" depth="0.2" sourcerect="392,454,52,56" origin="0.5,0.5" />
+      <Body radius="30" density="9" waterdragcoefficient="20" />
+      <Price baseprice="70" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.7" minavailable="0" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="2" maxavailable="8" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect"></Throwable>
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+    <Item name="Maple basil" identifier="heexp-maplebasil" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="8" damagedbyexplosions="false" allowasextracargo="true">
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Gardening/Vegetables.png" depth="0.2" sourcerect="293,483,43,19" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Gardening/Vegetables.png" sourcerect="342,464,40,43" origin="0.5,0.5" />
+      <Body radius="20" density="9" waterdragcoefficient="20" />
+      <Price baseprice="20" sold="false">
+        <Price storeidentifier="merchantoutpost" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.8" />
+        <Price storeidentifier="merchantmine" multiplier="0.75" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Holdable canbepicked="true" characterusable="false" canBeCombined="false" slots="Any,RightHand,LeftHand" aimpos="0,0" holdangle="0" holdpos="20,-30" aimangle="0" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnFire" target="This" tags="onfire" setvalue="true" interval="0.1" duration="0.2" />
+        <StatusEffect type="OnFire" target="This" condition="0" setvalue="true" delay="8" stackable="false" CheckConditionalAlways="true">
+          <Conditional HasStatusTag="onfire" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+    <Item name="Lumofruit" identifier="heexp-lumofruit" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" Tags="smallitem,plantitem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_soft" impacttolerance="8" damagedbyexplosions="false" allowasextracargo="true">
+      <Sprite texture="%ModDir%/Content/Items/Gardening/Vegetables.png" depth="0.2" sourcerect="224,462,15,42" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir%/Content/Items/Gardening/Vegetables.png" sourcerect="248,468,37,37" origin="0.5,0.5" />
+      <Body radius="30" density="9" waterdragcoefficient="20" />
+      <Price baseprice="185" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.7" minavailable="0" maxavailable="3" sold="true" />
+        <Price storeidentifier="merchantcity" multiplier="1.0" minavailable="1" maxavailable="5" sold="true" />
+        <Price storeidentifier="merchantresearch" />
+        <Price storeidentifier="merchantmilitary" />
+        <Price storeidentifier="merchantmine" />
+        <Price storeidentifier="merchantmedical" />
+      </Price>
+      <Deconstruct time="5">
+        <Item identifier="carbon" mincondition="0.5" />
+      </Deconstruct>
+      <Throwable characterusable="true" canBeCombined="false" slots="Any,RightHand,LeftHand" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnImpact" target="This" Condition="0.0" setvalue="true">
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+        </StatusEffect>
+        <StatusEffect type="OnFire" target="This" tags="onfire" setvalue="true" interval="0.1" duration="0.2" />
+        <StatusEffect type="OnFire" target="This" condition="0" setvalue="true" delay="8" stackable="false" CheckConditionalAlways="true">
+          <Conditional HasStatusTag="onfire" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Conditional HasStatusTag="onfire" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="fruitsplatter1" decalsize="1.0" />
+          <ParticleEmitter particle="whitegoosplash" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="fruitchunks" anglemin="0" anglemax="360" particleamount="10" velocitymin="200" velocitymax="300" scalemin="0.4" scalemax="0.8" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0">
+          <Remove />
+        </StatusEffect>
+      </Throwable>
+      <PreferredContainer primary="plantcontainer" />
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="English" nowhitespace="false" translatedname="English">
+  <!-- Dialog -->
+  <eventtext.gettakeovermission.option.accept.answer.acceptcrew>"Thank you! Some backup is always appreciated!"</eventtext.gettakeovermission.option.accept.answer.acceptcrew>
+  <eventtext.gettakeovermission.option.accept.answer.acceptcrew.answer>"Good luck!"</eventtext.gettakeovermission.option.accept.answer.acceptcrew.answer>
+  <eventtext.gettakeovermission.option.accept.answer.declinecrew>"That won't be necessary. Please order your soldiers to stay."</eventtext.gettakeovermission.option.accept.answer.declinecrew>
+  <eventtext.gettakeovermission.option.accept.answer.declinecrew.answer>"You seem quite determined... Alright, I'll order them to stay put. Good luck!"</eventtext.gettakeovermission.option.accept.answer.declinecrew.answer>
+  <EventText.mine.terminal.interact>The door is shut. The terminal says: "All external contractors must pay a security deposit of 250mk to access mining operations"</EventText.mine.terminal.interact>
+  <EventText.mine.terminal.interact.pay.success>Transaction received. Unlocking door...</EventText.mine.terminal.interact.pay.success>
+  <EventText.mine.terminal.interact.pay.failure>Transaction failed. Insufficient personal funds.</EventText.mine.terminal.interact.pay.failure>
+  <EventText.mine.breakin>You broke into the mine without paying the fee. Authorities were notified about your actions.</EventText.mine.breakin>
+  <EventText.option.pay>Pay</EventText.option.pay>
+  <entityname.mineterminal>Mineshaft access</entityname.mineterminal>
+  <EventText.jailbreak_husk.c1>“Praise the Husk. We thought we'd never be getting out of here!”</EventText.jailbreak_husk.c1>
+  <EventText.missionevent_beaconhusk.quest>"This vessel is yours, correct? We lost contact with a nearby deep sea laboratory. The research team is supposed to send us a weekly detailed report, but now they do not respond to our calls. See if you can reestablish communication, the church will reward you accordingly."</EventText.missionevent_beaconhusk.quest>
+  <EventText.beaconhusk.transducerbroken>No signal... Maybe check the antenna? </EventText.beaconhusk.transducerbroken>
+  <EventText.beaconhusk.poweronline>The power is back online. The structure rumbles as machinery comes alive.  </EventText.beaconhusk.poweronline>
+  <EventText.beaconhusk.smell>As the oxygen turns back on, you catch a strange smell in the air...</EventText.beaconhusk.smell>
+  <EventText.beaconhusk.savedresearcher>The researcher coughs up an unnerving amount of fluids before catching his breath in a gasp. \n"Praise the husk you came! It seems you're not from the church..."  </EventText.beaconhusk.savedresearcher>
+  <EventText.beaconhusk.whathappened>"You were on the verge of turning, what happened here?"</EventText.beaconhusk.whathappened>
+  <EventText.beaconhusk.taintedgenes>"It's the genes we were using. Usually the church directly provides us with a fresh supply, but for the last shipment, we had to rely on a delivery from an outsider ship. Those infidels must've tampered with the product, trying to make a profit by reselling the rest." </EventText.beaconhusk.taintedgenes>
+  <EventText.beaconhusk.whynotransform>"But why didn't the parasite take over?" </EventText.beaconhusk.whynotransform>
+  <EventText.beaconhusk.explanation>"We put the symbiote in stasis by spreading chlorine through the ventilation system and shut the whole circuit down, it's a standard safety procedure in case of outbreak... We tried signaling the church, but nobody came, until you did." </EventText.beaconhusk.explanation>
+  <EventText.beaconhusk.sabotaged>"Your antenna was disconnected." </EventText.beaconhusk.sabotaged>
+  <EventText.beaconhusk.reward>"Bastards must have sabotaged it! I'll send a full report to the church... And bless your travels." </EventText.beaconhusk.reward>
+  <EventText.hiddenandclowngerous.thisistheplace>This is the place. The clown could be anywhere. Don't forget to honk your horn. </EventText.hiddenandclowngerous.thisistheplace>
+  <EventText.hiddenandclowngerous.psstoverhere>You suddenly hear a muffled voice calling out for you. "Pssst! Over here!"</EventText.hiddenandclowngerous.psstoverhere>
+  <EventText.hiddenandclowngerous.trashfound>As you approach, an orange wig emerges from under the garbage. "Thank the honkmother! Did my troupe sent you?"  </EventText.hiddenandclowngerous.trashfound>
+  <EventText.hiddenandclowngerous.whyintrash>"What are you even doing in there?"</EventText.hiddenandclowngerous.whyintrash>
+  <EventText.hiddenandclowngerous.hidingobivously>"Hiding, obviously. At first I thought sharing a few jokes incognito would lighten up the mood, you know, get those sinister fellows on the sillier side of life. But as soon as I snuck into the outpost, my cover was blown! Can you believe it?"</EventText.hiddenandclowngerous.hidingobivously>
+  <EventText.hiddenandclowngerous.whatdidyouexpect>"What did you expect?"</EventText.hiddenandclowngerous.whatdidyouexpect>
+  <EventText.hiddenandclowngerous.unbelievable>"I find the very concept of clowns unbelievable to begin with."</EventText.hiddenandclowngerous.unbelievable>
+  <EventText.hiddenandclowngerous.studiedhusks>The clown grumbles. "I spent weeks mastering the art of subterfuge to blend into the cult, and even read all of their honkin' lore, chalice, wine and all..."</EventText.hiddenandclowngerous.studiedhusks>
+  <EventText.hiddenandclowngerous.timetoleave>"Well, time to leave."</EventText.hiddenandclowngerous.timetoleave>
+  <EventText.hiddenandclowngerous.pullnose>"Should I pull you out by the nose?"</EventText.hiddenandclowngerous.pullnose>
+  <EventText.hiddenandclowngerous.cantgetout>"No way, if I get seen, they'll get their grabby appendices on me and strap me to a dissection table! You can't open up a clown, that's like explaining a joke, it's not funny!"</EventText.hiddenandclowngerous.cantgetout>
+  <EventText.hiddenandclowngerous.gotosecurity>"Stay here, I'll deal with security."</EventText.hiddenandclowngerous.gotosecurity>
+  <EventText.hiddenandclowngerous.timetonegociate>"Great! I've got a few jokes if you need an ice-breaker. So, a cultist, a clown and a separatist walk into a bar..." You close the lid. Time to negociate.</EventText.hiddenandclowngerous.timetonegociate>
+  <EventText.hiddenandclowngerous.sternsecurity>"This particularly stern cultist looks like the head of security."</EventText.hiddenandclowngerous.sternsecurity>
+  <EventText.hiddenandclowngerous.heardanysqueaks>"So... heard any squeaky noises recently?"</EventText.hiddenandclowngerous.heardanysqueaks>
+  <EventText.hiddenandclowngerous.lookingforclown>"The cultist sighs. Ah... so you've heard about our unwanted guest. We've been looking to oust this intruder, but the trickster has eluded us.?"</EventText.hiddenandclowngerous.lookingforclown>
+  <EventText.hiddenandclowngerous.nofanofclowns>"Not a big fan of clowns are you?"</EventText.hiddenandclowngerous.nofanofclowns>
+  <EventText.hiddenandclowngerous.clownsnottolerated>"Disruptions are not to be tolerated in this holy sanctuary. Xenoscience is not some trivial matter. It requires a honed mind, focused on the most noble goal of bettering humanity. None shall make a mockery of our precepts."</EventText.hiddenandclowngerous.clownsnottolerated>
+  <EventText.hiddenandclowngerous.allowclowntoleave>"Let's say I can convince the clown to leave the station for good, will you allow it?"</EventText.hiddenandclowngerous.allowclowntoleave>
+  <EventText.hiddenandclowngerous.fineclowncanleave>"Fine. We just want our peace of mind. Rid us of this disturbance and we will overlook the situation."</EventText.hiddenandclowngerous.fineclowncanleave>
+  <EventText.hiddenandclowngerous.didtheylikejoke>"So? Did they like my joke?"</EventText.hiddenandclowngerous.didtheylikejoke>
+  <EventText.hiddenandclowngerous.youcango>"They're willing to let you go"</EventText.hiddenandclowngerous.youcango>
+  <EventText.hiddenandclowngerous.clownleavestrash>"Some fresh air at last!" The clown clumsily squeezes out of the trash can, like a human-shaped sausage.</EventText.hiddenandclowngerous.clownleavestrash>
+  <EventText.hiddenandclowngerous.smellyclown>The inept infiltrator is emanating a foul stench from days spent in hiding. "Please don't tell my troupe, I don't want to be the butt of the joke!"</EventText.hiddenandclowngerous.smellyclown>
+  <EventText.hiddenandclowngerous.joinmycrew>"How about you join my crew?"</EventText.hiddenandclowngerous.joinmycrew>
+  <EventText.hiddenandclowngerous.joinsthecrew>"Great! I might not be the most subtle of jesters, but I know my way around a submarine."</EventText.hiddenandclowngerous.joinsthecrew>
+  <EventText.hiddenandclowngerous.laughatyourself>"You need to learn to laugh about yourself. It's part of the clown spirit."</EventText.hiddenandclowngerous.laughatyourself>
+  <EventText.hiddenandclowngerous.clowngrateful>"You're right. There's nothing to be ashamed of. I'll call my friends and wait for a shuttle to bring me back." The clown bows and pinches its large red nose as a sign of gratitude.</EventText.hiddenandclowngerous.clowngrateful>
+  <EventText.hiddenandclowngerous.seennoclown>"Oh well. Not that I've seen clowns around here, no sir."</EventText.hiddenandclowngerous.seennoclown>
+  <EventText.hiddenandclowngerous.dontbotherme>"Then don't bother me!". They don't need to know about the clown, you need to think of another way. </EventText.hiddenandclowngerous.dontbotherme>
+  <EventText.hiddenandclowngerous.nonegociation>"Nuh-uh. I don't negociate with horrorists." </EventText.hiddenandclowngerous.nonegociation>
+  <EventText.hiddenandclowngerous.escapeplan>"This place gives me the creeps." The clown pauses for a moment, and formulates a plan. "What do you say we play one final prank, a diversion while I make my escape?" </EventText.hiddenandclowngerous.escapeplan>
+  <EventText.hiddenandclowngerous.whatprank>"What do you have in mind?" </EventText.hiddenandclowngerous.whatprank>
+  <EventText.hiddenandclowngerous.givesgrenade>"Here, I prepared this party cracker." He hands you a... grenade? "Place it inside a cabinet, and when you're ready, honk the horn. It's going to be a blast, trust me!" </EventText.hiddenandclowngerous.givesgrenade>
+  <EventText.hiddenandclowngerous.honkit>Now's the time! Honk it!</EventText.hiddenandclowngerous.honkit>
+  <EventText.hiddenandclowngerous.pathoftrickster>You find the clown shaking from excitement. "That was some J-grade pranking! To hell with subtelty, take me on a tour around the moon, there are many tricks to be played!"</EventText.hiddenandclowngerous.pathoftrickster>
+  <EventText.hiddenandclowngerous.clowncanjoin>"Sure, just don't blow up the submarine."</EventText.hiddenandclowngerous.clowncanjoin>
+  <EventText.hiddenandclowngerous.snitchonclown>"I know where the heretic hides"</EventText.hiddenandclowngerous.snitchonclown>
+  <EventText.hiddenandclowngerous.luretheclown>"The church would greatly appreciate your cooperation. Lure the unbeliever out, and we will take care of the rest." </EventText.hiddenandclowngerous.luretheclown>
+  <EventText.hiddenandclowngerous.lietoclown>"They loved it. You can come out now." </EventText.hiddenandclowngerous.lietoclown>
+  <EventText.hiddenandclowngerous.clownarrested>You hear the head of security over the radio: "The church thanks you for your help. May the tides carry you to your destination". You're not very proud of what you've done, but you accept the reward nonetheless. </EventText.hiddenandclowngerous.clownarrested>
+  <EventText.missionevent_hiddenandclowngerous.worriedclown>You spot an unusually upset clown. Despite its colorful appearance, it seems worried about something. </EventText.missionevent_hiddenandclowngerous.worriedclown>
+  <EventText.missionevent_hiddenandclowngerous.steppedonrake>"What's the matter? Stepped on a rake lately?"</EventText.missionevent_hiddenandclowngerous.steppedonrake>
+  <EventText.missionevent_hiddenandclowngerous.helpclowns>"Believe it or not, this is no laughing matter. I could use some help from a crew like yours."</EventText.missionevent_hiddenandclowngerous.helpclowns>
+  <EventText.missionevent_hiddenandclowngerous.twodaysago>"Two days ago, a member of our troupe thought it'd be a good idea to board a shuttle to a nearby church, and we havent heard about him since. Our friend believed he could infiltrate the church, and pass himself as an adept. Naturally, I thought it was a joke!" </EventText.missionevent_hiddenandclowngerous.twodaysago>
+  <EventText.missionevent_hiddenandclowngerous.huskdontlaugh>"Husks can't speak, much less laugh."</EventText.missionevent_hiddenandclowngerous.huskdontlaugh>
+  <EventText.missionevent_hiddenandclowngerous.blasphemy>"To us it's fun and games, but to these people the very concept of humor is akin to blasphemy!"</EventText.missionevent_hiddenandclowngerous.blasphemy>
+  <EventText.missionevent_hiddenandclowngerous.clownspies>"Didn't know the honkmother had a spy network."</EventText.missionevent_hiddenandclowngerous.clownspies>
+  <EventText.missionevent_hiddenandclowngerous.avoidchurches>"I thought you guys avoided touring the church."</EventText.missionevent_hiddenandclowngerous.avoidchurches>
+  <EventText.missionevent_hiddenandclowngerous.takethebikehorn>"We go from station to station, raising morale, that is the mission of our dis-organization. Anyway, take this bike horn with you and go to these coordinates. Once you're there, honk around. Clowns always heed the call, you should be able to find our friend that way."</EventText.missionevent_hiddenandclowngerous.takethebikehorn>
+  <EventText.missionevent_hiddenandclowngerous.acceptmission>"I'll see what I can do."</EventText.missionevent_hiddenandclowngerous.acceptmission>
+  <EventText.missionevent_hiddenandclowngerous.refusemission>Let's not get involved in clown business.</EventText.missionevent_hiddenandclowngerous.refusemission>
+  <eventtext.missionevent_huskcultinterception.churchmakesmeds>“I believe you're familiar with those creepy husk cultists right? They're not just religious fanatics mind you, the church makes most of the medicine and biotech here on Europa."</eventtext.missionevent_huskcultinterception.churchmakesmeds>
+  <EventText.missionevent_huskcultinterception.dependentonmeds>"Until we can produce our own on a large scale, we are dependent on their shipments, but so is the coalition...”</EventText.missionevent_huskcultinterception.dependentonmeds>
+  <EventText.missionevent_huskcultinterception.takedowntransport>“Here's the plan: take down a church transport ship on route to a coalition outpost. This will keep our hands clean while dealing a blow to the coalition”</EventText.missionevent_huskcultinterception.takedowntransport>
+  <EventText.missionevent_huskcultinterception.Whataboutit>"I already knew that, what about it?"</EventText.missionevent_huskcultinterception.Whataboutit>
+  <EventText.missionevent_huskcultinterception.Whatnow>"What now?"</EventText.missionevent_huskcultinterception.Whatnow>
+  <EventText.missionevent_huskcultinterception.Consideritdone>"Consider it done."</EventText.missionevent_huskcultinterception.Consideritdone>
+  <EventText.missionevent_huskcultinterception.Notapirate>"Count us out, we're not pirates."</EventText.missionevent_huskcultinterception.Notapirate>
+  <EventText.missionevent_assassinatehuskresearcher.majorproblem>The coalition official waves at you. “Here you are. I've received a report... We have a major problem.”</EventText.missionevent_assassinatehuskresearcher.majorproblem>
+  <EventText.missionevent_assassinatehuskresearcher.huskpathogen>“Those fanatics of the church are on the verge of a scientific breakthrough: a new pathogen, unlike anything we've seen before. We think they're working on way to spread the virus on a large scale.”</EventText.missionevent_assassinatehuskresearcher.huskpathogen>
+  <EventText.missionevent_assassinatehuskresearcher.missionbrief>“We need to put an end to this research project. Their scientist must be eliminated. But we can't act on our own, sending one of our own agents would cause not only the Church to retaliate, but also Separatists to take their side. \nI need a freelance crew for this... and you just happen to be here.”</EventText.missionevent_assassinatehuskresearcher.missionbrief>
+  <EventText.missionevent_assassinatehuskresearcher.whatkindofproblem>What kind of problem?</EventText.missionevent_assassinatehuskresearcher.whatkindofproblem>
+  <EventText.missionevent_assassinatehuskresearcher.soundsbad>Sounds bad...</EventText.missionevent_assassinatehuskresearcher.soundsbad>
+  <EventText.missionevent_assassinatehuskresearcher.Iwilldoit>I will do it.</EventText.missionevent_assassinatehuskresearcher.Iwilldoit>
+  <EventText.missionevent_assassinatehuskresearcher.Noway>No way. This is too much of a risk.</EventText.missionevent_assassinatehuskresearcher.Noway>
+  <eventtext.missionevent_escorthuskterrorist.c1>“Some of the commoners here are looking for safe passage to a nearby station. Escort them over there safely and you'll be paid.”</eventtext.missionevent_escorthuskterrorist.c1>
+  <EventText.missionevent_jailbreak_husk.c1>The Deacon seems distressed. “You know all too well the gospel of the church can be too... enlightening for some. \nThose who spread the good word are never safe from bigotry and suspicion.”</EventText.missionevent_jailbreak_husk.c1>
+  <EventText.missionevent_jailbreak_husk.o1.c1>“A few proselytes are being unjustly detained in an outpost nearby. Free them from the jaws of intolerance and the Church will reward you.”</EventText.missionevent_jailbreak_husk.o1.c1>
+  <eventtext.missionevent_huskmedicalcargo.c1>“An epidemic broke out in a nearby outpost. \nDeliver these medical supplies and spread the good word of the church.”</eventtext.missionevent_huskmedicalcargo.c1>
+  <eventtext.missionevent_huskeggsmuggling.c1>“We need to spread the good faith, but the unbelievers are wary of our gifts. \nSmuggle these goods to our proselyte brothers in hiding.”</eventtext.missionevent_huskeggsmuggling.c1>
+  <eventtext.missionevent_escorthuskvip.c1>“A Cardinal is looking for transport to a nearby research laboratory”</eventtext.missionevent_escorthuskvip.c1>
+  <eventtext.missionevent_slimecollection.c1>“I've heard the church of the Husk is looking to develop a new vaccine. \nThey will pay good money for fresh samples of slime bacteria.”</eventtext.missionevent_slimecollection.c1>
+  <eventtext.openblockade.pathunlocked>You pull the lever and hear the gate rumbling: the passage is open.</eventtext.openblockade.pathunlocked>
+  <eventtext.blockadealarm.breakin>Intruder trying to force the gate open!</eventtext.blockadealarm.breakin>
+  <eventtext.blockadealarm.breakin>Stay back! We'll shoot!</eventtext.blockadealarm.breakin>
+  <eventtext.blockadealarm.breakin>Don't let them reach the gate!</eventtext.blockadealarm.breakin>
+  <eventtext.blockadealarm.breakin>We've got a break-in!</eventtext.blockadealarm.breakin>
+  <eventtext.blockadealarm.breakin>Shoot the intruder!</eventtext.blockadealarm.breakin>
+  <eventtext.openblockade.blockade>You've reached a blockade. The path to the next biome must be unlocked to proceed.</eventtext.openblockade.blockade>
+  <eventtext.openblockade.gotolever>Reach the control room to open the blockade</eventtext.openblockade.gotolever>
+  <eventtext.missionevent_killmonster_regional.c1>“I posted about an assignment earlier. Some fauna exclusive to this region is causing us massive trouble. I've sent all the details to your onboard navigation system, in case you're interested.”</eventtext.missionevent_killmonster_regional.c1>
+  <eventtext.missionevent_piratemission1.c1>“We received multiple reports about a pirate vessel causing trouble. We need you to get rid of them by any means.”</eventtext.missionevent_piratemission1.c1>
+  <eventtext.missionevent_piratemission2.c1>“We received multiple reports about a pirate vessel blasting music into the depths and luring more monsters close to our stations. We need you to get rid of them by any means.”</eventtext.missionevent_piratemission2.c1>
+  <eventtext.missionevent_piratemission3.c1>“We recently lost contact to some of our vessels. We believe they got attacked by a strange vessel that was reported lurking around these parts. We need you to get rid of it to hopefully prevent other vessels getting lost in the future.”</eventtext.missionevent_piratemission3.c1>
+  <eventtext.troubledengine.monitor>The status monitor is displaying a warning about the engine slowly breaking down. Better order a mechanic to take a look.</eventtext.troubledengine.monitor>
+  <eventtext.troubledengine.engine>The engine stopped working. Best to quickly get it back up and running.</eventtext.troubledengine.engine>
+  <eventtext.troubledengine.engine.success>You got the engine back up and running!</eventtext.troubledengine.engine.success>
+  <eventtext.troubledengine.engine.failure>The engine didn't start up. Try again?</eventtext.troubledengine.engine.failure>
+  <eventtext.troubledengine.engine.smack.failure>A part fell off. Surely nothing important... Just give it a bit of time and it'll probably start back up.</eventtext.troubledengine.engine.smack.failure>
+  <eventtext.option.useitem.wrench>Use Wrench</eventtext.option.useitem.wrench>
+  <eventtext.option.smack>Smack it!</eventtext.option.smack>
+  <eventtext.option.releasepressure>Release Pressure</eventtext.option.releasepressure>
+  <eventtext.option.dontbother>Let someone else deal with this...</eventtext.option.dontbother>
+  <eventtext.reactormalfunction.monitor>The status monitor is displaying a warning about a reactor malfunction. An engineer should probably take a look.</eventtext.reactormalfunction.monitor>
+  <eventtext.reactormalfunction.reactor>The automated control circuit seems to not be responding and the switch is stuck. Someone needs to manually operate the reactor!</eventtext.reactormalfunction.reactor>
+  <eventtext.reactormalfunction.reactor.success>You resolved the issue and the reactor is returning to normal values!</eventtext.reactormalfunction.reactor.success>
+  <eventtext.reactormalfunction.reactor.failure>You failed to release the pressure. Try again?</eventtext.reactormalfunction.reactor.failure>
+  <eventtext.reactormalfunction.reactor.smack.failure>A part fell off. Let's hope it's nothing important...</eventtext.reactormalfunction.reactor.smack.failure>
+  <eventtext.reactormalfunction.backtonormal>You hear a mechanical piece moving. Looks like the problem resolved itself somehow. The machine has a spirit of its own... </eventtext.reactormalfunction.backtonormal>
+  <eventtext.bartender.buy.coalitionbeer>Beer - Coalition Premium (10 MK)</eventtext.bartender.buy.coalitionbeer>
+  <eventtext.bartender.buy.separatistbeer>Beer - Jovian Force (10 MK)</eventtext.bartender.buy.separatistbeer>
+  <eventtext.bartender.buy.huskbeer>Beer - Liquid Ascension (59 MK)</eventtext.bartender.buy.huskbeer>
+  <eventtext.bartender.buy.clownbeer>Beer - Clown Juice (38 MK)</eventtext.bartender.buy.clownbeer>
+  <eventtext.bartender.buy.whiskey>Whiskey (125 MK)</eventtext.bartender.buy.whiskey>
+  <eventtext.bartender.buy.coalitionbeer.success.nodrunk>"A quite popular choice."</eventtext.bartender.buy.coalitionbeer.success.nodrunk>
+  <eventtext.bartender.buy.separatistbeer.success.nodrunk>"Ah yes, the underdog."</eventtext.bartender.buy.separatistbeer.success.nodrunk>
+  <eventtext.bartender.buy.huskbeer.success.nodrunk>"I see. Interesting choice. You might want to be careful with that stuff though... I heard it may contain parasites."</eventtext.bartender.buy.huskbeer.success.nodrunk>
+  <eventtext.bartender.buy.clownbeer.success.nodrunk>"One of those huh? Here you go."</eventtext.bartender.buy.clownbeer.success.nodrunk>
+  <eventtext.bartender.buy.whiskey.success.nodrunk>"Recommended by doctors all over Europa."</eventtext.bartender.buy.whiskey.success.nodrunk>
+  <eventtext.bartender.outofstock>"Sorry, got none of those left."</eventtext.bartender.outofstock>
+  <eventtext.shop.engineer.co.attack>"You're gonna pay today, Viva la revolution!"</eventtext.shop.engineer.co.attack>
+  <eventtext.manualtakeover.call.nostation>According to the tracker you're not even at a station! Don't waste our time!</eventtext.manualtakeover.call.nostation>
+  <eventtext.manualtakeover.call.church>You're at a station of the church of husk. We have no intend on interfering with them. Permission denied!</eventtext.manualtakeover.call.church>
+  <eventtext.manualtakeover.call.bandits>You're at a pirate station. We are not interested in that facility. Do whatever, but we will not claim the station!</eventtext.manualtakeover.call.bandits>
+  <eventtext.manualtakeover.call.coalition>You're calling the coalition over the military frequency...</eventtext.manualtakeover.call.coalition>
+  <eventtext.manualtakeover.call.separatists>You're calling the separatists over the military frequency...</eventtext.manualtakeover.call.separatists>
+  <eventtext.manualtakeover.call.playerresponse>We'd like to take over a station for you...</eventtext.manualtakeover.call.playerresponse>
+  <eventtext.manualtakeover.call.permissiongranted>"Understood. You can proceed, but be aware that we won't be able to pay you much nor are we able to assist you with this, but you can keep whatever equipment you find! So best of luck to you and your crew!"</eventtext.manualtakeover.call.permissiongranted>
+  <eventtext.manualtakeover.call.friendlystation>"It looks like you're docked to a friendly station. Over."</eventtext.manualtakeover.call.friendlystation>
+  <eventtext.manualtakeover.call.radiobroke>The radio broke! (The DE devs did a few changes to takeovers) \n\nYou should get a new one from the officer at a camp, base, fortress, colony or city outpost. </eventtext.manualtakeover.call.radiobroke>
+  <eventtext.takeover.success>You hear someone tune into your frequency: "Enough! We yield! The station is yours... Just please stop with the bloodshed!"</eventtext.takeover.success>
+  <!-- <eventtext.takeover.success.info>Leave the station to receive your reward.</eventtext.takeover.success.info> -->
+  <!-- <eventtext.takeover.success.reward>You're receiving a call from the seargent: "Good work! The station is now under our command! We've delivered a little gift to your submarine. Go check it out!"</eventtext.takeover.success.reward> -->
+  <!-- <eventtext.takeover.success.reward.check>You notice a crate. Upon opening it you find a military radio with a note: \n"Use this to call into our military frequency and inform us about any other takeovers!"</eventtext.takeover.success.reward.check> -->
+  <eventtext.takeover.complete>"Great work! The station is now ours. We'll send some of our people there. It should be back up and running under our command in no time! For now you should leave the station. I'm sending you your reward..."</eventtext.takeover.complete>
+  <eventtext.takeover.attack>"We arrived! Make sure your weapons are loaded and safety is off! Let's do this!". \n\nThere's no turning back now: You're at war.</eventtext.takeover.attack>
+  <eventtext.gettakeovermission.coalition.highrep.askingforhelp>"Ah good to see you! Your crew is doing great! We planned another attack. Would your crew mind lending a hand at taking over another separatist station nearby?"</eventtext.gettakeovermission.coalition.highrep.askingforhelp>
+  <eventtext.gettakeovermission.coalition.medrep.askingforhelp>"Since your crew is doing good, we'd like to ask if your crew could aid us in another attack on a separatist station nearby?"</eventtext.gettakeovermission.coalition.medrep.askingforhelp>
+  <eventtext.gettakeovermission.coalition.lowrep.askingforhelp>"We have noticed your efforts to maintain a good reputation with us and would like to give your crew a chance to prove you're serious with us. Aid us in an attack on a separatist station nearby and you'll be working with our top men soon enough!"</eventtext.gettakeovermission.coalition.lowrep.askingforhelp>
+  <eventtext.gettakeovermission.separatists.highrep.askingforhelp>"Ah good to see you! Your crew is doing great! We planned another attack. Would your crew mind lending a hand at taking over another coalition station nearby?"</eventtext.gettakeovermission.separatists.highrep.askingforhelp>
+  <eventtext.gettakeovermission.separatists.medrep.askingforhelp>"Since your crew is doing good, we'd like to ask if your crew could aid us in another attack on a coalition station nearby?"</eventtext.gettakeovermission.separatists.medrep.askingforhelp>
+  <eventtext.gettakeovermission.separatists.lowrep.askingforhelp>"We have noticed your efforts to maintain a good reputation with us and would like to give your crew a chance to prove you're serious with us. Aid us in an attack on a coalition station nearby and you'll be working with our top men soon enough!"</eventtext.gettakeovermission.separatists.lowrep.askingforhelp>
+  <eventtext.gettakeovermission.option.accept>"Yes we would like to help. Which station is our target?"</eventtext.gettakeovermission.option.accept>
+  <eventtext.gettakeovermission.option.accept.answer>"Here, I'll mark it on your map... We've also ordered some of our soldiers to assist you and your crew during the attack. They'll be joining you in just a moment."</eventtext.gettakeovermission.option.accept.answer>
+  <eventtext.gettakeovermission.option.decline>"Sorry, but we currently got other business to take care of first."</eventtext.gettakeovermission.option.decline>
+  <eventtext.gettakeovermission.option.decline.answer>"Alright. Let me know when you dealt with your business or if you change your mind."</eventtext.gettakeovermission.option.decline.answer>
+  <eventtext.gettakeovermission.giveradio.coalition>"We've been informed you've successfully pacified the rebel outpost." The sergeant hands you a communication device. \n\n"This radio is tuned to our military frequency. If you find yourself docked to an enemy station, call in. We won't be able to assist with reinforcements, but we'll send a crew to take over the place after you deal with the occupants."</eventtext.gettakeovermission.giveradio.coalition>
+  <eventtext.gettakeovermission.giveradio.separatists>"We've been informed you've successfully freed the outpost from coalition's grasp." The sergeant hands you a communication device. \n\n"This radio is tuned to our military frequency. If you find yourself docked to an enemy station, call in. We won't be able to assist with reinforcements, but we'll send a crew to take over the place after you deal with the occupants."</eventtext.gettakeovermission.giveradio.separatists>
+  <eventtext.gettakeovermission.newradio>"According to the tracker you've lost the military radio. Here's another one, but take good care of it! Those things don't come cheap..."</eventtext.gettakeovermission.newradio>
+  <eventtext.gettakeovermission.general.isactive>"We still have to take over the last station your crew was sent to before we can plan an attack on the next one."</eventtext.gettakeovermission.general.isactive>
+  <eventtext.piratemissionbroadcast.receive>"Yarhahar, what do we have here? Me eyes spied some good loot! Hope ye came prepared..."</eventtext.piratemissionbroadcast.receive>
+  <eventtext.cocargobroadcast.receive>You're receiving a transmission from another vessel. What do you want to do?</eventtext.cocargobroadcast.receive>
+  <eventtext.cocargobroadcast.receive.accept.answer>"This is CO-CT-43. State your business in this area immediately!"</eventtext.cocargobroadcast.receive.accept.answer>
+  <eventtext.cocargobroadcast.receive.accept.answer.truth>(Tell the truth) "We're here to rob you obviously... Get ready to be boarded!"</eventtext.cocargobroadcast.receive.accept.answer.truth>
+  <eventtext.cocargobroadcast.receive.accept.answer.truth.answer>"At least your honest... *EVERYONE GET TO YOUR STATIONS! WE GOT HOSTILES INCOMING*"</eventtext.cocargobroadcast.receive.accept.answer.truth.answer>
+  <eventtext.cocargobroadcast.receive.accept.answer.lie>(Tell a lie) "We have official orders from Admiral Edward to check your cargo for potential stowaways. Please cooperate with us and stop your submarine."</eventtext.cocargobroadcast.receive.accept.answer.lie>
+  <eventtext.cocargobroadcast.receive.accept.answer.lie.success>"Oh Admiral Edward? Yes we'll stop our vessel immediately! Welcome on board!"</eventtext.cocargobroadcast.receive.accept.answer.lie.success>
+  <eventtext.cocargobroadcast.receive.accept.answer.lie.failure>"How stupid do you think we are? There is no Admiral Edward! Whoever you are, we suggest to turn around and get out of our way or face the consequences."</eventtext.cocargobroadcast.receive.accept.answer.lie.failure>
+  <eventtext.factionseparatist.meltdown>The reactor is buckling and whining with pressure, what do you do?</eventtext.factionseparatist.meltdown>
+  <eventtext.factionseparatist.meltdown.option.pressure>Release Pressure</eventtext.factionseparatist.meltdown.option.pressure>
+  <eventtext.factionseparatist.meltdown.option.pressure.success>The reactor shudders, but you hear the steam whistle out of the core. It seems someone wired something to it...</eventtext.factionseparatist.meltdown.option.pressure.success>
+  <eventtext.factionseparatist.meltdown.option.pressure.failure>The reactor gurgles as the steam swells the protective hoses leaving the core, it seems a qualified engineer is required.</eventtext.factionseparatist.meltdown.option.pressure.failure>
+  <eventtext.factionseparatist.smellofsulfur>The smell of sulfur burns your nostrils...</eventtext.factionseparatist.smellofsulfur>
+  <eventtext.factionseparatist.hiddenstash>Hidden in the walls, you notice a small metal box glimmers.</eventtext.factionseparatist.hiddenstash>
+  <eventtext.factionseparatist.hiddenstash.take>You find a note stashed in a detonator with detailed instructions on what needs to be done for democracy.</eventtext.factionseparatist.hiddenstash.take>
+  <eventtext.bartender.offerdrink.nodrunk>"Looks like you could use a drink."</eventtext.bartender.offerdrink.nodrunk>
+  <eventtext.bartender.offerdrink.slightdrunk>"Looks like you could use another drink."</eventtext.bartender.offerdrink.slightdrunk>
+  <eventtext.bartender.offerdrink.drunk>"Another round?"</eventtext.bartender.offerdrink.drunk>
+  <eventtext.bartender.buy.rum>Rum (150 MK)</eventtext.bartender.buy.rum>
+  <eventtext.bartender.buy.rum.success.nodrunk>"Artificial sweetener only, sorry."</eventtext.bartender.buy.rum.success.nodrunk>
+  <eventtext.bartender.buy.rum.success.slightdrunk>"Still got more were that came from."</eventtext.bartender.buy.rum.success.slightdrunk>
+  <eventtext.bartender.buy.rum.success.drunk>"Let me see you down this one next!"</eventtext.bartender.buy.rum.success.drunk>
+  <eventtext.bartender.buy.rum.failure>"We only hold tabs for the locals, bring me some money first."</eventtext.bartender.buy.rum.failure>
+  <eventtext.bartender.tip>Tip and Leave (50 MK)</eventtext.bartender.tip>
+  <eventtext.bartender.tip.success>"I will trade you a tip for a tip; check out this signal once you undock, it might be worth something."</eventtext.bartender.tip.success>
+  <eventtext.bartender.tip.failure>"I wish compliments paid the bills man, thanks anyway."</eventtext.bartender.tip.failure>
+  <eventtext.pirateoutpostevent>A pirate has stopped and is looking at you like he is waiting for you to do something. What will you do?</eventtext.pirateoutpostevent>
+  <eventtext.pirateoutpostevent.option.ignore>Keep walking.</eventtext.pirateoutpostevent.option.ignore>
+  <eventtext.pirateoutpostevent.option.ignore.answer>You don't care and go on with your business.</eventtext.pirateoutpostevent.option.ignore.answer>
+  <eventtext.pirateoutpostevent.option.ignore.answer.response>You hear someone calling out: "Hey wait a second!"</eventtext.pirateoutpostevent.option.ignore.answer.response>
+  <eventtext.pirateoutpostevent.option.attack>Attack (Destroy the Pirate Outpost)</eventtext.pirateoutpostevent.option.attack>
+  <eventtext.pirateoutpostevent.option.attack.answer>"I really don't like the looks of you filthy pirate scum... Time for pest control!"</eventtext.pirateoutpostevent.option.attack.answer>
+  <eventtext.pirateoutpostevent.option.attack2>Rip 'n' Tear (Destroy the Pirate Outpost)</eventtext.pirateoutpostevent.option.attack2>
+  <eventtext.pirateoutpostevent.option.attack2.answer>"It's time to send you all to hell!"</eventtext.pirateoutpostevent.option.attack2.answer>
+  <eventtext.commsrelay.piratehaven>The station is trying to establish a connection...</eventtext.commsrelay.piratehaven>
+  <eventtext.commsrelay.piratehaven.answer>"Hey! Are ye stupid? Thought we don't check who's dockin'? Well think again asshole! Y'all are with the coalition! Don't ye even think about settin' foot on this outpost or ye'll regret it, dickheads! Get lost!"</eventtext.commsrelay.piratehaven.answer>
+  <eventtext.option.accept>Accept</eventtext.option.accept>
+  <eventtext.option.listen>Listen</eventtext.option.listen>
+  <eventtext.option.investigate>Investigate</eventtext.option.investigate>
+  <eventtext.option.decline>Decline</eventtext.option.decline>
+  <eventtext.option.ignore>Ignore</eventtext.option.ignore>
+  <eventtext.option.leave>Leave</eventtext.option.leave>
+  <eventtext.option.nevermind>Nevermind</eventtext.option.nevermind>
+  <eventtext.general.decline>"Not right now."</eventtext.general.decline>
+  <eventtext.commsrelay.monster>You are picking up a strange radio signal, it might be worth investigating...</eventtext.commsrelay.monster>
+  <eventtext.commsrelay.monster.answer>Haunting howls echo off the hull, something must be emitting these strange signals.</eventtext.commsrelay.monster.answer>
+  <eventtext.commsrelay.monster.answer>Screeching shrills send shivers down your spine, something must be emitting these strange signals.</eventtext.commsrelay.monster.answer>
+  <eventtext.commsrelay.wreck>You are picking up an automated distress signal, it might be worth investigating...</eventtext.commsrelay.wreck>
+  <eventtext.commsrelay.wreck.answer>You're receiving an SOS broadcast from somewhere near your current location.</eventtext.commsrelay.wreck.answer>
+  <eventtext.commsrelay.ruin>You're picking up an alien signal, it might be worth investigating...</eventtext.commsrelay.ruin>
+  <eventtext.commsrelay.ruin.answer>An eerie whirring whistle awakens a deep fear, something must be emitting these strange signals.</eventtext.commsrelay.ruin.answer>
+  <eventtext.commsrelay.closetosignal>The strange radio signal grows stronger, it must be nearby...</eventtext.commsrelay.closetosignal>
+  <eventtext.commsrelay.generic.decline>"We don't have time for this now."</eventtext.commsrelay.generic.decline>
+  <eventtext.factionstowaway.separatist>A rugged freedom fighter leaps out of the crate, all while waving a firearm wildly.</eventtext.factionstowaway.separatist>
+  <eventtext.factionstowaway.coalition.good>It appears this is a missplaced shipment of another captains items. Nice!</eventtext.factionstowaway.coalition.good>
+  <eventtext.factionstowaway.coalition.bad>The crate contained a small letter with a coalition seal. It contains a fine, tough luck.</eventtext.factionstowaway.coalition.bad>
+  <eventtext.factionstowaway.cultist>The stench of rotting flesh is followed by a rusted diving suit starting to stand up out of the box.</eventtext.factionstowaway.cultist>
+  <eventtext.factionstowaway.clown>A dastardly grinning harlequin greets your gaze with a smile, drool drips from under his mask.</eventtext.factionstowaway.clown>
+  <eventtext.cocivtransport.interact>You approach a seemingly scared civilian. What will you do?</eventtext.cocivtransport.interact>
+  <eventtext.cocivtransport.option.rob>"You either hand over all your money quickly or you'll not walk out of here alive!"</eventtext.cocivtransport.option.rob>
+  <eventtext.cocivtransport.option.rob.answer>"Alright alright... That's all I have!"</eventtext.cocivtransport.option.rob.answer>
+  <eventtext.cocivtransport.option.execute>"Any last words?" (Execute)</eventtext.cocivtransport.option.execute>
+  <eventtext.cocivtransport.option.execute.answer>"No no no no please wai..."</eventtext.cocivtransport.option.execute.answer>
+  <eventtext.cocivtransport.option.hire>"Join us or die like the others!"</eventtext.cocivtransport.option.hire>
+  <eventtext.cocivtransport.option.hire.success>"Ok ok! I'll do anything, but please don't hurt me!"</eventtext.cocivtransport.option.hire.success>
+  <eventtext.cocivtransport.option.hire.failure>"I'd rather die than join some filthy pirates!"</eventtext.cocivtransport.option.hire.failure>
+  <eventtext.jobboardde.interact>A collection of fliers dot the wall, each with a reward. Which one do you pick up?</eventtext.jobboardde.interact>
+  <eventtext.jobboardde.option.piratemission>Pirate Bounty</eventtext.jobboardde.option.piratemission>
+  <eventtext.jobboardde.option.piratemission.info>-BOUNTIES AVAILABLE FOR LOCAL PIRATE HUNTERS-</eventtext.jobboardde.option.piratemission.info>
+  <eventtext.jobboardde.option.piratemission.accept>You think to yourself: "The coalition really needs people to do their dirty work anonymously."</eventtext.jobboardde.option.piratemission.accept>
+  <eventtext.jobboardde.option.monstermission>Fauna Removal</eventtext.jobboardde.option.monstermission>
+  <eventtext.jobboardde.option.monstermission.info>-LOCAL FAUNA CAUSING HAVOC - WE PAY FOR THEIR DEMISE-</eventtext.jobboardde.option.monstermission.info>
+  <eventtext.jobboardde.option.monstermission.accept>You think to yourself: "Someone really needs to clean out these dangerous critters."</eventtext.jobboardde.option.monstermission.accept>
+  <eventtext.jobboardde.option.miningmission>Mining Mission</eventtext.jobboardde.option.miningmission>
+  <eventtext.jobboardde.option.miningmission.info>-LOCAL CAVE MIGHT CONTAIN MINERAL DEPOSITS - WE PAY FOR PROOF OF THEIR EXISTENCE-</eventtext.jobboardde.option.miningmission.info>
+  <eventtext.jobboardde.option.miningmission.accept>You think to yourself: "A bit of honest mining work, what could go wrong?"</eventtext.jobboardde.option.miningmission.accept>
+  <eventtext.jobboardde.option.cargomission>Cargo Hauling</eventtext.jobboardde.option.cargomission>
+  <eventtext.jobboardde.option.cargomission.info>-SKIPPERS REQUIRED FOR ICE COLD TRUCKING-</eventtext.jobboardde.option.cargomission.info>
+  <eventtext.jobboardde.option.cargomission.accept>You think to yourself: "To be quite frank, I don’t give two shits about any speed limits!"</eventtext.jobboardde.option.cargomission.accept>
+  <eventtext.jobboardde.option.salvagemission>Salvage Loot</eventtext.jobboardde.option.salvagemission>
+  <eventtext.jobboardde.option.salvagemission.info>-A SIGNAL APPEARED IN A LOCAL CAVE - WE PAY ANYONE WHO INVESTIGATES AND RETRIEVES WHAT THEY FIND-</eventtext.jobboardde.option.salvagemission.info>
+  <eventtext.jobboardde.option.salvagemission.accept>You think to yourself: "I am sure there will be something to scrap down there!"</eventtext.jobboardde.option.salvagemission.accept>
+  <eventtext.shop.engineer.interact>"I have some spare materials here, looking to buy? You may choose only 1 though!"</eventtext.shop.engineer.interact>
+  <eventtext.shop.engineer.option.fuelrod>4x Fuel Rod (900 Mk)</eventtext.shop.engineer.option.fuelrod>
+  <eventtext.shop.engineer.option.fuelrod.buy.success>"Here some extra fuel for you."</eventtext.shop.engineer.option.fuelrod.buy.success>
+  <eventtext.shop.engineer.option.fuelrod.buy.failure>"Sorry, I'm not doing handouts."</eventtext.shop.engineer.option.fuelrod.buy.failure>
+  <eventtext.shop.engineer.option.fpga>2x FPGA Circuits (250 Mk)</eventtext.shop.engineer.option.fpga>
+  <eventtext.shop.engineer.option.fpga.buy.success>"You can smell the fabricator still on it."</eventtext.shop.engineer.option.fpga.buy.success>
+  <eventtext.shop.engineer.option.fpga.buy.failure>"You know these cost money right?"</eventtext.shop.engineer.option.fpga.buy.failure>
+  <eventtext.shop.engineer.option.extinguisher>1x Fire Extinguisher (100 Mk)</eventtext.shop.engineer.option.extinguisher>
+  <eventtext.shop.engineer.option.extinguisher.buy.success>"Better safe than sorry."</eventtext.shop.engineer.option.extinguisher.buy.success>
+  <eventtext.shop.engineer.option.extinguisher.buy.failure>"You're really hurting if a fire breaks out."</eventtext.shop.engineer.option.extinguisher.buy.failure>
+  <eventtext.shop.engineer.unfriedly>"We're not gonna help the likes of you."</eventtext.shop.engineer.unfriedly>
+  <eventtext.shop.engineer.attack>"You're gonna pay today, Viva la revolution!"</eventtext.shop.engineer.attack>
+  <eventtext.shop.quartermaster.interact>"I've got some surplus welding fuel, if you need to resupply."</eventtext.shop.quartermaster.interact>
+  <eventtext.shop.quartermaster.option.weldingfuel>8x Welding Fuel (1000 Mk)</eventtext.shop.quartermaster.option.weldingfuel>
+  <eventtext.shop.quartermaster.option.weldingfuel.buy.success>"Remember, highly flammable!"</eventtext.shop.quartermaster.option.weldingfuel.buy.success>
+  <eventtext.shop.quartermaster.option.weldingfuel.buy.failure>"Sorry, I'm not doing handouts."</eventtext.shop.quartermaster.option.weldingfuel.buy.failure>
+  <eventtext.shop.quartermaster.option.scrap>1x Scrap + Info (1000 Mk)</eventtext.shop.quartermaster.option.scrap>
+  <eventtext.shop.quartermaster.option.scrap.buy.success>"Got this from a wreck not far from here, let me add it to your map..."</eventtext.shop.quartermaster.option.scrap.buy.success>
+  <eventtext.shop.quartermaster.option.scrap.buy.failure>"It's not trash to me son, pay up."</eventtext.shop.quartermaster.option.scrap.buy.failure>
+  <eventtext.shop.securityofficer.interact>"I've got surplus ammo, if you're looking to resupply, but I can only sell you 1 package!"</eventtext.shop.securityofficer.interact>
+  <eventtext.shop.securityofficer.option.coilgunammo>Coilgun Ammunition Box (150 Mk)</eventtext.shop.securityofficer.option.coilgunammo>
+  <eventtext.shop.securityofficer.option.coilgunammo.buy.success>"Give them the whole 9 yards."</eventtext.shop.securityofficer.option.coilgunammo.buy.success>
+  <eventtext.shop.securityofficer.option.coilgunammo.buy.failure>"This ammo isn't a hand me out."</eventtext.shop.securityofficer.option.coilgunammo.buy.failure>
+  <eventtext.shop.securityofficer.option.revolverammo>12x .38 Revolver Round (600 Mk)</eventtext.shop.securityofficer.option.revolverammo>
+  <eventtext.shop.securityofficer.option.revolverammo.buy.success>"Good ole .38."</eventtext.shop.securityofficer.option.revolverammo.buy.success>
+  <eventtext.shop.securityofficer.option.revolverammo.buy.failure>"You know bullets aren't free, right?"</eventtext.shop.securityofficer.option.revolverammo.buy.failure>
+  <eventtext.shop.securityofficer.option.smgmagazine>2x SMG Magazine (400 Mk)</eventtext.shop.securityofficer.option.smgmagazine>
+  <eventtext.shop.securityofficer.option.smgmagazine.buy.success>".45, for killing the soul."</eventtext.shop.securityofficer.option.smgmagazine.buy.success>
+  <eventtext.shop.securityofficer.option.smgmagazine.buy.failure>"You know bullets aren't free, right?"</eventtext.shop.securityofficer.option.smgmagazine.buy.failure>
+  <eventtext.securityofficer.interact>"Got any stolen goods on you?"</eventtext.securityofficer.interact>
+  <eventtext.securityofficer.option.polite>"No Sir."</eventtext.securityofficer.option.polite>
+  <eventtext.securityofficer.option.polite.answer>"Better not."</eventtext.securityofficer.option.polite.answer>
+  <eventtext.securityofficer.option.rude>"None that you know of."</eventtext.securityofficer.option.rude>
+  <eventtext.securityofficer.option.rude.answer>"Wise guy huh?"</eventtext.securityofficer.option.rude.answer>
+  <eventtext.securityofficer.bribe.interact>"I'm keeping an eye on you."</eventtext.securityofficer.bribe.interact>
+  <eventtext.securityofficer.bribe.option.polite>"Thats ok officer, I will behave."</eventtext.securityofficer.bribe.option.polite>
+  <eventtext.securityofficer.bribe.option.polite.answer>"We will see about that..."</eventtext.securityofficer.bribe.option.polite.answer>
+  <eventtext.securityofficer.bribe.option.rude>"All security officers are bastards!"</eventtext.securityofficer.bribe.option.rude>
+  <eventtext.securityofficer.bribe.option.rude.answer>"So you wanna do this the hard way, huh?"</eventtext.securityofficer.bribe.option.rude.answer>
+  <eventtext.securityofficer.bribe.option.leave.answer>"I've got a suspect here, Standby."</eventtext.securityofficer.bribe.option.leave.answer>
+  <eventtext.securityofficer.bribe.option.bribe.high>Bribe (500 Mk)</eventtext.securityofficer.bribe.option.bribe.high>
+  <eventtext.securityofficer.bribe.option.bribe.medium>Bribe (250 Mk)</eventtext.securityofficer.bribe.option.bribe.medium>
+  <eventtext.securityofficer.bribe.option.bribe.low>Bribe (75 Mk)</eventtext.securityofficer.bribe.option.bribe.low>
+  <eventtext.securityofficer.bribe.option.bribe.success>"On second thought, you're not the guy I was looking for."</eventtext.securityofficer.bribe.option.bribe.success>
+  <eventtext.securityofficer.bribe.option.bribe.failure>"Are you trying to bribe me with that puny amount?"</eventtext.securityofficer.bribe.option.bribe.failure>
+  <eventtext.securityofficer.bribe.option.bribe.rejected>"Are you trying to bribe me?"</eventtext.securityofficer.bribe.option.bribe.rejected>
+  <eventtext.securityofficer.option.insult>Insult</eventtext.securityofficer.option.insult>
+  <eventtext.securityofficer.option.insult.answer>"What did you just say to me!? I'll file a report if you don't stop with that!"</eventtext.securityofficer.option.insult.answer>
+  <eventtext.securityofficer.option.insult.answer.insult.answer>"That's it! You're under arrest!"</eventtext.securityofficer.option.insult.answer.insult.answer>
+  <eventtext.securityofficer.option.insult.leave.answer>"Yeah you better get going!"</eventtext.securityofficer.option.insult.leave.answer>
+  <eventtext.shop.piratesecurityofficer.interact>"I've got some fuckin' firepower if you're looking to load up. I'll sell ya one package of your choosing."</eventtext.shop.piratesecurityofficer.interact>
+  <eventtext.shop.piratesecurityofficer.option.hyperzine>Hyperzine (500 Mk)</eventtext.shop.piratesecurityofficer.option.hyperzine>
+  <eventtext.shop.piratesecurityofficer.option.hyperzine.buy.success>"Oh, that's the good stuff."</eventtext.shop.piratesecurityofficer.option.hyperzine.buy.success>
+  <eventtext.shop.piratesecurityofficer.option.hyperzine.buy.failure>"You're not getting high for free."</eventtext.shop.piratesecurityofficer.option.hyperzine.buy.failure>
+  <eventtext.shop.piratesecurityofficer.option.handcannonammo>6x Hand Cannon Revolver Rounds (1000 Mk)</eventtext.shop.piratesecurityofficer.option.handcannonammo>
+  <eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.success>"This will cut through any coalition body armor, a mantis, and even moloch armor I swear."</eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.success>
+  <eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.failure>"Does this look like a charity?"</eventtext.shop.piratesecurityofficer.option.handcannonammo.buy.failure>
+  <eventtext.shop.piratesecurityofficer.option.assaultriflemagazine>2x Assault Rifle Magazines (1000 Mk)</eventtext.shop.piratesecurityofficer.option.assaultriflemagazine>
+  <eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.success>"These are made with hatred and loaded with malicious intent, assault responsibly."</eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.success>
+  <eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.failure>"Did you just blow in from the abandoned station too? I need a lil money here."</eventtext.shop.piratesecurityofficer.option.assaultriflemagazine.buy.failure>
+  <eventtext.piratesecurityofficer.toll.low.interact>"Ya know we don't just let everyone walk right in. There's a fuckin' toll! Word of advice: It's better to pay up!"</eventtext.piratesecurityofficer.toll.low.interact>
+  <eventtext.piratesecurityofficer.highrep.pay.high>Pay Toll (1000 Mk)</eventtext.piratesecurityofficer.highrep.pay.high>
+  <eventtext.piratesecurityofficer.highrep.paytoll.success>"Hah! That's what I like to see. No hassle whatsoever!"</eventtext.piratesecurityofficer.highrep.paytoll.success>
+  <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation>"You know what... If you pay double, I'll spread a few good words about your crew among the other crews!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation>
+  <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy>Pay 1000mk (Coalition Reputation -20)</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy>
+  <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.success>"Hah! I knew I'd like you!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.success>
+  <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.failure>"Dude you don't even got the scratch... Trying to fuck me over? Get lost!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.buy.failure>
+  <eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.declined>"Pff! Fine... Keep your stinkin' cash!"</eventtext.piratesecurityofficer.highrep.paytoll.success.extra.reputation.declined>
+  <eventtext.piratesecurityofficer.highrep.paytoll.failure>"You don't even have the money? Surely you own something worth my time."</eventtext.piratesecurityofficer.highrep.paytoll.failure>
+  <eventtext.piratesecurityofficer.highrep.pay.medium>Haggle (750 Mk)</eventtext.piratesecurityofficer.highrep.pay.medium>
+  <eventtext.piratesecurityofficer.highrep.haggle.success>"Really now? You fuckin' with me, right? Alright fine! Go in..."</eventtext.piratesecurityofficer.highrep.haggle.success>
+  <eventtext.piratesecurityofficer.highrep.haggle.failure>"Think this pittance is gonna be enough? You're in, but remember: no cash, no service."</eventtext.piratesecurityofficer.highrep.haggle.failure>
+  <eventtext.piratesecurityofficer.highrep.haggle.rejected>"Find the money or piss off."</eventtext.piratesecurityofficer.highrep.haggle.rejected>
+  <eventtext.piratesecurityofficer.highrep.pay.low>Plead (250 Mk)</eventtext.piratesecurityofficer.highrep.pay.low>
+  <eventtext.piratesecurityofficer.highrep.plead.success>"Your crying amuses me... Dont you say another word and get outta my sight."</eventtext.piratesecurityofficer.highrep.plead.success>
+  <eventtext.piratesecurityofficer.highrep.plead.undress>"Can't afford our hospitality huh? Don't worry, I'll give you the royal treatment!"</eventtext.piratesecurityofficer.highrep.plead.undress>
+  <eventtext.piratesecurityofficer.highrep.plead.UhOh>"Uh Oh."</eventtext.piratesecurityofficer.highrep.plead.UhOh>
+  <eventtext.piratesecurityofficer.highrep.plead.failure>"Suit youself, your majesty!"</eventtext.piratesecurityofficer.highrep.plead.failure>
+  <eventtext.piratesecurityofficer.highrep.plead.rejected>"Your pitiful excuse of a story isn't gonna save you!"</eventtext.piratesecurityofficer.highrep.plead.rejected>
+  <eventtext.piratesecurityofficer.toll.option.leave.answer>"I know a language you'll understand."</eventtext.piratesecurityofficer.toll.option.leave.answer>
+  <eventtext.piratesecurityofficer.toll.option.insult>Insult</eventtext.piratesecurityofficer.toll.option.insult>
+  <eventtext.piratesecurityofficer.toll.option.insult.answer>"Oh you're so fucking dead!"</eventtext.piratesecurityofficer.toll.option.insult.answer>
+  <eventtext.piratesecurityofficer.attack>"Get 'em!"</eventtext.piratesecurityofficer.attack>
+  <eventtext.piratesecurityofficer.attack.coalition>Get them coalition pigs!</eventtext.piratesecurityofficer.attack.coalition>
+  <eventtext.piratesecurityofficer.toll.high.interact>"Oh what do we have here? Coalition scum!? Ya know there's a fuckin' TOLL! Pay up dumbass!"</eventtext.piratesecurityofficer.toll.high.interact>
+  <eventtext.piratesecurityofficer.lowrep.pay.high>Pay Toll (2000 Mk)</eventtext.piratesecurityofficer.lowrep.pay.high>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.success>"Thanks for stopping by, pig!"</eventtext.piratesecurityofficer.lowrep.paytoll.success>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation>"Imma give you a special offer now. Pay me double and I'll spread some really good words about your crew amongst the other crews here."</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy>Pay 1000Mk (Coalition Reputation -40)</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.success>"Hm didn't expect you to actually pay. Alright I'll spread some cool rumors about your crew. Coalition won't like it if they hear it, hehe."</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.success>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.failure>"Look at this idiot! Can't even keep track of their fuckin' money. Get lost!"</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.buy.failure>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.declined>"Should've guessed. You're just a shitty loyal boot licker. Get the hell out of my sight!"</eventtext.piratesecurityofficer.lowrep.paytoll.success.extra.reputation.declined>
+  <eventtext.piratesecurityofficer.lowrep.paytoll.failure>"You don't even have the money? Surely you coalition folks own something worth my time."</eventtext.piratesecurityofficer.lowrep.paytoll.failure>
+  <eventtext.piratesecurityofficer.lowrep.pay.medium>Haggle (1500 Mk)</eventtext.piratesecurityofficer.lowrep.pay.medium>
+  <eventtext.piratesecurityofficer.lowrep.haggle.success>"Go in, but make it quick pig, or I will."</eventtext.piratesecurityofficer.lowrep.haggle.success>
+  <eventtext.piratesecurityofficer.lowrep.haggle.failure>"I was expecting something more from someone like you... Get in."</eventtext.piratesecurityofficer.lowrep.haggle.failure>
+  <eventtext.piratesecurityofficer.toll.high.haggle.rejected>"You know what? Forget about it! You're a goner!"</eventtext.piratesecurityofficer.toll.high.haggle.rejected>
+  <eventtext.piratesecurityofficer.lowrep.pay.low>Plead (1000 Mk)</eventtext.piratesecurityofficer.lowrep.pay.low>
+  <eventtext.piratesecurityofficer.lowrep.plead.success>"Haha hey boys! Look at this whiny shitbag! ...Alright you made me laugh so go in, before I change my mind!"</eventtext.piratesecurityofficer.lowrep.plead.success>
+  <eventtext.piratesecurityofficer.lowrep.plead.failure>"You fuckin' kiddin' me!? Imma take everything from your fuckin' corpse!"</eventtext.piratesecurityofficer.lowrep.plead.failure>
+  <eventtext.piratesecurityofficer.lowrep.plead.rejected>"Your pitiful excuse of a story isn't gonna save you, nor can your coalition buddies help you here! Say your last words!"</eventtext.piratesecurityofficer.lowrep.plead.rejected>
+  <eventtext.piratehavenalarm.breakin>"These guys are trying to break in! Get 'em!"</eventtext.piratehavenalarm.breakin>
+  <eventtext.piratearmorylocked.doorlocked>You try pressing the button, but the door seems locked. You can hear a raspy voice from the other side: \n\n"Should've paid, the toll, chump. But if you REALLY want in... we can find an arrangement..."</eventtext.piratearmorylocked.doorlocked>
+  <eventtext.piratearmorylocked.howmuch>*Sigh...* "How much?"</eventtext.piratearmorylocked.howmuch>
+  <eventtext.piratearmorylocked.500mk>"500Mk. Pay up or stay out."</eventtext.piratearmorylocked.500mk>
+  <eventtext.piratearmorylocked.Pay>"Fine..."</eventtext.piratearmorylocked.Pay>
+  <eventtext.piratearmorylocked.noway>"No way. This is racket."</eventtext.piratearmorylocked.noway>
+  <eventtext.piratearmorylocked.dooropens>"Nice. Lookin' forward to doing business."</eventtext.piratearmorylocked.dooropens>
+  <eventtext.piratearmorylocked.nomoney>"Trying to swindle me? No cash, no guns."</eventtext.piratearmorylocked.nomoney>
+  <eventtext.piratearmorylocked.comeback>"Hah! Come back if you change your mind. I'm not going anywhere."</eventtext.piratearmorylocked.comeback>
+  <eventtext.piratearmoryalarm.breakin>"This guy's trying to steal our supplies!"</eventtext.piratearmoryalarm.breakin>
+  <eventtext.piratediversoutpost.meetambusher>As you walk down the hallway, an unsavory individual puts a hand on your shoulder. "Fancy ship you've got there. A real beauty... Bet it cost you a little fortune."</eventtext.piratediversoutpost.meetambusher>
+  <eventtext.piratediversoutpost.agree>"It's just a hunk of junk."</eventtext.piratediversoutpost.agree>
+  <eventtext.piratediversoutpost.buggeroff>"Bugger off."</eventtext.piratediversoutpost.buggeroff>
+  <eventtext.piratediversoutpost.Iwascaptain>The man keeps following you. "Used to be a captain you know? Mine was sunk by one of those coalition dogs. Tried to run a blockade with a shipment of the good stuff, turns out Dugongs aren't known for their speed."</eventtext.piratediversoutpost.Iwascaptain>
+  <eventtext.piratediversoutpost.Iwascaptain2>The self-proclaimed pilot spits on the floor. "Took a straight hit by a railgun. Tore a hole in the amidships, but somehow me and my crew limped back to this rat hole of a station. Bet if I had yours, things would've been different..."</eventtext.piratediversoutpost.Iwascaptain2>
+  <eventtext.piratediversoutpost.goodluck>"Tough luck mate, I wish you the best."</eventtext.piratediversoutpost.goodluck>
+  <eventtext.piratediversoutpost.dontcare>"Not my problem."</eventtext.piratediversoutpost.dontcare>
+  <eventtext.piratediversoutpost.offersbooze>The involuntary landlubber is back again, and pulls something from under his coat. For a brief moment you think it's a gun, but it's just a bottle of rum. "You know what, I've got a good feeling business will resume. Pulled these babies from my personal stash. This one is on the house!" </eventtext.piratediversoutpost.offersbooze>
+  <eventtext.piratediversoutpost.takebooze>"Never say no to free booze."</eventtext.piratediversoutpost.takebooze>
+  <eventtext.piratediversoutpost.getthehelloff>"Get the hell off me. You're not my buddy, pal."</eventtext.piratediversoutpost.getthehelloff>
+  <eventtext.piratediversoutpost.drinkup>"Drink up, and make sure to share with aaaaall your crew! To the last drop. Me, I won't be staying here for long..." \n\nYou catch a glimpse of a sinister chuckle.</eventtext.piratediversoutpost.drinkup>
+  <eventtext.piratediversoutpost.dontgetalong>"Whatever. Guess we just don't get along. Don't worry, I'll be leaving soon..."</eventtext.piratediversoutpost.dontgetalong>
+  <eventtext.piratediversoutpost.soundinairlock>There's a loud sound in the airlock...</eventtext.piratediversoutpost.soundinairlock>
+  <eventtext.piratediversoutpost.takeover>"We're taking over this ship!"</eventtext.piratediversoutpost.takeover>
+  <eventtext.piratemissioninformant.interact>"Hm? Ye lookin' for work ye say? Lemme tell ya somethin'! Ain't no administration service here! But... Got me a lead about a coalition transport passing near here and I'm not sure if me crew is ready for it. Imma sell it to ya if ye got the cash!"</eventtext.piratemissioninformant.interact>
+  <eventtext.piratemissioninformant.option.buy>Buy (1000mk)</eventtext.piratemissioninformant.option.buy>
+  <eventtext.piratemissioninformant.option.buy.success>"Hah great! Lemme show ya where they gonna pass!"</eventtext.piratemissioninformant.option.buy.success>
+  <eventtext.piratemissioninformant.option.buy.failure>"Ain't gonna give it to ya for free dumbass! Come back when ye got the scratch!"</eventtext.piratemissioninformant.option.buy.failure>
+  <EventText.DEgotoblockade.c1>"COALITION BOUNTY ISSUED", the discolored and damaged posters list off sites of destruction and infestation, seems like the coalition is in over their heads. You can only make out one set of coordinates.</EventText.DEgotoblockade.c1>
+  <EventText.DEgotoblockade.o1>A tax free paycheck couldn't hurt...</EventText.DEgotoblockade.o1>
+  <eventtext.missionevent_lair.c1>“There is a massive lair nearby bubbling over with more and more creatures by the minute, if you can take it out there is a reward in it for you!”</eventtext.missionevent_lair.c1>
+  <EventText.missionevent_lair.o1>Understood</EventText.missionevent_lair.o1>
+  <eventtext.survey.interact>This automated station scans the surrounding area for minerals. A message is displayed on the terminal: \n\n"PAY 1000MK TO ACCESS THIS UNIT'S SCANNING DATABASE"</eventtext.survey.interact>
+  <eventtext.survey.payup>Transfer the money</eventtext.survey.payup>
+  <eventtext.survey.givemissions>"ACCESS GRANTED. POTENTIAL MINERAL DEPOSITS CAN BE FOUND AT THESE LOCATIONS..."</eventtext.survey.givemissions>
+  <eventtext.survey.nomoney>"INSUFFICIENT FUNDS. ACCESS DENIED"</eventtext.survey.nomoney>
+  <eventtext.constructionrecipe.recipe>A panel displays a message from the outpost's taskmaster. \n\n"CONSTRUCTION UNITS REQUESTED. MAY BE FABRICATED AND PACKAGED USING THE FOLLOWING MATERIALS:" \n\n-Lead \n-Copper \n-Steel \n-Iron \n-Zinc \n-Aluminium</eventtext.constructionrecipe.recipe>
+  <eventtext.Constructionprogress.starterdialogue>"Hey you! We're running short on materials and the next delivery has been delayed a few days. We don't want to spend more time on this construction site than we have to... You don't happen to have 5 crates of building materials you could spare? We'll pay for them of course!"</eventtext.Constructionprogress.starterdialogue>
+  <eventtext.Constructionprogress.wehavecrates>"We do. Let me go grab them for you."</eventtext.Constructionprogress.wehavecrates>
+  <eventtext.Constructionprogress.speaktomeagain>"Oh wonderful! Speak to me again once you're done delivering them to the cargo unit over there to collect your payment."</eventtext.Constructionprogress.speaktomeagain>
+  <eventtext.Constructionprogress.letmecheck>"Let me check our cargo."</eventtext.Constructionprogress.letmecheck>
+  <eventtext.Constructionprogress.ifyoufindcrates>"Alright! If you happen to find some, deliver them to the cargo unit over there and talk to me once you're done."</eventtext.Constructionprogress.ifyoufindcrates>
+  <eventtext.Constructionprogress.notinterested>"Not interested."</eventtext.Constructionprogress.notinterested>
+  <eventtext.Constructionprogress.findmeagain>"I see... Well if you change your mind, you know where to find me."</eventtext.Constructionprogress.findmeagain>
+  <eventtext.Constructionprogress.nomaterials>"We're lacking the materials."</eventtext.Constructionprogress.nomaterials>
+  <eventtext.Constructionprogress.wellwait>"I see... Well then I guess we'll have to wait for the official delivery then."</eventtext.Constructionprogress.wellwait>
+  <eventtext.Constructionprogress.changeyourmind>"Oh hey! Did you guys change your mind? We really could use those 5 crates of building materials!"</eventtext.Constructionprogress.changeyourmind>
+  <eventtext.Constructionprogress.cratescoming>"Yes, the crates are on their way."</eventtext.Constructionprogress.cratescoming>
+  <eventtext.Constructionprogress.cratesdelivered>"I see you've delivered the required amount. Here's your payment!"</eventtext.Constructionprogress.cratesdelivered>
+  <eventtext.Constructionprogress.thanks>"Thank you."</eventtext.Constructionprogress.thanks>
+  <eventtext.Constructionprogress.youdecide>"Oh and since you're on good terms with us, administration stated to throw the current building plans out and let you decide on what type of station we should build here. So what's it going to be, boss?"</eventtext.Constructionprogress.youdecide>
+  <eventtext.Constructionprogress.settlement>A Settlement</eventtext.Constructionprogress.settlement>
+  <eventtext.Constructionprogress.settlementpicked>"Alright, a settlement it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.settlementpicked>
+  <eventtext.Constructionprogress.base>A Military Base</eventtext.Constructionprogress.base>
+  <eventtext.Constructionprogress.basepicked>"Alright, a military base it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.basepicked>
+  <eventtext.Constructionprogress.research>A Research Station</eventtext.Constructionprogress.research>
+  <eventtext.Constructionprogress.researchpicked>"Alright, a research station it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.researchpicked>
+  <eventtext.Constructionprogress.hospital>A Hospital</eventtext.Constructionprogress.hospital>
+  <eventtext.Constructionprogress.hospitalpicked>"Alright, a hospital it is. I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.hospitalpicked>
+  <eventtext.Constructionprogress.backtowork>"I'll be returning to work now. Safe travels to you!"</eventtext.Constructionprogress.backtowork>
+  <eventtext.Constructionprogress.notenough>"I'm afraid that won't be enough. Check your cargo hold and see if can find some more."</eventtext.Constructionprogress.notenough>
+  <eventtext.Constructionprogress.checkagain>"I'll go check again."</eventtext.Constructionprogress.checkagain>
+  <eventtext.Constructionprogress.allwegot>"Sorry, but that's all we got..."</eventtext.Constructionprogress.allwegot>
+  <eventtext.Constructionprogress.takecargoback>"In that case I recommend taking your cargo back to your submarine. We'll be waiting for the official delivery  instead."</eventtext.Constructionprogress.takecargoback>
+  <eventtext.ConstructionUpgrade.starterdialogue>"We're working on expanding this outpost, so we're always looking for construction resources. Do you have 3 crates of building materials to spare? We'll pay for them of course!"</eventtext.ConstructionUpgrade.starterdialogue>
+  <eventtext.pantytheft.heyyou>"Pssst. Hey you, over here."</eventtext.pantytheft.heyyou>
+  <eventtext.pantytheft.opportunity>A suspicious figure speaks quietly: "I've heard of you. And I know you take odd jobs. Can I interest you in a most lucrative opportunity?"</eventtext.pantytheft.opportunity>
+  <eventtext.pantytheft.confidentiality>"See, people come and go around these outposts, but nobody knows when and where. That's captain confidentiality."</eventtext.pantytheft.confidentiality>
+  <eventtext.pantytheft.plantingtags>"Well me and my partners all over Europa came up with a little system. We plant tags in the clothes, and with a simple scanner in the airlock, we know exactly who docks and who leaves. Then we sell the information to whoever needs it. Separatist dissidents, coalition bigwigs, juicy merchants... you name em, we find em. That's where you help."</eventtext.pantytheft.plantingtags>
+  <eventtext.pantytheft.ifitpays>As long as you pay...</eventtext.pantytheft.ifitpays>
+  <eventtext.pantytheft.grabclothes>"I can't be seen rummaging around the crew quarters, so you're up to the job. Grab a bunch of clothes from the lockers, and bring them to me in that bag. I'll do my thing and put them right back in."</eventtext.pantytheft.grabclothes>
+  <eventtext.pantytheft.clothesdelivered>"Perfect. I'll get to work. Remember: We never spoke."</eventtext.pantytheft.clothesdelivered>
+  <eventtext.pantytheft.moreclothes>"Won't do. Get me more clothes."</eventtext.pantytheft.moreclothes>
+  <eventtext.vendingsmashing.heyyou>"Pssst. Hey you, over here."</eventtext.vendingsmashing.heyyou>
+  <eventtext.vendingsmashing.quickcash>A disheveled individual whispers: "Hey, looking for a bit of quick cash?"</eventtext.vendingsmashing.quickcash>
+  <eventtext.vendingsmashing.machinetrick>"Those vending machines man, they're a scam. But I know a trick to make them spill their insides."</eventtext.vendingsmashing.machinetrick>
+  <eventtext.vendingsmashing.hitemhard>"Hit em as hard as you can. That'll attract the attention"</eventtext.vendingsmashing.hitemhard>
+  <eventtext.vendingsmashing.Notsubtle>"Not exactly subtle..."</eventtext.vendingsmashing.Notsubtle>
+  <eventtext.vendingsmashing.Ilootyourun>"Yeah that's why you do the smashing and I do the looting. Keep security busy while I grab the goods. Now get to work." He hands you a crowbar. </eventtext.vendingsmashing.Ilootyourun>
+  <eventtext.vendingsmashing.readycrowbar>That one looks full. Ready your crowbar...</eventtext.vendingsmashing.readycrowbar>
+  <eventtext.vendingsmashing.Ilootyourun>"Yeah that's why you do the smashing and I do the looting. Keep security busy while I grab the goods. Now get to work."</eventtext.vendingsmashing.Ilootyourun>
+  <eventtext.vendingsmashing.yourshare>"Good job. Here's your share."</eventtext.vendingsmashing.yourshare>
+  <eventtext.circuswelcome.foundus>"You found us! A warm welcome to our guests."</eventtext.circuswelcome.foundus>
+  <eventtext.missionevent_vipnapping.listen>One of the locals stops you: "Looking for money? I've got a job in mind."</eventtext.missionevent_vipnapping.listen>
+  <eventtext.missionevent_vipnapping.bigscore>"So, I've heard some industry big shot on a business trip from the shallows has been spotted around these parts..."</eventtext.missionevent_vipnapping.bigscore>
+  <eventtext.missionevent_vipnapping.whatabout>What are you thinking about?</eventtext.missionevent_vipnapping.whatabout>
+  <eventtext.missionevent_vipnapping.ransomplan>"A fat ransom of course! You'll get paid in advance."</eventtext.missionevent_vipnapping.ransomplan>
+  <eventtext.missionevent_vipnapping.briefing>"Here's the plan: You find the target, bag the guy in your submarine and split the station. Then I'll pick him up with a shuttle to throw any pursuers off. They won't see it coming."</eventtext.missionevent_vipnapping.briefing>
+  <eventtext.missionevent_vipnapping.Imin>I'm in. Time to share the wealth.</eventtext.missionevent_vipnapping.Imin>
+  <eventtext.missionevent_vipnapping.notmykink>I'm not into that stuff.</eventtext.missionevent_vipnapping.notmykink>
+  <eventtext.missionevent_vipnapping.hereslocation>"Here's the location, and a picture of the target. I'll follow in your wake."</eventtext.missionevent_vipnapping.hereslocation>
+  <eventtext.missionevent_vipnapping.yourloss>"Pfeh! Your loss then."</eventtext.missionevent_vipnapping.yourloss>
+  <eventtext.vipnapping.thatstarget>"Fancy clothes, expensive watch... That's the target."</eventtext.vipnapping.thatstarget>
+  <eventtext.psychovisions.ghosts>A visibly distraught researcher stares intently at the research terminal. \n"Ghosts! They're speaking to me!"</eventtext.psychovisions.ghosts>
+  <eventtext.psychovisions.noghosts>"Ghosts? Aren't you a scientist?"</eventtext.psychovisions.noghosts>
+  <eventtext.psychovisions.insidemyhead>"It's those aliens! They're inside my head! I swear I saw them... the ancient scriptures! The song of the TRUE Europans!"</eventtext.psychovisions.insidemyhead>
+  <eventtext.psychovisions.psychotic>"You're clearly psychotic."</eventtext.psychovisions.psychotic>
+  <eventtext.psychovisions.panic>"Maybe YOU are not enough! If only you could see the things that I see..." The researcher scurries away in a panic.</eventtext.psychovisions.panic>
+  <eventtext.psychovisions.leave>Leave the madman to his ravings.</eventtext.psychovisions.leave>
+  <eventtext.psychovisions.listenalien>"Come. Listen. Deeper..."</eventtext.psychovisions.listenalien>
+  <eventtext.psychovisions.paranoid>You're not quite sure what you just witnessed. But somehow, you feel like you can see a ...path to the end of your journey. You're left perplexed, and also a little paranoid.</eventtext.psychovisions.paranoid>
+  <EventText.scrapdealer1.scrapseller>You hear a muffled voice calling out the passerbys: "Salvage, rare metals, I've got them all! Hey you traveller, interested into some first rate, former submarine parts?"</EventText.scrapdealer1.scrapseller>
+  <EventText.scrapdealer1.sellmescrap>"You're selling me ...scrap?"</EventText.scrapdealer1.sellmescrap>
+  <EventText.scrapdealer1.junktreasure>“One man's junk is another's treasure. You wouldn't believe what you can find patiently waiting at the bottom of the sea. Scrap could be anything: broken down engines, electronics... it could even be a boat! So, how about helping me kick off this business by being my first customer?"</EventText.scrapdealer1.junktreasure>
+  <EventText.scrapdealer1.buyscrap>"For 250 marks, all this scrap can be yours!"</EventText.scrapdealer1.buyscrap>
+  <EventText.scrapdealer1.deal>“Deal.”</EventText.scrapdealer1.deal>
+  <EventText.scrapdealer1.scrapbought>"Here you go! This is the start of a lucrative business venture!"</EventText.scrapdealer1.scrapbought>
+  <EventText.scrapdealer1.nomoney>"I'm not giving it for free! You gotta pay up!"</EventText.scrapdealer1.nomoney>
+  <EventText.scrapdealer2.scrapseller>The familiar glint of a metal bucket and the person wearing it catches your eye: "You again! As you can see, I'm still in the salvage business. And I got my hand on some brand new, high-quality scrap! Interested in buying?"</EventText.scrapdealer2.scrapseller>
+  <EventText.scrapdealer2.buyscrap>"For 250 marks, all this scrap can be yours! Again!"</EventText.scrapdealer2.buyscrap>
+  <EventText.scrapdealer2.scrapbought>"Never thought any sane person would buy that junk TWICE! Since you're my best and only customer, let me give you a tip as a bonus: Here's a wreck I found a while ago, but it proved too dangerous to loot. Maybe you can give it a shot..."</EventText.scrapdealer2.scrapbought>
+  <EventText.missionevent_capturelivecrawler.periloustask>A hooded figure signs to you. "Blessings, dear traveller. I've been looking for a vessel capable enough to rid us of handling a most delicate task."</EventText.missionevent_capturelivecrawler.periloustask>
+  <EventText.missionevent_capturelivecrawler.whattask>"Sounds fishy."</EventText.missionevent_capturelivecrawler.whattask>
+  <EventText.missionevent_capturelivecrawler.experiments>“Our church is running crucial experiments on unique organisms and rare mutations, all for the good of humanity. But with the pursuit of progress comes unfortunate... incidents."</EventText.missionevent_capturelivecrawler.experiments>
+  <EventText.missionevent_capturelivecrawler.incidents>"Incidents?"</EventText.missionevent_capturelivecrawler.incidents>
+  <EventText.missionevent_capturelivecrawler.missionbrief>“Some of our test subjects escaped containement during transport to one of our churches. Save those lost souls and bring them back to our sanctuary. We will reward your effort... and your silence.”</EventText.missionevent_capturelivecrawler.missionbrief>
+  <EventText.missionevent_capturelivecrawler.Iwilldoit>"I will do it."</EventText.missionevent_capturelivecrawler.Iwilldoit>
+  <EventText.missionevent_capturelivecrawler.Noway>"No way. Clean up your own mistakes."</EventText.missionevent_capturelivecrawler.Noway>
+  <EventText.missionevent_capturelivecrawler.takethis>“Take these sedative implements. They will help keeping the beasts pacified. Remember: keep at least one of the subjects alive.”</EventText.missionevent_capturelivecrawler.takethis>
+  <EventText.piratebodybag.smellyroom>Heaps of trash are piled up in a single place, saturating the damp air with the stench of mold. You didn't think this place could get any filthier.</EventText.piratebodybag.smellyroom>
+  <EventText.piratebodybag.hearthump>You hear an irregular thump coming from inside a suspiciously wrapped package...</EventText.piratebodybag.hearthump>
+  <EventText.piratebodybag.kickit>Kick it.</EventText.piratebodybag.kickit>
+  <EventText.piratebodybag.stayaway>Stay the hell away.</EventText.piratebodybag.stayaway>
+  <EventText.missionevent_escortmedivac.needhelp>"You're part of the crew that just docked, correct? Listen, we have an emergency here, and we could use your ship."</EventText.missionevent_escortmedivac.needhelp>
+  <EventText.missionevent_escortmedivac.myship>"My ship? How?"</EventText.missionevent_escortmedivac.myship>
+  <EventText.missionevent_escortmedivac.spaceflu>"One of our residents caught some kind of unknown space flu from a recent expedition. Luckily we immediately put the patient in quarantine, but can't figure out whatever the hell is incubating. Worse, this station doesn't have the means to treat it. So far only Stabilozine seems to have an effect, but it's just temporary."</EventText.missionevent_escortmedivac.spaceflu>
+  <EventText.missionevent_escortmedivac.lupus>"Maybe it's a Lupus?"</EventText.missionevent_escortmedivac.lupus>
+  <EventText.missionevent_escortmedivac.missionbrief>"No, and we're running low on supplies. That's why we need you to transport the patient to the medical facility nearby, before this situation turns into a potential outbreak."</EventText.missionevent_escortmedivac.missionbrief>
+  <EventText.missionevent_escortmedivac.accept>"Anything to save a life."</EventText.missionevent_escortmedivac.accept>
+  <EventText.missionevent_escortmedivac.refuse>"An infectious disease in an enclosed submarine? Not happening."</EventText.missionevent_escortmedivac.refuse>
+  <EventText.orangePETA.spotted>A person wearing an strange helmet shouts towards your direction: "Hey I think that's the guy!"</EventText.orangePETA.spotted>
+  <EventText.orangePETA.whatme>"Are you talking to me?"</EventText.orangePETA.whatme>
+  <EventText.orangePETA.OPSspeech1>The odd group presents itself as the Orange Protection Society. “We've heard word of an unscrupulous captain trafficking kind orange souls to slaughter them! Soon, the entire species will be endangered due to the gluttony of a few cruel flesh-eaters! They are the real monsters of Europa, as well as those who do their bidding for money!"</EventText.orangePETA.OPSspeech1>
+  <EventText.orangePETA.OPSspeech2>"Like humans, the Europan Lobscrab is an amazingly social, smart and kind animal. They can live to be more than 100 years old, most of them older than any of human on this moon! Do you have any idea how they feel, being boiled alive and devoured?"</EventText.orangePETA.OPSspeech2>
+  <EventText.orangePETA.lie>“You're mistaken, we were taking them to a loving forever home.”</EventText.orangePETA.lie>
+  <EventText.orangePETA.whatarelief>There's an awkward silence. "Oh, what a relief. I'm so glad they're safe and sound. I must apologize, there's still some good left in the world after all. Take this, as a token of the Orange Protection Society."</EventText.orangePETA.whatarelief>
+  <EventText.orangePETA.delicious>"They feel delicious, with a touch of Moloch butter."</EventText.orangePETA.delicious>
+  <EventText.orangePETA.getem>"That's the orange butcher in person! Get 'em!"</EventText.orangePETA.getem>
+  <EventText.piezopioneer.argument>You hear two miners arguing loudly: \n\n"Yeah yeah I've heard that drivel a thousand times before..." \n\n"It's true! It says it right here: the tale of the piezo pioneers..." \n\n"Ever gotten close to a Piezo Crystal? Don't think so, you'd be fried on the spot. And that antique of yours? You got conned. Now get back to work!" \n </EventText.piezopioneer.argument>
+  <EventText.piezopioneer.hmmm>"Hmmm..."</EventText.piezopioneer.hmmm>
+  <EventText.piezopioneer.upsetminer>That miner looks visibly upset...</EventText.piezopioneer.upsetminer>
+  <EventText.piezopioneer.inquirepiezos>"What was that about piezos?"</EventText.piezopioneer.inquirepiezos>
+  <EventText.piezopioneer.taleofpioneers>“Been trying to convince these fools for a while, but they're too content with digging dirt for the rest of their lives. Did you know in the olden times, the first europan miners took chunks out of piezos crystals and used them as an energy source. Piezos!”</EventText.piezopioneer.taleofpioneers>
+  <EventText.piezopioneer.insane>"The giant exploding crystals? That sounds insane..."</EventText.piezopioneer.insane>
+  <EventText.piezopioneer.strangetool>"But I can prove it. I bought this tool from some weird scrap peddler... It looks old enough, but I never used it myself."</EventText.piezopioneer.strangetool>
+  <EventText.piezopioneer.youdontknow>"So you don't actually know."</EventText.piezopioneer.youdontknow>
+  <EventText.piezopioneer.taketool>"It's not like I can leave this hole anyway, I'm still under contract... Here, take it, and prove to these idiots that the spirit of the pioneers still lives on."</EventText.piezopioneer.taketool>
+  <EventText.missionevent_silencewitness.gangbounty>"We got a bounty if you're interested. The Red Mantis gang has put a hit on a target."</EventText.missionevent_silencewitness.gangbounty>
+  <EventText.missionevent_silencewitness.tellmemore>"Tell me more..."</EventText.missionevent_silencewitness.tellmemore>
+  <EventText.missionevent_silencewitness.missionbrief>"One of their old lieutenants has caught cold feet and turned tail towards the neareast coalition outpost. Word is, they're going to rat out their old crew to the authorities. Of course, the gang doesn't really like that prospect, so they're paying a nice sum to keep that snitch from babbling."</EventText.missionevent_silencewitness.missionbrief>
+  <EventText.missionevent_silencewitness.accept>"I'll squash the rat."</EventText.missionevent_silencewitness.accept>
+  <EventText.missionevent_silencewitness.seacario>"That's a job for a sea-cario."</EventText.missionevent_silencewitness.seacario>
+  <EventText.missionevent_silencewitness.dotdotdot>"..."</EventText.missionevent_silencewitness.dotdotdot>
+  <EventText.missionevent_silencewitness.hitlocation>"Here's where you should find the hit. Probably waiting in a cell until they get a full confession out of the traitor."</EventText.missionevent_silencewitness.hitlocation>
+  <EventText.missionevent_silencewitness.nogangbusiness>"No thanks, we try to stay out of gang business."</EventText.missionevent_silencewitness.nogangbusiness>
+  <EventText.silencewitnessevent.whichone>The pirate mentioned the turncoat was here, but didn't expect to see several prisoners in the same place. You can't tell which one is your target...</EventText.silencewitnessevent.whichone>
+  <EventText.silencewitnessevent.whoareyou>"Who the hell are you? Am I finally getting out?"</EventText.silencewitnessevent.whoareyou>
+  <EventText.silencewitnessevent.whoareyou>"I don't know you. Am I leaving?"</EventText.silencewitnessevent.whoareyou>
+  <EventText.silencewitnessevent.regards>"The Red Mantis crew sends their regards."</EventText.silencewitnessevent.regards>
+  <EventText.silencewitnessevent.righttarget>"Red Mantis? Fuck! Security, there's a guy out to get me!"</EventText.silencewitnessevent.righttarget>
+  <EventText.silencewitnessevent.wrongtarget>“No really who the fuck are you? Security!”</EventText.silencewitnessevent.wrongtarget>
+  <EventText.silencewitnessevent.nevermind>"Nevermind. Stay inside."</EventText.silencewitnessevent.nevermind>
+  <EventText.silencewitnessevent.whatever>"Whatever you say, chief..."</EventText.silencewitnessevent.whatever>
+  <EventText.silencewitnessevent.whatever>"Quit givin' me false hope..."</EventText.silencewitnessevent.whatever>
+  <EventText.silencewitnessevent.outtahere>"Whoever you are chump, I'm outta here!"</EventText.silencewitnessevent.outtahere>
+  <EventText.oxygenfluidleak.monitor>The status monitor is displaying a warning about an oxygen generator malfunction. Better order a mechanic to take a look.</EventText.oxygenfluidleak.monitor>
+  <EventText.oxygenfluidleak.toolate>You're a little late, but the chemical scrubber was leaking a large quantity of ammonia through the vents all over the ship. Thankfully the liquid has ran out.</EventText.oxygenfluidleak.toolate>
+  <EventText.oxygenfluidleak.leakyscrubber>The chemical scrubber is leaking a large quantity of ammonia through the vents all over the ship.</EventText.oxygenfluidleak.leakyscrubber>
+  <EventText.oxygenfluidleak.waitorpurge>The remaining fluid should dissipate over time if you just wait... but you could also purge it all at once.</EventText.oxygenfluidleak.waitorpurge>
+  <EventText.oxygenfluidleak.purgeoption>Purge the fluid at your own risk.</EventText.oxygenfluidleak.purgeoption>
+  <EventText.oxygenfluidleak.goodpurge>You remember the purging procedure. Get the crew ready!</EventText.oxygenfluidleak.goodpurge>
+  <EventText.oxygenfluidleak.badpurge>You wish you hadn't traded the operating manual for opium. Here goes nothing...</EventText.oxygenfluidleak.badpurge>
+  <EventText.oxygenfluidleak.waititout>Wait for the problem to resolve itself.</EventText.oxygenfluidleak.waititout>
+  <EventText.beaconcommsjam.jammed>You hear scrambled noises coming from your headset. The beacon signal is active, but it's malfunctioning and jamming nearby communications. Better not stay around.</EventText.beaconcommsjam.jammed>
+  <EventText.missionevent_hostagesituation.distressed>You approach a coalition official who looks distressed. "Good thing you're here... We have a crisis on our hands and no personel to spare."</EventText.missionevent_hostagesituation.distressed>
+  <EventText.missionevent_hostagesituation.missionbrief>"One of our stations has been taken hostage by a group of heavily armed bandits. We don't know who if they're doing a hit for the separatists or if they're just being reckless, but they've threatened to kill all of the residents if we don't pay a hefty ransom of 5000mk in cash. Piracy was bad enough, now this?"</EventText.missionevent_hostagesituation.missionbrief>
+  <EventText.missionevent_hostagesituation.ynomilitary>"Can't you send a military submarine?"</EventText.missionevent_hostagesituation.ynomilitary>
+  <EventText.missionevent_hostagesituation.3rdparty>"No, we can't. They said that if they saw a submarine flying the Coalition colors, they'd execute the hostages. That's why we need a 3rd party captain to act as a negociator."</EventText.missionevent_hostagesituation.3rdparty>
+  <EventText.missionevent_hostagesituation.volunteer>"We'll volunteer for the rescue."</EventText.missionevent_hostagesituation.volunteer>
+  <EventText.missionevent_hostagesituation.freehostages>"Try to free the hostages, one way or another. The higher-ups categorically refuse to negociate with outlaws, so I can't give you the funds, but if you succeed I'll try to gather a reward."</EventText.missionevent_hostagesituation.freehostages>
+  <EventText.missionevent_hostagesituation.canthelp>"Sorry, we can't help right now."</EventText.missionevent_hostagesituation.canthelp>
+  <EventText.hostagesituation.radiocall>You hear someone tune into your frequency from inside the station: \n\n"Whoever you are, don't take on step inside! We've got this whole outpost under our control! One wrong move and we'll pull the trigger!"</EventText.hostagesituation.radiocall>
+  <EventText.hostagesituation.negociate>"We've come to negociate the ransom."</EventText.hostagesituation.negociate>
+  <EventText.hostagesituation.nonegociate>Diplomacy was never an option.</EventText.hostagesituation.nonegociate>
+  <EventText.hostagesituation.sendnegociator>"You better come UNARMED, if we catch a glipse of iron, we'll open fire! Our leader is waiting in the admin office, don't try anything funny!" \n\nSend your best negociator, and hide your weapons...</EventText.hostagesituation.sendnegociator>
+  <EventText.hostagesituation.killeveryone>Diplomacy was never an option.</EventText.hostagesituation.killeveryone>
+  <EventText.hostagesituation.gangleader>You approach the gang leader, their clothes still freshly stained with blood. "Well well, if it isn't the coalition's errand dog. Here's what we want: 5000mk, cash, not traceable. We'll be rich, you'll be alive, no harm done to the honest folk of this fine place. Capiche?"</EventText.hostagesituation.gangleader>
+  <EventText.hostagesituation.payransom>Hand over the 5000mk</EventText.hostagesituation.payransom>
+  <EventText.hostagesituation.dealsoff>"Screw you. Deal's off the table."</EventText.hostagesituation.dealsoff>
+  <EventText.hostagesituation.happybandit>The scoundrel rubs his hands. "Wonderful! See lads, I told you the coalition always respects authority! Harr harr... Don't worry, we'll take our leave as soon as you undock, give us a little space just for safety's sake. Now get the hell out of here before I change my mind."</EventText.hostagesituation.happybandit>
+  <EventText.hostagesituation.paidransom>You've informed the coalition that the ransom has been paid and the bandits are on their way. They're not happy, but they'll give you your reward nonetheless...</EventText.hostagesituation.paidransom>
+  <EventText.hostagesituation.nomoney>"Hey hey hey you guys are trying to cheat us? Get em'!"</EventText.hostagesituation.nomoney>
+  <EventText.hostagesituation.intimidate>"You think you can get away with all of this?"</EventText.hostagesituation.intimidate>
+  <EventText.hostagesituation.infamous>The bandit takes a closer look at your face. "Wait, I've heard of you... you're pretty infamous around these waters... You're telling me another gang is sending you to stop us?"</EventText.hostagesituation.infamous>
+  <EventText.hostagesituation.badforbusiness>(Bluff) "The other crews aren't pleased with your ways, you're attracting too much attention, the kind that's bad for business. They're giving you a chance to fuck off while you still can."</EventText.hostagesituation.badforbusiness>
+  <EventText.hostagesituation.packitup>After a moment of confusion among the bandits, the leader gives up. "Damnit! I should've stuck to smuggling drugs. Grab your loot and pack up lads, we're outta here!"</EventText.hostagesituation.packitup>
+  <EventText.hostagesituation.banditsleave>You've informed the coalition that the bandits are leaving the station. They don't know how you pulled it off, but they'll send you the reward right away.</EventText.hostagesituation.banditsleave>
+  <EventText.hostagesituation.extorsion>"I like your guts, but you're not that good at extorsion. Watch this:"</EventText.hostagesituation.extorsion>
+  <EventText.hostagesituation.callcoalition>You tune into the coalition frequency. They're asking about the hostages...</EventText.hostagesituation.callcoalition>
+  <EventText.hostagesituation.10000mk>"We've decided to side with the bandits. The ransom just went up: 10000mk, through wire."</EventText.hostagesituation.10000mk>
+  <EventText.hostagesituation.moneysent>The officer is furious and curses you with every imaginable Europan slur. But it doesn't matter, you were their only shot and there's nothing they can do about it. They eventually send you the money.</EventText.hostagesituation.moneysent>
+  <EventText.hostagesituation.artfulrobbery>"That was some artful robbery! We're gonna split the money, right?"</EventText.hostagesituation.artfulrobbery>
+  <EventText.hostagesituation.splitmoney>Split the money</EventText.hostagesituation.splitmoney>
+  <EventText.hostagesituation.keepmoney>"How about I kill you and keep it?"</EventText.hostagesituation.keepmoney>
+  <EventText.hostagesituation.telltheguys>"Can't wait to tell the guys at home about this!" The bandits prepare to leave, and so should you.</EventText.hostagesituation.telltheguys>
+  <EventText.hostagesituation.backoff>(Back off) "Nevermind, we're still negociating. Over."</EventText.hostagesituation.backoff>
+  <EventText.hostagesituation.backedoff>"What the hell was that about, are you cozy with the coalition now? Then pay up."</EventText.hostagesituation.backedoff>
+  <EventText.hostagesituation.payanyway>"Whatever, here's your 5000mk."</EventText.hostagesituation.payanyway>
+  <EventText.hostagesituation.scaredbandits>The bandits seem agitated after noticing the guns on your submarine. Looks like they weren't expecting a armed vessel. "Uh, yeah, you bet! We've got this station on lockdown, the coalition can't do squat, right guys?"</EventText.hostagesituation.scaredbandits>
+  <EventText.hostagesituation.2hours>(Bluff) "In 2 hours, the coalition will send their counter-terrorist force, and you'll get blasted apart. But I'll give you a chance to leave, unscathed."</EventText.hostagesituation.2hours>
+  <EventText.hostagesituation.webounce>"Fuck, I knew this was a bad idea... Everyone, we're pulling out! Take whatever loot you find and bounce!"</EventText.hostagesituation.webounce>
+  <EventText.hostagesituation.bullshit>"Hah! Like I'm falling for this bullshit." The leader snaps their fingers.</EventText.hostagesituation.bullshit>
+  <EventText.hostagesituation.snapfingers>"I don't give two shits about what those rats think. Lemme show you." The leader snaps their fingers.</EventText.hostagesituation.snapfingers>
+  <EventText.hostagesituation.shothostage>"Hear that? That's one less hostage. Keep arguing and see what happens. Now pay up."</EventText.hostagesituation.shothostage>
+  <EventText.hostagesituation.ceasebloodshed>"Cease the bloodshed, here's the money."</EventText.hostagesituation.ceasebloodshed>
+  <EventText.hostagesituation.toomanydead>Too many hostages died. Mission failed.</EventText.hostagesituation.toomanydead>
+  <EventText.hostagesituationalarm.gunspotted>"These guys have a weapon!"</EventText.hostagesituationalarm.gunspotted>
+  <hostagesexecuted>Too many hostages died. Mission failed.</hostagesexecuted>
+  <EventText.methformeds.dirtydoctor>You spot someone wearing what used to be a white surgeon coat, now stained with what you assume to be alcohol. They give you the side-eye: "What are you looking at?" </EventText.methformeds.dirtydoctor>
+  <EventText.methformeds.dontlookgood>"You don't look too good."</EventText.methformeds.dontlookgood>
+  <EventText.methformeds.lostlicense>"Those bastards took my license away." \nThey take a swift swig of rum, spilling half on the floor. "People nowadays think they can just inject morphine and make all their worries go away. They'll get their limbs torn off, their hands crushed and their skull caved in. But then it's up to us to fix them up, without fail. Docs gotta keep their hands off the meds! Well I didn't. Botched a few surgeries, so what?" </EventText.methformeds.lostlicense>
+  <EventText.methformeds.nojob>"So, are you out of a job?" </EventText.methformeds.nojob>
+  <EventText.methformeds.kickedout>"Officially I got kicked out of the medical facility, but there are lots of less than savory crews that don't mind..." </EventText.methformeds.kickedout>
+  <EventText.methformeds.useadoc>"I could use a doctor right now." </EventText.methformeds.useadoc>
+  <EventText.methformeds.findmeth>"My hands are a little shaky from the bottle, but find me some meth, and I might be able to fix you up."</EventText.methformeds.findmeth>
+  <EventText.methformeds.havesome>"I happen to have some." </EventText.methformeds.havesome>
+  <EventText.methformeds.feelsgood>Their eyes roll back in a spasm. "Ohhh that feels good. Show me your wounds."</EventText.methformeds.feelsgood>
+  <EventText.methformeds.nometh>"Don't screw with me, get me my dose." </EventText.methformeds.nometh>
+  <EventText.methformeds.moremeth>"I can only do that much, bring me another."</EventText.methformeds.moremeth>
+  <EventText.methformeds.dontfeelgood>Their hands start shaking again, barely grasping at the bottle. "Oooh I don't feel so good..."</EventText.methformeds.dontfeelgood>
+  <EventText.orangecombat.cheering>As you approach a cheering crowd, you see money being passed around, while two conspicuous crates are being tightly held.</EventText.orangecombat.cheering>
+  <EventText.orangecombat.whatsthis>"What is going on?"</EventText.orangecombat.whatsthis>
+  <EventText.orangecombat.petfighters>"We've gathered the most foul, cruel and bad-tempered crustaceans we could find, and raised from the egg to fight to the death!". \nIt looks like the infamous pet-fighting rings have made their way to this station... </EventText.orangecombat.petfighters>
+  <EventText.orangecombat.gambling>"So, do you feel like picking a champion? The bet is 300mk, just make sure to keep your hands off the fighters."</EventText.orangecombat.gambling>
+  <EventText.orangecombat.picktyler>"I'll pick Tyler"</EventText.orangecombat.picktyler>
+  <EventText.orangecombat.pickdurden>"I'll pick Durden"</EventText.orangecombat.pickdurden>
+  <EventText.orangecombat.nomoney>"You don't have enough, bud." </EventText.orangecombat.nomoney>
+  <EventText.orangecombat.betsareoff>"All bets are off! Release the beasts!"</EventText.orangecombat.betsareoff>
+  <EventText.orangecombat.winner>One of the two suddenly stops moving. "We have a winner!"</EventText.orangecombat.winner>
+  <EventText.orangecombat.youwon>"Good eye, your boy won." Your pockets are heavier, but so is your conscience...</EventText.orangecombat.youwon>
+  <EventText.orangecombat.youlost>"You lost bud! Hehehe..."</EventText.orangecombat.youlost>
+  <EventText.orangecombat.rescuepets>Rescue the pets.</EventText.orangecombat.rescuepets>
+  <EventText.orangecombat.dropit>"Drop the damn pet!"</EventText.orangecombat.dropit>
+  <EventText.orangecombat.dropit>"Drop it!"</EventText.orangecombat.dropit>
+  <EventText.orangecombat.dropit>"Stop that!"</EventText.orangecombat.dropit>
+  <EventText.orangecombat.dontmess>"Don't mess with us!"</EventText.orangecombat.dontmess>
+  <eventtext.duckcorleone.heyyou>Someone bumps your shoulder as you pass by. "Sailor. You look like you're freshly docked. Can I interest you in an offer you can't refuse?"</eventtext.duckcorleone.heyyou>
+  <eventtext.duckcorleone.delivery>"Just a small favor. I need you to deliver an item for me, unnoticed if possible. A simple task with a generous compensation."</eventtext.duckcorleone.delivery>
+  <eventtext.duckcorleone.whatisit>"A delivery? What kind?"</eventtext.duckcorleone.whatisit>
+  <eventtext.duckcorleone.themessage>"Just a toy. A small trinket. This station's administrator has given me and my family trouble. Put this in their cabinet, they will understand the message... Me, I can't be seen. Do we have an agreement?"</eventtext.duckcorleone.themessage>
+  <eventtext.duckcorleone.Iwilldoit>"I'll be quick."</eventtext.duckcorleone.Iwilldoit>
+  <eventtext.duckcorleone.good>"Good." You receive a plastic duck with an eyepatch. Time to find the administrator's stash.</eventtext.duckcorleone.good>
+  <eventtext.duckcorleone.unfortunate>"Most unfortunate. For you."</eventtext.duckcorleone.unfortunate>
+  <eventtext.duckcorleone.pleased>"The family is most pleased. Now forget everything you've heard. A few drinks should help."</eventtext.duckcorleone.pleased>
+  <eventtext.duckcorleone.security>What are you doing? Security!</eventtext.duckcorleone.security>
+  <EventText.mudraptorracing.bookmaker>You come across a mudraptor trainer running a race track. \n"The beasts are primed and hungry, and the race is about to begin! Want to place a bet?"</EventText.mudraptorracing.bookmaker>
+  <EventText.mudraptorracing.pickred>Choose the ‖color:gui.red‖red‖end‖ raptor</EventText.mudraptorracing.pickred>
+  <EventText.mudraptorracing.pickgreen>Choose the ‖color:gui.green‖green‖end‖ raptor</EventText.mudraptorracing.pickgreen>
+  <EventText.mudraptorracing.pickblue>Choose the ‖color:gui.blue‖blue‖end‖ raptor</EventText.mudraptorracing.pickblue>
+  <EventText.mudraptorracing.howmuchred>"Of course, the color ‖color:gui.red‖red‖end‖ makes it run faster! \nHow much are you going to bet?"</EventText.mudraptorracing.howmuchred>
+  <EventText.mudraptorracing.howmuchgreen>"Good choice, the ‖color:gui.green‖green‖end‖ one is quick and agile! \nHow much are you going to bet?"</EventText.mudraptorracing.howmuchgreen>
+  <EventText.mudraptorracing.howmuchblue>"Smart pick, the ‖color:gui.blue‖blue‖end‖ one is a clever girl! \nHow much are you going to bet?"</EventText.mudraptorracing.howmuchblue>
+  <EventText.mudraptorracing.100>Bet 100mk</EventText.mudraptorracing.100>
+  <EventText.mudraptorracing.300>Bet 300mk</EventText.mudraptorracing.300>
+  <EventText.mudraptorracing.yourticket>"Here's your ticket."</EventText.mudraptorracing.yourticket>
+  <EventText.mudraptorracing.nomoney>"Sorry mate, you don't have enough cash."</EventText.mudraptorracing.nomoney>
+  <EventText.mudraptorracing.morebets>We need more bets! Place your money!</EventText.mudraptorracing.morebets>
+  <EventText.mudraptorracing.enoughbets>All bets are off!</EventText.mudraptorracing.enoughbets>
+  <EventText.mudraptorracing.betsareoff>"All bets are off! Do us the honor and hit the lever to unleash the racers!"</EventText.mudraptorracing.betsareoff>
+  <EventText.mudraptorracing.winner>"We have a champion! Cash out your winning tickets at the terminal, and see you for the next race!"</EventText.mudraptorracing.winner>
+  <EventText.mudraptorracing.cashout.claim>The cashout terminal reads: \n"INSERT YOUR TICKET TO CLAIM YOUR PRIZE."</EventText.mudraptorracing.cashout.claim>
+  <EventText.mudraptorracing.cashout.redticket>Insert a ‖color:gui.red‖red‖end‖ ticket</EventText.mudraptorracing.cashout.redticket>
+  <EventText.mudraptorracing.cashout.greenticket>Insert a ‖color:gui.green‖green‖end‖ ticket</EventText.mudraptorracing.cashout.greenticket>
+  <EventText.mudraptorracing.cashout.blueticket>Insert a ‖color:gui.blue‖blue‖end‖ ticket</EventText.mudraptorracing.cashout.blueticket>
+  <EventText.mudraptorracing.cashout.noticket>"NO TICKET DETECTED. TRY AGAIN."</EventText.mudraptorracing.cashout.noticket>
+  <EventText.mudraptorracing.cashout.raptorlost>"YOUR CHOSEN RAPTOR DID NOT WIN THE RACE. PLEASE DISPOSE OF YOUR TICKET IN THE NEAREST TRASH CAN. KEEP STATIONS CLEAN AND HAVE A NICE DAY."</EventText.mudraptorracing.cashout.raptorlost>
+  <EventText.firstmission.justarrived>The descent in that cramped elevator felt like an eternity, but at last you're meeting with the station manager. Just as you were about to ask for the keys to your very own submarine, the official sighs. \n"You don't look like you ever had a wet toe in your entire life. Are you really the best the upper levels can offer?"</EventText.firstmission.justarrived>
+  <EventText.firstmission.ready>"Don't worry, I'm trained and ready."</EventText.firstmission.ready>
+  <EventText.firstmission.thebest>"The best of the best."</EventText.firstmission.thebest>
+  <EventText.firstmission.donebefore>"I've done this before. I think?"</EventText.firstmission.donebefore>
+  <EventText.firstmission.notready>"Oh I doubt you're ready for what's down there. Too many crews are eager to sail. Most don't make it past cold caverns."</EventText.firstmission.notready>
+  <EventText.firstmission.notthebest>"So claimed the crew before you. They all drowned, most in alcohol."</EventText.firstmission.notthebest>
+  <EventText.firstmission.notdonebefore>"How could you possibly know anything about managing a submarine? Are you some kind of time traveler?"</EventText.firstmission.notdonebefore>
+  <EventText.firstmission.anyway>"Anyway, let me see your ID. You'll find your submarine at Dock B. And try not to sink, or I'll be the one handling your post-mortem paperwork. Bureaucracy is sometimes worse than wading through crawler-infested waters."</EventText.firstmission.anyway>
+  <EventText.firstmission.timetodive>"Time to dive."</EventText.firstmission.timetodive>
+  <EventText.firstmission.mission>"One last thing before you leave, I have this assignment that needs taking care of." The manager goes back to furiously scrambling papers.</EventText.firstmission.mission>
+  <cargodefensebot.bzzt>*bzzt*</cargodefensebot.bzzt>
+  <cargodefensebot.beepboop>*beep boop*</cargodefensebot.beepboop>
+  <!-- GENERIC RESPONSES. VANILLA ONES ARE COMMENTED OUT -->
+  <!-- GENERIC RESPONSES. VANILLA ONES ARE COMMENTED OUT -->
+  <!-- GENERIC RESPONSES. VANILLA ONES ARE COMMENTED OUT -->
+  <!-- GENERIC RESPONSES. VANILLA ONES ARE COMMENTED OUT -->
+  <!-- <eventtext.generic.walkaway>Walk away.</eventtext.generic.walkaway>
+  <eventtext.generic.ignore>Ignore.</eventtext.generic.ignore>
+  <eventtext.generic.continue>Continue...</eventtext.generic.continue>
+  <eventtext.generic.refuse>Refuse.</eventtext.generic.refuse> -->
+  <eventtext.generic.Iwilldoit>"I will do it."</eventtext.generic.Iwilldoit>
+  <eventtext.generic.noway>"No way."</eventtext.generic.noway>
+  <eventtext.generic.tellmemore>"Tell me more..."</eventtext.generic.tellmemore>
+  <eventtext.generic.accept>Accept.</eventtext.generic.accept>
+  <eventtext.generic.agree>Agree.</eventtext.generic.agree>
+  <eventtext.generic.disagree>Disagree.</eventtext.generic.disagree>
+  <eventtext.generic.leave>Leave.</eventtext.generic.leave>
+  <eventtext.generic.inquire>Inquire.</eventtext.generic.inquire>
+  <eventtext.generic.askabout>Ask about what's going on.</eventtext.generic.askabout>
+  <eventtext.generic.nevermind>"Nevermind."</eventtext.generic.nevermind>
+</infotext>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="Enforcer" identifier="needsenforcer" category="Material" maxstacksize="1" Tags="" description="" scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="true">
+    <InventoryIcon texture="%ModDir%/Injector.png" sourcerect="0,67,56,56" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Injector.png" sourcerect="0,0,36,66" depth="0.6" origin="0.5,0.5" />
+    <Body width="35" height="65" density="10.2" />
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="-26,-48" holdpos="30,-15" holdangle="0" aimangle="300" aimable="false" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="Always" target="This,Character">
+        <GiveTalentInfo talentidentifiers="he-hungryeuropan" giverandom="false" />
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Override>
+    <Item name="Hungry Europan (Enable Needs)" identifier="he-enableneeds" description="[RMB + E] Enables the hunger and thirst afflictions for the user, causing them to have to eat and drink regularly. This is completely optional and is NOT required to gain buffs from eating or drinking. Warning: Can't be disabled for your current character once it is enabled." category="Misc" maxstacksize="1" Tags="smallitem" scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="medcab" />
+      <Deconstruct time="3" />
+      <InventoryIcon texture="%ModDir%/Injector.png" sourcerect="0,67,56,56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Injector.png" sourcerect="0,0,36,66" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" />
+      <Holdable slots="Any,RightHand,LeftHand" aimpos="-26,-48" holdpos="30,-15" holdangle="0" aimangle="300" aimable="false" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnUse" target="This,Character" Condition="-100.0" setvalue="true" comparison="Or">
+          <Conditional hasspecifiertag="male" />
+          <Conditional hasspecifiertag="female" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="male" />
+          <Sound file="Content/Characters/Human/male_damage1.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Human/male_damage2.ogg" />
+          <Sound file="Content/Characters/Human/male_damage3.ogg" />
+          <Sound file="Content/Characters/Human/male_damage4.ogg" />
+          <Sound file="Content/Characters/Human/male_damage5.ogg" />
+          <Sound file="Content/Characters/Human/male_damage6.ogg" />
+          <Sound file="Content/Characters/Human/male_damage7.ogg" />
+          <Sound file="Content/Characters/Human/male_damage8.ogg" />
+          <Sound file="Content/Characters/Human/male_damage9.ogg" />
+          <Sound file="Content/Characters/Human/male_damage10.ogg" />
+          <Sound file="Content/Characters/Human/male_damage11.ogg" />
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-hungryeuropan" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" comparison="And">
+          <Conditional ishuman="true" />
+          <Conditional hasspecifiertag="female" />
+          <Sound file="Content/Characters/Human/female_damage1.ogg" selectionmode="Random" />
+          <Sound file="Content/Characters/Human/female_damage2.ogg" />
+          <Sound file="Content/Characters/Human/female_damage3.ogg" />
+          <Sound file="Content/Characters/Human/female_damage4.ogg" />
+          <Sound file="Content/Characters/Human/female_damage5.ogg" />
+          <Sound file="Content/Characters/Human/female_damage6.ogg" />
+          <Sound file="Content/Characters/Human/female_damage7.ogg" />
+          <Sound file="Content/Characters/Human/female_damage8.ogg" />
+          <Sound file="Content/Characters/Human/female_damage9.ogg" />
+          <Sound file="Content/Characters/Human/female_damage10.ogg" />
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-hungryeuropan" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </Item>
+  </Override>
+</Items>

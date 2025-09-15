@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Character speciesname="Mantisnew" humanoid="False" blooddecal="blood" speciestranslationoverride="" displayname="Mantis Shrimp" group="shrimp" hasinfo="False" husk="False" usehuskappendage="False" needsair="False" needswater="False" canspeak="False" noise="100" visibility="100" bleedparticleair="blooddrop" bleedparticlewater="waterblood" eatingspeed="10" pathfinderpriority="1" hideinsonar="False" sonardisruption="0">
+    <ragdolls folder="default" />
+    <animations folder="default" />
+    <health vitality="200" doesbleed="True" crushdepth="Infinity" usehealthwindow="False" bleedingreduction="1" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="1" />
+    <damageemitter particle="gib" particleamount="10" velocitymin="200" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.15" scalemax="0.2" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+    <bloodemitter particle="blood" particleamount="1" anglemin="0" anglemax="0" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+    <bloodemitter particle="waterblood" particleamount="1" anglemin="0" anglemax="0" scalemin="1" scalemax="1" velocitymin="0" velocitymax="0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+    <gibemitter particle="gib" particleamount="20" velocitymin="200" velocitymax="700" anglemin="0" anglemax="360" scalemin="1" scalemax="1" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+    <gibemitter particle="heavygib" particleamount="10" velocitymin="50" velocitymax="500" anglemin="0" anglemax="360" scalemin="1" scalemax="1" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+    <sound file="%ModDir%/Characters/Mantisnew/attack1.ogg" state="Attack" range="2000" volume="1" gender="None" />
+    <sound file="%ModDir%/Characters/Mantisnew/attack2.ogg" state="Attack" range="2000" volume="1" gender="None" />
+    <sound file="%ModDir%/Characters/Mantisnew/idle1.ogg" state="Idle" range="2000" volume="1" gender="None" />
+    <sound file="%ModDir%/Characters/Mantisnew/idle2.ogg" state="Idle" range="2000" volume="1" gender="None" />
+    <sound file="%ModDir%/Characters/Mantisnew/idle3.ogg" state="Idle" range="2000" volume="1" gender="None" />
+    <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="2">
+      <Item identifier="chitin" />
+      <Item identifier="copper" />
+      <Item identifier="aluminium" />
+      <Item identifier="alienblood" />
+    </Inventory>
+    <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="2">
+      <Item identifier="chitin" />
+      <Item identifier="lead" />
+      <Item identifier="iron" />
+      <Item identifier="alienblood" />
+    </Inventory>
+    <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="2">
+      <Item identifier="chitin" />
+      <Item identifier="carbon" />
+      <Item identifier="tin" />
+      <Item identifier="alienblood" />
+    </Inventory>
+    <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="1">
+      <Item identifier="chitin" />
+      <Item identifier="steel" />
+      <Item identifier="alienblood" />
+      <Item identifier="thorium" />
+    </Inventory>
+    <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="1">
+      <Item identifier="swimbladder" />
+      <Item identifier="steel" />
+      <Item identifier="alienblood" />
+      <Item identifier="uranium" />
+    </Inventory>
+    <ai combatstrength="250" sight="0.5" hearing="1" aggressiveboarding="True" fleehealththreshold="20" aggressionhurt="100" aggressiongreed="10" attackwhenprovoked="True" avoidgunfire="False" enforceaggressivebehaviorformissions="True" targetouterwalls="True" randomattack="False">
+      <target tag="decoy" state="Attack" priority="600" reactdistance="0" attackdistance="0" />
+      <target tag="nasonov" state="Attack" priority="100" reactdistance="0" attackdistance="0" />
+      <target tag="stronger" state="Escape" priority="100" reactdistance="1000" attackdistance="0" />
+      <target tag="weaker" state="Attack" priority="60" reactdistance="0" attackdistance="0" />
+      <target tag="dead" state="Eat" priority="90" reactdistance="0" attackdistance="0" />
+      <target tag="human" state="Attack" priority="80" reactdistance="0" attackdistance="0" />
+      <target tag="door" state="Attack" priority="65" reactdistance="0" attackdistance="0" />
+      <target tag="sonar" state="Attack" priority="50" reactdistance="0" attackdistance="0" />
+      <target tag="room" state="Attack" priority="50" reactdistance="0" attackdistance="0" />
+      <latchonto attachtowalls="true" attachtosub="false" attachlimb="Head" />
+      <SwarmBehavior mindistfromclosest="300" maxdistfromcenter="1000" cohesion="0.5" />
+    </ai>
+  </Character>
+</Override>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="searchlightdown" tags="searchlight" aliases="Searchlight" category="Machine" focusonselected="true" offsetonselected="780" linkable="false" showinstatusmonitor="false" Scale="0.5">
+    <Fabricate suitablefabricators="fabricatorm" requiredtime="25">
+      <RequiredSkill identifier="electrical" level="45" />
+      <Item identifier="fpgacircuit" amount="2" />
+      <Item identifier="steel" amount="2" />
+      <Item identifier="zinc" amount="2" />
+      <Item identifier="copper" />
+      <Item identifier="battery" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+      <Item identifier="zinc" />
+      <Item identifier="copper" />
+      <Item identifier="battery" />
+    </Deconstruct>
+    <Upgrade gameversion="0.9.5.0" scale="0.5" />
+    <Sprite texture="SearchLightBase.png" depth="0.01" sourcerect="0,0,96,75" canflipy="false" />
+    <Turret canbeselected="true" linkable="false" barrelpos="49,54" reload="999999999" rotationlimits="0,180" powerconsumption="10000.0" showchargeindicator="false" showprojectileindicator="false" springstiffnesslowskill="25" springstiffnesshighskill="25" springdampinglowskill="5" springdampinghighskill="5" rotationspeedlowskill="0.5" rotationspeedhighskill="0.5">
+      <BarrelSprite texture="Content/Items/SearchLight/SearchLightBase.png" sourcerect="99,0,64,88" origin="0.5, 0.75" />
+      <LightComponent LightColor="1.0,1.0,1.0,1.0" Flicker="0.0" range="2500" IsOn="true" powerconsumption="50" drawbehindsubs="true" ignorecontinuoustoggle="true">
+        <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+      </LightComponent>
+    </Turret>
+    <Body width="98" height="81" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <RequiredItem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="WeldingTable" tags="fabricatorM,donttakeitems,lualinkable" category="Machine" linkable="true" allowedlinks="deconstructor,locker" damagedbyexplosions="true" explosiondamagemultiplier="0.2" scale="0.5">
+    <Price baseprice="1600">
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="1" minavailable="1" />
+      <Price locationtype="research" multiplier="1" minavailable="1" />
+      <Price locationtype="military" multiplier="1" minavailable="1" />
+      <Price locationtype="mine" multiplier="1" minavailable="1" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
+      <RequiredSkill identifier="electrical" level="60" />
+      <RequiredSkill identifier="mechanical" level="60" />
+      <RequiredItem identifier="fpgacircuit" amount="2" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
+      <RequiredItem identifier="weldingtool" />
+    </Fabricate>
+    <Deconstruct time="30">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="steel" />
+      <Item identifier="titaniumaluminiumalloy" amount="2" />
+      <Item identifier="weldingtool" />
+    </Deconstruct>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+      <Button text="Rotation 0">
+        <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+      </Button>
+      <Button text="Rotation 90">
+        <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+      </Button>
+      <Button text="Rotation 180">
+        <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+      </Button>
+      <Button text="Rotation 270">
+        <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+      </Button>
+    </CustomInterface>
+    <Upgrade gameversion="0.10.4.0">
+      <Repairable Msg="ItemMsgRepairWrench" />
+    </Upgrade>
+    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
+    <Sprite texture="%ModDir%/Items/WeldingTable.png" sourcerect="0,0,368,368" depth="0.65" />
+    <Fabricator canbeselected="true" powerconsumption="500.0" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
+      <sound file="Content/Items/Fabricators/Fabricator.ogg" type="OnActive" range="1000.0" loop="true" />
+      <poweronsound file="Content/Items/PowerOnLight1.ogg" range="600" loop="false" />
+      <StatusEffect type="InWater" target="This" condition="-0.5" />
+    </Fabricator>
+    <Body width="285" height="365" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+      <RequiredItem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.25" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" hudpriority="10" msg="ItemMsgRewireScrewdriver">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+    <Repairable selectkey="Select" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="2" scalemin="1" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
+    <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
+  </Item>
+  <Item name="" identifier="textdisplaysb" scale="0.5">
+    <Upgrade gameversion="0.12.0.0" scale="0.5" />
+    <Sprite texture="%ModDir%/Items/labelsSL.png" depth="0.65" sourcerect="4,102,97,49" />
+    <Fabricate suitablefabricators="fabricatorm" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <Requireditem identifier="fpgacircuit" amount="2" />
+      <Requireditem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+      <Button text="Rotation 0">
+        <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+      </Button>
+      <Button text="Rotation 90">
+        <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+      </Button>
+      <Button text="Rotation 180">
+        <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+      </Button>
+      <Button text="Rotation 270">
+        <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+      </Button>
+    </CustomInterface>
+    <ItemLabel scrollable="true" padding="10,5,10,12" textcolor="1,1,1,1">
+      <Upgrade gameversion="0.12.0.0" padding="10,5,10,12" />
+    </ItemLabel>
+    <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" alphablend="false">
+      <Upgrade gameversion="0.17.15.0" range="0" />
+      <sprite texture="%ModDir%/Items/labelsSL.png" sourcerect="2,155,90,39" depth="0.025" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Body width="126" height="48" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <input name="set_text_color" displayname="connection.settextcolor" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="" identifier="textdisplaylb" scale="0.5">
+    <Upgrade gameversion="0.12.0.0" scale="0.5" />
+    <Sprite texture="%ModDir%/Items/labelsSL.png" depth="0.65" sourcerect="3,2,187,49" />
+    <Fabricate suitablefabricators="fabricatorm" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="25" />
+      <Requireditem identifier="fpgacircuit" amount="2" />
+      <Requireditem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+      <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+      <Button text="Rotation 0">
+        <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+      </Button>
+      <Button text="Rotation 90">
+        <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+      </Button>
+      <Button text="Rotation 180">
+        <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+      </Button>
+      <Button text="Rotation 270">
+        <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+      </Button>
+    </CustomInterface>
+    <ItemLabel scrollable="true" padding="10,5,10,12" textcolor="1,1,1,1">
+      <Upgrade gameversion="0.12.0.0" padding="10,5,10,12" />
+    </ItemLabel>
+    <LightComponent range="0.0" lightcolor="255,255,255,0" IsOn="true" castshadows="false" alphablend="false">
+      <Upgrade gameversion="0.17.15.0" range="0" />
+      <sprite texture="%ModDir%/Items/labelsSL.png" sourcerect="1,57,174,39" depth="0.025" origin="0.5,0.5" alpha="1.0" />
+    </LightComponent>
+    <Body width="126" height="48" density="40" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+      <requireditem identifier="Crowbar" type="Equipped" />
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+    </Holdable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <requireditem items="screwdriver" type="Equipped" />
+      <input name="set_text" displayname="connection.set_text" fallbackdisplayname="connection.setoutput" />
+      <input name="set_color" displayname="connection.setcolor" />
+      <input name="set_text_color" displayname="connection.settextcolor" />
+    </ConnectionPanel>
+  </Item>
+</Items>

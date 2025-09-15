@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<npcsets>
+  <Override>
+    <npcset identifier="he-outpostnpcs">
+      <npc identifier="merchantbutcher" job="watchman" spawnpointtags="butcher" healthmultiplier="3" campaigninteractiontype="Store" behavior="StayInHull">
+        <ItemSet commonness="1">
+          <Item identifier="he-chefsuniform1" equip="true" />
+          <Item identifier="idcard" equip="true" />
+          <Item identifier="he-cleaver" equip="true" />
+          <Item identifier="revolver">
+            <Item identifier="revolverround" amount="6" />
+          </Item>
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+    </npcset>
+  </Override>
+  <Override>
+    <npcset identifier="he-hirablenpcs">
+      <npc identifier="regularchef" job="he-chef" behavior="StayInHull">
+        <ItemSet commonness="0.5">
+          <Item identifier="he-chefsuniform1" equip="true" />
+          <Item identifier="he-chefscap1" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="idcard" equip="true" tags="id_chef" />
+          <Item identifier="he-cleaver" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+        <ItemSet commonness="0.5">
+          <Item identifier="he-chefsuniform2" equip="true" />
+          <Item identifier="he-chefscap2" equip="true" />
+          <Item identifier="headset" equip="true" showpreview="false" />
+          <Item identifier="idcard" equip="true" tags="id_chef" />
+          <Item identifier="he-cleaver" equip="true" />
+          <Item identifier="divingmask">
+            <Item identifier="oxygentank" />
+          </Item>
+        </ItemSet>
+      </npc>
+    </npcset>
+  </Override>
+</npcsets>

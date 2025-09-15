@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CoralshrimpSwimSlow movementspeed="1.53072" steertorque="20" waveamplitude="3.7164035" wavelength="6.5480113" flip="True" headangle="-4" torsoangle="-5.572949" mirror="True" rotatetowardsmovement="True" torsotorque="25" headtorque="25" foottorque="25" tailtorque="50" footangles="5: 1.341396,7: 1.269672,9: 0.7624149" cyclespeed="1" animationtype="SwimSlow" usesinemovement="False" tailangle="-11" flipcooldown="1" flipdelay="0.2" mirrorlerp="True" tailtorquemultiplier="1" type="Coralshrimp" />

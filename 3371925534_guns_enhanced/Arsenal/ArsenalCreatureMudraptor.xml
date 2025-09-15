@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Charactervariant inherit="Mudraptor" speciesname="Mudraptor_target" speciestranslationoverride="Mudraptor" group="human">
+    <health vitality="150" usehealthwindow="False" />
+    <attack damagemultiplier="0.0" rangemultiplier="0.0" impactmultiplier="0.0" />
+    <ai combatstrength="0" sight="0" hearing="0" fleehealththreshold="10000" aggressiveboarding="false" aggressiongreed="0" aggressionhurt="0" attackwhenprovoked="False" avoidgunfire="False" enforceaggressivebehaviorformissions="False" targetouterwalls="false" randomattack="false">
+      <target tag="owner" state="Protect" priority="0" reactdistance="0" />
+      <!--Override inherited targets-->
+      <target tag="door" state="Idle" priority="1" />
+      <target tag="wall" state="Idle" priority="1" />
+      <target tag="room" state="Idle" priority="1" />
+      <target tag="sonar" state="Idle" priority="1" />
+      <target tag="turret" state="Idle" priority="1" />
+      <target tag="decoy" state="Idle" priority="1" />
+      <target tag="weapon" state="Idle" priority="1" />
+      <target tag="nasonov" state="Idle" priority="1" />
+      <target tag="provocative" state="Idle" priority="1" />
+      <target tag="tool" state="Idle" priority="1" />
+    </ai>
+    <StatusEffect type="OnDeath" target="This" delay="0.5">
+      <RemoveCharacter />
+    </StatusEffect>
+  </Charactervariant>
+</Override>

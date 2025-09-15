@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="smallplanter" category="Misc" Tags="planter,mediumitem,dontsellitems" scale="0.5" isshootable="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="0,0,128,128" depth="0.75" premultiplyalpha="false" origin="0.5,0.5" />
+      <!-- Pomegrenade Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="0,390,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="pomegrenadeseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Tobacco Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="130,390,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="tobaccoseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Saltbulb Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="260,390,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="saltbulbseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Raptorbane Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="0,520,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="raptorbaneseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Bubbleberry Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="130,520,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="bubbleberryseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Popnut Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="260,520,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="popnutseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Banana Sprite -->
+      <DecorativeSprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" sourcerect="260,650,128,128" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="bananaseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <!-- Maplebasil Sprite -->
+      <DecorativeSprite texture="%ModDir:3370300182%/Content/Items/Gardening/Planter.png" sourcerect="12,20,107,105" depth="0.749" premultiplyalpha="false" origin="0.5,0.5">
+        <IsActiveConditional HasTag="maplebasilseed" targetcontaineditem="true" />
+      </DecorativeSprite>
+      <Body width="95" height="106" density="25" />
+      <Price baseprice="120" minleveldifficulty="1">
+        <Price storeidentifier="merchantoutpost" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" sold="false" multiplier="1.2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="0.75" />
+      </Price>
+      <PreferredContainer primary="crewcab" />
+      <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab" amount="1" spawnprobability="0.1" />
+      <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetach" PickingTime="5.0" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true" />
+      <Fabricate suitablefabricators="fabricator" requiredtime="45">
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <Deconstruct time="30">
+        <Item identifier="steel" mincondition="0.5" />
+        <Item identifier="plastic" mincondition="1" />
+      </Deconstruct>
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" uilabel="" allowuioverlap="true" allowdraganddrop="false" showcontainedstateindicator="false">
+        <Containable items="seed" />
+      </ItemContainer>
+      <!-- Pomegrenade Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="pomegrenadeseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="0,130,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Tobacco Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="tobaccoseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="130,130,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Saltbulb Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="saltbulbseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="260,130,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Raptorbane Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="raptorbaneseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="0,260,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Bubbleberry Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="bubbleberryseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="130,260,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Popnut Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="popnutseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="260,260,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Banana Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="bananaseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:2954998725%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="130,650,128,128" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <!-- Maplebasil Light -->
+      <LightComponent range="10.0" lightcolor="150,150,150,0" IsOn="true" castshadows="false" allowingameediting="false">
+        <IsActiveConditional HasTag="maplebasilseed" targetcontaineditem="true" />
+        <sprite texture="%ModDir:3370300182%/Content/Items/Gardening/Planter.png" depth="0.025" sourcerect="141,20,107,105" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <Planter selectkey="Select" canbepicked="true" pickingtime="5.0" msg="ItemMsgPlantSeed">
+        <PlantSlot slot="0" offset="0,32" size="0.25" />
+        <SuitableFertilizer items="fertilizer" />
+        <SuitableSeed items="seed" />
+      </Planter>
+    </Item>
+  </Items>
+</Override>

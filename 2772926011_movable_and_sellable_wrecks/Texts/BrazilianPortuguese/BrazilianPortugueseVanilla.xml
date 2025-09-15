@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Brazilian Portuguese" nowhitespace="false" translatedname="Português brasileiro">
+  <!-- Selling Text -->
+  <SellWreck>Naufrágio %s será vendido por %s marcos no final da rodada. A tripulação receberá %s pontos de experiência.</SellWreck>
+  <entityname.railgunharpoon>Gancho industrial pesado</entityname.railgunharpoon>
+  <entitydescription.railgunharpoon>Gancho industrial pesado de titânio para içar submarinos afundados do fundo do mar. Certifique-se de usar ganchos suficientes, caso contrário os cabos podem quebrar!</entitydescription.railgunharpoon>
+</infotexts>

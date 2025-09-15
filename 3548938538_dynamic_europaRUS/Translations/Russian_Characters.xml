@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="English">
+  <!-- CHARACTERS -->
+  <character.Lithomorph_Cassiterite>Литоморф</character.Lithomorph_Cassiterite>
+  <character.Lithomorph_Chamosite>Литоморф</character.Lithomorph_Chamosite>
+  <character.Lithomorph_Cryolite>Литоморф</character.Lithomorph_Cryolite>
+  <character.Lithomorph_Galena>Литоморф</character.Lithomorph_Galena>
+  <character.Lithomorph_Hydroxyapatite>Литоморф</character.Lithomorph_Hydroxyapatite>
+  <character.Lithomorph_Pyromorphite>Литоморф</character.Lithomorph_Pyromorphite>
+  <character.Lithomorph_Sphalerite>Литоморф</character.Lithomorph_Sphalerite>
+  <character.Lithomorph_Sylvite>Литоморф</character.Lithomorph_Sylvite>
+  <character.Lithomorph_Triphylite>Литоморф</character.Lithomorph_Triphylite>
+  <character.Lithomorph>Литоморф</character.Lithomorph>
+  <character.spineling_electric>Большой электрический шипостай</character.spineling_electric>
+  <charactername.kazuyakumo>Кадзуя Кумо</charactername.kazuyakumo>
+  <charactername.captainsmith>Джон Смит</charactername.captainsmith>
+  <charactername.loyalcommissar>Комиссар сепаратистов</charactername.loyalcommissar>
+  <charactername.jokster>Джокстер</charactername.jokster>
+  <charactername.jokster1>Джокстер</charactername.jokster1>
+  <charactername.frenseynomor>Френ Сейномор</charactername.frenseynomor>
+  <charactername.frenseynomor1>Френ Сейномор</charactername.frenseynomor1>
+  <charactername.noveva>Новева</charactername.noveva>
+  <charactername.sadashikira>Садаши Кира</charactername.sadashikira>
+  <charactername.sadashikira1>Садаши Кира</charactername.sadashikira1>
+  <charactername.sadashikira2>Садаши Кира</charactername.sadashikira2>
+  <!-- NPCS -->
+  <!-- newtext -->
+  <Override>
+    <npctitle.piratecaptain>Капер</npctitle.piratecaptain>
+    <npctitle.piratecaptainlord>Корсар</npctitle.piratecaptainlord>
+    <npctitle.pirateannihilator>Пират-уничтожитель</npctitle.pirateannihilator>
+    <npctitle.piratesecurityrecruit>Головорез</npctitle.piratesecurityrecruit>
+    <npctitle.piratesecuritybrute>Наёмный головорез</npctitle.piratesecuritybrute>
+  </Override>
+  <npctitle.partypiratecaptain>Безумный капитан пиратов</npctitle.partypiratecaptain>
+  <npctitle.partypiratecaptainlord>Безумный лорд пиратов</npctitle.partypiratecaptainlord>
+  <npctitle.partypiratesecurityrecruit>Безумный рекрут охраны пиратов</npctitle.partypiratesecurityrecruit>
+  <npctitle.partypiratesecuritygunner>Безумный стрелок пиратов</npctitle.partypiratesecuritygunner>
+  <npctitle.partypiratesecuritybrute>Безумный громила пиратов</npctitle.partypiratesecuritybrute>
+  <npctitle.partypiratesecurityelite>Безумный элитник пиратов</npctitle.partypiratesecurityelite>
+  <npctitle.partypiratemechanicveteran>Безумный техник пиратов</npctitle.partypiratemechanicveteran>
+  <npctitle.partypirateengineerveteran>Безумный физик пиратов</npctitle.partypirateengineerveteran>
+  <npctitle.partypiratemechanicrecruit>Безумный механик пиратов</npctitle.partypiratemechanicrecruit>
+  <npctitle.partypirateengineerrecruit>Безумный инженер пиратов</npctitle.partypirateengineerrecruit>
+  <!-- newtext -->
+  <npctitle.outpostmanagerhusk>Дьякон</npctitle.outpostmanagerhusk>
+  <npctitle.huskcultistsecurity>Тамплиер</npctitle.huskcultistsecurity>
+  <npctitle.huskvip>Кардинал</npctitle.huskvip>
+  <npctitle.outposthuskdoctor>Хирург</npctitle.outposthuskdoctor>
+  <npctitle.huskassassinationtarget>Главный учёный</npctitle.huskassassinationtarget>
+  <npctitle.hireablehuskscientist>Церковный учёный</npctitle.hireablehuskscientist>
+  <npctitle.hireablehusktemplar>Церковный тамплиер</npctitle.hireablehusktemplar>
+  <npctitle.sergeantcoalition>Офицер коалиции</npctitle.sergeantcoalition>
+  <npctitle.sergeantseparatists>Офицер сепаратистов</npctitle.sergeantseparatists>
+  <npctitle.soldiercoalition>Солдат</npctitle.soldiercoalition>
+  <npctitle.tempsoldiercoalition>Солдат</npctitle.tempsoldiercoalition>
+  <npctitle.soldierseparatists>Повстанец</npctitle.soldierseparatists>
+  <npctitle.tempsoldierseparatists>Повстанец</npctitle.tempsoldierseparatists>
+  <npctitle.tempsoldierseparatists>Повстанец</npctitle.tempsoldierseparatists>
+  <npctitle.ransomtarget>Цель для выкупа</npctitle.ransomtarget>
+  <character.Crawler_capture>Сбежавший ползун</character.Crawler_capture>
+  <charactername.scrapdealer>Саул Вэгер</charactername.scrapdealer>
+  <npctitle.sickpatient>Пациент</npctitle.sickpatient>
+  <character.orangeboy_escort>Эскорт-цель</character.orangeboy_escort>
+  <character.Defensebot_defective>Дефектный бот</character.Defensebot_defective>
+</infotext>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Missions>
+    <!-- Average Monster Missions -->
+    <MonsterMission name="Migrating Icecrabs" description="Scouts have reported of a swarm of Icecrabs wandering the area between [location1] and [location2]. We need this crabmeat to fill our bellies. The authorities are offering a reward of [reward] marks to any submarine that takes out the swarm." successmessage="missionsuccess.killcrawlerswarm1" identifier="killicecrab" type="Monster" tags="killmonster,killswarm,killswarm_set1" commonness="100" difficulty="1" reward="2500" sonarlabel="Icecrab" maxsonarmarkerdistance="10000">
+      <monster character="Icecrab" min="5" max="7" />
+      <Reputation identifier="location" amount="1" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="256,0,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionmessage0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Moss Outbreak!" description="Scouts have reported of a large swarm of brainmosses breakout from a thalamus wreck, they are wandering the area between [location1] and [location2]. These Brainmosses can emit dangerous radiations and other unknown psychoactive effect. The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm." successmessage="missionsuccess.killcrawlerswarm1" identifier="killbrainmoss" type="Monster" tags="killmonster,killswarm,killswarm_set2" commonness="100" difficulty="2" reward="3500" sonarlabel="Brainmoss" maxsonarmarkerdistance="10000">
+      <monster character="Brainmoss1" min="4" max="5" />
+      <monster character="Brainmoss2" min="2" max="3" />
+      <monster character="Brainmoss3" min="2" max="3" />
+      <Reputation identifier="location" amount="2" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="768,0,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionmessage0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Mass Deworming" description="Scouts have reported of a large swarm of Magmalarva wandering the area between [location1] and [location2]. These creatures can cause high-temperature burns and even set submarines on fire! The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm." successmessage="missionsuccess.killcrawlerswarm1" identifier="killmagmalarva" type="Monster" tags="killmonster,killswarm,killswarm_set3" commonness="100" difficulty="3" reward="4500" sonarlabel="Magma Larva" maxsonarmarkerdistance="10000">
+      <monster character="Magmaworm" min="16" max="24" />
+      <monster character="Magmalarva" min="12" max="16" />
+      <Reputation identifier="location" amount="2" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="512,0,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionmessage0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Thermal Eels Removal" description="Scouts have reported of a large swarm of Thermal Eels wandering the area between [location1] and [location2]. These creatures are photosensitive creatures living in darkness. The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm." successmessage="missionsuccess.killcrawlerswarm1" identifier="killthermaleel" type="Monster" tags="killmonster,killswarm,killswarm_set4" commonness="100" difficulty="4" reward="6000" sonarlabel="Thermal Eel" maxsonarmarkerdistance="10000">
+      <monster character="Thermaleel" min="12" max="18" />
+      <Reputation identifier="location" amount="3" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionmessage0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Into the shadows" description="Scouts have reported of a large swarm of Shadow Whales wandering the area between [location1] and [location2]. These Whales are invisible on sonar and can pose a big threat towards unprepared ships. The authorities are offering a reward of [reward] marks to any submarine that takes out the large swarm." successmessage="missionsuccess.killcrawlerswarm1" identifier="killshadowwhale" type="Monster" tags="killmonster,killswarm,killswarm_set5" commonness="100" difficulty="4" reward="7500" sonarlabel="Shadow Whale" maxsonarmarkerdistance="10000">
+      <monster character="Shadowwhale" min="3" max="4" />
+      <monster character="Shadowleech" min="2" max="3" />
+      <monster character="Shadowwhalebaby" min="3" max="4" />
+      <Reputation identifier="location" amount="3" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="0,256,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionmessage0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Floating Stones" description="Scouts have reported of some weird stones floating around the area between [location1] and [location2]. This situation had a negative impact on commercial lines, The authorities are offering a reward of [reward] marks to any submarine that clears these obstacles." successmessage="missionheader0.killcrawlerswarm1" identifier="killstonewanderer" type="Monster" tags="killmonster,killmonster_set1" commonness="100" difficulty="1" reward="2000" sonarlabel="Floating Stone" maxsonarmarkerdistance="10000">
+      <monster character="Stonewanderer" min="2" max="3" />
+      <Reputation identifier="location" amount="1" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="256,256,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionheader0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Shark hunting" description="Scouts have reported of some Paralytic Sharks that wandering the area between [location1] and [location2]. They attack passing ships, paralyze the crew and eat them, causing huge losses. The authorities are offering a reward of [reward] marks to any submarine that eliminiates these creatures." successmessage="missionheader0.killcrawlerswarm1" identifier="killparalyticshark" type="Monster" tags="killmonster,killmonster_set2" commonness="100" difficulty="2" reward="4500" sonarlabel="Paralytic Shark" maxsonarmarkerdistance="10000">
+      <monster character="Paralyticshark" min="2" max="3" />
+      <Reputation identifier="location" amount="2" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48" />
+      <message header="missionheader0.killcrawlerswarm1" text="missionheader0.killcrawlerswarm1" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Silent Hope" description="Scouts have reported that several small shuttles carrying researchers have recently gone missing in the waters between [location1] and [location2]. The authorities are offering a reward of [reward] marks to any submarine that can investigate the matter." successmessage="missionsuccess.salvagewreck2" identifier="killcarriernew" type="Monster" tags="killmonster,killmonster_set3" commonness="100" difficulty="3" reward="6000" sonarlabel="Lost Shuttles" maxsonarmarkerdistance="10000">
+      <monster character="Carriernew" count="3" />
+      <Reputation identifier="location" amount="3" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="512,768,256,256" color="214,50,48" />
+      <message header="missionheader0.salvagewreck2" text="missionmessage0.salvagewreck2" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Terminate a Infested Submarine" description="Scouts have reported of a large Wrecked Carrier that has been taken over by infestated growth. It is now still moving around [location1] and [location2] and the authorities are offering a reward of [reward] marks to any submarine that takes out the mobile thalamus. Be warned that it has a hook on its front side and must be approached carefully." successmessage="missionsuccess.salvagekillthalamus" identifier="killthalamuscarrier" type="Monster" tags="killmonster,killmonster_set4" commonness="100" difficulty="4" reward="8500" sonarlabel="Thalamus Carrier" maxsonarmarkerdistance="10000">
+      <monster character="Thalamuscarrier" count="1" />
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="%ModDir%/UI/MissionIcons.png" sourcerect="768,256,256,256" color="214,50,48" />
+      <message header="missionheader0.salvagekillthalamus" text="missionmessage0.salvagekillthalamus" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <!-- Beacon missions -->
+    <BeaconMission name="Activate Beacon" identifier="EMbeacon1" textidentifier="beaconnoreward" achievementidentifier="beaconmission" tags="beacon,beaconnoreward" type="Beacon" description="The beacon station between [location1] and [location2] is down - get in there and get it back online and transmitting an active sonar signal." difficulty="2" commonness="60" reward="2000" sideobjective="true" maxleveldifficulty="50">
+      <monsters commonness="34">
+        <monster character="Icecrab" min="5" max="7" />
+      </monsters>
+      <monsters commonness="33">
+        <monster character="Stonewanderer" min="3" max="5" />
+      </monsters>
+      <monsters commonness="33">
+        <monster character="Mantisnew" min="5" max="7" />
+      </monsters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,256,256,256" color="243,146,55" />
+      <message header="Beacon reactivated" text="The beacon station is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to claim your reward." />
+    </BeaconMission>
+    <BeaconMission name="Activate Beacon" identifier="EMbeacon2" textidentifier="beaconnoreward" achievementidentifier="beaconmission" tags="beacon,beaconnoreward" type="Beacon" description="The beacon station between [location1] and [location2] is down - get in there and get it back online and transmitting an active sonar signal." difficulty="3" commonness="60" reward="2500" sideobjective="true" minleveldifficulty="15" maxleveldifficulty="65">
+      <monsters commonness="30">
+        <monster character="Brainmoss1" min="3" max="4" />
+        <monster character="Brainmoss2" min="2" max="3" />
+      </monsters>
+      <monsters commonness="30">
+        <monster character="Brainmoss2" min="3" max="4" />
+        <monster character="Brainmoss3" min="2" max="3" />
+      </monsters>
+      <monsters commonness="30">
+        <monster character="Brainmoss1" min="3" max="4" />
+        <monster character="Brainmoss3" min="2" max="3" />
+      </monsters>
+      <monsters commonness="10">
+        <monster character="Carriernew" min="1" max="2" />
+      </monsters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,256,256,256" color="243,146,55" />
+      <message header="Beacon reactivated" text="The beacon station is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to claim your reward." />
+    </BeaconMission>
+    <BeaconMission name="Activate Beacon" identifier="ENbeacon3" textidentifier="beaconnoreward" achievementidentifier="beaconmission" tags="beacon,beaconnoreward" type="Beacon" description="The beacon station between [location1] and [location2] is down - get in there and get it back online and transmitting an active sonar signal." difficulty="3" commonness="60" reward="2500" sideobjective="true" minleveldifficulty="35">
+      <monsters commonness="33">
+        <monster character="Paralyticshark" min="1" max="2" />
+      </monsters>
+      <monsters commonness="34">
+        <monster character="Magmalarva" min="5" max="7" />
+        <monster character="Magmaworm" min="6" max="9" />
+      </monsters>
+      <monsters commonness="33">
+        <monster character="Newcoelanth" min="3" max="4" />
+      </monsters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,256,256,256" color="243,146,55" />
+      <message header="Beacon reactivated" text="The beacon station is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to claim your reward." />
+    </BeaconMission>
+    <BeaconMission name="Activate Beacon" identifier="EMbeacon4" textidentifier="beaconnoreward" achievementidentifier="beaconmission" tags="beacon,beaconnoreward" type="Beacon" description="The beacon station between [location1] and [location2] is down - get in there and get it back online and transmitting an active sonar signal." difficulty="4" commonness="60" reward="3000" sideobjective="true" minleveldifficulty="50">
+      <monsters commonness="33">
+        <monster character="Charybdissmall" min="1" max="3" />
+      </monsters>
+      <monsters commonness="33">
+        <monster character="Shadowleech" min="2" max="3" />
+        <monster character="Shadowwhale" min="0" max="1" />
+        <monster character="Shadowwhalebaby" min="1" max="2" />
+      </monsters>
+      <monsters commonness="34">
+        <monster character="Thermaleel" min="4" max="7" />
+      </monsters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,256,256,256" color="243,146,55" />
+      <message header="Beacon reactivated" text="The beacon station is back online. Make sure it stays transmitting, and navigate the submarine to [location2] to claim your reward." />
+    </BeaconMission>
+    <BeaconMission name="Activate Beacon" identifier="EMbeaconTroll" textidentifier="EMbeaconTroll" achievementidentifier="beaconmission" successmessage="missionsuccess.beaconnoreward" failuremessage="missionfailure.beaconnoreward" tags="beacon,beaconnoreward" type="Beacon" description="missiondescription.beaconnoreward" difficulty="4" commonness="10" reward="3000" sideobjective="true" minleveldifficulty="65">
+      <monsters commonness="33">
+        <monster character="Charybdissavage" count="1" />
+      </monsters>
+      <monsters commonness="33">
+        <monster character="Endwormcoral" count="1" />
+      </monsters>
+      <monsters commonness="34">
+        <monster character="Thalamuscarrier" count="1" />
+        <monster character="Turretcarrier" min="2" max="3" />
+      </monsters>
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,256,256,256" color="243,146,55" />
+      <message header="Wait, what was that noise?" text="You feel something enormous approaching!" />
+    </BeaconMission>
+    <!-- Hunting grounds -->
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds1" description="Seismic readings in the area indicate an Leviathan size creature is within the area. All routes to [location1] and [location2] are closed off until the creature is eliminated. Administrators are rewarding a hefty [reward] marks to anyone who can kill the creature." tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare,hard" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="target" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Voidleviathan">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds2" description="Nearby beacon stations have reported Electromagnetic readings and massive electricity faults in their systems. They warned that there could be a Leviathan size creature between [location1] and [location2] emitting large amounts of electromagnetic pulses. Authorities have blocked off the route and are awarding [reward] marks to whoever can eliminate the creature." tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="Electromagnetic Readings" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Fractaldestroyer">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds3" description="Nearby beacon stations have reported Pulse readings and massive electricity faults in their systems. They warned that there could be a Leviathan size creature between [location1] and [location2] emitting large amounts of electromagnetic pulses. Authorities have blocked off the route and are awarding [reward] marks to whoever can eliminate the creature." tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="Pulse Readings" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Fractalannihilator">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds4" description="Seismic readings in the area indicate an Colossal size creature is within the area. All routes to [location1] and [location2] are closed off until the creature is eliminated. Administrators are rewarding a hefty [reward] marks to anyone who can kill the creature." tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare,hard" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="target" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Epicentrum">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds5" description="missiondescription.huntinggrounds" tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="target" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Endwormcoral">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds6" description="missiondescription.huntinggrounds" tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="target" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Charybdissavage">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <MonsterMission name="missionname.huntinggrounds" identifier="EMhuntinggrounds7" description="missiondescription.huntinggrounds" tags="huntinggroundsnoreward,huntinggrounds,killmonsterrare,easy" type="Monster" sideobjective="true" difficulty="4" commonness="0" reward="8500" sonarlabel="target" spawntype="Abyss" maxsonarmarkerdistance="20000" successmessage="missionsuccess.huntinggrounds" failuremessage="missionfailure.huntinggrounds" monsterfile="Thalamuscarrier">
+      <Reputation identifier="separatists" amount="3" />
+      <Reputation identifier="coalition" amount="3" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+    </MonsterMission>
+    <!-- Hunting grounds alike monster missions -->
+    <MonsterMission name="missionname.salvagekillmoloch" identifier="surprisecharybdis" tags="killmonster,killmonster_set3" type="Monster" description="missiondescription.salvagekillmoloch" difficulty="4" commonness="100" reward="7000" sonarlabel="Ultrasonic signal" spawntype="Mainpath" maxsonarmarkerdistance="20000" successmessage="It turns out the signal was emitted by a massive monster. The researchers of [location1] have agreed to pay you the reward of [reward] marks nevertheless for getting rid of the problem." monsterfile="Charybdissavage">
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,512,256,256" color="49,93,233" />
+      <message header="missionheader0.salvagekillmoloch" text="Turns out the signal was emitted by a Scylla! You should navigate out of the cavern and inform the researchers." />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="missionname.salvagekillmoloch" identifier="surpriseendworm" tags="killmonster,killmonster_set3" type="Monster" description="missiondescription.salvagekillmoloch" difficulty="4" commonness="100" reward="7000" sonarlabel="Ultrasonic signal" spawntype="Mainpath" maxsonarmarkerdistance="20000" successmessage="It turns out the signal was emitted by a massive monster. The researchers of [location1] have agreed to pay you the reward of [reward] marks nevertheless for getting rid of the problem." monsterfile="Endwormcoral">
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="256,512,256,256" color="49,93,233" />
+      <message header="missionheader0.salvagekillmoloch" text="Turns out the signal was emitted by a Coralworm! You should navigate out of the cavern and inform the researchers." />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Beast from the Abyss" identifier="killvoidleviathan" description="Seismic readings are indicating that something enormous has emerged from the depths of Europa into the passageway between [location1] and [location2]. All transports through the passageway have been canceled for now and a reward of [reward] marks has been promised to those who get rid of whatever is causing the seismic activity." tags="killmonster,killmonster_set4" type="Monster" difficulty="4" commonness="80" reward="8500" sonarlabel="Seismic Activity" spawntype="Mainpath" maxsonarmarkerdistance="20000" successmessage="The Leviathan is dead and the passageway is open for transport again." monsterfile="Voidleviathan">
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="256,256,256,256" color="255,215,0" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.killendworm" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Heart of Europa" identifier="killepicentrum" description="An unprecedented strong seismic signal appeared between [location1] and [location2]. Rumors spread that the Heart of Europa has awakened. All commercial lines have been ceased and authorities are offering a hefty [reward] marks to whoever can investigate the incidence." tags="killmonster,killmonster_set4" type="Monster" difficulty="4" commonness="80" reward="8500" sonarlabel="Seismic Signal" spawntype="Mainpath" maxsonarmarkerdistance="20000" successmessage="The core of Europa has once again returned dormant." monsterfile="Epicentrum">
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,0,256,256" color="240,255,255" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="The Resurrection" identifier="killfractalannihilator" description="Research vessels have reported a large Fractal Annihilator has been brought back to life between [location1] and [location2]! Authorities are offering [reward] marks to whoever can eliminate the large mobile creature before it causes havoc on the nearby outposts." tags="killmonster,killmonster_set4" type="Monster" difficulty="4" commonness="80" reward="8500" sonarlabel="Electromagnetic Field" spawntype="Mainpath" maxsonarmarkerdistance="20000" successmessage="The Fractal Annihilator is incapacitated, it seems..." monsterfile="Fractalannihilator">
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="256,768,256,256" color="214,50,48" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="The Exterminator" identifier="killfractaldestroyer" type="Monster" tags="killmonster,killmonster_set4" description="A few days ago, some researchers removed an artifact from an Alienruin between [location1] and [location2], unexpectedly activating a dormant Fractal Destroyer, resulting in only a few people narrowly escaping death. Now it rampages through, eliminating all living beings it encounters, posing a significant threat to the safety of the outpost. Authorities are offering [reward] marks to anyone who can eliminate it." difficulty="4" commonness="80" reward="8500" sonarlabel="Electromagnetic Field" spawntype="Mainpath" maxsonarmarkerdistance="20000" successmessage="The rampaging Fractal Destroyer has finally been destroyed." monsterfile="Fractaldestroyer">
+      <Reputation identifier="location" amount="7" />
+      <Icon texture="Content/UI/MissionIcons.png" sourcerect="256,768,256,256" color="49,93,233" />
+      <message header="missionheader0.huntinggrounds" text="missionmessage0.huntinggrounds" />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+    <MonsterMission name="Didymos" identifier="didymos" type="Monster" tags="killmonster,killmonster_set4" description="Legend has it that when the moons of Jupiter align, the powerful gravitational forces awaken the ancient Colossal Fractal Guardians placed in the depths of Europa's ocean. Now, the time for Ganymede and Europa to meet has arrived, and we should be prepared. Authorities will offer a reward of [reward] marks to anyone who neutralize the Fractal Guardians along the navigation route." difficulty="4" commonness="80" reward="12500" spawntype="Mainpath" sonarlabel="Fractal Colossus" maxsonarmarkerdistance="20000" successmessage="Let's hope we can be prepared before the next catastrophe arrives.">
+      <monster character="fractaldestroyer" count="1" />
+      <monster character="fractalannihilator" count="1" />
+      <Reputation identifier="location" amount="12" />
+      <Icon texture="Content/UI/MissionIcons2.png" sourcerect="512,0,256,256" color="136,6,206" />
+      <message header="missionheader0.huntinggrounds" text="The twins are dead. Navigate the submarine out of the cavern to claim the reward." />
+      <LocationType from="AnyOutpost" to="AnyOutpost" />
+    </MonsterMission>
+  </Missions>
+</Override>

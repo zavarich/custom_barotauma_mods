@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Missions>
+  <MonsterMission identifier="kill_hellraptor" name="missionname.killhellraptor1" description="missiondescription.killhellraptor1" tags="killmonster,killmonster_set3" type="Monster" difficulty="3" commonness="75" reward="3900" maxsonarmarkerdistance="10000" sonarlabel="character.hellraptor" monsterfile="Hellraptor">
+    <Reputation identifier="location" amount="3" />
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killhellraptor1" text="missionmessage0.killhellraptor1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_hellraptor_group" name="missionname.killhellraptorgroup1" description="missiondescription.killhellraptorgroup1" tags="killmonster,killmonster_set3" type="Monster" difficulty="4" commonness="50" reward="6000" sonarlabel="character.hellraptor" maxsonarmarkerdistance="10000">
+    <monster character="Hellraptor" min="3" max="4" />
+    <Reputation identifier="location" amount="6" />
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killhellraptorgroup1" text="missionmessage0.killhellraptorgroup1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_dreadnoughthammerhead" name="missionname.killdreadnought1" description="missiondescription.killdreadnought1" tags="killmonster,killmonster_set4" type="Monster" difficulty="3" commonness="75" reward="7250" maxsonarmarkerdistance="10000" sonarlabel="character.dreadnoughthammerhead" monsterfile="dreadnoughthammerhead">
+    <Reputation identifier="location" amount="5" />
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killdreadnought1" text="missionmessage0.killdreadnought1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_abyssalcrawler_group" name="missionname.killabyssalcrawlergroup1" description="missiondescription.killabyssalcrawlergroup1" tags="killmonster,killswarm,killswarm_set3" type="Monster" difficulty="3" commonness="100" reward="3550" sonarlabel="character.abyssalcrawler" maxsonarmarkerdistance="10000">
+    <monster character="abyssalcrawler" min="3" max="4" />
+    <Reputation identifier="location" amount="2" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killabyssalcrawlergroup1" text="missionmessage0.killabyssalcrawlergroup1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_abyssalcrawler_squadron" name="missionname.killabyssalcrawlersquadron1" description="missiondescription.killabyssalcrawlersquadron1" tags="killmonster,killswarm,killswarm_set3" type="Monster" difficulty="3" commonness="80" reward="4150" sonarlabel="character.abyssalcrawler" maxsonarmarkerdistance="10000">
+    <monster character="abyssalcrawler" min="5" max="7" />
+    <Reputation identifier="location" amount="3" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killabyssalcrawlergroup1" text="missionmessage0.killabyssalcrawlersquadron1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_abyssalcrawler_swarm" name="missionname.killabyssalcrawlerswarm1" description="missiondescription.killabyssalcrawlerswarm1" tags="killmonster,killswarm,killswarm_set4" type="Monster" difficulty="4" commonness="50" reward="5250" sonarlabel="character.abyssalcrawler" maxsonarmarkerdistance="10000">
+    <monster character="abyssalcrawler" min="10" max="14" />
+    <Reputation identifier="location" amount="5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killabyssalcrawlergroup1" text="missionmessage0.killabyssalcrawlerswarm1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_lapidarismantis_group" name="missionname.killlapidarismantisgroup1" description="missiondescription.killlapidarismantisgroup1" tags="killmonster,killswarm,killswarm_set3" type="Monster" difficulty="3" commonness="100" reward="3800" sonarlabel="character.lapidarismantis" maxsonarmarkerdistance="10000">
+    <monster character="Lapidarismantis" min="3" max="4" />
+    <Reputation identifier="location" amount="4" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killlapidarismantisgroup1" text="missionmessage0.killlapidarismantisgroup1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_lapidarismantis_squadron" name="missionname.killlapidarismantissquadron1" description="missiondescription.killlapidarismantissquadron1" tags="killmonster,killswarm,killswarm_set3" type="Monster" difficulty="4" commonness="80" reward="4150" sonarlabel="character.lapidarismantis" maxsonarmarkerdistance="10000">
+    <monster character="Lapidarismantis" min="5" max="7" />
+    <Reputation identifier="location" amount="5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killlapidarismantisgroup1" text="missionmessage0.killlapidarismantissquadron1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_rhinomantis_group" name="missionname.killrhinomantisgroup1" description="missiondescription.killrhinomantisgroup1" tags="killmonster,killswarm,killswarm_set2" type="Monster" difficulty="3" commonness="100" reward="3400" sonarlabel="character.rhinomantis" maxsonarmarkerdistance="10000">
+    <monster character="Rhinomantis" min="3" max="5" />
+    <Reputation identifier="location" amount="4" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killrhinomantisgroup1" text="missionmessage0.killrhinomantisgroup1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_rhinomantis_squadron" name="missionname.killrhinomantissquadron1" description="missiondescription.killrhinomantissquadron1" tags="killmonster,killswarm,killswarm_set3" type="Monster" difficulty="3" commonness="80" reward="4050" sonarlabel="character.rhinomantis" maxsonarmarkerdistance="10000">
+    <monster character="Rhinomantis" min="5" max="8" />
+    <Reputation identifier="location" amount="5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killrhinomantisgroup1" text="missionmessage0.killrhinomantissquadron1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+  <MonsterMission identifier="kill_rhinomantis_swarm" name="missionname.killrhinomantisswarm1" description="missiondescription.killrhinomantisswarm1" tags="killmonster,killswarm,killswarm_set3" type="Monster" difficulty="4" commonness="60" reward="5500" sonarlabel="character.rhinomantis" maxsonarmarkerdistance="10000">
+    <monster character="Rhinomantis" min="5" max="8" />
+    <Reputation identifier="location" amount="5" />
+    <Icon texture="Content/UI/MissionIcons2.png" sourcerect="768,768,256,256" color="214,50,48" />
+    <message header="missionheader0.killrhinomantisgroup1" text="missionmessage0.killrhinomantisswarm1" />
+    <LocationType from="AnyOutpost" to="AnyOutpost" />
+  </MonsterMission>
+</Missions>

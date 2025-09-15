@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CharybdissavageSwimSlow type="Charybdissavage" UseSineMovement="False" Flip="False" FlipCooldown="1" FlipDelay="0.5" Mirror="False" MirrorLerp="True" WaveAmplitude="19.896591" WaveLength="69.23032" RotateTowardsMovement="True" TailTorque="150" TailTorqueMultiplier="1" FootAngles="7: 1.521676,3: 1.204156" TailAngle="79.13941" SteerTorque="80" LegTorque="25" MovementSpeed="9" CycleSpeed="1" HeadAngle="90" TorsoAngle="90" HeadTorque="150" TorsoTorque="150" FootTorque="50" AnimationType="SwimSlow" ArmIKStrength="1" HandIKStrength="1" />

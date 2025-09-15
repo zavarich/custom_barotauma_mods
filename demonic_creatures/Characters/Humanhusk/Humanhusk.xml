@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Character genders="true" SpeciesName="Humanhusk" NonHuskedSpecies="human" SpeciesTranslationOverride="" DisplayName="" Group="husk" Humanoid="True" HasInfo="True" CanInteract="True" Husk="True" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" UseHumanAI="False" IsMachine="False" CanSpeak="True" ShowHealthBar="True" UseBossHealthBar="False" Noise="95" Visibility="80" BloodDecal="blackblood" BleedParticleAir="blackblood" BleedParticleWater="blackwaterblood" BleedParticleMultiplier="1" CanEat="False" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="1" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="8.5" DespawnContainer="despawncontainer">
+    <ragdolls folder="default" />
+    <animations folder="default" />
+    <huskappendage affliction="huskinfection" path="Content/Characters/Humanhusk/Huskappendage.xml" />
+    <huskappendage affliction="husksymbiosis" path="Content/Characters/Humanhusk/Huskappendagesymbiosis.xml" />
+    <huskappendage affliction="naturalmeleeweapon" path="Content/Characters/Humanhusk/Mudraptorbeak.xml" onlyfromafflictions="true" />
+    <huskappendage affliction="naturalrangedweapon" path="Content/Characters/Humanhusk/Spinelingspine.xml" onlyfromafflictions="true" />
+    <huskappendage affliction="huskinfectionaffinity" path="%ModDir:2085783214%/Characters/Humanhusk/Modappendage.xml" onlyfromafflictions="true" />
+    <bloodemitter Particle="blackblood" AngleMin="0" AngleMax="0" ScaleMin="1" ScaleMax="1" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="5" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+    <bloodemitter Particle="blackwaterblood" AngleMin="0" AngleMax="0" ScaleMin="1" ScaleMax="1" VelocityMin="0" VelocityMax="0" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="1" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+    <gibemitter Particle="blackgib" AngleMin="0" AngleMax="360" ScaleMin="1" ScaleMax="1" VelocityMin="50" VelocityMax="500" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+    <gibemitter Particle="blackgib" AngleMin="0" AngleMax="360" ScaleMin="1" ScaleMax="1" VelocityMin="50" VelocityMax="500" EmitInterval="0" ParticlesPerSecond="0" ParticleAmount="10" HighQualityCollisionDetection="False" CopyEntityAngle="False" />
+    <health Vitality="100" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="True" BleedingReduction="10" BurnReduction="0" ConstantHealthRegeneration="0.5" HealthRegenerationWhenEating="0" StunImmunity="False" PoisonImmunity="False" PoisonVulnerability="1" EmpVulnerability="0" ApplyAfflictionColors="False">
+      <MedUISilhouette texture="Content/UI/Health/MedUI_Silhouette.png" columns="8" rows="2" sourcerect="0,0,1008,748" />
+      <MedUIExtra texture="Content/UI/Health/MedUIExtra.png" columns="4" rows="4" sourcerect="0,0,1024,1024" />
+      <Limb name="Head">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="1,0,126,374" highlightarea="41,0,45,54" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="1,515,126,374" />
+        <VitalityMultiplier type="damage" multiplier="2.0" />
+      </Limb>
+      <Limb name="Torso">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="631,0,126,374" highlightarea="29,56,70,134" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="631,515,126,374" />
+      </Limb>
+      <Limb name="LeftArm">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="379,0,126,374" highlightarea="1,69,27,140" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="379,515,126,374" />
+        <VitalityMultiplier type="damage" multiplier="0.5" />
+      </Limb>
+      <Limb name="RightArm">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="127,0,126,374" highlightarea="100,69,27,140" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="127,515,126,374" />
+        <VitalityMultiplier type="damage" multiplier="0.5" />
+      </Limb>
+      <Limb name="LeftLeg">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="505,0,126,374" highlightarea="3,180,57,194" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="505,515,126,374" />
+        <VitalityMultiplier type="damage" multiplier="0.5" />
+      </Limb>
+      <Limb name="RightLeg">
+        <Sprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="253,0,126,374" highlightarea="68,180,57,194" />
+        <Highlightsprite texture="Content/UI/Health/MedUIAtlas.png" sourcerect="253,515,126,374" />
+        <VitalityMultiplier type="damage" multiplier="0.5" />
+      </Limb>
+    </health>
+    <!-- AI -->
+    <ai combatstrength="50" sight="0.8" hearing="1.4" aggressiveboarding="True" attackwhenprovoked="True" aggressiongreed="10" aggressionhurt="150" canopendoors="True" targetouterwalls="False" fleehealththreshold="0" avoidgunfire="False" avoidtime="3" minfleetime="20" enforceaggressivebehaviorformissions="True" randomattack="False" avoidabyss="True" stayinabyss="True" startaggression="0" maxaggression="100" aggressioncumulation="0">
+      <target tag="decoy" state="Attack" priority="100" ignoreifnotinsamesub="True" />
+      <target tag="provocative" state="Attack" priority="100" ignoreifnotinsamesub="True" />
+      <target tag="weapon" state="Attack" priority="100" ignoreifnotinsamesub="True" />
+      <target tag="nasonov" state="Attack" priority="100" ignoreinside="True" />
+      <target damagethreshold="0" Tag="crawler" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target damagethreshold="0" Tag="human" State="Attack" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target damagethreshold="0" Tag="weaker" State="Attack" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target damagethreshold="0" Tag="stronger" State="Escape" Priority="80" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="True" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target damagethreshold="0" Tag="sonar" State="Attack" Priority="30" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target damagethreshold="0" Tag="room" State="Attack" Priority="10" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target damagethreshold="0" Tag="turret" State="Attack" Priority="1" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="True" IgnoreOutside="False" IgnoreIfNotInSameSub="False" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />
+      <target tag="huskinfected" state="Idle" priority="0" ignoreinside="True" ignoreoutside="True" ignoreifnotinsamesub="True" ignoreincapacitated="True" threshold="1" />
+    </ai>
+    <!-- sounds -->
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle1.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle2.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle3.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle4.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle5.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle6.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle7.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle8.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle9.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_idle10.ogg" State="Idle" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt1.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt2.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt3.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt4.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt5.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt6.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt7.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_hurt8.ogg" State="Damage" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack1.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack2.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack3.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack4.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack5.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack6.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack7.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_attack8.ogg" State="Attack" Range="1000" Volume="1" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die1.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die2.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die3.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+    <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_die4.ogg" State="Die" Range="1000" Volume="2" Tags="Male" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle1.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle2.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle3.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle4.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle5.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle6.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle7.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle8.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle9.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_idle10.ogg" State="Idle" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt1.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt2.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt3.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt4.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt5.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt6.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt7.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_hurt8.ogg" State="Damage" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack1.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack2.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack3.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack4.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack5.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack6.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack7.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_attack8.ogg" State="Attack" Range="1000" Volume="1" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die1.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die2.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die3.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+    <sound gender="Female" File="%ModDir%/CustomSounds/Husk/female_die4.ogg" State="Die" Range="1000" Volume="2" Tags="Female" />
+    <StatusEffect type="OnSpawn" stackable="true" target="Character">
+      <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate1.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+      <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate2.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+      <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate3.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+      <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate4.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+      <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate5.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+      <sound gender="Male" File="%ModDir%/CustomSounds/Husk/male_reanimate6.ogg" Range="1000" Volume="1.5" SelectionMode="Random" Tags="Male" />
+    </StatusEffect>
+    <StatusEffect type="OnSpawn" stackable="true" target="Character">
+      <Affliction identifier="applyhuskoverlay" amount="5" />
+    </StatusEffect>
+    <!-- husked controlled players cannot access their inventory; guns, weapons, medicine etc -->
+    <inventory arrowslot="9" accessiblebyowner="False" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any, HealthInterface" AccessibleWhenAlive="False" Commonness="1" />
+    <names path="Content/Characters/Human/names.xml" />
+  </Character>
+</Override>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!--———————————————————————-->
+  <!--       Medical         -->
+  <!--———————————————————————-->
+  <entityname.hellraptoregg>Hellraptor Egg</entityname.hellraptoregg>
+  <entitydescription.hellraptoregg>An ominous red-tinted pulsating egg that almost resembles a mudraptor egg.</entitydescription.hellraptoregg>
+  <!--———————————————————————-->
+  <!--       Missions        -->
+  <!--———————————————————————-->
+  <!-- Hellraptor -->
+  <character.hellraptor>Hellraptor</character.hellraptor>
+  <missionname.killhellraptor1>Kill a Hellraptor</missionname.killhellraptor1>
+  <missiondescription.killhellraptor1>A hellish creature of unknown origins is terrorizing waters between [location1] and [location2]. Anyone who is able to kill it will be rewarded with [reward] marks.</missiondescription.killhellraptor1>
+  <missionheader0.killhellraptor1>Target terminated</missionheader0.killhellraptor1>
+  <missionmessage0.killhellraptor1>The Hellraptor is dead. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killhellraptor1>
+  <missionname.killhellraptorgroup1>Terminate a group of Hellraptors</missionname.killhellraptorgroup1>
+  <missiondescription.killhellraptorgroup1>A group of hellish creatures of an unknown origin is terrorizing the waters between [location1] and [location2]. Anyone who is able to kill them will be generously rewarded with [reward] marks.</missiondescription.killhellraptorgroup1>
+  <missionheader0.killhellraptorgroup1>Targets terminated</missionheader0.killhellraptorgroup1>
+  <missionmessage0.killhellraptorgroup1>The group of Hellraptors is dead. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killhellraptorgroup1>
+  <!-- Dreadnought Hammerhead -->
+  <character.dreadnoughthammerhead>Dreadnought Hammerhead</character.dreadnoughthammerhead>
+  <missionname.killdreadnought1>Kill a Dreadnought Hammerhead</missionname.killdreadnought1>
+  <missiondescription.killdreadnought1>A Hammerhead Dreadnought has been spotted in the surrounding area of [location2]. It is unknown exactly where this creature is, but anyone who manages to exterminate it will be paid a hefty reward of [reward] marks.</missiondescription.killdreadnought1>
+  <missionheader0.killdreadnought1>Target terminated</missionheader0.killdreadnought1>
+  <missionmessage0.killdreadnought1>The Dreadnought is dead. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killdreadnought1>
+  <!-- Abyssal Crawler -->
+  <character.abyssalcrawler>Abyssal Crawler</character.abyssalcrawler>
+  <missionname.killabyssalcrawlergroup1>Terminate a group of Abyssal Crawlers</missionname.killabyssalcrawlergroup1>
+  <missiondescription.killabyssalcrawlergroup1>A nasty group of Abyssal Crawlers were seen in this area. You will be rewarded with [reward] marks if you are able to rid the area of them.</missiondescription.killabyssalcrawlergroup1>
+  <missionheader0.killabyssalcrawlergroup1>Targets terminated</missionheader0.killabyssalcrawlergroup1>
+  <missionmessage0.killabyssalcrawlergroup1>The group of Abyssal Crawlers has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killabyssalcrawlergroup1>
+  <missionname.killabyssalcrawlersquadron1>Terminate a squadron of Abyssal Crawlers</missionname.killabyssalcrawlersquadron1>
+  <missionname.killabyssalcrawlersquadron1>A squadron of Abyssal Crawlers were seen in this area. You will be rewarded with [reward] marks if you are able to rid the area of them.</missionname.killabyssalcrawlersquadron1>
+  <missionmessage0.killabyssalcrawlersquadron1>The squadron of Abyssal Crawlers has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killabyssalcrawlersquadron1>
+  <missionname.killabyssalcrawlerswarm1>Terminate a swarm of Abyssal Crawlers</missionname.killabyssalcrawlerswarm1>
+  <missionname.killabyssalcrawlerswarm1>A large swarm of Abyssal Crawlers were seen in this area. You will be rewarded with [reward] marks if you are able to rid the area of them.</missionname.killabyssalcrawlerswarm1>
+  <missionmessage0.killabyssalcrawlerswarm1>The swarm of Abyssal Crawlers has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killabyssalcrawlerswarm1>
+  <!-- Lapidaris Mantis -->
+  <character.lapidarismantis>Lapidaris Mantis</character.lapidarismantis>
+  <missionname.killlapidarismantisgroup1>Terminate a group of Lapidaris Mantises</missionname.killlapidarismantisgroup1>
+  <missiondescription.killlapidarismantisgroup1>Some Lapidaris Mantises have been seen roaming the waters in this area. Kill them for a reward of [reward] marks.</missiondescription.killlapidarismantisgroup1>
+  <missionheader0.killlapidarismantisgroup1>Targets terminated</missionheader0.killlapidarismantisgroup1>
+  <missionmessage0.killlapidarismantisgroup1>The group is terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killlapidarismantisgroup1>
+  <missionname.killlapidarismantissquadron1>Terminate a squadron of Lapidaris Mantises</missionname.killlapidarismantissquadron1>
+  <missiondescription.killlapidarismantissquadron1>A dangerous squadron of Lapidaris Mantises have been roaming this area. Rid the waters of them to reap your reward of [reward] marks.</missiondescription.killlapidarismantissquadron1>
+  <missionmessage0.killlapidarismantissquadron1>The squadron has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killlapidarismantissquadron1>
+  <missionname.killlapidarismantisswarm1>Terminate a swarm of Lapidaris Mantises</missionname.killlapidarismantisswarm1>
+  <missiondescription.killlapidarismantisswarm1>A dangerous swarm of Lapidaris Mantises have been roaming this area. Rid the waters of them to reap your reward of [reward] marks.</missiondescription.killlapidarismantisswarm1>
+  <missionmessage0.killlapidarismantisswarm1>The swarm has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killlapidarismantisswarm1>
+  <!-- Rhino Mantis -->
+  <character.rhinomantis>Rhino Mantis</character.rhinomantis>
+  <missionname.killrhinomantisgroup1>Terminate a group of Rhino Mantises</missionname.killrhinomantisgroup1>
+  <missiondescription.killrhinomantisgroup1>Some Rhino Mantises were reportedly scouted among this area. Get rid of them for a reward of [reward] marks.</missiondescription.killrhinomantisgroup1>
+  <missionheader0.killrhinomantisgroup1>Targets terminated</missionheader0.killrhinomantisgroup1>
+  <missionmessage0.killrhinomantisgroup1>The group is terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killrhinomantisgroup1>
+  <missionname.killrhinomantissquadron1>Terminate a squadron of Rhino Mantises</missionname.killrhinomantissquadron1>
+  <missiondescription.killrhinomantissquadron1>A reasonably sized squadron of Rhino Mantises have been invading and terrorizing the area between [location1] and [location2]. If you manage to kill them all, you will be rewarded with [reward] marks.</missiondescription.killrhinomantissquadron1>
+  <missionmessage0.killrhinomantissquadron1>The squadron has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killrhinomantissquadron1>
+  <missionname.killrhinomantisswarm1>Terminate a swarm of Rhino Mantises</missionname.killrhinomantisswarm1>
+  <missiondescription.killrhinomantisswarm1>A large swarm of Rhino Mantises have been invading and terrorizing the area between [location1] and [location2]. If you manage to kill them all, you will be generously rewarded with [reward] marks.</missiondescription.killrhinomantisswarm1>
+  <missionmessage0.killrhinomantisswarm1>The swarm has been terminated. Navigate the submarine out of the cavern to claim the reward.</missionmessage0.killrhinomantisswarm1>
+  <!-- Mission Dialogue
+  <eventtext.missionevent_killswarm.c1>“No transport ship can leave without running into a swarm of monsters. Take care of the problem and there's a reward in it for you.”</eventtext.missionevent_killswarm.c1>
+  <eventtext.missionevent_killmonstercommon.c1>“There's this especially mean monster terrorizing the caves near here. I've put a little reward aside for the crew that takes it down.”</eventtext.missionevent_killmonstercommon.c1>
+  <eventtext.missionevent_killmonsterrare.c1>“I've heard reports of a gargantuan monster somewhere in the vicinity. If you want to try hunting it down, be my guest. Just make sure you're prepared. It's a dangerous one.”</eventtext.missionevent_killmonsterrare.c1>
+  -->
+</infotexts>

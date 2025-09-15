@@ -1,0 +1,1 @@
+%ModDir%/Characters/Humanbiohusk/biohusk_male.png

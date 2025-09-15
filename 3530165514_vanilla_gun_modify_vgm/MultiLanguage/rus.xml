@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="true" translatedname="Русский">
+  <entityname.fabricatorVGM>Станок для модификации оружия</entityname.fabricatorVGM>
+  <entitydescription.fabricatorVGM>В прошлом этот самосборный старый станок можно было встретить повсюду. С развитием технологий он стал непригоден для производства большинства изделий, но после небольшой модификации его все еще можно использовать для изготовления модификаций оружия. Конечно, требуется электричество.
+    Разбирается монтировкой, для размещения нажмите и удерживайте правую кнопку мыши, а затем нажмите "E"</entitydescription.fabricatorVGM>
+  <entityname.flashHiderMuzzleVGM>Пламегаситель</entityname.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>Эффективно уменьшает отдачу при непрерывной стрельбе и немного увеличивает урон. Обычно является предпочтительным выбором для скорострельного оружия. Совместим с большинством видов оружия, подходит для различных калибров</entitydescription.flashHiderMuzzleVGM>
+  <entityname.longBarrelMuzzleVGM>Удлиненный ствол</entityname.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>Повышает начальную скорость пули, увеличивает урон и бронебойные характеристики оружия. Не подходит для компактного оружия. Примечание: слишком длинный ствол не подходит для ближнего боя</entitydescription.longBarrelMuzzleVGM>
+  <entityname.longSilencerMuzzleVGM>Длинный глушитель</entityname.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>Этот глушитель, изготовленный из инопланетных материалов, обладает природным магнетизмом и может не только снизить шум выстрела, но и эффективно повысить начальную скорость пули, что приводит к значительному увеличению урона. Не подходит для компактного оружия</entitydescription.longSilencerMuzzleVGM>
+  <entityname.shortSilencerMuzzleVGM>Компактный глушитель</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>Базовый глушитель, который снижает шум выстрела, дает небольшой прирост урона и в некоторой степени уменьшает отдачу при стрельбе. Совместим с большинством видов оружия</entitydescription.shortSilencerMuzzleVGM>
+  <entityname.deadeyeStockVGM>Оригинальный приклад винтовки "Мертвый глаз"</entityname.deadeyeStockVGM>
+  <entitydescription.deadeyeStockVGM>Оригинальный приклад винтовки "Мертвый глаз". Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.deadeyeStockVGM>
+  <entityname.boomStickStockVGM>Оригинальный приклад "Бумстика"</entityname.boomStickStockVGM>
+  <entitydescription.boomStickStockVGM>Оригинальный приклад "Бумстика". Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.boomStickStockVGM>
+  <entityname.rifleStockVGM>Оригинальный приклад винтовки</entityname.rifleStockVGM>
+  <entitydescription.rifleStockVGM>Оригинальный приклад винтовки. Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.rifleStockVGM>
+  <entityname.shotgunStockVGM>Оригинальный приклад дробовика для подавления беспорядков</entityname.shotgunStockVGM>
+  <entitydescription.shotgunStockVGM>Оригинальный приклад дробовика для подавления беспорядков. Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.shotgunStockVGM>
+  <entityname.assaultRifleStockVGM>Оригинальный приклад штурмовой винтовки</entityname.assaultRifleStockVGM>
+  <entitydescription.assaultRifleStockVGM>Оригинальный приклад штурмовой винтовки. Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но уберет стандартный штраф к скорости передвижения</entitydescription.assaultRifleStockVGM>
+  <entityname.hmgStockVGM>Оригинальный приклад тяжелого пулемета</entityname.hmgStockVGM>
+  <entitydescription.hmgStockVGM>Оригинальный приклад тяжелого пулемета. Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но скомпенсирует 50% стандартного штрафа к скорости передвижения</entitydescription.hmgStockVGM>
+  <entityname.nuclearGunStockVGM>Оригинальный приклад делительного ускорителя</entityname.nuclearGunStockVGM>
+  <entitydescription.nuclearGunStockVGM>Оригинальный приклад делительного ускорителя. Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.nuclearGunStockVGM>
+  <entityname.scrapCannonStockVGM>Оригинальный приклад "Ломовой пушки"</entityname.scrapCannonStockVGM>
+  <entitydescription.scrapCannonStockVGM>Оригинальный приклад "Ломовой пушки". Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.scrapCannonStockVGM>
+  <entityname.lightStockVGM>Легкий приклад</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>Приклад, изготовленный только из труб, может быть установлен на большинство легкого оружия. Помогает повысить мобильность, но не подходит для точного прицеливания, хотя все же лучше, чем отсутствие приклада</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>Тяжелый приклад</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>Тяжелый приклад с регулируемыми грузиками, подходит только для штурмовых винтовок и тяжелых пулеметов. Эффективно уменьшает разброс при прицеливании, но влияет на мобильность</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>Тяжелый эргономичный приклад</entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>Тяжелый эргономичный приклад, подходит только для штурмовых винтовок и тяжелых пулеметов. Максимально уменьшает разброс при прицеливании, но влияет на мобильность оружия</entitydescription.sniperStockVGM>
+  <entityname.holoGraphicScopeVGM>Компактный голографический прицел</entityname.holoGraphicScopeVGM>
+  <entitydescription.holoGraphicScopeVGM>Компактный голографический прицел, увеличивает видимую дальность оружия, подходит для большинства видов оружия</entitydescription.holoGraphicScopeVGM>
+  <entityname.dotScopeVGM>Компактный коллиматорный прицел</entityname.dotScopeVGM>
+  <entitydescription.dotScopeVGM>Компактный коллиматорный прицел, увеличивает видимую дальность оружия, подходит для большинства видов оружия</entitydescription.dotScopeVGM>
+  <entityname.acogScopeVGM>Четырехкратный прицел</entityname.acogScopeVGM>
+  <entitydescription.acogScopeVGM>Четырехкратный прицел ACOG, некоторые дизайны не устаревают даже в эпоху космической колонизации. Эффективно увеличивает видимую дальность оружия, подходит для большинства видов оружия</entitydescription.acogScopeVGM>
+  <entityname.sniperScopeVGM>Снайперский прицел</entityname.sniperScopeVGM>
+  <entitydescription.sniperScopeVGM>Снайперский восьмикратный прицел, максимально увеличивает видимую дальность оружия. Не подходит для компактного оружия. Примечание: слишком большое увеличение влияет на эффективность оружия в ближнем бою</entitydescription.sniperScopeVGM>
+  <entitydescription.scope>Шестикратный прицел для длинноствольного оружия. Не подходит для компактного оружия</entitydescription.scope>
+  <entityname.verticalGripVGM>Вертикальная рукоятка</entityname.verticalGripVGM>
+  <entitydescription.verticalGripVGM>Вертикальная рукоятка помогает дольше удерживать тактическую позу и сокращает время реакции на подъем оружия</entitydescription.verticalGripVGM>
+  <entityname.angleGripVGM>Угловая рукоятка</entityname.angleGripVGM>
+  <entitydescription.angleGripVGM>Угловая рукоятка помогает дольше удерживать тактическую позу с поднятым стволом и сокращает время реакции на подъем оружия</entitydescription.angleGripVGM>
+  <entityname.smgDrummagVGM>Барабанный магазин для пистолета-пулемета</entityname.smgDrummagVGM>
+  <entitydescription.smgDrummagVGM>Тройная емкость магазина, неудобен для ношения</entitydescription.smgDrummagVGM>
+  <entityname.smgLongmagVGM>Удлиненный магазин для пистолета-пулемета</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Двойная емкость магазина</entitydescription.smgLongmagVGM>
+  <entityname.smgDFuelLongMagVGM>Удлиненный магазин для пистолета-пулемета с обедненным топливом</entityname.smgDFuelLongMagVGM>
+  <entitydescription.smgDFuelLongMagVGM></entitydescription.smgDFuelLongMagVGM>
+  <entityname.smgDFuelDrumMagVGM>Барабанный магазин для пистолета-пулемета с обедненным топливом</entityname.smgDFuelDrumMagVGM>
+  <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
+  <entityname.smgLongmagVGM>Удлиненный магазин для пистолета-пулемета</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Двойная емкость магазина</entitydescription.smgLongmagVGM>
+  <entityname.assaultrifleLongmagVGM>Удлиненный магазин для штурмовой винтовки</entityname.assaultrifleLongmagVGM>
+  <entitydescription.assaultrifleLongmagVGM>Двойная емкость магазина</entitydescription.assaultrifleLongmagVGM>
+  <entityname.assaultrifleDrumMagVGM>Барабанный магазин для штурмовой винтовки</entityname.assaultrifleDrumMagVGM>
+  <entitydescription.assaultrifleDrumMagVGM>Тройная емкость магазина, неудобен для ношения</entitydescription.assaultrifleDrumMagVGM>
+  <entityname.hmgDrumMagVGM>Барабанный магазин для тяжелого пулемета</entityname.hmgDrumMagVGM>
+  <entitydescription.hmgDrumMagVGM>Этот огромный барабанный магазин вмещает более 200 патронов калибра 556, обеспечивая непрерывную огневую мощь</entitydescription.hmgDrumMagVGM>
+  <entityname.redLazerVGM>Лазерный целеуказатель "Радуга"</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>Лазерный целеуказатель, цвет лазера которого можно изменить. Чтобы изменить цвет, нажмите и удерживайте правую кнопку мыши, а затем нажмите "E", чтобы разместить его на стене, после чего взаимодействуйте левой кнопкой мыши.
+    Рекомендуемые цвета: Sci-Fi Blue (23,150,214); Proton Purple (138,43,226); Plastic Pink (255,20,147); Classic Red (255,0,0); Fallout Green (0,255,5)</entitydescription.redLazerVGM>
+  <entityname.healthScannerVGM>Компактный медицинский сканер</entityname.healthScannerVGM>
+  <entitydescription.healthScannerVGM>Медицинский сканер, который можно установить на огнестрельное оружие. Для его работы нужно прицелиться, нажав правую кнопку мыши</entitydescription.healthScannerVGM>
+  <entityname.thermalScannerVGM>Компактный тепловизор</entityname.thermalScannerVGM>
+  <entitydescription.thermalScannerVGM>Тепловизор, который можно установить на огнестрельное оружие. Для его работы нужно прицелиться, нажав правую кнопку мыши</entitydescription.thermalScannerVGM>
+  <entityname.lightSniperStockVGM>Легкий снайперский приклад</entityname.lightSniperStockVGM>
+  <entitydescription.lightSniperStockVGM>Снайперский приклад, предназначенный для легкого оружия. Уменьшает разброс при прицеливании за счет небольшого снижения мобильности. Не подходит для тяжелого оружия</entitydescription.lightSniperStockVGM>
+</infotexts>

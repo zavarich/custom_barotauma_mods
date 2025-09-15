@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <entityname.heexp-cheesepizza>Сырная пицца</entityname.heexp-cheesepizza>
+  <entitydescription.heexp-cheesepizza>Для любителей сыра.</entitydescription.heexp-cheesepizza>
+  <entityname.heexp-cheesepizzaslice>Кусочек сырной пиццы</entityname.heexp-cheesepizzaslice>
+  <entitydescription.heexp-cheesepizzaslice>Кусочек вкуснейшей пиццы.</entitydescription.heexp-cheesepizzaslice>
+  <entityname.heexp-mushroompizza>Пицца с грибами</entityname.heexp-mushroompizza>
+  <entitydescription.heexp-mushroompizza>Лучшая пицца, по мнению жителей Европы.</entitydescription.heexp-mushroompizza>
+  <entityname.heexp-mushroompizzaslice>Кусочек пиццы с грибами</entityname.heexp-mushroompizzaslice>
+  <entitydescription.heexp-mushroompizzaslice>Кусочек вкуснейшей пиццы.</entitydescription.heexp-mushroompizzaslice>
+  <entityname.heexp-groundmeat>Фарш</entityname.heexp-groundmeat>
+  <entitydescription.heexp-groundmeat>Мясо в необычной форме.</entitydescription.heexp-groundmeat>
+  <entityname.heexp-dumplings>Пельмени</entityname.heexp-dumplings>
+  <entitydescription.heexp-dumplings>Давным-давно кто-то привёз их рецепт с собой. Теперь многие европейцы полюбили это блюдо.</entitydescription.heexp-dumplings>
+  <entityname.heexp-pizzabox>Коробка пиццы</entityname.heexp-pizzabox>
+  <entitydescription.heexp-pizzabox>Кто-то заказывал пиццу?</entitydescription.heexp-pizzabox>
+  <entityname.heexp-cheesepizzabox>Коробка сырной пиццы</entityname.heexp-cheesepizzabox>
+  <entitydescription.heexp-cheesepizzabox>Кто-то заказывал пиццу?</entitydescription.heexp-cheesepizzabox>
+  <entityname.heexp-mushroompizzabox>Коробка грибной пиццы</entityname.heexp-mushroompizzabox>
+  <entitydescription.heexp-mushroompizzabox>Кто-то заказывал пиццу?</entitydescription.heexp-mushroompizzabox>
+  <entityname.heexp-saladworker>Салат "Рабочий"</entityname.heexp-saladworker>
+  <entitydescription.heexp-saladworker>Банальный, довольно легко готовящийся салатик.</entitydescription.heexp-saladworker>
+  <entityname.heexp-glassofbananajuice>Стакан бананового сока</entityname.heexp-glassofbananajuice>
+  <entitydescription.heexp-glassofbananajuice>Как ты его сделал? В этом явно замешаны клоуны...</entitydescription.heexp-glassofbananajuice>
+  <entityname.heexp-glassofpomegrenadejuice>Стакан сока из взрывного граната</entityname.heexp-glassofpomegrenadejuice>
+  <entitydescription.heexp-glassofpomegrenadejuice>Сок из врывного граната. Не самая вкусная штука, но попить можно.</entitydescription.heexp-glassofpomegrenadejuice>
+  <entityname.heexp-glassoflumofruitjuice>Стакан сока из люмофрукта</entityname.heexp-glassoflumofruitjuice>
+  <entitydescription.heexp-glassoflumofruitjuice>Невероятно вкусный сок. Так и хочется выпить его.</entitydescription.heexp-glassoflumofruitjuice>
+  <entityname.heexp-glassofpomegrenademilkshake>Коктейль из взрывного граната</entityname.heexp-glassofpomegrenademilkshake>
+  <entitydescription.heexp-glassofpomegrenademilkshake>После добавления мороженого и молока вкус не такой уж и ужасный.</entitydescription.heexp-glassofpomegrenademilkshake>
+  <entityname.heexp-glassofmilkshake>Молочный коктейль</entityname.heexp-glassofmilkshake>
+  <entitydescription.heexp-glassofmilkshake>Самый стандартный коктейль. Тем не менее, он вкусный.</entitydescription.heexp-glassofmilkshake>
+  <entityname.heexp-glassofpopnutmilkshake>Коктейль из поп-ореха</entityname.heexp-glassofpopnutmilkshake>
+  <entitydescription.heexp-glassofpopnutmilkshake>Мягкий шоколадный вкус. Вкуснятина.</entitydescription.heexp-glassofpopnutmilkshake>
+  <entityname.heexp-glassoflumofruitmilkshake>Коктейль из люмофрукта</entityname.heexp-glassoflumofruitmilkshake>
+  <entitydescription.heexp-glassoflumofruitmilkshake>Наверное, лучший коктейль, придуманный на Европе. Многие заплатили бы немалые деньги, чтобы его попробовать.</entitydescription.heexp-glassoflumofruitmilkshake>
+  <entityname.heexp-boiledrice>Вареный рис</entityname.heexp-boiledrice>
+  <entitydescription.heexp-boiledrice>Миска очень вкусный вареный рис</entitydescription.heexp-boiledrice>
+  <entityname.heexp-bagofrice>Пачка риса</entityname.heexp-bagofrice>
+  <entitydescription.heexp-bagofrice>Пачка очень вкусный рис</entitydescription.heexp-bagofrice>
+  <entityname.heexp-cabage>Качан капусты</entityname.heexp-cabage>
+  <entitydescription.heexp-cabage>Свежий качан инопланетной капусты.</entitydescription.heexp-cabage>
+  <entityname.heexp-spotshroom>Пятновка</entityname.heexp-spotshroom>
+  <entitydescription.heexp-spotshroom>Довольный редкий тип грибов. Находится в глубинах пещер Европы.</entitydescription.heexp-spotshroom>
+  <entityname.heexp-maplebasil>Кленовый базилик</entityname.heexp-maplebasil>
+  <entitydescription.heexp-maplebasil>Странная и в то же время универсальная специя. В зависимости от обработки выходят разные вкусы.</entitydescription.heexp-maplebasil>
+  <entityname.heexp-lumofruit>Люмофрукт</entityname.heexp-lumofruit>
+  <entitydescription.heexp-lumofruit>Имеет очень насыщенный сладкий вкус, напоминающий и клубнику, и персик. Хоть никто и не помнит каков их вкус. Но по крайней мере, так говорилось в книгах.</entitydescription.heexp-lumofruit>
+  <entityname.heexp-smallrefrigerator>Маленький холодильник</entityname.heexp-smallrefrigerator>
+  <entitydescription.heexp-smallrefrigerator>Холодильник, но маленький.</entitydescription.heexp-smallrefrigerator>
+  <entityname.heexp-pancakes>Панкейки</entityname.heexp-pancakes>
+  <entitydescription.heexp-pancakes>Тарелка воздушных, вкусных панкейков.</entitydescription.heexp-pancakes>
+  <entityname.heexp-blini>Блины</entityname.heexp-blini>
+  <entitydescription.heexp-blini>Тарелка не менее вкусных блинов.</entitydescription.heexp-blini>
+  <entityname.heexp-kvass>Квас</entityname.heexp-kvass>
+  <entitydescription.heexp-kvass>Бутылка кваса. Горьковатый, но всё равно вкуснятина.</entitydescription.heexp-kvass>
+  <entityname.heexp-bubbleberriescake>Торт из пузырьковых ягод</entityname.heexp-bubbleberriescake>
+  <entitydescription.heexp-bubbleberriescake>Торт из пузырьковых ягод. Изумительный вкус, дешевый рецепт. Нарезайте ломтиками и берите кусочек!</entitydescription.heexp-bubbleberriescake>
+  <entityname.heexp-bubbleberriescakeslice>Кусочек торта из пузырьковых ягод</entityname.heexp-bubbleberriescakeslice>
+  <entitydescription.heexp-bubbleberriescakeslice>Кусочек торта из пузырьковых ягод! Бери и откуси!</entitydescription.heexp-bubbleberriescakeslice>
+  <entityname.heexp-vanillin>Ванилин</entityname.heexp-vanillin>
+  <entitydescription.heexp-vanillin>Малекньки пакетик ванилина.</entitydescription.heexp-vanillin>
+  <entityname.heexp-fcheesepizzabox>Коробка свежей сырной пиццы</entityname.heexp-fcheesepizzabox>
+  <entitydescription.heexp-fcheesepizzabox>Кто-то заказывал пиццу?</entitydescription.heexp-fcheesepizzabox>
+  <entityname.heexp-fmushroompizzabox>Коробка свежей грибной пиццы</entityname.heexp-fmushroompizzabox>
+  <entitydescription.heexp-fmushroompizzabox>Кто-то заказывал пиццу?</entitydescription.heexp-fmushroompizzabox>
+  <entityname.heexp-fpizzabox>Коробка свежей пиццы</entityname.heexp-fpizzabox>
+  <entitydescription.heexp-fpizzabox>Кто-то заказывал пиццу?</entitydescription.heexp-fpizzabox>
+</infotexts>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <!-- 
+  Vanilla splatters:
+  -fruitsplatter_white
+  -fruitsplatter_black
+  -fruitsplatter_red
+  -fruitsplatter_green
+  -fruitsplatter_blue
+  -fruitsplatter_brown -->
+  <fruitsplatter_orange color="175,90,0,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_orange>
+  <fruitsplatter_yellow color="160,160,50,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_yellow>
+  <fruitsplatter_purpledark color="90,60,90,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_purpledark>
+  <fruitsplatter_purpledesat color="90,60,90,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_purpledesat>
+  <fruitsplatter_cyan color="50,160,160,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_cyan>
+  <fruitsplatter_pink color="180,50,110,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_pink>
+  <fruitsplatter_crimson color="140,50,40,200" lifetime="6000" fadeouttime="30">
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,416,192,192" origin="0.5,0.5" />
+    <sprite texture="Content/Items/Gardening/GrowablePlants_Temp.png" sourcerect="672,160,192,192" origin="0.5,0.5" />
+  </fruitsplatter_crimson>
+</prefabs>

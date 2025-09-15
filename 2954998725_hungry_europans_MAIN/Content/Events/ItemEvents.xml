@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <!-- SCRIPTED EVENTS -->
+  <EventPrefabs>
+    <ScriptedEvent identifier="potentialfirestove">
+      <TagAction criteria="player" tag="player" />
+      <Label name="CheckSkill" />
+      <TriggerAction target1tag="stove" target2tag="player" applytotarget1="activestove" applytotarget2="cookingatstove" radius="300" waitforinteraction="false" allowmultipletargets="false" />
+      <SkillCheckAction targettag="cookingatstove" requiredskill="cooking" requiredlevel="80" probabilitybased="false">
+        <Success>
+          <WaitAction time="10" />
+          <ClearTagAction tag="cookingatstove" />
+          <ClearTagAction tag="activestove" />
+          <GoTo name="CheckSkill" />
+        </Success>
+        <Failure>
+          <SkillCheckAction targettag="cookingatstove" requiredskill="cooking" requiredlevel="40" probabilitybased="false">
+            <Success>
+              <RNGAction chance="0.01">
+                <Success>
+                  <StatusEffectAction targettag="activestove">
+                    <StatusEffect target="this" type="OnActive">
+                      <Conditional Voltage="gt 0.5" isActive="true" targetcontainer="true" targetitemcomponent="Fabricator" />
+                      <Fire size="10" />
+                    </StatusEffect>
+                  </StatusEffectAction>
+                  <WaitAction time="10" />
+                  <ClearTagAction tag="cookingatstove" />
+                  <ClearTagAction tag="activestove" />
+                  <GoTo name="CheckSkill" />
+                </Success>
+                <Failure>
+                  <WaitAction time="10" />
+                  <ClearTagAction tag="cookingatstove" />
+                  <ClearTagAction tag="activestove" />
+                  <GoTo name="CheckSkill" />
+                </Failure>
+              </RNGAction>
+            </Success>
+            <Failure>
+              <SkillCheckAction targettag="cookingatstove" requiredskill="cooking" requiredlevel="20" probabilitybased="false">
+                <Success>
+                  <RNGAction chance="0.05">
+                    <Success>
+                      <StatusEffectAction targettag="activestove">
+                        <StatusEffect target="this" type="OnActive">
+                          <Conditional Voltage="gt 0.5" isActive="true" targetcontainer="true" targetitemcomponent="Fabricator" />
+                          <Fire size="10" />
+                        </StatusEffect>
+                      </StatusEffectAction>
+                      <WaitAction time="10" />
+                      <ClearTagAction tag="cookingatstove" />
+                      <ClearTagAction tag="activestove" />
+                      <GoTo name="CheckSkill" />
+                    </Success>
+                    <Failure>
+                      <WaitAction time="10" />
+                      <ClearTagAction tag="cookingatstove" />
+                      <ClearTagAction tag="activestove" />
+                      <GoTo name="CheckSkill" />
+                    </Failure>
+                  </RNGAction>
+                </Success>
+                <Failure>
+                  <RNGAction chance="0.1">
+                    <Success>
+                      <StatusEffectAction targettag="activestove">
+                        <StatusEffect target="this" type="OnActive">
+                          <Conditional Voltage="gt 0.5" isActive="true" targetcontainer="true" targetitemcomponent="Fabricator" />
+                          <Fire size="10" />
+                        </StatusEffect>
+                      </StatusEffectAction>
+                      <WaitAction time="10" />
+                      <ClearTagAction tag="cookingatstove" />
+                      <ClearTagAction tag="activestove" />
+                      <GoTo name="CheckSkill" />
+                    </Success>
+                    <Failure>
+                      <WaitAction time="10" />
+                      <ClearTagAction tag="cookingatstove" />
+                      <ClearTagAction tag="activestove" />
+                      <GoTo name="CheckSkill" />
+                    </Failure>
+                  </RNGAction>
+                </Failure>
+              </SkillCheckAction>
+            </Failure>
+          </SkillCheckAction>
+        </Failure>
+      </SkillCheckAction>
+    </ScriptedEvent>
+  </EventPrefabs>
+</Randomevents>

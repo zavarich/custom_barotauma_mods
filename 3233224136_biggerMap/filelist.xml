@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="DynamicEuropa - Large Map Size Patch" modversion="1.0.1" corepackage="False" steamworkshopid="3233224136" gameversion="1.5.9.1" expectedhash="6C32940B42E642B9F15E911149CFCF3D">
+  <MapGenerationParameters file="%ModDir%/Map/MapGenerationParameters.xml" />
+</contentpackage>

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Hungry Europans - Enforced Extras" modversion="1.0.0" corepackage="False" gameversion="1.0.21.0" expectedhash="08C69FFB4B13A876425ADC0901CAEB3F">
+  <Item file="%ModDir%/Items.xml" />
+  <Other file="%ModDir%/Lua/Autorun/autorun.lua" />
+</contentpackage>

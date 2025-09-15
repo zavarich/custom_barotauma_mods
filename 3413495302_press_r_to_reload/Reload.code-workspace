@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+	],
+	"settings": {
+		"Lua.diagnostics.libraryFiles": "Enable",
+		"Lua.workspace.library": [
+			"D:/Projects/Barotrauma/types/client",
+			"D:/Projects/Barotrauma/types/shared",
+		],
+
+		"Lua.diagnostics.disable": [
+			"param-type-mismatch",
+			"return-type-mismatch",
+			"undefined-field",
+			"need-check-nil",
+			"assign-type-mismatch",
+			"redundant-return-value",
+			"missing-parameter",
+			"undefined-global",
+			"missing-return-value",
+			"undefined-doc-name",
+			"missing-return",
+			"cast-local-type",
+			"deprecated",
+		],
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+		{
+			"name": "MoonSharp Attach",
+            "type": "moonsharp-debug",
+            "request": "attach",
+			"debugServer" : 41912
+		}
+		]
+	}
+}

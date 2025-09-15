@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <backgroundcreatures>
+    <!-- I've tried a whole lot of tweaks but it doesnt play well with depth and parallax so I'll keep it disabled until devs drop the map visuals update sorry -->
+    <DugongR speed="30.0" wanderamount="2.1" wanderzamount="0.1" swarmmin="1" swarmmax="1" scale="3.0" disablerotation="true" disableflipping="true" mindepth="6000" maxdepth="10000" commonness="0" maxcount="1">
+      <!-- level commonness -->
+      <!-- <overridecommonness leveltype="coldcavernsbasic" commonness="8" />
+    <overridecommonness leveltype="coldcavernsadvanced" commonness="7" />
+    <overridecommonness leveltype="coldcavernsmaze" commonness="6" />
+    <overridecommonness leveltype="coldcavernstransition" commonness="5" />
+    <overridecommonness leveltype="ridgebasic" commonness="4" />
+    <overridecommonness leveltype="ridgeadvanced" commonness="3" />
+    <overridecommonness leveltype="plateaubasic" commonness="2" />
+    <overridecommonness leveltype="greatseabasic" commonness="1" />
+    <overridecommonness leveltype="greatseanarrow" commonness="1" />
+    <overridecommonness leveltype="coldcavernsoutpost" commonness="4" />
+    <overridecommonness leveltype="ridgeoutpost" commonness="3" />
+    <overridecommonness leveltype="plateauoutpost" commonness="2" />
+    <overridecommonness leveltype="greatseaoutpost" commonness="1" />
+    <overridecommonness leveltype="wastesoutpost" commonness="1" /> -->
+      <Sprite texture="%ModDir:2532991202%/BackgroundCreatures/BackgroundSubs.png" sourcerect="0,0,339,129" origin="0.5,0.5" />
+      <!-- <LightSprite texture="%ModDir:2532991202%/BackgroundCreatures/BackgroundSubs.png" sourcerect="0,131,339,129" origin="0.5,0.5" /> -->
+    </DugongR>
+    <DugongL speed="30.0" wanderamount="2.1" wanderzamount="0.1" swarmmin="1" swarmmax="1" scale="3.0" disablerotation="true" disableflipping="true" mindepth="6000" maxdepth="10000" commonness="0" maxcount="1">
+      <!-- level commonness -->
+      <!-- <overridecommonness leveltype="coldcavernsbasic" commonness="8" />
+    <overridecommonness leveltype="coldcavernsadvanced" commonness="7" />
+    <overridecommonness leveltype="coldcavernsmaze" commonness="6" />
+    <overridecommonness leveltype="coldcavernstransition" commonness="5" />
+    <overridecommonness leveltype="ridgebasic" commonness="4" />
+    <overridecommonness leveltype="ridgeadvanced" commonness="3" />
+    <overridecommonness leveltype="plateaubasic" commonness="2" />
+    <overridecommonness leveltype="greatseabasic" commonness="1" />
+    <overridecommonness leveltype="greatseanarrow" commonness="1" />
+    <overridecommonness leveltype="coldcavernsoutpost" commonness="4" />
+    <overridecommonness leveltype="ridgeoutpost" commonness="3" />
+    <overridecommonness leveltype="plateauoutpost" commonness="2" />
+    <overridecommonness leveltype="greatseaoutpost" commonness="1" />
+    <overridecommonness leveltype="wastesoutpost" commonness="1" />  -->
+      <Sprite texture="%ModDir:2532991202%/BackgroundCreatures/BackgroundSubs.png" sourcerect="340,0,339,129" origin="0.5,0.5" />
+      <LightSprite texture="%ModDir:2532991202%/BackgroundCreatures/BackgroundSubs.png" sourcerect="340,131,339,129" origin="0.5,0.5" />
+    </DugongL>
+    <!-- <overridecommonness leveltype="coldcavernsbasic" commonness="4" />
+    <overridecommonness leveltype="coldcavernsadvanced" commonness="4" />
+    <overridecommonness leveltype="coldcavernsmaze" commonness="4" />
+    <overridecommonness leveltype="coldcavernstransition" commonness="4" />
+    <overridecommonness leveltype="coldcavernsoutpost" commonness="4" />
+    <overridecommonness leveltype="coldcavernsadvanced" commonness="4" />
+    <overridecommonness leveltype="ridgebasic" commonness="3" />
+    <overridecommonness leveltype="ridgeadvanced" commonness="3" />
+    <overridecommonness leveltype="ridgeoutpost" commonness="3" />
+    <overridecommonness leveltype="plateaubasic" commonness="2" />
+    <overridecommonness leveltype="plateauoutpost" commonness="2" />
+    <overridecommonness leveltype="greatseabasic" commonness="1" />
+    <overridecommonness leveltype="greatseanarrow" commonness="1" />
+    <overridecommonness leveltype="greatseaoutpost" commonness="1" /> -->
+    <!-- Legacy, there is no Fish1 -->
+    <!-- guh fish -->
+    <Fish2 speed="80.0" wanderamount="0.1" wanderzamount="0.2" swarmmin="2" swarmmax="5" swarmradius="300" mindepth="600" maxdepth="999" scale="0.25" commonness="0" disablerotation="false" disableflipping="false" fadeoutdepth="1500">
+      <Sprite texture="Content/BackgroundCreatures/bgFish1.png" sourcerect="10,23,243,125" />
+      <overridecommonness leveltype="coldcavernsoutpost" commonness="100" />
+      <!-- <overridecommonness leveltype="ridgeoutpost" commonness="100" /> -->
+      <!-- <overridecommonness leveltype="plateauoutpost" commonness="100" /> -->
+      <!-- <overridecommonness leveltype="greatseaoutpost" commonness="100" /> -->
+      <overridecommonness leveltype="wastesoutpost" commonness="100" />
+    </Fish2>
+    <!-- little bitey fish -->
+    <Fish3 speed="80.0" wanderamount="0.1" wanderzamount="0.2" swarmmin="2" swarmmax="5" swarmradius="300" mindepth="600" maxdepth="999" scale="0.25" commonness="0" disablerotation="false" disableflipping="false" fadeoutdepth="1500">&gt;
+    <Sprite texture="Content/BackgroundCreatures/bgFish1.png" sourcerect="265,29,238,115" /><overridecommonness leveltype="coldcavernsoutpost" commonness="100" /><!-- <overridecommonness leveltype="ridgeoutpost" commonness="100" /> --><!-- <overridecommonness leveltype="plateauoutpost" commonness="100" /> --><overridecommonness leveltype="greatseaoutpost" commonness="100" /><!-- <overridecommonness leveltype="wastesoutpost" commonness="100" /> --></Fish3>
+    <!-- angler fish -->
+    <Fish4 speed="80.0" wanderamount="0.1" wanderzamount="0.2" swarmmin="2" swarmmax="5" swarmradius="300" mindepth="600" maxdepth="999" scale="0.25" commonness="0" disablerotation="false" disableflipping="false" fadeoutdepth="1500">
+      <Sprite texture="Content/BackgroundCreatures/bgFish1.png" sourcerect="9,177,238,152" />
+      <!-- <overridecommonness leveltype="coldcavernsoutpost" commonness="100" /> -->
+      <overridecommonness leveltype="ridgeoutpost" commonness="100" />
+      <!-- <overridecommonness leveltype="plateauoutpost" commonness="100" /> -->
+      <overridecommonness leveltype="greatseaoutpost" commonness="100" />
+      <!-- <overridecommonness leveltype="wastesoutpost" commonness="100" /> -->
+    </Fish4>
+    <!-- testicle fish -->
+    <Fish5 speed="80.0" wanderamount="0.1" wanderzamount="0.2" swarmmin="2" swarmmax="5" swarmradius="300" mindepth="600" maxdepth="999" scale="0.25" commonness="0" disablerotation="false" disableflipping="false" fadeoutdepth="1500">
+      <Sprite texture="Content/BackgroundCreatures/bgFish1.png" sourcerect="290,210,207,120" />
+      <!-- <overridecommonness leveltype="coldcavernsoutpost" commonness="100" /> -->
+      <overridecommonness leveltype="ridgeoutpost" commonness="100" />
+      <overridecommonness leveltype="plateauoutpost" commonness="100" />
+      <!-- <overridecommonness leveltype="greatseaoutpost" commonness="100" /> -->
+      <overridecommonness leveltype="wastesoutpost" commonness="100" />
+    </Fish5>
+    <!-- large fish -->
+    <Fish6 speed="80.0" wanderamount="0.1" wanderzamount="0.2" swarmmin="1" swarmmax="2" swarmradius="300" mindepth="600" maxdepth="999" scale="0.25" commonness="0" disablerotation="false" disableflipping="false" fadeoutdepth="1500">
+      <Sprite texture="Content/BackgroundCreatures/bgFish1.png" sourcerect="55,341,411,171" />
+      <overridecommonness leveltype="coldcavernsoutpost" commonness="50" />
+      <overridecommonness leveltype="ridgeoutpost" commonness="50" />
+      <overridecommonness leveltype="plateauoutpost" commonness="50" />
+      <overridecommonness leveltype="greatseaoutpost" commonness="50" />
+      <overridecommonness leveltype="wastesoutpost" commonness="50" />
+    </Fish6>
+  </backgroundcreatures>
+</Override>

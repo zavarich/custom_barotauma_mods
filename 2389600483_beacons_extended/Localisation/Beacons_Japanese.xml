@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Japanese" nowhitespace="true" translatedname="日本語">
+  <!-- Item interaction messages -->
+  <ItemMsgRotate>[[use]] Rotate</ItemMsgRotate>
+  <ItemMsgDetachScrewdriver>[[use]] Detach (Screwdriver)</ItemMsgDetachScrewdriver>
+  <ItemMsgDetachKnife>[[use]] Detach (Knife)</ItemMsgDetachKnife>
+  <ItemMsgUseKnife>[[use]] Cut (Knife)</ItemMsgUseKnife>
+  <ItemMsgForceOpenKnife>[[use]] Force open (Knife)</ItemMsgForceOpenKnife>
+  <ItemMsgBreatheUse>[[use]] Breathe</ItemMsgBreatheUse>
+  <ItemMsgNoCrowbar>This object cannot be pried with crowbar.</ItemMsgNoCrowbar>
+  <!-- Beacon Labels -->
+  <!-- SING Beacon Labels -->
+  <label.beacon_exhaust>EXHAUST</label.beacon_exhaust>
+  <label.beacon_coolant>COOLANT</label.beacon_coolant>
+  <label.beacon_communications>COMMUNICATIONS</label.beacon_communications>
+  <!-- UBER Beacon Labels -->
+  <label.beacon_subjectstat_friendly>Subject behavior: Friendly</label.beacon_subjectstat_friendly>
+  <label.beacon_powercell_docked>POWER CELL DOCKED</label.beacon_powercell_docked>
+  <label.beacon_powercell_undocked>POWER CELL UNDOCKED</label.beacon_powercell_undocked>
+  <label.beacon_power_on>POWER ON</label.beacon_power_on>
+  <label.beacon_power_off>POWER OFF</label.beacon_power_off>
+  <label.beacon_code_require>Code required</label.beacon_code_require>
+  <label.beacon_code_right>Transmission Activated</label.beacon_code_right>
+  <label.beacon_code_wrong>ERROR - Wrong code</label.beacon_code_wrong>
+  <label.beacon_shuttle_loc>Trying to locate supply shuttle... Disantce:</label.beacon_shuttle_loc>
+  <label.beacon_shuttle_distaway>meters away</label.beacon_shuttle_distaway>
+  <label.beacon_shuttle_code>BEACON DISTRESS CODE:</label.beacon_shuttle_code>
+  <label.beacon_shuttle_distress>DISTRESS</label.beacon_shuttle_distress>
+  <!-- CRO Beacon Labels -->
+  <label.beacon_camera>CAMERA</label.beacon_camera>
+  <label.beacon_dischargecoils>ELECTRIC COILS</label.beacon_dischargecoils>
+  <label.beacon_state_on_01>ON</label.beacon_state_on_01>
+  <label.beacon_state_on_02>on</label.beacon_state_on_02>
+  <label.beacon_state_off_01>OFF</label.beacon_state_off_01>
+  <label.beacon_state_off_02>off</label.beacon_state_off_02>
+  <!-- RYR Beacon Labels -->
+  <label.beacon_lockdown>LOCKDOWN</label.beacon_lockdown>
+  <label.beacon_maintenanceaccess>MAINTENANCE ACCESS</label.beacon_maintenanceaccess>
+  <terminalwelcomemsg.beacon_uber_01_shuttle>Beacon in range detected.\nType !code to generate a beacon activation code</terminalwelcomemsg.beacon_uber_01_shuttle>
+  <terminalwelcomemsg.beacon_uber_01_beacon>TRANSMITTER CODE REQUIRED - AWAITING SHUTTLE\nERROR - LOST CONTACT WITH SHUTTLE... CODES MUST BE RECOVERED\n...\nERROR\n...\nERROR\n...</terminalwelcomemsg.beacon_uber_01_beacon>
+  <terminalwelcomemsg.beacon_cro_01_shieldcontrol>SHIELD GENERATOR\nCOMMANDS: on / off</terminalwelcomemsg.beacon_cro_01_shieldcontrol>
+  <terminalwelcomemsg.beacon_cro_01_lore>UNITED EUROPAN COALITION\nUSER: Niel Stewart\nID#: 225138693\nInbox:\nFrom: Karin Provsky\nHi Niel, I'm sorry to hear about Darnell, and try not to be to hard on Becky I know she can be a handfull at times. I understand your concern, and its comforting to know you care.\nOutbox:\nTo: Karin Provsky\nHi Karin, Darnell is still not doing so good and Becky is starting to give me a headache. Anyway i hope this message finds you in good health, I worry about you working with those radicals, stay safe.</terminalwelcomemsg.beacon_cro_01_lore>
+  <terminalwelcomemsg.beacon_ryr_04_doorcontrol>[1] - OPEN THE DOOR\n[0] - CLOSE THE DOOR</terminalwelcomemsg.beacon_ryr_04_doorcontrol>
+  <terminalwelcomemsg.beacon_ryr_08_beacon>=======STATIONARY MODE=======\nMOBILE BEACON STATION 'BUMBLEBEE' ACTIVATED IN STATIONARY MODE\nMOVEMENT FUNCTIONS ARE UNAVAILABLE</terminalwelcomemsg.beacon_ryr_08_beacon>
+  <terminalwelcomemsg.beacon_sing_11b_keylocation>Key is behid maintenance pannel at the base of the antenna.</terminalwelcomemsg.beacon_sing_11b_keylocation>
+</infotexts>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Charactervariant inherit="Humanhusksprinter" speciesname="Humanhusksprinternaturalrenegade">
+  <!-- Renegade [EHA] -->
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclothes" />
+    <Item slot="Head" equip="true" identifier="piratebandana" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+  </inventory>
+  <!-- renegade heavy pistol -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclothes" />
+    <Item slot="Head" equip="true" identifier="piratebandana" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+    <Item identifier="scp_sr1" equip="false">
+      <Item identifier="scp_45mag" />
+    </Item>
+    <Item identifier="scp_45mag" />
+    <Item identifier="scp_45mag" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclothesnovice" />
+    <Item slot="Head" equip="true" identifier="piratecaptainhat" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+  </inventory>
+  <!-- renegade semi-auto rifle -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclothesnovice" />
+    <Item slot="Head" equip="true" identifier="piratecaptainhat" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+    <Item identifier="rifle" equip="false" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="riflebullet" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1.0">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclotheshard" />
+    <Item slot="Head" equip="true" identifier="piratehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+  </inventory>
+  <!-- renegade submachine gun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.4">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclotheshard" />
+    <Item slot="Head" equip="true" identifier="piratehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+    <Item identifier="scp_uzi" equip="false">
+      <Item identifier="scp_9mmsmgmag" />
+    </Item>
+    <Item identifier="scp_9mmsmgmag" />
+    <Item identifier="scp_9mmsmgmag" />
+  </inventory>
+  <!-- renegade heavy submachine gun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.06">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="pirateclotheshard" />
+    <Item slot="Head" equip="true" identifier="piratehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+    <Item identifier="scp_sr2" equip="false">
+      <Item identifier="scp_umpmag" />
+    </Item>
+    <Item identifier="scp_umpmag" />
+    <Item identifier="scp_umpmag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.8">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_renegadeuniform" />
+    <Item slot="Head" equip="true" identifier="scp_simplehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+  </inventory>
+  <!-- renegade pistol -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.5">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_renegadeuniform" />
+    <Item slot="Head" equip="true" identifier="scp_simplehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+    <Item identifier="scp_mp443" equip="false">
+      <Item identifier="scp_9mmmag" />
+    </Item>
+    <Item identifier="scp_9mmmag" />
+    <Item identifier="scp_9mmmag" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+  </inventory>
+  <!-- renegade pump-action shotgun -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.08">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_renegadeuniform" />
+    <Item slot="Head" equip="true" identifier="scp_simplehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadevest" />
+    <Item identifier="scp_rm93" equip="false">
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+      <Item identifier="shotgunshell" />
+    </Item>
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="shotgunshell" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+    <Item identifier="scrap" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.6">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_renegadeuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadeplatecarrier" />
+  </inventory>
+  <!-- renegade assault carbine -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.2">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_renegadeuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadeplatecarrier" />
+    <Item identifier="scp_aks74u" equip="false">
+      <Item identifier="scp_ak74mag" />
+    </Item>
+    <Item identifier="scp_ak74mag" />
+    <Item identifier="scp_ak74mag" />
+    <Item identifier="scp_wreckorepile" />
+    <Item identifier="scp_wreckorepile" />
+    <Item identifier="scp_wreckmetalpile" />
+  </inventory>
+  <!-- renegade assault rifle -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.18">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_renegadeuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadehelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadeplatecarrier" />
+    <Item identifier="scp_ak74m" equip="false">
+      <Item identifier="scp_ak74mag" />
+    </Item>
+    <Item identifier="scp_ak74mag" />
+    <Item identifier="scp_ak74mag" />
+    <Item identifier="scp_wreckorepile" />
+    <Item identifier="scp_wreckorepile" />
+    <Item identifier="scp_wreckmetalpile" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.1">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyrenuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadeheavyhelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadeplatecarrier" />
+  </inventory>
+  <!-- renegade precision rifle -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.04">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyrenuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadeheavyhelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadeplatecarrier" />
+    <Item slot="Bag" identifier="scp_m24" equip="false">
+      <Item identifier="scp_t5000boxmag" />
+    </Item>
+    <Item identifier="scp_t5000boxmag" />
+    <Item identifier="scp_t5000boxmag" />
+  </inventory>
+  <!-- unarmed -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.06">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyrenuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadeheavyhelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadespecialrig" />
+  </inventory>
+  <!-- renegade caseless assault rifle -->
+  <inventory arrowslot="9" Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag, Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="0.1">
+    <Item slot="Card" equip="true" Identifier="idcard" />
+    <Item slot="InnerClothes" equip="true" identifier="scp_heavyrenuniform" />
+    <Item slot="Head" equip="true" identifier="scp_renegadeheavyhelmet" />
+    <Item slot="OuterClothes" equip="true" identifier="scp_renegadespecialrig" />
+    <Item identifier="scp_kh2020" equip="false">
+      <Item identifier="scp_65bullmag" />
+    </Item>
+    <Item identifier="scp_65bullmag" />
+    <Item identifier="scp_65bullmag" />
+  </inventory>
+</Charactervariant>

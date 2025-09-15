@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <Item identifier="scope" category="Equipment" Tags="smallitem,bigScopeVGM" cargocontaineridentifier="metalcrate" allowasextracargo="true" scale="0.5" impactsoundtag="impact_metal_light">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,384,64,64" />
+      <Sprite texture="Content/Items/Tools/tools.png" sourcerect="80,256,64,16" depth="0.55" origin="0.5,1.0" />
+      <Body width="64" height="16" density="20" />
+      <PreferredContainer primary="armcab" secondary="secarmcab" />
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.2" />
+      <Price baseprice="250" minleveldifficulty="25">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator,fabricatorVGM" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="quartz" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+        <Item identifier="silicon" amount="2" />
+      </Deconstruct>
+      <Holdable slots="Any,LeftHand,RightHand" controlpose="true" usehandrotationforholdangle="true" aimpos="37,24" handle1="0,0" cameraaimoffset="500" msg="ItemMsgPickUpSelect">
+        <StatusEffect type="OnActive" target="Parent" cameraaimoffset="600" setvalue="true" interval="1" />
+      </Holdable>
+    </Item>
+  </Override>
+</Items>

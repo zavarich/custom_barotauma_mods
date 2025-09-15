@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <!-- ek_stun_threshold -->
+    <Affliction name="EKR 暈眩" identifier="ekR_stun_threshold" description="病人神誌不清，沒有反應。" type="damage" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="1000" maxstrength="30">
+      <Effect minstrength="0" maxstrength="10" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="0.0" maxscreenblur="1.0" strengthchange="-1.5">
+        <StatusEffect target="Character" setvalue="true" SpeedMultiplier="0.75" />
+      </Effect>
+      <Effect minstrength="10" maxstrength="20" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="1.0" maxscreenblur="2.0" minscreendistort="0.0" maxscreendistort="0.15" strengthchange="-1.0">
+        <StatusEffect target="Character" setvalue="true" SpeedMultiplier="0.5" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0" maxvalue="-0.05" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0" maxvalue="-0.05" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="0" maxvalue="-0.05" />
+      </Effect>
+      <Effect minstrength="20" maxstrength="35" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="2.0" maxscreenblur="4.0" minscreendistort="0.15" maxscreendistort="0.5" strengthchange="-1.0">
+        <StatusEffect target="Character" setvalue="true">
+          <Conditional stun="lte 1" />
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.05" maxvalue="-0.1" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.05" maxvalue="-0.1" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.05" maxvalue="-0.1" />
+      </Effect>
+      <PeriodicEffect mininterval="2" maxinterval="8">
+        <StatusEffect target="Character" duration="0.6">
+          <Affliction identifier="ekr_invertcontrols_fixed" strength="2.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="EKR 暈眩" identifier="EKR_flashgrenade" description="病人神誌不清，沒有反應。" type="damage" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="1000" maxstrength="30">
+      <Effect minstrength="0" maxstrength="10" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="0.0" maxscreenblur="1.0" strengthchange="-1.5">
+        <!-- <StatusEffect target="Character" setvalue="true" SpeedMultiplier="0.75" /> -->
+      </Effect>
+      <Effect minstrength="10" maxstrength="20" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="1.0" maxscreenblur="2.0" minscreendistort="0.0" maxscreendistort="0.15" strengthchange="-1.0">
+        <!-- <StatusEffect target="Character" setvalue="true" SpeedMultiplier="0.5" /> -->
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0" maxvalue="-0.05" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0" maxvalue="-0.05" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="0" maxvalue="-0.05" />
+      </Effect>
+      <Effect minstrength="20" maxstrength="35" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="2.0" maxscreenblur="4.0" minscreendistort="0.15" maxscreendistort="0.5" strengthchange="-1.0">
+        <StatusEffect target="Character" setvalue="true">
+          <Conditional stun="lte 1" />
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.05" maxvalue="-0.1" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="-0.05" maxvalue="-0.1" />
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.05" maxvalue="-0.1" />
+      </Effect>
+      <PeriodicEffect mininterval="2" maxinterval="8">
+        <StatusEffect target="Character" duration="0.6">
+          <Affliction identifier="ekr_invertcontrols_fixed" strength="2.5" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+    </Affliction>
+    <!-- ek_invertcontrols_fixed，失去方向感 -->
+    <!-- 試試看用新的方式實現方向顛倒 -->
+    <Affliction name="EKR 失去方向感" identifier="ekR_invertcontrols_fixed" description="" type="invertcontrols" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="3">
+      <Effect minstrength="0" maxstrength="3" minscreendistort="0.0" maxscreendistort="1.0" minradialdistort="0" maxradialdistort="2" strengthchange="-1.5">
+        <!-- <StatusEffect target="Character" SpeedMultiplier="-0.5" setvalue="true" /> -->
+      </Effect>
+    </Affliction>
+    <!-- ek_burn_threshold -->
+    <Affliction name="" identifier="ekR_burn_threshold" description="該區域出現水泡、發紅，皮膚已經開始成片剝落。 病人承受著極大的痛苦。" type="burn" causeofdeathdescription="Burned to death" selfcauseofdeathdescription="You have burned to death." limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="10">
+      <Effect minstrength="0" maxstrength="5" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-0.25">
+        <StatusEffect target="Limb">
+          <Conditional InWater="false" />
+          <!-- <ParticleEmitter particle="ekcharacterburn" particlespersecond="6" scalemin="0.5" scalemax="0.8" distancemin="0" distancemax="30" /> -->
+          <ParticleEmitter particle="flameburningcharacter" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="200" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="4" scalemax="3" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.6" />
+        </StatusEffect>
+        <StatusEffect target="Limb" disabledeltatime="true">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="ekR_burn_threshold" amount="2.5" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" volume="0.5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,104,60,255" origin="0,0" />
+    </Affliction>
+    <!-- 新版點燃，和原版點燃的差距在於，只要一點就能著火 -->
+    <Affliction name="點燃" identifier="EKR_Burning" description="The target is burning." type="burn" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="20">
+      <Effect minstrength="0" maxstrength="20" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0">
+        <StatusEffect target="Limb">
+          <Conditional InWater="false" />
+          <ParticleEmitter particle="flameburningcharacter" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="200" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="3" scalemax="2" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.6" />
+        </StatusEffect>
+        <StatusEffect target="Limb">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="EKR_Burning" amount="7.5" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <Conditional InWater="false" />
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" volume="0.5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,0,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 新版點燃，和原版點燃的差距在於，只要一點就能著火 -->
+    <!-- 4/29，在水中不直接熄滅，而僅僅是加速消失，點燃的傷害較高 -->
+    <Affliction name="燃素點燃" identifier="EKR_Burning_Incendium" description="The target is burning." type="burn" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="15">
+      <Effect minstrength="0" maxstrength="15" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0">
+        <StatusEffect target="Limb">
+          <ParticleEmitter particle="EKR_flameburningcharacter_incendium" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="200" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="3" scalemax="2" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.8" />
+        </StatusEffect>
+        <StatusEffect target="Limb">
+          <Conditional InWater="true" />
+          <ReduceAffliction identifier="EKR_Burning_Incendium" amount="0.33" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <!-- <Conditional InWater="false" /> -->
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" volume="0.5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,0,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 新版點燃，和原版點燃的差距在於，只要一點就能著火 -->
+    <Affliction name="自氧化點燃" identifier="EKR_Burning_Hypergolic" description="The target is burning." type="burn" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="15">
+      <Effect minstrength="0" maxstrength="15" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0">
+        <StatusEffect target="Limb">
+          <ParticleEmitter particle="EKR_flameburningcharacter_Hypergolic" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="200" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <ParticleEmitter particle="smoke" particlespersecond="6" scalemin="3" scalemax="2" distancemin="10" distancemax="50" />
+          <Affliction identifier="burn" amount="0.6" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <!-- <Conditional InWater="false" /> -->
+          <sound file="Content/Sounds/FireSmall.ogg" range="200.0" volume="0.5" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="768,640,128,128" color="195,0,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 雷射燒灼，DPS是點燃的兩倍 -->
+    <Affliction name="雷射燒灼" identifier="EKR_Laser_Burning" description="The target is burning." type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="6">
+      <Effect minstrength="0" maxstrength="6" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0">
+        <StatusEffect target="Limb">
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.1" scalemax="0.2" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="150" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <Affliction identifier="burn" amount="1.0" />
+        </StatusEffect>
+        <StatusEffect target="Limb">
+          <Conditional InWater="false" />
+          <Affliction identifier="burn" amount="0.2" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <!-- 雷射燒灼R，DPS是雷射燒灼的兩倍 -->
+    <Affliction name="雷射燒灼" identifier="EKR_Laser_Burning_R" description="The target is burning." type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="8">
+      <Effect minstrength="0" maxstrength="8" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0">
+        <StatusEffect target="Limb">
+          <ParticleEmitter particle="flameburningcharacter" scalemin="0.1" scalemax="0.2" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="150" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <Affliction identifier="burn" amount="2.0" />
+        </StatusEffect>
+        <StatusEffect target="Limb">
+          <Conditional InWater="false" />
+          <Affliction identifier="burn" amount="0.4" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <!-- 雷射燒灼R，DPS是雷射燒灼的兩倍 -->
+    <Affliction name="雷射燒灼" identifier="EKR_Laser_Burning_A" description="The target is burning." type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="8">
+      <Effect minstrength="0" maxstrength="8" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-1.0">
+        <StatusEffect target="Limb">
+          <ParticleEmitter particle="EKR_flameburningcharacter_A" scalemin="0.1" scalemax="0.2" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="150" AngleMin="60" AngleMax="120" VelocityMax="20" />
+          <Affliction identifier="burn" amount="2.0" />
+        </StatusEffect>
+        <StatusEffect target="Limb">
+          <Conditional InWater="false" />
+          <Affliction identifier="burn" amount="0.4" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <!-- ek_explosivedart -->
+    <!-- <Affliction name="爆炸飛鏢" identifier="ekR_explosivedart" type="damage" causeofdeathdescription="Died of internal injuries" selfcauseofdeathdescription="You have succumbed to your internal injuries." limbspecific="true" activationthreshold="1.0" showiconthreshold="1000" maxstrength="25"> -->
+    <!-- <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="1.5"></Effect> -->
+    <!-- <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Explosion range="200.0" structuredamage="30" itemdamage="15" force="20.0" severlimbsprobability="1" decal="explosion" decalsize="0.05"> -->
+    <!-- <Affliction identifier="explosiondamage" strength="100" dividebylimbcount="true"/> -->
+    <!-- <Affliction identifier="burn" strength="7.5" probability="0.2" dividebylimbcount="false"/> -->
+    <!-- <Affliction identifier="bleeding" strength="20" probability="0.05" dividebylimbcount="false"/> -->
+    <!-- <Affliction identifier="stun" strength="5" /> -->
+    <!-- </Explosion> -->
+    <!-- <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="1200" /> -->
+    <!-- </StatusEffect> -->
+    <!-- </Effect> -->
+    <!-- <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="106,106,106,255" origin="0,0" /> -->
+    <!-- </Affliction> -->
+    <!-- ek_pressure_threshold_4000 -->
+    <!-- <Affliction name="壓力保護" identifier="ekR_pressure_threshold_4000" description=" " type="buff" limbspecific="false" activationthreshold="1.0" showiconthreshold="1000" maxstrength="50"> -->
+    <!-- <Effect minstrength="1" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-150.0"></Effect> -->
+    <!-- <Effect minstrength="25" maxstrength="50" strengthchange="-150.0"> -->
+    <!-- <StatusEffect target="Character" PressureProtection="4000.0" setvalue="true" /> -->
+    <!-- </Effect> -->
+    <!-- </Affliction> -->
+    <!--削特攻-->
+    <!-- <InternalDamage name="碎甲" identifier="ekR_piercing_physicoriumweak_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1"> -->
+    <!-- <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect> -->
+    <!-- <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Affliction identifier="bleeding" strength="5" /> -->
+    <!-- <Affliction identifier="gunshotwound" strength="5" /> -->
+    <!-- <Affliction identifier="bleeding" strength="10" /> -->
+    <!-- <Affliction identifier="gunshotwound" strength="10" /> -->
+    <!-- </StatusEffect> -->
+    <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Conditional speciesgroup="mudraptor"/> -->
+    <!-- <Affliction identifier="gunshotwound" amount="5" /> -->
+    <!-- <Affliction identifier="burn" amount="2.5" /> -->
+    <!-- </StatusEffect> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Conditional speciesname="bonethresher" /> -->
+    <!-- <Affliction identifier="gunshotwound" amount="5" /> -->
+    <!-- <Affliction identifier="burn" amount="5" /> -->
+    <!-- </StatusEffect> -->
+    <!-- </Effect> -->
+    <!-- <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" /> -->
+    <!-- </InternalDamage> -->
+    <!-- 同一時間命中的話會無法打出全額傷害 -->
+    <!-- <InternalDamage name="小碎甲" identifier="ekR_piercing_physicoriumweak2_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1"> -->
+    <!-- <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect> -->
+    <!-- <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Affliction identifier="bleeding" strength="1" /> -->
+    <!-- <Affliction identifier="gunshotwound" strength="1" /> -->
+    <!-- </StatusEffect> -->
+    <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+    <!-- 好像是因為改成Character所以傷害爆炸? -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Conditional speciesgroup="mudraptor"/> -->
+    <!-- <Affliction identifier="gunshotwound" amount="2.5" /> -->
+    <!-- <Affliction identifier="burn" amount="1.0" /> -->
+    <!-- </StatusEffect> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Conditional speciesname="bonethresher" /> -->
+    <!-- <Affliction identifier="gunshotwound" amount="2.5" /> -->
+    <!-- <Affliction identifier="burn" amount="2" /> -->
+    <!-- </StatusEffect> -->
+    <!-- </Effect> -->
+    <!-- <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" /> -->
+    <!-- </InternalDamage> -->
+    <!-- 之前是未正常生效，正常生效後好離譜... -->
+    <!-- <InternalDamage name="異星碎甲" identifier="ekR_piercing_physicorium_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1"> -->
+    <!-- <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect> -->
+    <!-- <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!-- <Affliction identifier="bleeding" strength="20" /> -->
+    <!-- <Affliction identifier="gunshotwound" strength="20" /> -->
+    <!-- <Affliction identifier="emp" strength="1" multiplybymaxvitality="true" /> -->
+    <!-- </StatusEffect> -->
+    <!-- RIP AND TEAR , UNTIL IT IS DONE -->
+    <!-- <StatusEffect target="Character" disabledeltatime="true"> -->
+    <!-- <Conditional speciesgroup="mudraptor" /> -->
+    <!-- <Affliction identifier="gunshotwound" amount="50" /> -->
+    <!-- </StatusEffect> -->
+    <!-- <StatusEffect target="Character" disabledeltatime="true"> -->
+    <!-- <Conditional speciesname="bonethresher" /> -->
+    <!-- <Affliction identifier="gunshotwound" amount="50" /> -->
+    <!-- </StatusEffect> -->
+    <!-- <StatusEffect target="Character" disabledeltatime="true"> -->
+    <!-- <Conditional speciesgroup="mudraptor"/> -->
+    <!-- <Affliction identifier="gunshotwound" amount="5" /> -->
+    <!-- <Affliction identifier="burn" amount="5" /> -->
+    <!-- </StatusEffect> -->
+    <!-- <StatusEffect target="Character" disabledeltatime="true"> -->
+    <!-- <Conditional speciesname="bonethresher" /> -->
+    <!-- <Affliction identifier="gunshotwound" amount="5" /> -->
+    <!-- <Affliction identifier="burn" amount="10" /> -->
+    <!-- </StatusEffect> -->
+    <!-- </Effect> -->
+    <!-- <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" /> -->
+    <!-- </InternalDamage> -->
+    <!-- 移除，改用其他機制替代 -->
+    <!-- <InternalDamage name="聚變彈爆炸" identifier="ekR_fusion_railgun_effect" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="true" maxstrength="25" damageoverlayalpha="1"> -->
+    <!-- <Effect minstrength="1" maxstrength="24" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"></Effect> -->
+    <!-- <Effect minstrength="24" maxstrength="25" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-10000"> -->
+    <!-- <StatusEffect target="Limb" disabledeltatime="true"> -->
+    <!--         <Affliction identifier="explosiondamage" amount="1250" />
+        <Affliction identifier="lacerations" amount="1250" />
+        <Affliction identifier="internaldamage" amount="700" />
+        <Affliction identifier="bleeding" amount="100" />
+        <Affliction identifier="stun" amount="5" /> -->
+    <!-- <Affliction identifier="explosiondamage" amount="100" /> -->
+    <!-- <Affliction identifier="lacerations" amount="100" /> -->
+    <!-- <Affliction identifier="internaldamage" amount="75" /> -->
+    <!-- <Affliction identifier="bleeding" amount="25" /> -->
+    <!-- <Affliction identifier="stun" amount="5" /> -->
+    <!-- </StatusEffect> -->
+    <!-- </Effect> -->
+    <!-- <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="896,896,128,128" color="160,100,200,255" origin="0,0" /> -->
+    <!-- </InternalDamage> -->
+    <!-- 效果全給他砍了，避免暈到不該暈的生物，其次是，暈眩的效果我已經合併入生物本身 -->
+    <Affliction name="Drone Disarm Signal" identifier="EKR_drone_disarm" description="" type="buff" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="1000" maxstrength="91">
+      <Effect minstrength="1" maxstrength="15" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+        <!-- <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true" /> -->
+      </Effect>
+      <Effect minstrength="15" maxstrength="90" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+        <!-- <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true"> -->
+        <!-- <Affliction identifier="stun" amount="1000" /> -->
+        <!-- </StatusEffect> -->
+      </Effect>
+      <Effect minstrength="90" maxstrength="91" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+        <!-- <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true"> -->
+        <!-- <Affliction identifier="stun" amount="1000" /> -->
+        <!-- </StatusEffect> -->
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="IFF Disabled" identifier="ekR_drone_noiff" description="" type="buff" limbspecific="false" indicatorlimb="Torso" activationthreshold="1.0" showiconthreshold="1000" maxstrength="101">
+      <Effect minstrength="1" maxstrength="101" minvitalitydecrease="0" maxvitalitydecrease="0" strengthchange="-20">
+        <StatusEffect target="Character" duration="0.5" lifetime="0.5" setvalue="true" />
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="128,640,128,128" color="195,177,60,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="耳聾" identifier="ekR_deafened" description="" type="damage" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="20">
+      <Effect minstrength="0" maxstrength="4" strengthchange="-0.6">
+        <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.8" setvalue="true" />
+      </Effect>
+      <Effect minstrength="4" maxstrength="8" strengthchange="-0.6">
+        <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.6" setvalue="true" />
+      </Effect>
+      <Effect minstrength="8" maxstrength="12" strengthchange="-0.6">
+        <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.4" setvalue="true" />
+      </Effect>
+      <Effect minstrength="12" maxstrength="16" strengthchange="-0.6">
+        <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0.2" setvalue="true" />
+      </Effect>
+      <Effect minstrength="16" maxstrength="20" strengthchange="-0.6">
+        <StatusEffect target="Character" ObstructVision="true" LowPassMultiplier="0" setvalue="true" />
+      </Effect>
+    </Affliction>
+    <!-- 可以累積更多，增加小幅減速25% -->
+    <!-- 改良減速的機制 -->
+    <Affliction name="致盲" identifier="ekR_blinded" description="" type="EKR_blinded" causeofdeathdescription="" selfcauseofdeathdescription="" indicatorlimb="Head" activationthreshold="1.0" limbspecific="false" showiconthreshold="1000" maxstrength="25">
+      <Effect minstrength="0" maxstrength="25" strengthchange="-5" minspeedmultiplier="0.75" maxspeedmultiplier="0.75">
+        <!-- 造成全生物的減速效果 -->
+        <StatusEffect target="Character" ObstructVision="true" setvalue="true" />
+        <!-- 可以治癒凝視效果(必須不是人類)，並給予獨目哨兵凝視免疫效果 -->
+        <StatusEffect target="Character" disabledeltatime="true">
+          <ReduceAffliction identifier="gaze" strength="100" />
+          <Affliction identifier="EKR_watchersgaze_resistance" strength="100" />
+        </StatusEffect>
+        <!-- 可以對觀察者、虎尾煞造成額外的方向反轉(EKR 失去方向感) -->
+        <!-- 對於觀察者，這個致盲效果會很難消除 -->
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesname="Watcher" />
+          <Affliction identifier="ekR_blinded" strength="4.8" />
+          <Affliction identifier="organdamage" strength="0.2" />
+          <Affliction identifier="ekR_invertcontrols_fixed" strength="0.5" />
+        </StatusEffect>
+        <!-- 可以對虎尾煞造成缺氧效果，對於虎尾煞，這個致盲效果會很難消除，但是他在水中好像不會缺氧，直接給器官損傷好了 -->
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesgroup="thresher" />
+          <Affliction identifier="ekR_blinded" strength="2.5" />
+          <Affliction identifier="organdamage" strength="0.2" />
+          <Affliction identifier="ekR_invertcontrols_fixed" strength="0.5" />
+        </StatusEffect>
+        <!-- 可以對獵食獸群造成器官損傷、暈眩(不讓他方向顛倒了，意義不大，直接暈了)	  -->
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesname="Swarmfeeder" />
+          <Affliction identifier="organdamage" strength="0.05" />
+          <Affliction identifier="stun" strength="0.1" />
+        </StatusEffect>
+        <!-- 可以造成射擊變得更偏的效果 -->
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.0" maxvalue="-0.99" />
+      </Effect>
+    </Affliction>
+    <!-- 獨目哨兵凝視免疫，效果-50%~-100%，上限翻倍 -->
+    <Affliction name="Watchersgaze Resistance" identifier="EKR_watchersgaze_resistance" type="resistance" isbuff="true" limbspecific="false" indicatorlimb="Head" maxstrength="200" affectmachines="false" showiconthreshold="0">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-20" resistancefor="watchersgaze" minresistance="0.5" maxresistance="1.0" />
+      <icon texture="%ModDir%/UI/EKR_Affliction.png" sourcerect="640,896,128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction name="毒雲(氰化物)" identifier="ekR_nearbycharacters_cyanidepoisoning" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="2">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-4">
+        <StatusEffect target="Character">
+          <Conditional ishuman="false" />
+          <Affliction identifier="cyanidepoisoning" strength="1" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="毒雲(麻痺劑)" identifier="ekR_nearbycharacters_paralysis" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="2">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-4">
+        <StatusEffect target="Character">
+          <Conditional ishuman="false" />
+          <Affliction identifier="paralysis" strength="2" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <Affliction name="毒雲(輻射毒劑)" identifier="ekR_nearbycharacters_radiationsickness" description="" type="poison" causeofdeathdescription="" selfcauseofdeathdescription="" limbspecific="false" showiconthreshold="1000" maxstrength="2">
+      <Effect minstrength="0" maxstrength="2" strengthchange="-4">
+        <StatusEffect target="Character">
+          <Conditional ishuman="false" />
+          <Affliction identifier="radiationsickness" strength="8" />
+        </StatusEffect>
+      </Effect>
+    </Affliction>
+    <!-- 減速+抽搐+射擊變得更偏 -->
+    <Affliction name="神經毒素中毒" identifier="EKR_neurotoxin" description="病人四肢時不時的抽搐、失去方向感。" type="poison" limbspecific="false" indicatorlimb="Head" activationthreshold="1.0" showiconthreshold="0" maxstrength="50">
+      <!-- 最多減速10% -->
+      <Effect minstrength="0" maxstrength="10" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="0.0" maxscreenblur="1.0" minspeedmultiplier="1.0" maxspeedmultiplier="0.9" strengthchange="-1.0">
+        <!-- 第一階段 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Affliction identifier="stun" strength="0.025" probability="0.15" />
+        </StatusEffect>
+        <!-- 毒素削減效果抵銷 -->
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesname="Crawler" />
+          <Conditional speciesname="Spineling" />
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesgroup="thresher" />
+          <Affliction identifier="EKR_neurotoxin" strength="0.9" />
+        </StatusEffect>
+      </Effect>
+      <!-- 最多減速5% -->
+      <Effect minstrength="10" maxstrength="20" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="1.0" maxscreenblur="2.0" minscreendistort="0.0" maxscreendistort="0.15" minspeedmultiplier="0.9" maxspeedmultiplier="0.85" strengthchange="-1.0">
+        <!-- 概率抽搐 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Affliction identifier="stun" strength="0.025" probability="0.30" />
+        </StatusEffect>
+        <!-- 如果有麻痹抗性，則消耗抗性大幅加快治癒速度 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Conditional paralysisresistance="gt 0" />
+          <ReduceAffliction identifier="EKR_neurotoxin" strength="5.0" />
+          <ReduceAffliction identifier="paralysisresistance" strength="5.0" />
+        </StatusEffect>
+        <!-- 降低近戰速度、射擊精度 -->
+        <StatValue stattype="RangedSpreadReduction" minvalue="0" maxvalue="-0.025" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="0" maxvalue="-0.05" />
+      </Effect>
+      <!-- 最多減速5% -->
+      <Effect minstrength="20" maxstrength="30" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="1.5" maxscreenblur="2.5" minscreendistort="0.15" maxscreendistort="0.5" minspeedmultiplier="0.85" maxspeedmultiplier="0.80" strengthchange="-1.0">
+        <!-- 概率抽搐 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Affliction identifier="stun" strength="0.025" probability="0.45" />
+        </StatusEffect>
+        <!-- 如果有麻痹抗性，則消耗抗性大幅加快治癒速度 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Conditional paralysisresistance="gt 0" />
+          <ReduceAffliction identifier="EKR_neurotoxin" strength="5.0" />
+          <ReduceAffliction identifier="paralysisresistance" strength="10.0" />
+        </StatusEffect>
+        <!-- 降低近戰速度、射擊精度 -->
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.025" maxvalue="-0.05" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.05" maxvalue="-0.10" />
+      </Effect>
+      <!-- 最多減速5% -->
+      <Effect minstrength="30" maxstrength="40" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="2.0" maxscreenblur="4.0" minscreendistort="0.15" maxscreendistort="0.5" minspeedmultiplier="0.80" maxspeedmultiplier="0.75" strengthchange="-1.0">
+        <!-- 概率抽搐 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Affliction identifier="stun" strength="0.025" probability="0.60" />
+          <Affliction identifier="oxygenlow" strength="0.5" />
+          <Affliction identifier="hallucinating" strength="2.0" probability="0.50" />
+          <Affliction identifier="ekR_invertcontrols_fixed" strength="0.25" probability="0.06" />
+        </StatusEffect>
+        <!-- 如果有麻痹抗性，則消耗抗性大幅加快治癒速度 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Conditional paralysisresistance="gt 0" />
+          <ReduceAffliction identifier="EKR_neurotoxin" strength="5.0" />
+          <ReduceAffliction identifier="paralysisresistance" strength="15.0" />
+        </StatusEffect>
+        <!-- 降低近戰速度、射擊精度 -->
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.05" maxvalue="-0.075" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.1" maxvalue="-0.15" />
+      </Effect>
+      <!-- 最終階段，但會急快速的下降，只能持續4秒 -->
+      <Effect minstrength="40" maxstrength="50" minvitalitydecrease="0" maxvitalitydecrease="0" minscreenblur="2.0" maxscreenblur="4.0" minscreendistort="0.15" maxscreendistort="0.5" minspeedmultiplier="0.75" maxspeedmultiplier="0.70" strengthchange="-2.5">
+        <!-- 缺氧+概率抽搐 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Affliction identifier="oxygenlow" strength="1.0" />
+          <Affliction identifier="hallucinating" strength="6.0" />
+          <Affliction identifier="ekR_invertcontrols_fixed" strength="1.0" probability="0.30" />
+        </StatusEffect>
+        <!-- 如果有麻痹抗性，則消耗抗性大幅加快治癒速度 -->
+        <StatusEffect target="Character" interval="0.25" disabledeltatime="true">
+          <Conditional paralysisresistance="gt 0" />
+          <ReduceAffliction identifier="EKR_neurotoxin" strength="5.0" />
+          <ReduceAffliction identifier="paralysisresistance" strength="20.0" />
+        </StatusEffect>
+        <!-- 降低近戰速度、射擊精度 -->
+        <StatValue stattype="RangedSpreadReduction" minvalue="-0.075" maxvalue="-0.10" />
+        <StatValue stattype="MeleeAttackSpeed" minvalue="-0.10" maxvalue="-0.20" />
+        <!-- 直接暈眩倒地 -->
+        <StatusEffect target="Character" setvalue="true">
+          <Affliction identifier="stun" strength="1" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect mininterval="2" maxinterval="10">
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesname="Crawler" />
+          <Conditional speciesname="Spineling" />
+          <Conditional speciesgroup="mudraptor" />
+          <Conditional speciesgroup="thresher" />
+          <Affliction identifier="stun" strength="0.025" probability="0.8" />
+          <Affliction identifier="stun" strength="0.1" probability="0.05" />
+          <Affliction identifier="ekr_invertcontrols_fixed" strength="1.5" probability="0.50" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesgroup="moloch" />
+          <Affliction identifier="stun" strength="0.025" probability="0.40" />
+          <Affliction identifier="ekR_invertcontrols_fixed" strength="1.5" probability="0.25" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesgroup="husk" />
+          <Affliction identifier="stun" strength="0.025" probability="0.40" />
+          <Affliction identifier="ekr_invertcontrols_fixed" strength="2.5" probability="0.05" />
+        </StatusEffect>
+        <StatusEffect target="Character" disabledeltatime="true">
+          <Conditional speciesgroup="abyss" />
+          <Affliction identifier="ekr_invertcontrols_fixed" strength="2.5" probability="0.05" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="106,106,106,255" origin="0,0" />
+    </Affliction>
+    <!-- 和進行性暈眩progressivestun類似，但速度稍快，最後造成EKR增量眩暈 -->
+    <Affliction name="泰瑟槍暈眩" identifier="EKR_progressivestun" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" karmachangeonapplied="-10" maxstrength="100" WeaponsSkillGain="1.0" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255">
+      <Effect minstrength="0" maxstrength="9" minscreendistort="0.0" maxscreendistort="0.05" minscreenblur="0" maxscreenblur="0.1" strengthchange="2.25" minradialdistort="0" maxradialdistort="0.1" minspeedmultiplier="1.0" maxspeedmultiplier="0.9"></Effect>
+      <Effect minstrength="9" maxstrength="99" minscreendistort="0.05" maxscreendistort="0.6" minscreenblur="0.1" maxscreenblur="1.0" strengthchange="20" minradialdistort="0.1" maxradialdistort="1" minspeedmultiplier="0.9" maxspeedmultiplier="0.3"></Effect>
+      <Effect minstrength="99" maxstrength="100" minscreendistort="0.6" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="1" maxradialdistort="1" strengthchange="10" minspeedmultiplier="0.3" maxspeedmultiplier="0.3">
+        <StatusEffect target="Character" setvalue="true">
+          <ReduceAffliction identifier="EKR_progressivestun" strength="100" />
+          <Affliction identifier="EKR_incrementalstun" amount="100" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 和增量暈眩一樣，但不會吐，只會輕微耳聾 -->
+    <Affliction name="泰瑟槍暈眩2" identifier="EKR_incrementalstun" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" karmachangeonapplied="-10" maxstrength="100" WeaponsSkillGain="1.0">
+      <!-- Used incrementally -> apply a set amount of affliction per hit until value > 90, then wear off gradually. -->
+      <!-- Value above 90 equals stun. Each point over 90 equals one second of stun. -->
+      <!-- For example, 95 causes 5 seconds of stun, then target starts recovering. -->
+      <Effect minstrength="0" maxstrength="90" minscreenblur="0" maxscreenblur="1.0" minscreendistort="0.0" maxscreendistort="0.6" minradialdistort="0" maxradialdistort="0.2" strengthchange="-5" minspeedmultiplier="1.0" maxspeedmultiplier="0.3"></Effect>
+      <Effect minstrength="90" maxstrength="100" minscreendistort="0.6" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="0.2" maxradialdistort="1" strengthchange="-1">
+        <StatusEffect target="Character" setvalue="true">
+          <Affliction identifier="stun" amount="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="ekR_deafened" amount="3" />
+          <Affliction identifier="drag" amount="1" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 高壓泰瑟槍暈眩，會帶雷電特效 -->
+    <!-- 1/6，現在會顫抖了 -->
+    <Affliction name="高壓泰瑟槍暈眩" identifier="EKR_stun_highvoltage" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="35" WeaponsSkillGain="1.0">
+      <Effect minstrength="0" maxstrength="5" minscreenblur="0" maxscreenblur="1.0" minscreendistort="0.0" maxscreendistort="0.6" minradialdistort="0" maxradialdistort="0.2" strengthchange="-1.0" minspeedmultiplier="1.0" maxspeedmultiplier="0.9">
+        <StatusEffect target="Character" setvalue="true">
+          <ParticleEmitter drawontop="true" particle="electricshock" distancemin="0" distancemax="40" particlespersecond="1" anglemin="0" anglemax="360" scalemin="0.03" scalemax="0.06" />
+        </StatusEffect>
+      </Effect>
+      <Effect minstrength="5" maxstrength="35" minscreendistort="0.6" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="0.2" maxradialdistort="1" strengthchange="-1" minspeedmultiplier="0.9" maxspeedmultiplier="0.9">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <Affliction identifier="ekR_deafened" amount="3" />
+          <Affliction identifier="drag" amount="1" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true">
+          <ParticleEmitter drawontop="true" particle="electricshock" distancemin="0" distancemax="40" particlespersecond="2" anglemin="0" anglemax="360" scalemin="0.04" scalemax="0.1" />
+        </StatusEffect>
+      </Effect>
+      <PeriodicEffect minstrength="5" maxstrength="35" mininterval="0.10" maxinterval="0.15">
+        <StatusEffect target="Character" duration="0.1">
+          <TriggerAnimation Type="Walk" filename="Spasm" priority="10" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" filename="SpasmRun" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,640,128,128" color="0,255,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 新版電擊效果 -->
+    <Affliction name="電擊麻痺" identifier="EKR_ElectricParalysis" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="10" showinhealthscannerthreshold="10" karmachangeonapplied="0" maxstrength="100" WeaponsSkillGain="1.0" iconcolors="195,195,140,255;220,220,100,255;255,255,40,255">
+      <!-- Used incrementally -> apply a set amount of affliction per hit until value > 90, then wear off gradually. -->
+      <!-- Value above 90 equals stun. Each point over 90 equals one second of stun. -->
+      <!-- For example, 95 causes 5 seconds of stun, then target starts recovering. -->
+      <Effect minstrength="0" maxstrength="90" minscreenblur="0" maxscreenblur="0.2" minscreendistort="0.0" maxscreendistort="0.2" minradialdistort="0" maxradialdistort="0.1" strengthchange="-5" minspeedmultiplier="1.0" maxspeedmultiplier="0.3"></Effect>
+      <PeriodicEffect minstrength="40" maxstrength="90" mininterval="0.12" maxinterval="0.15">
+        <StatusEffect target="Character" duration="0.1">
+          <TriggerAnimation Type="Walk" filename="Spasm" priority="10" ExpectedSpecies="Human" />
+          <TriggerAnimation Type="Run" filename="SpasmRun" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+      </PeriodicEffect>
+      <Effect minstrength="90" maxstrength="100" minscreendistort="0.6" maxscreendistort="1" minscreenblur="1" maxscreenblur="1" minradialdistort="0.2" maxradialdistort="1" strengthchange="-10">
+        <!-- 缺哪個補哪個，就這麼簡單，生效時會同時把被電擊消除，電擊的附帶debuff產生時則會把原版的那個消除(相當於上位版) -->
+        <StatusEffect target="Character">
+          <ReduceAffliction identifier="electricshock" strength="75" />
+          <ReduceAffliction identifier="EKR_ElectricParalysis" strength="75" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" comparison="And">
+          <Conditional mass="lt 300" />
+          <Conditional mass="gte 60" />
+          <Conditional stun="lte 2" />
+          <Affliction identifier="stun" amount="2" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" comparison="And">
+          <Conditional mass="lt 60" />
+          <Conditional stun="lte 6" />
+          <Affliction identifier="stun" amount="6" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" comparison="And">
+          <Conditional mass="lt 300" />
+          <Conditional mass="gte 60" />
+          <Conditional EKR_electricshockwearoff="lte 4" />
+          <ReduceAffliction identifier="electricshockwearoff" strength="4" />
+          <Affliction identifier="EKR_electricshockwearoff" amount="4" />
+        </StatusEffect>
+        <StatusEffect target="Character" setvalue="true" comparison="And">
+          <Conditional mass="lt 60" />
+          <Conditional EKR_electricshockwearoff="lte 6" />
+          <ReduceAffliction identifier="electricshockwearoff" strength="6" />
+          <Affliction identifier="EKR_electricshockwearoff" amount="6" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/CommandUIBackground.png" sourcerect="770,768,128,128" color="255,255,0,255" origin="0,0" />
+    </Affliction>
+    <!-- 新版電擊，不會造成噁心 -->
+    <Affliction name="Woozy" identifier="EKR_electricshockwearoff" limbspecific="false" type="debuff" activationthreshold="0" showiconthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" affectmachines="false" maxstrength="10">
+      <Effect minstrength="0" maxstrength="10" minscreendistort="0.0" maxscreendistort="0.2" minscreenblur="0.0" maxscreenblur="0.2" strengthchange="-1.0">
+        <StatusEffect target="Character">
+          <Affliction identifier="slow" amount="20" />
+        </StatusEffect>
+      </Effect>
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="256,640,128,128" color="150,26,26,255" origin="0,0" />
+    </Affliction>
+    <!-- 仇恨消除，假設仇恨由karmachangeonapplied影響，那麼我加回來或許有用? -->
+    <Affliction name="仇恨消除" identifier="EKR_Hidden" description="" type="EKR_Hidden" isbuff="true" limbspecific="true" karmachangeonapplied="10000.0" showiconthreshold="1000000" showicontoothersthreshold="1000000" showinhealthscannerthreshold="1000000" maxstrength="1000000">
+      <Effect minstrength="0" maxstrength="1000000" strengthchange="-1000000" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="640,896,128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="EKR_LifeSupportSystem" type="EKR_LifeSupportSystem" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1">
+        <AbilityFlag flagtype="CanNotDieToAfflictions" />
+      </Effect>
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 氣胸-25% -->
+    <Affliction identifier="EKR_pneumothorax_resistance_025" type="EKR_armor_resistance" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="pneumothorax" minresistance="0.25" maxresistance="0.25" />
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 氣胸-50% -->
+    <Affliction identifier="EKR_pneumothorax_resistance_05" type="EKR_armor_resistance" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="pneumothorax" minresistance="0.5" maxresistance="0.5" />
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 氣胸-75% -->
+    <Affliction identifier="EKR_pneumothorax_resistance_075" type="EKR_armor_resistance" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="pneumothorax" minresistance="0.75" maxresistance="0.75" />
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 氣胸-100% -->
+    <Affliction identifier="EKR_pneumothorax_immunity" type="EKR_armor_resistance" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="pneumothorax" minresistance="1.0" maxresistance="1.0" />
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 骨折脫臼-50% -->
+    <Affliction identifier="EKR_dislocation_resistance_05" type="EKR_armor_resistance" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="ra_fracture,la_fracture,rl_fracture,ll_fracture,t_fracture,h_fracture,n_fracture,dislocation1,dislocation2,dislocation3,dislocation4" minresistance="0.5" maxresistance="0.5" />
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 骨折脫臼-25% -->
+    <Affliction identifier="EKR_dislocation_resistance_025" type="EKR_armor_resistance" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <Effect minstrength="0" maxstrength="1" strengthchange="0" resistancefor="ra_fracture,la_fracture,rl_fracture,ll_fracture,t_fracture,h_fracture,n_fracture,dislocation1,dislocation2,dislocation3,dislocation4" minresistance="0.25" maxresistance="0.25" />
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <!-- 判定用 -->
+    <Affliction identifier="EKR_shearclaw_outfit_Buff" type="EKR_shearclaw_Buff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="EKR_shearclaw_helmet_Buff" type="EKR_shearclaw_Buff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" showiconthreshold="1000" treatmentthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" duration="1">
+      <icon texture="Content/UI/CommandUIAtlas.png" sourcerect="768,768,128,128" color="143,111,160,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

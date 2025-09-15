@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Starvation Conciousness Regainer" identifier="he-antistarve" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" description="Used to wake up a patient that lost conciousness due to starvation or thirst." useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="medcab" secondary="medcontainer" />
+      <PreferredContainer secondary="wreckmedcab,abandonedmedcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+      <PreferredContainer secondary="outpostmedcab" minamount="1" maxamount="3" spawnprobability="0.01" />
+      <PreferredContainer secondary="outpostmedcompartment" amount="1" spawnprobability="0.01" />
+      <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.05" />
+      <Price baseprice="250" sold="true">
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="0" maxavailable="3" />
+      </Price>
+      <SuitableTreatment identifier="he-starvation" suitability="100" />
+      <SuitableTreatment identifier="he-dieofthirst" suitability="100" />
+      <Fabricate suitablefabricators="he-stove" requiredtime="180" requiresrecipe="true">
+        <RequiredSkill identifier="medical" level="30" />
+        <RequiredItem identifier="creepingorange" Amount="2" MinCondition="0.9" MaxCondition="1.0" UseCondition="False" />
+        <RequiredItem identifier="yeastshroom" Amount="1" />
+        <RequiredItem identifier="he-milk" Amount="1" UseCondition="True" MinCondition="0.5" />
+        <RequiredItem identifier="ethanol" Amount="1" UseCondition="True" MinCondition="0.5" />
+      </Fabricate>
+      <Deconstruct time="3" />
+      <InventoryIcon texture="%ModDir%/Content/Items/Medical/AntiStarve.png" sourcerect="0,67,56,56" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Medical/AntiStarve.png" sourcerect="0,0,36,66" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <RequiredSkill identifier="medical" level="50" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget">
+          <ReduceAffliction type="hunger" amount="20" />
+          <ReduceAffliction type="thirst" amount="20" />
+          <ReduceAffliction type="he-hungryforhumanmeat" amount="10" />
+          <ReduceAffliction type="he-starvation" amount="100" />
+          <ReduceAffliction type="he-dieofthirst" amount="100" />
+          <Affliction identifier="oxygenlow" amount="6" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget">
+          <ReduceAffliction type="hunger" amount="5" />
+          <ReduceAffliction type="thirst" amount="5" />
+          <ReduceAffliction type="he-hungryforhumanmeat" amount="5" />
+          <ReduceAffliction type="he-starvation" amount="100" />
+          <ReduceAffliction type="he-dieofthirst" amount="100" />
+          <Affliction identifier="oxygenlow" amount="12" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnFailure" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+          <Affliction identifier="stun" amount="0.1" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+      <SkillRequirementHint identifier="medical" level="50" />
+    </Item>
+    <Adrenaline name="" identifier="adrenaline" category="Medical,Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" Tags="smallitem,chem,medical,syringe" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer primary="medfabcab" secondary="medcontainer" />
+      <PreferredContainer secondary="abandonedmedcab,wreckmedcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+      <Price baseprice="60">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+        <Price storeidentifier="merchantmedical" multiplier="0.9" minavailable="4" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="384,768,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="379,452,27,58" depth="0.6" origin="0.5,0.5" />
+      <Body width="25" height="55" density="10.2" waterdragcoefficient="1" />
+      <SuitableTreatment identifier="stun" suitability="100" />
+      <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <RequiredSkill identifier="medical" level="55" />
+        <StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+        <StatusEffect tags="medical" type="OnSuccess" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <ReduceAffliction type="stun" amount="60" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect tags="medical" type="OnFailure" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <ReduceAffliction type="stun" amount="15" />
+          <Affliction identifier="nausea" amount="30" probability="0.5" />
+          <Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+          <Affliction identifier="stun" amount="0.1" />
+        </StatusEffect>
+        <!-- Remove the item when fully used -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </MeleeWeapon>
+      <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritstatuseffectsfrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
+      <SkillRequirementHint identifier="medical" level="55" />
+    </Adrenaline>
+    <SulphuricAcid name="" identifier="sulphuricacid" category="Material" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="mediccrate" description="" Tags="smallitem,chem,poison" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" isshootable="true" RequireAimToUse="True">
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <PreferredContainer secondary="wrecktoxcab,abandonedtoxcab" spawnprobability="0.5" />
+      <PreferredContainer primary="toxcab" secondary="toxcontainer" />
+      <Price baseprice="80">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.1" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+      </Price>
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,768,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Medical/Medicines.png" sourcerect="346,452,33,60" depth="0.6" origin="0.5,0.5" />
+      <Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+      <Holdable canbepicked="true" canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="32,28" holdpos="30,-15" holdangle="0" aimangle="120" aimable="false" swingwhenaiming="true" swingamount="3,9" swingspeed="0.2" msg="ItemMsgPickUpSelect">
+        <!-- Allow the item to be applied to a bot, but prevent full usage on a player -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional IsBot="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" targetlimb="Torso" comparison="And" multiplyafflictionsbymaxvitality="true" disabledeltatime="true" delay="10">
+          <Conditional IsBot="true" />
+          <Affliction identifier="he-stomachache" strength="100.0" />
+          <Affliction identifier="he-internalburn" amount="50" />
+          <Affliction identifier="acidburn" amount="40" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Allow the item to be applied to a player fully, if the player is not in water and unconcious/stunned -->
+        <StatusEffect type="OnSuccess" target="This,UseTarget" condition="0" setvalue="true" comparison="And">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" target="This,UseTarget" targetlimb="Torso" duration="5" comparison="And" multiplyafflictionsbymaxvitality="true" delay="10">
+          <Conditional InWater="false" />
+          <Conditional stun="gt 0" />
+          <Conditional IsPlayer="true" />
+          <Affliction identifier="he-stomachache" strength="20.0" />
+          <Affliction identifier="he-internalburn" amount="10" />
+          <Affliction identifier="acidburn" amount="8" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Swallow1.ogg" volume="8.0" range="300" loop="false" />
+        </StatusEffect>
+        <!-- Regular drinking -->
+        <StatusEffect type="OnUse" target="This" Condition="-20.0">
+          <Conditional InWater="false" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Drinks/Drinking.ogg" loop="true" range="200" volume="5.0" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="Character" targetlimb="Torso" comparison="And" delay="10">
+          <Conditional InWater="false" />
+          <Affliction identifier="he-stomachache" strength="20.0" />
+          <Affliction identifier="he-internalburn" amount="10" />
+          <Affliction identifier="acidburn" amount="8" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Sound file="%ModDir%/Content/Sounds/Items/Misc/CanCrush1.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Misc/CanCrush2.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Misc/CanCrush3.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Misc/CanCrush4.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Misc/CanCrush5.ogg" range="350" volume="3" selectionmode="Random" />
+          <Sound file="%ModDir%/Content/Sounds/Items/Misc/CanCrush6.ogg" range="350" volume="3" selectionmode="Random" />
+          <Remove />
+        </StatusEffect>
+      </Holdable>
+    </SulphuricAcid>
+  </Items>
+</Override>

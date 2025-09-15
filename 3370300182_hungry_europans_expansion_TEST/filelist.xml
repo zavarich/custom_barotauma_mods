@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Hungry Europans Expansion" modversion="1.0.29" corepackage="False" steamworkshopid="3370300182" gameversion="1.9.8.0" expectedhash="D86D104F530CD0CB5489CFC8CA9D3C7B">
+  <Item file="%ModDir%/Content/Items/Food/Food.xml" />
+  <Item file="%ModDir%/Content/Items/Food/Drinks.xml" />
+  <Item file="%ModDir%/Content/Items/Food/Sweets.xml" />
+  <Item file="%ModDir%/Content/Items/Food/Pots and pot food.xml" />
+  <Item file="%ModDir%/Content/Items/Food/Ingredients.xml" />
+  <Item file="%ModDir%/Content/Items/Fabricators/Fabricators.xml" />
+  <Item file="%ModDir%/Content/Items/Gardening/PlantProducts.xml" />
+  <Item file="%ModDir%/Content/Items/Gardening/GrowablePlants.xml" />
+  <Item file="%ModDir%/Content/Items/Gardening/GardeningTools.xml" />
+  <Item file="%ModDir%/Content/Items/Misc/Misc.xml" />
+  <Text file="%ModDir%/Content/Texts/Russian.xml" />
+  <Text file="%ModDir%/Content/Texts/English.xml" />
+</contentpackage>

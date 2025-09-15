@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+  <redmuzzleflashhandlaser lifetime="0.5" startdelaymin="0" startdelaymax="0.1" angularvelocitymin="-100" angularvelocitymax="100" startrotationmin="0" startrotationmax="359" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="1" usecollision="False" deleteoncollision="False" friction="0.5" restitution="0.5" startsizemin="2,2" startsizemax="6,6" growtime="0" startcolor="255,255,255,150" endcolor="255,255,255,0" drawtarget="Both" drawontop="True" blendstate="Additive" loopanim="False" lifetimemin="0" sizechangemin="0,0" sizechangemax="0,0" middlecolor="255,255,255,255" usemiddlecolor="False" animduration="1">
+    <sprite texture="%ModDir%/Particles/ParticleAtlas.png" sourcerect="0,0,60,60" />
+  </redmuzzleflashhandlaser>
+</prefabs>

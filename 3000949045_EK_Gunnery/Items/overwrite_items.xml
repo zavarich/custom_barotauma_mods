@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- 改為可放SSL砲彈 -->
+    <Item name="" identifier="railgunshellrack" tags="container,railgunammocontainer" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="330,811,218,212" origin="0.5,0.5" />
+      <ItemContainer hideitems="false" drawinventory="true" capacity="6" slotsperrow="6" maxstacksize="1" itempos="32,-100" iteminterval="30,0" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect">
+        <Upgrade gameversion="0.18.0.0" itempos="32,-100" iteminterval="30,0" />
+        <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+        <Containable items="railgunammo,ekgunnery_mediumsslammo" />
+      </ItemContainer>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="railgunshellrack3" nameidentifier="railgunshellrack" category="Legacy" tags="container,railgunammocontainer" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="330,811,218,212" origin="0.5,0.5" />
+      <ItemContainer hideitems="false" drawinventory="true" capacity="3" slotsperrow="3" maxstacksize="1" itempos="53,-100" iteminterval="55,0" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.2,0.2" anchor="Center" style="ItemUI" />
+        <Containable items="railgunammo,ekgunnery_mediumsslammo" />
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>

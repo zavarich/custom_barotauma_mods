@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Bottle Shiv" identifier="he-shivcommon" descriptionidentifier="he-shivcommon" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,shiv" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_glassfragments" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="1">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="184,1,42,20" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="184,1,42,20" depth="0.55" origin="0.5,0.5" />
+      <Body width="42" height="20" density="15" />
+      <MeleeWeapon slots="RightHand,LeftHand" aimpos="50,0" handle1="-13,0" holdangle="45" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="false">
+        <Attack targetimpulse="2" severlimbsprobability="0.0" itemdamage="2" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="3" />
+          <Affliction identifier="bleeding" strength="15" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnSuccess" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnFailure" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <Removeitem target="This" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="Bottle Shiv" identifier="he-shivbeer" descriptionidentifier="he-shivcommon" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,shiv" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_glassfragments" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="1">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="77,1,48,17" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="77,1,48,17" depth="0.55" origin="0.5,0.5" />
+      <Body width="48" height="17" density="15" />
+      <MeleeWeapon slots="RightHand,LeftHand" aimpos="50,0" handle1="-10,0" holdangle="45" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="false">
+        <Attack targetimpulse="2" severlimbsprobability="0.0" itemdamage="2" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="3" />
+          <Affliction identifier="bleeding" strength="15" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnSuccess" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnFailure" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <Removeitem target="This" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="Bottle Shiv" identifier="he-shivhalucinova" descriptionidentifier="he-shivcommon" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,shiv" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_glassfragments" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="1">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="126,1,57,26" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="126,1,57,26" depth="0.55" origin="0.5,0.5" />
+      <Body width="57" height="26" density="15" />
+      <MeleeWeapon slots="RightHand,LeftHand" aimpos="50,0" handle1="-16,0" holdangle="45" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="false">
+        <Attack targetimpulse="2" severlimbsprobability="0.0" itemdamage="3" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="bleeding" strength="20" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnSuccess" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnFailure" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <Removeitem target="This" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="Bottle Shiv" identifier="he-shivwhiskey" descriptionidentifier="he-shivcommon" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,shiv" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_glassfragments" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="1">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="227,1,52,27" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="227,1,52,27" depth="0.55" origin="0.5,0.5" />
+      <Body width="52" height="27" density="15" />
+      <MeleeWeapon slots="RightHand,LeftHand" aimpos="50,0" handle1="-12,0" holdangle="45" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="false">
+        <Attack targetimpulse="2" severlimbsprobability="0.0" itemdamage="2" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="4" />
+          <Affliction identifier="bleeding" strength="18" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnSuccess" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnFailure" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <Removeitem target="This" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="Bottle Shiv" identifier="he-shivrum" descriptionidentifier="he-shivcommon" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,shiv" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_glassfragments" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="1">
+        <Item identifier="he-glassfragments" amount="1" outcondition="0.5" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="280,1,61,26" origin="0.5,0.5" />
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Tools/Tools.png" sourcerect="280,1,61,26" depth="0.55" origin="0.5,0.5" />
+      <Body width="61" height="26" density="15" />
+      <MeleeWeapon slots="RightHand,LeftHand" aimpos="50,0" handle1="-16,0" holdangle="45" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="false">
+        <Attack targetimpulse="2" severlimbsprobability="0.0" itemdamage="2" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="4" />
+          <Affliction identifier="bleeding" strength="18" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+        <StatusEffect type="OnSuccess" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnFailure" target="This" condition="-20" disabledeltatime="true" />
+        <StatusEffect type="OnBroken" target="This">
+          <Removeitem target="This" />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+  </Items>
+</Override>

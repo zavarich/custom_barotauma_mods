@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!--———————————————————————————-->
+  <!-- HUSK INFECTION AFFLICTION -->
+  <!--———————————————————————————-->
+  <!-- showinhealthscannerthreshold="60" DormantThreshold="55" showiconthreshold="75" showicontoothersthreshold="75" ActiveThreshold="60" transformthresholdondeath="25" -->
+  <AfflictionHusk name="Husk infection" identifier="huskinfection" description="A blood-borne parasite has somehow entered the brain stem and crawled into the mouth." type="alieninfection" transferbuffs="true" targets="human,crawler,crawler_hatchling,swarmcrawler,mudraptor,mudraptor_unarmored,mudraptor_hatchling,bonethresher,tigerthresher,tigerthresher_hatchling,hammerhead,hammerheadgold,hammerheadmatriarch,hammerheadspawn,hammerhead_m,hammerheadgold_m,moloch,moloch_m,molochblack,molochblack_m,molochbaby,mantis,legacycrawler,coelanth,psilotoad,orangeboy,peanut,spineling,watcher,endworm,charybdis" huskedspeciesname="[speciesname]husk" causeofdeathdescription="Taken over by the husk parasite." selfcauseofdeathdescription="You have been taken over by the husk parasite." limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showinhealthscannerthreshold="45" showiconthreshold="65" showicontoothersthreshold="60" ActiveThreshold="60" transformthresholdondeath="25" karmachangeonapplied="-5" maxstrength="100" achievementonremoved="healhusk" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255" DormantThreshold="55" causespeechimpediment="false" sendmessages="false" needsair="true">
+    <AfflictionOverlay texture="%ModDir%/Afflictions/infected.png" sourcerect="0,0,1024,640" color="255,255,255,255" origin="0,0" />
+    <!-- dormant -->
+    <Effect minstrength="0" maxstrength="25" strengthchange="0.25" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.0">
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional huskinfection="gt 20" />
+        <Conditional huskinfection="lt 21" />
+        <sound file="%ModDir%/CustomSounds/Infection/grief_stage0.ogg" Volume="1" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+    </Effect>
+    <!-- active -->
+    <Effect minstrength="25" maxstrength="60" strengthchange="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.95" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.0">
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional huskinfection="gt 40" />
+        <Conditional huskinfection="lt 41" />
+        <sound file="%ModDir%/CustomSounds/Infection/grief_stage1.ogg" Volume="1" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/grief_stage2.ogg" Volume="1" DontMuffle="True" Loop="False" />
+        <sound file="%ModDir%/CustomSounds/Infection/swell1.ogg" Volume="1" DontMuffle="True" Loop="False" />
+        <sound file="%ModDir%/CustomSounds/Infection/swell2.ogg" Volume="1" DontMuffle="True" Loop="False" />
+        <sound file="%ModDir%/CustomSounds/Infection/swell3.ogg" Volume="1" DontMuffle="True" Loop="False" />
+      </StatusEffect>
+    </Effect>
+    <Effect minstrength="60" maxstrength="100" strengthchange="0.25" minspeedmultiplier="0.95" maxspeedmultiplier="0.75" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.85" minchromaticaberration="0.0" maxchromaticaberration="0.2">
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional huskinfection="gt 60" />
+        <Conditional huskinfection="lt 61" />
+        <sound file="%ModDir%/CustomSounds/Infection/grief_stage3.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <!-- for reference; periodic vomiting begins at 65% here -->
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional IsDead="false" />
+        <Conditional SpeciesName="human" />
+        <Conditional HasStatusTag="!equals huskcult" />
+        <Conditional huskinfection="gt 70" />
+        <Conditional huskinfection="lt 71" />
+        <sound file="%ModDir%/CustomSounds/Infection/vortex.ogg" Volume="0.3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/drone_screams.ogg" Volume="0.3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/drone_satanic.ogg" Volume="0.3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional HasStatusTag="!equals huskcult" />
+        <Conditional huskinfection="gt 80" />
+        <Conditional huskinfection="lt 81" />
+        <sound file="%ModDir%/CustomSounds/Infection/grief_stage4.ogg" Volume="2" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/grief_whispers1.ogg" Volume="0.8" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional huskinfection="gt 95" />
+        <Conditional IsDead="false" />
+        <Conditional HasStatusTag="!equals huskcult" />
+        <sound file="%ModDir%/CustomSounds/Infection/turned1.ogg" Volume="1.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional huskinfection="gte 90" />
+        <Conditional IsDead="false" />
+        <Conditional IsUnconscious="true" />
+        <Conditional HasStatusTag="!equals huskcult" />
+        <sound file="%ModDir%/CustomSounds/Infection/deathsdoor.ogg" Volume="1.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+    </Effect>
+    <PeriodicEffect mininterval="3" maxinterval="6">
+      <StatusEffect target="Character" checkconditionalalways="true" comparison="and">
+        <Conditional huskinfection="gte 60.0" />
+        <Conditional isunconscious="false" />
+        <Reduceaffliction identifier="Oxygenlow" amount="15" />
+      </StatusEffect>
+      <!-- slowly heal if they have a good amount of husk infection and are unconscious -->
+      <StatusEffect target="Character" comparison="and">
+        <Conditional isdead="false" />
+        <Conditional isunconscious="true" />
+        <Conditional speciesname="human" />
+        <Conditional huskinfection="gt 35" />
+        <Conditional huskinfection="lt 95" />
+        <ReduceAffliction type="damage" strength="2" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- periodic vomiting -->
+    <PeriodicEffect mininterval="25" maxinterval="60">
+      <StatusEffect target="Character" targetlimb="Head" stackable="False" comparison="and" duration="4">
+        <Conditional isdead="false" />
+        <Conditional SpeciesName="human" />
+        <Conditional huskinfection="gt 65" />
+        <Conditional HasStatusTag="!eq huskcult" />
+        <Explosion range="150.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" flames="false" sparks="false" flash="false" smoke="false" playtinnitus="true">
+          <Affliction identifier="vomitexposure" amount="10" />
+          <Affliction identifier="phasedblur" amount="4" />
+        </Explosion>
+        <ParticleEmitter particle="vomitsplash" copyentityangle="true" anglemin="-12" anglemax="12" particlespersecond="35" velocitymin="55" velocitymax="80" scalemin="0.05" scalemax="0.15" />
+        <ParticleEmitter particle="bloodspurtsplashdemon" copyentityangle="true" anglemin="-12" anglemax="12" particlespersecond="85" velocitymin="55" velocitymax="80" scalemin="0.05" scalemax="0.15" />
+        <Affliction identifier="phasedblur" amount="4" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit1.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit2.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit3.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit4.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <StatusEffect target="Character" lowpassmultiplier="0.8" setvalue="True" />
+        <StatusEffect target="Character" duration="2">
+          <TriggerAnimation Type="Walk" filename="Vomit" priority="10" ExpectedSpecies="Human" />
+        </StatusEffect>
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- periodically damage the player -->
+    <PeriodicEffect mininterval="0.7" maxinterval="1.2">
+      <StatusEffect target="Character" stackable="true" comparison="and" forceplaysounds="true">
+        <Conditional isdead="false" />
+        <Conditional HasStatusTag="!equals huskcult" />
+        <Conditional huskinfection="gte 95.0" />
+        <ParticleEmitter particle="bloodsplash" particlespersecond="12" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="blackblood" particlespersecond="12" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="waterblood" particlespersecond="12" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="blackwaterblood" particlespersecond="12" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <Affliction identifier="internaldamage" amount="0.5" />
+        <Affliction identifier="phasedblur" amount="2" />
+        <Affliction identifier="stun" amount="2" />
+        <Explosion range="30.0" structuredamage="0" itemdamage="0" force="2.5" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" flames="false" sparks="false" flash="false" smoke="false" playtinnitus="true">
+          <Affliction identifier="phasedblur" amount="1" />
+        </Explosion>
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn1.ogg" Volume="1" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn2.ogg" Volume="1" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn3.ogg" Volume="1" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn4.ogg" Volume="1" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn5.ogg" Volume="1" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn6.ogg" Volume="1" SelectionMode="Random" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,640,128,128" color="60,107,195,255" origin="0,0" />
+  </AfflictionHusk>
+  <Affliction name="Phased Blur" identifier="phasedblur" description="" type="stun" limbspecific="false" indicatorlimb="Head" showiconthreshold="999" showinhealthscannerthreshold="999" maxstrength="6">
+    <Effect minstrength="0" maxstrength="6" minscreenblur="0.0" maxscreenblur="12.0" minscreendistort="0" maxscreendistort="0.1" minspeedmultiplier="1.0" maxspeedmultiplier="0.0" strengthchange="-1" />
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,0,1,1" color="255,255,255,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Grabbed" identifier="grabbed" description="" type="stun" limbspecific="false" indicatorlimb="Torso" showiconthreshold="0" showinhealthscannerthreshold="999" maxstrength="8">
+    <Effect minstrength="0" maxstrength="4" minscreenblur="0.0" maxscreenblur="1.0" minspeedmultiplier="0.85" maxspeedmultiplier="0.3" strengthchange="-1" />
+    <Effect minstrength="4" maxstrength="8" minscreenblur="1.0" maxscreenblur="1.5" minspeedmultiplier="0.3" maxspeedmultiplier="0.25" strengthchange="-2" />
+    <icon texture="%ModDir%/Afflictions/grabbed.png" sourcerect="0,0,128,128" color="120,40,40,255" origin="0,0" />
+  </Affliction>
+  <Affliction name="Constant Vomiting" identifier="constantvomiting" description="" type="debuff" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="0" showinhealthscannerthreshold="999" maxstrength="100">
+    <Effect minstrength="0" maxstrength="10" strengthchange="0" />
+    <PeriodicEffect mininterval="30" maxinterval="45">
+      <StatusEffect target="Character" targetlimb="Head" stackable="False" duration="4">
+        <Explosion range="85.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" flames="false" sparks="false" flash="false" smoke="false">
+          <Affliction identifier="vomitexposure" amount="10" />
+          <Affliction identifier="phasedblur" amount="4" />
+        </Explosion>
+        <ParticleEmitter particle="vomitsplash" copyentityangle="true" anglemin="-12" anglemax="12" particlespersecond="35" velocitymin="5" velocitymax="10" scalemin="0.06" scalemax="0.16" />
+        <ParticleEmitter particle="bloodspurtsplashdemon" copyentityangle="true" anglemin="-12" anglemax="12" particlespersecond="85" velocitymin="5" velocitymax="10" scalemin="0.06" scalemax="0.16" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit1.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit2.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit3.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit4.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+      </StatusEffect>
+    </PeriodicEffect>
+  </Affliction>
+  <Affliction name="Vomit Exposure" identifier="vomitexposure" description="realization." type="vomitexposure" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="999" showinhealthscannerthreshold="999" maxstrength="3">
+    <AfflictionOverlay texture="%ModDir%/Afflictions/vomit2.png" sourcerect="0,0,1024,640" color="255,255,255,255" origin="0,0" />
+    <Effect minstrength="0" maxstrength="3" strengthchange="-1" minradialdistort="0.0" maxradialdistort="0.2" screeneffectfluctuationfrequency="4" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.6">
+      <StatusEffect target="Character" stackable="false" comparison="and" checkconditionalalways="true">
+        <Conditional IsLocalPlayer="True" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect1.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect2.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect3.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect4.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and" checkconditionalalways="true">
+        <Conditional HasStatusTag="!equals vomitimmunity" />
+        <Conditional HasStatusTag="!equals huskcult" />
+        <Conditional speciesname="human" />
+        <Conditional IsDead="false" />
+        <Affliction identifier="huskinfection" amount="1" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="Bio-Vomit Exposure" identifier="biovomitexposure" description="realization." type="vomitexposure" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="999" showinhealthscannerthreshold="999" maxstrength="3">
+    <AfflictionOverlay texture="%ModDir%/Afflictions/vomit2.png" sourcerect="0,0,1024,640" color="255,255,255,255" origin="0,0" />
+    <Effect minstrength="0" maxstrength="3" strengthchange="-1" minradialdistort="0.0" maxradialdistort="0.2" screeneffectfluctuationfrequency="12.0" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.6">
+      <StatusEffect target="Character" stackable="false" comparison="and" checkconditionalalways="true">
+        <Conditional IsLocalPlayer="True" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect1.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect2.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect3.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/vomit_infect4.ogg" Volume="3" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect target="Character" comparison="and" checkconditionalalways="true">
+        <Conditional HasStatusTag="!equals vomitimmunity" />
+        <Conditional HasStatusTag="!eq huskcult" />
+        <Conditional speciesname="human" />
+        <Conditional IsDead="false" />
+        <Affliction identifier="biohuskinfection" amount="1" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="Cough Exposure" identifier="coughexposure" description="" type="coughexposure" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="999" showinhealthscannerthreshold="999" maxstrength="3">
+    <Effect minstrength="0" maxstrength="3" strengthchange="-1" minradialdistort="0.0" maxradialdistort="0.2" screeneffectfluctuationfrequency="12.0">
+      <StatusEffect target="Character" comparison="and" checkconditionalalways="true">
+        <Conditional HasStatusTag="!equals coughimmunity" />
+        <Conditional HasStatusTag="!eq huskcult" />
+        <Conditional speciesname="human" />
+        <Conditional IsDead="false" />
+        <Affliction identifier="biohuskinfection" amount="0.25" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="Blood Exposure" identifier="bloodexposure" description="" type="bloodexposure" isbuff="false" limbspecific="false" indicatorlimb="Head" showiconthreshold="999" showinhealthscannerthreshold="999" maxstrength="3">
+    <Effect minstrength="0" maxstrength="3" strengthchange="-1" minradialdistort="0.0" maxradialdistort="0.2" screeneffectfluctuationfrequency="12.0">
+      <StatusEffect target="Character" comparison="and" checkconditionalalways="true">
+        <Conditional HasStatusTag="!equals bloodimmunity" />
+        <Conditional HasStatusTag="!eq huskcult" />
+        <Conditional speciesname="human" />
+        <Conditional IsDead="false" />
+        <Affliction identifier="biohuskinfection" amount="1" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <!-- applied when wearing adequate protection
+  <Affliction name="Vomit Resistance" identifier="vomitresistance" description="" type="resistance" isbuff="true" showiconthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" limbspecific="false" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-100" resistancefor="vomitexposure,biovomitexposure" minresistance="0.0" maxresistance="1.0"/>
+  </Affliction>
+
+  <Affliction name="Cough Resistance" identifier="coughresistance" description="" type="resistance" isbuff="true" showiconthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000" limbspecific="false" maxstrength="100">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-100" resistancefor="coughexposure" minresistance="1.0" maxresistance="1.0"/>
+  </Affliction> -->
+  <!--———————————————————————————————————————-->
+  <!-- BIO-MUTATED HUSK INFECTION AFFLICTION -->
+  <!--———————————————————————————————————————-->
+  <AfflictionHusk name="Bio-mutated Husk Infection" identifier="biohuskinfection" description="A highly viral and infectious airborne variant of the Velonaceps Calyx parasitic infection. Spreads through coughs, vomit, and blood. Nearly impossible to cure at late stages." type="biohusk" transferbuffs="true" targets="human" huskedspeciesname="[speciesname]biohusk" causeofdeathdescription="gone." selfcauseofdeathdescription="Your immune system couldn't handle the overwhelming intensity of the bio-mutated Velonaceps Calyx parasite." limbspecific="false" indicatorlimb="Torso" activationthreshold="0" showinhealthscannerthreshold="15" showiconthreshold="60" showicontoothersthreshold="65" ActiveThreshold="70" transformthresholdondeath="10" karmachangeonapplied="-5" maxstrength="100" achievementonremoved="healhusk" iconcolors="60,140,195,255;60,107,195,255;60,0,195,255" DormantThreshold="65" causespeechimpediment="false" sendmessages="false" needsair="true">
+    <AfflictionOverlay texture="%ModDir%/Afflictions/infected.png" sourcerect="0,0,1024,640" color="255,255,255,255" origin="0,0" />
+    <!-- dormant -->
+    <Effect minstrength="0" maxstrength="25" strengthchange="0.25" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.0" />
+    <!-- coughing begins at 15% -->
+    <PeriodicEffect mininterval="8" maxinterval="12">
+      <StatusEffect target="Character" comparison="And" forceplaysounds="true">
+        <Conditional speciesname="eq human" />
+        <Conditional biohuskinfection="gte 15" />
+        <Conditional biohuskinfection="lt 60" />
+        <sound file="%ModDir%/CustomSounds/Infection/cough1.ogg" range="400" volume="0.8" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/cough2.ogg" range="400" volume="0.8" />
+        <sound file="%ModDir%/CustomSounds/Infection/cough3.ogg" range="400" volume="0.8" />
+        <sound file="%ModDir%/CustomSounds/Infection/cough4.ogg" range="400" volume="0.8" />
+        <sound file="%ModDir%/CustomSounds/Infection/cough5.ogg" range="400" volume="0.8" />
+        <Explosion range="75.0" structuredamage="0" itemdamage="0" force="1" camerashake="0.0" severlimbsprobability="0.0" decalsize="0.85" shockwave="false" underwaterbubble="false" flames="false" sparks="false" flash="false" smoke="false" playtinnitus="false">
+          <Affliction identifier="coughexposure" amount="3" />
+        </Explosion>
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- active -->
+    <Effect minstrength="25" maxstrength="55" strengthchange="0.25" minspeedmultiplier="1.0" maxspeedmultiplier="0.95" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.0">
+      <!-- no sounds play until much later.
+			<StatusEffect Target="Character" comparison="and" stackable="false">
+				<Conditional IsLocalPlayer="True" />
+				<Conditional biohuskinfection="gt 40" />
+				<Conditional biohuskinfection="lt 41" />
+				<sound file="%ModDir%/CustomSounds/Infection/grief_stage1.ogg" Volume="0.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+				<sound file="%ModDir%/CustomSounds/Infection/grief_stage2.ogg" Volume="0.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+			</StatusEffect>
+			<StatusEffect Target="Character" comparison="and" stackable="false">
+				<Conditional IsLocalPlayer="True" />
+				<Conditional biohuskinfection="gt 50" />
+				<Conditional biohuskinfection="lt 51" />
+				<sound file="%ModDir%/CustomSounds/Infection/grief_stage3.ogg" Volume="1" DontMuffle="True" Loop="False" SelectionMode="Random" />
+			</StatusEffect>
+			-->
+    </Effect>
+    <Effect minstrength="55" maxstrength="100" strengthchange="0.5" minspeedmultiplier="0.95" maxspeedmultiplier="0.75" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.2" minchromaticaberration="0.0" maxchromaticaberration="0.2" minfacetint="0,0,0,0" maxfacetint="0,0,0,225">
+      <!-- first audible and apparent sound cue that you are infected with mutated husk. -->
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional IsDead="false" />
+        <Conditional SpeciesName="human" />
+        <Conditional biohuskinfection="gt 55" />
+        <Conditional biohuskinfection="lt 56" />
+        <sound file="%ModDir%/CustomSounds/Infection/bell_dark.ogg" Volume="0.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/drone_screams.ogg" Volume="0.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/drone_satanic.ogg" Volume="0.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional biohuskinfection="gt 80" />
+        <Conditional biohuskinfection="lt 81" />
+        <sound file="%ModDir%/CustomSounds/Infection/bell_dull.ogg" Volume="1.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional biohuskinfection="gt 95" />
+        <Conditional biohuskinfection="lt 95.5" />
+        <Conditional IsDead="false" />
+        <Conditional IsUnconscious="false" />
+        <sound file="%ModDir%/CustomSounds/Infection/turned1.ogg" Volume="1" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+      <StatusEffect Target="Character" stackable="false">
+        <Conditional biohuskinfection="gt 95" />
+        <Conditional biohuskinfection="lt 95.5" />
+        <Conditional IsDead="false" />
+        <sound file="%ModDir%/CustomSounds/Infection/bonecrackle.ogg" Volume="1.25" Loop="False" />
+      </StatusEffect>
+      <StatusEffect Target="Character" comparison="and" stackable="false">
+        <Conditional IsLocalPlayer="True" />
+        <Conditional biohuskinfection="gte 90" />
+        <Conditional IsDead="false" />
+        <Conditional IsUnconscious="true" />
+        <sound file="%ModDir%/CustomSounds/Infection/deathsdoor2.ogg" Volume="1.5" DontMuffle="True" Loop="False" SelectionMode="Random" />
+      </StatusEffect>
+    </Effect>
+    <!-- reduce oxygen low -->
+    <PeriodicEffect mininterval="3" maxinterval="6">
+      <StatusEffect target="Character" checkconditionalalways="true" comparison="and">
+        <Conditional biohuskinfection="gte 60.0" />
+        <Conditional isunconscious="false" />
+        <Reduceaffliction identifier="Oxygenlow" amount="15" />
+      </StatusEffect>
+      <!-- slowly heal if they have a good amount of husk infection and are unconscious -->
+      <StatusEffect target="Character" comparison="and">
+        <Conditional isdead="false" />
+        <Conditional isunconscious="true" />
+        <Conditional speciesname="human" />
+        <Conditional biohuskinfection="gt 25" />
+        <Conditional biohuskinfection="lt 95" />
+        <ReduceAffliction type="damage" strength="2.5" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- worm sounds -->
+    <PeriodicEffect mininterval="10" maxinterval="16">
+      <StatusEffect target="Character" targetlimbs="Head" comparison="and">
+        <Conditional biohuskinfection="gt 60" />
+        <Conditional biohuskinfection="lt 95" />
+        <Conditional speciesname="human" />
+        <Conditional IsDead="false" />
+        <sound file="%ModDir%/CustomSounds/Infection/wormcrawl1.ogg" range="300" volume="0.6" loop="false" selectionmode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/wormcrawl2.ogg" range="300" volume="0.6" loop="false" selectionmode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/wormcrawl3.ogg" range="300" volume="0.6" loop="false" selectionmode="Random" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- vigorous periodic vomiting begins at 75%. By this time the patient is too far gone. -->
+    <PeriodicEffect mininterval="12" maxinterval="24">
+      <StatusEffect target="Character" targetlimb="Head" stackable="False" comparison="and" duration="3">
+        <Conditional isdead="false" />
+        <Conditional SpeciesName="human" />
+        <Conditional biohuskinfection="gt 75" />
+        <Explosion range="185.0" structuredamage="0" itemdamage="0" force="0.1" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" flames="false" sparks="false" flash="false" smoke="false" playtinnitus="true">
+          <Affliction identifier="biovomitexposure" amount="10" />
+          <Affliction identifier="phasedblur" amount="4" />
+        </Explosion>
+        <ParticleEmitter particle="vomitsplash" copyentityangle="true" anglemin="-12" anglemax="12" particlespersecond="35" velocitymin="65" velocitymax="90" scalemin="0.05" scalemax="0.15" />
+        <ParticleEmitter particle="bloodspurtsplashdemon" copyentityangle="true" anglemin="-12" anglemax="12" particlespersecond="85" velocitymin="60" velocitymax="95" scalemin="0.05" scalemax="0.2" />
+        <Affliction identifier="phasedblur" amount="4" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit1.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit2.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit3.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <sound File="%ModDir%/CustomSounds/Husk/vomit4.ogg" Range="1400" Volume="1.5" selectionmode="Random" />
+        <StatusEffect target="Character" lowpassmultiplier="0.8" setvalue="True" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <!-- periodically damage the player after 95% -->
+    <PeriodicEffect mininterval="0.35" maxinterval="0.5">
+      <StatusEffect target="Character" stackable="true" comparison="and" forceplaysounds="true">
+        <Conditional biohuskinfection="gte 95.0" />
+        <Conditional isdead="false" />
+        <ParticleEmitter particle="bloodsplash" particlespersecond="100" scalemin="0.7" scalemax="1.4" velocitymin="60" velocitymax="200" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="blackblood" particlespersecond="100" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="waterblood" particlespersecond="100" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <ParticleEmitter particle="blackwaterblood" particlespersecond="100" scalemin="0.85" scalemax="1.35" velocitymin="20" velocitymax="120" anglemin="0" anglemax="360" />
+        <Affliction identifier="internaldamage" amount="0.5" />
+        <Affliction identifier="phasedblur" amount="1" />
+        <Affliction identifier="stun" amount="2" />
+        <!-- begin violent convulsions, flinging blood everywhere -->
+        <Explosion range="50.0" structuredamage="0" itemdamage="0" force="10" severlimbsprobability="0.0" decal="blood" decalsize="0.85" shockwave="false" underwaterbubble="false" flames="false" sparks="false" flash="false" smoke="false" playtinnitus="true">
+          <Affliction identifier="bloodexposure" amount="3" />
+          <Affliction identifier="phasedblur" amount="1" />
+        </Explosion>
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn1.ogg" Volume="1.2" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn2.ogg" Volume="1.2" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn3.ogg" Volume="1.2" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn4.ogg" Volume="1.2" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn5.ogg" Volume="1.2" SelectionMode="Random" />
+        <sound file="%ModDir%/CustomSounds/Infection/gore_turn6.ogg" Volume="1.2" SelectionMode="Random" />
+      </StatusEffect>
+    </PeriodicEffect>
+    <icon texture="%ModDir%/Afflictions/biohusk.png" sourcerect="0,0,128,128" color="55,102,190,255" origin="0,0" />
+  </AfflictionHusk>
+  <!-- overlay that applies when a biohazard grenade is thrown at the player -->
+  <Affliction name="Biochemical Inhalation" identifier="biogas" description="You can barely stand. You feel weary and light-headed" type="debuff" isbuff="false" limbspecific="false" indicatorlimb="Head" damageoverlayalpha="0.5" iconcolors="70,70,70,255" maxstrength="30">
+    <Effect minscreenblur="0.2" maxscreenblur="0.8" minscreendistort="0" maxscreendistort="0.4" minafflictionoverlayalphamultiplier="0" maxafflictionoverlayalphamultiplier="1.0" minstrength="0" maxstrength="30" strengthchange="-1" minspeedmultiplier="1.0" maxspeedmultiplier="0.3"></Effect>
+    <icon texture="%ModDir%/Afflictions/biogas.png" sourcerect="0,0,128,128" color="70,70,70,255" origin="0.5,0.5" />
+    <AfflictionOverlay texture="%ModDir%/Afflictions/biogasoverlay.png" sourcerect="0,0,1024,680" color="255,255,255,255" origin="0,0" />
+  </Affliction>
+  <!-- mimics the husk infection overlay that begins at 60 or above; husks need it because all afflictions get cleared upon turning into a fully fledged husk. -->
+  <Affliction name="" identifier="applyhuskoverlay" description="" type="none" limbspecific="false" indicatorlimb="Head" showiconthreshold="1000" showinhealthscannerthreshold="1000" maxstrength="5">
+    <AfflictionOverlay texture="%ModDir%/Afflictions/infected.png" sourcerect="0,0,1024,640" color="255,255,255,255" origin="0,0" />
+    <Effect minstrength="0" maxstrength="5" minradialdistort="0.1" maxradialdistort="0.3" screeneffectfluctuationfrequency="0.75" minafflictionoverlayalphamultiplier="0.85" maxafflictionoverlayalphamultiplier="0.85" />
+  </Affliction>
+  <!-- stalker amalgamation of dogshit begins here -->
+  <Affliction name="" identifier="stalkeralert" description="" type="" limbspecific="false" indicatorlimb="Head" maxstrength="10" showinhealthscannerthreshold="999" showiconthreshold="999" showicontoothersthreshold="999">
+    <AfflictionOverlay texture="%ModDir%/Afflictions/vignette.png" sourcerect="0,0,1024,640" color="120,50,40,255" origin="0,0" />
+    <Effect minscreenblur="0.1" maxscreenblur="0.3" minscreendistort="0" maxscreendistort="1.0" minradialdistort="0.0" maxradialdistort="1.0" minstrength="0" maxstrength="10" strengthchange="-2" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.5" minspeedmultiplier="1.0" maxspeedmultiplier="0.5">
+      <StatusEffect target="Character">
+        <Conditional IsLocalPlayer="True" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/notice1.ogg" volume="6" selectionmode="Random" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/notice2.ogg" volume="6" selectionmode="Random" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/notice3.ogg" volume="6" selectionmode="Random" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/notice4.ogg" volume="6" selectionmode="Random" />
+        <Affliction identifier="stalkernoticed" amount="100" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="" identifier="stalkeralertgiver" description="" type="" isbuff="true" maxstrength="1">
+    <Effect minstrength="0" maxstrength="1" strengthchange="-1">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional IsHuman="True" />
+        <Conditional HasTag="!eq stalkernoticed" />
+        <Conditional stalkernoticed="lte 0" />
+        <Affliction identifier="stalkeralert" amount="10" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+  <Affliction name="" identifier="stalkernoticed" description="" maxstrength="100" showinhealthscannerthreshold="999" showiconthreshold="999" showicontoothersthreshold="999">
+    <Effect minstrength="0" maxstrength="100" strengthchange="-0.25" />
+  </Affliction>
+  <Affliction name="" identifier="stalkerimpact" description="" maxstrength="4">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-1" minscreenblur="0" maxscreenblur="2.0" minspeedmultiplier="1.0" maxspeedmultiplier="0.0" minradialdistort="0.0" mingrainstrength="0.1" maxgrainstrength="1.0" screeneffectfluctuationfrequency="0.2" maxradialdistort="0.25">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional IsDead="False" />
+        <Conditional IsLocalPlayer="True" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/impact1.ogg" volume="4" selectionmode="Random" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/impact2.ogg" volume="4" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/impact3.ogg" volume="4" />
+        <Sound file="%ModDir%/Characters/Stalker/Sounds/impact4.ogg" volume="4" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+</Override>

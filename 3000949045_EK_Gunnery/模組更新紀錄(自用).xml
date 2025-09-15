@@ -1,0 +1,98 @@
+
+
+<!-- 預計強化自動加農炮高爆彈，可能要改合成表，直擊、爆炸傷害加強(因為電磁槍的高爆也加強了) -->
+<!-- 自動加農炮HEFC也可能加強 -->
+<!-- 做出區別，高爆傷害重作、榴霰彈是範圍特化，HEFC是穿甲單體特化 -->
+<!-- 可能重改合成表? -->
+
+
+<!-- 自動加農炮榴霰彈回收配方錯誤 -->
+
+
+
+
+・修正自動加農炮剛素彈藥箱、小型SSL炮塔HEFC彈藥箱不能放物品欄的問題
+
+・自動加農炮彈藥量增加20發(除了高爆彈、HEFC、榴霰彈)，材料中的銅用高級彈藥被甲材料取代
+・機槍、微型、小型SSL彈藥增加暈眩(除了小型SSL，都是有概率造成暈眩，因為這些炮塔射速實在太快了)
+・中型SSL增加結構傷害(方便摧毀冰尖岩)
+
+・全HEFC彈藥的爆炸增加穿甲0.15
+・全高爆彈藥箱傷害調整，降低直擊傷害、大幅提高直擊穿甲，提高爆炸傷害
+・部分彈藥箱的銅改為任意的高級彈藥被甲材料
+
+
+
+
+[*]修正AI使用渦環加農炮會顯示無法裝彈的問題
+
+
+11/26
+[*]優化繁體中文、簡體中文翻譯的部分物品名稱
+
+
+12/9
+[*]聲波脈衝重作，現在變成電磁線圈的變體，同時保留了攝影機的能力
+
+[*]修正輔助中型SSL裝彈器的彈藥上限錯誤
+
+[*]撞擊艏因為常常有人反應有Bug(然而我這裡測不出來)，暫時移到遺產類，並加上警告標語(除開重作，現在不會再去處理這個Bug)
+
+
+
+
+[*]Acoustic-Kinetic Pulse has been redesigned and is now a variant of the Electrical Discharge Coil while retaining the camera surveillance function.
+
+[*]Fixed the ammo capacity error in the Auxiliary Medium SSL Loader.
+
+[*]Due to frequent reports of issues with the Ramming Prow, which I couldn't reproduce, I have temporarily moved it to the Legacy category and added a warning label. Unless a major overhaul is undertaken, this bug will not be addressed further.
+
+
+
+10/2
+[*]為本MOD特有的炮塔裝載點增加hardpoint的TAG
+
+
+11/13
+[*]修正有少部分內容依舊依賴EK Dockyard而產生的BUG
+[*]修正有少部分内容依旧依赖EK Dockyard而产生的BUG
+[*]Fixed a bug caused by a small amount of content still relying on EK Dockyard.
+
+11/25
+[*]為本模組所有的炮塔新增「設置_自動_運行」、「切換_自動_操作」的接口
+[*]為本模組所有的裝彈器新增「彈藥_輸出」的接口
+[*]为本模组所有的炮塔新增「设置_自动_运行」、「切换_自动_操作」的接口
+[*]为本模组所有的装弹器新增「弹药_输出」的接口
+[*]Added set_auto_operate and toggle_auto_operate wiring pins to all turrets in this MOD.
+[*]Added an ammunition_out wiring pin to all loaders in this MOD.
+
+
+[*]重型軌道炮炮彈手持時的減速效果統一變為-60%
+[*]除了重型軌道炮炮彈、自動加農炮彈藥箱，大多數的炮彈皆可單手拿取（當然了，你依舊可以把炮彈放入物品欄，若不想要這樣，你可以裝對應的平衡補丁來取消）
+[*]調整部分武器彈藥的價格、分解產物
+
+[*]中型SSL炮彈（實心）：穿甲力-0.1，傷害極大幅度提升，價格大幅下降，販賣數量大幅提升，爆炸的部分將只有暈眩傷害，但傷害更穩定
+[*]中型SSL炮彈（高爆）：大幅提高直擊傷害、爆炸傷害，提高爆炸範圍，販賣數量提升
+[*]中型SSL炮彈（穿甲）：調整傷害類型，小幅提高爆炸傷害，販賣數量小幅提升
+[*]中型SSL炮彈（榴霰彈），爆炸傷害增加，現在內外圈的範圍的爆炸傷害基本一致，販賣數量提升
+
+[*]Unified the deceleration effect for holding Heavy Railgun Shell to -60%.
+[*]Modified the posture for holding most of the ammo boxes and shells.
+[*]Most shells can now be carried with one hand, except for the Heavy Railgun Shell and Auto Cannon Ammunition Box. (Of course, you can still place the shells in your inventory, or if you prefer, you can install the corresponding balance patch to remove this feature.)
+[*]Adjusted the prices and decomposition products for some weapon ammunition.
+
+[*]Medium SSL Shell (Solid): Penetration power reduced, damage significantly increased, price drastically lowered, explosion now only causes stun damage but with more stable overall damage.
+[*]Medium SSL Shell (HE): Greatly increased direct hit damage, explosion damage, and explosion radius.
+[*]Medium SSL Shell (AP): Adjusted damage type, slightly increased explosion damage, reduced explosion radius.
+[*]Medium SSL Shell (Flak): Explosion damage increased, now consistent between the inner and outer explosion radii.
+[*]Merchants will sell more Medium SSL Shells.
+
+
+[*]添加一種新的重型軌道炮炮彈，重型軌道炮魚叉，有比軌道炮魚叉更強力的拉力
+[*] Added a new type of projectile, the Heavy Railgun Harpoon, which has a stronger pulling force than the Railgun Harpoon.
+
+
+
+現在炮彈的減速效果無論是否添加平衡補丁，兩者都是一樣的(之前只有平衡補丁與部分彈藥有減速，但一來這樣我更新不便，容易搞混，二來有些有減速有些沒有顯得很奇怪，反正有搬炮彈功能的情況下，影響不大)
+中型SSL炮彈推車，現在一格可以放兩顆SSL炮彈，等於直接翻倍，並且減速的幅度也大幅下降
+調整繁體中文翻譯

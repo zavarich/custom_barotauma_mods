@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Charactervariant inherit="Humanhuskbrute" speciesname="Humanhuskbrutecoalition">
+  <!-- Coalition [EHA] -->
+  <inventory Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" AccessibleWhenAlive="False" Commonness="1">
+    <Item equip="true" outfit="true" identifier="scp_heavyuniform" />
+    <Item equip="true" identifier="scp_specialrig" />
+    <Item equip="true" identifier="scp_heavycombathelmet" />
+    <Item equip="true" identifier="idcard" />
+  </inventory>
+  <inventory Slots="Card, Headset, Head, InnerClothes, OuterClothes, LeftHand, RightHand, Bag" AccessibleWhenAlive="False" Commonness="1">
+    <Item equip="true" outfit="true" identifier="scp_lightuniform" />
+    <Item equip="true" identifier="scp_heavyvest" />
+    <Item equip="true" identifier="ballistichelmet1" />
+    <Item equip="true" identifier="idcard" />
+  </inventory>
+</Charactervariant>

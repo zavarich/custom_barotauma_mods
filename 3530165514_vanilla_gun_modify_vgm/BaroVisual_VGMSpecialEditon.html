@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏物品XML编辑器 - 批量产出</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; margin: 20px; background-color: #f0f2f5; color: #333; }
+        h1, h2, h3 { color: #0056b3; }
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            max-width: 1800px; /* 增加最大宽度以适应两栏 */
+            margin: 0 auto;
+        }
+        .left-column, .right-column {
+            flex: 1; /* 使两列平均分配宽度 */
+        }
+        .section-panel {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px; /* 添加间距 */
+        }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+        input[type="text"], input[type="number"], textarea, select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        button:hover { background-color: #0056b3; transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
+        button.active { background-color: #28a745; } /* 活跃模式按钮 */
+        button.coordinate-picker-btn {
+            background-color: #6c757d;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+        button.coordinate-picker-btn:hover { background-color: #5a6268; }
+
+        canvas {
+            border: 2px dashed #007bff;
+            background-color: #e9ecef;
+            display: block;
+            margin-top: 15px;
+            width: 800px; /* 固定 Canvas 宽度 */
+            height: 600px; /* 固定 Canvas 高度 */
+            cursor: grab; /* 默认手型光标 */
+            border-radius: 8px;
+        }
+        canvas.grabbing {
+            cursor: grabbing; /* 拖动时光标 */
+        }
+        pre {
+            background-color: #e9ecef;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            min-height: 200px;
+            overflow-x: auto;
+        }
+        .mode-buttons button { width: auto; }
+        .attribute-group {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #fdfdfd;
+        }
+        .attribute-group h4 {
+            margin-top: 0;
+            color: #007bff;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .dynamic-item-group {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            position: relative;
+        }
+        .dynamic-item-group .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+        .dynamic-item-group .remove-btn:hover {
+            background-color: #c82333;
+        }
+        .dynamic-item-group label, .dynamic-item-group input, .dynamic-item-group select {
+            width: auto;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .dynamic-item-group input[type="text"], .dynamic-item-group input[type="number"] {
+            width: 120px; /* Make dynamic inputs smaller */
+        }
+        .dynamic-item-group input[type="checkbox"] {
+            width: auto;
+        }
+        .sub-container-group {
+            border: 1px solid #a7d9ff;
+            background-color: #e6f7ff;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .sub-container-group .remove-btn {
+            background-color: #ff4d4f;
+        }
+        .slot-icon-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .slot-icon-group > div {
+            flex: 1 1 calc(50% - 10px); /* Two columns */
+            min-width: 250px;
+        }
+        .slot-icon-group label input {
+            width: calc(100% - 10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <div class="section-panel">
+                <h2>物品基本信息 (Item Attributes)</h2>
+
+                <div class="attribute-group">
+                    <h4>基本标识符与名称</h4>
+                    <label for="itemIdentifier">标识符 (identifier): <small>(必需)</small></label>
+                    <input type="text" id="itemIdentifier" value="newweapon">
+
+                    <label for="itemName">名称 (name):</label>
+                    <input type="text" id="itemName" value="New Weapon">
+
+                    <label for="tags">标签 (tags, 逗号分隔):</label>
+                    <input type="text" id="tags" value="smallitem,weapon">
+
+                    <label for="itemCategory">类别 (category):</label>
+                    <select id="itemCategory">
+                        <option value="Weapon">Weapon</option>
+                        <option value="Decorative">Decorative</option>
+                        <option value="Machine">Machine</option>
+                        <option value="Medical">Medical</option>
+                        <option value="Diving">Diving</option>
+                        <option value="Equipment">Equipment</option>
+                        <option value="Fuel">Fuel</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Material">Material</option>
+                        <option value="Alien">Alien</option>
+                        <option value="Wrecked">Wrecked</option>
+                        <option value="Misc">Misc</option>
+                    </select>
+                    <label for="subcategory">子类别 (Subcategory):</label>
+                    <input type="text" id="subcategory" placeholder="例如：LightWeapon">
+                    <label for="impactSoundTag">冲击音效标签 (ImpactSoundTag):</label>
+                    <input type="text" id="impactSoundTag" value="impact_metal_light">
+                    <label for="itemScale">物品整体缩放 (Scale): <small>(float, item level)</small></label>
+                    <input type="number" id="itemScale" step="0.01" value="1.0">
+                </div>
+
+                <div class="attribute-group">
+                    <h4>交互与视觉属性</h4>
+                    <label for="interactDistance">交互距离 (InteractDistance): <small>(float)</small></label>
+                    <input type="number" id="interactDistance" step="0.1" value="50">
+                    <label for="interactPriority">交互优先级 (InteractPriority): <small>(float)</small></label>
+                    <input type="number" id="interactPriority" step="0.1" value="1.0">
+                    <label for="interactThroughWalls">穿墙交互 (InteractThroughWalls): <small>(bool)</small></label>
+                    <select id="interactThroughWalls">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="focusOnSelected">选中时聚焦 (FocusOnSelected): <small>(bool)</small></label>
+                    <select id="focusOnSelected">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="offsetOnSelected">选中偏移 (OffsetOnSelected): <small>(float)</small></label>
+                    <input type="number" id="offsetOnSelected" step="1" value="0">
+                    <label for="showContentsInTooltip">提示显示内容 (ShowContentsInTooltip): <small>(bool)</small></label>
+                    <select id="showContentsInTooltip">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="spriteColor">精灵颜色 (SpriteColor): <small>(R,G,B,A 例如: 1.0,1.0,1.0,1.0)</small></label>
+                    <input type="text" id="spriteColor" value="1.0,1.0,1.0,1.0">
+                </div>
+
+                <div class="attribute-group">
+                    <h4>状态与生命值</h4>
+                    <label for="health">生命值 (Health): <small>(float)</small></label>
+                    <input type="number" id="health" step="1" value="100">
+                    <label for="indestructible">不可摧毁 (Indestructible): <small>(bool)</small></label>
+                    <select id="indestructible">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="fireProof">防火 (FireProof): <small>(bool)</small></label>
+                    <select id="fireProof">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="waterProof">防水 (WaterProof): <small>(bool)</small></label>
+                    <select id="waterProof">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="impactTolerance">冲击承受 (ImpactTolerance): <small>(float)</small></label>
+                    <input type="number" id="impactTolerance" step="0.1" value="10.0">
+                </div>
+
+                <div class="attribute-group">
+                    <h4>其他属性</h4>
+                    <label for="maxStackSize">最大堆叠数量 (maxstacksize):</label>
+                    <input type="number" id="maxStackSize" value="1">
+                    <label for="allowAsExtraCargo">允许作为额外货物 (allowasextracargo): <small>(bool)</small></label>
+                    <select id="allowAsExtraCargo">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="cargoContainerIdentifier">货物容器标识符 (CargoContainerIdentifier): <small>(string)</small></label>
+                    <input type="text" id="cargoContainerIdentifier" placeholder="metalcrate">
+                    <label for="allowRotatingInEditor">编辑器中允许旋转 (AllowRotatingInEditor): <small>(bool)</small></label>
+                    <select id="allowRotatingInEditor">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <label for="linkable">可连接 (Linkable): <small>(bool)</small></label>
+                    <select id="linkable">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                </div>
+                <div class="attribute-group">
+                    <h4>价格 (Price)</h4>
+                    <label for="basePrice">基础价格 (baseprice):</label>
+                    <input type="number" id="basePrice" value="666">
+                    <div id="dynamicPrices">
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value="merchantoutpost"></label>
+                            <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="1.5"></label>
+                            <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value=""></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value="merchantcity"></label>
+                            <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="1.25"></label>
+                            <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value="1"></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value="merchantresearch"></label>
+                            <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="1.25"></label>
+                            <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value=""></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value="merchantmilitary"></label>
+                            <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="0.9"></label>
+                            <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value="1"></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value="merchantmine"></label>
+                            <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="1.25"></label>
+                            <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value=""></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value="merchantarmory"></label>
+                            <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="0.9"></label>
+                            <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value="1"></label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addPrice()">添加更多价格规则</button>
+                </div>
+                
+                <div class="attribute-group">
+                    <h4>首选容器 (PreferredContainer)</h4>
+                    <div id="dynamicPreferredContainers">
+                        </div>
+                    <button type="button" onclick="addPreferredContainer()">添加首选容器</button>
+                </div>
+
+                <div class="attribute-group">
+                    <h4>合成 (Fabricate)</h4>
+                    <label for="fabricateTime">合成时间 (requiredtime):</label>
+                    <input type="number" id="fabricateTime" value="35">
+                    <label for="fabricateSuitableFabricators">合成器 (suitablefabricators, 逗号分隔):</label>
+                    <input type="text" id="fabricateSuitableFabricators" value="fabricatorVGM">
+                    <div id="dynamicFabricateRequiredItems">
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>物品标识符 (item identifier): <input type="text" class="fabricate-item-identifier" value="assaultrifle"></label>
+                            <label>数量 (amount): <input type="number" class="fabricate-item-amount" value="1"></label>
+                            <label>最小状况 (mincondition, -1 to ignore): <input type="number" class="fabricate-mincondition" step="0.01" value="0"></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>物品标识符 (item identifier): <input type="text" class="fabricate-item-identifier" value="steel"></label>
+                            <label>数量 (amount): <input type="number" class="fabricate-item-amount" value="3"></label>
+                            <label>最小状况 (mincondition, -1 to ignore): <input type="number" class="fabricate-mincondition" step="0.01" value="0"></label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addFabricateRequiredItem()">添加合成材料</button>
+                </div>
+
+                <div class="attribute-group">
+                    <h4>分解 (Deconstruct)</h4>
+                    <label for="deconstructTime">分解时间 (time):</label>
+                    <input type="number" id="deconstructTime" value="10">
+                    <div id="dynamicDeconstructItems">
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>物品标识符 (item identifier): <input type="text" class="deconstruct-item-identifier" value="plastic"></label>
+                        </div>
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                            <label>物品标识符 (item identifier): <input type="text" class="deconstruct-item-identifier" value="titaniumaluminiumalloy"></label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addDeconstructItem()">添加分解产物</button>
+                </div>
+
+                <div class="attribute-group">
+                    <h4>物理体积 (Body)</h4>
+                    <label for="bodyWidth">宽度 (width):</label>
+                    <input type="number" id="bodyWidth" value="160">
+                    <label for="bodyHeight">高度 (height):</label>
+                    <input type="number" id="bodyHeight" value="60">
+                    <label for="bodyDensity">密度 (density):</label>
+                    <input type="number" id="bodyDensity" value="25">
+                </div>
+                
+                <div class="attribute-group">
+                    <h4>远程武器 (RangedWeapon) - 选填</h4>
+                    <label for="reloadTime">装填时间 (reload):</label>
+                    <input type="number" id="reloadTime" step="0.01" value="0.24">
+                    <label for="weapondamagemodifier">武器伤害修正 (weapondamagemodifier):</label>
+                    <input type="number" id="weapondamagemodifier" step="0.01" value="1.0">
+                    <label for="crosshairscale">准星缩放 (crosshairscale):</label>
+                    <input type="number" id="crosshairscale" step="0.01" value="0.2">
+                    <label for="penetration">穿透 (penetration):</label>
+                    <input type="text" id="penetration" value="">
+                    <label for="holdtrigger">按住扳机 (holdtrigger):</label>
+                    <select id="holdtrigger">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <label for="barrelPos">枪管位置 (barrelpos, x,y):</label>
+                    <input type="text" id="barrelPos" value="75,20" readonly>
+                    <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('barrelPos')">点选</button>
+                    <label for="spread">散布 (spread):</label>
+                    <input type="number" id="spread" value="6">
+                    <label for="unskilledspread">非熟练散布 (unskilledspread):</label>
+                    <input type="number" id="unskilledspread" value="20">
+                    <label for="combatPriority">战斗优先级 (combatPriority):</label>
+                    <input type="number" id="combatPriority" value="80">
+                    <label for="drawhudwhenequipped">装备时绘制HUD (drawhudwhenequipped):</label>
+                    <select id="drawhudwhenequipped">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <label for="crosshairTexture">准星纹理 (Crosshair texture):</label>
+                    <input type="text" id="crosshairTexture" value="Content/Items/Weapons/Crosshairs.png">
+                    <label for="crosshairSourceRect">准星源矩形 (Crosshair sourcerect):</label>
+                    <input type="text" id="crosshairSourceRect" value="0,256,256,256">
+                    <label for="crosshairPointerTexture">准星指针纹理 (CrosshairPointer texture):</label>
+                    <input type="text" id="crosshairPointerTexture" value="Content/Items/Weapons/Crosshairs.png">
+                    <label for="crosshairPointerSourceRect">准星指针源矩形 (CrosshairPointer sourcerect):</label>
+                    <input type="text" id="crosshairPointerSourceRect" value="256,256,256,256">
+                    <label for="rangedRequiredItems">所需物品 (RequiredItems, 逗号分隔):</label>
+                    <input type="text" id="rangedRequiredItems" value="smgammo">
+                    <label for="rangedRequiredItemsType">所需物品类型 (RequiredItems type):</label>
+                    <input type="text" id="rangedRequiredItemsType" value="Contained">
+                    <label for="rangedRequiredItemsMsg">所需物品消息 (RequiredItems msg):</label>
+                    <input type="text" id="rangedRequiredItemsMsg" value="ItemMsgAmmoRequired">
+                    <label for="rangedRequiredSkillIdentifier">所需技能标识符 (RequiredSkill identifier):</label>
+                    <input type="text" id="rangedRequiredSkillIdentifier" value="weapons">
+                    <label for="rangedRequiredSkillLevel">所需技能等级 (RequiredSkill level):</label>
+                    <input type="number" id="rangedRequiredSkillLevel" value="60">
+                    <p><small>注意：RangedWeapon中的StatusEffect将固定为模板内容。</small></p>
+                </div>
+
+                <div class="attribute-group">
+                    <h4>物品容器 (ItemContainer)</h4>
+                    <label for="containerCapacity">容量 (capacity):</label>
+                    <input type="number" id="containerCapacity" value="1">
+                    <label for="containerMaxStackSize">最大堆叠 (maxstacksize):</label>
+                    <input type="number" id="containerMaxStackSize" value="1">
+                    <label for="containerHideItems">隐藏物品 (hideitems):</label>
+                    <select id="containerHideItems">
+                        <option value="false">false</option>
+                        <option value="true">true</option>
+                    </select>
+                    <label for="containedStateIndicatorSlot">状态指示器槽位 (containedstateindicatorslot):</label>
+                    <input type="number" id="containedStateIndicatorSlot" value="0">
+                    <label for="containedStateIndicatorStyle">状态指示器样式 (containedstateindicatorstyle):</label>
+                    <input type="text" id="containedStateIndicatorStyle" value="bullet">
+                    <label for="containedSpriteDepth">包含精灵深度 (containedspritedepth):</label>
+                    <input type="number" id="containedSpriteDepth" step="0.01" value="0.56">
+
+                    <div id="subContainerGroups">
+                        <div class="sub-container-group dynamic-item-group" data-default-type="loweraccessory">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">×</button>
+                            <h4>下挂件 (SubContainer - LowerAccessory)</h4>
+                            <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallAccessoryVGM,bigAccessoryVGM,light"></label>
+                            <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-loweraccessory" value="22,1" readonly></label>
+                            <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-loweraccessory')">点选</button>
+                            <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
+                        </div>
+                        <div class="sub-container-group dynamic-item-group" data-default-type="grip">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">×</button>
+                            <h4>握把 (SubContainer - Grip)</h4>
+                            <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallHandVGM,bigHandVGM"></label>
+                            <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-grip" value="22,1" readonly></label>
+                            <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-grip')">点选</button>
+                            <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
+                        </div>
+                        <div class="sub-container-group dynamic-item-group" data-default-type="muzzle">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">×</button>
+                            <h4>枪口 (SubContainer - Muzzle)</h4>
+                            <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallMuzzleVGM,bigMuzzleVGM"></label>
+                            <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-muzzle" value="22,1" readonly></label>
+                            <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-muzzle')">点选</button>
+                            <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
+                        </div>
+                        <div class="sub-container-group dynamic-item-group" data-default-type="stock">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">×</button>
+                            <h4>枪托 (SubContainer - Stock)</h4>
+                            <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallStockVGM,bigStockVGM"></label>
+                            <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-stock" value="22,1" readonly></label>
+                            <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-stock')">点选</button>
+                            <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
+                        </div>
+                        <div class="sub-container-group dynamic-item-group" data-default-type="scope">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">×</button>
+                            <h4>上挂件 (SubContainer - Scope)</h4>
+                            <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallScopeVGM,bigScopeVGM"></label>
+                            <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-scope" value="22,1" readonly></label>
+                            <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-scope')">点选</button>
+                            <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addSubContainer('loweraccessory')">添加下挂件子容器</button>
+                    <button type="button" onclick="addSubContainer('grip')">添加握把子容器</button>
+                    <button type="button" onclick="addSubContainer('muzzle')">添加枪口子容器</button>
+                    <button type="button" onclick="addSubContainer('stock')">添加枪托子容器</button>
+                    <button type="button" onclick="addSubContainer('scope')">添加上挂件子容器</button>
+                    <button type="button" onclick="addSubContainer('custom')">添加自定义子容器</button>
+
+                </div>
+                
+                <div class="attribute-group">
+                    <h5>主容器可容纳物品 (Containable)</h5>
+                    <div id="mainContainables">
+                        <div class="dynamic-item-group">
+                            <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">移除</button>
+                            <label>物品标识符 (items, 逗号分隔): <input type="text" class="containable-items" value="smgammo,smallMagVGM,bigMagVGM,drumMagVGM"></label>
+                            <label>隐藏 (hide): <select class="containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="containable-itempos" id="mainContainableItemPos-0" value="-19,-1" readonly></label>
+                            <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('mainContainableItemPos-0')">点选</button>
+                            <label>旋转 (rotation): <input type="number" class="containable-rotation" value="-30"></label>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addMainContainable()">添加主容器可容纳物品</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="section-panel">
+                <h2>图片与坐标编辑</h2>
+                <label for="imageUpload">上传物品贴图：</label>
+                <input type="file" id="imageUpload" accept="image/*">
+                <div class="mode-buttons">
+                    <button id="modeSourcerect" onclick="setMode('sourcerect')">选择贴图区域</button>
+                </div>
+                <canvas id="imageCanvas" class="grabbing" ></canvas>
+                <h3>精灵 (Sprite)</h3>
+                <label for="spriteTexture">纹理路径 (texture):</label>
+                <input type="text" id="spriteTexture" value="Content/Items/Weapons/weapons_new.png" placeholder="根据您的游戏文件路径修改">
+                <label for="spriteSourceRect">物品精灵源矩形 (sourcerect, x,y,width,height):</label>
+                <input type="text" id="spriteSourceRect" value="94,8,161,59" readonly>
+                <label for="spriteDepth">深度 (depth):</label>
+                <input type="number" id="spriteDepth" step="0.01" value="0.55">
+                <label for="spriteOrigin">原点 (origin, x,y):</label>
+                <input type="text" id="spriteOrigin" value="0.5,0.5">
+                <p style="font-size: 0.9em; color: #777;">通常为 0.5,0.5 (中心点)。持握点坐标会相对于此原点计算。</p>
+                <h3>背包图标 (InventoryIcon)</h3>
+                <label for="inventoryIconTexture">纹理路径 (texture):</label>
+                <input type="text" id="inventoryIconTexture" value="Content/Items/InventoryIconAtlas.png">
+                <label for="inventoryIconSourceRect">背包图标源矩形 (sourcerect, x,y,width,height):</label>
+                <input type="text" id="inventoryIconSourceRect" value="94,8,161,59" readonly>
+                <label for="inventoryIconOrigin">原点 (origin, x,y):</label>
+                <input type="text" id="inventoryIconOrigin" value="0.5,0.5">
+                <p style="font-size: 0.9em; color: #777;">默认使用物品精灵的源矩形。通常背包图标纹理路径为 `Content/Items/InventoryIconAtlas.png`。</p>
+            </div>
+            
+            <div class="section-panel">
+                <div class="attribute-group">
+                    <h4>持握点 (Holdable)</h4>
+                    <label for="holdableSlots">槽位 (slots, 逗号分隔):</label>
+                    <input type="text" id="holdableSlots" value="Any,RightHand+LeftHand">
+                    <label for="controlPose">控制姿势 (controlpose):</label>
+                    <select id="controlPose">
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <label for="holdPos">持握位置 (holdpos, x,y):</label>
+                    <input type="text" id="holdPos" value="40,-10">
+                    <label for="aimPos">瞄准位置 (aimpos, x,y):</label>
+                    <input type="text" id="aimPos" value="45,-10">
+                    <label for="handle1Pos">持握点1 (handle1, dx,dy):</label>
+                    <input type="text" id="handle1Pos" value="-30,15" readonly>
+                    <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('handle1Pos')">点选</button>
+                    <label for="handle2Pos">持握点2 (handle2, dx,dy):</label>
+                    <input type="text" id="handle2Pos" value="26,-5" readonly>
+                    <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('handle2Pos')">点选</button>
+                    <label for="holdAngle">持握角度 (holdangle):</label>
+                    <input type="number" id="holdAngle" value="-35">
+                    <label for="holdableMsg">消息 (msg):</label>
+                    <input type="text" id="holdableMsg" value="ItemMsgPickUpSelect">
+                </div>
+                <div class="attribute-group">
+                    <h4>AI目标 (AITarget)</h4>
+                    <label for="aiTargetSightRange">视力范围 (sightrange):</label>
+                    <input type="number" id="aiTargetSightRange" value="2000" step="1">
+                    <label for="aiTargetSoundRange">听力范围 (soundrange):</label>
+                    <input type="number" id="aiTargetSoundRange" value="5000" step="1">
+                    <label for="aiTargetFadeOutTime">消失时间 (fadeouttime):</label>
+                    <input type="number" id="aiTargetFadeOutTime" value="5" step="0.1">
+                </div>
+                <div class="attribute-group">
+                    <h4>品质 (Quality)</h4>
+                    <label for="qualityStatType">属性类型 (stattype):</label>
+                    <input type="text" id="qualityStatType" value="FirepowerMultiplier">
+                    <label for="qualityValue">值 (value):</label>
+                    <input type="number" id="qualityValue" value="0.1" step="0.01">
+                </div>
+                <div class="attribute-group">
+                    <h4>技能要求提示 (SkillRequirementHint)</h4>
+                    <label for="skillHintIdentifier">标识符 (identifier):</label>
+                    <input type="text" id="skillHintIdentifier" value="weapons">
+                    <label for="skillHintLevel">等级 (level):</label>
+                    <input type="number" id="skillHintLevel" value="40" step="1">
+                </div>
+            </div>
+
+            <div class="section-panel output-section">
+                <h2>生成的XML</h2>
+                <pre id="xmlOutput"></pre>
+                <button onclick="generateXml()" style="margin-top: 20px;">生成XML</button>
+                <p style="color: red; font-weight: bold; margin-top: 15px;">警告：持握点位和容器位置通常不准确，需要根据游戏内表现重新微调</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        const CANVAS_FIXED_WIDTH = 800; // 固定 Canvas 宽度
+        const CANVAS_FIXED_HEIGHT = 600; // 固定 Canvas 高度
+
+        // --- Global State Variables ---
+        let uploadedImage = new Image();
+        let currentMode = 'none'; // 'none', 'sourcerect', 'pointSelection'
+        let activeCoordinateInput = null; // Stores the input element to populate during pointSelection mode
+
+        // Zoom and Pan state
+        let scale = 1.0; // Current zoom level
+        let panX = 0; // Pan offset X
+        let panY = 0; // Pan offset Y
+        let isPanning = false;
+        let lastPanX = 0;
+        let lastPanY = 0;
+
+        // Sourcerect selection state
+        let isDrawing = false;
+        let startX_canvas_screen = 0; // Mouse down X on canvas (client coordinates relative to canvas element)
+        let startY_canvas_screen = 0; // Mouse down Y on canvas (client coordinates relative to canvas element)
+        let currentDrawingRect_canvas_transformed = null; // Temporary rect while drawing (in canvas-transformed image coordinates)
+
+        // Stored values for persistent drawing (in original image pixels) - These are Barotrauma-style coordinates (Y-up is positive)
+        let selectedSourcerect = { x: 94, y: 8, width: 161, height: 59 }; // Initial values from user's example
+        let selectedHandle1 = { x: -30, y: 15 }; // Barotrauma-style (Y-up is positive)
+        let selectedHandle2 = { x: 26, y: -5 }; // Barotrauma-style (Y-up is positive)
+        let selectedBarrelPos = { x: 75, y: 20 }; // Barotrauma-style (Y-up is positive)
+        let selectedItemPos = { // Initial values from user's example - Barotrauma-style (Y-up is positive)
+            "mainContainableItemPos-0": {x: -19, y: -1},
+            "subContainableItemPos-loweraccessory": {x: 22, y: 1},
+            "subContainableItemPos-grip": {x: 22, y: 1},
+            "subContainableItemPos-muzzle": {x: 22, y: 1},
+            "subContainableItemPos-stock": {x: 22, y: 1},
+            "subContainableItemPos-scope": {x: 22, y: 1}
+        };
+
+        // --- Canvas Setup ---
+        const canvas = document.getElementById('imageCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas display size and internal drawing size
+        canvas.width = CANVAS_FIXED_WIDTH;
+        canvas.height = CANVAS_FIXED_HEIGHT;
+
+        // --- Event Listeners ---
+        document.getElementById('imageUpload').addEventListener('change', handleImageUpload);
+        canvas.addEventListener('mousedown', handleMouseDown);
+        canvas.addEventListener('mousemove', handleMouseMove);
+        canvas.addEventListener('mouseup', handleMouseUp);
+        canvas.addEventListener('mouseout', handleMouseUp); // End drawing/panning if mouse leaves canvas
+        canvas.addEventListener('wheel', handleWheel);
+
+        // Initial setup for existing coordinate inputs
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCanvas();
+        });
+
+
+        // --- Image Loading and Rendering ---
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedImage.onload = () => {
+                        // Reset zoom and pan when new image is loaded
+                        scale = 1.0;
+                        panX = 0;
+                        panY = 0;
+                        // Keep current selectedSourcerect, but clear temporary drawing rect
+                        currentDrawingRect_canvas_transformed = null;
+
+                        renderCanvas();
+                    };
+                    uploadedImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function renderCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+
+            if (uploadedImage.src) {
+                // Save the current transformation matrix
+                ctx.save();
+
+                // Apply pan and zoom
+                ctx.translate(panX, panY);
+                ctx.scale(scale, scale);
+
+                // Draw the image
+                ctx.drawImage(uploadedImage, 0, 0, uploadedImage.width, uploadedImage.height);
+
+                // Draw selected sourcerect (in original image pixels, already accounted for by pan/zoom)
+                if (selectedSourcerect.width > 0 && selectedSourcerect.height > 0) {
+                    ctx.strokeStyle = 'red';
+                    ctx.lineWidth = 2 / scale; // Adjust line width for zoom
+                    ctx.strokeRect(selectedSourcerect.x, selectedSourcerect.y, selectedSourcerect.width, selectedSourcerect.height);
+                }
+
+                // Draw current drawing rect (in image pixels, transformed by pan/zoom)
+                if (currentDrawingRect_canvas_transformed) {
+                    ctx.strokeStyle = 'blue';
+                    ctx.lineWidth = 2 / scale; // Adjust line width for zoom
+                    ctx.strokeRect(
+                        currentDrawingRect_canvas_transformed.x,
+                        currentDrawingRect_canvas_transformed.y,
+                        currentDrawingRect_canvas_transformed.width,
+                        currentDrawingRect_canvas_transformed.height
+                    );
+                }
+
+                // Get itemScale for drawing points
+                const itemScaleVal = parseFloat(document.getElementById('itemScale').value) || 1.0;
+
+                // Draw handle points (x, y are Barotrauma-style, so y needs to be inverted for canvas drawing)
+                // The stored points are already scaled.
+                drawPoint(selectedHandle1.x, selectedHandle1.y, 'handle1Pos', 'red', 'red', itemScaleVal);
+                drawPoint(selectedHandle2.x, selectedHandle2.y, 'handle2Pos', 'green', 'green', itemScaleVal);
+                drawPoint(selectedBarrelPos.x, selectedBarrelPos.y, 'barrelPos', 'purple', 'purple', itemScaleVal);
+
+                // Draw dynamic itempos points
+                for (const id in selectedItemPos) {
+                    const pos = selectedItemPos[id];
+                    drawPoint(pos.x, pos.y, id, 'orange', 'orange', itemScaleVal);
+                }
+
+                // Restore the transformation matrix
+                ctx.restore();
+            }
+        }
+
+        function drawPoint(x, y, inputId, strokeColor, fillColor, itemScaleVal) {
+            if (!uploadedImage.src) return;
+
+            const spriteOriginInput = document.getElementById('spriteOrigin').value || "0.5,0.5";
+            const [originXRatio, originYRatio] = spriteOriginInput.split(',').map(Number);
+            
+            const spriteSourceRectInput = document.getElementById('spriteSourceRect').value;
+            let spriteWidth = uploadedImage.width;
+            let spriteHeight = uploadedImage.height;
+            let spriteRectX = 0;
+            let spriteRectY = 0;
+
+            if (spriteSourceRectInput) {
+                const parts = spriteSourceRectInput.split(',').map(Number);
+                if (parts.length === 4) {
+                    spriteRectX = parts[0];
+                    spriteRectY = parts[1];
+                    spriteWidth = parts[2];
+                    spriteHeight = parts[3];
+                }
+            }
+            
+            // Unscale the point for drawing on the base image, as the visual representation should be scaled
+            // The stored x,y values are already scaled, so we divide by itemScaleVal to get the unscaled position
+            // relative to the item's unscaled dimensions. This unscaled position is then offset by the origin
+            // and spriteRect to get the global image coordinate for drawing.
+            const unscaledX = x / itemScaleVal;
+            const unscaledY = y / itemScaleVal;
+
+            // Calculate origin pixel coordinates relative to the *top-left of the original image/sourcerect*
+            // globalX and globalY are coordinates on the image itself.
+            const globalX = spriteRectX + (originXRatio * spriteWidth) + unscaledX;
+            // Y is Barotrauma-style (up is positive), so to draw on canvas (down is positive), invert Y
+            const globalY_for_drawing = spriteRectY + (originYRatio * spriteHeight) - unscaledY;
+
+
+            // Draw the circle - ctx is already transformed by pan and zoom
+            ctx.beginPath();
+            const radius = 5 / scale; // Adjust radius for zoom
+            ctx.arc(globalX, globalY_for_drawing, radius, 0, Math.PI * 2);
+            ctx.strokeStyle = strokeColor;
+            ctx.lineWidth = 2 / scale;
+            ctx.stroke();
+            ctx.fillStyle = fillColor;
+            ctx.fill();
+
+            // Draw label
+            ctx.font = `${12 / scale}px Arial`;
+            ctx.fillStyle = 'black';
+            // Offset label slightly
+            let labelText = inputId.replace('Pos', '');
+            if (inputId.startsWith('mainContainableItemPos-')) {
+                labelText = `MainItemPos ${inputId.split('-')[1]}`;
+            } else if (inputId.startsWith('subContainableItemPos-')) {
+                labelText = `${inputId.split('-')[1]} ItemPos`;
+            }
+            ctx.fillText(labelText, globalX + radius + (2 / scale), globalY_for_drawing + radius + (2 / scale));
+        }
+
+
+        // --- Mouse Event Handlers ---
+        function getTransformedMouseCoordinates(e) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX_screen = e.clientX - rect.left;
+            const mouseY_screen = e.clientY - rect.top;
+
+            // Convert screen coordinates to canvas-transformed image coordinates (x right, y down)
+            const mouseX_transformed = (mouseX_screen - panX) / scale;
+            const mouseY_transformed = (mouseY_screen - panY) / scale;
+            return { x: mouseX_transformed, y: mouseY_transformed };
+        }
+
+        function handleMouseDown(e) {
+            if (!uploadedImage.src) return;
+
+            const { x: mouseX_transformed, y: mouseY_transformed } = getTransformedMouseCoordinates(e);
+
+            if (currentMode === 'sourcerect') {
+                isDrawing = true;
+                startX_canvas_screen = e.clientX - canvas.getBoundingClientRect().left; // Store screen coords for calculating movement
+                startY_canvas_screen = e.clientY - canvas.getBoundingClientRect().top;
+
+                // Initialize currentDrawingRect in transformed image coordinates
+                currentDrawingRect_canvas_transformed = {
+                    x: mouseX_transformed,
+                    y: mouseY_transformed,
+                    width: 0,
+                    height: 0
+                };
+                canvas.classList.add('grabbing');
+            } else if (currentMode === 'pointSelection') {
+                if (activeCoordinateInput) {
+                    const spriteOriginInput = document.getElementById('spriteOrigin').value || "0.5,0.5";
+                    const [originXRatio, originYRatio] = spriteOriginInput.split(',').map(Number);
+
+                    const spriteSourceRectInput = document.getElementById('spriteSourceRect').value;
+                    let spriteWidth = uploadedImage.width;
+                    let spriteHeight = uploadedImage.height;
+                    let spriteRectX = 0;
+                    let spriteRectY = 0;
+                    if (spriteSourceRectInput) {
+                        const parts = spriteSourceRectInput.split(',').map(Number);
+                        if (parts.length === 4) {
+                            spriteRectX = parts[0];
+                            spriteRectY = parts[1];
+                            spriteWidth = parts[2];
+                            spriteHeight = parts[3];
+                        }
+                    }
+
+                    // Calculate point relative to sprite origin (Canvas style: X right, Y down from origin)
+                    const tempPointX_canvasStyle = mouseX_transformed - (spriteRectX + originXRatio * spriteWidth);
+                    const tempPointY_canvasStyle = mouseY_transformed - (spriteRectY + originYRatio * spriteHeight);
+
+                    // Convert to Barotrauma style (X right, Y up from origin)
+                    let pointX_barotraumaStyle = tempPointX_canvasStyle;
+                    let pointY_barotraumaStyle = -tempPointY_canvasStyle;
+
+                    // Get itemScale and apply it
+                    const itemScaleVal = parseFloat(document.getElementById('itemScale').value) || 1.0;
+                    pointX_barotraumaStyle = Math.round(pointX_barotraumaStyle * itemScaleVal);
+                    pointY_barotraumaStyle = Math.round(pointY_barotraumaStyle * itemScaleVal);
+
+
+                    activeCoordinateInput.value = `${pointX_barotraumaStyle},${pointY_barotraumaStyle}`;
+                    updateCoordinate(activeCoordinateInput.id, pointX_barotraumaStyle, pointY_barotraumaStyle);
+                    setMode('none'); // Exit point selection mode
+                }
+            } else { // Panning mode
+                isPanning = true;
+                lastPanX = e.clientX - canvas.getBoundingClientRect().left;
+                lastPanY = e.clientY - canvas.getBoundingClientRect().top;
+                canvas.classList.add('grabbing');
+            }
+        }
+
+        function handleMouseMove(e) {
+            const rect = canvas.getBoundingClientRect();
+            const mouseX_canvas = e.clientX - rect.left;
+            const mouseY_canvas = e.clientY - rect.top;
+
+            if (isDrawing) {
+                // Calculate dimensions in transformed image coordinates
+                const currentX_transformed = (mouseX_canvas - panX) / scale;
+                const currentY_transformed = (mouseY_canvas - panY) / scale;
+                
+                currentDrawingRect_canvas_transformed.width = currentX_transformed - currentDrawingRect_canvas_transformed.x;
+                currentDrawingRect_canvas_transformed.height = currentY_transformed - currentDrawingRect_canvas_transformed.y;
+                renderCanvas();
+            } else if (isPanning) {
+                const dx = mouseX_canvas - lastPanX;
+                const dy = mouseY_canvas - lastPanY;
+                panX += dx;
+                panY += dy;
+                lastPanX = mouseX_canvas;
+                lastPanY = mouseY_canvas;
+                renderCanvas();
+            }
+        }
+
+        function handleMouseUp() {
+            if (isDrawing) {
+                isDrawing = false;
+                canvas.classList.remove('grabbing');
+
+                // Ensure width/height are positive
+                let finalRect = {
+                    x: currentDrawingRect_canvas_transformed.x,
+                    y: currentDrawingRect_canvas_transformed.y,
+                    width: currentDrawingRect_canvas_transformed.width,
+                    height: currentDrawingRect_canvas_transformed.height
+                };
+
+                if (finalRect.width < 0) {
+                    finalRect.x += finalRect.width;
+                    finalRect.width *= -1;
+                }
+                if (finalRect.height < 0) {
+                    finalRect.y += finalRect.height;
+                    finalRect.height *= -1;
+                }
+
+                selectedSourcerect = {
+                    x: Math.round(finalRect.x),
+                    y: Math.round(finalRect.y),
+                    width: Math.round(finalRect.width),
+                    height: Math.round(finalRect.height)
+                };
+
+                document.getElementById('spriteSourceRect').value = `${selectedSourcerect.x},${selectedSourcerect.y},${selectedSourcerect.width},${selectedSourcerect.height}`;
+                document.getElementById('inventoryIconSourceRect').value = `${selectedSourcerect.x},${selectedSourcerect.y},${selectedSourcerect.width},${selectedSourcerect.height}`;
+
+                currentDrawingRect_canvas_transformed = null; // Clear temporary rect
+                renderCanvas();
+            } else if (isPanning) {
+                isPanning = false;
+                canvas.classList.remove('grabbing');
+            }
+        }
+
+        function handleWheel(e) {
+            e.preventDefault(); // Prevent page scrolling
+
+            const zoomIntensity = 0.1;
+            const mouseX = e.clientX - canvas.getBoundingClientRect().left;
+            const mouseY = e.clientY - canvas.getBoundingClientRect().top;
+
+            const scaleFactor = e.deltaY < 0 ? (1 + zoomIntensity) : (1 - zoomIntensity);
+
+            // Calculate new pan to zoom around mouse cursor
+            panX = mouseX - ((mouseX - panX) * scaleFactor);
+            panY = mouseY - ((mouseY - panY) * scaleFactor);
+            scale *= scaleFactor;
+
+            // Limit zoom
+            if (scale < 0.1) scale = 0.1;
+            if (scale > 10) scale = 10;
+
+            renderCanvas();
+        }
+
+        // --- Mode Control ---
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-buttons button').forEach(btn => btn.classList.remove('active'));
+            if (mode !== 'none') {
+                document.getElementById('mode' + mode.charAt(0).toUpperCase() + mode.slice(1)).classList.add('active');
+            }
+            if (mode === 'pointSelection' || mode === 'sourcerect') {
+                canvas.style.cursor = 'crosshair';
+            } else {
+                canvas.style.cursor = 'grab';
+            }
+            activeCoordinateInput = null; // Clear active input when changing mode
+        }
+
+        function setPointSelectionMode(inputId) {
+            activeCoordinateInput = document.getElementById(inputId);
+            setMode('pointSelection');
+        }
+
+        function updateCoordinate(id, x, y) {
+            if (id === 'handle1Pos') selectedHandle1 = { x, y };
+            else if (id === 'handle2Pos') selectedHandle2 = { x, y };
+            else if (id === 'barrelPos') selectedBarrelPos = { x, y };
+            else if (id.startsWith('mainContainableItemPos-')) selectedItemPos[id] = {x, y};
+            else if (id.startsWith('subContainableItemPos-')) selectedItemPos[id] = {x, y};
+            renderCanvas();
+        }
+        
+        // --- Dynamic Content Functions ---
+        function addPrice() {
+            const container = document.getElementById('dynamicPrices');
+            const index = container.children.length;
+            const div = document.createElement('div');
+            div.className = 'dynamic-item-group';
+            div.innerHTML = `
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                <label>商店标识符 (storeidentifier): <input type="text" class="price-storeidentifier" value=""></label>
+                <label>已售 (sold): <select class="price-sold"><option value="false">false</option><option value="true">true</option></select></label>
+                <label>价格修正 (multiplier): <input type="number" class="price-multiplier" step="0.01" value="1.0"></label>
+                <label>最低可用数量 (minavailable): <input type="number" class="price-minavailable" value=""></label>
+            `;
+            container.appendChild(div);
+        }
+
+        function addPreferredContainer() {
+            const container = document.getElementById('dynamicPreferredContainers');
+            const index = container.children.length;
+            const div = document.createElement('div');
+            div.className = 'dynamic-item-group';
+            div.innerHTML = `
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                <label>标识符 (identifier): <input type="text" class="preferred-container-identifier" value="engsuitlocker"></label>
+                <label>类型 (type): <input type="text" class="preferred-container-type" value="Cargo"></label>
+            `;
+            container.appendChild(div);
+        }
+
+        function addFabricateRequiredItem() {
+            const container = document.getElementById('dynamicFabricateRequiredItems');
+            const index = container.children.length;
+            const div = document.createElement('div');
+            div.className = 'dynamic-item-group';
+            div.innerHTML = `
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                <label>物品标识符 (item identifier): <input type="text" class="fabricate-item-identifier" value="steel"></label>
+                <label>数量 (amount): <input type="number" class="fabricate-item-amount" value="1"></label>
+                <label>最小状况 (mincondition, -1 to ignore): <input type="number" class="fabricate-mincondition" step="0.01" value="0"></label>
+            `;
+            container.appendChild(div);
+        }
+
+        function addDeconstructItem() {
+            const container = document.getElementById('dynamicDeconstructItems');
+            const index = container.children.length;
+            const div = document.createElement('div');
+            div.className = 'dynamic-item-group';
+            div.innerHTML = `
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove()">移除</button>
+                <label>物品标识符 (item identifier): <input type="text" class="deconstruct-item-identifier" value="plastic"></label>
+            `;
+            container.appendChild(div);
+        }
+
+        function addMainContainable() {
+            const container = document.getElementById('mainContainables');
+            const index = container.children.length;
+            const div = document.createElement('div');
+            div.className = 'dynamic-item-group';
+            const itemPosId = `mainContainableItemPos-${Date.now()}`; // Use timestamp for unique ID
+            div.innerHTML = `
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">移除</button>
+                <label>物品标识符 (items, 逗号分隔): <input type="text" class="containable-items" value=""></label>
+                <label>隐藏 (hide): <select class="containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                <label>物品位置 (itempos, x,y): <input type="text" class="containable-itempos" id="${itemPosId}" value="0,0" readonly></label>
+                <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('${itemPosId}')">点选</button>
+                <label>旋转 (rotation): <input type="number" class="containable-rotation" value="0"></label>
+            `;
+            container.appendChild(div);
+            selectedItemPos[itemPosId] = {x:0, y:0}; // Initialize new point for rendering (Barotrauma style)
+            renderCanvas();
+        }
+
+        function addSubContainer(type = 'custom') { // Added type parameter
+            const containerGroups = document.getElementById('subContainerGroups');
+            const newGroup = document.createElement('div');
+            newGroup.className = 'sub-container-group dynamic-item-group';
+            newGroup.dataset.defaultType = type; // Set the data-default-type attribute
+
+            let title = '';
+            let defaultItems = '';
+
+            // Set defaults based on known types
+            if (type === 'loweraccessory') {
+                title = '下挂件子容器';
+                defaultItems = 'smallAccessoryVGM,bigAccessoryVGM,light';
+            } else if (type === 'grip') {
+                title = '握把子容器';
+                defaultItems = 'smallHandVGM,bigHandVGM';
+            } else if (type === 'muzzle') {
+                title = '枪口子容器';
+                defaultItems = 'smallMuzzleVGM,bigMuzzleVGM';
+            } else if (type === 'stock') {
+                title = '枪托子容器';
+                defaultItems = 'smallStockVGM,bigStockVGM';
+            } else if (type === 'scope') {
+                title = '上挂件子容器';
+                defaultItems = 'smallScopeVGM,bigScopeVGM';
+            } else { // Custom type
+                title = '自定义子容器';
+                defaultItems = 'any';
+            }
+
+            const itemPosId = `subContainableItemPos-${type}-${Date.now()}`; // Unique ID for itempos
+
+            newGroup.innerHTML = `
+                <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">×</button>
+                <h4>${title}</h4>
+                <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="${defaultItems}"></label>
+                <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
+                <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="${itemPosId}" value="0,0" readonly></label>
+                <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('${itemPosId}')">点选</button>
+                <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
+            `;
+            containerGroups.appendChild(newGroup);
+            selectedItemPos[itemPosId] = {x:0, y:0}; // Initialize new point for rendering (Barotrauma style)
+            renderCanvas();
+        }
+
+        // --- XML Generation ---
+        function generateXml() {
+            const itemIdentifier = document.getElementById('itemIdentifier').value || 'newitem';
+            const itemName = document.getElementById('itemName').value;
+            const tags = document.getElementById('tags').value;
+            const itemCategory = document.getElementById('itemCategory').value;
+            const subcategory = document.getElementById('subcategory').value;
+            const impactSoundTag = document.getElementById('impactSoundTag').value;
+            const itemScale = document.getElementById('itemScale').value; // New item-level scale
+
+            const interactDistance = document.getElementById('interactDistance').value;
+            const interactPriority = document.getElementById('interactPriority').value;
+            const interactThroughWalls = document.getElementById('interactThroughWalls').value;
+            const focusOnSelected = document.getElementById('focusOnSelected').value;
+            const offsetOnSelected = document.getElementById('offsetOnSelected').value;
+            const showContentsInTooltip = document.getElementById('showContentsInTooltip').value;
+            const spriteColor = document.getElementById('spriteColor').value;
+
+            const health = document.getElementById('health').value;
+            const indestructible = document.getElementById('indestructible').value;
+            const fireProof = document.getElementById('fireProof').value;
+            const waterProof = document.getElementById('waterProof').value;
+            const impactTolerance = document.getElementById('impactTolerance').value;
+
+            const maxStackSize = document.getElementById('maxStackSize').value;
+            const allowAsExtraCargo = document.getElementById('allowAsExtraCargo').value;
+            const cargoContainerIdentifier = document.getElementById('cargoContainerIdentifier').value;
+            const allowRotatingInEditor = document.getElementById('allowRotatingInEditor').value;
+            const linkable = document.getElementById('linkable').value;
+
+            const basePrice = document.getElementById('basePrice').value;
+
+            const fabricateTime = document.getElementById('fabricateTime').value;
+            const fabricateSuitableFabricators = document.getElementById('fabricateSuitableFabricators').value;
+            
+            const deconstructTime = document.getElementById('deconstructTime').value;
+
+            const bodyWidth = document.getElementById('bodyWidth').value;
+            const bodyHeight = document.getElementById('bodyHeight').value;
+            const bodyDensity = document.getElementById('bodyDensity').value;
+
+            const reloadTime = document.getElementById('reloadTime').value;
+            const weaponDamageModifier = document.getElementById('weapondamagemodifier').value;
+            const crosshairscale = document.getElementById('crosshairscale').value; // Get crosshairscale value
+            const penetration = document.getElementById('penetration').value; // Can be empty string
+            const holdtrigger = document.getElementById('holdtrigger').value;
+            const barrelPos = document.getElementById('barrelPos').value;
+            const spread = document.getElementById('spread').value;
+            const unskilledspread = document.getElementById('unskilledspread').value;
+            const combatPriority = document.getElementById('combatPriority').value;
+            const drawhudwhenequipped = document.getElementById('drawhudwhenequipped').value;
+            const crosshairTexture = document.getElementById('crosshairTexture').value;
+            const crosshairSourceRect = document.getElementById('crosshairSourceRect').value;
+            const crosshairPointerTexture = document.getElementById('crosshairPointerTexture').value;
+            const crosshairPointerSourceRect = document.getElementById('crosshairPointerSourceRect').value;
+            const rangedRequiredItems = document.getElementById('rangedRequiredItems').value;
+            const rangedRequiredItemsType = document.getElementById('rangedRequiredItemsType').value;
+            const rangedRequiredItemsMsg = document.getElementById('rangedRequiredItemsMsg').value;
+            const rangedRequiredSkillIdentifier = document.getElementById('rangedRequiredSkillIdentifier').value;
+            const rangedRequiredSkillLevel = document.getElementById('rangedRequiredSkillLevel').value;
+
+            const containerCapacity = document.getElementById('containerCapacity').value;
+            const containerMaxStackSize = document.getElementById('containerMaxStackSize').value;
+            const containerHideItems = document.getElementById('containerHideItems').value;
+            const containedStateIndicatorSlot = document.getElementById('containedStateIndicatorSlot').value;
+            const containedStateIndicatorStyle = document.getElementById('containedStateIndicatorStyle').value;
+            const containedSpriteDepth = document.getElementById('containedSpriteDepth').value;
+
+            const spriteTexture = document.getElementById('spriteTexture').value;
+            const spriteSourceRect = document.getElementById('spriteSourceRect').value;
+            const spriteDepth = document.getElementById('spriteDepth').value;
+            const spriteOrigin = document.getElementById('spriteOrigin').value;
+            // const spriteScale = document.getElementById('spriteScale').value; // Removed
+
+            const inventoryIconTexture = document.getElementById('inventoryIconTexture').value;
+            const inventoryIconSourceRect = document.getElementById('inventoryIconSourceRect').value;
+            const inventoryIconOrigin = document.getElementById('inventoryIconOrigin').value;
+
+            const holdableSlots = document.getElementById('holdableSlots').value;
+            const controlPose = document.getElementById('controlPose').value;
+            const holdPos = document.getElementById('holdPos').value;
+            const aimPos = document.getElementById('aimPos').value;
+            const handle1Pos = document.getElementById('handle1Pos').value;
+            const handle2Pos = document.getElementById('handle2Pos').value;
+            const holdAngle = document.getElementById('holdAngle').value;
+            const holdableMsg = document.getElementById('holdableMsg').value;
+
+            // New AI Target fields
+            const aiTargetSightRange = document.getElementById('aiTargetSightRange').value;
+            const aiTargetSoundRange = document.getElementById('aiTargetSoundRange').value;
+            const aiTargetFadeOutTime = document.getElementById('aiTargetFadeOutTime').value;
+
+            // New Quality fields
+            const qualityStatType = document.getElementById('qualityStatType').value;
+            const qualityValue = document.getElementById('qualityValue').value;
+
+            // New Skill Requirement Hint fields
+            const skillHintIdentifier = document.getElementById('skillHintIdentifier').value;
+            const skillHintLevel = document.getElementById('skillHintLevel').value;
+            
+            let xml = `<Item identifier="${itemIdentifier}"`;
+
+            if (itemName) xml += ` name="${itemName}"`;
+            if (tags) xml += ` tags="${tags}"`;
+            if (itemCategory) xml += ` category="${itemCategory}"`;
+            if (subcategory) xml += ` subcategory="${subcategory}"`;
+            xml += ` scale="${itemScale}"`; // Use new item-level scale
+            if (impactSoundTag) xml += ` impactsoundtag="${impactSoundTag}"`;
+
+            xml += ` interactdistance="${interactDistance}"`;
+            xml += ` interactpriority="${interactPriority}"`;
+            xml += ` interactthroughwalls="${interactThroughWalls}"`;
+            xml += ` focusonselected="${focusOnSelected}"`;
+            xml += ` offsetonselected="${offsetOnSelected}"`;
+            xml += ` showcontentsintooltip="${showContentsInTooltip}"`;
+            xml += ` health="${health}"`;
+            xml += ` indestructible="${indestructible}"`;
+            xml += ` fireproof="${fireProof}"`;
+            xml += ` waterproof="${waterProof}"`;
+            xml += ` impacttolerance="${impactTolerance}"`;
+            xml += ` maxstacksize="${maxStackSize}"`;
+            xml += ` allowasextracargo="${allowAsExtraCargo}"`;
+            if (cargoContainerIdentifier) xml += ` cargocontaineridentifier="${cargoContainerIdentifier}"`;
+            xml += ` allowrotatingineditor="${allowRotatingInEditor}"`;
+            xml += ` linkable="${linkable}"`;
+
+            xml += `>\n`;
+
+            // Price
+            xml += `  <Price baseprice="${basePrice}">\n`;
+            document.querySelectorAll('#dynamicPrices .dynamic-item-group').forEach(group => {
+                const storeidentifier = group.querySelector('.price-storeidentifier').value;
+                const sold = group.querySelector('.price-sold').value;
+                const multiplier = group.querySelector('.price-multiplier').value;
+                const minavailable = group.querySelector('.price-minavailable').value;
+
+                let priceLine = `    <Price storeidentifier="${storeidentifier}"`;
+                if (sold !== 'false') priceLine += ` sold="${sold}"`; 
+                priceLine += ` multiplier="${multiplier}"`;
+                if (minavailable) priceLine += ` minavailable="${minavailable}"`;
+                priceLine += ` />\n`;
+                xml += priceLine;
+            });
+            xml += `  </Price>\n`;
+
+            // PreferredContainer (Dynamic)
+            document.querySelectorAll('#dynamicPreferredContainers .dynamic-item-group').forEach(group => {
+                const identifier = group.querySelector('.preferred-container-identifier').value;
+                const type = group.querySelector('.preferred-container-type').value;
+                xml += `  <PreferredContainer identifier="${identifier}" type="${type}" />\n`;
+            });
+
+            // Fabricate
+            xml += `  <Fabricate requiredtime="${fabricateTime}" suitablefabricators="${fabricateSuitableFabricators}">\n`;
+            document.querySelectorAll('#dynamicFabricateRequiredItems .dynamic-item-group').forEach(group => {
+                const identifier = group.querySelector('.fabricate-item-identifier').value;
+                const amount = group.querySelector('.fabricate-item-amount').value;
+                const mincondition = group.querySelector('.fabricate-mincondition').value;
+                xml += `    <RequiredItem identifier="${identifier}" amount="${amount}" mincondition="${mincondition}" />\n`;
+            });
+            xml += `  </Fabricate>\n`;
+
+            // Deconstruct
+            xml += `  <Deconstruct time="${deconstructTime}">\n`;
+            document.querySelectorAll('#dynamicDeconstructItems .dynamic-item-group').forEach(group => {
+                const identifier = group.querySelector('.deconstruct-item-identifier').value;
+                xml += `    <Item identifier="${identifier}" />\n`;
+            });
+            xml += `  </Deconstruct>\n`;
+
+            // Body
+            xml += `  <Body width="${bodyWidth}" height="${bodyHeight}" density="${bodyDensity}" />\n`;
+            
+            // InventoryIcon - Moved after Body
+            xml += `  <InventoryIcon texture="${inventoryIconTexture}" sourcerect="${inventoryIconSourceRect}" origin="${inventoryIconOrigin}" />\n`;
+
+            // NEW: PreferredContainer (Static) - Added here before Sprite
+            xml += `  <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />\n`;
+
+            // Sprite - Moved after Body and InventoryIcon
+            xml += `  <Sprite texture="${spriteTexture}" sourcerect="${spriteSourceRect}" depth="${spriteDepth}" origin="${spriteOrigin}" scale="1.0" `; // Fixed scale to 1.0
+            // Add SpriteColor if it's set
+            if (spriteColor) {
+                xml += `color="${spriteColor}"`;
+            }
+            xml += `/>\n`;
+
+            // Holdable - Moved before RangedWeapon
+            xml += `  <Holdable slots="${holdableSlots}" controlpose="${controlPose}" holdpos="${holdPos}" aimpos="${aimPos}" handle1="${handle1Pos}" handle2="${handle2Pos}" holdangle="${holdAngle}" msg="${holdableMsg}" />\n`;
+
+
+            // RangedWeapon (if reloadTime is provided, assume it's a ranged weapon)
+            if (reloadTime) {
+                xml += `  <RangedWeapon reload="${reloadTime}" weapondamagemodifier="${weaponDamageModifier}" crosshairscale="${crosshairscale}" penetration="${penetration}" holdtrigger="${holdtrigger}" barrelpos="${barrelPos}" spread="${spread}" unskilledspread="${unskilledspread}" combatpriority="${combatPriority}" drawhudwhenequipped="${drawhudwhenequipped}">\n`;
+                xml += `    <Crosshair texture="${crosshairTexture}" sourcerect="${crosshairSourceRect}" />\n`; // CORRECTED LINE: Removed scale attribute
+                xml += `    <CrosshairPointer texture="${crosshairPointerTexture}" sourcerect="${crosshairPointerSourceRect}" />\n`;
+                // Added ParticleEmitter as requested
+                xml += `    <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />\n`;
+                if (rangedRequiredItems) {
+                    xml += `    <RequiredItems items="${rangedRequiredItems}" type="${rangedRequiredItemsType}" msg="${rangedRequiredItemsMsg}" />\n`;
+                }
+                if (rangedRequiredSkillIdentifier) {
+                    xml += `    <RequiredSkill identifier="${rangedRequiredSkillIdentifier}" level="${rangedRequiredSkillLevel}" />\n`;
+                }
+                // Updated StatusEffects as per user's request, removed OnSecondaryUse
+                xml += `    <StatusEffect type="OnUse" target="This">\n`;
+                xml += `      <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />\n`;
+                xml += `      <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />\n`;
+                xml += `    </StatusEffect>\n`;
+                xml += `    <StatusEffect type="OnUse" target="Contained">\n`;
+                xml += `      <Use />\n`;
+                xml += `    </StatusEffect>\n`;
+                xml += `  </RangedWeapon>\n`;
+            }
+
+            // ItemContainer
+            xml += `  <ItemContainer capacity="${containerCapacity}" maxstacksize="${containerMaxStackSize}" hideitems="${containerHideItems}" containedstateindicatorslot="${containedStateIndicatorSlot}" containedstateindicatorstyle="${containedStateIndicatorStyle}" containedspritedepth="${containedSpriteDepth}">\n`;
+
+            // Slot Icons - Hardcoded as per user's example
+            xml += `    <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />\n`;
+            xml += `    <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />\n`;
+            xml += `    <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="192,0,64,64" origin="0.5,0.5" />\n`;
+            xml += `    <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="0,64,64,64" origin="0.5,0.5" />\n`;
+            xml += `    <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" origin="0.5,0.5" />\n`;
+            xml += `    <SlotIcon slotindex="5" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" origin="0.5,0.5" />\n`;
+
+            // Main Containable
+            document.querySelectorAll('#mainContainables .dynamic-item-group').forEach(group => {
+                const items = group.querySelector('.containable-items').value;
+                const hide = group.querySelector('.containable-hide').value;
+                const itempos = group.querySelector('.containable-itempos').value;
+                const rotation = group.querySelector('.containable-rotation').value;
+                if (items) {
+                    xml += `    <Containable items="${items}" hide="${hide}" itempos="${itempos}" rotation="${rotation}" />\n`;
+                }
+            });
+
+            // SubContainers - Modified to use nested Containable tag
+            document.querySelectorAll('#subContainerGroups .dynamic-item-group').forEach(group => {
+                const items = group.querySelector('.sub-containable-items').value;
+                const hide = group.querySelector('.sub-containable-hide').value;
+                const itempos = group.querySelector('.sub-containable-itempos').value;
+                const setactive = group.querySelector('.sub-containable-setactive').value;
+
+                xml += `    <SubContainer capacity="1" maxstacksize="1">\n`; 
+                xml += `      <Containable items="${items}" hide="${hide}" itempos="${itempos}" setactive="${setactive}" >\n`;
+                xml += `      </Containable>\n`; // Changed to opening and closing tags
+                xml += `    </SubContainer>\n`;
+            });
+
+            xml += `  </ItemContainer>\n`;
+
+            // AI Target
+            xml += `  <aitarget sightrange="${aiTargetSightRange}" soundrange="${aiTargetSoundRange}" fadeouttime="${aiTargetFadeOutTime}" />\n`;
+
+            // Quality
+            xml += `  <Quality>\n`;
+            xml += `    <QualityStat stattype="${qualityStatType}" value="${qualityValue}" />\n`;
+            xml += `  </Quality>\n`;
+
+            // Skill Requirement Hint
+            xml += `  <SkillRequirementHint identifier="${skillHintIdentifier}" level="${skillHintLevel}" />\n`;
+
+
+            xml += `</Item>`;
+            
+            document.getElementById('xmlOutput').textContent = formatXml(xml);
+        }
+
+        // Helper function for XML formatting
+        function formatXml(xml) {
+            let formatted = '';
+            const reg = /(>)(<)(\/?)/g;
+            xml = xml.replace(reg, '$1\r\n$2$3');
+            let pad = 0;
+            xml.split('\r\n').forEach(node => {
+                let indent = 0;
+                if (node.match( /.+<\/\w[^>]*>$/ )) {
+                    indent = 0;
+                } else if (node.match( /^<\/\w/ )) {
+                    pad--;
+                } else if (node.match( /^<\w[^>]*[^\/]>.*$/ )) {
+                    pad++;
+                }
+                for (let i = 0; i < pad; i++) {
+                    formatted += '  '; 
+                }
+                formatted += node + '\r\n';
+            });
+            return formatted.trim();
+        }
+    </script>
+</body>
+</html>

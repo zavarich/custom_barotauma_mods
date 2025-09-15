@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="EK Utilities" modversion="1.0.46" corepackage="False" steamworkshopid="3008781099" gameversion="1.8.6.2">
+  <Item file="%ModDir%/Items/Containers/ekutility_containers.xml" />
+  <Item file="%ModDir%/Items/Containers/ekutility_labels.xml" />
+  <Item file="%ModDir%/Items/Diving/ekutility_divinggear.xml" />
+  <Item file="%ModDir%/Items/Materials/ekutility_densifiedmaterials.xml" />
+  <Item file="%ModDir%/Items/Tools/ekutility_placeablemachines.xml" />
+  <Item file="%ModDir%/Items/Tools/ekutility_tools.xml" />
+  <Item file="%ModDir%/Items/overwrite_items.xml" />
+  <Particles file="%ModDir%/Particles/ParticlePrefabs.xml" />
+  <Text file="%ModDir%/Texts/TraditionalChineseEkUtilities.xml" />
+  <Text file="%ModDir%/Texts/SimplifiedChineseEkUtilities.xml" />
+  <Text file="%ModDir%/Texts/RussianEKUtilities.xml" />
+  <Text file="%ModDir%/Texts/EnglishEKUtilities.xml" />
+  <Afflictions file="%ModDir%/EKR_Afflictions.xml" />
+</contentpackage>

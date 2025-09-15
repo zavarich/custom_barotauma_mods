@@ -1,0 +1,535 @@
+本更新紀錄並不完整，僅作為本人作筆記用
+
+
+改動
+基於原版彈藥的擴展彈藥箱變得和原版相同，可以用更自由的材料來合成，同時更新擴展破片加農炮的彈藥量為80發
+
+配合原版新功能，部分物品在櫃子中的堆疊上限改變，以下是更改後的櫃子中的堆疊數量
+簡易步槍子彈32
+左輪信號彈32
+9mm彈匣16
+9mm彈匣(大容量)12
+9mm剛素彈匣16(堆疊上限變為4)
+9mm彈匣（鎮暴彈）16(堆疊上限變為4)
+5.7x28mm彈匣8
+輕型防暴盾4
+微型魚雷16
+信號彈36
+接觸地雷、近爆地雷16
+霰彈槍子彈32
+泰瑟槍彈匣16
+火焰噴射器燃料罐32
+莫洛托夫32
+各類飛鏢32
+10mm-Auto彈匣16
+火箭彈8
+高斯手槍彈匣16
+5.56x45mm彈鼓8
+煙霧彈32
+5.56x45mm彈匣8
+30mm-FC彈夾12
+簡易爆炸物12
+炸藥包16
+鋁熱劑32
+鋁熱劑手雷32
+雷射手槍彈倉16
+雷射步槍彈倉12
+炸藥32
+357左輪手槍彈藥32
+閃光震撼彈32
+火箭魚叉32
+水下手雷32
+40mm 煙霧榴彈、蜂巢榴彈、鋁熱榴彈32
+
+，櫃子中的堆疊量變為32
+
+
+maxstacksize="8" maxstacksizecharacterinventory="2"
+
+
+
+
+
+鋁熱劑減少材料
+破牆炸藥材料修改，分解產物多出銅
+
+
+
+
+
+
+
+
+
+11/4
+[*]重新調整雷射手槍、雷射步槍、異星步槍的傷害
+[*]雷射手槍、雷射步槍、異星步槍增加一點EMP傷害(不會損害電器，但能對機械生物造成強力控制效果)
+   PS:雷射手槍、雷射步槍EMP傷害較少，但仍然可以對守衛者造成類似暈眩的有效控制
+[*]異星步槍彈倉可回收
+[*]異星步槍未滿技能時使用會被震暈
+
+[*]飛鏢槍威力+10%，子彈初速更快，提升精準度，可以直接射部分藥物(注射器槍的能力)
+[*]微型飛鏢槍降低所需的武器技能，提升精準度，可合成，可以直接射部分藥物(注射器槍的能力)
+[*]飛鏢製造成本減少(鋼筋換成鐵)，製造所需時間下降
+[*]飛鏢(爆炸)重製機制，現在可以同時打多發，連續爆炸，且不會掉聲望
+
+[*]雙管霰彈槍重製，變為快速二連發，降低精準度(可以當作強化版的爆鳴)
+[*]海軍戰術霰彈槍，裝彈數量提升到8發
+[*]12號霰彈更名為8號霰彈(因為12號和原版的霰彈功能完全重疊)，8號霰彈傷害更集中，暈眩、衝擊力也更高
+[*]霰彈槍獨頭彈、霰彈槍空尖獨頭彈強化，傷害增加，傷害類型調整
+[*]霰彈槍剛素獨頭彈強化，衝擊力，傷害類型調整，增加一段小爆炸
+[*]霰彈槍箭型彈傷害調整，並增加穿甲能力
+
+[*]脈衝雷射彈物資箱強化，爆炸傷害小幅度增加
+
+[*]「野獸」SSL提高技能使用需求，且未滿技能使用會造成暈眩
+[*]30mm-FC彈藥強化，傷害類型調整，增加穿甲能力
+
+[*]泰瑟槍加強，給予品質補正，泰瑟槍子彈減少傷害，能更快擊暈目標，並確保目標不累積過多的噁心傷害，對命中的目標持續累積減速
+
+[*]煙霧彈、煙霧榴彈給予的致盲效果加強，除了會另生物減速，還會對獨目哨兵、虎尾煞、獵食獸群造成器官損傷和控制效果，並給予生物「獨目哨兵凝視抗性」
+
+[*]略為降低鋁熱劑在水中的下沉速度，增加小幅度的引怪能力
+
+[*]炸藥包（炸藥）的結構傷害、壓載艙傷害增加
+
+[*]Mk-II軍用動力裝甲增強，減少氧氣消耗、增加健康掃描儀、生命維持系統(可以通過讓氧氣消耗變為3倍來緩慢治療部分傷勢，主要是失血)
+
+[*]手銬箱變為每格可放8個手銬
+
+[*]修正部分武器的碎甲能力未對Bonethresher(碎骨煞、骨尾煞)正常生效的問題
+[*]修復槍械未正常顯示所需技能的問題
+[*]修正「野獸」SSL沒有品質補正的問題
+[*]修正部分物品文本錯誤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[*]火焰噴射器自氧化燃料罐，修復會燒到自己、在水下特效不明顯特效的問題
+[*]火焰噴射器燃素燃料罐，改為玫紅色火焰，且可以在水下使用了(射程減半)
+
+[*]HEFC彈藥箱材料更改為(改為C-4、鋼、鈦鋁合金、鋁)，彈藥量降低到100發，製作時間下降5秒(擴展彈藥箱下降更多)，相應的，子彈爆炸穿甲力增加0.15，爆炸暈眩下調(其實這挺蠢的，小隻不需要，大隻暈不動)
+[*]修復混合彈藥箱的子彈未正常在使用後消失的問題
+[*]混合穿甲彈藥箱的材料更改(UEX改為C-4)
+<!-- [*]混合毒素彈藥箱加強，部分毒素會依照生物的最大血量增加傷害，能對深淵生物造成額外傷害，增加一個隱藏效果 -->
+[*]優化部分子彈的碰撞箱，減少二段命中的子彈打不全傷害的問題
+[*]混合榴霰彈彈藥箱命中第一次後的引爆時間提前0.01秒
+
+[*]連射炮高爆彈藥箱材料調整(不須用鉛、鈦，而是使用3個高級彈藥被甲材料)，製作時間下降，撕裂傷變為爆炸傷害，直擊傷害降低，穿甲力、結構傷害提高，散射下降，爆炸範圍增加0.5m，爆炸傷害小幅增加
+[*]連射炮HEFC彈藥箱材料調整(銅改為使用1個高級彈藥被甲材料)，彈藥量增加至250發，直擊傷害下降，穿甲提高，爆炸穿甲力增加0.15，爆炸暈眩下調(其實這挺蠢的，小隻不需要，大隻暈不動)
+
+[*]修正脈衝雷射彈物資箱無法放物品欄的問題，以及命中物體(不包括生物)會將其移除的問題
+
+[*]部分軌道炮炮彈增加衝擊力
+[*]軌道炮聲納誘餌 重做，炮彈初速下降、誘敵範圍增加、聲納持續時間增加，且必須要周圍有怪物過3秒才會引爆(或是過60秒自動引爆，直擊不會直接引爆，而是會留有引怪的時間)
+[*]軌道炮追蹤彈，爆炸傷害增加，增加炮彈引怪範圍
+[*]軌道炮榴霰彈，取消直擊穿甲，第四段爆炸範圍、傷害大幅加強，爆炸暈眩增加，增加炮彈引怪範圍
+[*]軌道炮聚變彈，重作，取消了以前的穿甲機制(取而代之的是一圈穿甲1.0的爆炸)，延長引爆範圍，讓射擊軌道更加平直
+[*]全軌道炮半身彈優化，令其看起來更正常一些
+[*]軌道炮燃燒彈，重作，現在會噴火了！(雖然還是功能性的東西，除開特定時候可以穿甲點火，其他時候都是玩具
+[*]軌道炮高速彈，軌道更加平直
+
+全HEFC彈藥箱傷害調整
+
+[*]調整防彈衣販賣難度
+
+
+
+<!-- 下個版本飛鏢槍大改 -->
+
+
+
+[*]增加部分物品的英文介紹
+[*]加強致盲效果(煙霧彈的隱藏效果)，可以削弱敵人遠程攻擊的精準度
+[*]修正部分衣服不能放入櫃子的問題
+[*]MK-II裝甲增加大幅提升射擊精準度、近戰速度的效果
+[*]部分潛水服增加AI的優先級
+[*]泰瑟槍子彈重做，會拖著電線固定在敵人身上，射程更長，並給予一種增量暈眩的變種(相當於不帶嘔吐的電擊槍子彈，但擊暈速度更快)
+
+
+
+
+
+[*]Added English descriptions for some items.
+[*]Enhanced the blinding effect (smoke grenade concealment), which can weaken the precision of enemy long-range attacks.
+[*]Fixed an issue where some clothing could not be placed in containers.
+[*]Military Mk-II Hardsuit now provides a "+80% Shooting Accuracy" and "+10% Melee Speed" bonus.
+[*]Increased the priority of AI for certain diving suits.
+[*]The redesigned Taser gun projectiles will now trail wires to secure onto the target, introducing a variant of progressive stun damage.
+PS：The equivalent of a Stun Gun Dart without nausea, with longer range and higher stun capability.
+
+
+
+
+[*]對武器的戰術手電、雷射瞄準器的開關做出了中文翻譯(這需要是新的武器，在分解台拆掉配件然後再去加工台重裝也行)
+[*]優化部分物品介紹(主要是英文)
+[*]Mk-II軍用動力裝甲（隱形）介紹更改，小幅降低合成成本
+
+
+
+
+[*]修復軌道炮半身彈放入彈藥架時的貼圖錯誤
+[*]Fixed the texture error when Railgun Halfshells are placed on an ammunition rack.
+
+
+
+
+
+
+[*]增加高壓泰瑟槍彈匣，可以快速擊暈目標，但充電速度較慢
+[*]完善混合毒素彈藥箱的隱藏效果(神經毒素中毒)，該效果在玩家有麻痺抗性時可以消耗抗性來高速治癒
+[*]Introducing the High Voltage Taser Cartridge for quickly stunning targets, albeit with a slower recharge speed.
+[*]Enhanced the hidden effect (neurotoxin) of the Hybrid Toxin Ammunition Box. This effect can now rapidly heal the player when they have Paralysis Resistance, consuming resistance in the process.
+
+
+
+
+
+[*]部分武器增加拋殼的特效
+[*]潛水服TAG修改，並且和正常潛水服有相同的引怪範圍(Mk-I Shearclaw系列可豁免，這系列的裝備不會引怪了)
+[*]Some weapons now feature added bullet shell ejection effects.
+[*]Modification to the diving suit's TAG, and it now shares the same monster-attracting range as a regular diving suit (Shearclaw series is exempt, as equipment from this series no longer attracts monsters).
+
+
+[*]修正手槍放入彈匣時貼圖顯示錯誤的BUG
+[*]更新部分代碼，避免了一些煩人的報錯
+[*]
+[*]
+[*]
+
+
+2024/6/6
+
+[*]修正軌道炮追蹤彈、軌道炮核能追蹤彈少了target="This"的BUG
+[*]修正轨道炮追踪弹、轨道炮核能追踪弹少了target="This"的BUG
+[*]Fixed the bug that Railgun Homing Shell and Railgun Nuclear Homing Shell were missing target="This".
+
+[*]修正少部分的繁體中文翻譯錯誤
+
+
+2024/8/4
+[*]修改MK-II系列鎧甲，使用回血功能時不需再額外消耗氧氣(變成單純的啟動能力)
+[*]修改MK-II系列鎧甲，多出兩個格子，可以放入健康掃描儀、熱成像，來獲得對應的能力(可同時開啟)
+
+
+11/25
+[*]修改MK-II系列鎧甲，取消健康掃描儀的格子，現在自帶健康掃描儀功能（修復會看不到按鍵提示的BUG）
+[*]火焰噴射器自氧化燃料罐 技能要求與製造時間調整
+[*] Modified the Military Mk-II Hardsuit to fix a bug where button prompts for characters were not visible in certain situations. It now includes built-in Health Scanner HUD functionality.
+[*] Adjusted the skill requirements and crafting time for the Flamethrower Hypergolic Tank.
+
+
+
+[*]修改了大部分的彈藥箱、炮彈手持時的視覺效果
+[*]除了擴展彈藥箱、深水炸彈外，大多數的炮彈皆可單手拿取
+
+
+1/6
+[*]給微型魚雷（擊暈脈衝）增加額外的特效，並能給予敵人電擊麻痺效果(與原版"被電擊"類似，但不會造成噁心，且更為強力一點)
+[*]調整了泰瑟槍與其彈藥的屬性
+[*]修正了附加配件的.357左輪手槍、雷射手槍、高斯手槍無法享受快槍手天賦加成的BUG
+[*]子彈帶、戰術背包現在不會被潛水服遮擋了
+
+[*]給Microtorpedo (Shock Pulse)增加額外的特效，並能給予敵人Electric Paralysis效果(與原版"Zapped"類似，但不會造成Nausea，且更強一點)
+[*]調整了Taser Gun與其彈藥的屬性
+[*]修正了附加配件的.357 Revolver、Laser Pistol、Gauss Pistol無法享受Quickdraw天賦加成的BUG
+[*]Bandolier、Tactical Backpack現在不會被潛水服遮擋了
+
+[*]修正泰瑟槍英文拼寫的錯誤
+
+
+
+
+[*]修正EK Dockyard 重製版更新導致的問題
+[*]下調氚的合成等級需求
+[*]優化了部分中文翻譯
+
+
+1/10
+調整雷射手槍、雷射步槍，削減EMP傷害的觸發機率，刪除以前添加的機制傷，改為增加穿甲力，調整傷害
+雷射手槍、雷射步槍、異星步槍增加一個短暫的點燃效果(該效果在水中亦可生效)
+重做EK的燃燒效果，傷害提高
+調整火焰發射器各燃料罐的傷害
+
+
+調整Laser Pistol、Laser Rifle，削減EMP傷害的觸發機率，刪除以前添加的機制傷，改為增加穿甲能力，調整傷害
+Laser Pistol、Laser Rifle、Alien Rifle增加一個短暫的點燃效果(該效果在水中亦可生效)
+重做EK的燃燒效果，傷害提高
+調整Flamethrower各燃料罐的傷害
+
+
+[*]Adjust the Laser Pistol and Laser Rifle to reduce the trigger chance of EMP damage, remove the previously added sustained damage mechanism, replace it with increased armor-piercing capability, and adjust the damage values.
+[*]Add a brief ignition effect to the Laser Pistol, Laser Rifle, and Alien Rifle (this effect also works underwater).
+[*]Rework the burning effect of EK, increasing its damage.
+[*]Adjust the damage values for all Flamethrower fuel canisters.
+
+
+
+1/10
+[*]微型魚雷(擊暈脈衝)增加EMP傷害，子彈初速下調，減少密度
+[*]鑒於原版震撼手榴彈已經和閃光震撼彈極其相似，所以將閃光震撼彈重做為震撼手榴彈的升級版，有機率擾亂敵人的方向感，並降低敵人近戰傷害、近戰速度、遠程精準度，並享受更高的品質加成
+[*]調整飛鏢的數據，以匹配新版本的藥劑，所有的藥物飛鏢的功效都是對應藥物的一半
+[*]爆炸飛鏢材料改動，但威力提升，穿甲能力提升
+[*]飛鏢槍射擊精準度提高
+
+
+[*]The Microtorpedo (Shock Pulse) increases EMP damage, reduces bullet velocity, and decreases density (allowing for straighter flight).
+[*]Considering that the original Stun Grenade is already very similar to the Flashbang, the Flashbang has been reworked into an upgraded version of the Stun Grenade. It has a chance to disrupt the enemy's sense of direction, reduce enemy melee damage, melee speed, and ranged accuracy, while benefiting from higher quality bonuses.
+[*]The Dart statistics have been adjusted to match the new version of drugs. The effect of all Darts is half of the corresponding drugs, and some previously removed Darts have been restored.
+[*]Dart (Explosive) material requirements have been adjusted, with increased power and improved armor-piercing capabilities of the explosion.
+[*]The accuracy of the Dart Gun has been increased.
+
+
+
+重做了飛刀，具體可以自行體驗(這有點難以說明，簡單來說就是手感更棒，且效能消耗更少)
+
+
+1/23
+[*]簡易步槍子彈合成表調整，材料更加的自由，可以一次合成12顆子彈(總體來說，成本下調)
+[*]接觸地雷、近爆地雷傷害調整，但穿透力大幅提高(0.0⭢0.5)
+[*]雙管霰彈槍的重裝速度再加快
+[*]其他較小的平衡性調整(基本是加強)
+<!-- 簡易步槍剛素子彈斷肢能力小幅提高 -->
+<!-- 左輪信號彈、信號彈暈眩能力提高 -->
+<!-- 手槍子彈穿透力提高 -->
+<!-- 高爆魚雷直擊的衝擊力提高 -->
+<!-- 海軍戰術霰彈槍滿足技能條件時的射速提高 -->
+<!-- 8號霰彈提高穿透力 -->
+<!-- 令部分軌道炮炮彈、電磁槍子彈可以給予點燃傷害 -->
+
+
+Pipe Rifle Round合成材料調整，材料更加的自由，可以一次合成12顆子彈(總體來說，成本下調)
+Impact Mine、Proximity Mine傷害調整，但穿透力大幅提高(0.0⭢0.5)
+Double-barrel Shotgun重裝速度再加快
+其他較小的平衡性調整(基本是加強)
+
+
+
+
+
+
+把所有的鎮暴彈、信號彈等全部放到販賣機販賣
+增加飛鏢(爆炸)的傷害
+增加飛鏢(燃燒)，可以無聲無息地將對象點燃
+增加所有鎮暴彈造成的暈眩
+調整所有彈藥造成的暈眩效果(由於詳細說明的篇幅極長，因此不進行說明，如有興趣了解，我寫在模組文件的模組更新紀錄當中)
+其他平衡性調整(基本是加強)
+
+
+傷害中給予暈眩的方式有兩種，一種是給予名為暈眩的傷害(<Affliction identifier="stun" amount="X" />)，我稱之為傷害暈眩，一種是在過去的EK中大量出現的，直接定義暈眩值(stun="X")，我稱之為機制暈眩，經過一番實驗，我測出了機制暈眩的所有特性，如下
+1.無視對象對於暈眩的減傷率(對不可暈眩的生物依舊無效)
+2.不可吃到槍械品質補正的加成，亦不被算作傷害
+3.不可疊加性，每次傷害的機制暈眩時間單獨計算(EX:打兩次4點機制暈眩，對象並不會暈眩8秒，而是第二發子彈開始計算4秒)
+4.當對象有傷害暈眩時，機制暈眩的累積值不會減少，故一定程度上可等價傷害暈眩(EX:機制暈眩2點+傷害暈眩2點，會令對象暈眩4秒)
+
+<!-- 實驗證明過程就太長了，這裡不解釋，總之，由於機制暈眩是沒有補正，亦不可得到槍械品質的增幅，因此在本次的更新中，我將大部分的機制暈眩都改為傷害暈眩，體感上就是用高品質的槍或是連開數槍時，怪物會暈眩得更久 -->
+
+
+All riot rounds, Flare Cartridges, and similar items have been added to vending machines for purchase.
+The damage of Dart (Explosive) has been increased.
+Dart (Ignis) has been introduced, allowing targets to be silently ignited.
+The stun effect of all riot rounds has been enhanced.
+The stun effect caused by all ammunition has been adjusted (due to the extensive details, it will not be explained here. If interested, please refer to the module update notes in the module file).
+Other balance adjustments have been made (mostly buffs).
+
+
+
+軌道炮燃燒彈現在可以產生4次有效命中，穿透船殼的能力大大的上升
+軌道炮聲納誘餌吸引怪物的能力得到強化，可以吸引到某些不會被深潛誘餌(decoy TAG)吸引的怪物
+軌道炮追蹤彈有了品質，會根據品質造成不同的傷害(因為用了特殊的方式實現這個功能，因此品質補正的數值僅供參考)
+修正了鋁熱劑吸引怪物的能力(之前由於某些疏忽，這個功能沒有生效)
+由於無人機系列以目前的技術無法修理，故全部取消合成與販賣
+其他平衡性調整(基本是加強)
+
+
+Railgun Incendiary Shell現在可以產生4次有效命中，穿透船殼的能力大大的上升
+Railgun Sonar Decoy吸引怪物的能力得到強化，可以吸引到某些不會被深潛誘餌(decoy TAG)吸引的怪物
+Railgun Homing Shell和Nuclear Homing Shell有了品質了，會根據品質造成不同的傷害(因為用了特殊的方式實現這個功能，因此品質補正的數值僅供參考)
+修正了Thermite吸引怪物的能力(之前由於某些疏忽，這個功能沒有生效)
+由於Drone系列以目前的技術無法修理，故全部取消合成與販賣
+其他平衡性調整(基本是加強)
+
+優化物品的中文翻譯
+
+
+
+
+
+
+現在炮彈、彈藥箱的減速效果無論是否添加平衡補丁，兩者都是一樣的(之前只有平衡補丁與部分彈藥有減速，但一來這樣我更新不便，容易搞混，二來有些有減速有些沒有顯得很奇怪，反正有搬炮彈功能的情況下，影響不大)
+修正了雙發軌道炮半身彈的內容物(軌道炮半身彈)會錯誤的生成在沉船裝彈器中的BUG
+電磁槍雷射發射器的威力小幅上升
+
+[*]The slowdown effect of shells and ammunition boxes is now the same regardless of whether the "平衡補丁" is applied. (Previously, only the "平衡補丁" and certain types of ammunition had a slowdown effect. This was inconvenient for updates and caused confusion. Additionally, having some items with slowdown and others without felt inconsistent. Since there is a shell-carrying function, the impact should be minimal.)
+[*]Fixed a bug where the contents of Railgun Halfshells (Railgun Halfshell) would incorrectly spawn in wreck ammo loaders.
+[*]Slightly increased the damage of the Coilgun Laser Emitter.
+
+
+修復了部分槍械無法放入武器架的BUG
+其他平衡性調整
+
+
+[*]調整了飛鏢槍的子彈初速
+[*]提高了毒劑類型飛鏢的傷害(通常為完整藥劑的0.8倍效果)，並且增加了一個特殊機制，可以一定程度上實現無仇恨暗殺(注:雖然能當面給對方注射毒劑，但這機制並不完善，自己小心點)
+[*]減少了飛鏢的製作材料
+[*]一些平衡性調整
+
+
+緊湊衝鋒槍改為小型物品
+
+
+
+
+[*]一些針對炮彈的平衡性調整，對軌道炮鋼針彈、軌道炮穿甲彈、軌道炮穿甲爆破彈的合成材料與傷害都進行了調整
+[*] Some balance adjustments for shells. The crafting materials and damage of Railgun Flechette Shell, Railgun Piercing Shell, and Railgun Armor Piercing Explosive Shell have been adjusted.
+
+
+調整了MKII系列裝甲的能力，回復能力被削弱，但當啟動生命維持裝置時，可以直接吊著裝備著的生命，即使生命歸零也不會死去
+調整了混合毒素彈藥箱的效果，現在無法對深淵生物造成額外傷害(那太過誇張)，調整了數值
+
+The abilities of the Military Mk-II Hardsuit have been adjusted. Its healing ability has been weakened, but when the Life Support System is activated, it can directly sustain the life of the wearer, even if HP reaches zero, preventing death.
+The effect of the Hybrid Toxin Ammunition Box has been adjusted. It can no longer deal additional damage to Abyssal creatures (as that was too exaggerated), and the values have been modified.
+
+
+
+增加飛鏢(赤酸)，可以造成與赤酸相同的效果
+修改了部分物品的名稱與物品介紹(源自我不懂武器的疏失)
+
+
+[*]防彈衣、防彈頭盔、消防衣、消防頭盔都額外增加了被電擊的抗性
+[*]消防衣增加了一個格子，可以放置滅火器
+[*]一些平衡性調整
+
+[*]防弹衣、防弹头盔、消防衣、消防头盔都额外增加了被电击的抗性
+[*]消防衣增加了一个格子，可以放置灭火器
+[*]一些平衡性调整
+
+[*]Combat Armor, Ballistic Helmet, Fire Jumpsuit, and Fire Helmet now provide additional resistance to electric shocks.
+[*]The Fire Jumpsuit now has an extra slot for holding a fire extinguisher and increased burn resistance.
+[*]Some balance adjustments.
+
+
+[*]調整了脈衝雷射彈物資箱的傷害
+[*]調整了彈藥箱與部分炮彈的生成機率
+
+[*]调整了脉冲激光弹物资箱的伤害
+[*]调整了弹药箱与部分炮弹的生成机率
+
+[*] Adjusted the damage of the Pulse Laser Plasma Box.
+[*] Modified the spawn rates of ammo boxes and certain shells.
+
+[*]新增了部分軌道炮的便宜版本(與原版的便宜版本核彈相同)
+[*]新增了部分轨道炮的便宜版本(与原版的便宜版本核弹相同)
+[*]Added cheaper versions of certain railgun shells (similar to the cheaper version of the vanilla nuclear shell).
+
+令部分武器材料可以放入工具箱中
+
+
+使臨時貨架、裝載集裝箱可以正常顯示放入地擴展彈藥箱的貼圖
+
+
+調整了MK系列裝甲(染色版本)的合成材料
+
+
+<!-- 小幅增加了部分軌道炮彈藥的直擊的穿甲能力。(難以翻出來，而且改變並不巨大，不打上了) -->
+[*]令部分彈藥可以正常命中門
+[*]新增了重力破片彈藥箱、魚叉彈藥箱對應的擴展彈藥箱
+[*]取消了擴展貧化燃料電磁槍彈藥箱的合成配方，該物品僅能透過少數途徑的生成來獲取
+
+
+
+調整了連射炮高爆彈的傷害，穿甲能力下降，爆炸傷害提高
+連射炮高爆彈彈藥箱、連射炮HEFC彈藥箱的子彈顏色更改，修復了貼圖錯誤
+
+[*]高斯手槍、高斯步槍在合成帶配件的版本時，不再需要充滿電就可以合成
+[*]雷射手槍、雷射步槍的品質補正被削弱
+[*]調整了9成的武器，移除了之前添加的「當滿足技能條件時，射擊速度提高」的機制(因為這會讓某些武器的DPS嚴重超出預期)，現在這個機制僅在部分武器上保留
+[*]調整了武器破門的速度，使其更加的合理
+[*]修正MK-II鎧甲的UI錯誤
+[*]加強了Mk-I Shearclaw裝甲在水下游泳的速度
+
+[*]高斯手枪、高斯步枪在合成带配件的版本时，不再需要充满电就可以合成
+[*]激光手枪、激光步枪的品质补正被削弱
+[*]调整了9成的武器，移除了之前添加的「当满足技能条件时，射击速度提高」的机制(因为这会让某些武器的DPS严重超出预期)，现在这个机制仅在部分武器上保留
+[*]调整了武器破门的速度，使其更加的合理
+[*]修正MK-II铠甲的UI错误
+[*]加强了Mk-I Shearclaw装甲在水下游泳的速度
+
+[*]Gauss pistols and Gauss rifles no longer require a full charge to craft their versions with attachments
+[*]The quality modifiers of Laser Pistols and Laser Rifles have been reduced
+[*]Ninety percent of weapons have been adjusted; the previously added mechanic “increased fire rate when skill conditions are met” has been removed (as it caused certain weapons to significantly exceed expected DPS). This mechanic is now retained only on selected weapons
+[*]Adjusted the door-breaching speed of weapons to make it more reasonable
+[*]Corrected the UI error of the MK-II armor
+[*]Enhanced the underwater swimming speed when wearing the Mk-I Shearclaw armor
+
+
+
+修正在多人模式的特定情況下，帶有槍燈等配件的槍械會怪異的閃爍的情況
+調整了MK-II鎧甲，其提供的增益效果被重新調整，現在它提供的免死能力是常駐的，並不需要手動開啟
+調整了部分物品的UI
+增加了破牆炸藥與炸藥造成的結構傷害量
+
+
+[*]調整近戰武器，使部分近戰武器可以雙持
+[*]修正了30mm-FC彈夾會在進入遊戲時產生無傷害爆炸的BUG
+
+[*]调整近战武器，使部分近战武器可以双持
+[*]修复了30mm-FC弹夹在进入游戏时会触发无伤害爆炸的BUG
+
+[*]Adjusted melee weapons so that some melee weapons can now be dual-wielded
+[*]Fixed a bug where the 30mm-FC Clip would explode upon entering the game
+
+30mm-FC Clip
+
+[*]調整了5.56x45mm剛素彈鼓(Physicorium 5.56x45mm Drum)的製造材料與傷害，彈容量從91發增加到100發
+[*]修正了部分武器的報錯(EX：飛鏢)
+[*]優化了所有本MOD中彈匣的代碼
+
+[*]Adjusted the crafting materials and damage of the Physicorium 5.56x45mm Drum; its magazine capacity has been increased from 91 rounds to 100
+[*]Fixed errors related to certain weapons (e.g., throwing darts)
+[*]Optimized the code for all magazines in this mod
+
+
+[*]調整部分英文翻譯
+[*]調整破牆炸藥(Breaching Charge)、炸藥(Dynamite)、鋁熱劑(Thermite)的屬性，使對異星門產生額外傷害的機制可以正常生效
+
+[*]Adjusted some English translations.
+[*]Modified the properties of Breaching Charge, Dynamite, and Thermite to ensure that the mechanism for dealing additional damage to Alien Door works properly.
+
+
+[*]使所有的彈匣都能夠放入原版的戰術腰帶中
+[*]火焰噴射器燃素燃料罐的攻擊力、穿透力得到小幅度的提升，並且可以在水下正常燃燒，點燃造成的傷害也更大
+[*]調整了火焰噴射器自氧化燃料罐的穿透力（現在的威力與原版EK大致相同）
+
+[*]All magazines can now be placed in the vanilla Bandolier
+[*]The incendiary fuel tank for the flamethrower has slightly increased damage and penetration, now burns properly underwater, and its ignition damage has also been increased
+[*]Adjusted the penetration of the self-oxidizing fuel tank for the flamethrower
+
+
+
+
+
+
+
+
+[*]更新彈藥的代碼
+[*]調整部分武器、彈藥的平衡性
+
+[*]更新弹药的代码
+[*]调整部分武器、弹药的平衡性
+
+[*] Updated ammunition code
+[*] Adjusted balance for certain weapons and ammunition

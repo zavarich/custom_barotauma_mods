@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <!-- nameidentifier="securesteelcabinet" -->
+  <Items>
+    <Item nameidentifier="securesteelcabinet" name="revolvercontainer" hideinmenus="true" identifier="revolvercontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="revolver,revolverround,revolverrounddepletedfuel" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="revolver">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="revolver" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="revolverround">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="revolverround" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="revolverrounddepletedfuel">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="revolverrounddepletedfuel" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="machinepistolcontainer" hideinmenus="true" identifier="machinepistolcontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="machinepistol,smgmagazine,smgmagazinedepletedfuel" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="machinepistol">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="machinepistol" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="smgmagazine">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="smgmagazine" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="smgmagazinedepletedfuel">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="smgmagazinedepletedfuel" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="harpoonguncontainer" hideinmenus="true" identifier="harpoonguncontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="2" canbeselected="true" spawnwithid="harpoongun,spear,explosivespear,alienspear,spearunique" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="harpoongun">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="harpoongun" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="spear">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="spear" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="explosivespear">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="explosivespear" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="alienspear">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="alienspear" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="spearunique">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="spearunique" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="harpooncoilriflecontainer" hideinmenus="true" identifier="harpooncoilriflecontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="3" canbeselected="true" spawnwithid="harpooncoilrifle,spear,explosivespear,alienspear,spearunique,batterycell,fulguriumbatterycell" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="harpooncoilrifle">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="harpooncoilrifle" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="spear">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="spear" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="explosivespear">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="explosivespear" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="alienspear">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="alienspear" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="spearunique">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="spearunique" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="batterycell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="batterycell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="fulguriumbatterycell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="fulguriumbatterycell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="smgcontainer" hideinmenus="true" identifier="smgcontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="smg,smgmagazine,smgmagazinedepletedfuel" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="smg">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="smg" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="smgmagazine">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="smgmagazine" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="smgmagazinedepletedfuel">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="smgmagazinedepletedfuel" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="shotguncontainer" hideinmenus="true" identifier="shotguncontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="2" canbeselected="true" spawnwithid="shotgun,shotgunshell,shotgunshellblunt,shotgunslugexplosive" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="shotgun">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="shotgun" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunshell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunshell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunshellblunt">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunshellblunt" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunslugexplosive">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunslugexplosive" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="riflecontainer" hideinmenus="true" identifier="riflercontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="rifle,riflebullet" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="rifle">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="rifle" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="riflebullet">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="riflebullet" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="autoshotguncontainer" hideinmenus="true" identifier="autoshotguncontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="2" canbeselected="true" spawnwithid="autoshotgun,shotgunshell,shotgunshellblunt,shotgunslugexplosive" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="autoshotgun">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="autoshotgun" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunshell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunshell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunshellblunt">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunshellblunt" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunslugexplosive">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunslugexplosive" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="handcannoncontainer" hideinmenus="true" identifier="handcannoncontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="handcannon,handcannonround" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="handcannon">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="handcannon" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="handcannonround">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="handcannonround" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="hmgcontainer" hideinmenus="true" identifier="hmgcontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="hmg,hmgmagazine" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="hmg">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="hmg" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="hmgmagazine">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="hmgmagazine" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="assaultriflecontainer" hideinmenus="true" identifier="assaultriflecontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="assaultrifle,assaultriflemagazine" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="assaultrifle">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="assaultrifle" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="assaultriflemagazine">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="assaultriflemagazine" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="grenadelaunchercontainer" hideinmenus="true" identifier="grenadelaunchercontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="2" canbeselected="true" spawnwithid="grenadelauncher,40mmgrenade,40mmstungrenade,40mmchemgrenade,40mmnuke" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="grenadelauncher">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="grenadelauncher" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="40mmgrenade">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="40mmgrenade" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="40mmstungrenade">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="40mmstungrenade" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="40mmchemgrenade">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="40mmchemgrenade" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="40mmnuke">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="40mmnuke" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="smguniquecontainer" hideinmenus="true" identifier="smguniquecontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="smgunique,smgmagazine,smgmagazinedepletedfuel" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="smgunique">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="smgunique" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="smgmagazine">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="smgmagazine" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="smgmagazinedepletedfuel">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="smgmagazinedepletedfuel" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="shotgununiquecontainer" hideinmenus="true" identifier="shotgununiquecontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="2" canbeselected="true" spawnwithid="shotgununique,shotgunshell,shotgunshellblunt,shotgunslugexplosive" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="shotgununique">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="shotgununique" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunshell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunshell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunshellblunt">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunshellblunt" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="shotgunslugexplosive">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="shotgunslugexplosive" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="flamercontainer" hideinmenus="true" identifier="flamercontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="flamer,weldingfueltank,incendiumfueltank" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="flamer">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="flamer" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="weldingfueltank">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="weldingfueltank" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="incendiumfueltank">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="incendiumfueltank" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="flamercontainer" hideinmenus="true" identifier="flameruniquecontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="flamerunique,weldingfueltank,incendiumfueltank" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="flamerunique">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="flamerunique" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="weldingfueltank">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="weldingfueltank" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="incendiumfueltank">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="incendiumfueltank" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="alienpistolcontainer" hideinmenus="true" identifier="alienpistolcontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="alienpistol,alienpowercell" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="alienpistol">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="alienpistol" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="alienpowercell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="alienpowercell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="ancientweaponcontainer" hideinmenus="true" identifier="ancientweaponcontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="ancientweapon,alienpowercell" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="ancientweapon">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="ancientweapon" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="alienpowercell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="alienpowercell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="arcemittercontainer" hideinmenus="true" identifier="arcemittercontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="arcemitter,batterycell,fulguriumbatterycell" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.45" anchor="Center" style="ItemUI" />
+        <Containable items="arcemitter">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="arcemitter" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="batterycell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="batterycell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="fulguriumbatterycell">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="fulguriumbatterycell" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="securesteelcabinet" name="divingmaskcontainer" hideinmenus="true" identifier="divingmaskcontainer" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <ItemContainer capacity="1" slotsperrow="1" canbeselected="true" spawnwithid="divingmask,oxygentank" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.15,0.32" anchor="Center" style="ItemUI" />
+        <Containable items="divingmask">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="divingmask" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="oxygentank">
+            <StatusEffect type="OnRemoved" target="This" stackable="false">
+              <SpawnItem identifiers="oxygentank" spawnposition="ThisInventory" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+      </ItemContainer>
+    </Item>
+    <Item nameidentifier="terminal" name="targetterminal" hideinmenus="true" identifier="targetterminal" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <CustomInterface canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.15,0.36" anchor="Center" style="ItemUI" />
+        <Button text=" 2.5 m" connection="signal_out1" />
+        <Button text=" 5.0 m" connection="signal_out2" />
+        <Button text=" 7.5 m" connection="signal_out3" />
+        <Button text="10.0 m" connection="signal_out4" />
+        <Button text="12.5 m" connection="signal_out5" />
+        <Button text="15.0 m" connection="signal_out6" />
+      </CustomInterface>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.25,0.4" minsize="400,450" maxsize="480,500" anchor="Center" style="ConnectionPanel" />
+        <output name="signal_out1" displayname="connection.signaloutx~[num]=1" />
+        <output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
+        <output name="signal_out3" displayname="connection.signaloutx~[num]=3" />
+        <output name="signal_out4" displayname="connection.signaloutx~[num]=4" />
+        <output name="signal_out5" displayname="connection.signaloutx~[num]=5" />
+        <output name="signal_out6" displayname="connection.signaloutx~[num]=6" />
+      </ConnectionPanel>
+    </Item>
+    <Item nameidentifier="terminal" name="peopleterminal" hideinmenus="true" identifier="peopleterminal" tags="locker,container" linkable="true" pickdistance="150" waterproof="true" scale="0.4">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.6" sourcerect="1,1,175,374" origin="0.5,0.5" />
+      <CustomInterface canbeselected="true" allowuioverlap="true">
+        <GuiFrame relativesize="0.15,0.18" anchor="Center" style="ItemUI" />
+        <Button text="crawler" connection="signal_out1">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnCharacter speciesname="Crawler_target" offset="0,-250" />
+          </StatusEffect>
+        </Button>
+        <Button text="mudraptor" connection="signal_out2">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnCharacter speciesname="Mudraptor_target" offset="0,-250" />
+          </StatusEffect>
+        </Button>
+        <Button text="human" connection="signal_out3">
+          <StatusEffect type="OnUse" target="This">
+            <SpawnCharacter speciesname="Human_target" offset="0,-250" />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="" nameidentifier="opdeco_trashcan" hideinmenus="true" identifier="trashcanarsenal" tags="" width="122" height="201" texturescale="1.0,1.0" scale="0.5" category="Decorative" AllowStealingContainedItems="true">
+      <sprite texture="Content/Map/Outposts/Art/Storage.png" sourcerect="1662,914,125,205" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+      <ItemContainer capacity="3" slotsperrow="3" canbeselected="true" hideitems="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.18,0.25" anchor="Center" style="ItemUI" />
+        <Containable items="smallitem,mediumitem" ExcludeBroken="false">
+          <StatusEffect type="OnInserted" target="Contained">
+            <RemoveItem />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="" nameidentifier="extinguisherbracket" identifier="extinguisherbracketarsenal" category="Equipment" tags="extinguisherholder" hideinmenus="true" canflipx="false" canflipy="false" scale="0.5" pickdistance="75">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="815,349,72,204" origin="0.5,0.5" />
+      <ItemContainer hideitems="false" spawnwithid="extinguisherarsenal" drawinventory="true" capacity="1" AutoInteractWithContained="true" maxstacksize="1" slotsperrow="1" itempos="35,-130" iteminterval="0,0" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="extinguisherarsenal">
+          <StatusEffect type="OnRemoved" target="This" stackable="false">
+            <SpawnItem identifiers="extinguisherarsenal" spawnposition="ThisInventory" />
+          </StatusEffect>
+        </Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="" nameidentifier="extinguisher" identifier="extinguisherarsenal" category="Equipment" Tags="mediumitem,fireextinguisher,provocative" cargocontaineridentifier="metalcrate" description="" hideinmenus="true" Scale="0.5" impactsoundtag="impact_metal_light" donttransferbetweensubs="true">
+      <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="0,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Tools/tools.png" depth="0.55" sourcerect="161,105,64,128" origin="0.5,0.5" />
+      <Body width="30" height="100" density="8" />
+      <Holdable slots="RightHand+LeftHand" controlpose="true" aimpos="40,-20" handle1="-6,10" handle2="-10,40" msg="ItemMsgPickUpSelect" />
+      <RepairTool extinguishamount="60.0" range="500" barrelpos="21,25" repairthroughholes="true" hititems="false" IgnoreCharacters="true">
+        <ParticleEmitter particle="extinguisher" velocitymin="1000.0" velocitymax="1650.0" particlespersecond="100" />
+        <sound file="Content/Items/Tools/Extinguisher.ogg" type="OnUse" range="500.0" loop="true" />
+      </RepairTool>
+      <RepairTool range="500" barrelpos="21,25" IgnoreCharacters="false">
+        <!-- Remove 'burning' affliction from characters-->
+        <StatusEffect type="OnUse" target="UseTarget">
+          <ReduceAffliction identifier="burning" amount="15.0" />
+        </StatusEffect>
+      </RepairTool>
+      <Propulsion force="-80" usablein="water" particles="bubbles" />
+      <aitarget sightrange="1000" soundrange="1000" fadeouttime="1" />
+    </Item>
+    <Item name="" nameidentifier="suppliescabinet" identifier="suppliescabinetarsenal" hideinmenus="true" tags="container,suppliescontainer" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
+      <Sprite texture="Content/Items/Containers/containers.png" depth="0.84" sourcerect="889,349,120,132" origin="0.5,0.5" />
+      <Controller canbeselected="true" direction="None" msg="ItemMsgInteractSelect">
+        <StatusEffect type="OnActive" target="Character">
+          <ReduceAffliction type="damage" amount="100" />
+          <ReduceAffliction type="burn" amount="100" />
+          <ReduceAffliction type="bleeding" amount="100" />
+          <ReduceAffliction type="bloodloss" amount="100" />
+        </StatusEffect>
+      </Controller>
+    </Item>
+  </Items>
+</Override>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <TalentTrees>
+    <TalentTree jobidentifier="mechanic">
+      <SubTree identifier="mechanic_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="2" maxchosentalents="6">
+          <TalentOption identifier="salvagecrew"/>
+          <TalentOption identifier="machinemaniac"/>
+          <TalentOption identifier="safetyfirst"/>
+          <TalentOption identifier="multifunctional"/>
+          <TalentOption identifier="engineengineer"/>
+          <TalentOption identifier="ballastdenizen"/>
+        </TalentOptions>
+        <TalentOptions requiredtalents="2" maxchosentalents="5">
+          <TalentOption identifier="modularrepairs"/>
+          <TalentOption identifier="oiledmachinery"/>
+          <TalentOption identifier="pumpndump"/>
+          <TalentOption identifier="ironman"/>
+          <TalentOption identifier="retrofit"/>
+          <TalentOption identifier="bagitupMining"/>          
+          <TalentOption identifier="FabricatorsFabric"/>
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="scrapper" type="specialization" requires="mechanic_primary" blocks="machinist,brawler">
+        <TalentOptions>
+          <TalentOption identifier="miner"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="residualwaste"/>
+          <TalentOption identifier="massproduction"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="scrapsavant"/>
+          <TalentOption identifier="toolmaintenance"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="ironstorm"/>
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="machinist" type="specialization" requires="mechanic_primary" blocks="scrapper,brawler">
+        <TalentOptions>
+          <TalentOption identifier="hullfixer"/>          
+          <TalentOption identifier="FabricatorsFabricAdvanced"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="tinkerer"/>
+          <TalentOption identifier="quickfixer"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="letitdrain"/>
+          <TalentOption identifier="FabricatorsNuclear"/>        
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="robotics"/>
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="brawler" type="specialization" requires="mechanic_primary" blocks="machinist,scrapper">
+        <TalentOptions>
+          <TalentOption identifier="iamthatguy"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="heavylifting"/>
+          <TalentOption identifier="mudraptorwrestler"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="foolhardy"/>
+          <TalentOption identifier="berserker"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="powerarmor"/>
+        </TalentOptions>
+      </SubTree>
+    </TalentTree> 
+  </TalentTrees>
+</Override>

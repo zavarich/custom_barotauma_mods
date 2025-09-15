@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="English">
+  <!-- ITEM GUI TEXT ELEMENTS -->
+  <GUI.button.onoff>ВКЛ/ВЫКЛЮ</GUI.button.onoff>
+  <GUI.button.140mrange>Дальность - 140 м.</GUI.button.140mrange>
+  <GUI.button.10mrange>Дальность - 10 м.</GUI.button.10mrange>
+  <GUI.button.nexttrack>Следующая композиция</GUI.button.nexttrack>
+  <GUI.button.previoustrack>Предыдущая композиция</GUI.button.previoustrack>
+  <GUI.button.jumptofirst>Перейти в начало</GUI.button.jumptofirst>
+  <GUI.button.untangle>Распустать</GUI.button.untangle>
+</infotext>

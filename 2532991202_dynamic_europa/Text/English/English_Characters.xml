@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="English" nowhitespace="false" translatedname="English">
+  <!-- CHARACTERS -->
+  <character.Lithomorph_Cassiterite>Lithomorph</character.Lithomorph_Cassiterite>
+  <character.Lithomorph_Chamosite>Lithomorph</character.Lithomorph_Chamosite>
+  <character.Lithomorph_Cryolite>Lithomorph</character.Lithomorph_Cryolite>
+  <character.Lithomorph_Galena>Lithomorph</character.Lithomorph_Galena>
+  <character.Lithomorph_Hydroxyapatite>Lithomorph</character.Lithomorph_Hydroxyapatite>
+  <character.Lithomorph_Pyromorphite>Lithomorph</character.Lithomorph_Pyromorphite>
+  <character.Lithomorph_Sphalerite>Lithomorph</character.Lithomorph_Sphalerite>
+  <character.Lithomorph_Sylvite>Lithomorph</character.Lithomorph_Sylvite>
+  <character.Lithomorph_Triphylite>Lithomorph</character.Lithomorph_Triphylite>
+  <character.Lithomorph>Lithomorph</character.Lithomorph>
+  <character.spineling_electric>Great Electric Spineling</character.spineling_electric>
+  <charactername.kazuyakumo>Kazuya Kumo</charactername.kazuyakumo>
+  <charactername.captainsmith>John Smith</charactername.captainsmith>
+  <charactername.loyalcommissar>Separatists Commissar</charactername.loyalcommissar>
+  <charactername.jokster>Jokster</charactername.jokster>
+  <charactername.jokster1>Jokster</charactername.jokster1>
+  <charactername.frenseynomor>Fren Seynomor</charactername.frenseynomor>
+  <charactername.frenseynomor1>Fren Seynomor</charactername.frenseynomor1>
+  <charactername.noveva>Noveva</charactername.noveva>
+  <charactername.sadashikira>Sadashi Kira</charactername.sadashikira>
+  <charactername.sadashikira1>Sadashi Kira</charactername.sadashikira1>
+  <charactername.sadashikira2>Sadashi Kira</charactername.sadashikira2>
+  <!-- NPCS -->
+  <!-- newtext -->
+  <Override>
+    <npctitle.piratecaptain>Privateer</npctitle.piratecaptain>
+    <npctitle.piratecaptainlord>Corsair</npctitle.piratecaptainlord>
+    <npctitle.pirateannihilator>Pirate Annihilator</npctitle.pirateannihilator>
+    <npctitle.piratesecurityrecruit>Henchman</npctitle.piratesecurityrecruit>
+    <npctitle.piratesecuritybrute>Hired Gun</npctitle.piratesecuritybrute>
+  </Override>
+  <npctitle.partypiratecaptain>Raving Pirate Captain</npctitle.partypiratecaptain>
+  <npctitle.partypiratecaptainlord>Raving Pirate Lord</npctitle.partypiratecaptainlord>
+  <npctitle.partypiratesecurityrecruit>Raving Pirate Recruit</npctitle.partypiratesecurityrecruit>
+  <npctitle.partypiratesecuritygunner>Raving Pirate Gunner</npctitle.partypiratesecuritygunner>
+  <npctitle.partypiratesecuritybrute>Raving Pirate Brute</npctitle.partypiratesecuritybrute>
+  <npctitle.partypiratesecurityelite>Raving Pirate Elite</npctitle.partypiratesecurityelite>
+  <npctitle.partypiratemechanicveteran>Raving Pirate Technician</npctitle.partypiratemechanicveteran>
+  <npctitle.partypirateengineerveteran>Raving Pirate Physicist</npctitle.partypirateengineerveteran>
+  <npctitle.partypiratemechanicrecruit>Raving Pirate Mechanic</npctitle.partypiratemechanicrecruit>
+  <npctitle.partypirateengineerrecruit>Raving Pirate Engineer</npctitle.partypirateengineerrecruit>
+  <!-- newtext -->
+  <npctitle.outpostmanagerhusk>Deacon</npctitle.outpostmanagerhusk>
+  <npctitle.huskcultistsecurity>Templar</npctitle.huskcultistsecurity>
+  <npctitle.huskvip>Cardinal</npctitle.huskvip>
+  <npctitle.outposthuskdoctor>Surgeon</npctitle.outposthuskdoctor>
+  <npctitle.huskassassinationtarget>Head Scientist</npctitle.huskassassinationtarget>
+  <npctitle.hireablehuskscientist>Church Scientist</npctitle.hireablehuskscientist>
+  <npctitle.hireablehusktemplar>Church Templar</npctitle.hireablehusktemplar>
+  <npctitle.sergeantcoalition>Coalition Officer</npctitle.sergeantcoalition>
+  <npctitle.sergeantseparatists>Separatist Officer</npctitle.sergeantseparatists>
+  <npctitle.soldiercoalition>Soldier</npctitle.soldiercoalition>
+  <npctitle.tempsoldiercoalition>Soldier</npctitle.tempsoldiercoalition>
+  <npctitle.soldierseparatists>Rebel</npctitle.soldierseparatists>
+  <npctitle.tempsoldierseparatists>Rebel</npctitle.tempsoldierseparatists>
+  <npctitle.tempsoldierseparatists>Rebel</npctitle.tempsoldierseparatists>
+  <npctitle.ransomtarget>Ransom Target</npctitle.ransomtarget>
+  <character.Crawler_capture>Escaped Crawler</character.Crawler_capture>
+  <charactername.scrapdealer>Saul Väger</charactername.scrapdealer>
+  <npctitle.sickpatient>Patient</npctitle.sickpatient>
+  <character.orangeboy_escort>Escort Target</character.orangeboy_escort>
+  <character.Defensebot_defective>Defective Bot</character.Defensebot_defective>
+</infotext>

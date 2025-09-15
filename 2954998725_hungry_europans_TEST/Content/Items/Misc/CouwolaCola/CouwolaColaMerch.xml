@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!--TODO: change the priority to 2.5 when the bots can switch the batteries-->
+    <Item name="Limited Edition Couwola Cola Exosuit" identifier="he-couwolaexosuit" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,cuttingequipment,provocative,containradiation" scale="0.605" fireproof="true" description="A limited edition Exosuit produced by Couwola Cola. It is more fuel efficient and allows the wearer to breath oxygen from their surroundings while only using the oxygen tanks when needed." isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
+      <Price baseprice="80" canbespecial="false" sold="false" />
+      <Deconstruct time="30">
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="rubber" />
+        <Item identifier="rubber" />
+      </Deconstruct>
+      <!--<Fabricate suitablefabricators="fabricator" requiredtime="45" requiresrecipe="true">
+        <RequiredSkill identifier="mechanical" level="60" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
+        <RequiredItem identifier="rubber" amount="3" />
+      </Fabricate>-->
+      <InventoryIcon texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" sourcerect="384,384,128,128" origin="0.5,0.5" />
+      <Sprite name="Exosuit Item" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" sourcerect="2,266,203,244" depth="0.55" origin="0.5,0.5" />
+      <Body width="150" height="230" density="30" />
+      <Wearable slots="OuterClothes+RightHand" msg="ItemMsgEquipSelect" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select" allowusewhenworn="true">
+        <sprite name="Exosuit Helmet Wearable" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="Head" hidelimb="true" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.65" hideotherwearables="true" hidewearablesoftype="" sourcerect="0,0,1,1" origin="0.5,0.5" />
+        <sprite name="Exosuit Torso" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="Torso" scale="1.2" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.8" inheritlimbdepth="true" inheritsourcerect="false" sourcerect="167,1,203,193">
+          <LightComponent range="200.0" lightcolor="250,224,165,255" powerconsumption="10" IsOn="true" allowingameediting="false" offset="-50,-50">
+            <LightTexture texture="Content/Lights/divinghelmetlight.png" origin="0.05, 0.5" size="1.0,1.0" />
+          </LightComponent>
+        </sprite>
+        <sprite name="Exosuit Right Hand" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="RightHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,160,64,48" />
+        <sprite name="Exosuit Left Hand" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="LeftHand" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,160,64,48" />
+        <sprite name="Exosuit Right Upper Arm" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="RightArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,0,64,96" />
+        <sprite name="Exosuit Left Upper Arm" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="LeftArm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,0,64,96" />
+        <sprite name="Exosuit Right Forearm" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="RightForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" inheritlimbdepth="true" SourceRect="383,96,64,64" />
+        <sprite name="Exosuit Left Forearm" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="LeftForearm" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="false" SourceRect="447,96,64,64" />
+        <sprite name="Exosuit Waist" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="Waist" hidelimb="true" scale="1.2" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="182,196,178,53" />
+        <sprite name="Exosuit Right Thigh" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="RightThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" inheritlimbdepth="true" sourcerect="0,0,96,112" />
+        <sprite name="Exosuit Left Thigh" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="LeftThigh" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="0,0,96,112" />
+        <sprite name="Exosuit Right Leg" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritlimbdepth="true" inheritsourcerect="true" />
+        <sprite name="Exosuit Left Leg" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="true" inheritsourcerect="true" />
+        <sprite name="Exosuit Left Shoe" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="LeftFoot" sound="footstep_armor_exosuit" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
+        <sprite name="Exosuit Right Shoe" texture="%ModDir:2954998725%/Content/Items/Misc/CouwolaCola/Exosuit.png" limb="RightFoot" sound="footstep_armor_exosuit" hidelimb="true" inherittexturescale="true" hideotherwearables="true" inheritorigin="false" origin="0.2,0.5" inheritsourcerect="false" sourcerect="371,211,133,37" />
+        <StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" />
+        <StatusEffect type="OnWearing" target="Character" LowPassMultiplier="0.2" HideFace="true" ObstructVision="true" PressureProtection="10000.0" SpeedMultiplier="0.4" PropulsionSpeedMultiplier="0.25" setvalue="true" disabledeltatime="true">
+          <Conditional InWater="false" />
+          <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Character" LowPassMultiplier="0.2" HideFace="true" ObstructVision="true" PressureProtection="10000.0" SpeedMultiplier="0.4" PropulsionSpeedMultiplier="0.25" setvalue="true" disabledeltatime="true">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="limb" targetlimb="head" interval="6" duration="0.5">
+          <Conditional InWater="true" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Diving/DivingSuitBreathUnderwater1.ogg" range="400" selectionmode="Random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Diving/DivingSuitBreathUnderwater2.ogg" range="400" selectionmode="Random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Diving/DivingSuitBreathUnderwater3.ogg" range="400" selectionmode="Random" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Diving/DivingSuitBreathUnderwater4.ogg" range="400" selectionmode="Random" />
+          <ParticleEmitter particle="risingbubbles" velocitymin="10.0" velocitymax="10.0" scalemin="0.6" scalemax="0.6" particlespersecond="20" />
+        </StatusEffect>
+        <!-- no HMG stun -->
+        <StatusEffect type="OnWearing" target="Character" interval="0.9" disabledeltatime="true">
+          <Affliction identifier="recoilstabilized" amount="1" />
+        </StatusEffect>
+        <!-- slow movement -->
+        <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="0.4" setvalue="true" disabledeltatime="true">
+          <Conditional Voltage="gt 0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Condition="-0.05" interval="1" disabledeltatime="true" targetslot="1" comparison="Or">
+          <Conditional IsDead="false" />
+          <RequiredItem items="reactorfuel" targetslot="1" type="Contained" />
+        </StatusEffect>
+        <!-- 0 movement speed when out of fuel-->
+        <StatusEffect type="OnWearing" target="This,Character" SpeedMultiplier="-10.0" setvalue="true" disabledeltatime="true">
+          <Conditional Voltage="lte 0.5" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+          <Conditional IsDead="false" />
+          <RequiredItem items="weldingfueltank" targetslot="0" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" targetlimbs="Torso" Oxygen="-10.0" Condition="-0.5" interval="1" disabledeltatime="true" targetslot="0">
+          <Conditional IsDead="false" />
+          <RequiredItem items="incendiumfueltank" targetslot="0" type="Contained" />
+          <Affliction identifier="burn" amount="0.05" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+          <Conditional IsDead="false" />
+          <Conditional HullOxygenPercentage="lt 50" />
+          <Conditional InWater="false" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained,Character" UseHullOxygen="false" OxygenAvailable="1000.0" Condition="-0.3" comparison="And" targetslot="0">
+          <Conditional InWater="true" />
+          <RequiredItem items="oxygensource" type="Contained" />
+        </StatusEffect>
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,bitewounds,lacerations,bleeding" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictiontypes="burn" damagemultiplier="0.5" damagesound="" deflectprojectiles="true" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness" damagemultiplier="0.75" damagesound="LimbArmor" />
+        <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" probabilitymultiplier="0.5" damagesound="LimbArmor" />
+        <sound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" type="OnWearing" range="500.0" volumeproperty="Speed" volume="0.2" loop="true" frequencymultiplier="0.5" />
+        <StatValue stattype="FlowResistance" value="0.9" />
+      </Wearable>
+      <!-- When couwola cola is inserted: cut walls (colafuel1), weld walls (colafuel2), go faster (colafuel3)        -->
+      <Holdable slots="OuterClothes+RightHand" controlpose="true" aimpos="70,5" handle1="-25,-7">
+        <RequiredItem items="colafuel3" type="Contained" targetslot="2" />
+        <StatusEffect type="OnUse" targettype="Contained" targets="colafuel3" targetslot="2" Condition="-0.1">
+          <RequiredItem items="colafuel3" type="Contained" targetslot="2" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This,Character" SpeedMultiplier="2.0" PropulsionSpeedMultiplier="2.0" setvalue="true" disabledeltatime="true">
+          <RequiredItem items="colafuel3" type="Contained" targetslot="2" />
+          <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Drinks/KettleWhistle.ogg" range="500.0" loop="true" volume="1.0" frequencymultiplier="0.35" dontmuffle="true" />
+          <ParticleEmitter particle="steamspray" particlespersecond="10" velocitymin="30" velocitymax="120" distancemin="0" distancemax="10" anglemin="110" anglemax="160" scalemin="1.0" scalemax="1.5" colormultiplier="255,220,180,255" lifetimemultiplier="1" copyentityangle="true" />
+          <ParticleEmitter particle="colagoosplash" particlespersecond="10" velocitymin="60" velocitymax="200" distancemin="0" distancemax="30" anglemin="0" anglemax="360" scalemin="1.0" scalemax="1.5" colormultiplier="255,255,255,150" lifetimemultiplier="1" />
+        </StatusEffect>
+      </Holdable>
+      <RepairTool firedamage="0.0" structurefixamount="0.0" range="250" barrelpos="0,0" combatpriority="10" repairmultiple="true" repairthroughwalls="true" maxoverlappingwalldist="0.0" repairthroughholes="true" levelwallfixamount="-5.0" targetforce="10" drawhudwhenequipped="true" crosshairscale="0.2">
+        <RequiredItem items="colafuel1,colafuel2" type="Contained" targetslot="2" />
+        <RequiredSkill identifier="mechanical" level="50" />
+        <StatusEffect type="OnUse" targettype="Contained" targets="colafuel1,colafuel2" targetslot="2" Condition="-0.4" />
+        <StatusEffect type="OnUse" targettype="This" structurefixamount="-2.0" repairthroughwalls="false" repairthroughholes="true" levelwallfixamount="-5.0" setvalue="true" duration="0.1">
+          <RequiredItem items="colafuel1" type="Contained" targetslot="2" />
+          <sound file="Content/Sounds/Water/FlowMedium.ogg" type="OnUse" range="500.0" loop="true" frequencymultiplier="0.5" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This" structurefixamount="2.0" repairthroughwalls="false" repairthroughholes="false" levelwallfixamount="0.0" setvalue="true" duration="0.1">
+          <RequiredItem items="colafuel2" type="Contained" targetslot="2" />
+          <sound file="Content/Sounds/Water/FlowMedium.ogg" type="OnUse" range="500.0" loop="true" frequencymultiplier="0.5" dontmuffle="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This">
+          <Conditional InWater="False" />
+          <sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/ColaBubble1.ogg" range="750.0" volume="5" loop="true" />
+          <ParticleEmitter particle="colagoosplash" copyentityangle="true" particlespersecond="80" anglemin="0" anglemax="0" velocitymin="300" velocitymax="500" highqualitycollisiondetection="true" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" targettype="This">
+          <Conditional InWater="True" />
+          <sound file="%ModDir:2954998725%/Content/Sounds/Items/Misc/ColaBubble2.ogg" range="750.0" volume="5" loop="true" />
+          <ParticleEmitter particle="colabubbles" colormultiplier="25,5,0" copyentityangle="true" particlespersecond="20" anglemin="-10" anglemax="10" scalemin="0.3" scalemax="0.7" velocitymin="100" velocitymax="200" highqualitycollisiondetection="true" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="-20.0">
+          <RequiredItem items="colafuel1" type="Contained" targetslot="2" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="20.0">
+          <RequiredItem items="colafuel2" type="Contained" targetslot="2" />
+        </StatusEffect>
+        <StatusEffect type="OnSuccess" targettype="UseTarget" targets="item" Condition="-20.0">
+          <Conditional HasTag="neq weldable" target="This" />
+          <RequiredItem items="colafuel1" type="Contained" targetslot="2" />
+        </StatusEffect>
+        <!--<ParticleEmitterHitStructure particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+        <ParticleEmitterHitStructure particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="20" />
+        <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+        <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+        <ParticleEmitterHitItem identifiers="ore" particle="iceshards" particlespersecond="5" anglemin="-40" anglemax="40" velocitymin="10" velocitymax="300" scalemin="0.5" scalemax="1.0" />
+        <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />-->
+        <Fixable identifier="structure" />
+        <!--<LightComponent LightColor="204,178,255,100" range="150" Flicker="0.5">
+          <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+        </LightComponent>-->
+      </RepairTool>
+      <ItemContainer capacity="0" hideitems="true" containedstateindicatorstyle="tank" containedstateindicatorslot="0">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="3" texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="662,0,85,85" origin="0.5,0.5" />
+        <StatusEffect type="OnWearing" target="Contained" targetslot="0">
+          <RequiredItem items="oxygensource" type="Contained" targetslot="0" />
+          <Conditional condition="lt 5.0" />
+          <Sound file="Content/Items/WarningBeepSlow.ogg" range="500" loop="true" />
+        </StatusEffect>
+        <StatusEffect type="OnWearing" target="Contained" targetslot="0" playsoundonrequireditemfailure="true">
+          <RequiredItem items="oxygensource" type="Contained" targetslot="0" matchonempty="true" />
+          <Conditional condition="lte 0.0" />
+          <Sound file="Content/Items/WarningBeep.ogg" range="500" loop="true" />
+        </StatusEffect>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="oxygensource,weldingtoolfuel" />
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="reactorfuel">
+            <StatusEffect type="OnContaining" target="This,Character" Voltage="1.0" setvalue="true">
+              <Conditional IsDead="false" />
+            </StatusEffect>
+          </Containable>
+        </SubContainer>
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="colafuel1,colafuel2,colafuel3" />
+        </SubContainer>
+        <!-- Disabeled as it will allow to weld or cut forever if a cola is contained in any inventory slot because <RequiredItem> apparently ignores targetslot -->
+        <SubContainer capacity="9">
+          <Containable items="smallitem" excludeditems="pistolitem,smallautoweapon,colafuel1,colafuel2,colafuel3" />
+        </SubContainer>
+      </ItemContainer>
+      <aitarget maxsightrange="1500" />
+    </Item>
+  </Items>
+</Override>

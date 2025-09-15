@@ -1,0 +1,375 @@
+EK Utilities 重製版
+
+顧名思義就是整個模組我都看過，盡可能地修改了問題、平衡性，並匹配新版本
+
+即使是自製的重製版，這個模組依舊是屬於原作者Videogames的
+
+以下是他的原模組
+https://steamcommunity.com/workshop/filedetails/?id=1946765892
+
+以下列出大部分的改動內容(如果有忘記了的，很正常，我修改的部分太多了)
+
+
+
+・修改物品合成表，對於效果強大的物品更是如此，影響最大的有貨架、運輸式水下推進器等（貨架變得很貴，畢竟可以賺錢）。
+
+・修改全物品價格、生成等等參數
+
+・部分物品，減少拿在手上時的減速效果(可安裝的物品、手推車、運輸車等)
+
+・部分物品GUI、物品格子優化、美化(比如耗電物品會增加電池圖標)
+(Ex:小架子、架子、巨型軌道砲彈架、大型軌道砲彈架、運輸式水下推進器、保險鋼櫃)
+
+・所有使用電池的物品，代碼變為新版的寫法
+PS:舊版寫法是針對電池的ID，雷素電池是100耐久(消耗是一半)，新版則是針對mobilebattery的TAG，雷素電池200耐久(消耗一樣)，雷素電池是電池的2倍，如果維持舊版寫法，則會變成4倍
+
+-容器-
+
+・小架子、架子等等...對於改變貼圖的機制部分，修復了少了stackable的問題(理論上可以優化效能)，架子增加物品格數
+
+・工業加強箱不可以套娃了（不可以放工具帶、工具箱、子彈帶、載貨滑板車）
+
+・貨箱擋板，改為小型物品，一次可合成4個，可堆疊32個，方便使用
+
+・材料存儲櫃，增加防火防水
+
+・運輸式水下推進器，整個重做！ 增加一個電池格子，以後需要電池了，拔除信標效果(有BUG，無法顯示信標不說，還會誤關燈光)，額外增加一格格子可放小型或中型物品，美化格子
+
+-標籤-
+
+・標籤打印機，改為小型物品，放大各個標籤，增加標籤碰撞箱與文字大小、按鈕文字匹配各語言
+
+-潛水用具-
+
+・強化氧氣罐、強化氧礦罐耐久變為對應的普通版本的1.25倍(125/250)，品質補正變為每級20%，強化氧礦罐可回收(也可用強化氧氣罐的瓶子來回收)，沒有了有小數點的合成表，具體可以自己體驗看看
+
+・循環呼吸器耐久變為125，回復速度也加快25%，修復無耐久時不能使用的BUG!!!現在無耐久時只要還有電就還能恢復運作(無耐久時有1秒的冷卻CD，而不是1幀)
+
+・噴氣式水下推進器，耗電量小幅度減少，但製作成本大幅提高(作為水下推進器的上位版，材料便宜顯然說不過去)
+
+・高級聲納信標，耗電量減少(其實我不知道聲納信標的具體運作原理，嚴格說來，我是不知道它的<AiTarget/>究竟會不會同時帶來引怪效果，不敢亂加數值)
+
+・多功能壓力服MK-1，這個系列整個重寫，數值以PUCS和安全背帶為基礎，增加自動藥物注射、室內用氧、安全背帶的水流妨礙下降功能，物品格子增加(總共是1格氧氣罐、1格放藥物、4格自由格子可放小型物品)，相應的材料也變貴很多，GUI匹配各語言
+
+・增加多功能壓力服MK-1（隱形），以多功能壓力服+攝魂礦製作(染色)，圖標和多功能壓力服相同，但是是透明的裝備，不會阻礙你好看的MOD皮膚d(`･∀･)b
+
+・氧氣單元 Mk-I耐久度更變為350，補正變為20%，可回收(效果等同普通氧氣罐，容量大但並不會有氧礦的加速效果)
+
+・氧氣單元 Mk-II耐久度更變為500，補正變為25%，可回收(效果等同普通氧氣罐，容量大但並不會有氧礦的加速效果)
+
+-緻密物資-
+
+・緻密物資道具全部重製，消除會將物品變成子彈形式射出的BUG，調整生成與販賣(平衡性可能待調整?)
+
+-可安裝機械-
+
+・在一定程度上優化性能
+
+・大功率斷路器，電流量上限+1000
+
+・小型泵增加拆下後自動修復的功能，並改為用螺絲刀修(需求技能依舊是機械，但為了防止操作指令打架，改為用螺絲刀，其他修復用扳手的同理)
+
+・加工台，製作速度從0.6倍變為0.8倍，增加電量消耗，改為用螺絲刀修
+
+・加工台 （自適應），製作速度和一般加工台相同，增加電量消耗、製造時間，技能等級削減變為30%(原本是40%)，改為用螺絲刀修(要雙屬性55才能修)
+
+・解構儀，分解速度從0.6倍變為0.8倍，增加電量消耗，改為用螺絲刀修
+
+-工具-
+
+・強化焊接油罐、強化燃素油罐耐久變為150(但材料也增加了)，品質補正變為每級20%，可用任意強化油罐的罐子回收
+
+・電鑽對應原版等離子切割器的結構傷害增加，結構傷害也翻了4倍，增加技能要求、技能要求提示(注:這是原版的機制，如果技能要求未達標，除了使用上會斷斷續續，同時還會誤傷自己，這不是BUG)
+
+・金屬泡沫噴霧機，增加技能要求、技能要求提示(機械、電器各50級)
+
+・金屬泡沫罐，堆疊上限翻倍，縮小爆炸範圍(嚴禁破拆的意思是丟出去會爆炸噴出毒氣)，增加可以在售貨機買到(但較貴)
+
+・離子脈沖切割器，結構傷害變為等離子切割器的2倍(1.0)，增加品質補正每級20%切割速度/開採速度，但耗電量大幅增加，增加技能要求(機械、電器各50級)
+
+・化學螢光棒合成表大幅修改，堆疊上限增加至12，但持續時間減半
+
+・抓鉤槍大改，移除下降用的子彈，不能固定生物(如果可以固定生物會出現BUG，強大的拉力會把生物模型打碎)，並變為小型物品，相應的拉力增強很多，可以使用了(但僅能在水下使用，空氣中使用會拉不動人)
+
+・火箭腰帶推進力增強到160，勉強能用?為甚麼說勉強你用過就知道，在空氣中用推進器不是甚麼聰明的決定
+
+・工程耳機重作，現在是普通耳機的1.3倍距離，同時增加了自動注射的功能(需要自動注射耳機來合成)，為了避免被覆蓋，如果有裝BT模組，此模組應覆蓋在其上
+
+・遠程無線電，可在水中漂浮不動
+
+・破拆錘，加大揮動的力量，增加品質
+
+・電子照明彈，增加品質，優化GUI界面
+
+・狀態監控器、物流監控器的耗電量減半
+
+・船體修補工具重作，修復速度加快，增加品質補正，加一點生成，機制改變(不再是消耗燃料，而是消耗自身耐久)，定位是一次性的焊接工具(說實話，本來那樣是真沒什麼意義...不過你們應該會拿來拆才是???)
+
+・激光鑽機 結構傷害變為4倍(0.48)，增加品質補正每級20%切割速度/開採速度，增加技能要求(機械30級+電器50級)
+
+・弧焊機，下調修復速度，增加電力消耗、增加技能要求(機械、電器各30級)
+
+・燃素燃料棒，增加疊加上限，減少一點點耐久(畢竟燃素的定位本來就不是拿來發電的)
+
+・裝備袋，變貴，但每格可以放兩個物品而不是一個
+
+
+
+-基於原版的修改-
+
+・移除了以前對不必要的內容的修改，重寫揮發性雷素燃料棒，以讓燃料棒在燃料棒裝卸車時不會散發輻射(原理是讓燃料棒不在反應爐時才會發射輻射，但燃料棒裝卸車具有反應爐TAG)
+
+
+
+
+alphablend="false" 
+
+
+<!-- 之後要把EK armory的所有有GUI的介面優化一下 -->
+
+
+
+
+  <!-- 此物品用於在生成物品時不讓物品以子彈形式出現的過渡 -->
+  <Item name="" identifier="ekr_spawnitem_ouob" maxstacksize="1" scale="0.5" hideinmenus="true">
+    <Sprite texture="%ModDir%/Items/Materials/ekutility_densifiedmaterials.png" depth="0.55" sourcerect="0,0,1,1" />
+    <Body width="45" height="30" density="30" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect"/>
+    <ItemContainer autofill="False" hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="false" removecontaineditemsondeconstruct="false" >
+      <Containable items="ouob" />
+      <StatusEffect type="Always" target="This" Condition="-100" >
+        <Conditional Condition="gte 100" />
+        <SpawnItem identifiers="ouob" spawnposition="ThisInventory" />
+		<DropContainedItems/>
+        <Remove />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+・配合原版新功能，部分物品的堆疊上限改變，以下是更改後的櫃子中的堆疊數量，()中的數字代表拿在手上時的堆疊數量
+
+強化氧氣罐8(1)
+強化氧礦罐8(1)
+氧氣單元 Mk-I 8(1)
+氧氣單元 Mk-II 8(1)
+灑水器8(2)
+充電塢站4(1)
+強化焊接油罐8(1)
+強化燃素油罐8(1)
+金屬泡沫罐4(1)
+化學螢光棒36(12)
+醫學掃描儀4(1)
+電子照明彈32(8)
+船體修補工具4(1)
+
+
+・修正了手推車和運輸車不顯示內容物貼圖的錯誤
+
+・強化氧氣罐，耐久度翻倍
+
+・強化氧礦罐，耐久度翻倍，增加合成所需等級
+
+・噴氣式水下推進器，機制修改，只要燈開著就會緩慢耗電，但相應的...推進時的耗電量減少
+
+・高級聲納信標，減少耗電量
+
+・氧氣單元 Mk-I、氧氣單元 Mk-II，耐久度變為2.5倍
+
+・強化焊接油罐、強化燃素油罐、金屬泡沫罐，耐久度翻倍 
+(我知道原版沒給燃素油罐的耐久增加，我不管，燃素好歹也是稀有物資，哪能這樣消耗?強化燃素油罐的性價比就是要比較高，不然一般都不用的)
+
+・船體修補工具，耐久度翻倍(消耗速度減半)
+
+・為部分物品補上tag(也許能解決一些AI問題?)
+
+
+
+
+
+
+[*]增加部分物品的英文介紹
+
+
+
+
+
+[*]灑水器滅火、澆花的能力加強
+
+
+
+
+[*]重做抓勾槍的子彈，現在可以按布娃娃鍵來托跩自身，並且可以固定在生物身上(主要用於將自身拖向大型生物的方向)
+[*]更新部分代碼，避免了一些煩人的報錯
+
+
+
+[*]8/12，在箱子中時的堆疊上限增加到8
+
+2025/1/2
+[*]優化保險鋼櫃效能
+[*]現在標籤打印機不能放入帶有中型物品標籤的物品
+
+1/2
+[*]緻密材料系列物品（EX:一箱鐵）修正可用機修工天賦複製材料的BUG
+[*]緻密材料系列物品優化，物品將直接生成在玩家的物品欄（如物品欄滿了，則直接生成在手上，手上也滿了就會噴地上）。
+<!-- PS:目前作為官方還沒有應對措施的方案，原版不能被複製的TAG，geneticmaterial,unidentifiedgeneticmaterial,circuitboxcomponent,lightcomponent之中選擇circuitboxcomponent(電路盒組件)目前看來是最不容易出現問題的 -->
+
+
+
+1/6
+[*]礦工背包、醫療背包現在不會被普通的潛水服遮擋了
+[*]調整部分設備接線失敗、電氣設備修復失敗時給予的傷害
+[*]所有的儲物容器都增加了額外可用於放置工具箱的格子
+[*]修正運輸式水下推進器的合成材料錯誤
+[*]調整部分合成表
+
+
+[*]The Mining Backpack and Medical Backpack are now no longer visually obstructed by the diving suit.
+[*]Adjusted the damage inflicted when wiring equipment fails or repairing electrical devices fails.
+[*]Added extra slots in all storage containers for placing toolboxes.
+[*]Fixed an error in the crafting materials for the Crate Transport Mule.
+[*]Adjusted certain crafting recipes.
+
+
+
+優化部分英文翻譯
+
+[*]重做了噴氣式水下推進器、運輸式水下推進器，現在會和普通的水下推進器一樣，可以在舉起時發出燈光，因為某些遊戲機制上的問題，該更新僅適用於新刷新或做出的物品，此處為玩家準備了一個臨時的特殊合成(無需求，使用一個物品自身來合成)，該合成表會持續一段時間才會刪除，以此配方進行一次合成，做一次完整的「刷新」即可正常使用，此後類似的刷新我都會用此方式
+[*]噴氣式水下推進器推進時的耗電量下調
+[*]運輸式水下推進器增加聲納信標功能(並不會發出聲音，因為聽起來很怪)
+[*]弧焊機添加了一定的電擊傷害
+[*]抓鉤槍的技能要求會正常顯示了
+[*]恆溫板條箱架改為電器類，修正玩家無法正常修復的BUG(因為用扳手修復時會和拆卸的指令衝突)
+[*]優化部分物品的性能
+[*]優化部分繁體中文、簡體中文翻譯
+
+
+
+[*]Jetscooter and Crate Transport Mule have been reworked. They now emit light while aiming, similar to the Underwater Scooter. Due to certain game mechanics, this update applies only to newly spawned or crafted items. A temporary special crafting recipe has been provided (no additional materials required, simply use the item itself to craft). This recipe will remain available for a period of time, allowing players to perform a "refresh" on old items. Simply craft the old item using this recipe to perform a full "refresh" and make it function properly.
+PS: Re-manufacturing the item will also achieve the same effect.
+[*]The power consumption of the Jetscooter during propulsion has been reduced.
+[*]The Crate Transport Mule now includes a Sonar Beacon function (it does not emit sound, as that would sound odd).
+[*]The Arc Welder now adds a certain amount of electric shock damage.
+[*]The skill requirements for the Grappling Hook will now display correctly.
+[*]The Climate-Controlled Crate Rack has been changed to the electrical category, and the bug preventing players from repairing it properly has been fixed (because using a wrench to repair conflicted with the disassemble command).
+[*]Optimized the performance of some items.
+[*]Optimized some Traditional Chinese and Simplified Chinese translations.
+
+
+調整了一下循環呼吸器的判定
+優化效能
+
+
+
+現在多功能壓力服MK-1可以減免50%的電器電擊
+調整了多功能壓力服MK-1（隱形）的製造材料
+增加了一種隱形的電線，可以讓玩家更佳方便的布線
+
+
+
+更改了使用燃素燃料棒來作為快速裂變加速器的動力源時，可以射出紅色的雷射，輻射較少，但可以對目標造成點燃傷害，同時減少每次射擊消耗的耐久度
+
+
+
+
+離子脈衝切割器的耗電量大幅下調，基礎切割速度提高，並且可以對異星門造成巨大的破壞
+所有的切割工具對異星門的破壞都有著巨大的提升(離子脈衝切割器>電鑽>雷射鑽機)
+增加新物品，緊湊型電磁線圈，是可以自行放置的電磁線圈，範圍500，冷卻0.5秒，耗電量為5000(圖片從EK Dockyard修改而來)
+優化中文的物品介紹
+
+离子脉冲切割器的耗电量大幅下调，基础切割速度提高，并且可以对异星门造成巨大的破坏
+所有的切割工具对异星门的破坏都有着巨大的提升(离子脉冲切割器>电钻>激光钻机)
+增加新物品，紧凑型电磁线圈，是可以自行放置的电磁线圈，范围500，冷却0.5秒，耗电量为5000(图片從EK Dockyard修改而来)
+优化中文的物品介绍
+
+The power consumption of the Ion Pulse Cutter has been significantly reduced, its cutting speed increased, and it now deals massive damage to Alien Doors.
+All cutting tools now deal greatly increased damage to Alien Doors (Ion Pulse Cutter > Electric Drill > Laser Bore).
+A new item, Compact Electrical Discharge Coil, has been added. It is a placeable electrical discharge coil with a range of 500, a cooldown of 0.5 seconds, and a power consumption of 5000 (image modified from EK Dockyard).
+
+
+
+
+[*]噴氣式水下推進器的推進動力得到了增強
+[*]在穿戴外骨骼時，可以緩解部分拿取時會減速的物品的減速效果（減速效果減少30%，如果減速本身低於30%，則穿戴外骨骼時免疫該物品的減速效果）。
+[*]令小架子、架子、材料儲存櫃可以設定ID鎖（你需要在編輯器中編輯，並使用新放置或對舊物品點擊「重置為預裝」才能調整ID限制）。
+[*]作為原版充電塢站BUG的一種補償機制，令原版及本MOD的充電塢站充電速度更加快速，使本MOD中的充電塢站更具有使用的價值。
+
+[*]喷气式水下推进器的推进动力得到了增强
+[*]在穿戴外骨骼时，可以缓解部分拿取时会减速的物品的减速效果（减速效果减少30%，如果减速本身低于30%，则穿戴外骨骼时免疫该物品的减速效果）。
+[*]令小架子、架子、材料储存柜可以设定ID锁（你需要在编辑器中编辑，并使用新放置或对旧物品点击「重置为预装」才能调整ID限制）。
+[*]作为原版充电坞站BUG的一种补偿机制，令原版及本MOD的充电坞站充电速度更加快速，使本MOD中的充电坞站更具有使用的价值。
+
+[*]The propulsion power of the Jetscooter has been enhanced.
+[*]When wearing an exoskeleton, it can mitigate the slowdown effect caused by carrying certain heavy items (reduces slowdown by 30%; if the original slowdown is less than 30%, the exoskeleton wearer is immune to the slowdown effect).
+[*]Small Shelf, Shelf, and Material Storage Locker can now be locked with an ID, just like a safe (you need to edit this in the editor and either place a new one or click "Reset to prefab" on old items to adjust this option).
+[*]As a compensation mechanism for the original Charging Dock BUG, the charging speed of both the vanilla and this mod's Charging Docks has been further increased, making the Charging Dock more valuable to use.
+
+
+[*]令AI可以把物品放到正確的位置
+[*]調整了運輸式水下推進器的手持姿勢，以避免出現手持運輸式水下推進器並丟棄其中內容物時，物品會卡出牆體外的意外情況(現在的姿勢就是原EK的姿勢)
+[*]調整了運輸車、手推車、燃料棒裝卸車、遺物容器、運輸式水下推進器，使雙手佔滿物品時，依舊可以透過點擊它們來開啟物品容器
+[*]手持遺物容器時的減速效果從-40%下調至-30%
+
+[*]Ensure that AI can place items in the correct positions.
+[*]Adjusted the holding posture of the Crate Transport Mule to prevent situations where, upon discarding its contents while holding it, items might clip through walls.
+[*]Adjusted Rolling Cart, Hand Truck, Fuelrod Handling Truck, Artifact Container, and Crate Transport Mule so that even when both hands are full, players can still open the item container by clicking on them.
+[*]Reduced the slowdown effect when holding an Artifact Container from -40% to -30%.
+
+
+
+
+調整了燃料棒裝卸車，現在可以裝8根燃料棒
+調整了多功能壓力服的製造材料與屬性，不再能夠放入中型物品，但穿戴時可以加速解構、修復設備、修復結構的速度
+
+Adjusted the Fuelrod Handling Truck, which can now hold 8 fuel rods.
+Modified the manufacturing materials and attributes of the Utility Mk-I Hardsuit; it can no longer store medium-sized items, but when worn, it increases the speed of deconstruction, equipment repair, and structure repair.
+
+
+
+修正了揮發性燃料棒的輻射不能夠被屏蔽的BUG
+
+
+
+
+
+小架子(Small Shelf)、架子(Shelf)、物資儲存櫃(Material Storage Locker)、保險鋼櫃(Secure Locker)的容器皆進行了調整，這是為了修復自動整理可能會將物品強行擠出容器的BUG
+物資儲存櫃(Material Storage Locker)的容器格子數量得到提升，增加到了48格
+所有貨架(Crate Rack)的合成材料均進行了調整，以確保Item IO Framework環境下可以更方便的合成
+運輸式水下推進器(Crate Transport Mule)的合成材料進行了調整，同時調整了機制，不再具備聲納信標(Sonar Beacon)功能，增加了兩個變體，一個帶有聲納信標(Sonar Beacon)，另一個則有手持聲納(Handheld Sonar)功能
+在手上沒有空間時點擊地面上的工業加強箱(Industrial Strength Crate)可以將其打開
+
+[*]小架子、架子、物資儲存櫃、保險鋼櫃的容器皆進行了調整，這是為了修復自動整理可能會將物品強行擠出容器的BUG
+[*]物資儲存櫃的容器格子數量得到提升，增加到了48格
+[*]所有貨架的合成材料均進行了調整，以確保Item IO Framework環境下可以更方便的合成
+[*]運輸式水下推進器的合成材料進行了調整，同時調整了機制，不再具備聲納信標功能，增加了兩個變體，一個帶有聲納信標，另一個則有手持聲納功能
+[*]在手上沒有空間時點擊地面上的工業加強箱可以將其打開
+
+[*]The containers of the Small Shelf, Shelf, Material Storage Locker, and Secure Locker have all been adjusted to fix a bug where auto-sorting could forcibly push items out of the container.
+[*]The slot count of the Material Storage Locker has been increased to 48.
+[*]The crafting materials for all Crate Racks have been adjusted to ensure easier crafting in the Item IO Framework environment.
+[*]The crafting materials for the Crate Transport Mule have been adjusted, and its mechanics have been modified— it no longer has the Sonar Beacon function. Two new variants have been added: one with a Sonar Beacon and another with Handheld Sonar functionality.
+[*]When there is no space in hand, clicking on an Industrial Strength Crate on the ground will open it.
+
+
+[*]調整了運輸式水下推進器(Crate Transport Mule(Handheld Sonar))和噴氣式水下推進器(Jetscooter)的UI
+[*]使部分材料類型的物品可以正常放入背包收納(刪除了mobilecontainer TAG)
+
+[*]调整了运输式水下推进器和喷气式水下推进器的UI
+[*]使部分材料类型的物品可以正常放入背包收纳（删除了mobilecontainer TAG）。
+
+[*]Adjusted the UI of the Crate Transport Mule (Handheld Sonar) and the Jetscooter underwater propulsion devices.
+[*]Enabled proper backpack storage for certain material-type items (removed the mobilecontainer TAG).

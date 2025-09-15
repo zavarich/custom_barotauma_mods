@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- 枪械模板 -->
+  <Item name="长枪模板" identifier="templateSmg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" description="哇哦!一把能装载所有模组的枪!就是安装位置有点奇怪...(你不应该在正常游戏中看到这把武器,如果看到了,说明它是不正常刷出来的)">
+    <!-- 中意的容器 -->
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.25" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <!-- 价格设置，建议战术武器非军事站点全部设置sold="false" -->
+    <Price baseprice="390" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+    </Price>
+    <!-- 合成表 -->
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="55" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+    </Fabricate>
+    <!-- 拆解表 -->
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+    <!-- 物品栏图标,一般可以不设置 -->
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,830,64,64" origin="0.5,0.5" />
+    <!-- Sprite和Body设置,最重要的贴图位置设置 -->
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,121,144,80" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="60" density="25" />
+    <!-- 可抓取物,如果希望只能带在背上吧这里的Any去掉,希望双持就将"RightHand+LeftHand"改为"RightHand,LeftHand",Any看情况 -->
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
+    <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+      <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+    </StatusEffect>
+    <!-- 我参考了COR使用标签的写法，但是发现COR当前的写法存在两个问题：
+  1 一部分OnUse可以改成OnSecondaryUse，毕竟这游戏的枪必须得举起来瞄准才能射击
+  2 少部分使用了always，不过我好像看的是比较老版本的，刚刚查了一下新版本的基本都去掉了
+  性能优化嘛，能少点不必要的性能负担就少点，所以我这边只在枪管上使用了标签的方式去触发（说实话一开始是打算全都用OnInsert和OnRemove的,连标签都不用，但是后来放弃了，也许后面可以再尝试以下究竟行不行）
+
+  8月6号更新：诶呦，看来只使用OnInsert和OnRemove看来不行，本身是没问题的，而且只会触发一次，但是问题在于，每次重新加载地图时，数值全会变回去。
+         解决方案：后面你看到的OnInsert，全部改成OnContaining。24年刚加入的时候是可以的，但是今年2月修复了，具体参考https://github.com/FakeFishGames/Barotrauma/discussions/15372
+
+  所以，所有涉及到给予标签的配件，都得在Holdable里面多写个触发标签的逻辑，我用的很谨慎，只做了两个标签-->
+    <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true">
+      <RequiredItem items="sniperStockVGM" type="Contained" />
+    </StatusEffect>
+    <!-- 另外，枪托的移动速度影响也写在这里 -->
+    <!-- 远程武器栏,最主要的属性之一 -->
+    <RangedWeapon reload="0.19" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="64,9" spread="10" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-0.1" stackable="true" disabledeltatime="true" setvalue="false">
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect>
+      <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <!-- 物品栏，顺序已经准备完毕，不需要额外变动，只需要修改StatusEffect即可 -->
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <!-- ItemContainer的内容是VGM实现的关键:所有配件的效果都写在ItemContainer当中:可以插的类型\插入后的数值等等 -->
+      <!-- 很遗憾!配件的效果必须写在枪械当中, 坏处是你做VGM枪时必须在父类(枪械)上设定好子类(配件)的数值,这样你的武器代码会又臭又长,好处则是你可以顺带给每一把枪可以安装的配件来个深度定制,在细节上做出点东西-->
+      <!-- 我并不是没有想过把它们写进子物品里,但是考虑到statusEffect不支持乘除(只能加减属性),而且每把枪属性各不相同,这个程序上确实更优雅的组织方法很遗憾在这里没法实现. -->
+      <Containable items="smgammo,smallMagVGM,bigMagVGM,drumMagVGM" hide="false" itempos="4,-10" rotation="-30" />
+      <!-- 你需要在这里修改SlotIcon -->
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="192,0,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="5" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+      <!-- 下配件 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <!-- 在Containable当中修改对应的物品和位置 -->
+        <Containable items="smallAccessoryVGM,bigAccessoryVGM,light" hide="false" itempos="22,-1" setactive="true">
+          <!-- 必须要写OnRemoved，并且写在枪里，我试过把OnInserted和OnRemoved写在配件上，但是很遗憾，这两个新加的条件都只能再ItemContainer，而且，虽然支持Parent这种写法，但是Parent好像指代的就是插件自身，所以没办法，你只能写在枪里面 -->
+          <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
+          <!-- 不过这倒是有个额外好处：那就是你可以顺带定好每把武器能有什么配件，以及相同配件在不同枪上的效果了！这个对于这种2D游戏来说可能没啥明显区别，但是对于部分需要精修枪械手感（射击反馈）的FPS来说倒是挺关键的 -->
+          <StatusEffect type="OnContaining" target="This" holdangle="20" setvalue="true" disabledeltatime="true">
+            <RequiredItem items="angleGripVGM" type="Contained" />
+          </StatusEffect>
+          <!-- 所以你也看到了：一把枪对应一个StatusEffect，不用担心性能问题，OnInserted和OnRemoved只会在物品移除/插入时触发一次，比写always要好得多，就是xml可能会写得又臭又长 -->
+          <StatusEffect type="OnContaining" target="This" holdangle="-15" setvalue="true" disabledeltatime="true">
+            <RequiredItem items="verticalGripVGM" type="Contained" />
+          </StatusEffect>
+          <!-- 另外，我在考虑使用xslt这样的工具进一步加快制作效率，我一有突破就会加到XML Generator里面的 -->
+        </Containable>
+      </SubContainer>
+      <!-- 握把 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallHandVGM,bigHandVGM" hide="false" itempos="22,-1" setactive="true"></Containable>
+      </SubContainer>
+      <!-- 枪口 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="22,-1" setactive="true"></Containable>
+      </SubContainer>
+      <!-- 枪托 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallStockVGM,bigStockVGM" hide="false" itempos="22,-1" setactive="true"></Containable>
+      </SubContainer>
+      <!-- 上挂件 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallScopeVGM,bigScopeVGM" hide="false" itempos="22,-1" setactive="true"></Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <!-- 配件模板 -->
+  <Item name="测试枪管模板" identifier="muzzleTemplateVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/rifleSilencerVGM.png" sourcerect="0,0,39,8" origin="0.5,0.5" />
+    <!-- 注意这里有个细节错误:贴图长宽应该为4的倍数(我这里是39,因此游戏内有报错) -->
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/rifleSilencerVGM.png" sourcerect="0,0,39,8" depth="0.55" origin="0.0,0.5" />
+    <!-- 由于保持装配点位一致的需要，枪管的origin全部需要修改为0.0,0.5，这会导致如果未在游戏中设置原点仍为0.5,0.5 InventoryIcon的话，装备栏会图标会变得奇怪,因此对于配件来说,InventoryIcon是必须要设置的 -->
+    <Body width="39" height="8" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="测试枪托模板" identifier="stockTemplateVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/stockTemplateVGM.png" sourcerect="0,0,68,44" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/stockTemplateVGM.png" sourcerect="0,0,68,44" depth="0.55" origin="1.0,0.5" />
+    <!-- 由于保持装配点位一致的需要，枪管的origin全部需要修改为0.0,0.5，这会导致如果未在游戏中设置原点仍为0.5,0.5 InventoryIcon的话，装备栏会图标会变得奇怪,因此对于配件来说,InventoryIcon是必须要设置的 -->
+    <Body width="68" height="44" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="测试上挂件模板" identifier="scopeTemplateVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/scopeTemplateVGM.png" sourcerect="0,0,98,24" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/scopeTemplateVGM.png" sourcerect="0,0,98,24" depth="0.55" origin="0.5,1.0" />
+    <Body width="98" height="24" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="测试握把模板" identifier="handTemplateVGM" category="Equipment" Tags="smallitem,tool,bigHandVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/handTemplateVGM.png" sourcerect="0,0,28,32" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/handTemplateVGM.png" sourcerect="0,0,28,32" depth="0.55" origin="1.0,0.0" />
+    <Body width="28" height="32" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <!-- 下挂件模板请直接参考原游戏的手电筒 -->
+  <!-- 下面这些东西都是我测试statuseffect时写的，我把它们全部保留了下来，以提醒自己以后别踩这些坑 -->
+  <Item name="测试道具" identifier="flashlight" category="Equipment" Tags="smallitem,tool,provocative" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <!-- <PreferredContainer primary="divingcab" minamount="1" maxamount="2" spawnprobability="1" notcampaign="true" notpvp="true"/>
+    <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab,wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05"/>
+    <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.1"/> -->
+    <!-- <Price baseprice="200" minavailable="2">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+      <Price storeidentifier="merchantmine" />
+    </Price> -->
+    <!-- <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="aluminium" amount="2" />
+      <RequiredItem tag="lightcomponent" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="aluminium" />
+      <Item identifier="lightcomponent" />
+    </Deconstruct> -->
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,320,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="293,185,49,18" depth="0.55" origin="0.5,0.5" />
+    <Body width="48" height="15" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" targettype="Contained" Condition="-0.2">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <!-- 测试:StatusEffect -->
+      <StatusEffect type="OnActive" targettype="This" Condition="-0.5" />
+      <!-- 测试通过，StatusEffect需要依附于类似Holdable这类父节点上 -->
+      <!-- 测试:能否影响父节点 -->
+      <StatusEffect type="OnActive" targettype="Parent" Condition="-0.5" />
+      <!-- 测试通过，可以影响父节点 -->
+      <!-- 测试:能否通过该值修改父节点的任何属性 -->
+      <StatusEffect type="OnActive" targettype="Parent" tagargetitemcomponent="RangedWeapon" spread="1.0" />
+      <!-- 失败，可能还是需要通过给予tag来触发 -->
+      <!-- 测试:给予父节点状态tag -->
+      <StatusEffect type="OnActive" targettype="Parent" settags="silencer_vgm" />
+      <!-- 测试:重新尝试修改父节点属性 -->
+      <!-- <StatusEffect type="OnActive" target="Parent" tagargetitemcomponent="RangedWeapon" reload="0.10" spread="0.5" unskilledspread="0.8" weapondamagemodifier="0.1" penetration="1.0" crosshairscale="0.5" stackable="false" disabledeltatime="true" setvalue="true" /> -->
+      <!-- 成功,其实是可以用的,看来chaggpt有时候也不靠谱哈,不过还是留下了一个问题:当你移除物品时,会返回原先的数值吗? -->
+      <!-- 测试：尝试增减数值，而不是叠加数值 -->
+      <!-- <StatusEffect type="OnActive" target="Parent" tagargetitemcomponent="RangedWeapon" reload="0.10" spread="0.5" unskilledspread="0.8" weapondamagemodifier="0.1" penetration="1.0" crosshairscale="0.5" stackable="false" disabledeltatime="true" setvalue="true" /> -->
+      <LightComponent LightColor="0.5,0.5,0.5,1.0" directional="true" Flicker="0.02" range="800" powerconsumption="10" IsOn="true">
+        <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+        <IsActive targetcontaineditem="true" condition="gt 1.0" />
+      </LightComponent>
+      <LightComponent LightColor="0.5,0.5,0.5,1.0" directional="true" range="800" powerconsumption="10" IsOn="true" flicker="0.8" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
+        <LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.0,1.0" />
+        <IsActive targetcontaineditem="true" condition="lte 1.0" />
+      </LightComponent>
+    </Holdable>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+        <!-- <StatusEffect type="OnContaining" targettype="Parent" Condition="-50.0" /> -->
+        <!-- <StatusEffect type="OnRemoved" targettype="Parent" Condition="-75.0" setvalue="true" /> -->
+      </Containable>
+    </ItemContainer>
+    <!-- <ItemComponent>
+        <StatusEffect type="OnActive" targettype="This" Condition="-50.0" />
+        <StatusEffect type="OnContaining" targettype="Parent" Condition="-50.0" />
+    </ItemComponent> -->
+  </Item>
+  <Item name="测试枪" identifier="smg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+    <!-- <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.25" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+    <Price baseprice="390" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="2" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="55" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct> -->
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,830,64,64" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,121,144,80" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="60" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="0.19" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="64,9" spread="10" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <!-- <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot3.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot4.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot5.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/SMGsingleShot6.ogg" type="OnUse" range="3000" /> -->
+      <StatusEffect type="OnUse" target="This">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <!--"Use" contained magazine to spawn projectiles.-->
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <!-- 测试:响应动态tag -->
+      <!-- <StatusEffect type="OnSecondaryUse" target="This" Condition="-0.1" stackable="true" disabledeltatime="true" setvalue="false" /> -->
+      <!-- 成功：建议使用OnSecondaryUse降低性能影响 -->
+      <!-- 测试：相应动态tag -->
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-0.1" stackable="true" disabledeltatime="true" setvalue="false">
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect>
+      <!-- 成功,接下来测试修改相关属性 -->
+      <!-- 测试:修改其他属性 -->
+      <!-- <StatusEffect type="OnSecondaryUse" target="This" reload="0.15" spread="0.5" unskilledspread="0.8" weapondamagemodifier="0.1" penetration="1.0" crosshairscale="0.5" stackable="true" disabledeltatime="true" setvalue="false" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect> -->
+      <!-- 错误:是都会修改,但是变成叠加了,需要设置当没有这个东西时候不生效 -->
+      <!-- 测试:修改其他属性v2 -->
+      <!-- <StatusEffect type="OnSecondaryUse" target="This" reload="0.10" spread="0.5" unskilledspread="0.8" weapondamagemodifier="0.1" penetration="1.0" crosshairscale="0.5" stackable="false" disabledeltatime="true" setvalue="true" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect> -->
+      <!-- 成功，但是不会在移除物品时返回原先的数值 -->
+      <!-- 测试:OnInserted 和 OnRemoved 测试 -->
+      <!-- <StatusEffect type="OnInserted" target="This" reload="0.05" disabledeltatime="true" crosshairscale="0.5" setvalue="true" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnRemoved" target="This" reload="0.19" disabledeltatime="true" crosshairscale="0.2" setvalue="true" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect> -->
+      <!-- 失败：似乎需要放在ItemContainer当中 -->
+      <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <!-- 测试:OnInserted 和 OnRemoved 测试 -->
+      <!-- <StatusEffect type="OnInserted" target="This" reload="0.05" disabledeltatime="true" crosshairscale="0.5" setvalue="true" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect>
+      <StatusEffect type="OnRemoved" target="This" reload="0.19" disabledeltatime="true" crosshairscale="0.2" setvalue="true" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect> -->
+      <!-- 失败，怀疑是得写进Containable当中 -->
+      <Containable items="smgammo" hide="false" itempos="4,-10" rotation="-30" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="22,-1" setactive="true">
+          <!-- 测试:OnInserted 和 OnRemoved 写进Containable当中 -->
+          <!-- <StatusEffect type="OnInserted" target="This" reload="0.05" disabledeltatime="true" crosshairscale="0.5" setvalue="true" />
+            <StatusEffect type="OnRemoved" target="This" reload="0.19" disabledeltatime="true" crosshairscale="0.2" setvalue="true" /> -->
+          <!-- 成功,确实是这样写的,接下来就是尝试一下可不可以增减了,我想配件系统的核心逻辑已经初步成型 -->
+          <StatusEffect type="OnInserted" target="This" reload="-0.15" disabledeltatime="true" crosshairscale="0.5" setvalue="false" />
+          <StatusEffect type="OnRemoved" target="This" reload="0.15" disabledeltatime="true" crosshairscale="-0.5" setvalue="false" />
+          <!-- 成功,不敢相信我找到了! -->
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+    <!-- <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" /> -->
+    <!-- <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <SkillRequirementHint identifier="weapons" level="50" /> -->
+  </Item>
+  <!-- 既然你看到了这里,最后一个重要提示: 导出贴图时一定要选"二次平方(锐利)"!一定要锐利的!不然倒进游戏会糊 -->
+  <!-- 另外，考虑一下借助ai来做mod，将StatusEffect.cs先喂给ai然后再问它问题以获得最准确的结果，另外不要完全相信它 -->
+</Items>

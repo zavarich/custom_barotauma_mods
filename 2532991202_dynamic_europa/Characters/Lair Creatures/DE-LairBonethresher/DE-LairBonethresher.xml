@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character inherit="Bonethresher" speciesname="DE-LairBonethresher" speciestranslationoverride="Bonethresher" usepathfinding="True">
+  <ragdolls folder="%ModDir:2532991202%/Characters/Lair Creatures/DE-LairBonethresher/Ragdolls/" />
+  <ai targetinnerwalls="False"></ai>
+</Character>

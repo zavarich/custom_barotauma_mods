@@ -1,0 +1,51 @@
+﻿Barotrauma Client crash report (generated on 02/05/2022 18:37:51)
+
+
+Barotrauma seems to have crashed. Sorry for the inconvenience! 
+
+
+28D80F2FA4850B8644E5F1BBED452ED2
+
+
+Game version 0.17.15.0 (ReleaseWindows, branch master, revision 79daf2ed3)
+Graphics mode: 1280x1024 (BorderlessWindowed)
+VSync ON
+Language: English
+Selected content packages: None
+Level seed: no level loaded
+Loaded submarine: None
+Selected screen: None
+SteamManager initialized
+
+
+System info:
+    Operating system: Microsoft Windows NT 10.0.19044.0 64 bit
+    GPU name: AMD Radeon(TM) Vega 8 Graphics
+    Display mode: {Width:1280 Height:1024 Format:Color AspectRatio:1,25}
+    GPU status: Normal
+
+
+Exception: Could not find file 'B:\programming\c#\Barotrauma\Barotrauma\bin\ReleaseWindows\net6.0\win-x64\publish\Content\Effects\waterbump.png'. (System.IO.FileNotFoundException)
+Target site: Microsoft.Win32.SafeHandles.SafeFileHandle CreateFile(System.String, System.IO.FileMode, System.IO.FileAccess, System.IO.FileShare, System.IO.FileOptions)
+Stack trace: 
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.Open(String path, FileMode mode, FileAccess access, FileShare share)
+   at Barotrauma.IO.File.Open(String path, FileMode mode, FileAccess access, Nullable`1 share) in <DEV>\Barotrauma\BarotraumaShared\SharedSource\Utils\SafeIO.cs:line 366
+   at Barotrauma.IO.File.OpenRead(String path) in <DEV>\Barotrauma\BarotraumaShared\SharedSource\Utils\SafeIO.cs:line 371
+   at Barotrauma.TextureLoader.FromFile(String path, Boolean compress, Boolean mipmap) in <DEV>\Barotrauma\BarotraumaClient\ClientSource\Utils\TextureLoader.cs:line 193
+   at Barotrauma.WaterRenderer..ctor(GraphicsDevice graphicsDevice, ContentManager content) in <DEV>\Barotrauma\BarotraumaClient\ClientSource\Map\Levels\WaterRenderer.cs:line 78
+   at Barotrauma.GameMain.LoadContent() in <DEV>\Barotrauma\BarotraumaClient\ClientSource\GameMain.cs:line 400
+   at Microsoft.Xna.Framework.Game.Initialize() in <DEV>\Libraries\MonoGame.Framework\Src\MonoGame.Framework\Game.cs:line 551
+   at Barotrauma.GameMain.Initialize() in <DEV>\Barotrauma\BarotraumaClient\ClientSource\GameMain.cs:line 369
+   at Microsoft.Xna.Framework.Game.DoInitialize() in <DEV>\Libraries\MonoGame.Framework\Src\MonoGame.Framework\Game.cs:line 678
+   at Microsoft.Xna.Framework.Game.Run(GameRunBehavior runBehavior) in <DEV>\Libraries\MonoGame.Framework\Src\MonoGame.Framework\Game.cs:line 381
+   at Microsoft.Xna.Framework.Game.Run() in <DEV>\Libraries\MonoGame.Framework\Src\MonoGame.Framework\Game.cs:line 367
+   at Barotrauma.Program.Main(String[] args) in <DEV>\Barotrauma\BarotraumaClient\ClientSource\Program.cs:line 58
+
+
+Last debug messages:
+[02/05/2022 18:37:47] Logged in as Evil Factory (SteamID STEAM_1:1:53859811)

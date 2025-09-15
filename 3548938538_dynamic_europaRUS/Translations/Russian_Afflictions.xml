@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Afflictions -->
+  <afflictionname.temporarycrew>Временный член экипажа</afflictionname.temporarycrew>
+  <afflictiondescription.temporarycrew.other>Покинет экипаж через 6 часов с момента присоединения.</afflictiondescription.temporarycrew.other>
+  <afflictiondescription.temporarycrew.self>Я здесь, чтобы поддерживать этот экипаж в течение 6 часов с момента прибытия. Ни минутой больше, ни меньше.</afflictiondescription.temporarycrew.self>
+  <afflictionname.mysteriousdisease>Таинственная болезнь</afflictionname.mysteriousdisease>
+  <afflictiondescription.mysteriousdisease.self>Вы чувствуете недомогание и не понимаете причину.</afflictiondescription.mysteriousdisease.self>
+  <afflictiondescription.mysteriousdisease.others>Пациент заражён неизвестной, заразной болезнью и нуждается в медицинской помощи.</afflictiondescription.mysteriousdisease.others>
+  <afflictionname.mysteriousdiseaseplayer>Недуг</afflictionname.mysteriousdiseaseplayer>
+  <afflictiondescription.mysteriousdiseaseplayer.self>Вы тоже заболели. Постарайтесь изолироваться и продержаться.</afflictiondescription.mysteriousdiseaseplayer.self>
+  <afflictiondescription.mysteriousdiseaseplayer.others>Таинственная болезнь распространилась на экипаж…</afflictiondescription.mysteriousdiseaseplayer.others>
+  <afflictionname.nastyscar>Зловещий шрам</afflictionname.nastyscar>
+  <afflictiondescription.nastyscar.self>Шрам в форме богомола, которым метят любого, кто вступает в ряды печально известной банды пиратов.</afflictiondescription.nastyscar.self>
+  <afflictiondescription.nastyscar.others>Вы замечаете странный шрам под ключицей… Почти как клеймо.</afflictiondescription.nastyscar.others>
+</infotext>

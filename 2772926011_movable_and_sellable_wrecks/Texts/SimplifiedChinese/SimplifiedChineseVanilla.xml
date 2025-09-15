@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
+  <!-- Selling Text -->
+  <SellWreck>沉船残骸 %s 将在巡回结束时以 %s 马克出售。 你的所有船员将获得 %s 经验值。</SellWreck>
+  <entityname.railgunharpoon>钛合金制成的重型工业钩</entityname.railgunharpoon>
+  <entitydescription.railgunharpoon>钛合金制成的重型工业钩，用于从海底吊起失事的潜艇。请确保使用足够的抓钩，否则它们会被折断！</entitydescription.railgunharpoon>
+</infotexts>

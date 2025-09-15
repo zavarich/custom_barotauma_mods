@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+   <!-- EK Utilities -->
+  <!-- ekutility_containers.xml -->
+  <entityname.ekutility_smallshelf>Маленькая полка</entityname.ekutility_smallshelf>
+  <entitydescription.ekutility_smallshelf>Базовое решение установки настенного хранилища. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_smallshelf>
+  <entityname.ekutility_mediumshelf>Полка</entityname.ekutility_mediumshelf>
+  <entitydescription.ekutility_mediumshelf>Базовое решение установки настенного хранилища. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_mediumshelf>
+  <entityname.ekutility_shellrack>Большая стойка для снарядов рельсотрона</entityname.ekutility_shellrack>
+  <entitydescription.ekutility_shellrack>Металлическая рама, предназначенная для хранения снарядов рельсотрона. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_shellrack>
+  <entityname.ekutility_shellrack_huge>Огромная стойка для снарядов рельсотрона</entityname.ekutility_shellrack_huge>
+  <entitydescription.ekutility_shellrack_huge>Настенное хранилище, предназначенное для хранения большого количества снарядов для рельсотрона. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_shellrack_huge>
+  <entityname.ekutility_craterack>Малый стеллаж для ящиков</entityname.ekutility_craterack>
+  <entitydescription.ekutility_craterack>Полка для аккуратного хранения грузовых ящиков. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_craterack>
+  <entityname.ekutility_craterack_tall>Высокий стеллаж для ящиков</entityname.ekutility_craterack_tall>
+  <entitydescription.ekutility_craterack_tall>Более высокая полка для аккуратного хранения грузовых ящиков. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_craterack_tall>
+  <entityname.ekutility_craterack_freezer>Стеллаж для ящиков с климат-контролем</entityname.ekutility_craterack_freezer>
+  <entitydescription.ekutility_craterack_freezer>Закрытая полка для ящиков с регуляторами для чувствительных к температуре или влажности грузов. Требуется электричество. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_craterack_freezer>
+  <entityname.ekutility_chemlightboxred>Ящик ХИС (Красные)</entityname.ekutility_chemlightboxred>
+  <entitydescription.ekutility_chemlightboxred>Коробка с химическими источниками света; одноразовый источник света. Красного цвета.</entitydescription.ekutility_chemlightboxred>
+  <entityname.ekutility_chemlightboxgreen>Ящик ХИС (Зелёные)</entityname.ekutility_chemlightboxgreen>
+  <entitydescription.ekutility_chemlightboxgreen>Коробка с химическими источниками света; одноразовый источник света. Зелёного цвета.</entitydescription.ekutility_chemlightboxgreen>
+  <entityname.ekutility_chemlightboxblue>Ящик ХИС (Синие)</entityname.ekutility_chemlightboxblue>
+  <entitydescription.ekutility_chemlightboxblue>Коробка с химическими источниками света; одноразовый источник света. Синего цвета.</entitydescription.ekutility_chemlightboxblue>
+  <entityname.ekutility_chemlightboxyellow>Ящик ХИС (Жёлтые)</entityname.ekutility_chemlightboxyellow>
+  <entitydescription.ekutility_chemlightboxyellow>Коробка с химическими источниками света; одноразовый источник света. Янтарного цвета.</entitydescription.ekutility_chemlightboxyellow>
+  <entityname.ekutility_cart_depthcharge>Тележка на колесиках</entityname.ekutility_cart_depthcharge>
+  <entitydescription.ekutility_cart_depthcharge>Прочная металлическая тележка для транспортировки таких предметов, как металлические ящики, глубинные бомбы и водолазные костюмы.</entitydescription.ekutility_cart_depthcharge>
+  <entityname.ekutility_handtruck>Тележка для снарядов</entityname.ekutility_handtruck>
+  <entitydescription.ekutility_handtruck>Простая ручная тележка для легкого перемещения снарядов рельсотрона.</entitydescription.ekutility_handtruck>
+  <entityname.ekutility_handtruck_reactorfuel>Тележка для транспортировки топливных стержней</entityname.ekutility_handtruck_reactorfuel>
+  <entitydescription.ekutility_handtruck_reactorfuel>Ручная тележка с экранированным корпусом для перемещения топливных стержней из реактора.</entitydescription.ekutility_handtruck_reactorfuel>
+  <entityname.ekutility_artifactbox>Контейнер для артефакта</entityname.ekutility_artifactbox>
+  <entitydescription.ekutility_artifactbox>Большой хорошо изолированный контейнер, предназначенный для хранения артефактов для транспортировки и изучения.</entitydescription.ekutility_artifactbox>
+  <entityname.ekutility_storagecrate>Промышленный ящик</entityname.ekutility_storagecrate>
+  <entitydescription.ekutility_storagecrate>Прочный водонепроницаемый контейнер для хранения и транспортировки.</entitydescription.ekutility_storagecrate>
+  <entityname.ekutility_crateblocker>Блокиратор грузовых полок</entityname.ekutility_crateblocker>
+  <entitydescription.ekutility_crateblocker>Заглушка, может использоваться для предотвращения размещения груза в неиспользуемых ячейках грузовых полок.</entitydescription.ekutility_crateblocker>
+  <entityname.ekutility_materiallocker>Шкафчик для хранения материалов</entityname.ekutility_materiallocker>
+  <entitydescription.ekutility_materiallocker>Тяжелый шкафчик для хранения вещей, для организации и сортировки. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_materiallocker>
+  <entityname.ekutility_mulecargo>Мул для перевозки ящиков</entityname.ekutility_mulecargo>
+  <entitydescription.ekutility_mulecargo>Самоходные подводные сани, способные перевозить 4 грузовых ящика.</entitydescription.ekutility_mulecargo>
+  <entityname.ekutility_securelockercaptain>Защищённый шкафчик(Капитан)</entityname.ekutility_securelockercaptain>
+  <entitydescription.ekutility_securelockercaptain>Запирающееся хранилище для мелких и средних предметов. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_securelockercaptain>
+  <entityname.ekutility_securelockersecurityofficer>Защищённый шкафчик(СБ)</entityname.ekutility_securelockersecurityofficer>
+  <entitydescription.ekutility_securelockersecurityofficer>Запирающееся хранилище для мелких и средних предметов. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_securelockersecurityofficer>
+  <entityname.ekutility_securelockermedicaldoctor>Защищённый шкафчик(Врач)</entityname.ekutility_securelockermedicaldoctor>
+  <entitydescription.ekutility_securelockermedicaldoctor>Запирающееся хранилище для мелких и средних предметов. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_securelockermedicaldoctor>
+  <entityname.ekutility_securelockermechanic>Защищённый шкафчик(Механик)</entityname.ekutility_securelockermechanic>
+  <entitydescription.ekutility_securelockermechanic>Запирающееся хранилище для мелких и средних предметов. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_securelockermechanic>
+  <entityname.ekutility_securelockerengineer>Защищённый шкафчик(Инженер)</entityname.ekutility_securelockerengineer>
+  <entitydescription.ekutility_securelockerengineer>Запирающееся хранилище для мелких и средних предметов. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_securelockerengineer>
+  <!-- ekutility_labels.xml -->
+  <entityname.ekutility_label_text>Текстовая этикетка</entityname.ekutility_label_text>
+  <entitydescription.ekutility_label_text>Пустая карточка-этикетка с местом для письменной информации.</entitydescription.ekutility_label_text>
+  <entityname.ekutility_label_iron>Этикетка железа</entityname.ekutility_label_iron>
+  <entitydescription.ekutility_label_iron>Этикетка с изображением железа на ней.</entitydescription.ekutility_label_iron>
+  <entityname.ekutility_label_aluminium>Этикетка алюминия</entityname.ekutility_label_aluminium>
+  <entitydescription.ekutility_label_aluminium>Этикетка с изображением алюминия на ней.</entitydescription.ekutility_label_aluminium>
+  <entityname.ekutility_label_copper>Этикетка меди</entityname.ekutility_label_copper>
+  <entitydescription.ekutility_label_copper>Этикетка с изображением меди на ней.</entitydescription.ekutility_label_copper>
+  <entityname.ekutility_label_titanium>Этикетка титана</entityname.ekutility_label_titanium>
+  <entitydescription.ekutility_label_titanium>Этикетка с изображением титана на ней.</entitydescription.ekutility_label_titanium>
+  <entityname.ekutility_label_carbon>Этикетка углерода</entityname.ekutility_label_carbon>
+  <entitydescription.ekutility_label_carbon>Этикетка с изображением углерода на ней.</entitydescription.ekutility_label_carbon>
+  <entityname.ekutility_label_lead>Этикетка свинца</entityname.ekutility_label_lead>
+  <entitydescription.ekutility_label_lead>Этикетка с изображением свинца на ней.</entitydescription.ekutility_label_lead>
+  <entityname.ekutility_label_tin>Этикетка олова</entityname.ekutility_label_tin>
+  <entitydescription.ekutility_label_tin>Этикетка с изображением олова на ней.</entitydescription.ekutility_label_tin>
+  <entityname.ekutility_label_zinc>Этикетка цинка</entityname.ekutility_label_zinc>
+  <entitydescription.ekutility_label_zinc>Этикетка с изображением цинка на ней.</entitydescription.ekutility_label_zinc>
+  <entityname.ekutility_label_silicon>Этикетка кремния</entityname.ekutility_label_silicon>
+  <entitydescription.ekutility_label_silicon>Этикетка с изображением кремния на ней.</entitydescription.ekutility_label_silicon>
+  <entityname.ekutility_label_uranium>Этикетка урана</entityname.ekutility_label_uranium>
+  <entitydescription.ekutility_label_uranium>Этикетка с изображением урана на ней.</entitydescription.ekutility_label_uranium>
+  <entityname.ekutility_label_thorium>Этикетка тория</entityname.ekutility_label_thorium>
+  <entitydescription.ekutility_label_thorium>Этикетка с изображением тория на ней.</entitydescription.ekutility_label_thorium>
+  <entityname.ekutility_label_steel>Этикетка стали</entityname.ekutility_label_steel>
+  <entitydescription.ekutility_label_steel>Этикетка с изображением стали на ней.</entitydescription.ekutility_label_steel>
+  <entityname.ekutility_label_titaniumaluminiumalloy>Этикетка слитка титана-алюминия</entityname.ekutility_label_titaniumaluminiumalloy>
+  <entitydescription.ekutility_label_titaniumaluminiumalloy>Этикетка с изображением слитка титана-алюминия на ней.</entitydescription.ekutility_label_titaniumaluminiumalloy>
+  <entityname.ekutility_label_plastic>Этикетка пластика</entityname.ekutility_label_plastic>
+  <entitydescription.ekutility_label_plastic>Этикетка с изображением пластика на ней.</entitydescription.ekutility_label_plastic>
+  <entityname.ekutility_label_rubber>Этикетка резины</entityname.ekutility_label_rubber>
+  <entitydescription.ekutility_label_rubber>Этикетка с изображением резины на ней.</entitydescription.ekutility_label_rubber>
+  <entityname.ekutility_label_fpgacircuit>Этикетка схемы на базе ППВМ</entityname.ekutility_label_fpgacircuit>
+  <entitydescription.ekutility_label_fpgacircuit>Этикетка с изображением схемы на базе ППВМ на ней.</entitydescription.ekutility_label_fpgacircuit>
+  <entityname.ekutility_label_organicfiber>Этикетка органического волокна</entityname.ekutility_label_organicfiber>
+  <entitydescription.ekutility_label_organicfiber>Этикетка с изображением органического волокна на ней.</entitydescription.ekutility_label_organicfiber>
+  <entityname.ekutility_label_ballisticfiber>Этикетка противоударного волокна</entityname.ekutility_label_ballisticfiber>
+  <entitydescription.ekutility_label_ballisticfiber>Этикетка с изображением противоударного волокна на ней.</entitydescription.ekutility_label_ballisticfiber>
+  <entityname.ekutility_label_physicorium>Этикетка физикориевого осколка</entityname.ekutility_label_physicorium>
+  <entitydescription.ekutility_label_physicorium>Этикетка с изображением Физикориевого осколка на ней.</entitydescription.ekutility_label_physicorium>
+  <entityname.ekutility_label_fulgurium>Этикетка куска грозовия</entityname.ekutility_label_fulgurium>
+  <entitydescription.ekutility_label_fulgurium>Этикетка с изображением куска грозовия на ней.</entitydescription.ekutility_label_fulgurium>
+  <entityname.ekutility_label_sulphuriteshard>Этикетка осколка сернита</entityname.ekutility_label_sulphuriteshard>
+  <entitydescription.ekutility_label_sulphuriteshard>Этикетка с изображением осколка сернита на ней.</entitydescription.ekutility_label_sulphuriteshard>
+  <entityname.ekutility_label_oxygeniteshard>Этикетка осколка кислородита</entityname.ekutility_label_oxygeniteshard>
+  <entitydescription.ekutility_label_oxygeniteshard>Этикетка с изображением осколка кислородита на ней.</entitydescription.ekutility_label_oxygeniteshard>
+  <entityname.ekutility_label_incendium>Этикетка воспламенитового кристалла</entityname.ekutility_label_incendium>
+  <entitydescription.ekutility_label_incendium>Этикетка с изображением воспламенитового кристалла на ней.</entitydescription.ekutility_label_incendium>
+  <entityname.ekutility_label_dementonite>Этикетка скопления дементонита</entityname.ekutility_label_dementonite>
+  <entitydescription.ekutility_label_dementonite>Этикетка с изображением скопления дементонита на ней.</entitydescription.ekutility_label_dementonite>
+  <entityname.ekutility_label_flashpowder>Этикетка светящегося порошка</entityname.ekutility_label_flashpowder>
+  <entitydescription.ekutility_label_flashpowder>Этикетка с изображением светящегося порошка на ней.</entitydescription.ekutility_label_flashpowder>
+  <entityname.ekutility_label_lithium>Этикетка лития</entityname.ekutility_label_lithium>
+  <entitydescription.ekutility_label_lithium>Этикетка с изображением лития на ней.</entitydescription.ekutility_label_lithium>
+  <entityname.ekutility_label_sodium>Этикетка натрия</entityname.ekutility_label_sodium>
+  <entitydescription.ekutility_label_sodium>Этикетка с изображением натрия на ней.</entitydescription.ekutility_label_sodium>
+  <entityname.ekutility_label_magnesium>Этикетка магния</entityname.ekutility_label_magnesium>
+  <entitydescription.ekutility_label_magnesium>Этикетка с изображением магния на ней.</entitydescription.ekutility_label_magnesium>
+  <entityname.ekutility_label_potassium>Этикетка калия</entityname.ekutility_label_potassium>
+  <entitydescription.ekutility_label_potassium>Этикетка с изображением калия на ней.</entitydescription.ekutility_label_potassium>
+  <entityname.ekutility_label_chlorine>Этикетка хлорина</entityname.ekutility_label_chlorine>
+  <entitydescription.ekutility_label_chlorine>Этикетка с изображением хлорина на ней.</entitydescription.ekutility_label_chlorine>
+  <entityname.ekutility_label_calcium>Этикетка кальция</entityname.ekutility_label_calcium>
+  <entitydescription.ekutility_label_calcium>Этикетка с изображением кальция на ней.</entitydescription.ekutility_label_calcium>
+  <entityname.ekutility_label_phosphorus>Этикетка фосфора</entityname.ekutility_label_phosphorus>
+  <entitydescription.ekutility_label_phosphorus>Этикетка с изображением фосфора на ней.</entitydescription.ekutility_label_phosphorus>
+  <entityname.ekutility_label_ethanol>Этикетка этанола</entityname.ekutility_label_ethanol>
+  <entitydescription.ekutility_label_ethanol>Этикетка с изображением этанола на ней.</entitydescription.ekutility_label_ethanol>
+  <entityname.ekutility_label_sulphuricacid>Этикетка серной кислоты</entityname.ekutility_label_sulphuricacid>
+  <entitydescription.ekutility_label_sulphuricacid>Этикетка с изображением серной кислоты на ней.</entitydescription.ekutility_label_sulphuricacid>
+  <entityname.ekutility_label_bandage>Этикетка бинтов</entityname.ekutility_label_bandage>
+  <entitydescription.ekutility_label_bandage>Этикетка с изображением бинтов на ней.</entitydescription.ekutility_label_bandage>
+  <entityname.ekutility_label_plastiseal>Этикетка эластичного бинта</entityname.ekutility_label_plastiseal>
+  <entitydescription.ekutility_label_plastiseal>Этикетка с изображением эластичного бинта на ней.</entitydescription.ekutility_label_plastiseal>
+  <entityname.ekutility_label_antibioticglue>Этикетка антибиотического клея</entityname.ekutility_label_antibioticglue>
+  <entitydescription.ekutility_label_antibioticglue>Этикетка с изображением антибиотического клея на ней.</entitydescription.ekutility_label_antibioticglue>
+  <entityname.ekutility_label_tonicliquid>Этикетка жидкого тоника</entityname.ekutility_label_tonicliquid>
+  <entitydescription.ekutility_label_tonicliquid>Этикетка с изображением жидкого тоника на ней.</entitydescription.ekutility_label_tonicliquid>
+  <entityname.ekutility_label_saline>Этикетка физраствора</entityname.ekutility_label_saline>
+  <entitydescription.ekutility_label_saline>Этикетка с изображением физраствора на ней.</entitydescription.ekutility_label_saline>
+  <entityname.ekutility_label_bloodpack>Этикетка пакета с кровью</entityname.ekutility_label_bloodpack>
+  <entitydescription.ekutility_label_bloodpack>Этикетка с изображением пакета с кровью на ней.</entitydescription.ekutility_label_bloodpack>
+  <entityname.ekutility_label_adrenaline>Этикетка адреналина</entityname.ekutility_label_adrenaline>
+  <entitydescription.ekutility_label_adrenaline>Этикетка с изображением адреналина на ней.</entitydescription.ekutility_label_adrenaline>
+  <entityname.ekutility_label_opium>Этикетка опиума</entityname.ekutility_label_opium>
+  <entitydescription.ekutility_label_opium>Этикетка с изображением опиума на ней.</entitydescription.ekutility_label_opium>
+  <entityname.ekutility_label_elastin>Этикетка эластина</entityname.ekutility_label_elastin>
+  <entitydescription.ekutility_label_elastin>Этикетка с изображением эластина на ней.</entitydescription.ekutility_label_elastin>
+  <entityname.ekutility_label_alienblood>Этикетка инопланетной крови</entityname.ekutility_label_alienblood>
+  <entitydescription.ekutility_label_alienblood>Этикетка с изображением инопланетной крови на ней.</entitydescription.ekutility_label_alienblood>
+  <entityname.ekutility_label_adrenalinegland>Этикетка адреналиновой железы</entityname.ekutility_label_adrenalinegland>
+  <entitydescription.ekutility_label_adrenalinegland>Этикетка с изображением адреналиновой железы на ней.</entitydescription.ekutility_label_adrenalinegland>
+  <entityname.ekutility_label_swimbladder>Этикетка плавательного пузыря</entityname.ekutility_label_swimbladder>
+  <entitydescription.ekutility_label_swimbladder>Этикетка с изображением плавательного пузыря на ней.</entitydescription.ekutility_label_swimbladder>
+  <entityname.ekutility_label_paralyxis>Этикетка параликса</entityname.ekutility_label_paralyxis>
+  <entitydescription.ekutility_label_paralyxis>Этикетка с изображением параликса на ней.</entitydescription.ekutility_label_paralyxis>
+  <entityname.ekutility_label_huskeggs>Этикетка экстракта каликса</entityname.ekutility_label_huskeggs>
+  <entitydescription.ekutility_label_huskeggs>Этикетка с изображением экстракта каликса на ней.</entitydescription.ekutility_label_huskeggs>
+  <entityname.ekutility_label_fiberplant>Этикетка прядильного растения</entityname.ekutility_label_fiberplant>
+  <entitydescription.ekutility_label_fiberplant>Этикетка с изображением прядильного растения на ней.</entitydescription.ekutility_label_fiberplant>
+  <entityname.ekutility_label_elastinplant>Этикетка эластинового растения</entityname.ekutility_label_elastinplant>
+  <entitydescription.ekutility_label_elastinplant>Этикетка с изображением эластинового растения на ней.</entitydescription.ekutility_label_elastinplant>
+  <entityname.ekutility_label_aquaticpoppy>Этикетка водяного мака</entityname.ekutility_label_aquaticpoppy>
+  <entitydescription.ekutility_label_aquaticpoppy>Этикетка с изображением водяного мака на ней.</entitydescription.ekutility_label_aquaticpoppy>
+  <entityname.ekutility_label_yeastshroom>Этикетка морских дрожжей</entityname.ekutility_label_yeastshroom>
+  <entitydescription.ekutility_label_yeastshroom>Этикетка с изображением морских дрожжей на ней.</entitydescription.ekutility_label_yeastshroom>
+  <entityname.ekutility_label_slimebacteria>Этикетка слизистых бактерий</entityname.ekutility_label_slimebacteria>
+  <entitydescription.ekutility_label_slimebacteria>Этикетка с изображением слизистых бактерий на ней.</entitydescription.ekutility_label_slimebacteria>
+  <entityname.ekutility_label_creepingorange>Этикетка взрывного граната</entityname.ekutility_label_creepingorange>
+  <entitydescription.ekutility_label_creepingorange>Этикетка с изображением взрывного граната на ней.</entitydescription.ekutility_label_creepingorange>
+  <entityname.ekutility_label_tobaccobud>Этикетка табачного бутона</entityname.ekutility_label_tobaccobud>
+  <entitydescription.ekutility_label_tobaccobud>Этикетка с изображением табачного бутона на ней.</entitydescription.ekutility_label_tobaccobud>
+  <entityname.ekutility_label_saltbulb>Этикетка солевой луковицы</entityname.ekutility_label_saltbulb>
+  <entitydescription.ekutility_label_saltbulb>Этикетка с изображением солевой луковицы на ней.</entitydescription.ekutility_label_saltbulb>
+  <entityname.ekutility_label_raptorbane>Этикетка бича раптора</entityname.ekutility_label_raptorbane>
+  <entitydescription.ekutility_label_raptorbane>Этикетка с изображением бича раптора на ней.</entitydescription.ekutility_label_raptorbane>
+  <entityname.ekutility_label_stabilozine>Этикетка стабилоцина</entityname.ekutility_label_stabilozine>
+  <entitydescription.ekutility_label_stabilozine>Этикетка с изображением стабилоцина на ней.</entitydescription.ekutility_label_stabilozine>
+  <entityname.ekutility_label_morphine>Этикетка морфина</entityname.ekutility_label_morphine>
+  <entitydescription.ekutility_label_morphine>Этикетка с изображением морфина на ней.</entitydescription.ekutility_label_morphine>
+  <entityname.ekutility_label_fentanyl>Этикетка фентанила</entityname.ekutility_label_fentanyl>
+  <entitydescription.ekutility_label_fentanyl>Этикетка с изображением фентанила на ней.</entitydescription.ekutility_label_fentanyl>
+  <entityname.ekutility_label_deusizine>Этикетка деусицина</entityname.ekutility_label_deusizine>
+  <entitydescription.ekutility_label_deusizine>Этикетка с изображением деусицина на ней.</entitydescription.ekutility_label_deusizine>
+  <entityname.ekutility_label_naloxone>Этикетка налоксона</entityname.ekutility_label_naloxone>
+  <entitydescription.ekutility_label_naloxone>Этикетка с изображением налоксона на ней.</entitydescription.ekutility_label_naloxone>
+  <entityname.ekutility_label_haloperidol>Этикетка галоперидола</entityname.ekutility_label_haloperidol>
+  <entitydescription.ekutility_label_haloperidol>Этикетка с изображением галоперидола на ней.</entitydescription.ekutility_label_haloperidol>
+  <entityname.ekutility_label_methamphetamine>Этикетка метамфетамина</entityname.ekutility_label_methamphetamine>
+  <entitydescription.ekutility_label_methamphetamine>Этикетка с изображением метамфетамина на ней.</entitydescription.ekutility_label_methamphetamine>
+  <entityname.ekutility_label_steroids>Этикетка анаболических стероидов</entityname.ekutility_label_steroids>
+  <entitydescription.ekutility_label_steroids>Этикетка с изображением анаболических стероидов на ней.</entitydescription.ekutility_label_steroids>
+  <entityname.ekutility_label_hyperzine>Этикетка гиперцина</entityname.ekutility_label_hyperzine>
+  <entitydescription.ekutility_label_hyperzine>Этикетка с изображением гиперцина на ней.</entitydescription.ekutility_label_hyperzine>
+  <entityname.ekutility_label_liquidoxygenite>Этикетка жидкого кислородита</entityname.ekutility_label_liquidoxygenite>
+  <entitydescription.ekutility_label_liquidoxygenite>Этикетка с изображением жидкого кислородита на ней.</entitydescription.ekutility_label_liquidoxygenite>
+  <entityname.ekutility_label_antibiotics>Этикетка антибиотиков широкого спектра</entityname.ekutility_label_antibiotics>
+  <entitydescription.ekutility_label_antibiotics>Этикетка с изображением антибиотиков широкого спектра на ней.</entitydescription.ekutility_label_antibiotics>
+  <entityname.ekutility_label_chloralhydrate>Этикетка хлоральгидрата</entityname.ekutility_label_chloralhydrate>
+  <entitydescription.ekutility_label_chloralhydrate>Этикетка с изображением хлоральгидрата на ней.</entitydescription.ekutility_label_chloralhydrate>
+  <entityname.ekutility_label_calyxanide>Этикетка каликсанида</entityname.ekutility_label_calyxanide>
+  <entitydescription.ekutility_label_calyxanide>Этикетка с изображением каликсанида на ней.</entitydescription.ekutility_label_calyxanide>
+  <entityname.ekutility_label_raptorbaneextract>Этикетка экстракта бича раптора</entityname.ekutility_label_raptorbaneextract>
+  <entitydescription.ekutility_label_raptorbaneextract>Этикетка с изображением экстракта бича раптора на ней.</entitydescription.ekutility_label_raptorbaneextract>
+  <entityname.ekutility_label_pomegrenadeextract>Этикетка экстракта взрывного граната</entityname.ekutility_label_pomegrenadeextract>
+  <entitydescription.ekutility_label_pomegrenadeextract>Этикетка с изображением экстракта взрывного граната на ней.</entitydescription.ekutility_label_pomegrenadeextract>
+  <entityname.ekutility_label_cyanide>Этикетка цианида</entityname.ekutility_label_cyanide>
+  <entitydescription.ekutility_label_cyanide>Этикетка с изображением цианида на ней.</entitydescription.ekutility_label_cyanide>
+  <entityname.ekutility_label_cyanideantidote>Этикетка антидота цианида</entityname.ekutility_label_cyanideantidote>
+  <entitydescription.ekutility_label_cyanideantidote>Этикетка с изображением антидота цианида на ней.</entitydescription.ekutility_label_cyanideantidote>
+  <entityname.ekutility_label_sufforin>Этикетка страданита</entityname.ekutility_label_sufforin>
+  <entitydescription.ekutility_label_sufforin>Этикетка с изображением страданита на ней.</entitydescription.ekutility_label_sufforin>
+  <entityname.ekutility_label_sufforinantidote>Этикетка антидота страданита</entityname.ekutility_label_sufforinantidote>
+  <entitydescription.ekutility_label_sufforinantidote>Этикетка с изображением антидота страданита на ней.</entitydescription.ekutility_label_sufforinantidote>
+  <entityname.ekutility_label_morbusine>Этикетка морбузина</entityname.ekutility_label_morbusine>
+  <entitydescription.ekutility_label_morbusine>Этикетка с изображением морбузина на ней.</entitydescription.ekutility_label_morbusine>
+  <entityname.ekutility_label_morbusineantidote>Этикетка антидота морбузина</entityname.ekutility_label_morbusineantidote>
+  <entitydescription.ekutility_label_morbusineantidote>Этикетка с изображением антидота морбузина на ней.</entitydescription.ekutility_label_morbusineantidote>
+  <entityname.ekutility_label_radiotoxin>Этикетка радиотоксина</entityname.ekutility_label_radiotoxin>
+  <entitydescription.ekutility_label_radiotoxin>Этикетка с изображением радиотоксина ней.</entitydescription.ekutility_label_radiotoxin>
+  <entityname.ekutility_label_antirad>Этикетка антирада</entityname.ekutility_label_antirad>
+  <entitydescription.ekutility_label_antirad>Этикетка с изображением антирада на ней.</entitydescription.ekutility_label_antirad>
+  <entityname.ekutility_label_deliriumine>Этикетка бредогена</entityname.ekutility_label_deliriumine>
+  <entitydescription.ekutility_label_deliriumine>Этикетка с изображением бредогена на ней.</entitydescription.ekutility_label_deliriumine>
+  <entityname.ekutility_label_deliriumineantidote>Этикетка антидота бредогена</entityname.ekutility_label_deliriumineantidote>
+  <entitydescription.ekutility_label_deliriumineantidote>Этикетка с изображением антидота бредогена на ней.</entitydescription.ekutility_label_deliriumineantidote>
+  <entityname.ekutility_label_paralyzant>Этикетка парализатора</entityname.ekutility_label_paralyzant>
+  <entitydescription.ekutility_label_paralyzant>Этикетка с изображением парализатора на ней.</entitydescription.ekutility_label_paralyzant>
+  <entityname.ekutility_label_antiparalysis>Этикетка анапарализатора</entityname.ekutility_label_antiparalysis>
+  <entitydescription.ekutility_label_antiparalysis>Этикетка с изображением анапарализатора на ней.</entitydescription.ekutility_label_antiparalysis>
+  <entityname.ekutility_label_reactorfuel>Этикетка топливного стержня</entityname.ekutility_label_reactorfuel>
+  <entitydescription.ekutility_label_reactorfuel>Этикетка с изображением топливного стержня на ней.</entitydescription.ekutility_label_reactorfuel>
+  <entityname.ekutility_label_wrench>Этикетка гаечного ключа</entityname.ekutility_label_wrench>
+  <entitydescription.ekutility_label_wrench>Этикетка с изображением гаечного ключа на ней.</entitydescription.ekutility_label_wrench>
+  <entityname.ekutility_label_screwdriver>Этикетка отвертки</entityname.ekutility_label_screwdriver>
+  <entitydescription.ekutility_label_screwdriver>Этикетка с изображением отвертки на ней.</entitydescription.ekutility_label_screwdriver>
+  <entityname.ekutility_label_crowbar>Этикетка лома</entityname.ekutility_label_crowbar>
+  <entitydescription.ekutility_label_crowbar>Этикетка с изображением лома на ней.</entitydescription.ekutility_label_crowbar>
+  <entityname.ekutility_label_weldingtool>Этикетка сварочного аппарата</entityname.ekutility_label_weldingtool>
+  <entitydescription.ekutility_label_weldingtool>Этикетка с изображением сварочного аппарата на ней.</entitydescription.ekutility_label_weldingtool>
+  <entityname.ekutility_label_plasmacutter>Этикетка плазменного резака</entityname.ekutility_label_plasmacutter>
+  <entitydescription.ekutility_label_plasmacutter>Этикетка с изображением плазменного резака на ней.</entitydescription.ekutility_label_plasmacutter>
+  <entityname.ekutility_label_flamer>Этикетка огнемета</entityname.ekutility_label_flamer>
+  <entitydescription.ekutility_label_flamer>Этикетка с изображением огнемета на ней.</entitydescription.ekutility_label_flamer>
+  <entityname.ekutility_label_fireextinguisher>Этикетка огнетушителя</entityname.ekutility_label_fireextinguisher>
+  <entitydescription.ekutility_label_fireextinguisher>Этикетка с изображением огнетушителя на ней.</entitydescription.ekutility_label_fireextinguisher>
+  <entityname.ekutility_label_flare>Этикетка сигнального огня</entityname.ekutility_label_flare>
+  <entitydescription.ekutility_label_flare>Этикетка с изображением сигнального огня на ней.</entitydescription.ekutility_label_flare>
+  <entityname.ekutility_label_flashlight>Этикетка фонарика</entityname.ekutility_label_flashlight>
+  <entitydescription.ekutility_label_flashlight>Этикетка с изображением фонарика на ней.</entitydescription.ekutility_label_flashlight>
+  <entityname.ekutility_label_oxygentank>Этикетка кислородного баллона</entityname.ekutility_label_oxygentank>
+  <entitydescription.ekutility_label_oxygentank>Этикетка с изображением кислородного баллона на ней.</entitydescription.ekutility_label_oxygentank>
+  <entityname.ekutility_label_weldingfueltank>Этикетка топливного бака сварочного аппарата</entityname.ekutility_label_weldingfueltank>
+  <entitydescription.ekutility_label_weldingfueltank>Этикетка с изображением топливного бака сварочного аппарата на ней.</entitydescription.ekutility_label_weldingfueltank>
+  <entityname.ekutility_label_batterycell>Этикетка аккумулятора</entityname.ekutility_label_batterycell>
+  <entitydescription.ekutility_label_batterycell>Этикетка с изображением аккумулятора на ней.</entitydescription.ekutility_label_batterycell>
+  <entityname.ekutility_label_fulguriumbatterycell>Этикетка грозовиевого аккумулятора</entityname.ekutility_label_fulguriumbatterycell>
+  <entitydescription.ekutility_label_fulguriumbatterycell>Этикетка с изображением грозовиевого аккумулятора на ней.</entitydescription.ekutility_label_fulguriumbatterycell>
+  <entityname.ekutility_label_headset>Этикетка наушников</entityname.ekutility_label_headset>
+  <entitydescription.ekutility_label_headset>Этикетка с изображением наушников на ней.</entitydescription.ekutility_label_headset>
+  <entityname.ekutility_label_divingmask>Этикетка подводной маски</entityname.ekutility_label_divingmask>
+  <entitydescription.ekutility_label_divingmask>Этикетка с изображением подводной маски на ней.</entitydescription.ekutility_label_divingmask>
+  <entityname.ekutility_label_underwaterscooter>Этикетка подводного скутера</entityname.ekutility_label_underwaterscooter>
+  <entitydescription.ekutility_label_underwaterscooter>Этикетка с изображением подводного скутера на ней.</entitydescription.ekutility_label_underwaterscooter>
+  <entityname.ekutility_label_handheldsonar>Этикетка ручного сонара</entityname.ekutility_label_handheldsonar>
+  <entitydescription.ekutility_label_handheldsonar>Этикетка с изображением ручного сонара на ней.</entitydescription.ekutility_label_handheldsonar>
+  <entityname.ekutility_label_sonarbeacon>Этикетка сонарного маяка</entityname.ekutility_label_sonarbeacon>
+  <entitydescription.ekutility_label_sonarbeacon>Этикетка с изображением сонарного маяка на ней.</entitydescription.ekutility_label_sonarbeacon>
+  <entityname.ekutility_label_miningdrill>Этикетка электродрели</entityname.ekutility_label_miningdrill>
+  <entitydescription.ekutility_label_miningdrill>Этикетка с изображением электродрели на ней.</entitydescription.ekutility_label_miningdrill>
+  <entityname.ekutility_label_metalfoam_tank>Этикетка канистры металлической пены</entityname.ekutility_label_metalfoam_tank>
+  <entitydescription.ekutility_label_metalfoam_tank>Этикетка с изображением канистры металлической пены на ней.</entitydescription.ekutility_label_metalfoam_tank>
+  <entityname.ekutility_label_metalfoam_gun>Этикетка распылителя металлической пены</entityname.ekutility_label_metalfoam_gun>
+  <entitydescription.ekutility_label_metalfoam_gun>Этикетка с изображением распылителя металлической пены на ней.</entitydescription.ekutility_label_metalfoam_gun>
+  <entityname.ekutility_label_pulsecutter>Этикетка ионно-импульсного резака</entityname.ekutility_label_pulsecutter>
+  <entitydescription.ekutility_label_pulsecutter>Этикетка с изображением ионно-импульсного резака на ней.</entitydescription.ekutility_label_pulsecutter>
+  <entityname.ekutility_label_laserdrill>Этикетка лазерного резака</entityname.ekutility_label_laserdrill>
+  <entitydescription.ekutility_label_laserdrill>Этикетка с изображением лазерного резака на ней.</entitydescription.ekutility_label_laserdrill>
+  <entityname.ekutility_label_arcwelder>Этикетка дугового сварщика</entityname.ekutility_label_arcwelder>
+  <entitydescription.ekutility_label_arcwelder>Этикетка с изображением дугового сварщика на ней.</entitydescription.ekutility_label_arcwelder>
+  <entityname.ekutility_labelprinter>Устройство печати этикеток</entityname.ekutility_labelprinter>
+  <entitydescription.ekutility_labelprinter>Лучший друг каптёра. Это портативное устройство может сканировать и печатать сортировочные этикетки для наиболее распространенных грузов.</entitydescription.ekutility_labelprinter>
+  <!-- ekutility_divinggear.xml -->
+  <entityname.ekutility_reinforcedtank_oxygen>Усиленный кислородный баллон</entityname.ekutility_reinforcedtank_oxygen>
+  <entitydescription.ekutility_reinforcedtank_oxygen>Композитный резервуар высокого давления, устойчивый к проколам и нагреву.</entitydescription.ekutility_reinforcedtank_oxygen>
+  <entityname.ekutility_reinforcedtank_oxygenite>Усиленный кислородитовый баллон</entityname.ekutility_reinforcedtank_oxygenite>
+  <entitydescription.ekutility_reinforcedtank_oxygenite>Композитный резервуар высокого давления, устойчивый к проколам и нагреву.</entitydescription.ekutility_reinforcedtank_oxygenite>
+  <entityname.ekutility_rebreatherunit>Ребризер</entityname.ekutility_rebreatherunit>
+  <entitydescription.ekutility_rebreatherunit>Экспериментальный автономный ребризер, его соединения спроектированы таким образом, чтобы быть совместимыми с большинством стандартного оборудования для подводного плавания. Для работы требуются батареи и внутренний накопитель кислорода.</entitydescription.ekutility_rebreatherunit>
+  <entityname.ekutility_jetscooter>Джетскутер</entityname.ekutility_jetscooter>
+  <entitydescription.ekutility_jetscooter>Усовершенствованный подводный скутер. Особенности заключаются в улучшенном времени автономной работы и встроенная гидролокаторная навигационная система.</entitydescription.ekutility_jetscooter>
+  <entityname.ekutility_advancedsonarbeacon>Продвинутый сонарный маяк</entityname.ekutility_advancedsonarbeacon>
+  <entitydescription.ekutility_advancedsonarbeacon>Ручной передатчик позиционного маяка, бесценный инструмент для вне корабельных операций.</entitydescription.ekutility_advancedsonarbeacon>
+  <entityname.ekutility_Utility_hardsuit>Универсальный скафандр Mk-I</entityname.ekutility_Utility_hardsuit>
+  <entitydescription.ekutility_Utility_hardsuit>Прочный скафандр, предназначенный для строительства верфей, добычи полезных ископаемых и спасательных работ. Костюм обеспечивает умеренную изоляцию от электрических и термических воздействий, в то время как перчатки для манипуляций позволяют владельцу работать с инструментами и снаряжением в обычном режиме. (Максимальная глубина 6000м)</entitydescription.ekutility_Utility_hardsuit>
+  <entityname.ekutility_utility_hardsuit_paintmechanic>Универсальный скафандр Mk-I (Механик)</entityname.ekutility_utility_hardsuit_paintmechanic>
+  <entitydescription.ekutility_utility_hardsuit_paintmechanic>Прочный скафандр, предназначенный для строительства верфей, добычи полезных ископаемых и спасательных работ. Костюм обеспечивает умеренную изоляцию от электрических и термических воздействий, в то время как перчатки для манипуляций позволяют владельцу работать с инструментами и снаряжением в обычном режиме. (Максимальная глубина 6000м)</entitydescription.ekutility_utility_hardsuit_paintmechanic>
+  <entityname.ekutility_oxygencell1>Кислородная ячейка Mk-I</entityname.ekutility_oxygencell1>
+  <entitydescription.ekutility_oxygencell1>Не перезаряжаемый кислородный баллон скафандра, в котором используются химические реагенты для получения кислорода большой плотности.</entitydescription.ekutility_oxygencell1>
+  <entityname.ekutility_oxygencell2>Кислородная ячейка Mk-II</entityname.ekutility_oxygencell2>
+  <entitydescription.ekutility_oxygencell2>Не перезаряжаемый кислородный баллон скафандра, в котором используются химические реагенты для получения кислорода большой плотности.</entitydescription.ekutility_oxygencell2>
+  <!-- ekutility_densifiedmaterials.xml -->
+  <entityname.ekutility_densifiedmaterial_iron>Ящик железа</entityname.ekutility_densifiedmaterial_iron>
+  <entitydescription.ekutility_densifiedmaterial_iron>Контейнер для массового хранения/транспортировки сырого железа.</entitydescription.ekutility_densifiedmaterial_iron>
+  <entityname.ekutility_densifiedmaterial_aluminium>Ящик алюминия</entityname.ekutility_densifiedmaterial_aluminium>
+  <entitydescription.ekutility_densifiedmaterial_aluminium>Контейнер для массового хранения/транспортировки сырого алюминия.</entitydescription.ekutility_densifiedmaterial_aluminium>
+  <entityname.ekutility_densifiedmaterial_copper>Ящик меди</entityname.ekutility_densifiedmaterial_copper>
+  <entitydescription.ekutility_densifiedmaterial_copper>Контейнер для массового хранения/транспортировки сырого меди.</entitydescription.ekutility_densifiedmaterial_copper>
+  <entityname.ekutility_densifiedmaterial_titanium>Ящик титана</entityname.ekutility_densifiedmaterial_titanium>
+  <entitydescription.ekutility_densifiedmaterial_titanium>Контейнер для массового хранения/транспортировки сырого титана.</entitydescription.ekutility_densifiedmaterial_titanium>
+  <entityname.ekutility_densifiedmaterial_carbon>Ящик углерода</entityname.ekutility_densifiedmaterial_carbon>
+  <entitydescription.ekutility_densifiedmaterial_carbon>Контейнер для массового хранения/транспортировки сырого углерода.</entitydescription.ekutility_densifiedmaterial_carbon>
+  <entityname.ekutility_densifiedmaterial_lead>Ящик свинца</entityname.ekutility_densifiedmaterial_lead>
+  <entitydescription.ekutility_densifiedmaterial_lead>Контейнер для массового хранения/транспортировки сырого свинца.</entitydescription.ekutility_densifiedmaterial_lead>
+  <entityname.ekutility_densifiedmaterial_tin>Ящик олова</entityname.ekutility_densifiedmaterial_tin>
+  <entitydescription.ekutility_densifiedmaterial_tin>Контейнер для массового хранения/транспортировки сырого олова.</entitydescription.ekutility_densifiedmaterial_tin>
+  <entityname.ekutility_densifiedmaterial_zinc>Ящик цинка</entityname.ekutility_densifiedmaterial_zinc>
+  <entitydescription.ekutility_densifiedmaterial_zinc>Контейнер для массового хранения/транспортировки сырого цинка.</entitydescription.ekutility_densifiedmaterial_zinc>
+  <entityname.ekutility_densifiedmaterial_silicon>Ящик кремния</entityname.ekutility_densifiedmaterial_silicon>
+  <entitydescription.ekutility_densifiedmaterial_silicon>Контейнер для массового хранения/транспортировки сырого кремния.</entitydescription.ekutility_densifiedmaterial_silicon>
+  <entityname.ekutility_densifiedmaterial_steel>Ящик стальных слитков</entityname.ekutility_densifiedmaterial_steel>
+  <entitydescription.ekutility_densifiedmaterial_steel>Контейнер для массового хранения/транспортировки стальных слитков.</entitydescription.ekutility_densifiedmaterial_steel>
+  <entityname.ekutility_densifiedmaterial_titaniumaluminiumalloy>Ящик слитков титана-алюминия</entityname.ekutility_densifiedmaterial_titaniumaluminiumalloy>
+  <entitydescription.ekutility_densifiedmaterial_titaniumaluminiumalloy>Контейнер для массового хранения/транспортировки слитков титана-алюминия.</entitydescription.ekutility_densifiedmaterial_titaniumaluminiumalloy>
+  <entityname.ekutility_densifiedmaterial_plastic>Ящик пластика</entityname.ekutility_densifiedmaterial_plastic>
+  <entitydescription.ekutility_densifiedmaterial_plastic>Контейнер для массового хранения/транспортировки сырого пластика.</entitydescription.ekutility_densifiedmaterial_plastic>
+  <entityname.ekutility_densifiedmaterial_rubber>Ящик резины</entityname.ekutility_densifiedmaterial_rubber>
+  <entitydescription.ekutility_densifiedmaterial_rubber>Контейнер для массового хранения/транспортировки сырой резины.</entitydescription.ekutility_densifiedmaterial_rubber>
+  <entityname.ekutility_densifiedmaterial_fpgacircuit>Ящик схем на базе ППВМ</entityname.ekutility_densifiedmaterial_fpgacircuit>
+  <entitydescription.ekutility_densifiedmaterial_fpgacircuit>Контейнер для массового хранения/транспортировки схем на базе ППВМ.</entitydescription.ekutility_densifiedmaterial_fpgacircuit>
+  <entityname.ekutility_densifiedmaterial_organicfiber>Ящик органического волокна</entityname.ekutility_densifiedmaterial_organicfiber>
+  <entitydescription.ekutility_densifiedmaterial_organicfiber>Контейнер для массового хранения/транспортировки органического волокна.</entitydescription.ekutility_densifiedmaterial_organicfiber>
+  <entityname.ekutility_densifiedmaterial_ballisticfiber>Ящик противоударного волокна</entityname.ekutility_densifiedmaterial_ballisticfiber>
+  <entitydescription.ekutility_densifiedmaterial_ballisticfiber>Контейнер для массового хранения/транспортировки противоударного волокна.</entitydescription.ekutility_densifiedmaterial_ballisticfiber>
+  <entityname.ekutility_densifiedmaterial_uranium>Ящик урана</entityname.ekutility_densifiedmaterial_uranium>
+  <entitydescription.ekutility_densifiedmaterial_uranium>Контейнер для массового хранения/транспортировки сырого урана.</entitydescription.ekutility_densifiedmaterial_uranium>
+  <entityname.ekutility_densifiedmaterial_thorium>Ящик тория</entityname.ekutility_densifiedmaterial_thorium>
+  <entitydescription.ekutility_densifiedmaterial_thorium>Контейнер для массового хранения/транспортировки сырого тория.</entitydescription.ekutility_densifiedmaterial_thorium>
+  <entityname.ekutility_densifiedmaterial_depleteduranium>Ящик обеднённого топлива</entityname.ekutility_densifiedmaterial_depleteduranium>
+  <entitydescription.ekutility_densifiedmaterial_depleteduranium>Контейнер для массового хранения/транспортировки обеднённого топлива.</entitydescription.ekutility_densifiedmaterial_depleteduranium>
+  <entityname.ekutility_densifiedmaterial_flashpowder>Ящик светящегося порошка</entityname.ekutility_densifiedmaterial_flashpowder>
+  <entitydescription.ekutility_densifiedmaterial_flashpowder>Контейнер для массового хранения/транспортировки светящегося порошка.</entitydescription.ekutility_densifiedmaterial_flashpowder>
+  <entityname.ekutility_densifiedmaterial_lithium>Ящик лития</entityname.ekutility_densifiedmaterial_lithium>
+  <entitydescription.ekutility_densifiedmaterial_lithium>Контейнер для массового хранения/транспортировки лития.</entitydescription.ekutility_densifiedmaterial_lithium>
+  <entityname.ekutility_densifiedmaterial_sodium>Ящик натрия</entityname.ekutility_densifiedmaterial_sodium>
+  <entitydescription.ekutility_densifiedmaterial_sodium>Контейнер для массового хранения/транспортировки натрия.</entitydescription.ekutility_densifiedmaterial_sodium>
+  <entityname.ekutility_densifiedmaterial_magnesium>Ящик магния</entityname.ekutility_densifiedmaterial_magnesium>
+  <entitydescription.ekutility_densifiedmaterial_magnesium>Контейнер для массового хранения/транспортировки магния.</entitydescription.ekutility_densifiedmaterial_magnesium>
+  <entityname.ekutility_densifiedmaterial_potassium>Ящик калия</entityname.ekutility_densifiedmaterial_potassium>
+  <entitydescription.ekutility_densifiedmaterial_potassium>Контейнер для массового хранения/транспортировки калия.</entitydescription.ekutility_densifiedmaterial_potassium>
+  <entityname.ekutility_densifiedmaterial_chlorine>Ящик хлорина</entityname.ekutility_densifiedmaterial_chlorine>
+  <entitydescription.ekutility_densifiedmaterial_chlorine>Контейнер для массового хранения/транспортировки хлорина.</entitydescription.ekutility_densifiedmaterial_chlorine>
+  <entityname.ekutility_densifiedmaterial_calcium>Ящик кальция</entityname.ekutility_densifiedmaterial_calcium>
+  <entitydescription.ekutility_densifiedmaterial_calcium>Контейнер для массового хранения/транспортировки кальция.</entitydescription.ekutility_densifiedmaterial_calcium>
+  <entityname.ekutility_densifiedmaterial_phosphorus>Ящик фосфора</entityname.ekutility_densifiedmaterial_phosphorus>
+  <entitydescription.ekutility_densifiedmaterial_phosphorus>Контейнер для массового хранения/транспортировки фосфора.</entitydescription.ekutility_densifiedmaterial_phosphorus>
+  <entityname.ekutility_densifiedmaterial_ethanol>Ящик этанола</entityname.ekutility_densifiedmaterial_ethanol>
+  <entitydescription.ekutility_densifiedmaterial_ethanol>Контейнер для массового хранения/транспортировки этанола.</entitydescription.ekutility_densifiedmaterial_ethanol>
+  <entityname.ekutility_densifiedmaterial_sulphuricacid>Ящик серной кислоты</entityname.ekutility_densifiedmaterial_sulphuricacid>
+  <entitydescription.ekutility_densifiedmaterial_sulphuricacid>Контейнер для массового хранения/транспортировки серной кислоты.</entitydescription.ekutility_densifiedmaterial_sulphuricacid>
+  <entityname.ekutility_densifiedmaterial_uex>Ящик UEX</entityname.ekutility_densifiedmaterial_uex>
+  <entitydescription.ekutility_densifiedmaterial_uex>Контейнер для массового хранения/транспортировки UEX.</entitydescription.ekutility_densifiedmaterial_uex>
+  <entityname.ekutility_densifiedmaterial_c4block>Ящик C-4</entityname.ekutility_densifiedmaterial_c4block>
+  <entitydescription.ekutility_densifiedmaterial_c4block>Контейнер для массового хранения/транспортировки C-4.</entitydescription.ekutility_densifiedmaterial_c4block>
+  <entityname.ekutility_densifiedmaterial_compoundn>Ящик соединения N</entityname.ekutility_densifiedmaterial_compoundn>
+  <entitydescription.ekutility_densifiedmaterial_compoundn>Контейнер для массового хранения/транспортировки соединения N.</entitydescription.ekutility_densifiedmaterial_compoundn>
+  <entityname.ekutility_densifiedmaterial_ic4block>Ящик C-4+</entityname.ekutility_densifiedmaterial_ic4block>
+  <entitydescription.ekutility_densifiedmaterial_ic4block>Контейнер для массового хранения/транспортировки C-4+.</entitydescription.ekutility_densifiedmaterial_ic4block>
+  <entityname.ekutility_densifiedmaterial_physicorium>Ящик физикориевых осколков</entityname.ekutility_densifiedmaterial_physicorium>
+  <entitydescription.ekutility_densifiedmaterial_physicorium>Контейнер для массового хранения/транспортировки физикориевых осколков.</entitydescription.ekutility_densifiedmaterial_physicorium>
+  <entityname.ekutility_densifiedmaterial_fulgurium>Ящик кусков грозовия</entityname.ekutility_densifiedmaterial_fulgurium>
+  <entitydescription.ekutility_densifiedmaterial_fulgurium>Контейнер для массового хранения/транспортировки кусков грозовия.</entitydescription.ekutility_densifiedmaterial_fulgurium>
+  <entityname.ekutility_densifiedmaterial_sulphuriteshard>Ящик осколков сернита</entityname.ekutility_densifiedmaterial_sulphuriteshard>
+  <entitydescription.ekutility_densifiedmaterial_sulphuriteshard>Контейнер для массового хранения/транспортировки осколков сернита.</entitydescription.ekutility_densifiedmaterial_sulphuriteshard>
+  <entityname.ekutility_densifiedmaterial_oxygeniteshard>Ящик осколков кислородита</entityname.ekutility_densifiedmaterial_oxygeniteshard>
+  <entitydescription.ekutility_densifiedmaterial_oxygeniteshard>Контейнер для массового хранения/транспортировки осколков кислородита.</entitydescription.ekutility_densifiedmaterial_oxygeniteshard>
+  <entityname.ekutility_densifiedmaterial_incendium>Ящик воспламенитовых кристаллов</entityname.ekutility_densifiedmaterial_incendium>
+  <entitydescription.ekutility_densifiedmaterial_incendium>Контейнер для массового хранения/транспортировки воспламенитовых кристаллов.</entitydescription.ekutility_densifiedmaterial_incendium>
+  <entityname.ekutility_densifiedmaterial_dementonite>Ящик скопления дементонита</entityname.ekutility_densifiedmaterial_dementonite>
+  <entitydescription.ekutility_densifiedmaterial_dementonite>Контейнер для массового хранения/транспортировки скопления дементонита.</entitydescription.ekutility_densifiedmaterial_dementonite>
+  <entityname.ekutility_densifiedmaterial_antibleeding1>Ящик бинтов</entityname.ekutility_densifiedmaterial_antibleeding1>
+  <entitydescription.ekutility_densifiedmaterial_antibleeding1>Контейнер для массового хранения/транспортировки бинтов.</entitydescription.ekutility_densifiedmaterial_antibleeding1>
+  <entityname.ekutility_densifiedmaterial_antibleeding2>Ящик эластичных бинтов</entityname.ekutility_densifiedmaterial_antibleeding2>
+  <entitydescription.ekutility_densifiedmaterial_antibleeding2>Контейнер для массового хранения/транспортировки эластичных бинтов.</entitydescription.ekutility_densifiedmaterial_antibleeding2>
+  <entityname.ekutility_densifiedmaterial_antibleeding3>Ящик антибиотического клея</entityname.ekutility_densifiedmaterial_antibleeding3>
+  <entitydescription.ekutility_densifiedmaterial_antibleeding3>Контейнер для массового хранения/транспортировки антибиотического клея.</entitydescription.ekutility_densifiedmaterial_antibleeding3>
+  <entityname.ekutility_densifiedmaterial_tonicliquid>Ящик жидкого тоника</entityname.ekutility_densifiedmaterial_tonicliquid>
+  <entitydescription.ekutility_densifiedmaterial_tonicliquid>Контейнер для массового хранения/транспортировки жидкого тоника.</entitydescription.ekutility_densifiedmaterial_tonicliquid>
+  <entityname.ekutility_densifiedmaterial_antibloodloss1>Ящик физраствора</entityname.ekutility_densifiedmaterial_antibloodloss1>
+  <entitydescription.ekutility_densifiedmaterial_antibloodloss1>Контейнер для массового хранения/транспортировки физраствора.</entitydescription.ekutility_densifiedmaterial_antibloodloss1>
+  <entityname.ekutility_densifiedmaterial_antibloodloss2>Ящик пакетов с кровью</entityname.ekutility_densifiedmaterial_antibloodloss2>
+  <entitydescription.ekutility_densifiedmaterial_antibloodloss2>Медицинский контейнер для массового хранения/транспортировки пакетов с кровью.</entitydescription.ekutility_densifiedmaterial_antibloodloss2>
+  <entityname.ekutility_densifiedmaterial_adrenaline>Ящик адреналина</entityname.ekutility_densifiedmaterial_adrenaline>
+  <entitydescription.ekutility_densifiedmaterial_adrenaline>Контейнер для массового хранения/транспортировки адреналина.</entitydescription.ekutility_densifiedmaterial_adrenaline>
+  <entityname.ekutility_densifiedmaterial_opium>Ящик опиума</entityname.ekutility_densifiedmaterial_opium>
+  <entitydescription.ekutility_densifiedmaterial_opium>Контейнер для массового хранения/транспортировки опиума.</entitydescription.ekutility_densifiedmaterial_opium>
+  <entityname.ekutility_densifiedmaterial_elastin>Ящик эластина</entityname.ekutility_densifiedmaterial_elastin>
+  <entitydescription.ekutility_densifiedmaterial_elastin>Контейнер для массового хранения/транспортировки эластина.</entitydescription.ekutility_densifiedmaterial_elastin>
+  <entityname.ekutility_densifiedmaterial_alienblood>Ящик инопланетной крови</entityname.ekutility_densifiedmaterial_alienblood>
+  <entitydescription.ekutility_densifiedmaterial_alienblood>Медицинский контейнер для массового хранения/транспортировки инопланетной крови.</entitydescription.ekutility_densifiedmaterial_alienblood>
+  <entityname.ekutility_densifiedmaterial_adrenalinegland>Ящик адреналиновых желёз</entityname.ekutility_densifiedmaterial_adrenalinegland>
+  <entitydescription.ekutility_densifiedmaterial_adrenalinegland>Медицинский контейнер для массового хранения/транспортировки адреналиновых желёз.</entitydescription.ekutility_densifiedmaterial_adrenalinegland>
+  <entityname.ekutility_densifiedmaterial_swimbladder>Ящик плавательных пузырей</entityname.ekutility_densifiedmaterial_swimbladder>
+  <entitydescription.ekutility_densifiedmaterial_swimbladder>Медицинский контейнер для массового хранения/транспортировки плавательных пузырей.</entitydescription.ekutility_densifiedmaterial_swimbladder>
+  <entityname.ekutility_densifiedmaterial_paralyxis>Ящик параликса</entityname.ekutility_densifiedmaterial_paralyxis>
+  <entitydescription.ekutility_densifiedmaterial_paralyxis>Медицинский контейнер для массового хранения/транспортировки параликса.</entitydescription.ekutility_densifiedmaterial_paralyxis>
+  <entityname.ekutility_densifiedmaterial_huskeggs>Ящик экстракта каликса</entityname.ekutility_densifiedmaterial_huskeggs>
+  <entitydescription.ekutility_densifiedmaterial_huskeggs>Медицинский контейнер для массового хранения/транспортировки экстракта каликса.</entitydescription.ekutility_densifiedmaterial_huskeggs>
+  <entityname.ekutility_densifiedmaterial_stabilozine>Ящик стабилоцина</entityname.ekutility_densifiedmaterial_stabilozine>
+  <entitydescription.ekutility_densifiedmaterial_stabilozine>Контейнер для массового хранения/транспортировки стабилоцина.</entitydescription.ekutility_densifiedmaterial_stabilozine>
+  <entityname.ekutility_densifiedmaterial_morphine>Ящик морфина</entityname.ekutility_densifiedmaterial_morphine>
+  <entitydescription.ekutility_densifiedmaterial_morphine>Контейнер для массового хранения/транспортировки морфина.</entitydescription.ekutility_densifiedmaterial_morphine>
+  <entityname.ekutility_densifiedmaterial_fentanyl>Ящик фентанила</entityname.ekutility_densifiedmaterial_fentanyl>
+  <entitydescription.ekutility_densifiedmaterial_fentanyl>Контейнер для массового хранения/транспортировки фентанила.</entitydescription.ekutility_densifiedmaterial_fentanyl>
+  <entityname.ekutility_densifiedmaterial_deusizine>Ящик деусицина</entityname.ekutility_densifiedmaterial_deusizine>
+  <entitydescription.ekutility_densifiedmaterial_deusizine>Контейнер для массового хранения/транспортировки деусицина.</entitydescription.ekutility_densifiedmaterial_deusizine>
+  <entityname.ekutility_densifiedmaterial_naloxone>Ящик налоксона</entityname.ekutility_densifiedmaterial_naloxone>
+  <entitydescription.ekutility_densifiedmaterial_naloxone>Контейнер для массового хранения/транспортировки налоксона.</entitydescription.ekutility_densifiedmaterial_naloxone>
+  <entityname.ekutility_densifiedmaterial_haloperidol>Ящик галоперидола</entityname.ekutility_densifiedmaterial_haloperidol>
+  <entitydescription.ekutility_densifiedmaterial_haloperidol>Контейнер для массового хранения/транспортировки галоперидола.</entitydescription.ekutility_densifiedmaterial_haloperidol>
+  <entityname.ekutility_densifiedmaterial_meth>Ящик метамфетамина</entityname.ekutility_densifiedmaterial_meth>
+  <entitydescription.ekutility_densifiedmaterial_meth>Контейнер для массового хранения/транспортировки метамфетамина.</entitydescription.ekutility_densifiedmaterial_meth>
+  <entityname.ekutility_densifiedmaterial_steroids>Ящик анаболических стероидов</entityname.ekutility_densifiedmaterial_steroids>
+  <entitydescription.ekutility_densifiedmaterial_steroids>Контейнер для массового хранения/транспортировки анаболических стероидов.</entitydescription.ekutility_densifiedmaterial_steroids>
+  <entityname.ekutility_densifiedmaterial_hyperzine>Ящик гиперцина</entityname.ekutility_densifiedmaterial_hyperzine>
+  <entitydescription.ekutility_densifiedmaterial_hyperzine>Контейнер для массового хранения/транспортировки гиперцина.</entitydescription.ekutility_densifiedmaterial_hyperzine>
+  <entityname.ekutility_densifiedmaterial_liquidoxygenite>Ящик жидкого кислородита</entityname.ekutility_densifiedmaterial_liquidoxygenite>
+  <entitydescription.ekutility_densifiedmaterial_liquidoxygenite>Контейнер для массового хранения/транспортировки жидкого кислородита.</entitydescription.ekutility_densifiedmaterial_liquidoxygenite>
+  <entityname.ekutility_densifiedmaterial_antibiotics>Ящик антибиотиков широкого спектра</entityname.ekutility_densifiedmaterial_antibiotics>
+  <entitydescription.ekutility_densifiedmaterial_antibiotics>Контейнер для массового хранения/транспортировки антибиотиков широкого спектра.</entitydescription.ekutility_densifiedmaterial_antibiotics>
+  <entityname.ekutility_densifiedmaterial_chloralhydrate>Ящик хлоральгидрата</entityname.ekutility_densifiedmaterial_chloralhydrate>
+  <entitydescription.ekutility_densifiedmaterial_chloralhydrate>Контейнер для массового хранения/транспортировки хлоральгидрата.</entitydescription.ekutility_densifiedmaterial_chloralhydrate>
+  <entityname.ekutility_densifiedmaterial_calyxanide>Ящик каликсанида</entityname.ekutility_densifiedmaterial_calyxanide>
+  <entitydescription.ekutility_densifiedmaterial_calyxanide>Контейнер для массового хранения/транспортировки каликсанида.</entitydescription.ekutility_densifiedmaterial_calyxanide>
+  <entityname.ekutility_densifiedmaterial_raptorbaneextract>Ящик экстракта бича раптора</entityname.ekutility_densifiedmaterial_raptorbaneextract>
+  <entitydescription.ekutility_densifiedmaterial_raptorbaneextract>Контейнер для массового хранения/транспортировки экстракта бича раптора.</entitydescription.ekutility_densifiedmaterial_raptorbaneextract>
+  <entityname.ekutility_densifiedmaterial_pomegrenadeextract>Ящик экстракта взрывного граната</entityname.ekutility_densifiedmaterial_pomegrenadeextract>
+  <entitydescription.ekutility_densifiedmaterial_pomegrenadeextract>Контейнер для массового хранения/транспортировки экстракта взрывного граната.</entitydescription.ekutility_densifiedmaterial_pomegrenadeextract>
+  <entityname.ekutility_densifiedmaterial_cyanide>Ящик цианида</entityname.ekutility_densifiedmaterial_cyanide>
+  <entitydescription.ekutility_densifiedmaterial_cyanide>Контейнер для массового хранения/транспортировки цианида.</entitydescription.ekutility_densifiedmaterial_cyanide>
+  <entityname.ekutility_densifiedmaterial_cyanideantidote>Ящик антидота цианида</entityname.ekutility_densifiedmaterial_cyanideantidote>
+  <entitydescription.ekutility_densifiedmaterial_cyanideantidote>Контейнер для массового хранения/транспортировки антидота цианида.</entitydescription.ekutility_densifiedmaterial_cyanideantidote>
+  <entityname.ekutility_densifiedmaterial_sufforin>Ящик страданита</entityname.ekutility_densifiedmaterial_sufforin>
+  <entitydescription.ekutility_densifiedmaterial_sufforin>Контейнер для массового хранения/транспортировки страданита.</entitydescription.ekutility_densifiedmaterial_sufforin>
+  <entityname.ekutility_densifiedmaterial_sufforinantidote>Ящик антидота страданита</entityname.ekutility_densifiedmaterial_sufforinantidote>
+  <entitydescription.ekutility_densifiedmaterial_sufforinantidote>Контейнер для массового хранения/транспортировки антидота страданита.</entitydescription.ekutility_densifiedmaterial_sufforinantidote>
+  <entityname.ekutility_densifiedmaterial_morbusine>Ящик морбузина</entityname.ekutility_densifiedmaterial_morbusine>
+  <entitydescription.ekutility_densifiedmaterial_morbusine>Контейнер для массового хранения/транспортировки морбузина.</entitydescription.ekutility_densifiedmaterial_morbusine>
+  <entityname.ekutility_densifiedmaterial_morbusineantidote>Ящик антидота морбузина</entityname.ekutility_densifiedmaterial_morbusineantidote>
+  <entitydescription.ekutility_densifiedmaterial_morbusineantidote>Контейнер для массового хранения/транспортировки антидота морбузина.</entitydescription.ekutility_densifiedmaterial_morbusineantidote>
+  <entityname.ekutility_densifiedmaterial_radiotoxin>Ящик радиотоксина</entityname.ekutility_densifiedmaterial_radiotoxin>
+  <entitydescription.ekutility_densifiedmaterial_radiotoxin>Контейнер для массового хранения/транспортировки радиотоксина.</entitydescription.ekutility_densifiedmaterial_radiotoxin>
+  <entityname.ekutility_densifiedmaterial_antirad>Ящик антирада</entityname.ekutility_densifiedmaterial_antirad>
+  <entitydescription.ekutility_densifiedmaterial_antirad>Контейнер для массового хранения/транспортировки антирада.</entitydescription.ekutility_densifiedmaterial_antirad>
+  <entityname.ekutility_densifiedmaterial_deliriumine>Ящик бредогена</entityname.ekutility_densifiedmaterial_deliriumine>
+  <entitydescription.ekutility_densifiedmaterial_deliriumine>Контейнер для массового хранения/транспортировки бредогена.</entitydescription.ekutility_densifiedmaterial_deliriumine>
+  <entityname.ekutility_densifiedmaterial_deliriumineantidote>Ящик антидота бредогена</entityname.ekutility_densifiedmaterial_deliriumineantidote>
+  <entitydescription.ekutility_densifiedmaterial_deliriumineantidote>Контейнер для массового хранения/транспортировки антидота бредогена.</entitydescription.ekutility_densifiedmaterial_deliriumineantidote>
+  <entityname.ekutility_densifiedmaterial_paralyzant>Ящик парализатора</entityname.ekutility_densifiedmaterial_paralyzant>
+  <entitydescription.ekutility_densifiedmaterial_paralyzant>Контейнер для массового хранения/транспортировки парализатора.</entitydescription.ekutility_densifiedmaterial_paralyzant>
+  <entityname.ekutility_densifiedmaterial_antiparalysis>Ящик анапарализатора</entityname.ekutility_densifiedmaterial_antiparalysis>
+  <entitydescription.ekutility_densifiedmaterial_antiparalysis>Контейнер для массового хранения/транспортировки анапарализатора.</entitydescription.ekutility_densifiedmaterial_antiparalysis>
+  <!-- ekutility_placeablemachines.xml -->
+  <entityname.ekutility_divingsuitlocker>Шкаф для подводного снаряжения</entityname.ekutility_divingsuitlocker>
+  <entitydescription.ekutility_divingsuitlocker>Место для хранения одного водолазного костюма, заправляется кислородом при подаче электричества. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_divingsuitlocker>
+  <entityname.ekutility_oxygentankshelf>Полка для хранения кислородных баллонов</entityname.ekutility_oxygentankshelf>
+  <entitydescription.ekutility_oxygentankshelf>Место для хранения трёх кислородных баллонов, заправляется кислородом при подаче электричества. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_oxygentankshelf>
+  <entityname.ekutility_placeabletextdisplay>Текстовый экран</entityname.ekutility_placeabletextdisplay>
+  <entitydescription.ekutility_placeabletextdisplay></entitydescription.ekutility_placeabletextdisplay>
+  <entityname.ekutility_placeabletextdisplaylong>Текстовый экран (Длинный)</entityname.ekutility_placeabletextdisplaylong>
+  <entitydescription.ekutility_placeabletextdisplaylong></entitydescription.ekutility_placeabletextdisplaylong>
+  <entityname.ekutility_portablespinkler>Разбрызгиватель воды</entityname.ekutility_portablespinkler>
+  <entitydescription.ekutility_portablespinkler>Разбрызгивающая система общего назначения для сельскохозяйственного использования или легкого пожаротушения. Требуется электричество. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_portablespinkler>
+  <entityname.ekutility_securebuttoncaptain>Защищённая кнопка (Капитан)</entityname.ekutility_securebuttoncaptain>
+  <entitydescription.ekutility_securebuttoncaptain></entitydescription.ekutility_securebuttoncaptain>
+  <entityname.ekutility_securebuttonsecurityofficer>Защищённая кнопка (СБ)</entityname.ekutility_securebuttonsecurityofficer>
+  <entitydescription.ekutility_securebuttonsecurityofficer></entitydescription.ekutility_securebuttonsecurityofficer>
+  <entityname.ekutility_securebuttonmedicaldoctor>Защищённая кнопка (Врач)</entityname.ekutility_securebuttonmedicaldoctor>
+  <entitydescription.ekutility_securebuttonmedicaldoctor></entitydescription.ekutility_securebuttonmedicaldoctor>
+  <entityname.ekutility_securebuttonmechanic>Защищённая кнопка (Механик)</entityname.ekutility_securebuttonmechanic>
+  <entitydescription.ekutility_securebuttonmechanic></entitydescription.ekutility_securebuttonmechanic>
+  <entityname.ekutility_securebuttonengineer>Защищённая кнопка (Инженер)</entityname.ekutility_securebuttonengineer>
+  <entitydescription.ekutility_securebuttonengineer></entitydescription.ekutility_securebuttonengineer>
+  <entityname.ekutility_placeablejunction>Соединительная шина</entityname.ekutility_placeablejunction>
+  <entitydescription.ekutility_placeablejunction>Простое настенное электрическое соединение. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablejunction>
+  <entityname.ekutility_heavypowerswitch>Тяжелый переключатель питания</entityname.ekutility_heavypowerswitch>
+  <entitydescription.ekutility_heavypowerswitch>Разъединитель питания промышленной мощности, способный работать с одноконтактной мощностью до 5000 кВт. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_heavypowerswitch>
+  <entityname.ekutility_placeablebattery>Настенная батарея</entityname.ekutility_placeablebattery>
+  <entitydescription.ekutility_placeablebattery>Установленный на стене мощный аккумуляторный блок питания. Мощность 2000 кВт, скорость разряда 1500 кВт. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablebattery>
+  <entityname.ekutility_placeableterminal>Терминал</entityname.ekutility_placeableterminal>
+  <entitydescription.ekutility_placeableterminal>Выводит отправленную пользователем строку.</entitydescription.ekutility_placeableterminal>
+  <entityname.ekutility_placeablesmallpump>Маленький насос</entityname.ekutility_placeablesmallpump>
+  <entitydescription.ekutility_placeablesmallpump>Полезное устройство для откачки воды.</entitydescription.ekutility_placeablesmallpump>
+  <entityname.ekutility_placeablefabricator>Фабрикатор</entityname.ekutility_placeablefabricator>
+  <entitydescription.ekutility_placeablefabricator>Машина, способная производить широкий ассортимент изделий из основного сырья. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablefabricator>
+  <entityname.ekutility_placeablefabricator_adaptive>Фабрикатор (Адаптивный)</entityname.ekutility_placeablefabricator_adaptive>
+  <entitydescription.ekutility_placeablefabricator_adaptive>Усовершенствованный производственный блок с адаптивным управляющим компьютером и улучшенными производственными допусками. Более низкие требования к навыкам калибровки. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablefabricator_adaptive>
+  <entityname.ekutility_placeablemedicalfabricator>Медицинский фабрикатор</entityname.ekutility_placeablemedicalfabricator>
+  <entitydescription.ekutility_placeablemedicalfabricator>Машина, которая может быть использована для производства различных лекарств. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablemedicalfabricator>
+  <entityname.ekutility_placeabledeconstructor>Деконструктор</entityname.ekutility_placeabledeconstructor>
+  <entitydescription.ekutility_placeabledeconstructor>Разбирает и разбивает детали на многоразовые компоненты и бруски материала. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeabledeconstructor>
+  <entityname.ekutility_placeablesonarmonitor>Сонарный монитор</entityname.ekutility_placeablesonarmonitor>
+  <entitydescription.ekutility_placeablesonarmonitor>Полезное устройство для наблюдения за сонаром подлодки. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablesonarmonitor>
+  <entityname.ekutility_placeablestatusmonitor>Монитор состояния</entityname.ekutility_placeablestatusmonitor>
+  <entitydescription.ekutility_placeablestatusmonitor>Удобное устройство для просмотра схемы подлодки, а также статуса каждого отсека. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_placeablestatusmonitor>
+  <entityname.ekutility_chargingdock1>Док-станция для зарядки</entityname.ekutility_chargingdock1>
+  <entitydescription.ekutility_chargingdock1>Настенная док-станция для зарядки аккумуляторов. (Чтобы поместить, прицельтесь и нажмите E)</entitydescription.ekutility_chargingdock1>
+  <!-- ekutility_tools.xml -->
+  <entityname.ek_hv_battery>Ядерно-электрическая батарея</entityname.ek_hv_battery>
+  <entitydescription.ek_hv_battery>Перезаряжаемый аккумулятор на основе деления, для промышленного оборудования. Только красноносые знают, как это работает.</entitydescription.ek_hv_battery>
+  <entityname.ekutility_reinforcedtank_weldingfuel>Усиленный топливный бак сварочного аппарата</entityname.ekutility_reinforcedtank_weldingfuel>
+  <entitydescription.ekutility_reinforcedtank_weldingfuel>Композитный резервуар высокого давления, устойчивый к проколам и нагреву.</entitydescription.ekutility_reinforcedtank_weldingfuel>
+  <entityname.ekutility_heavytank_incendium>Усиленный воспламенитовый топливный бак сварочного аппарата</entityname.ekutility_heavytank_incendium>
+  <entitydescription.ekutility_heavytank_incendium>Композитный резервуар высокого давления, устойчивый к проколам и нагреву.</entitydescription.ekutility_heavytank_incendium>
+  <entityname.ekutility_miningdrill>Электродрель</entityname.ekutility_miningdrill>
+  <entitydescription.ekutility_miningdrill>Ручная дрель промышленной мощности. Используется для добычи полезных ископаемых и аварийно-спасательных работ.</entitydescription.ekutility_miningdrill>
+  <entityname.ekutility_metalfoam_tank>Канистра металлической пены</entityname.ekutility_metalfoam_tank>
+  <entitydescription.ekutility_metalfoam_tank>Содержит усовершенствованный растворитель металлического катализатора, используемый для быстрого устранения повреждений корпуса, используемый в распылителе металлической пены. Опасность: Высокотоксичен, не открывайте.</entitydescription.ekutility_metalfoam_tank>
+  <entityname.ekutility_metalfoam_gun>Распылитель металлической пены</entityname.ekutility_metalfoam_gun>
+  <entitydescription.ekutility_metalfoam_gun>Передовая технология герметизации корпуса. Использует специальную химико-металлоидную формулу, выдавливаемую через нагретую форсунку для быстрого восстановления поврежденных или проколотых участков корпуса.</entitydescription.ekutility_metalfoam_gun>
+  <entityname.ekutility_ioncutter>Ионно-импульсный резак</entityname.ekutility_ioncutter>
+  <entitydescription.ekutility_ioncutter>Тяжелый режущий инструмент, использующий быстрые импульсы ускоренных заряженных частиц. Эффективен против целого ряда материалов, но страдает от низкой энергоэффективности. Опасность: Блокирование ионного луча во время работы может привести к инвалидности или серьезным травмам, таким как ожоги третьей степени, потеря конечностей, испарение и смерть.</entitydescription.ekutility_ioncutter>
+  <entityname.ekutility_redchemlight>ХИС (Красный)</entityname.ekutility_redchemlight>
+  <entitydescription.ekutility_redchemlight></entitydescription.ekutility_redchemlight>
+  <entityname.ekutility_greenchemlight>ХИС (Зелёный)</entityname.ekutility_greenchemlight>
+  <entitydescription.ekutility_greenchemlight></entitydescription.ekutility_greenchemlight>
+  <entityname.ekutility_bluechemlight>ХИС (Синий)</entityname.ekutility_bluechemlight>
+  <entitydescription.ekutility_bluechemlight></entitydescription.ekutility_bluechemlight>
+  <entityname.ekutility_yellowchemlight>ХИС (Жёлтый)</entityname.ekutility_yellowchemlight>
+  <entitydescription.ekutility_yellowchemlight></entitydescription.ekutility_yellowchemlight>
+  <entityname.ekutility_medicalscanner>Медицинский сканер</entityname.ekutility_medicalscanner>
+  <entitydescription.ekutility_medicalscanner>Портативный сканер, который отображает состояние здоровья людей.</entitydescription.ekutility_medicalscanner>
+  <entityname.ekutility_guicompass>Гирокомпас</entityname.ekutility_guicompass>
+  <entitydescription.ekutility_guicompass>Само светящийся ручной компас.</entitydescription.ekutility_guicompass>
+  <entityname.ekutility_grapplegun>Крюк-кошка</entityname.ekutility_grapplegun>
+  <entitydescription.ekutility_grapplegun>Получайте удовольствие, раскачиваясь в воздухе, ни о чем не заботясь в этом мире.</entitydescription.ekutility_grapplegun>
+  <entityname.ekutility_grapplegunprojectile>ekutility_grapplegunprojectile</entityname.ekutility_grapplegunprojectile>
+  <entitydescription.ekutility_grapplegunprojectile></entitydescription.ekutility_grapplegunprojectile>
+  <entityname.ekutility_grapplegunprojectile_rappel>ekutility_grapplegunprojectile_rappel</entityname.ekutility_grapplegunprojectile_rappel>
+  <entitydescription.ekutility_grapplegunprojectile_rappel></entitydescription.ekutility_grapplegunprojectile_rappel>
+  <entityname.ekutility_jetpack1>Ракетный пояс</entityname.ekutility_jetpack1>
+  <entitydescription.ekutility_jetpack1>Новое устройство, когда-то использовавшееся исследователями поверхности и даже миров за ее пределами. Работает с использованием того же состава топлива, что и стандартный сварочный бак.</entitydescription.ekutility_jetpack1>
+  <entityname.ekutility_advancedheadset>Инженерные наушники</entityname.ekutility_advancedheadset>
+  <entitydescription.ekutility_advancedheadset></entitydescription.ekutility_advancedheadset>
+  <entityname.ekutility_longrangeradio>Ранец с длинноволновым радио</entityname.ekutility_longrangeradio>
+  <entitydescription.ekutility_longrangeradio>Водонепроницаемый пакет мощных радиопередатчиков, предназначенный для использования экипажем экспедиции коалиции.</entitydescription.ekutility_longrangeradio>
+  <entityname.ekutility_sledgehammer>Кувалда</entityname.ekutility_sledgehammer>
+  <entitydescription.ekutility_sledgehammer>Низкотехнологичное решение для удаления нежелательных структур.</entitydescription.ekutility_sledgehammer>
+  <entityname.ekutility_electroflare>Электрический сигнальный огонь</entityname.ekutility_electroflare>
+  <entitydescription.ekutility_electroflare>Небольшой автономный осветительный прибор. Можно заряжать с помощью зарядной док-станции.</entitydescription.ekutility_electroflare>
+  <entityname.ekutility_pda>Статусный ПДА</entityname.ekutility_pda>
+  <entitydescription.ekutility_pda>Карманный компьютер, который отображает локальную структурную и атмосферную информацию из бортовой диагностической сети.</entitydescription.ekutility_pda>
+  <entityname.ekutility_pdacargo>Логистический ПДА</entityname.ekutility_pdacargo>
+  <entitydescription.ekutility_pdacargo>Карманный компьютер, который отображает информацию о судовой логистике и грузе из бортовой диагностической сети.</entitydescription.ekutility_pdacargo>
+  <entityname.ekutility_hullrepairkit>Комплект для ремонта корпуса</entityname.ekutility_hullrepairkit>
+  <entitydescription.ekutility_hullrepairkit>Низкотехнологичное решение для временного ремонта корпуса. Требует стальные слитки для ремонта структурных повреждений.</entitydescription.ekutility_hullrepairkit>
+  <entityname.ekutility_laserdrill>Лазерный резак</entityname.ekutility_laserdrill>
+  <entitydescription.ekutility_laserdrill>Портативная лазерная установка с фазовым умножением, предназначенная для резки льда и горных пород. Легко перегревается благодаря своей компактной конструкции.</entitydescription.ekutility_laserdrill>
+  <entityname.ekutility_miningbackpack>Рюкзак шахтёра</entityname.ekutility_miningbackpack>
+  <entitydescription.ekutility_miningbackpack>Прочный рюкзак с внешней рамой, часто используемый бригадами шахтерских застав.</entitydescription.ekutility_miningbackpack>
+  <entityname.ekutility_medicalbackpack>Рюкзак медика</entityname.ekutility_medicalbackpack>
+  <entitydescription.ekutility_medicalbackpack>Простая медицинская сумка, предназначенная для ношения в качестве рюкзака.</entitydescription.ekutility_medicalbackpack>
+  <entityname.ekutility_arcwelder>Дуговой сварщик</entityname.ekutility_arcwelder>
+  <entitydescription.ekutility_arcwelder>Сварочный инструмент с электрическим приводом, который использует тяжелый электрод для создания плазменных дуг, использующеся для починки корпуса.</entitydescription.ekutility_arcwelder>
+  <entityname.ekutility_portablepump>Портативный трюмный насос</entityname.ekutility_portablepump>
+  <entitydescription.ekutility_portablepump>debug item</entitydescription.ekutility_portablepump>
+  <entityname.ekutility_incendiumfuelrod>Воспламенитовый топливный стержень</entityname.ekutility_incendiumfuelrod>
+  <entitydescription.ekutility_incendiumfuelrod>Слиток обогащенного воспламенита для использования в реакторе. Выделяет значительно больше тепла и служит дольше, чем урановые топливные стержни.</entitydescription.ekutility_incendiumfuelrod>
+  <entityname.ekutility_supplypouch>Хозяйственная сумка</entityname.ekutility_supplypouch>
+  <entitydescription.ekutility_supplypouch>Сумка для хранения различных мелких предметов, таких как инструменты или медикаменты.</entitydescription.ekutility_supplypouch>
+  <!-- EKR -->
+  <entityname.EKR_utility_customwire_pipe1transparent>Прозрачный кабель‑канал</entityname.EKR_utility_customwire_pipe1transparent>
+  <entitydescription.EKR_utility_customwire_pipe1transparent>Промышленные трубы, используемые для прокладки проводных соединений по судну.</entitydescription.EKR_utility_customwire_pipe1transparent>
+  <entityname.EKR_Dischargecoil>Компактная катушка электрического разряда</entityname.EKR_Dischargecoil>
+  <entitydescription.EKR_Dischargecoil>Малая, самоустанавливающаяся катушка электрического разряда, которая потребляет лишь половину энергии стандартной катушки, но имеет более длительное время перезарядки после использования. (Разместите, нажимая ПКМ + использовать)</entitydescription.EKR_Dischargecoil>
+  <entityname.EKR_utility_mulecargo_sonarbeacon>Мул для транспортировки ящиков (Сонарный маяк)</entityname.EKR_utility_mulecargo_sonarbeacon>
+  <entityname.EKR_utility_mulecargo_handheldsonar>Мул для транспортировки ящиков (Ручной сонар)</entityname.EKR_utility_mulecargo_handheldsonar>
+  <!-- Buff -->
+  <afflictionname.EKR_PrecisionOperation>Качество работы</afflictionname.EKR_PrecisionOperation>
+  <afflictiondescription.EKR_PrecisionOperation>Вы настолько в себе преисполнились, что скорость демонтажа предметов, ремонта оборудования и восстановления конструкции значительно повысились.</afflictiondescription.EKR_PrecisionOperation>
+</infotexts>

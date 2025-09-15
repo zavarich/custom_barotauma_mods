@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Vanilla Gun Modify" modversion="beta.prod.4" corepackage="False" steamworkshopid="3530165514" gameversion="1.9.8.0" expectedhash="5C17B8BE0A36E23758F3F53F4A7B911D">
+  <Item file="%ModDir%/Fabicator/FabVGM.xml" />
+  <Item file="%ModDir%/GunMods/gunmods_alphaDev.xml" />
+  <Item file="%ModDir%/GunMods/gunmods_betaDev.xml" />
+  <Item file="%ModDir%/GunMods/overrideVanillaMods.xml" />
+  <Item file="%ModDir%/Guns/guns_betaDev.xml" />
+  <Text file="%ModDir%/MultiLanguage/chinese.xml" />
+  <Text file="%ModDir%/MultiLanguage/english.xml" />
+  <Text file="%ModDir%/MultiLanguage/japanese.xml" />
+  <Text file="%ModDir%/MultiLanguage/rus.xml" />
+</contentpackage>

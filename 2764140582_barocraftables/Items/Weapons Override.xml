@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!-- dischargecoil.xml -->
+    <Item name="" identifier="dischargecoil" tags="dischargecoil" category="Machine,Weapon" Scale="0.5">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="40">
+        <RequiredSkill identifier="electrical" level="65" />
+        <RequiredItem identifier="copper" amount="2" />
+        <RequiredItem identifier="fulguriumbatterycell" amount="2" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      </Fabricate>
+      <Deconstruct time="60">
+        <Item identifier="copper" />
+        <Item identifier="fulguriumbatterycell" />
+        <Item identifier="titaniumaluminiumalloy" />
+      </Deconstruct>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <Sprite texture="Content/Items/Weapons/Turrets.png" depth="0.01" sourcerect="557,945,464,76" />
+      <ElectricalDischarger duration="0.25" outdoorsonly="true" powerconsumption="10000">
+        <Attack targetimpulse="50">
+          <Affliction identifier="stun" strength="8" />
+          <Affliction identifier="burn" strength="10" />
+        </Attack>
+        <StatusEffect type="OnUse" target="This">
+          <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge1.ogg" range="20000" selectionmode="random" />
+          <sound file="Content/Items/Weapons/WEAPONS_electricalDischarge2.ogg" range="20000" />
+          <ParticleEmitter particle="risingbubbles" anglemin="0" anglemax="360" particleamount="50" velocitymin="50" velocitymax="100" scalemin="1" scalemax="2" />
+          <Explosion range="5000.0" camerashake="5" stun="0" force="0.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        </StatusEffect>
+      </ElectricalDischarger>
+      <Body width="464" height="76" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="trigger_in" displayname="connection.turrettriggerin" />
+      </ConnectionPanel>
+      <Upgrade gameversion="0.10.0.0" scale="*0.5" />
+    </Item>
+    <!-- turrethardpoint.xml -->
+    <Item name="" description="" identifier="blankperiscope" tags="periscope" category="Machine,Weapon" type="Controller" scale="0.5">
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="fpgacircuit" amount="2" />
+        <Item identifier="aluminium" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Body width="134" height="203" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <SwappableItem canbebought="false" origin="67,0" />
+      <Sprite texture="Content/Items/Weapons/Loaders.png" depth="0.1" sourcerect="1,355,134,203" origin="0.5,0.5" />
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <output name="position_out" displayname="connection.turretaimingout" fallbackdisplayname="inputtype.aim" />
+        <output name="trigger_out" displayname="connection.turrettriggerout" fallbackdisplayname="inputtype.shoot" />
+      </ConnectionPanel>
+    </Item>
+    <!-- railgun.xml -->
+    <Item name="" description="" identifier="periscope" tags="periscope" category="Machine,Weapon" type="Controller" disableitemusagewhenselected="true" scale="0.5" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false">
+      <Fabricate suitablefabricators="fabricatorm" requiredtime="25">
+        <RequiredSkill identifier="electrical" level="35" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="fpgacircuit" amount="2" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="plastic" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="aluminium" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true" hudpriority="20" depth="9">
+        <GuiFrame relativesize="0.15,0.15" anchor="BottomCenter" absoluteoffset="20,20" style="ItemUI" />
+        <Button text="Rotation 0">
+          <StatusEffect type="OnUse" targettype="This" rotation="0" setvalue="true" />
+        </Button>
+        <Button text="Rotation 90">
+          <StatusEffect type="OnUse" targettype="This" rotation="90" setvalue="true" />
+        </Button>
+        <Button text="Rotation 180">
+          <StatusEffect type="OnUse" targettype="This" rotation="180" setvalue="true" />
+        </Button>
+        <Button text="Rotation 270">
+          <StatusEffect type="OnUse" targettype="This" rotation="270" setvalue="true" />
+        </Button>
+      </CustomInterface>
+      <SwappableItem canbebought="false" origin="67,0" />
+      <Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" depth="0.1" sourcerect="2,210,134,203" origin="0.5,0.5" />
+      <Controller allowingameediting="false" UserPos="-35.0, -50.0" direction="Right" canbeselected="true" AllowSelectingWhenSelectedByBot="true" AllowSelectingWhenSelectedByOther="false" msg="ItemMsgInteractSelect">
+        <limbposition limb="Head" position="-10,-135" />
+        <limbposition limb="Torso" position="-10,-200" />
+        <limbposition limb="LeftHand" position="67,-170" />
+        <limbposition limb="RightHand" position="67,-170" />
+      </Controller>
+      <Body width="134" height="203" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="false">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <output name="position_out" displayname="connection.turretaimingout" fallbackdisplayname="inputtype.aim" />
+        <output name="trigger_out" displayname="connection.turrettriggerout" fallbackdisplayname="inputtype.shoot" />
+      </ConnectionPanel>
+      <!-- Controller output was made editable in v1.1.4.0, disallow it on periscopes -->
+      <Upgrade gameversion="1.1.4.0" allowingameediting="false" />
+    </Item>
+  </Items>
+</Override>

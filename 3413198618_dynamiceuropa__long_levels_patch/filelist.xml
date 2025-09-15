@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="DynamicEuropa - Long Levels Patch" modversion="1.1" corepackage="False" steamworkshopid="3413198618" gameversion="1.7.7.0" expectedhash="22907220FB1BE28388C95D679952607D">
+  <LevelGenerationParameters file="%ModDir%/Biomes/AphoticPlateau.xml" />
+  <LevelGenerationParameters file="%ModDir%/Biomes/ColdCaverns.xml" />
+  <LevelGenerationParameters file="%ModDir%/Biomes/EuropanRidge.xml" />
+  <LevelGenerationParameters file="%ModDir%/Biomes/HydrothermalWastes.xml" />
+  <LevelGenerationParameters file="%ModDir%/Biomes/TheGreatSea.xml" />
+</contentpackage>

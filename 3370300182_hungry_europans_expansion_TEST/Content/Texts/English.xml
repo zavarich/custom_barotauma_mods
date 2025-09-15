@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <entityname.heexp-cheesepizza>Cheese pizza</entityname.heexp-cheesepizza>
+  <entitydescription.heexp-cheesepizza>For cheese lovers.</entitydescription.heexp-cheesepizza>
+  <entityname.heexp-cheesepizzaslice>Cheese pizza slice</entityname.heexp-cheesepizzaslice>
+  <entitydescription.heexp-cheesepizzaslice>Slice of delicious pizza!</entitydescription.heexp-cheesepizzaslice>
+  <entityname.heexp-mushroompizza>Mushroom pizza</entityname.heexp-mushroompizza>
+  <entitydescription.heexp-mushroompizza>The best pizza, according to Europeans.</entitydescription.heexp-mushroompizza>
+  <entityname.heexp-mushroompizzaslice>Mushroom pizza slice</entityname.heexp-mushroompizzaslice>
+  <entitydescription.heexp-mushroompizzaslice>Slice of delicious pizza!</entitydescription.heexp-mushroompizzaslice>
+  <entityname.heexp-groundmeat>Ground meat</entityname.heexp-groundmeat>
+  <entitydescription.heexp-groundmeat>Meat in an unusual shape.</entitydescription.heexp-groundmeat>
+  <entityname.heexp-dumplings>Dumplings</entityname.heexp-dumplings>
+  <entitydescription.heexp-dumplings>A long time ago, someone brought it's recipe with them. Now many Europeans love this dish.</entitydescription.heexp-dumplings>
+  <entityname.heexp-pizzabox>Pizza box</entityname.heexp-pizzabox>
+  <entitydescription.heexp-pizzabox>Someone ordered pizza?</entitydescription.heexp-pizzabox>
+  <entityname.heexp-cheesepizzabox>Cheese pizza box</entityname.heexp-cheesepizzabox>
+  <entitydescription.heexp-cheesepizzabox>Someone ordered pizza?</entitydescription.heexp-cheesepizzabox>
+  <entityname.heexp-mushroompizzabox>Mushroom pizza box</entityname.heexp-mushroompizzabox>
+  <entitydescription.heexp-mushroompizzabox>Someone ordered pizza?</entitydescription.heexp-mushroompizzabox>
+  <entityname.heexp-saladworker>Salad "The worker"</entityname.heexp-saladworker>
+  <entitydescription.heexp-saladworker>A banal, fairly easy-to-cook salad.</entitydescription.heexp-saladworker>
+  <entityname.heexp-glassofbananajuice>Glass of banana juice</entityname.heexp-glassofbananajuice>
+  <entitydescription.heexp-glassofbananajuice>How did you do that juice? There are clearly clowns involved...</entitydescription.heexp-glassofbananajuice>
+  <entityname.heexp-glassofpomegrenadejuice>Glass of pomegrenade juice</entityname.heexp-glassofpomegrenadejuice>
+  <entitydescription.heexp-glassofpomegrenadejuice>Pomegrenade juice. Not the best variant... But, drinkable.</entitydescription.heexp-glassofpomegrenadejuice>
+  <entityname.heexp-glassoflumofruitjuice>Glass of lumofruit juice</entityname.heexp-glassoflumofruitjuice>
+  <entitydescription.heexp-glassoflumofruitjuice>Incredibly tasty juice. Really looking forward to drink it.</entitydescription.heexp-glassoflumofruitjuice>
+  <entityname.heexp-glassofpomegrenademilkshake>Glass of pomegrenade milkshake</entityname.heexp-glassofpomegrenademilkshake>
+  <entitydescription.heexp-glassofpomegrenademilkshake>After adding ice cream and milk the taste is not so bad.</entitydescription.heexp-glassofpomegrenademilkshake>
+  <entityname.heexp-glassofmilkshake>Glass of milkshake</entityname.heexp-glassofmilkshake>
+  <entitydescription.heexp-glassofmilkshake>The most standard cocktail. However, it is delicious.</entitydescription.heexp-glassofmilkshake>
+  <entityname.heexp-glassofpopnutmilkshake>Glass of pop-nut milkshake</entityname.heexp-glassofpopnutmilkshake>
+  <entitydescription.heexp-glassofpopnutmilkshake>Soft chocolate taste. Yummy.</entitydescription.heexp-glassofpopnutmilkshake>
+  <entityname.heexp-glassoflumofruitmilkshake>Glass of lumofruit milkshake</entityname.heexp-glassoflumofruitmilkshake>
+  <entitydescription.heexp-glassoflumofruitmilkshake>Probably the best cocktail in Europe. Many people would pay a lot of money to try it.</entitydescription.heexp-glassoflumofruitmilkshake>
+  <entityname.heexp-boiledrice>Boiled rice</entityname.heexp-boiledrice>
+  <entitydescription.heexp-boiledrice>Bowl of delicious cooked rice</entitydescription.heexp-boiledrice>
+  <entityname.heexp-bagofrice>Bag of rice</entityname.heexp-bagofrice>
+  <entitydescription.heexp-bagofrice>A bag of delicious rice</entitydescription.heexp-bagofrice>
+  <entityname.heexp-cabage>Cabbage</entityname.heexp-cabage>
+  <entitydescription.heexp-cabage>Fresh alien cabbage.</entitydescription.heexp-cabage>
+  <entityname.heexp-spotshroom>Spotshroom</entityname.heexp-spotshroom>
+  <entitydescription.heexp-spotshroom>Kind of rare type of mushrooms. Located in the depths of the Europe's caves.</entitydescription.heexp-spotshroom>
+  <entityname.heexp-maplebasil>Maple basil</entityname.heexp-maplebasil>
+  <entitydescription.heexp-maplebasil>A strange and at the same time universal spice. Depending on the processing, different flavors come out.</entitydescription.heexp-maplebasil>
+  <entityname.heexp-lumofruit>Lumofruit</entityname.heexp-lumofruit>
+  <entitydescription.heexp-lumofruit>It has a very rich sweet taste, reminiscent of both strawberry and peach. Although no one remembers what they taste like. But at least that's what it said in the books.</entitydescription.heexp-lumofruit>
+  <entityname.heexp-smallrefrigerator>Small refrigerator</entityname.heexp-smallrefrigerator>
+  <entitydescription.heexp-smallrefrigerator>Fridge, but smaller.</entitydescription.heexp-smallrefrigerator>
+  <entityname.heexp-pancakes>Pancakes</entityname.heexp-pancakes>
+  <entitydescription.heexp-pancakes>Plate of fluffy yummy pancakes.</entitydescription.heexp-pancakes>
+  <entityname.heexp-blini>Blini</entityname.heexp-blini>
+  <entitydescription.heexp-blini>Plate of yummy blini. Not worth than pancakes!</entitydescription.heexp-blini>
+  <entityname.heexp-kvass>Kvass</entityname.heexp-kvass>
+  <entitydescription.heexp-kvass>Bottle of kvass. Delicious!</entitydescription.heexp-kvass>
+  <entityname.heexp-bubbleberriescake>Bubbleberries cake.</entityname.heexp-bubbleberriescake>
+  <entitydescription.heexp-bubbleberriescake>Cake made from bubbleberries. Amazing flavour, cheap recipe. Cut in slices and take one!!</entitydescription.heexp-bubbleberriescake>
+  <entityname.heexp-bubbleberriescakeslice>Bubbleberries cake slice</entityname.heexp-bubbleberriescakeslice>
+  <entitydescription.heexp-bubbleberriescakeslice>Slice of bubbleberries cake! Come and take a bite!</entitydescription.heexp-bubbleberriescakeslice>
+  <entityname.heexp-vanillin>Vanillin</entityname.heexp-vanillin>
+  <entitydescription.heexp-vanillin>Small bag of vanillin.</entitydescription.heexp-vanillin>
+  <entityname.heexp-fcheesepizzabox>Fresh cheese pizza box</entityname.heexp-fcheesepizzabox>
+  <entitydescription.heexp-fcheesepizzabox>Someone ordered pizza?</entitydescription.heexp-fcheesepizzabox>
+  <entityname.heexp-fmushroompizzabox>Fresh mushroom pizza box</entityname.heexp-fmushroompizzabox>
+  <entitydescription.heexp-fmushroompizzabox>Someone ordered pizza?</entitydescription.heexp-fmushroompizzabox>
+  <entityname.heexp-fpizzabox>Fresh pizza box</entityname.heexp-fpizzabox>
+  <entitydescription.heexp-fpizzabox>Someone ordered pizza?</entitydescription.heexp-fpizzabox>
+</infotexts>

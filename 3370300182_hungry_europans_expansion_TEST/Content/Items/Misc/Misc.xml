@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <!--WEAPONS-->
+    <Item name="GET OUT" identifier="getout" description="Boomba" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/punchgun.png" sourcerect="8,65,115,82" depth="0.55" origin="0.5,0.5" />
+      <PreferredContainer primary="crewcab" secondary="storagecab" />
+      <Body width="110" height="80" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="False" aimpos="60,-20" handle1="-45,-15" handle2="-45,-30" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon reload="1" launchimpulse="5.0" barrelpos="50,15" spread="0" drawhudwhenequipped="true" crosshairscale="0.2">
+        <!-- <Sound file="Content/Items/Weapons/HarpoonGun1.ogg" type="OnUse" range="1000" /> -->
+        <StatusEffect type="OnUse">
+          <Explosion range="150.0" force="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.8" checkconditionalalways="true">
+          <SpawnItem identifier="getoutpunch" spawnposition="ThisInventory" />
+        </StatusEffect>
+      </RangedWeapon>
+      <ItemContainer capacity="1" maxstacksize="1" itempos="80,15" containedspritedepths="0.55" hideitems="false" drawinventory="false" canbeselected="false" removecontaineditemsondeconstruct="true" containedstateindicatorslot="0" containedstateindicatorstyle="spear" spawnwithid="punch">
+        <Containable items="getoutpunch" />
+      </ItemContainer>
+    </Item>
+    <Item name="GET OUT punch" identifier="getoutpunch" category="Weapon" maxstacksize="6" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="mediumitem,punch" Scale="0.5" impactsoundtag="impact_metal_light" hideinmenus="false" allowasextracargo="true" noninteractable="true">
+      <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/punchgun.png" sourcerect="371,70,50,53" depth="0.55" origin="0.5,0.5" />
+      <Body width="50" height="50" radius="0" friction="10" density="10" />
+      <Projectile characterusable="false" launchimpulse="6.0" maxtargetstohit="1" HitOnlyCharacters="true">
+        <Attack structuredamage="1" itemdamage="1" targetforce="40" severlimbsprobability="0">
+          <Affliction identifier="blunttrauma" strength="5" />
+          <Affliction identifier="stun" strength="3" />
+          <Affliction identifier="concussion" strength="1" probability="0.1" />
+          <Sound file="%ModDir:3370300182%/Content/Sounds/getout1.ogg" loop="False" range="500" volume="5.0" selectionmode="Random" />
+        </Attack>
+        <StatusEffect type="OnSuccess">
+          <Explosion range="100.0" force="2000" shockwave="true" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="3" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" delay="0.8">
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" delay="0.5">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Rope sourcepullforce="1" targetpullforce="1" projectilepullforce="15" maxlength="1500" snaponcollision="false" SnapWhenNotAimed="false" spritewidth="10" tile="true" origin="0.05,0.5" snapanimduration="1">
+        <Sprite texture="%ModDir:2954998725%/Content/Items/Misc/punchgun.png" sourcerect="132,65,230,51" depth="0.57" origin="0.5,0.5" />
+        <StatusEffect type="OnUse" target="This" delay="0.5" projectilepullforce="30" setvalue="True" />
+      </Rope>
+    </Item>
+    <!--PAKAGES-->
+    <Item name="Fresh pizza box" identifier="heexp-fpizzabox" category="Misc" subcategory="Food" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Box with fresh pizza" Tags="smallitem,ingredient,fooditem" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer primary="table" secondary="crewcab,kitchen" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="10" requiredmoney="250" fabricationlimitmin="0" fabricationlimitmax="8" />
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,446,139,19" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,446,139,19" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,446,139,19" depth="0.525" origin="0.5,0.6" />
+      <Body width="40" height="20" density="11" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="RightHand+LeftHand" holdpos="35,-40" handle1="0,0" holdangle="0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.open">
+          <StatusEffect type="OnUse" target="This">
+            <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/Unwrap.ogg" loop="false" range="200" volume="5.0" />
+            <SpawnItem identifier="he-pizza" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" count="1" />
+            <SpawnItem identifier="heexp-pizzabox" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" count="1" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Fresh cheese pizza box" identifier="heexp-fcheesepizzabox" category="Misc" subcategory="Food" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Box with fresh pizza" Tags="smallitem,ingredient,fooditem" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer primary="table" secondary="crewcab,kitchen" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="10" requiredmoney="200" fabricationlimitmin="0" fabricationlimitmax="8" />
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,470,139,19" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,470,139,19" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,470,139,19" depth="0.525" origin="0.5,0.6" />
+      <Body width="40" height="20" density="11" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="RightHand+LeftHand" holdpos="35,-40" handle1="0,0" holdangle="0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.open">
+          <StatusEffect type="OnUse" target="This">
+            <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/Unwrap.ogg" loop="false" range="200" volume="5.0" />
+            <SpawnItem identifier="heexp-cheesepizza" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" count="1" />
+            <SpawnItem identifier="heexp-cheesepizzabox" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" count="1" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Fresh mushroom pizza box" identifier="heexp-fmushroompizzabox" category="Misc" subcategory="Food" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Box with fresh pizza" Tags="smallitem,ingredient,fooditem" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer primary="table" secondary="crewcab,kitchen" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="10" requiredmoney="275" fabricationlimitmin="0" fabricationlimitmax="8" />
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,491,139,19" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,491,139,19" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,491,139,19" depth="0.525" origin="0.5,0.6" />
+      <Body width="40" height="20" density="11" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="RightHand+LeftHand" holdpos="35,-40" handle1="0,0" holdangle="0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.12,0.08" />
+        <Button text="interaction.open">
+          <StatusEffect type="OnUse" target="This">
+            <Sound file="%ModDir:2954998725%/Content/Sounds/Items/Food/Unwrap.ogg" loop="false" range="200" volume="5.0" />
+            <SpawnItem identifier="heexp-mushroompizza" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" count="1" />
+            <SpawnItem identifier="heexp-mushroompizzabox" spawnposition="SameInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" count="1" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Item>
+    <Item name="Pizza box" identifier="heexp-pizzabox" category="Misc" subcategory="Food" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Box for pizza" Tags="smallitem,container" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer primary="table" secondary="crewcab,kitchen" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="10" requiredmoney="250" fabricationlimitmin="0" fabricationlimitmax="8" />
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,446,139,19" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,446,139,19" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,446,139,19" depth="0.525" origin="0.5,0.6" />
+      <Body width="40" height="20" density="11" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="RightHand+LeftHand" holdpos="35,-40" handle1="0,0" holdangle="0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="false" AllowDragAndDrop="true" DrawInventory="True">
+        <Containable items="he-pizza"></Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="Cheese pizza box" identifier="heexp-cheesepizzabox" category="Misc" subcategory="Food" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Box for pizza" Tags="smallitem,container" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer primary="table" secondary="crewcab,kitchen" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="10" requiredmoney="200" fabricationlimitmin="0" fabricationlimitmax="8" />
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,470,139,19" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,470,139,19" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,470,139,19" depth="0.525" origin="0.5,0.6" />
+      <Body width="40" height="20" density="11" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="RightHand+LeftHand" holdpos="35,-40" handle1="0,0" holdangle="0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="false" AllowDragAndDrop="true" DrawInventory="True">
+        <Containable items="heexp-cheesepizza"></Containable>
+      </ItemContainer>
+    </Item>
+    <Item name="Mushroom pizza box" identifier="heexp-mushroompizzabox" category="Misc" subcategory="Food" maxstacksize="1" cargocontaineridentifier="metalcrate" description="Box for pizza" Tags="smallitem,container" useinhealthinterface="false" scale="0.5" impactsoundtag="impact_softitem" isshootable="true" requireaimtouse="true" canflipx="false">
+      <PreferredContainer primary="table" secondary="crewcab,kitchen" />
+      <Fabricate suitablefabricators="cafeteria" requiredtime="10" requiredmoney="275" fabricationlimitmin="0" fabricationlimitmax="8" />
+      <Deconstruct time="1" requireddeconstructor="deconstructor" />
+      <Sprite texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,491,139,19" depth="0.6" origin="0.5,0.5" />
+      <InventoryIcon texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,491,139,19" origin="0.5,0.5" />
+      <ContainedSprite allowedcontainertags="table" texture="%ModDir:3370300182%/Content/Items/Food/Food.png" sourcerect="1,491,139,19" depth="0.525" origin="0.5,0.6" />
+      <Body width="40" height="20" density="11" />
+      <Holdable canbepicked="true" canBeCombined="false" slots="RightHand+LeftHand" holdpos="35,-40" handle1="0,0" holdangle="0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <ItemContainer Capacity="1" MaxStackSize="1" HideItems="false" AllowDragAndDrop="true" DrawInventory="True">
+        <Containable items="heexp-mushroompizza"></Containable>
+      </ItemContainer>
+    </Item>
+  </Items>
+</Override>

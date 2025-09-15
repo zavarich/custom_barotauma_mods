@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <sounds>
+    <impact_jar file="%ModDir%/Content/Sounds/Impact/BottleImpact1.ogg" range="400" />
+    <impact_shaker file="%ModDir%/Content/Sounds/Impact/ShakerImpact1.ogg" range="400" />
+    <impact_aluminiumcan file="%ModDir%/Content/Sounds/Impact/CanImpact1.ogg" range="600" />
+    <impact_aluminiumcan file="%ModDir%/Content/Sounds/Impact/CanImpact2.ogg" range="600" />
+    <impact_aluminiumcan file="%ModDir%/Content/Sounds/Impact/CanImpact3.ogg" range="600" />
+    <impact_aluminiumcan file="%ModDir%/Content/Sounds/Impact/CanImpact4.ogg" range="600" />
+    <impact_aluminiumcan_full file="%ModDir%/Content/Sounds/Impact/CanImpactFull1.ogg" range="400" />
+    <impact_aluminiumcan_full file="%ModDir%/Content/Sounds/Impact/CanImpactFull2.ogg" range="400" />
+    <impact_bottle_glass file="%ModDir%/Content/Sounds/Impact/BottleImpact1.ogg" range="400" />
+    <impact_bottle_glass file="%ModDir%/Content/Sounds/Impact/BottleImpact2.ogg" range="400" />
+    <impact_bottle_glass file="%ModDir%/Content/Sounds/Impact/BottleImpact3.ogg" range="400" />
+    <impact_plastic_crate file="%ModDir%/Content/Sounds/Impact/PlasticCrateImpact1.ogg" range="450" />
+    <impact_plastic_crate file="%ModDir%/Content/Sounds/Impact/PlasticCrateImpact2.ogg" range="450" />
+    <impact_plastic_crate file="%ModDir%/Content/Sounds/Impact/PlasticCrateImpact3.ogg" range="450" />
+    <impact_plastic_crate file="%ModDir%/Content/Sounds/Impact/PlasticCrateImpact4.ogg" range="450" />
+    <impact_plastic_crate file="%ModDir%/Content/Sounds/Impact/PlasticCrateImpact5.ogg" range="450" />
+    <impact_glassfragments file="%ModDir%/Content/Sounds/Impact/GlassFragmentsImpact1.ogg" range="450" />
+    <impact_glassfragments file="%ModDir%/Content/Sounds/Impact/GlassFragmentsImpact2.ogg" range="450" />
+    <impact_softitem file="%ModDir%/Content/Sounds/Impact/SoftImpact1.ogg" range="450" />
+    <impact_softitem file="%ModDir%/Content/Sounds/Impact/SoftImpact2.ogg" range="450" />
+    <impact_softitem file="%ModDir%/Content/Sounds/Impact/SoftImpact3.ogg" range="450" />
+    <impact_softitem file="%ModDir%/Content/Sounds/Impact/SoftImpact4.ogg" range="450" />
+    <footstep_armor_exosuit file="%ModDir%/Content/Sounds/Footsteps/Armor/FootstepExosuit1.ogg" volume="1.5" range="700" />
+    <footstep_armor_exosuit file="%ModDir%/Content/Sounds/Footsteps/Armor/FootstepExosuit2.ogg" volume="1.5" range="700" />
+    <footstep_armor_exosuit file="%ModDir%/Content/Sounds/Footsteps/Armor/FootstepExosuit3.ogg" volume="1.5" range="700" />
+    <footstep_armor_exosuit file="%ModDir%/Content/Sounds/Footsteps/Armor/FootstepExosuit4.ogg" volume="1.5" range="700" />
+  </sounds>
+</Override>

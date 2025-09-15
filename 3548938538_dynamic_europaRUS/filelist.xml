@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="Dynamic Europa - Russian Translation" modversion="1.0.0" corepackage="False" gameversion="1.9.8.0">
+  <Text file="%ModDir%/Translations/Russian_Afflictions.xml" />
+  <Text file="%ModDir%/Translations/Russian_Characters.xml" />
+  <Text file="%ModDir%/Translations/Russian_Dialog.xml" />
+  <Text file="%ModDir%/Translations/Russian_Factions.xml" />
+  <Text file="%ModDir%/Translations/Russian_GUI.xml" />
+  <Text file="%ModDir%/Translations/Russian_Items.xml" />
+  <Text file="%ModDir%/Translations/Russian_Locations.xml" />
+  <Text file="%ModDir%/Translations/Russian_Missions.xml" />
+  <Text file="%ModDir%/Translations/Russian_SpecialCharactersEventText.xml" />
+  <Text file="%ModDir%/Translations/Russian_Structures.xml" />
+  <Text file="%ModDir%/Translations/Russian_Talents.xml" />
+  <Text file="%ModDir%/Translations/Russian_Unused_And_ToDo.xml" />
+</contentpackage>

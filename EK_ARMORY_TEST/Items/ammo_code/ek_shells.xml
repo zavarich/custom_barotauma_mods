@@ -1,0 +1,2624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Override>
+    <!--軌道炮聲納誘餌，對應原版軌道炮推進力被整合進砲塔中，削減推進力80-->
+    <!-- 11/14 誘敵能力加強，增加水流阻力抵擋 -->
+    <!-- 11/14，需要有怪物靠近才炸，等於上了一層保險 -->
+    <!-- 2025/1/14，為所有的軌道炮砲彈優化手持時的視覺效果 -->
+    <!-- 1/25，加上2個TAG sonar和provocative，這樣吸引怪物的能力會大幅上升 -->
+    <!-- 8/18提高穿透0.1 -->
+    <Item name="" identifier="ek_railshell_decoy" showcontentsintooltip="true" tags="railgunequipment,railgunammo,decoy,sonar,provocative" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="" aliases="railgun sonar shell, railgun decoy shell, railgun decoy">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.2" />
+      <Price baseprice="270" sold="false" minleveldifficulty="10">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="3" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="sonarbeacon" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="iron" />
+        <Item identifier="copper" />
+        <Item identifier="plastic" amount="2" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="64,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,1,222,30" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="10.1" waterdragcoefficient="1" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <!-- 增加誘敵範圍變為兩倍，機制也改動了 -->
+      <aitarget sightrange="550" soundrange="15000" fadeouttime="20" sonarlabel="entityname.ekarmorydecoy" />
+      <!-- 大幅降速，傷害、穿甲大幅增加，這樣才有機會吸引到敵人，而不是馬上被撞爆，衝擊力增加-->
+      <Projectile characterusable="false" launchimpulse="-20" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="5" itemdamage="5" severlimbsprobability="0.5" damagetype="Blunt" penetration="0.4" targetforce="1000">
+          <Affliction identifier="blunttrauma" strength="75" />
+          <Affliction identifier="internaldamage" strength="75" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <!-- 砲彈移動特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 開燈？聲納！啟動！ -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="true" />
+        <!-- 第一次撞擊，減少10耐久 -->
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" condition="90" setvalue="true">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+        <!-- 60秒後自動引爆 -->
+        <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" stackable="false" delay="60" />
+        <!-- 耐久歸零時引爆內容物 -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- 破壞時特效+移除+音效? -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="5000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="5000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="5000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <LightComponent characterusable="false" LightColor="125,255,160,30" range="150" blinkfrequency="1.5" IsOn="false">
+        <!--<sprite texture="Mods/EK Armory/Lights/sonarshell_lights.png" sourcerect="0,0,224,48" alpha="0.5" />-->
+        <StatusEffect type="OnActive" targettype="This" SoundRange="15000" setvalue="true">
+          <sound file="%ModDir%/Items/Weapons/ek_shellsonarbeacon.ogg" range="15000.0" loop="true" />
+        </StatusEffect>
+      </LightComponent>
+      <!-- 怪物感測器，當砲彈被啟動時，且耐久度小於等於90，感測器感應到活體生物，3秒則後引爆(同時引爆內容物) -->
+      <MotionSensor range="325" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="3.0" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lte 90" />
+        </StatusEffect>
+      </MotionSensor>
+      <ItemContainer autofill="False" hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <Containable identifiers="smallitem,explosive" />
+      </ItemContainer>
+    </Item>
+    <!--軌道炮核能聲納誘餌，分解後IC4變成燃素，製作需要塑膠-->
+    <Item name="" identifier="ek_railshell_nucleardecoy" showcontentsintooltip="true" tags="railgunequipment,railgunammo,decoy,sonar,provocative" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="" aliases="nuclear sonar shell,nuclear decoy shell,nuclear railgun decoy">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
+      <Price baseprice="620" sold="false" minleveldifficulty="35">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="35">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="uranium" />
+        <RequiredItem identifier="ic4block" />
+        <RequiredItem identifier="sonarbeacon" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="uranium" />
+        <Item identifier="incendium" />
+        <Item identifier="copper" />
+        <Item identifier="plastic" amount="2" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,288,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="10.1" waterdragcoefficient="1" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <aitarget sightrange="550" soundrange="15000" fadeouttime="20" sonarlabel="entityname.ekarmorydecoy" />
+      <Projectile characterusable="false" launchimpulse="-20" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="5" itemdamage="5" severlimbsprobability="0.5" damagetype="Blunt" penetration="0.4" targetforce="1000">
+          <Affliction identifier="blunttrauma" strength="75" />
+          <Affliction identifier="internaldamage" strength="75" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <!-- 啟動特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 啟動時同時啟動聲納 -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="true" />
+        <!-- 第一次撞擊的0.5秒後，減少10耐久 -->
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" condition="90" setvalue="true" delay="0.5">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+        <!-- 60秒後自動引爆 -->
+        <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" stackable="false" delay="60" />
+        <!-- 撞擊爆炸，核爆效果(比起EK原版強多了，還有穿甲) -->
+        <StatusEffect type="OnBroken" target="This" Condition="-100.0" setvalue="true" allowwhenbroken="true">
+          <sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="50000" />
+          <Explosion range="1500.0" structuredamage="600" itemdamage="1000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0" camerashake="1000" camerashakerange="50000" flashrange="10000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="5.0" penetration="0.6">
+            <Affliction identifier="explosiondamage" strength="1000" />
+            <Affliction identifier="burn" strength="1000" />
+            <Affliction identifier="radiationsickness" strength="100" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="30" />
+          </Explosion>
+          <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+          </Explosion>
+          <ParticleEmitter particle="underwaterexplosion" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="0" scalemin="15" scalemax="15" />
+          <SpawnItem identifier="nuclearaftereffectemitter" spawnposition="This" />
+        </StatusEffect>
+        <!-- 破壞(啟動時)引爆內容物 -->
+        <StatusEffect type="OnBroken" target="Contained">
+          <Use />
+        </StatusEffect>
+        <!-- 破壞(啟動時)音效+消失 -->
+        <StatusEffect type="OnBroken" target="This">
+          <sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+          <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <!-- 重新調整聲納效果 -->
+      <LightComponent characterusable="false" LightColor="125,255,160,30" range="150" blinkfrequency="1.5" IsOn="false">
+        <!--<sprite texture="Mods/EK Armory/Lights/sonarshell_lights.png" sourcerect="0,0,224,48" alpha="0.5" />-->
+        <StatusEffect type="OnActive" target="This" condition="-1.66" />
+        <StatusEffect type="OnActive" targettype="This" SoundRange="15000" setvalue="true">
+          <sound file="%ModDir%/Items/Weapons/ek_shellsonarbeacon.ogg" range="15000.0" loop="true" />
+        </StatusEffect>
+        <!-- <StatusEffect type="OnActive" targettype="This" tags="human" duration="1.0" setvalue="true" stackable="false" /> -->
+      </LightComponent>
+      <!-- 怪物感測器，當砲彈被啟動時，且耐久度小於等於90，感測器感應到活體生物，3秒則後啟動引爆(同時引爆內容物) -->
+      <MotionSensor range="650" canbeselected="false" IgnoreDead="True" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="3.0" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lte 90" />
+        </StatusEffect>
+      </MotionSensor>
+      <ItemContainer autofill="False" hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <Containable identifiers="smallitem,explosive" />
+      </ItemContainer>
+    </Item>
+    <!-- 軌道炮鋼針彈，機制重寫，減少卡頓的同時防止丟傷害，總傷害量控制在850左右(鋼針加總800) -->
+    <!-- 增加穿甲力0.2，增加衝擊力 -->
+    <Item name="" identifier="ek_railshell_flechette" aliases="railgun flechette" tags="railgunequipment,railgunammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" amount="1" spawnprobability="0.25" minleveldifficulty="20" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="150" sold="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="25">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="titanium" />
+        <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="titanium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,49,222,30" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" maxcondition="97" />
+      <Body width="215" height="30" density="10" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.2" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="80.0" maxtargetstohit="4" damagedoors="true">
+        <Attack structuredamage="5" itemdamage="5" targetforce="20" severlimbsprobability="0.2"></Attack>
+        <!-- 射出時直接散射出鋼針彈 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true">
+          <SpawnItem identifier="ek_railgun_flechette_pellet" spawnposition="This" count="25" aimspread="18" rotationtype="Collider" rotation="0" />
+          <Remove />
+        </StatusEffect>
+        <!--撞擊時直接觸發-->
+        <!-- <StatusEffect type="OnImpact" target="This" Condition="-100" stackable="false"/> -->
+      </Projectile>
+    </Item>
+    <!--鋼針彈鋼針，重寫傷害-->
+    <!-- 2/9，傷害小幅提高，改為兩次命中 -->
+    <Item name="" identifier="ek_railgun_flechette_pellet" category="Weapon" scale="0.5" sonarsize="2" hideinmenus="true">
+      <!--<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />-->
+      <!-- <Sprite texture="weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" /> -->
+      <Sprite texture="%ModDir%/Items/Weapons/ek_railgun_flechette_pellet.png" sourcerect="0,0,90,6" depth="0.55" origin="0.5,0.5" />
+      <!-- <Sprite texture="weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" /> -->
+      <!-- 大幅增加橫向距離，防止命中判定丟失，增加水流抗性 -->
+      <Body width="160" height="40" density="15" waterdragcoefficient="1" />
+      <Projectile characterusable="false" launchimpulse="100.0" impulsespread="0.25" spread="7.5" maxtargetstohit="2" damagedoors="true">
+        <Attack ballastfloradamage="4" structuredamage="8" itemdamage="6" targetforce="30" severlimbsprobability="0.2" penetration="0.5">
+          <Affliction identifier="gunshotwound" strength="5.0" />
+          <Affliction identifier="lacerations" strength="8.5" />
+          <Affliction identifier="bleeding" strength="4.0" />
+          <Affliction identifier="stun" strength="0.50" />
+          <!-- 迅猛龍特攻，我恨透這東西了 -->
+          <StatusEffect type="OnUse" target="UseTarget" disabledeltatime="true">
+            <Conditional speciesgroup="mudraptor" />
+            <Affliction identifier="gunshotwound" strength="1.0" />
+            <Affliction identifier="bleeding" amount="2" />
+            <Affliction identifier="stun" amount="0.05" />
+          </StatusEffect>
+        </Attack>
+        <!-- 射擊時的特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <!--<ParticleEmitter particle="ammotrailwater" copyentityangle="true" anglemin="-5" anglemax="5" particlespersecond="20" velocitymin="-10" velocitymax="-100" scalemin="0.5" scalemax="1" />-->
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particlespersecond="20" velocitymin="-50" velocitymax="50" scalemin="1" scalemax="1.5" />
+        </StatusEffect>
+        <!-- 1.5秒沒有命中物品則自動消失 -->
+        <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1.5">
+          <Remove />
+        </StatusEffect>
+        <!-- 撞擊時減少耐久度 -->
+        <StatusEffect type="OnImpact" target="This" condition="-50" />
+        <!-- 撞擊結構的效果 -->
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact1.ogg" selectionmode="Random" range="2500" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact2.ogg" selectionmode="Random" range="2500" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact3.ogg" selectionmode="Random" range="2500" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact4.ogg" selectionmode="Random" range="2500" volume="1.0" />
+          <ParticleEmitter particle="ekarmory_hdimpactsmall" particleamount="1" velocitymin="0" velocitymax="0" scalemin="1" scalemax="6" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-15" anglemax="15" particleamount="4" velocitymin="-10" velocitymax="-200" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-30" anglemax="30" particleamount="3" velocitymin="10" velocitymax="300" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="-20" anglemax="20" particleamount="3" velocitymin="50" velocitymax="300" scalemin="1" scalemax="2" />
+        </StatusEffect>
+        <!-- 延遲0.03秒才消失，製造嵌入感 -->
+        <StatusEffect type="OnBroken" target="This" delay="0.03">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--雙發軌道炮半身彈，將內容物與本身一起消除-->
+    <!-- 11/14優化代碼，把容器格子關上# -->
+    <!-- 1/29，軌道炮半身彈只有-15%速度，修正了半身彈有可能在沉船的裝彈器生成的BUG -->
+    <Item name="" identifier="ek_railgun_halfshells" aliases="railgun halfshell holder,ek_halfshell_case" tags="railgunequipment,railgunammo,containershell,ek_railgun_halfshellcontainer" subcategory="ekr_armory_Weapons" category="Weapon" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="1" spawnprobability="0.10" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" minamount="1" maxamount="2" spawnprobability="0.2" />
+      <Price baseprice="75">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="3" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="8" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="8" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" mincondition="0.95" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="iron" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="224,0,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="0,0,224,48" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="0,48,224,48" depth="0.55" maxcondition="51" origin="0.5,0.5" />
+      <Body width="215" height="30" density="20" />
+      <!-- 雙發軌道炮半身彈是特殊的，重量較輕，只有-15%移動速度 -->
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.15" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer autofill="False" capacity="1" maxstacksize="1" hideitems="true" removecontaineditemsondeconstruct="true" drawinventory="false" itempos="0,0" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="ek_railgun_halfshell">
+        <Containable identifiers="ek_railgun_halfshell" />
+        <ContainedStateIndicator texture="%ModDir%/UI/ek_containerindicators.png" sourcerect="0,64,120,32" />
+        <!-- 一旦使用，則在0.01秒後在內部生成半身彈，為甚麼要延遲呢?因為某些古怪的原因，若是不延遲，則會被判定為內部有物品，而無法正常生成，若是給兩個格子，則會被當成霰彈射出去(必須前兩項小於後一項的間隔) -->
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" stackable="false" delay="0.005">
+          <SpawnItem identifiers="ek_railgun_halfshell" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <!-- 一旦內部有軌道炮半身彈，則在使用的0.01秒後減少50耐久 -->
+        <StatusEffect type="OnUse" target="This" condition="-50" disabledeltatime="true" stackable="false" delay="0.005">
+          <RequiredItem items="ek_railgun_halfshell" type="Contained" />
+        </StatusEffect>
+        <!-- 在損壞的那一瞬間，將內容物與本身一起連帶著消除，這很重要，可以防止掉出內容物 -->
+        <StatusEffect type="OnBroken" target="This,Contained" disabledeltatime="true" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <!--軌道炮半身彈，雖然看似爆炸是砍了傷害，實際不然，因為爆炸給了0.5穿甲，實際更有優勢-->
+    <!-- 2/9，把直擊的穿甲加回來 -->
+    <Item name="" identifier="ek_railgun_halfshell" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+      <Deconstruct time="1"></Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="192,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="320,0,100,40" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="50" itemdamage="50" severlimbsprobability="2.5" penetration="0.6" targetforce="500">
+          <Affliction identifier="explosiondamage" strength="125" />
+          <Affliction identifier="bleeding" strength="25" />
+          <Affliction identifier="stun" strength="7.5" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="175.0" ballastfloradamage="50" structuredamage="25" itemdamage="100" force="10.0" severlimbsprobability="0.25" decal="explosion" decalsize="0.15" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="125" />
+            <Affliction identifier="stun" strength="3.5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--雙發穿甲軌道炮半身彈-->
+    <Item name="" identifier="ek_railgun_halfshells_piercingslug" tags="railgunequipment,railgunammo,containershell,ek_railgun_halfshellcontainer" subcategory="ekr_armory_Weapons" category="Weapon" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" amount="1" spawnprobability="0.25" minleveldifficulty="20" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="135" sold="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="titanium" />
+        <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" mincondition="0.95" />
+        <Item identifier="titanium" mincondition="0.95" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="224,96,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="0,96,224,48" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="0,144,224,48" depth="0.55" maxcondition="51" origin="0.5,0.5" />
+      <Body width="215" height="30" density="20" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.15" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer autofill="False" capacity="2" maxstacksize="1" hideitems="true" removecontaineditemsondeconstruct="true" drawinventory="false" itempos="0,0" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="ek_railgun_halfshell_piercingslug">
+        <Containable identifiers="ek_railgun_halfshell_piercingslug" />
+        <ContainedStateIndicator texture="%ModDir%/UI/ek_containerindicators.png" sourcerect="0,64,120,32" />
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" stackable="false" delay="0.005">
+          <SpawnItem identifiers="ek_railgun_halfshell_piercingslug" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-50" disabledeltatime="true" stackable="false" delay="0.005">
+          <RequiredItem items="ek_railgun_halfshell_piercingslug" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This,Contained" disabledeltatime="true" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <!--穿甲軌道炮半身彈-->
+    <!-- 原代碼非常怪異，撞一下扣32耐久是甚麼鬼 -->
+    <!-- 2/9，調整傷害(約為完整版本的一半多一點)，二段命中的機制加回來，補一點動能讓它可以自加速 -->
+    <Item name="" identifier="ek_railgun_halfshell_piercingslug" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+      <Deconstruct time="1"></Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,704,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="320,96,100,40" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="40.0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="40" itemdamage="70" severlimbsprobability="1.0" penetration="0.7">
+          <Affliction identifier="lacerations" strength="125" />
+          <Affliction identifier="internaldamage" strength="20" />
+          <Affliction identifier="bleeding" strength="5" />
+          <Affliction identifier="stun" strength="3.0" />
+        </Attack>
+        <!-- velocity jumping fix -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" condition="-1">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-5" disabledeltatime="true" stackable="false" delay="0.3">
+          <Conditional condition="gt 80" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact1.ogg" selectionmode="Random" range="5000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact2.ogg" selectionmode="Random" range="5000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact3.ogg" selectionmode="Random" range="5000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact4.ogg" selectionmode="Random" range="5000" volume="1.0" />
+          <ParticleEmitter particle="ekarmory_hdimpactmedium" particleamount="1" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2.5" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-30" anglemax="30" particleamount="5" velocitymin="-10" velocitymax="-300" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="4" velocitymin="10" velocitymax="400" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="-25" anglemax="25" particleamount="4" velocitymin="50" velocitymax="900" scalemin="1" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="false" anglemin="0" anglemax="360" particleamount="5" velocitymin="50" velocitymax="400" scalemin="1" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-50">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="150.0" ballastfloradamage="30" structuredamage="30" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.5">
+            <Affliction identifier="lacerations" strength="7.5" />
+            <Affliction identifier="internaldamage" strength="2.5" />
+            <Affliction identifier="stun" strength="0.5" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="15" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.5">
+            <Affliction identifier="lacerations" strength="7.5" />
+            <Affliction identifier="internaldamage" strength="2.5" />
+            <Affliction identifier="stun" strength="0.5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--雙發剛素軌道炮半身彈-->
+    <Item name="" identifier="ek_railgun_halfshells_alien" tags="railgunequipment,railgunammo,containershell,ek_railgun_halfshellcontainer" subcategory="ekr_armory_Weapons" category="Weapon" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" amount="1" spawnprobability="0.1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="310" sold="false" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" sold="false" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" sold="false" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="physicorium" mincondition="0.95" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="mechanical" level="20" />
+        <RequiredItem identifier="physicorium" />
+        <RequiredItem identifier="titanium" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="224,192,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="0,192,224,48" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="0,240,224,48" depth="0.55" maxcondition="51" origin="0.5,0.5" />
+      <Body width="215" height="30" density="20" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.15" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <ItemContainer autofill="False" capacity="2" maxstacksize="1" hideitems="true" removecontaineditemsondeconstruct="true" drawinventory="false" itempos="0,0" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="ek_railgun_halfshell_alien">
+        <Containable identifiers="ek_railgun_halfshell_alien" />
+        <ContainedStateIndicator texture="%ModDir%/UI/ek_containerindicators.png" sourcerect="0,64,120,32" />
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" stackable="false" delay="0.005">
+          <SpawnItem identifiers="ek_railgun_halfshell_alien" spawnposition="ThisInventory" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" condition="-50" disabledeltatime="true" stackable="false" delay="0.005">
+          <RequiredItem items="ek_railgun_halfshell_alien" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This,Contained" disabledeltatime="true" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </ItemContainer>
+    </Item>
+    <!--剛素軌道炮半身彈-->
+    <!-- 調整傷害 -->
+    <Item name="" identifier="ek_railgun_halfshell_alien" aliases="railgun alien halfshell,railgun halfshell alien" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" hideinmenus="true">
+      <Deconstruct time="1"></Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="256,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/halfshells_new.png" sourcerect="320,192,100,40" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="100" itemdamage="100" severlimbsprobability="2.5" penetration="0.8" targetforce="550">
+          <Affliction identifier="lacerations" strength="300" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="7.5" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+          <Explosion range="225.0" ballastfloradamage="50" structuredamage="25" itemdamage="100" force="10.0" severlimbsprobability="0.4" decal="explosion" decalsize="0.2" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="125" />
+            <Affliction identifier="stun" strength="3.5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--軌道炮追蹤彈，降低價格-->
+    <!-- 2024/6/6，修正少了target="This"的問題 -->
+    <!-- 1/25，增加了品質，傷害上限大大的增加，優化效能 -->
+    <Item name="" identifier="ek_railshell_homing" aliases="railgun homing shell,homing railgun shell,railgun torpedo" tags="railgunequipment,railgunammo,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="350" sold="false" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="3" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="c4block" />
+      </Deconstruct>
+      <!-- 手持聲納改掉，加上塑膠，畢竟哪有那麼多聲納可以這樣消耗 -->
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="c4block" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="384,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,240,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="10" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <!-- 擴大聲納引怪範圍(但這東西不是專門引怪用的，所以只加一點點，因為我的經驗是，太小相當於沒有) -->
+      <aitarget sightrange="300" soundrange="750" fadeouttime="20" />
+      <!-- 降低直擊傷害占比，這樣做的目的是鼓勵玩家用間接攻擊，相應的，會給追蹤彈加點傷害，增加衝擊力1000點 -->
+      <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="5" severlimbsprobability="0.5" penetration="0.4" damagetype="Blunt" targetforce="1000">
+          <Affliction identifier="blunttrauma" strength="50" />
+          <Affliction identifier="stun" strength="10" />
+        </Attack>
+        <!-- 啟動特效，並且減少耐久(因為沒禁用增量時間，會等很久才觸發減少耐久的效果) -->
+        <StatusEffect type="OnActive" target="This" condition="-1">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 啟動後每過1秒減少10耐久 -->
+        <StatusEffect type="OnActive" target="This" condition="-10" delay="1.0" disabledeltatime="true" />
+        <StatusEffect type="OnActive" target="This" delay="0.5" disabledeltatime="true" stackable="false">
+          <sound file="%ModDir%/Items/Weapons/homingshell_windup.ogg" type="OnActive" range="6500.0" />
+        </StatusEffect>
+        <!-- 當耐久小於等於94時，根據品質生成追蹤彈 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 0" />
+          <SpawnCharacter speciesname="Homingshell" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 1" />
+          <SpawnCharacter speciesname="HomingshellQ1" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 2" />
+          <SpawnCharacter speciesname="HomingshellQ2" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 3" />
+          <SpawnCharacter speciesname="HomingshellQ3" />
+          <Remove />
+        </StatusEffect>
+        <!-- 任意撞擊直接-10耐久，直接觸發 -->
+        <StatusEffect type="OnImpact" target="This" condition="-10" disabledeltatime="true" stackable="false" />
+        <!-- 這東西可以去掉，不可能發生，也不應該發生 -->
+        <!-- <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.1"> -->
+        <!-- <Remove /> -->
+        <!-- </StatusEffect> -->
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="firepowermultiplier" value="0.10" />
+      </Quality>
+    </Item>
+    <!--軌道炮核能追蹤彈-->
+    <!-- 2024/6/6，修正少了target="This"的問題 -->
+    <!-- 2/9，稍微增加它的初速，因為可能會有射遠一點的需求 -->
+    <Item name="" identifier="ek_railshell_nuclearhoming" aliases="nuclear homing shell,homing nuclear shell,nuclear torpedo" tags="railgunequipment,railgunammo,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
+      <Price baseprice="620" sold="false" minleveldifficulty="40">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem identifier="uranium" />
+        <RequiredItem identifier="ic4block" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="plastic" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="uranium" />
+        <Item identifier="incendium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,336,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="10" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <aitarget sightrange="300" soundrange="750" fadeouttime="20" />
+      <Projectile characterusable="false" launchimpulse="10" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="5" severlimbsprobability="0.5" penetration="0.4" damagetype="Blunt" targetforce="1000">
+          <Affliction identifier="blunttrauma" strength="50" />
+          <Affliction identifier="stun" strength="10" />
+        </Attack>
+        <!-- 啟動特效，並且減少耐久(因為沒禁用增量時間，會等很久才觸發減少耐久的效果) -->
+        <StatusEffect type="OnActive" target="This" condition="-1">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 啟動後過1.25秒減少10耐久 -->
+        <StatusEffect type="OnActive" target="This" condition="-10" delay="1.25" disabledeltatime="true" />
+        <StatusEffect type="OnActive" target="This" delay="0.5" disabledeltatime="true" stackable="false">
+          <sound file="%ModDir%/Items/Weapons/homingshell_windup.ogg" type="OnActive" range="6500.0" />
+        </StatusEffect>
+        <!-- 當耐久小於等於94時，根據品質生成追蹤彈 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 0" />
+          <SpawnCharacter speciesname="Nuclearhomingshell" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 1" />
+          <SpawnCharacter speciesname="NuclearhomingshellQ1" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 2" />
+          <SpawnCharacter speciesname="NuclearhomingshellQ2" />
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" comparison="And">
+          <Conditional Condition="lte 94" />
+          <Conditional Quality="eq 3" />
+          <SpawnCharacter speciesname="NuclearhomingshellQ3" />
+          <Remove />
+        </StatusEffect>
+        <!-- 任意撞擊直接-10耐久，直接觸發 -->
+        <StatusEffect type="OnImpact" target="This" condition="-10" disabledeltatime="true" stackable="false" />
+        <!-- <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.1"> -->
+        <!-- <Remove /> -->
+        <!-- </StatusEffect> -->
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="firepowermultiplier" value="0.05" />
+      </Quality>
+    </Item>
+    <!--軌道炮榴霰彈，取消直擊穿甲，多增加一段爆炸-->
+    <!-- 增加撞擊衝擊力500點 -->
+    <!-- 減少密度 -->
+    <Item name="" identifier="ek_railshell_flak" aliases="flak railgun shell" tags="railgunequipment,railgunammo,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="275" sold="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="steel" />
+        <!-- 28 -->
+        <RequiredItem identifier="aluminium" />
+        <!-- 42 -->
+        <RequiredItem identifier="copper" />
+        <!-- 22 -->
+        <RequiredItem identifier="c4block" />
+        <!-- 160 -->
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="aluminium" />
+        <Item identifier="copper" />
+        <Item identifier="sodium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,384,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="12" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <!-- 增加引怪範圍 -->
+      <aitarget sightrange="300" soundrange="750" fadeouttime="20" />
+      <!-- 這東西很迷惑，我是該減速呢?還是加速?因為他有自加速的效果 -->
+      <!-- 身為軌道炮沒有穿甲也挺奇怪的，給個0.1好了 -->
+      <Projectile characterusable="false" launchimpulse="15" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="20" severlimbsprobability="0.5" penetration="0.2" damagetype="Blunt" targetforce="500">
+          <Affliction identifier="blunttrauma" strength="30" />
+          <Affliction identifier="internaldamage" strength="30" />
+          <Affliction identifier="stun" strength="10" />
+        </Attack>
+        <!-- 射擊加速 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" condition="-1">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <!-- 每0.5秒加速一次 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.5" stackable="false">
+          <Use />
+        </StatusEffect>
+        <!-- 射擊特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 多段爆炸，其實實際上挺刮痧的，對多隻怪有用就是(穿甲力逐步提升) -->
+        <StatusEffect type="OnActive" target="This" condition="-49" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.2">
+          <Conditional Condition="gt 80" />
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="1250.0" structuredamage="0" itemdamage="0" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.2">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="bleeding" strength="25" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-30" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.5">
+          <Conditional Condition="eq 50" />
+          <!--shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false"-->
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="1750.0" structuredamage="10" itemdamage="60" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.25">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="bleeding" strength="35" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <!-- 20-2=18 -->
+        <StatusEffect type="Always" target="This" condition="-2" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.5">
+          <Conditional Condition="eq 20" />
+          <!--shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false"-->
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="1750.0" structuredamage="10" itemdamage="80" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.3">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="35" />
+            <Affliction identifier="bleeding" strength="35" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <!-- 最後一個大加速！ -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" condition="-1" delay="0.004" stackable="false">
+          <Conditional Condition="lte 18" />
+          <Use />
+        </StatusEffect>
+        <!-- 最後一下的範圍再提升 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.2">
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <Explosion range="1750.0" structuredamage="10" itemdamage="10" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.4">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="25" />
+            <Affliction identifier="bleeding" strength="35" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="ExplosionDamage" value="0.05" />
+      </Quality>
+    </Item>
+    <!--軌道炮近炸榴霰彈-->
+    <!-- 增加撞擊衝擊力500點 -->
+    <!-- 減少密度2點 -->
+    <Item name="" identifier="ek_railshell_flak_smartfuse" tags="railgunequipment,railgunammo,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="355" sold="false" soldeverywhere="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="2" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="35" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="c4block" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="aluminium" />
+        <Item identifier="copper" />
+        <Item identifier="sodium" />
+        <Item identifier="fpgacircuit" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="225,384,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="12" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <aitarget sightrange="300" soundrange="750" fadeouttime="20" />
+      <Projectile characterusable="false" launchimpulse="95" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="20" severlimbsprobability="0.5" penetration="0.2" damagetype="Blunt" targetforce="500">
+          <Affliction identifier="blunttrauma" strength="30" />
+          <Affliction identifier="internaldamage" strength="30" />
+          <Affliction identifier="stun" strength="10" />
+        </Attack>
+        <!-- velocity jumping fix -->
+        <StatusEffect type="OnActive" target="This" condition="-10" disabledeltatime="true" stackable="false">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.5" stackable="false">
+          <Conditional condition="gt 60" />
+          <Use />
+        </StatusEffect>
+        <!-- 特效，本來是會在一段時間後自動扣耐久啟動...但沒必要，移除 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 沒有碰到東西的話也會在6秒後自動啟動 -->
+        <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="6" stackable="false" />
+        <!-- 破壞時啟動...啊?居然還減少耐久，都歸零了欸，這是忘記移除了吧?刪掉 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="1250.0" structuredamage="0" itemdamage="0" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.2">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="bleeding" strength="25" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" stackable="false" delay="0.45">
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="1750.0" structuredamage="10" itemdamage="60" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.25">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="bleeding" strength="35" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" stackable="false" delay="0.9">
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="1750.0" structuredamage="10" itemdamage="80" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" onlyoutside="true" penetration="0.3">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="35" />
+            <Affliction identifier="bleeding" strength="35" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+          <Use />
+        </StatusEffect>
+        <!-- 最後一個加速 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="1.0" stackable="false">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="1.1" stackable="false">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="1.2" stackable="false">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="1.35">
+          <ParticleEmitter particle="underwaterexplosion" particleamount="1" scalemin="2.5" scalemax="3.0" />
+          <ParticleEmitter particle="ekflakburst" particleamount="1" scalemin="4" scalemax="4.5" startdelaymin="0.3" startdelaymax="0.35" />
+          <Explosion range="1750.0" structuredamage="10" itemdamage="10" stun="2" force="10.0" severlimbsprobability="0.1" underwaterbubble="false" penetration="0.4">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="internaldamage" strength="30" />
+            <Affliction identifier="explosiondamage" strength="25" />
+            <Affliction identifier="bleeding" strength="35" />
+            <Affliction identifier="stun" strength="2" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <MotionSensor rangex="1000" rangey="1000" canbeselected="false" IgnoreDead="true" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <!-- Proximity Fuse Detonation -->
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="0.05" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lt 95" />
+        </StatusEffect>
+      </MotionSensor>
+      <Quality>
+        <QualityStat stattype="ExplosionDamage" value="0.05" />
+      </Quality>
+    </Item>
+    <!--軌道炮穿甲彈，改為穿透兩次，總傷害量約660~684，槍傷合併到撕裂傷-->
+    <!-- 2/9，可以用更自由的材料製作，提高結構傷害，增加傷害與穿透力(總傷害為700~724)，增加衝擊力 -->
+    <!-- 根據品質決定爆炸的穿甲能力與結構破壞能力 -->
+    <!-- 2/14，調整傷害680~704 -->
+    <Item name="" identifier="ek_railshell_piercingslug" aliases="piercing railgun shell" tags="railgunequipment,railgunammo,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1" />
+      <Price baseprice="160" sold="false" minleveldifficulty="20">
+        <!-- +39 -->
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="3" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="titanium" />
+        <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="titanium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="256,0,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="4,16,216,32" depth="0.55" origin="0.5,0.5" />
+      <BrokenSprite texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="4,48,140,32" depth="0.55" origin="0.5,0.5" maxcondition="99" />
+      <Body width="215" height="30" density="30" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <!-- 自加速的原因，可能考慮不要改加速?(這東西也沒有特殊的運作機制，沒差) -->
+      <Projectile characterusable="false" launchimpulse="85.0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="75" itemdamage="125" severlimbsprobability="1.0" penetration="0.7" targetforce="500">
+          <!-- 現版本軌道炮為直擊300爆炸250共550傷害，剛素彈為直擊600爆炸250共850，罐裝彈則是70*11總共770，綜合考慮後直接給700傷害好了-->
+          <Affliction identifier="lacerations" strength="250" />
+          <Affliction identifier="internaldamage" strength="40" />
+          <Affliction identifier="bleeding" strength="10" />
+          <Affliction identifier="stun" strength="6.0" />
+        </Attack>
+        <!-- velocity jumping fix -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" condition="-1">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-2.5" disabledeltatime="true" stackable="false" delay="0.3">
+          <Conditional condition="gt 90" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 撞擊時小爆炸，能炸兩次，分成內外圈傷害 -->
+        <StatusEffect type="OnImpact" target="This" condition="-50">
+          <Conditional Quality="eq 0" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="200.0" ballastfloradamage="30" structuredamage="30" itemdamage="2.5" force="0.1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.5">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="15" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.5">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-50">
+          <Conditional Quality="eq 1" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="200.0" ballastfloradamage="30" structuredamage="30" itemdamage="2.5" force="0.1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.55">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="20" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.55">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-50">
+          <Conditional Quality="eq 2" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="200.0" ballastfloradamage="30" structuredamage="30" itemdamage="2.5" force="0.1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.6">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="25" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.6">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-50">
+          <Conditional Quality="eq 3" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="200.0" ballastfloradamage="30" structuredamage="30" itemdamage="2.5" force="0.1" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.65">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="30" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true" penetration="0.65">
+            <Affliction identifier="lacerations" strength="15" />
+            <Affliction identifier="internaldamage" strength="5" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap1.ogg" selectionmode="Random" range="5000" volume="0.8" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap2.ogg" selectionmode="Random" range="5000" volume="0.8" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap3.ogg" selectionmode="Random" range="5000" volume="0.8" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap4.ogg" selectionmode="Random" range="5000" volume="0.8" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap5.ogg" selectionmode="Random" range="5000" volume="0.8" />
+          <ParticleEmitter particle="ekarmory_hdimpactmedium" particleamount="1" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2.5" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-30" anglemax="30" particleamount="5" velocitymin="-10" velocitymax="-300" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="4" velocitymin="10" velocitymax="400" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="-25" anglemax="25" particleamount="4" velocitymin="50" velocitymax="900" scalemin="1" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="false" anglemin="0" anglemax="360" particleamount="5" velocitymin="50" velocitymax="400" scalemin="1" scalemax="1" />
+        </StatusEffect>
+        <!-- 延後消失，製造嵌入感，更有穿甲的感覺 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.01">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.10" />
+        <QualityStat stattype="ExplosionDamage" value="0.10" />
+      </Quality>
+    </Item>
+    <!--軌道炮穿甲爆破彈，將直擊的撕裂傷變成爆破傷害並合併，爆破的撕裂傷變成燒傷並合併，爆破部分增加穿甲，由於有C-4，因此總傷害約910~976-->
+    <!-- 11/15槍傷變為撕裂傷 -->
+    <!-- 2/9，傷害調整，954~1020 -->
+    <!-- 2/14，調整傷害，934~1000 -->
+    <Item name="" identifier="ek_railshell_armorpiercing" aliases="railgun armor piercing shell, armor piercing railgun shell" tags="railgunequipment,railgunammo,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
+      <Price baseprice="350" sold="false" minleveldifficulty="35">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="40" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="titanium" />
+        <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+        <RequiredItem identifier="c4block" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="copper" />
+        <Item identifier="titanium" />
+        <Item identifier="sodium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="256,64,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="4,80,216,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="30" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="85.0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="150" itemdamage="180" severlimbsprobability="3.0" penetration="0.9">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="lacerations" strength="80" />
+          <Affliction identifier="explosiondamage" strength="240" />
+          <Affliction identifier="bleeding" strength="12" />
+          <Affliction identifier="stun" strength="6" />
+        </Attack>
+        <!-- velocity jumping fix -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" condition="-1">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-5" disabledeltatime="true" stackable="false" delay="0.3">
+          <Conditional condition="gt 80" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 撞擊時小爆炸，能炸兩次 -->
+        <StatusEffect type="OnImpact" target="This">
+          <Conditional Quality="eq 0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode1.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode2.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <Explosion range="250.0" structuredamage="125" itemdamage="100" force="10.0" severlimbsprobability="1.5" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="burn" strength="30" />
+            <Affliction identifier="stun" strength="4" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="15" itemdamage="5" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true"></Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Conditional Quality="eq 1" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode1.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode2.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <Explosion range="250.0" structuredamage="125" itemdamage="100" force="10.0" severlimbsprobability="1.5" penetration="0.55">
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="burn" strength="30" />
+            <Affliction identifier="stun" strength="4" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="20" itemdamage="10" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true"></Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Conditional Quality="eq 2" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode1.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode2.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <Explosion range="250.0" structuredamage="125" itemdamage="100" force="10.0" severlimbsprobability="1.5" penetration="0.6">
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="burn" strength="30" />
+            <Affliction identifier="stun" strength="4" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="25" itemdamage="15" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true"></Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Conditional Quality="eq 3" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode1.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_heat_explode2.ogg" selectionmode="Random" range="10000" volume="1.0" />
+          <Explosion range="250.0" structuredamage="125" itemdamage="100" force="10.0" severlimbsprobability="1.5" penetration="0.65">
+            <Affliction identifier="explosiondamage" strength="30" />
+            <Affliction identifier="burn" strength="30" />
+            <Affliction identifier="stun" strength="4" />
+          </Explosion>
+          <Explosion range="50.0" structuredamage="30" itemdamage="20" force="0.1" shockwave="false" smoke="false" flames="false" flash="true" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="true"></Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" condition="-100" disabledeltatime="true" stackable="false" delay="0.10" />
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap1.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap2.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap3.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap4.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_railgun_ap5.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <ParticleEmitter particle="ekarmory_hdimpactmedium" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2.5" scalemax="3" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-30" anglemax="30" particleamount="5" velocitymin="-10" velocitymax="-300" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="4" velocitymin="10" velocitymax="400" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="-25" anglemax="25" particleamount="4" velocitymin="50" velocitymax="900" scalemin="1" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="false" anglemin="0" anglemax="360" particleamount="5" velocitymin="50" velocitymax="400" scalemin="1" scalemax="1" />
+        </StatusEffect>
+        <!-- 最後增加一段大爆炸 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <Explosion range="750.0" ballastfloradamage="25" structuredamage="25" itemdamage="25" force="20.0" severlimbsprobability="2" decal="explosion" decalsize="0.75" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="100" />
+            <Affliction identifier="burn" strength="30" probability="0.2" dividebylimbcount="false" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="10" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.1" />
+        <QualityStat stattype="ExplosionDamage" value="0.1" />
+      </Quality>
+    </Item>
+    <!--軌道炮聚變效果，模擬核聚變需要核分裂核彈引爆的效果-->
+    <!-- 1/23給予點燃傷害(是的，我知道這樣沒有很多，不過主要是象徵的含意) -->
+    <Item name="ek_railshell_fusion_effect" identifier="ek_railshell_fusion_effect" tags="" sonarsize="20" hideinmenus="true" noninteractable="true">
+      <AiTarget sightrange="1000.0" soundrange="1000" sonardisruption="10" static="True" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" Condition="-5.0" disabledeltatime="true" delay="0.9" stackable="false">
+          <Conditional Condition="gt 95" />
+          <!-- 650 -->
+          <Explosion range="7000.0" structuredamage="650" itemdamage="75" force="50.0" severlimbsprobability="2.0" camerashake="500" camerashakerange="50000" penetration="0.6">
+            <Affliction identifier="EKR_Burning" strength="15" />
+            <Affliction identifier="burn" strength="600" />
+            <Affliction identifier="lacerations" strength="300" />
+            <Affliction identifier="stun" strength="10" />
+          </Explosion>
+        </StatusEffect>
+        <!-- reduce condition to remove the emitter after 10 seconds -->
+        <StatusEffect type="Always" target="This" condition="-10">
+          <ParticleEmitter particle="risingbubbles" anglemin="0" anglemax="360" particlespersecond="50" velocitymin="0" velocitymax="50" scalemin="1" scalemax="6" distancemin="0" distancemax="3000" />
+        </StatusEffect>
+        <!-- 聚變燃燒的更乾淨，所以輻射更少 -->
+        <StatusEffect type="Always" target="NearbyCharacters" range="5500">
+          <Affliction identifier="radiationsickness" strength="1.5" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--軌道炮聚變彈，總傷害約3500，第二發變3200-->
+    <!-- 聚變彈的特殊傷害機制移除(那個不穩定)，取而代之的是穿甲力拉滿的一圈爆炸 -->
+    <!-- 8/18跟進新版本更新，爆炸的穿透力提高0.1 -->
+    <Item name="" identifier="ek_railshell_fusion" tags="railgunequipment,railgunammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.025" />
+      <Price baseprice="1050" sold="false" soldeverywhere="false" minleveldifficulty="40">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="mechanical" level="60" />
+        <RequiredSkill identifier="weapons" level="60" />
+        <RequiredItem identifier="physicorium" />
+        <RequiredItem identifier="uranium" amount="2"/>
+        <RequiredItem identifier="ic4block" />
+        <RequiredItem identifier="sulphuriteshard" />
+        <RequiredItem identifier="fpgacircuit" amount="2"/>
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="physicorium" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="c4block" />
+        <Item identifier="uranium" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="128,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="225,96,222,32" depth="0.55" origin="0.5,0.5" />
+      <!-- 將質量改為略重於10，這樣可以確保軌道平直，可惜了，沒辦法射出後再設定自身質量 -->
+      <Body width="215" height="30" density="10.1" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="80.0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="75" itemdamage="25" severlimbsprobability="1.0" penetration="0.8" targetforce="500">
+          <Affliction identifier="lacerations" strength="125" />
+          <Affliction identifier="bleeding" strength="25" />
+          <Affliction identifier="stun" strength="5" />
+        </Attack>
+        <!-- 一半距離時 -->
+        <!-- 試試更遠一點再爆 -->
+        <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" delay="2.8" stackable="false" />
+        <!-- 速度跳躍修正(初速加速) -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" condition="-1">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <!-- 自加速 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.3" stackable="false">
+          <Use />
+        </StatusEffect>
+        <!-- 射擊氣泡特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 爆炸特效 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <ParticleEmitter particle="ekfusionflash" particleamount="2" scalemin="4" scalemax="4" velocitymin="50" velocitymax="100" />
+          <ParticleEmitter particle="eknukeshockwave" particleamount="2" velocitymin="25" velocitymax="50" />
+        </StatusEffect>
+        <!-- 核爆 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/ek_fusionexplosion_mono.ogg" range="50000" />
+          <!-- 900 -->
+          <Explosion range="4000.0" structuredamage="900" itemdamage="300" force="50.0" severlimbsprobability="2.0" decal="explosion" decalsize="1.0" camerashake="500" camerashakerange="4000" flashrange="8000" flashduration="8.0" screencolor="255,255,255,255" screencolorrange="12000" screencolorduration="4.0" penetration="0.6" underwaterbubble="false">
+            <Affliction identifier="explosiondamage" strength="1000" />
+            <Affliction identifier="burn" strength="1000" />
+            <Affliction identifier="radiationsickness" strength="100" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="20" />
+          </Explosion>
+          <!-- 增加一個隱形的內圈爆炸，穿甲力拉滿，內圈傷害更高(取代原先的穿甲傷害機制) -->
+          <Explosion range="2500.0" structuredamage="0" force="0.0" severlimbsprobability="0.0" flames="false" smoke="false" flash="false" sparks="false" shockwave="false" underwaterbubble="false" penetration="1.0">
+            <Affliction identifier="burn" strength="200" />
+            <Affliction identifier="explosiondamage" strength="100" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <!-- 廣域EMP(但不多) -->
+          <Explosion range="7500" force="0.0" smoke="false" sparks="false" empstrength="0.5" applyfireeffects="false" />
+          <!-- 小範圍EMP -->
+          <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+          </Explosion>
+          <!-- 二段爆炸 -->
+          <SpawnItem identifier="ek_railshell_fusion_effect" spawnposition="This" />
+        </StatusEffect>
+        <!-- <StatusEffect type="OnBroken" target="NearbyCharacters" range="2500"> -->
+        <!-- <Affliction identifier="ekR_fusion_railgun_effect" strength="5000" /> -->
+        <!-- </StatusEffect> -->
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--軌道炮近炸聚變彈-->
+    <Item name="" identifier="ek_railshell_fusion_smartfuse" tags="railgunequipment,railgunammo,disallowduplicatedeconstructoutput" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammocontainer" />
+      <Price baseprice="1050" sold="false" soldeverywhere="false" minleveldifficulty="40">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="3">
+        <RequiredItem identifier="ek_railshell_fusion" />
+      </Fabricate>
+      <Deconstruct time="3">
+        <Item identifier="ek_railshell_fusion" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="512,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="225,432,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="10.1" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="80.0" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="75" itemdamage="25" severlimbsprobability="1.0" penetration="0.8" targetforce="500">
+          <Affliction identifier="lacerations" strength="125" />
+          <Affliction identifier="bleeding" strength="25" />
+          <Affliction identifier="stun" strength="5" />
+        </Attack>
+        <!-- 射擊初速補正 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" condition="-5.0">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <!-- 射出後耐久剛好為95，啟動並減少耐久15，達到耐久80...還是得延遲一小段距離，貼臉炸真的不行 -->
+        <StatusEffect type="Always" target="This" disabledeltatime="true" condition="-15.0" delay="0.35" stackable="false">
+          <Conditional condition="eq 95" />
+        </StatusEffect>
+        <!-- 自加速 -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.002" stackable="false">
+          <Use />
+        </StatusEffect>
+        <!-- 射擊氣泡特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="3" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 爆炸特效 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <ParticleEmitter particle="ekfusionflash" particleamount="2" scalemin="4" scalemax="4" velocitymin="50" velocitymax="100" />
+          <ParticleEmitter particle="eknukeshockwave" particleamount="2" velocitymin="25" velocitymax="50" />
+        </StatusEffect>
+        <!-- 核爆 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true">
+          <sound file="%ModDir%/Items/Weapons/ek_fusionexplosion_mono.ogg" range="25000" />
+          <Explosion range="4000.0" structuredamage="900" itemdamage="300" force="50.0" severlimbsprobability="2.0" decal="explosion" decalsize="1.0" camerashake="500" camerashakerange="4000" flashrange="8000" flashduration="8.0" screencolor="255,255,255,255" screencolorrange="12000" screencolorduration="4.0" penetration="0.6" underwaterbubble="false">
+            <Affliction identifier="explosiondamage" strength="1000" />
+            <Affliction identifier="burn" strength="1000" />
+            <Affliction identifier="radiationsickness" strength="100" />
+            <Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+            <Affliction identifier="stun" strength="20" />
+          </Explosion>
+          <!-- 增加一個隱形的內圈爆炸，穿甲力拉滿，內圈傷害更高(取代原先的穿甲傷害機制) -->
+          <Explosion range="2500.0" structuredamage="0" force="0.0" severlimbsprobability="0.0" flames="false" smoke="false" flash="false" sparks="false" shockwave="false" underwaterbubble="false" penetration="1.0">
+            <Affliction identifier="burn" strength="200" />
+            <Affliction identifier="explosiondamage" strength="100" />
+            <Affliction identifier="stun" strength="5" />
+          </Explosion>
+          <!-- 廣域EMP(但不多)，減少範圍 -->
+          <Explosion range="7500" force="0.0" smoke="false" sparks="false" empstrength="0.5" applyfireeffects="false" />
+          <!-- 小範圍EMP -->
+          <Explosion range="2000" force="0.0" smoke="false" sparks="false" empstrength="2.5" applyfireeffects="false" ignorecover="true">
+            <Affliction identifier="emp" strength="50" multiplybymaxvitality="true" />
+          </Explosion>
+          <!-- 二段爆炸 -->
+          <SpawnItem identifier="ek_railshell_fusion_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <!-- 近炸引信 -->
+      <!-- 耐久80時可感測引爆用多個傳感器是因為單傳感器範圍上限是1000，提高延遲0.05 -->
+      <MotionSensor rangex="750" rangey="750" detectoffset="-750,-750" canbeselected="false" IgnoreDead="true" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="0.15" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lte 80" />
+        </StatusEffect>
+      </MotionSensor>
+      <MotionSensor rangex="750" rangey="750" detectoffset="750,-750" canbeselected="false" IgnoreDead="true" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="0.15" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lte 80" />
+        </StatusEffect>
+      </MotionSensor>
+      <MotionSensor rangex="750" rangey="750" detectoffset="-750,750" canbeselected="false" IgnoreDead="true" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="0.15" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lte 80" />
+        </StatusEffect>
+      </MotionSensor>
+      <MotionSensor rangex="750" rangey="750" detectoffset="750,750" canbeselected="false" IgnoreDead="true" minimumvelocity="0" updateinterval="0.025" target="Monster" DetectOwnMotion="false">
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" delay="0.15" stackable="false" checkconditionalalways="true" comparison="And">
+          <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+          <Conditional Condition="lte 80" />
+        </StatusEffect>
+      </MotionSensor>
+      <!-- 怪物感測器，當砲彈被啟動時，且耐久度小於等於80，感測器感應到活體生物，3秒則後引爆(同時引爆內容物) -->
+    </Item>
+    <!--輻射深水炸彈，增加鈾，增加輻射病傷害0.07，降低燒傷0.03-->
+    <!-- 11/15分解產物增加鋅 -->
+    <Item name="" identifier="ek_depthcharge_radiation" tags="depthchargeammo,decoy,provocative,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="190" sold="false" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="zinc" mincondition="0.9" />
+        <Item identifier="uranium" mincondition="0.9" />
+        <Item identifier="fpgacircuit" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="Mechanical" level="40" />
+        <RequiredItem identifier="iron" />
+        <!-- 8 -->
+        <RequiredItem identifier="zinc" />
+        <!-- 26 -->
+        <RequiredItem identifier="uranium" />
+        <!-- 50 -->
+        <RequiredItem identifier="potassium" />
+        <!-- 10 -->
+        <RequiredItem identifier="fpgacircuit" />
+        <!-- 80 -->
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,704,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="224,224,128,96" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="10.35" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <aitarget sightrange="4000" soundrange="6000" fadeouttime="40" />
+      <Projectile characterusable="false" launchimpulse="16.0">
+        <Attack structuredamage="0" damagetype="Blunt" />
+        <!-- 輻射！啟動！！！ -->
+        <StatusEffect type="OnActive" target="This" targetitemcomponent="LightComponent" IsOn="true" condition="-3" disabledeltatime="true" delay="1.5" checkconditionalalways="true">
+          <Conditional Condition="gt 98" />
+        </StatusEffect>
+      </Projectile>
+      <LightComponent characterusable="false" LightColor="0,0,0,2" range="0" castshadows="false" castlights="false" IsOn="false">
+        <StatusEffect type="OnActive" target="This" condition="-2.5">
+          <sound file="%ModDir%/Items/Weapons/ek_magnetronloop.ogg" type="OnActive" range="1500.0" volume="1" loop="true" />
+          <ParticleEmitter particle="risingbubbles" anglemin="0" anglemax="360" particlespersecond="6" velocitymin="0" velocitymax="50" scalemin="0.5" scalemax="1.5" distancemin="0" distancemax="1400" />
+          <ParticleEmitter particle="ammotrailwater" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="0" velocitymax="100" scalemin="1" scalemax="2" distancemin="0" distancemax="1200" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This,NearbyCharacters" range="1300">
+          <sound file="%ModDir%/Items/Weapons/ek_geigerloop1.ogg" type="OnActive" range="2000.0" volume="1" loop="true" />
+          <Affliction identifier="burn" strength="0.30" />
+          <Affliction identifier="radiationsickness" strength="0.40" />
+        </StatusEffect>
+      </LightComponent>
+      <Quality>
+        <QualityStat stattype="Condition" value="0.1" />
+      </Quality>
+    </Item>
+    <!--
+  <Item name="ek_railgun_flare_effect" identifier="ek_railgun_flare_effect" Scale="0.5" impactsoundtag="impact_soft" sonarsize="5" hideinmenus="true">
+    <Sprite texture="weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+    <Body width="50" height="50" density="10.5" />
+	<AiTarget sightrange="6000.0" maxsoundrange="8000" minsoundrange="0" fadeouttime="15" sonardisruption="5"/>
+    <LightComponent characterusable="false" LightColor="255,50,50,255" Flicker="0.5" range="2048" IsOn="true">
+      <LightTexture texture="Mods/EK Armory/Lights/pointlight_bright_hires.png" origin="0.5, 0.5" size="1.2,1.2" />
+      <sound file="Content/Items/Tools/FlareLoop.ogg" type="OnActive" range="2048.0" loop="true" />
+      <StatusEffect type="OnActive" target="This" Condition="-1">
+        <Conditional PhysicsBodyActive="eq true" />
+        <ParticleEmitter particle="flare" particlespersecond="5" scalemin="5" scalemax="5"/>
+        <ParticleEmitter particle="ekflarelight1static" particlespersecond="30" scalemin="2.0" scalemax="2.75" velocitymin="0" velocitymax="35" distancemin="-32,-32" distancemax="32,32"/>
+        <ParticleEmitter particle="ekthermitebubbles" particlespersecond="6" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.1" />
+      <StatusEffect type="OnActive" target="This" Condition="-1">
+        <Conditional Condition="gt 88" />
+        <ParticleEmitter particle="bubbles" particlespersecond="20" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" drawinventory="true">
+        <Conditional Condition="lt 100" />
+      </StatusEffect>
+    </LightComponent>
+    <LightComponent characterusable="false" LightColor="255,50,50,255" Flicker="0.4" range="2048" IsOn="true">
+      <LightTexture texture="Mods/EK Armory/Lights/pointlight_ultrabright_hires.png" origin="0.5, 0.5" size="1.2,1.2" />
+    </LightComponent>
+    <ItemComponent>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+  -->
+    <!--照明特效-->
+    <Item name="ek_railgun_flare_effect" identifier="ek_railgun_flare_effect" tags="decoy,light,provocative" Scale="0.5" impactsoundtag="impact_soft" sonarsize="5" hideinmenus="true" noninteractable="true">
+      <Sprite texture="weapons_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <Body width="50" height="50" density="10.5" />
+      <AiTarget sightrange="6000.0" maxsoundrange="7500" minsoundrange="0" fadeouttime="15" sonardisruption="0.4" />
+      <LightComponent characterusable="false" LightColor="255,50,50,255" Flicker="0.5" range="2048" IsOn="true" shadows="false" drawbehindsubs="true">
+        <LightTexture texture="%ModDir%/Lights/pointlight_bright_q4.png" origin="0.0,0.0" size="1.1,1.1" />
+        <sound file="Content/Items/Tools/FlareLoop.ogg" type="OnActive" range="2048.0" loop="true" />
+        <StatusEffect type="OnActive" target="This" Condition="-1">
+          <Conditional PhysicsBodyActive="eq true" />
+          <ParticleEmitter particle="flare" particlespersecond="5" scalemin="5" scalemax="5" />
+          <ParticleEmitter particle="ekflarelight1static" particlespersecond="30" scalemin="2.0" scalemax="2.75" velocitymin="0" velocitymax="35" distancemin="0" distancemax="32" />
+          <ParticleEmitter particle="ekthermitebubbles" particlespersecond="6" />
+        </StatusEffect>
+        <!--<StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.1" />
+      <StatusEffect type="OnActive" target="This" Condition="-1">
+        <Conditional Condition="gt 88" />
+        <ParticleEmitter particle="bubbles" particlespersecond="20" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="This" setvalue="true" drawinventory="true">
+        <Conditional Condition="lt 100" />
+      </StatusEffect>-->
+      </LightComponent>
+      <LightComponent characterusable="false" LightColor="255,50,50,255" Flicker="0.4" range="2048" IsOn="true" shadows="false" drawbehindsubs="true">
+        <LightTexture texture="%ModDir%/Lights/pointlight_bright_q3.png" origin="1.0,0.0" size="1.1,1.1" />
+      </LightComponent>
+      <LightComponent characterusable="false" LightColor="255,50,50,255" Flicker="0.4" range="2048" IsOn="true" shadows="false" drawbehindsubs="true">
+        <LightTexture texture="%ModDir%/Lights/pointlight_bright_q2.png" origin="0.0,1.0" size="1.1,1.1" />
+      </LightComponent>
+      <LightComponent characterusable="false" LightColor="255,50,50,255" Flicker="0.4" range="2048" IsOn="true" shadows="false" drawbehindsubs="true">
+        <LightTexture texture="%ModDir%/Lights/pointlight_bright_q1.png" origin="1.0,1.0" size="1.1,1.1" />
+      </LightComponent>
+      <ItemComponent>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--軌道炮照明彈，取整、材料增加，AI聲音感知範圍縮小，但三段爆炸變成四段-->
+    <!-- 1/23，給予點燃傷害，一般不會生效(畢竟通常在水中)，但起到一個象徵意義 -->
+    <Item name="" identifier="ek_railshell_flare" aliases="flare railgun shell" tags="railgunequipment,railgunammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.2" />
+      <Price baseprice="160" sold="false" minleveldifficulty="10">
+        <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="flashpowder" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="steel" />
+        <!-- 28 -->
+        <RequiredItem identifier="iron" />
+        <!-- 8 -->
+        <RequiredItem identifier="flashpowder" />
+        <!-- 90 -->
+        <RequiredItem identifier="carbon" />
+        <!-- 10 -->
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="384,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="225,336,222,32" depth="0.55" origin="0.5,0.5" />
+      <!-- 密度下降，這樣其實OK了 -->
+      <Body width="215" height="30" density="12" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="15" maxtargetstohit="3" damagedoors="true">
+        <Attack structuredamage="20" severlimbsprobability="0.3" damagetype="Blunt" targetforce="350">
+          <Affliction identifier="gunshotwound" strength="65" />
+          <Affliction identifier="bleeding" strength="5" />
+          <Affliction identifier="stun" strength="5" />
+        </Attack>
+        <!-- velocity jumping fix -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="0.3" stackable="false">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-50" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.01">
+          <Conditional Condition="gt 80" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-10" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.8">
+          <Conditional Condition="eq 50" />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="1.5" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="6500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-20" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.8">
+          <Conditional Condition="eq 40" />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="1.5" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="6500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-10" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.8">
+          <Conditional Condition="eq 20" />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="1.5" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="6500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <!--第四次爆炸-->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" delay="2.7" stackable="false">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-10" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.85">
+          <Conditional Condition="eq 10" />
+          <Use />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="1.5" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="6500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.10">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- 軌道炮燃燒彈，材料取整，傷害下修 -->
+    <!-- 11/16，改變機制，會噴出火焰，這種火焰可以在水下使用(主要是功能性的，穿潛艇、沈船點火用) -->
+    <!-- 1/25，改為可以撞擊四次，穿透船殼的能力大大的上升，取消在沉船生成(不然怕是會被打死) -->
+    <!-- 2/18，不讓它在裝彈器生成，可能會出事(海盜使用的話) -->
+    <Item name="" identifier="ek_railshell_incendiary" aliases="incendiary railgun shell" tags="railgunequipment,railgunammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" spawnprobability="0.0" />
+      <!-- <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.1"/> -->
+      <Price baseprice="240" sold="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="aluminium" />
+        <RequiredItem identifier="ethanol" />
+        <RequiredItem identifier="flashpowder" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="aluminium" />
+        <Item identifier="ethanol" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="576,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="1,480,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="14" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="15.0" maxtargetstohit="4" damagedoors="true">
+        <Attack structuredamage="10" severlimbsprobability="0.5" penetration="0.6" targetforce="250">
+          <Affliction identifier="burn" strength="40" />
+          <Affliction identifier="lacerations" strength="40" />
+          <Affliction identifier="bleeding" strength="5" />
+          <Affliction identifier="stun" strength="5" />
+        </Attack>
+        <!-- 氣泡特效 -->
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <!-- 撞擊結構的效果 -->
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-30" anglemax="30" particleamount="5" velocitymin="-10" velocitymax="-300" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="4" velocitymin="10" velocitymax="400" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="-25" anglemax="25" particleamount="4" velocitymin="50" velocitymax="900" scalemin="1" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="false" anglemin="0" anglemax="360" particleamount="5" velocitymin="50" velocitymax="400" scalemin="1" scalemax="1" />
+        </StatusEffect>
+        <!-- 撞一次爆一次 -->
+        <StatusEffect type="OnImpact" target="This" disabledeltatime="true" condition="-100" delay="0.05">
+          <Fire size="100" />
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="250.0" structuredamage="15" force="5.0" penetration="0.6">
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+            <Affliction identifier="EKR_Burning_Incendium" strength="2.5" />
+            <Affliction identifier="ekR_burn_threshold" strength="10" />
+            <Affliction identifier="burn" strength="15" />
+            <Affliction identifier="stun" strength="1" />
+          </Explosion>
+        </StatusEffect>
+        <!-- 假設0.10秒內沒有撞擊到四次，則自毀 -->
+        <!-- 火焰濺射，損壞時 -->
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.10">
+          <Fire size="200" />
+          <SpawnItem identifier="EKR_railshell_incendiary_effect" spawnposition="This" />
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- 燃燒彈燃燒彈頭，會噴射燃料 -->
+    <Item name="EKR_railshell_incendiary_effect" identifier="EKR_railshell_incendiary_effect" tags="" sonarsize="3.5" hideinmenus="true" noninteractable="true">
+      <Body width="64" height="64" density="10" waterdragcoefficient="1" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <AiTarget sightrange="1000.0" maxsoundrange="1000" minsoundrange="0" fadeouttime="15" />
+      <ItemComponent>
+        <!-- 生成時，撥放音效 -->
+        <StatusEffect type="OnSpawn" target="This" duration="1">
+          <Sound file="Content/Items/Tools/Sprayer.ogg" range="1000" volume="0.1" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-20" disabledeltatime="true" delay="0.375" stackable="false">
+          <SpawnItem identifier="EKR_railshell_flame1" spawnposition="This" count="5" aimspread="360" rotationtype="Collider" rotation="0" />
+          <SpawnItem identifier="EKR_railshell_flame2" spawnposition="This" count="5" aimspread="360" rotationtype="Collider" rotation="0" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!-- 專用火焰1，玫紅火焰 -->
+    <Item name="" identifier="EKR_railshell_flame1" category="Misc" interactthroughwalls="false" hideinmenus="true">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
+      <Body width="16" height="16" density="10" waterdragcoefficient="0.5" />
+      <Projectile characterusable="false" launchimpulse="15.0" removeonhit="false" maxtargetstohit="2" penetration="0.05" damagedoors="true">
+        <Attack firedamage="15.0" structuredamage="1" itemdamage="1" targetforce="1">
+          <Affliction identifier="burn" strength="1.0" />
+          <Affliction identifier="EKR_Burning_Incendium" strength="1.5" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <!-- 改為特製的玫紅火焰，可在水下顯現特效 -->
+          <!-- <ParticleEmitter particle="EKRflamethrowerincendium" particlespersecond="35" scalemin="0.6" scalemax="1.0" /> -->
+          <!-- <ParticleEmitter particle="EKR_flameburningcharacter_incendium" particlespersecond="5" scalemin="0.6" scalemax="1.0" /> -->
+          <ParticleEmitter particle="EKRflamethrowerincendium" particlespersecond="15" scalemin="0.6" scalemax="1.0" />
+          <ParticleEmitter particle="EKR_flameburningcharacter_incendium" DistanceMin="0" DistanceMax="25" ParticlesPerSecond="30" AngleMin="60" AngleMax="120" VelocityMax="20" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Fire size="1" />
+        </StatusEffect>
+        <!-- 在水中改為0.5秒消失，而不是瞬間消失 -->
+        <StatusEffect type="InWater" target="This" disabledeltatime="true" delay="0.5">
+          <Remove />
+        </StatusEffect>
+        <!-- 離開罐子(射出後)1.0消失 -->
+        <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" delay="1.0">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!-- 專用火焰2 黃色火焰 -->
+    <Item name="" identifier="EKR_railshell_flame2" category="Misc" interactthroughwalls="false" hideinmenus="true">
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" depth="0.55" />
+      <Body width="16" height="16" density="10" waterdragcoefficient="0.1" />
+      <Projectile characterusable="false" launchimpulse="-10.0" removeonhit="false" maxtargetstohit="1" penetration="0.10" damagedoors="true">
+        <Attack firedamage="15.0" structuredamage="0" itemdamage="1" targetforce="2">
+          <Affliction identifier="burn" strength="1.5" />
+          <Affliction identifier="EKR_Burning" strength="2.5" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This">
+          <!-- 改為特製的火焰，可在水下顯現特效 -->
+          <!-- <ParticleEmitter particle="EKRflamethrowerrailshell" particlespersecond="35" scalemin="0.6" scalemax="0.8" /> -->
+          <!-- <ParticleEmitter particle="flameburningcharacter" particlespersecond="5" scalemin="0.6" scalemax="0.8" /> -->
+          <ParticleEmitter particle="EKRflamethrowerrailshell" particlespersecond="15" scalemin="0.6" scalemax="0.8" />
+          <ParticleEmitter particle="flameburningcharacter" DistanceMin="0" DistanceMax="30" ParticlesPerSecond="25" AngleMin="60" AngleMax="120" VelocityMax="20" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This">
+          <Fire size="1" />
+          <Remove />
+        </StatusEffect>
+        <!-- 在水中改為0.5秒消失，而不是瞬間消失 -->
+        <StatusEffect type="InWater" target="This" disabledeltatime="true" delay="0.5">
+          <Remove />
+        </StatusEffect>
+        <!-- 離開罐子(射出後)1.0消失 -->
+        <StatusEffect type="OnNotContained" target="This" disabledeltatime="true" delay="1.0">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--軌道炮高速彈，軌道更加平直-->
+    <Item name="" identifier="ek_railshell_highvelocity" showcontentsintooltip="true" aliases="high-velocity railgun shell" tags="railgunequipment,railgunammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" amount="1" spawnprobability="0.25" minleveldifficulty="15" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.2" />
+      <Price baseprice="105" sold="false" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="iron" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="copper" />
+        <RequiredItem identifier="aluminium" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="256,128,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/railshells_new.png" sourcerect="4,144,216,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="10.1" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="40.0" maxtargetstohit="1" damagedoors="true">
+        <Attack structuredamage="120" itemdamage="120" severlimbsprobability="5.0" penetration="0.60" targetforce="1000">
+          <Affliction identifier="gunshotwound" strength="100" />
+          <Affliction identifier="explosiondamage" strength="200" />
+          <Affliction identifier="bleeding" strength="50" />
+          <Affliction identifier="stun" strength="15" />
+        </Attack>
+        <StatusEffect type="OnActive" target="This" condition="-1" disabledeltatime="true" stackable="false" delay="0.3">
+          <Conditional condition="gt 80" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="UseTarget">
+          <Conditional entitytype="eq Structure" />
+          <Conditional hastag="eq door" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact1.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact2.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact3.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <sound file="%ModDir%/Items/Weapons/ek_hybridammo_impact4.ogg" selectionmode="Random" range="6000" volume="1.0" />
+          <ParticleEmitter particle="ekarmory_hdimpactmedium" particleamount="1" velocitymin="0" velocitymax="0" scalemin="1.5" scalemax="2.5" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-30" anglemax="30" particleamount="5" velocitymin="-10" velocitymax="-300" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="4" velocitymin="10" velocitymax="400" scalemin="1.5" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="-25" anglemax="25" particleamount="4" velocitymin="50" velocitymax="900" scalemin="1" scalemax="2" />
+          <ParticleEmitter particle="shrapnel" copyentityangle="false" anglemin="0" anglemax="360" particleamount="5" velocitymin="50" velocitymax="400" scalemin="1" scalemax="1" />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+          <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="10000" />
+          <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="10000" />
+          <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="1.0" sparks="false" decal="explosion" decalsize="0.3" penetration="0.5">
+            <Affliction identifier="explosiondamage" strength="250" />
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.3">
+          <Explosion range="200.0" structuredamage="20" force="5.0" penetration="0.75" underwaterbubble="false" smoke="false" flames="false" sparks="true">
+            <Affliction identifier="explosiondamage" strength="25" />
+            <Affliction identifier="stun" strength="3" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+        <StatusEffect type="OnImpact" target="Contained">
+          <Use />
+        </StatusEffect>
+      </Projectile>
+      <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false" containedstateindicatorstyle="explosive" containedspritedepth="0.81">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,384,64,64" origin="0.5,0.5" />
+        <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+        <Containable items="smallitem" />
+      </ItemContainer>
+    </Item>
+    <!--氰化物毒雲-->
+    <Item name="ek_depthcharge_cyanide_cloud" identifier="ek_depthcharge_cyanide_cloud" tags="provocative" hideinmenus="true" noninteractable="true">
+      <AiTarget sightrange="1000.0" soundrange="1000" static="True" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" condition="-7.5">
+          <ParticleEmitter particle="ekwatercloudcyanide" anglemin="0" anglemax="360" particlespersecond="40" velocitymin="0" velocitymax="50" scalemin="1" scalemax="6" distancemin="0" distancemax="1500" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="NearbyCharacters" range="2000">
+          <Conditional ishuman="false" />
+          <Affliction identifier="ekR_nearbycharacters_cyanidepoisoning" strength="10" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--氰化物深水炸彈-->
+    <Item name="" identifier="ek_depthcharge_cyanide" tags="depthchargeammo,decoy,provocative,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="310" sold="false" soldeverywhere="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="cyanide" />
+        <!-- 200 -->
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="iron" />
+        <!--8*2=16-->
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="sodium" />
+        <!-- 33 -->
+        <RequiredItem identifier="cyanide" />
+        <!--250-->
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="192,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="224,128,128,96" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="10.35" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <aitarget sightrange="4000" soundrange="6000" fadeouttime="40" />
+      <Projectile characterusable="false" launchimpulse="16.0">
+        <Attack structuredamage="0" damagetype="Blunt" />
+        <StatusEffect type="OnActive" target="This" condition="-200" disabledeltatime="true" delay="2" stackable="false" checkconditionalalways="true">
+          <sound file="%ModDir%/Items/Weapons/ek_depthcharge_chemicalburst_mono.ogg" type="OnBroken" range="8000" />
+          <Explosion range="600.0" structuredamage="100" itemdamage="500" stun="5" force="20.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+            <Affliction identifier="burn" strength="40" />
+            <Affliction identifier="explosiondamage" strength="25" />
+          </Explosion>
+          <SpawnItem identifier="ek_depthcharge_cyanide_cloud" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="5" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.10" />
+        <QualityStat stattype="ExplosionDamage" value="0.10" />
+      </Quality>
+    </Item>
+    <!--麻痺劑雲-->
+    <Item name="ek_depthcharge_paralyzant_cloud" identifier="ek_depthcharge_paralyzant_cloud" tags="provocative" hideinmenus="true" noninteractable="true">
+      <AiTarget sightrange="1000.0" soundrange="1000" static="True" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" condition="-7.5">
+          <ParticleEmitter particle="ekwatercloudparalyzant" anglemin="0" anglemax="360" particlespersecond="40" velocitymin="0" velocitymax="50" scalemin="1" scalemax="6" distancemin="0" distancemax="1500" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="NearbyCharacters" range="2000">
+          <Conditional ishuman="false" />
+          <Affliction identifier="ekR_nearbycharacters_paralysis" strength="10" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--麻痺劑深水炸彈-->
+    <Item name="" identifier="ek_depthcharge_paralyzant" tags="depthchargeammo,decoy,provocative,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="440" sold="false" soldeverywhere="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.1" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <Item identifier="paralyzant" />
+        <!-- 350 -->
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="iron" />
+        <!-- 8 -->
+        <RequiredItem identifier="iron" />
+        <!-- 8 -->
+        <RequiredItem identifier="sodium" />
+        <!-- 33 -->
+        <RequiredItem identifier="paralyzant" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="256,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="368,128,128,96" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="10.35" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <aitarget sightrange="4000" soundrange="6000" fadeouttime="40" />
+      <Projectile characterusable="false" launchimpulse="16.0">
+        <Attack structuredamage="0" damagetype="Blunt" />
+        <StatusEffect type="OnActive" target="This" condition="-200" disabledeltatime="true" delay="2" stackable="false" checkconditionalalways="true">
+          <sound file="%ModDir%/Items/Weapons/ek_depthcharge_chemicalburst_mono.ogg" type="OnBroken" range="8000" />
+          <Explosion range="600.0" structuredamage="100" itemdamage="500" stun="5" force="20.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+            <Affliction identifier="burn" strength="40" />
+            <Affliction identifier="explosiondamage" strength="25" />
+          </Explosion>
+          <SpawnItem identifier="ek_depthcharge_paralyzant_cloud" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="5" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.10" />
+        <QualityStat stattype="ExplosionDamage" value="0.10" />
+      </Quality>
+    </Item>
+    <!--輻射毒劑雲-->
+    <Item name="ek_depthcharge_radiotoxin_cloud" identifier="ek_depthcharge_radiotoxin_cloud" tags="provocative" hideinmenus="true" noninteractable="true">
+      <AiTarget sightrange="1000.0" soundrange="1000" static="True" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" condition="-7.5">
+          <ParticleEmitter particle="ekwatercloudradiotoxin" anglemin="0" anglemax="360" particlespersecond="40" velocitymin="0" velocitymax="50" scalemin="1" scalemax="6" distancemin="0" distancemax="1500" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="NearbyCharacters" range="2000">
+          <Conditional ishuman="false" />
+          <Affliction identifier="ekR_nearbycharacters_radiationsickness" strength="10" duration="5" stackable="false" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--輻射毒劑深水炸彈-->
+    <Item name="" identifier="ek_depthcharge_radiotoxin" tags="depthchargeammo,decoy,provocative,gunsmith,demolitionsexpert" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="250" sold="false" soldeverywhere="false" minleveldifficulty="20">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="1" />
+        <Price storeidentifier="merchantmine" multiplier="1.1" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="1" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+        <!-- 8 -->
+        <Item identifier="radiotoxin" mincondition="0.9" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="iron" />
+        <!-- 8 -->
+        <RequiredItem identifier="iron" />
+        <!-- 8 -->
+        <RequiredItem identifier="sodium" />
+        <!-- 33 -->
+        <RequiredItem identifier="radiotoxin" mincondition="0.9" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="320,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="512,128,128,96" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="10.35" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <aitarget sightrange="4000" soundrange="6000" fadeouttime="40" />
+      <Projectile characterusable="false" launchimpulse="16.0">
+        <Attack structuredamage="0" damagetype="Blunt" />
+        <StatusEffect type="OnActive" target="This" condition="-200" disabledeltatime="true" delay="2" stackable="false" checkconditionalalways="true">
+          <sound file="%ModDir%/Items/Weapons/ek_depthcharge_chemicalburst_mono.ogg" type="OnBroken" range="8000" />
+          <Explosion range="600.0" structuredamage="100" itemdamage="500" stun="5" force="20.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.5" penetration="0.5">
+            <Affliction identifier="burn" strength="40" />
+            <Affliction identifier="explosiondamage" strength="25" />
+          </Explosion>
+          <SpawnItem identifier="ek_depthcharge_radiotoxin_cloud" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="5" stackable="false">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+      <Quality>
+        <QualityStat stattype="ExplosionRadius" value="0.10" />
+        <QualityStat stattype="ExplosionDamage" value="0.10" />
+      </Quality>
+    </Item>
+    <!--照明深水炸彈-->
+    <Item name="" identifier="ek_depthcharge_flare" tags="depthchargeammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+      <Price baseprice="125" sold="false" soldeverywhere="false" minleveldifficulty="10">
+        <Price storeidentifier="merchantoutpost" multiplier="1.35" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" sold="true" minavailable="2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="3" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="3" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="iron" />
+        <Item identifier="iron" />
+        <Item identifier="carbon" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="40" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="flashpowder" />
+        <RequiredItem identifier="carbon" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,640,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="368,224,128,96" depth="0.55" origin="0.5,0.5" />
+      <!-- 下落速度太快了(原35)，減慢一些(20) -->
+      <Body width="128" height="85" density="20" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="7.5">
+        <Attack structuredamage="0" damagetype="Blunt" />
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-50" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="0.1">
+          <Conditional Condition="gt 80" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-20" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="2.6">
+          <Conditional Condition="eq 50" />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="2.0" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="7500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-20" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="2.6">
+          <Conditional Condition="eq 30" />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="2.0" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="7500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-20" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="2.6">
+          <Conditional Condition="eq 10" />
+          <Explosion range="500.0" structuredamage="10" itemdamage="150" stun="2.0" force="10.0" severlimbsprobability="0.1" underwaterbubble="false">
+            <Affliction identifier="burn" strength="35" />
+            <Affliction identifier="EKR_Burning" strength="2.5" />
+          </Explosion>
+          <sound file="%ModDir%/Items/Weapons/ek_flareshell_burst.ogg" range="7500" />
+          <SpawnItem identifier="ek_railgun_flare_effect" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--干擾雲-->
+    <!-- 2/14，優化效能，Always是沒差，反正又不是無時無刻都存在 -->
+    <Item name="ek_depthcharge_chaff_cloud" identifier="ek_depthcharge_chaff_cloud" tags="provocative" hideinmenus="true">
+      <AiTarget soundrange="8000" sonardisruption="2" static="True" fadeouttime="20" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" condition="-5" disabledeltatime="true" interval="2.0" stackable="false" />
+        <StatusEffect type="Always" target="This" disabledeltatime="true" interval="2.0" stackable="false">
+          <Conditional Condition="gt 5" />
+          <SpawnItem identifier="ek_depthcharge_chaff_aitarget" spawnposition="This" count="2" spread="4000" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <ParticleEmitter particle="ekchaff" anglemin="0" anglemax="360" particlespersecond="120" velocitymin="0" velocitymax="500" scalemin="1" scalemax="1" distancemin="0" distancemax="6000" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <Item name="ek_depthcharge_chaff_aitarget" identifier="ek_depthcharge_chaff_aitarget" tags="decoy,sonar,engine,provocative" hideinmenus="true">
+      <AiTarget soundrange="8000" static="True" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="0,0,1,1" depth="0.55" origin="0.5,0.5" />
+      <ItemComponent>
+        <StatusEffect type="Always" target="This" condition="-20" />
+        <StatusEffect type="OnBroken" target="This">
+          <Remove />
+        </StatusEffect>
+      </ItemComponent>
+    </Item>
+    <!--干擾深水炸彈-->
+    <Item name="" identifier="ek_depthcharge_chaff" tags="depthchargeammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <Price baseprice="120" sold="false" minleveldifficulty="15">
+        <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="4" />
+      </Price>
+      <Deconstruct time="15">
+        <Item identifier="iron" />
+        <Item identifier="iron" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="30">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="zinc" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="448,704,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="512,224,128,96" depth="0.55" origin="0.5,0.5" />
+      <!-- 一樣降低下沉速度(原35) -->
+      <Body width="128" height="85" density="20" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="7.5">
+        <Attack structuredamage="0" damagetype="Blunt" />
+        <StatusEffect type="OnActive" target="This" condition="-20" disabledeltatime="true" delay="1.2" stackable="false">
+          <Conditional Condition="gt 90" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <Conditional Condition="lt 90" />
+          <ParticleEmitter particle="ekchafftrail" copyentityangle="false" anglemin="0" anglemax="360" particlespersecond="45" velocitymin="50" velocitymax="1000" scalemin="1" scalemax="1" distancemax="150" startdelaymin="0.0" startdelaymax="0.25" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-100" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="2.0">
+          <Conditional Condition="eq 80" />
+          <SpawnItem identifier="ek_depthcharge_chaff_cloud" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="1.1">
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--軌道炮干擾砲彈，增加穿甲0.25、衝擊力-->
+    <Item name="" identifier="ek_railshell_chaff" aliases="chaff railgun shell" tags="railgunequipment,railgunammo" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="7" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <PreferredContainer primary="railgunammoloader,railgunammocontainer" mincondition="1" />
+      <PreferredContainer secondary="wreckrailgunloader" amount="1" spawnprobability="0.10" />
+      <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.05" />
+      <Price baseprice="130" sold="false">
+        <Price storeidentifier="merchantoutpost" multiplier="1.2" />
+        <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" />
+        <Price storeidentifier="merchantresearch" multiplier="1.2" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" sold="true" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.2" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" sold="true" minavailable="4" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="weapons" level="25" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="steel" />
+        <RequiredItem identifier="zinc" />
+        <RequiredItem identifier="fpgacircuit" />
+      </Fabricate>
+      <Deconstruct time="15">
+        <Item identifier="steel" />
+        <Item identifier="copper" />
+      </Deconstruct>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="384,704,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="225,528,222,32" depth="0.55" origin="0.5,0.5" />
+      <Body width="215" height="30" density="25" />
+      <Holdable canbecombined="false" slots="Any,RightHand,LeftHand" holdpos="0,-15" handle1="-30,-5" holdangle="170" aimable="false" msg="ItemMsgPickUpSelect">
+        <StatValue stattype="MovementSpeed" value="-0.20" />
+        <!-- 游泳時調整握持位置 -->
+        <StatusEffect type="OnActive" target="This" holdpos="-10,-15" handle1="0,-5" holdangle="70" setvalue="true" interval="1.1">
+          <Conditional InWater="true" />
+        </StatusEffect>
+        <!-- 行走時恢復保持位置調整 -->
+        <StatusEffect type="OnActive" target="This" holdpos="0,-15" handle1="-30,-5" holdangle="170" setvalue="true" interval="1.1">
+          <Conditional InWater="false" />
+        </StatusEffect>
+      </Holdable>
+      <Projectile characterusable="false" launchimpulse="95" maxtargetstohit="2" damagedoors="true">
+        <Attack structuredamage="20" severlimbsprobability="0.5" damagetype="Blunt" penetration="0.35" targetforce="500">
+          <Affliction identifier="lacerations" strength="125" />
+          <Affliction identifier="bleeding" strength="25" />
+          <Affliction identifier="stun" strength="10" />
+        </Attack>
+        <!-- velocity jumping fix -->
+        <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false">
+          <Conditional condition="eq 100" />
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This" condition="-20" disabledeltatime="true" delay="0.3" stackable="false">
+          <Conditional Condition="gt 90" />
+          <Use />
+        </StatusEffect>
+        <!--撞到物體時加速-->
+        <StatusEffect type="OnImpact" target="This" allowwhenbroken="true">
+          <Use />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This">
+          <Conditional Condition="lt 90" />
+          <ParticleEmitter particle="ekchafftrail" copyentityangle="false" anglemin="0" anglemax="360" particlespersecond="45" velocitymin="50" velocitymax="1000" scalemin="1" scalemax="1" distancemax="150" startdelaymin="0.0" startdelaymax="0.25" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="This">
+          <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+        </StatusEffect>
+        <StatusEffect type="Always" target="This" condition="-100" disabledeltatime="true" stackable="false" checkconditionalalways="true" delay="1">
+          <Conditional Condition="eq 80" />
+          <SpawnItem identifier="ek_depthcharge_chaff_cloud" spawnposition="This" />
+        </StatusEffect>
+        <StatusEffect type="OnBroken" target="This" disabledeltatime="true" delay="0.8">
+          <!--震波-->
+          <Explosion range="500.0" ballastfloradamage="0" structuredamage="0" itemdamage="0" force="0.0" flames="false" smoke="false" underwaterbubble="true" penetration="0.5">
+            <Affliction identifier="stun" strength="7" />
+          </Explosion>
+          <Remove />
+        </StatusEffect>
+      </Projectile>
+    </Item>
+    <!--載貨深水炸彈-->
+    <Item name="" identifier="ek_depthcharge_container" showcontentsintooltip="true" aliases="cargo depth charge" tags="depthchargeammo" waterproof="true" fireproof="true" subcategory="ekr_armory_Weapons" category="Weapon" sonarsize="3" scale="0.4" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+      <Price baseprice="55">
+        <Price storeidentifier="merchantoutpost" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+        <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+        <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="1" />
+        <Price storeidentifier="merchantengineering" multiplier="1.2" minavailable="2" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="iron" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="20">
+        <RequiredSkill identifier="mechanical" level="15" />
+        <RequiredItem identifier="iron" />
+        <RequiredItem identifier="aluminium" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Items/InventoryIcons.png" sourcerect="0,576,64,64" />
+      <Sprite texture="%ModDir%/Items/Weapons/shells_ek.png" sourcerect="224,0,128,96" depth="0.55" origin="0.5,0.5" />
+      <Body width="128" height="85" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+      <Projectile characterusable="false" launchimpulse="5.0">
+        <Attack structuredamage="0" damagetype="Blunt" />
+      </Projectile>
+      <ItemContainer autofill="False" hideitems="true" capacity="20" canbeselected="false">
+        <GuiFrame relativesize="0.15,0.2" anchor="Center" style="ItemUI" />
+        <Containable identifiers="smallitem,mediumitem,weapon,ek_ammocrate_small,ammobox" excludeditems="toolbelt,toolbox" />
+      </ItemContainer>
+    </Item>
+    <!-- 便宜合成 -->
+    <!-- 軌道炮核能聲納誘餌(便宜) -->
+    <Item name="軌道炮核能聲納誘餌(便宜)" identifier="EKR_railshell_nucleardecoy_cheap" variantof="ek_railshell_nucleardecoy" hideineditors="false">
+      <PreferredContainer spawnprobability="0" />
+      <PreferredContainer spawnprobability="0" />
+      <Price baseprice="450" sold="false" canbespecial="false">
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredSkill identifier="mechanical" level="25" />
+        <RequiredItem identifier="nuclearshellcheap" />
+        <RequiredItem identifier="sonarbeacon" />
+        <RequiredItem />
+        <RequiredItem />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="uranium" />
+        <Item identifier="copper" />
+        <Item identifier="plastic" amount="2" />
+        <Item />
+      </Deconstruct>
+    </Item>
+    <!-- 軌道炮核能追蹤彈(便宜) -->
+    <Item name="軌道炮核能追蹤彈(便宜)" identifier="EKR_railshell_nuclearhoming_cheap" variantof="ek_railshell_nuclearhoming" hideineditors="false">
+      <PreferredContainer spawnprobability="0" />
+      <PreferredContainer spawnprobability="0" />
+      <Price baseprice="450" sold="false" canbespecial="false">
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+        <Price sold="false" />
+      </Price>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="electrical" level="40" />
+        <RequiredSkill identifier="mechanical" level="45" />
+        <RequiredItem identifier="nuclearshellcheap" />
+        <RequiredItem identifier="plastic" />
+        <RequiredItem identifier="fpgacircuit" />
+        <RequiredItem />
+        <RequiredItem />
+      </Fabricate>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="fpgacircuit" />
+        <Item identifier="uranium" />
+        <Item />
+      </Deconstruct>
+    </Item>
+  </Override>
+</Items>

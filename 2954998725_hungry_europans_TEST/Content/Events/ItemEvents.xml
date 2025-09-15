@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <!-- SCRIPTED EVENTS -->
+  <EventPrefabs>
+    <ScriptedEvent identifier="give5mk">
+      <MoneyAction targettag="moneyrecipient" amount="5" />
+      <ClearTagAction tag="moneyrecipient" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="give25mk">
+      <MoneyAction targettag="moneyrecipient" amount="25" />
+      <ClearTagAction tag="moneyrecipient" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="give50mk">
+      <MoneyAction targettag="moneyrecipient" amount="50" />
+      <ClearTagAction tag="moneyrecipient" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="give75mk">
+      <MoneyAction targettag="moneyrecipient" amount="75" />
+      <ClearTagAction tag="moneyrecipient" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="give100mk">
+      <MoneyAction targettag="moneyrecipient" amount="100" />
+      <ClearTagAction tag="moneyrecipient" />
+    </ScriptedEvent>
+  </EventPrefabs>
+</Randomevents>

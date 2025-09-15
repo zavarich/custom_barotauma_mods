@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="false" translatedname="English">
+  <!-- Selling Text -->
+  <SellWreck>Wreck %s will be sold for %s marks at the end of the round. The crew will receive %s experience points.</SellWreck>
+  <override>
+    <entityname.railgunharpoon>Heavy industrial hook</entityname.railgunharpoon>
+    <entitydescription.railgunharpoon>Industrial hook that can be fired from a depth charge tube or from canister shell. Used for towing submarine back to outposts.</entitydescription.railgunharpoon>
+  </override>
+</infotexts>

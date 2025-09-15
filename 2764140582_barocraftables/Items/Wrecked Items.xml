@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="shuttleenginewrecked" nameidentifier="shuttleengine" tags="engine" category="Wrecked" Scale="0.5" damagedbyexplosions="true" canflipy="false" explosiondamagemultiplier="0.2" condition="0" spritecolor="250,200,150,256" inventoryiconcolor="250,200,150,256">
+      <UpgradePreviewSprite scale="2.0" texture="Content/UI/WeaponUI.png" sourcerect="512,960,64,64" origin="0.5,0.45" />
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Upgrade gameversion="3.0.21.0" noninteractable="false" />
+      <Sprite texture="Content/Items/Engine/Engines.png" depth="0.8" sourcerect="1615,318,426,178" canflipx="true" origin="0.5,0.5" />
+      <DecorativeSprite texture="Content/Items/Engine/Engines.png" depth="0.7999" sourcerect="1615,318,426,178" canflipx="true" origin="0.5,0.5" offset="5,5" offsetanim="Noise" offsetanimspeed="5.0">
+        <IsActiveConditional CurrentBrokenVolume="gt 0.1" targetitemcomponent="Engine" />
+      </DecorativeSprite>
+      <BrokenSprite texture="Content/Items/Engine/Engines.png" sourcerect="1615,501,426,178" depth="0.8" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="Content/Items/Engine/Engines.png" sourcerect="1615,684,426,178" depth="0.8" maxcondition="0" />
+      <Deconstruct time="45" chooserandom="true" amount="3">
+        <Item identifier="steel" commonness="0.4" />
+        <Item identifier="aluminium" commonness="0.5" />
+        <Item identifier="titaniumaluminiumalloy" commonness="0.3" />
+        <Item identifier="iron" commonness="0.6" />
+        <Item identifier="carbon" commonness="0.5" />
+      </Deconstruct>
+      <trigger x="180" y="-30" width="200" height="146" />
+      <aitarget sightrange="500" soundrange="5000" staticsight="true" fadeouttime="5" />
+      <Engine minvoltage="0.5" powerconsumption="500.0" maxforce="150" canbeselected="true" propellerpos="-200,0" msg="ItemMsgInteractSelect">
+        <Upgrade gameversion="0.11.0.9" propellerpos="-200,0" />
+        <GuiFrame relativesize="0.2,0.18" minsize="450,200" anchor="Center" style="ItemUI" />
+        <sound file="Content/Items/Engine/Engine.ogg" type="OnActive" range="3000.0" volumeproperty="CurrentVolume" loop="true" />
+        <sound file="Content/Items/Engine/EngineBroken.ogg" type="Always" range="6000.0" volumeproperty="CurrentBrokenVolume" loop="true" />
+        <propellerdamage damagerange="30" targetforce="500" severlimbsprobability="1.0">
+          <Affliction identifier="internaldamage" strength="5" />
+          <Affliction identifier="bleeding" strength="10" />
+        </propellerdamage>
+      </Engine>
+      <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="0" IsOn="false" castshadows="false" allowingameediting="false">
+        <IsActive targetitemcomponent="Engine" currentvolume="gt 0.01" />
+        <sprite texture="Content/Items/Engine/Engines.png" depth="0.025" sourcerect="1614,867,426,178" origin="0.5,0.5" alpha="1.0" />
+      </LightComponent>
+      <Body width="426" height="178" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="60.0" aimpos="65,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+      </Holdable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" stun="0" force="5.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="set_force" displayname="connection.setforce" />
+        <output name="condition_out" displayname="connection.conditionout" />
+      </ConnectionPanel>
+      <Repairable selectkey="Action" header="mechanicalrepairsheader" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.16" minsize="400,200" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+        <RequiredSkill identifier="mechanical" level="55" />
+        <RequiredItem items="wrench" type="equipped" />
+        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="1.0" maxcondition="50.0" />
+        <ParticleEmitter particle="DarkSmoke" particleburstamount="3" particleburstinterval="0.5" particlespersecond="8" scalemin="1.8" scalemax="2.5" anglemin="0" anglemax="359" velocitymin="-50" velocitymax="50" mincondition="1.0" maxcondition="50.0" />
+        <ParticleEmitter particle="heavysmoke" particleburstinterval="0.25" particlespersecond="2" scalemin="2.5" scalemax="5.0" mincondition="1.0" maxcondition="15.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand">
+          <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+          <Affliction identifier="lacerations" strength="5" />
+          <Affliction identifier="stun" strength="4" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+    <Item name="" identifier="batterywrecked" nameidentifier="battery" tags="battery,batterycellrecharger" category="Wrecked" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2" condition="0" spritecolor="200,150,100,255" inventoryiconcolor="250,200,150,256">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Upgrade gameversion="3.0.21.0" noninteractable="false" />
+      <Deconstruct time="35" chooserandom="true" amount="4">
+        <Item identifier="batterycell" commonness="0.15" />
+        <Item identifier="silicon" commonness="0.3" />
+        <Item identifier="fpgacircuit" commonness="0.2" />
+        <Item identifier="plastic" commonness="0.35" />
+        <Item identifier="copper" commonness="0.4" />
+        <Item identifier="tin" commonness="0.35" />
+        <Item identifier="silicon" commonness="0.35" />
+      </Deconstruct>
+      <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="64,961,32,22" origin="0.5,0.45" />
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="604,0,118,159" depth="0.8" />
+      <BrokenSprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="722,0,118,159" depth="0.8" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="840,0,118,159" depth="0.8" maxcondition="0" />
+      <PowerContainer capacity="2000.0" maxrechargespeed="500.0" maxoutput="1000.0" canbeselected="true" indicatorposition="65,33" indicatorsize="34,46" ishorizontal="false" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" />
+        <!--minsize="350,250" maxsize="420,300"-->
+        <StatusEffect type="OnActive" targettype="Contained" targets="loadable" Condition="2.0">
+          <!-- the statuseffect targets the contained item (a battery cell that's being charged), but the conditional targets the container (this battery) -->
+          <Conditional ChargePercentage="gt 0.01" targetcontainer="true" targetitemcomponent="PowerContainer" />
+        </StatusEffect>
+      </PowerContainer>
+      <Body width="118" height="159" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.5" setvalue="true" />
+      </Holdable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" stun="0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <requireditem items="Screwdriver" type="Equipped" />
+        <output name="power_out" displayname="connection.powerout" />
+        <input name="power_in" displayname="connection.powerin" />
+        <input name="set_rate" displayname="connection.batterysetrechargespeed" />
+        <output name="charge" displayname="connection.batterychargestatusout" />
+        <output name="charge_%" displayname="connection.batterychargepercentage" />
+        <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
+        <output name="condition_out" displayname="connection.conditionout" />
+        <output name="load_value_out" displayname="connection.loadvalueout" />
+        <output name="power_value_out" displayname="connection.powervalueout" />
+      </ConnectionPanel>
+      <ItemContainer capacity="3" maxstacksize="1" canbeselected="true" hideitems="true" hudpos="0.5,0.6" uilabel="ChargingDock">
+        <GuiFrame relativesize="0.2,0.2" anchor="Center" relativeoffset="0,0.2" style="ItemUI" />
+        <Containable items="loadable" />
+      </ItemContainer>
+      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="240" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+        <StatusEffect type="InWater" target="This" condition="-0.5" />
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.0,0.27" style="ItemUI" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="1.0" maxcondition="50.0" />
+        <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="1.0" maxcondition="50.0" />
+        <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="1.0" maxcondition="15.0" />
+        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="1.0" maxcondition="50.0" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+    <Item name="" identifier="supercapacitorwrecked" nameidentifier="supercapacitor" tags="supercapacitor" category="Wrecked" Scale="0.5" description="" damagedbyexplosions="true" explosiondamagemultiplier="0.2" condition="0" spritecolor="200,150,100,255" inventoryiconcolor="250,200,150,256">
+      <Upgrade gameversion="0.20.4.0" scale="0.5" condition="0" spritecolor="200,150,100,255" />
+      <Upgrade gameversion="3.0.21.0" noninteractable="false" />
+      <Deconstruct time="30" chooserandom="true" amount="4">
+        <Item identifier="aluminium" commonness="0.4" />
+        <Item identifier="silicon" commonness="0.4" />
+        <Item identifier="fpgacircuit" commonness="0.25" />
+        <Item identifier="plastic" commonness="0.4" />
+        <Item identifier="copper" commonness="0.4" />
+        <Item identifier="tin" commonness="0.4" />
+        <Item identifier="lithium" commonness="0.3" />
+      </Deconstruct>
+      <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="102,997,22,27" origin="0.5,0.45" />
+      <Upgrade gameversion="0.10.2.0" indicatorposition="53,11" indicatorsize="47,10" />
+      <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="512,334,154,160" />
+      <BrokenSprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="667,334,155,161" depth="0.8" maxcondition="80" fadein="true" />
+      <BrokenSprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="821,334,155,161" depth="0.8" maxcondition="0" />
+      <PowerContainer capacity="10.0" rechargespeed="0" maxrechargespeed="1000.0" maxoutput="20000000.0" efficiency="0.1" exponentialrechargespeed="true" rechargeadjustspeed="0.1" rechargewarningindicatorlow="0.5" rechargewarningindicatorhigh="0.75" canbeselected="true" indicatorposition="53,11" indicatorsize="47,10" ishorizontal="true" msg="ItemMsgInteractSelect">
+        <GuiFrame relativesize="0.25,0.23" minsize="350,200" anchor="Center" style="ItemUI" />
+        <Upgrade gameversion="0.16.7.0" maxrechargespeed="1000" />
+        <Upgrade gameversion="0.16.7.0" maxoutput="20000000.0" />
+      </PowerContainer>
+      <Body width="154" height="160" density="40" />
+      <Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" msg="ItemMsgDetachCrowbar" PickingTime="10.0" aimpos="35,-10" handle1="0,0" attachable="true" attachedbydefault="true" aimable="true">
+        <RequiredItem identifier="Crowbar" type="Equipped" />
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+      </Holdable>
+      <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+        <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <output name="power_out" displayname="connection.powerout" />
+        <input name="power_in" displayname="connection.powerin" />
+        <output name="charge" displayname="connection.batterychargestatusout" />
+        <output name="charge_%" displayname="connection.batterychargepercentage" />
+        <output name="charge_rate" displayname="connection.batteryrechargespeedout" />
+        <input name="set_rate" displayname="connection.batterysetrechargespeed" />
+        <output name="condition_out" displayname="connection.conditionout" />
+        <output name="load_value_out" displayname="connection.loadvalueout" />
+        <output name="power_value_out" displayname="connection.powervalueout" />
+      </ConnectionPanel>
+      <LightComponent range="10.0" lightcolor="255,255,255,0" alphablend="true" pulsefrequency="0.4" pulseamount="0.4" powerconsumption="1" IsOn="false" castshadows="false" allowingameediting="false">
+        <sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="358,334,154,160" depth="0.1" origin="0.5,0.5" alpha="1.0" />
+        <IsActive targetitemcomponent="PowerContainer" rechargeratio="gt 0.7" />
+        <IsActive targetitemcomponent="PowerContainer" currpowerconsumption="gt 500" />
+        <StatusEffect type="OnActive" target="This" Condition="-1.0">
+          <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" angle="270" distance="30" />
+        </StatusEffect>
+      </LightComponent>
+      <Repairable selectkey="Action" header="electricalrepairsheader" deteriorationspeed="0.125" mindeteriorationdelay="120" maxdeteriorationdelay="300" mindeteriorationcondition="0" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairScrewdriver" hudpriority="10">
+        <StatusEffect type="InWater" target="This" condition="-0.5" />
+        <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
+        <ParticleEmitter particle="damagebubbles" particleburstamount="2" particleburstinterval="2.0" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemin="0" anglemax="359" velocitymin="-10" velocitymax="10" mincondition="1.0" maxcondition="50.0" />
+        <ParticleEmitter particle="MistSmoke" particlespersecond="60" anglemin="0" anglemax="360" distancemin="0" distancemax="25" velocitymin="0" velocitymax="20" mincondition="1.0" maxcondition="50.0" />
+        <ParticleEmitter particle="spark" particleburstamount="5" particlespersecond="5" anglemin="0" anglemax="359" velocitymin="100" velocitymax="500" particleburstinterval="2" scalemin="0.5" scalemax="1" mincondition="1.0" maxcondition="15.0" />
+        <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="1.0" maxcondition="50.0" />
+        <RequiredSkill identifier="electrical" level="55" />
+        <RequiredItem items="screwdriver" type="Equipped" />
+        <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+          <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+          <Explosion range="100.0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+          <Affliction identifier="stun" strength="4" />
+          <Affliction identifier="burn" strength="5" />
+        </StatusEffect>
+      </Repairable>
+    </Item>
+  </Items>
+</Override>

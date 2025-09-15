@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character speciesname="Charybdispenetrator" humanoid="False" group="" husk="False" needsair="False" canspeak="False" noise="100" blooddecal="blood" eatingspeed="100" displayname="" hasinfo="False" usehuskappendage="False" needswater="False" visibility="100" bleedparticleair="blooddrop" bleedparticlewater="waterblood" pathfinderpriority="1" hideinsonar="False" speciestranslationoverride="" sonardisruption="0">
+  <ragdolls folder="default" />
+  <animations folder="default" />
+  <damageemitter particle="gib" drawontop="True" particleamount="10" velocitymin="50" velocitymax="300" anglemin="0" anglemax="360" scalemin="0.5" scalemax="1" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <bloodemitter particle="blood" particleamount="10" scalemin="2" scalemax="3" anglemin="0" anglemax="0" velocitymin="0" velocitymax="0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <bloodemitter particle="waterblood" particleamount="4" scalemin="3" scalemax="5" anglemin="0" anglemax="0" velocitymin="0" velocitymax="0" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <gibemitter particle="gib" particleamount="50" velocitymin="200" velocitymax="1500" anglemin="0" anglemax="360" scalemin="2" scalemax="3" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <gibemitter particle="heavygib" particleamount="20" velocitymin="50" velocitymax="1000" anglemin="0" anglemax="360" scalemin="2" scalemax="3" emitinterval="0" particlespersecond="0" highqualitycollisiondetection="False" copyentityangle="False" />
+  <health vitality="1000" doesbleed="True" crushdepth="-Infinity" usehealthwindow="False" bleedingreduction="0.5" burnreduction="0" constanthealthregeneration="0" healthregenerationwheneating="1" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_idle1.ogg" state="Idle" range="6000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_idle2.ogg" state="Idle" range="6000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_attack1.ogg" state="Attack" range="8000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_attack2.ogg" state="Attack" range="8000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_attack3.ogg" state="Attack" range="8000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_damage1.ogg" state="Damage" range="6000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_damage2.ogg" state="Damage" range="6000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_death1.ogg" state="Die" range="8000" volume="1" gender="None" />
+  <sound file="Content/Characters/Charybdis/CHARYBDIS_death2.ogg" state="Die" range="8000" volume="1" gender="None" />
+  <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="1">
+    <Item identifier="swimbladder" />
+    <Item identifier="adrenalinegland" />
+    <Item identifier="k_em_charybdisfang" />
+    <Item identifier="k_em_charybdisfang" />
+    <Item identifier="yeastshroom" />
+    <Item identifier="slimebacteria" />
+    <Item identifier="aquaticpoppy" />
+  </Inventory>
+  <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="3">
+    <Item identifier="swimbladder" />
+    <Item identifier="adrenalinegland" />
+    <Item identifier="k_em_charybdisfang" />
+    <Item identifier="alienblood" />
+    <Item identifier="yeastshroom" />
+    <Item identifier="aquaticpoppy" />
+  </Inventory>
+  <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="3">
+    <Item identifier="swimbladder" />
+    <Item identifier="adrenalinegland" />
+    <Item identifier="k_em_charybdisfang" />
+    <Item identifier="alienblood" />
+  </Inventory>
+  <Inventory slots="Any, Any, Any, Any, Any, Any, Any, Any, Any, Any" accessiblewhenalive="False" commonness="2">
+    <Item identifier="swimbladder" />
+    <Item identifier="adrenalinegland" />
+    <Item identifier="k_em_charybdisfang" />
+    <Item identifier="alienblood" />
+    <Item identifier="yeastshroom" />
+    <Item identifier="slimebacteria" />
+  </Inventory>
+  <ai combatstrength="3000" sight="1" hearing="1" aggressionhurt="100" aggressiongreed="10" fleehealththreshold="0" attackwhenprovoked="True" aggressiveboarding="True" avoidgunfire="False" enforceaggressivebehaviorformissions="True" targetinnerwalls="False" randomattack="False" targetouterwalls="True">
+    <target tag="decoy" state="Attack" priority="300" reactdistance="0" attackdistance="0" />
+    <target tag="provocative" state="Attack" priority="150" reactdistance="0" attackdistance="0" />
+    <target tag="weapon" state="Attack" priority="150" reactdistance="0" attackdistance="0" />
+    <target tag="stronger" state="PassiveAggressive" priority="110" reactdistance="2000" attackdistance="0" />
+    <target tag="light" state="Attack" priority="80" reactdistance="0" attackdistance="0" />
+    <target tag="human" state="Aggressive" priority="100" reactdistance="2000" attackdistance="0" />
+    <target tag="sonar" state="Attack" priority="100" reactdistance="0" attackdistance="0" />
+    <target tag="nasonov" state="Attack" priority="100" reactdistance="0" attackdistance="0" />
+    <target tag="wall" state="Attack" priority="80" reactdistance="0" attackdistance="0" />
+    <target tag="weaker" state="Aggressive" priority="70" reactdistance="2000" attackdistance="0" />
+    <target tag="dead" state="Eat" priority="60" reactdistance="0" attackdistance="0" />
+    <target tag="leucocyte" state="Avoid" priority="50" reactdistance="2000" attackdistance="0" />
+    <target tag="room" state="Attack" priority="40" reactdistance="0" attackdistance="0" />
+    <target tag="tool" state="Aggressive" priority="30" reactdistance="1000" attackdistance="0" />
+    <target tag="terminalcell" state="Idle" priority="1" reactdistance="0" attackdistance="0" />
+    <target tag="Charybdissmall" state="Idle" priority="71" reactdistance="0" attackdistance="0" />
+  </ai>
+</Character>

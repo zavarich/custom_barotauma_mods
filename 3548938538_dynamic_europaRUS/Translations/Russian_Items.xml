@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotext language="Russian" nowhitespace="false" translatedname="Русский">
+  <!-- Items -->
+  <entityname.portablemusicplayer>Музыкальный плеер Ipod Nano</entityname.portablemusicplayer>
+  <entitydescription.portablemusicplayer>Портативный музыкальный плеер, воспроизводит песни Шамана, Джигурды и КиШа.\nДержите подальше от воды!\nРемонтируется отвёрткой.</entitydescription.portablemusicplayer>
+  <entityname.contrabandrum>Морской самогон</entityname.contrabandrum>
+  <entitydescription.contrabandrum>Особый сорт рома, изготовленный из смеси морских грибов, сока псиложабы и выдержанный в ржавой ванне.</entitydescription.contrabandrum>
+  <entityname.raverplayer>Сабвуфер</entityname.raverplayer>
+  <entitydescription.raverplayer>Устанавливаемый музыкальный плеер с усиленными басами. Использует новейшую технологию CD-привода. Воспроизводит песни Шамана, Джигурды и КиШа.</entitydescription.raverplayer>
+  <entityname.cd_album_piraterave1>CD: Пиратский рейв</entityname.cd_album_piraterave1>
+  <entitydescription.cd_album_piraterave1>CD с подборкой треков, которые часто слышны, когда имеешь дело с пиратами. \nСписок треков:\n1. Alien Syndicate (Re_]|M|[_ix) — ]|M|[\n2. Abandon Ship — Simon Chylinski\n3. Scavenger Hunt Techno (EurocorpFx Remake) — EurocorpFx\n4. The Rebel Path — P.T. Adamczyk\n5. Contra la Luna — P.T. Adamczyk\n6. Cyborg — Full Kontakt</entitydescription.cd_album_piraterave1>
+  <entityname.cd_album_subnautica>CD: Subnautica OST</entityname.cd_album_subnautica>
+  <entitydescription.cd_album_subnautica>CD с несколькими композициями из саундтрека Subnautica. \nСписок треков:\n1. Abandon Ship — Simon Chylinski\n2. Exosuit — Simon Chylinski\n3. Red Alert — Simon Chylinski\n4. Seamoth — Simon Chylinski</entitydescription.cd_album_subnautica>
+  <entityname.cd_album_grip>CD: GRIP OST</entityname.cd_album_grip>
+  <entitydescription.cd_album_grip>CD с несколькими композициями из саундтрека GRIP. \nСписок треков:\n1. Clock Watch — Full Kontakt\n2. Cerbera — Imperium\n3. Cyborg — Full Kontakt\n4. Black Out — Full Kontakt</entitydescription.cd_album_grip>
+  <entityname.cd_album_forgivemefather>CD: Forgive Me Father OST</entityname.cd_album_forgivemefather>
+  <entitydescription.cd_album_forgivemefather>CD с несколькими композициями из саундтрека Forgive Me Father. \nСписок треков:\n1. Forgiveness Is Divine — Tim Fialka\n2. Good Time For You To Get Angry — Tim Fialka\n3. Big Ugly Fish Pt.1 — Tim Fialka\n4. Big Ugly Fish Pt.2 — Tim Fialka\n5. Rain And Pain — Tim Fialka\n6. Sweetie, Get Me Bazooka — Tim Fialka\n7. Welcome To Pestisville — Tim Fialka\n8. A Crow's Breakfast — Tim Fialka</entitydescription.cd_album_forgivemefather>
+  <entityname.documents>Документы</entityname.documents>
+  <entitydescription.documents>Папка с документами.</entitydescription.documents>
+  <entityname.classifieddocuments>Секретные документы</entityname.classifieddocuments>
+  <entitydescription.classifieddocuments>Конверт с секретными документами.</entitydescription.classifieddocuments>
+  <entityname.classifieddocumentssep>Секретные документы</entityname.classifieddocumentssep>
+  <entitydescription.classifieddocumentssep>Конверт с секретными документами сепаратистов.</entitydescription.classifieddocumentssep>
+  <entityname.militaryradio>Военная рация</entityname.militaryradio>
+  <entitydescription.militaryradio>Рация, способная выходить на военную частоту. Позволяет организовать захват выбранной станции силами врага фракции, контролирующей этот район.</entitydescription.militaryradio>
+  <entitydescription.militaryradiocoalition>Рация для связи с военной частотой Коалиции. Можно использовать для захвата выбранной станции сепаратистов.</entitydescription.militaryradiocoalition>
+  <entitydescription.militaryradioseparatists>Рация для связи с военной частотой Сепаратистов. Можно использовать для захвата выбранной станции Коалиции.</entitydescription.militaryradioseparatists>
+  <entityname.plantcluster>Клубок растений</entityname.plantcluster>
+  <entitydescription.plantcluster>Клубок переплетённых растений. Возможно, удастся распутать их, стабилизировав стабилоцином на исследовательском столе.</entitydescription.plantcluster>
+  <entityname.plantclusterresearched>Стабилизированный клубок растений</entityname.plantclusterresearched>
+  <entitydescription.plantclusterresearched>Клубок переплетённых растений. Его стабилизировали, и теперь его можно распутать, не повредив все растения.</entitydescription.plantclusterresearched>
+  <entityname.cultistrobeshoodless>Роба посвящённого</entityname.cultistrobeshoodless>
+  <entitydescription.cultistrobeshoodless>Тёмная одежда, традиционно носимая аколитами Церкви Хаска. Пропитана феромонами, усмиряющими диких хасков, помогая аколитам оставаться в безопасности, пока они не готовы вознестись.</entitydescription.cultistrobeshoodless>
+  <entityname.huskchalice>Ритуальный кубок</entityname.huskchalice>
+  <entitydescription.huskchalice>Украшенный кубок, используемый в обрядах вознесения.</entitydescription.huskchalice>
+  <entityname.de_posterreligionisbad1>Плакат — «Религия — это яд»</entityname.de_posterreligionisbad1>
+  <entityname.de_nuclearbomb>Ядерная бомба</entityname.de_nuclearbomb>
+  <entitydescription.de_nuclearbomb>Ядерная бомба, создающая массивное радиоактивное заражение после детонации, убивая всё на своём пути. 60 секунд до взрыва после активации.</entitydescription.de_nuclearbomb>
+  <entityname.lairbomb>Портативное ядерное устройство</entityname.lairbomb>
+  <entityname.kazuyakumoradio>Рация Кумо</entityname.kazuyakumoradio>
+  <entitydescription.kazuyakumoradio>Рация, которую вам дала Кадзуя Кумо, с заранее настроенной частотой, чтобы попросить об услуге при швартовке к станции сепаратистов.</entitydescription.kazuyakumoradio>
+  <entityname.duckysuit>Водолазный костюм «Утёнок»</entityname.duckysuit>
+  <entitydescription.duckysuit>Странный костюм, предложенный вашим другом Джокстером. Похоже, это модифицированный PUCS с некоторыми улучшениями скорости плавания из слипсьюта.</entitydescription.duckysuit>
+  <entityname.de-jobboard>Доска объявлений</entityname.de-jobboard>
+  <entityname.commsrelay>Ретранслятор связи</entityname.commsrelay>
+  <entitydescription.commsrelayDE>Устройство радиосвязи, позволяющее принимать радиосигналы и сообщения.</entitydescription.commsrelayDE>
+  <entityname.giantrubberduck>Огромная резиновая утка</entityname.giantrubberduck>
+  <entitydescription.giantrubberduck>Огромная резиновая утка: бросайте и наблюдайте, как она плавает в воде.</entitydescription.giantrubberduck>
+  <entityname.bigrubberduck>Большая резиновая утка</entityname.bigrubberduck>
+  <entitydescription.bigrubberduck>Большая резиновая утка: бросайте и наблюдайте, как она плавает в воде.</entitydescription.bigrubberduck>
+  <entityname.rubberduck>Резиновая утка</entityname.rubberduck>
+  <entitydescription.rubberduck>Резиновая утка: бросайте и наблюдайте, как она плавает в воде.</entitydescription.rubberduck>
+  <entityname.giantpiraterubberduck>Огромная резиновая утка</entityname.giantpiraterubberduck>
+  <entitydescription.giantpiraterubberduck>Огромная резиновая утка с пиратской шляпой и повязкой на глаз: бросайте и наблюдайте, как она плавает в воде.</entitydescription.giantpiraterubberduck>
+  <entityname.bigpiraterubberduck>Большая резиновая утка</entityname.bigpiraterubberduck>
+  <entitydescription.bigpiraterubberduck>Большая резиновая утка с пиратской шляпой и повязкой на глаз: бросайте и наблюдайте, как она плавает в воде.</entitydescription.bigpiraterubberduck>
+  <entityname.piraterubberduck>Резиновая утка</entityname.piraterubberduck>
+  <entitydescription.piraterubberduck>Резиновая утка с пиратской шляпой и повязкой на глаз: бросайте и наблюдайте, как она плавает в воде.</entitydescription.piraterubberduck>
+  <entityname.exosuitPA>Пиратский экзокостюм</entityname.exosuitPA>
+  <entitydescription.exosuitPA>ТОЛЬКО ДЛЯ NPC. ВАМ НЕ ПРЕДНАЗНАЧЕНО ЭТО НОСИТЬ.</entitydescription.exosuitPA>
+  <entityname.exosuitplayerPA>Пиратский экзокостюм</entityname.exosuitplayerPA>
+  <entitydescription.exosuitplayerPA>Сильно модифицированный экзокостюм. Похоже, некоторые пираты оказались довольно хитры и увеличили стойкость этого костюма к оглушению, а также позволили пользователю дышать кислородом из корпуса, если он доступен.</entitydescription.exosuitplayerPA>
+  <entityname.exosuitpartsPA>Повреждённые части пиратского экзокостюма</entityname.exosuitpartsPA>
+  <entitydescription.exosuitpartsPA>Повреждённые компоненты модифицированного пиратского экзокостюма.</entitydescription.exosuitpartsPA>
+  <entityname.dirtybombPA>«Грязная» бомба</entityname.dirtybombPA>
+  <entitydescription.dirtybombPA>Самодельная радиоактивная бомба для установки в детонатор, снаряд рельсотрона или глубинную бомбу. Держитесь подальше!</entitydescription.dirtybombPA>
+  <entityname.piratehelmetPA>Пиратский шлем</entityname.piratehelmetPA>
+  <entityname.piratebodyarmorPA>Пиратский бронежилет</entityname.piratebodyarmorPA>
+  <entityname.piratebandanaPA>Пиратская бандана</entityname.piratebandanaPA>
+  <entityname.piratecaptainhatPA>Пиратская капитанская шляпа</entityname.piratecaptainhatPA>
+  <entityname.pirateclothesnovicePA>Пиратская одежда (Новичок)</entityname.pirateclothesnovicePA>
+  <entitydescription.pirateclothesnovicePA>Грубая одежда ручной работы пиратов, рассчитана на суровые условия жизни на воде Европы. Этот комплект обычно выдают новичкам и членам экипажа низших рангов.</entitydescription.pirateclothesnovicePA>
+  <entityname.pirateclothesPA>Пиратская одежда</entityname.pirateclothesPA>
+  <entitydescription.pirateclothesPA>Грубая одежда ручной работы пиратов, рассчитана на суровые условия жизни на воде Европы. Этот комплект доработан лёгкими бронепластинами.</entitydescription.pirateclothesPA>
+  <entityname.pirateclotheshardPA>Пиратская одежда (Боевая)</entityname.pirateclotheshardPA>
+  <entitydescription.pirateclotheshardPA>Грубая одежда ручной работы пиратов, рассчитана на суровые условия жизни на воде Европы. Этот комплект носят более опытные члены экипажа и начальство для защиты в бою.</entitydescription.pirateclotheshardPA>
+  <entityname.constructionmaterialcrate>Ящик строительных материалов</entityname.constructionmaterialcrate>
+  <entitydescription.constructionmaterialcrate>Ящик, полный обработанных строительных материалов. Можно доставить на стройплощадки.</entitydescription.constructionmaterialcrate>
+  <fabricationdescription.softmaterials>Мягкие, гибкие металлы</fabricationdescription.softmaterials>
+  <fabricationdescription.hardmaterials>Твёрдые, прочные металлы</fabricationdescription.hardmaterials>
+  <entityname.cavepest>Пещерный вредитель</entityname.cavepest>
+  <entitydescription.cavepest>Мерзость! Выбросьте это!</entitydescription.cavepest>
+  <entityname.cavepestspawner>Гнездо пещерных вредителей</entityname.cavepestspawner>
+  <entitydescription.cavepestspawner>Гнездо пещерных вредителей. Эти червеобразные организмы падают на ничего не подозревающую добычу и растворяют её кислотой.</entitydescription.cavepestspawner>
+  <entityname.huskbodybag>Подозрительная посылка</entityname.huskbodybag>
+  <entityname.radioactivewaste>Радиоактивные отходы</entityname.radioactivewaste>
+  <entitydescription.radioactivewaste>Незаконно сброшенная бочка с радиоактивными отходами, теперь она протекает в океан.</entitydescription.radioactivewaste>
+  <entityname.piezochipper>Старое пьезо-долото</entityname.piezochipper>
+  <entitydescription.piezochipper>Древний инструмент, предположительно использовавшийся для откалывания кусочков пьезокристаллов — практики, давно признанной слишком опасной.</entitydescription.piezochipper>
+  <entityname.piezochunk>Фрагмент пьезокристалла</entityname.piezochunk>
+  <entitydescription.piezochunk>Фрагмент пьезокристалла, который излучает электричество. Может служить импровизированной батареей, но лучше его не ронять...</entitydescription.piezochunk>
+  <entityname.railgunshellclown>Система доставки клоунов</entityname.railgunshellclown>
+  <entitydescription.railgunshellclown>Благодаря невозможному чуду «клоунпрессии» дети Хонкматери каким-то образом умудряются запихнуться внутрь снаряда рельсотрона, чтобы их выстреливали между станциями. Отличный способ начать вечеринку-сюрприз!</entitydescription.railgunshellclown>
+  <entityname.hammerheadmucus>Слизь молотоглава</entityname.hammerheadmucus>
+  <entitydescription.hammerheadmucus>Отвратительный комок органики, выделяемый матриархами молотоголовых, чтобы кормить детёнышей, пока они на охоте. Богаты белками, ферментами и бактериями; ценятся за лекарственные свойства. Можно разобрать.</entitydescription.hammerheadmucus>
+  <entityname.raceticket>Билет на гонки грязерапторов</entityname.raceticket>
+  <entitydescription.raceticket>Вы поставили хорошие деньги на грязераптора. Ваш капитан наверняка одобрит такое вложение.</entitydescription.raceticket>
+  <entityname.securebriefcase>Защищённый кейс</entityname.securebriefcase>
+  <entitydescription.securebriefcase>Прочный кейс с кодовой панелью и замком. Единственный способ открыть — найти код...</entitydescription.securebriefcase>
+  <entityname.brokenweapon>Ржавое оружие</entityname.brokenweapon>
+  <entitydescription.brokenweapon>Старьё плохого качества, скорее всего контрабанда. Кажется, вот-вот развалится у вас в руках.</entitydescription.brokenweapon>
+  <GUI.button.activenuke>Активировать</GUI.button.activenuke>
+  <GUI.button.inactivenuke>Деактивировать</GUI.button.inactivenuke>
+  <entityname.laircore>Сердце логова</entityname.laircore>
+  <entityname.vendingmachine1PA>Пиратский магазин</entityname.vendingmachine1PA>
+  <entityname.mineralspawner>Залежи минералов</entityname.mineralspawner>
+  <entityname.frentestmedicine>Образец VAX</entityname.frentestmedicine>
+  <entitydescription.frentestmedicine>Генетически модифицированный образец хаска, созданный доктором Сейномором. Он утверждает, что «усовершенствовал» формулу, и любой, кто применит её, получит способности хаска, не потеряв рассудок. В инструкции сказано: «Чтобы применить на себе, зажмите ПКМ и нажмите E».</entitydescription.frentestmedicine>
+  <entityname.pressurestabilizersecurity>Стабилизатор давления с биометрическим замком</entityname.pressurestabilizersecurity>
+  <entityname.revolverbroken>Револьвер (сломанный)</entityname.revolverbroken>
+  <entityname.smgbroken>ПП (сломанный)</entityname.smgbroken>
+  <entityname.shotgunbroken>Полицейский дробовик (сломанный)</entityname.shotgunbroken>
+  <entityname.assaultriflebroken>Штурмовая винтовка (сломанная)</entityname.assaultriflebroken>
+  <entityname.machinepistolbroken>Автоматический пистолет (сломанный)</entityname.machinepistolbroken>
+  <entityname.piratedivingsuitmakeshift>Самодельный пиратский водолазный костюм</entityname.piratedivingsuitmakeshift>
+  <entityname.invisibleholder>Взять предмет</entityname.invisibleholder>
+  <entityname.vineladder>Лиановая лестница</entityname.vineladder>
+</infotext>

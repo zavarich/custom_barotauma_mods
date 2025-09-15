@@ -1,0 +1,1351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <!--COMMON TALENTS-->
+    <!--Increase sell price of Food Items by 20%-->
+    <Talent identifier="he-farmersmarket">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="0,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-farmersmarket">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.fooditemscostless">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="fooditem" stattype="StoreBuyMultiplier" value="0.1" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="fooditem" stattype="StoreSellMultiplier" value="0.2" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Increase Production Speed of Kitchen Fabricators by 25% -->
+    <Talent identifier="he-fastfood">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="1,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-fastfood">
+        <Replace tag="[value]" value="10" color="gui.green" />
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[itemname1]" value="entityname.he-electricgrill" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-fryer" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.doesnotstack" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MovementSpeed" value="0.1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="60">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="stove" stattype="FabricationSpeed" value="1.25" />
+          <CharacterAbilityGiveItemStatToTags tags="oven" stattype="FabricationSpeed" value="1.25" />
+          <CharacterAbilityGiveItemStatToTags tags="deepfryer" stattype="FabricationSpeed" value="1.25" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="stove" stattype="FabricationSpeed" value="1.25" />
+          <CharacterAbilityGiveItemStatToTags tags="oven" stattype="FabricationSpeed" value="1.25" />
+          <CharacterAbilityGiveItemStatToTags tags="deepfryer" stattype="FabricationSpeed" value="1.25" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Bonus XP on Monster and Nest Missions-->
+    <Talent identifier="he-poacher">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="2,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-poacher">
+        <Replace tag="[xpbonus]" value="20" color="gui.green" />
+        <Replace tag="[moneybonus]" value="10" color="gui.green" />
+        <Replace tag="[missiontype1]" value="missiontype.monster" color="gui.orange" />
+        <Replace tag="[missiontype2]" value="missiontype.nest" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionExperience">
+        <Conditions>
+          <AbilityConditionMission missiontype="Monster,Nest" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="1.20" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">
+        <Conditions>
+          <AbilityConditionMission isaffiliated="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyValue="1.10" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--20% Chance to find salt in a container if opened for the first time-->
+    <Talent identifier="he-saltybusiness">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="3,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-saltybusiness">
+        <Replace tag="[probability]" value="20" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.shotgunshellsalt" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnOpenItemContainer">
+        <Conditions>
+          <AbilityConditionItemInSubmarine submarinetype="Wreck" />
+          <AbilityConditionItem tags="container" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilitySpawnItemsToContainer randomchance="0.2" oncepercontainer="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget">
+                <SpawnItem identifiers="he-salt" spawnposition="ThisInventory" spawnifcantbecontained="false" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilitySpawnItemsToContainer>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="shotgunshellsalt" />
+    </Talent>
+    <!--Increase Medical Skill by 10 and increase healing you provide by 20%-->
+    <Talent identifier="he-anatomystudy">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="4,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.skillbonus">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[skillname]" value="skillname.medical" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.gainmedicalitemeffectiveness">
+        <Replace tag="[amount]" value="10" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.poisonsincreased">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="10" />
+          <CharacterAbilityGiveStat stattype="MedicalItemApplyingMultiplier" value="0.10" />
+          <CharacterAbilityGiveStat stattype="PoisonMultiplier" value="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Increase skill gain by 50%-->
+    <Talent identifier="he-thirstforknowledge">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="5,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalresistanceself">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[affliction]" value="afflictionname.thirst" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityModifyStat stattype="SkillGainSpeed" value="0.5" />
+          <CharacterAbilityGiveResistance resistanceid="thirst" multiplier="0.75" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--20% Stun resist when aiming a melee weapon and 20% increased melee weapon damage-->
+    <Talent identifier="he-steadyhands">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="6,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.meleeattackmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.he-steadyhands">
+        <Replace tag="[amount]" value="15" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="0.20" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.9">
+        <Conditions>
+          <AbilityConditionIsAiming weapontype="Melee" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="he-steadyhands" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!--Get paid 200 marks for entering new outpost, 400 for entering a new city-->
+    <Talent identifier="he-foodtrucking">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="7,0" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-foodtrucking">
+        <Replace tag="[outpost]" value="200" color="gui.green" />
+        <Replace tag="[helmbonus]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" locationtype="Outpost" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="200" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" locationtype="Settlement" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="200" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" locationtype="Colony" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="200" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" locationtype="City" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="200" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnLocationDiscovered">
+        <Conditions>
+          <AbilityConditionLocation hasoutpost="true" ispositivereputation="true" locationtype="Hydroponics" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveMoney amount="200" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="HelmSkillBonus" value="20" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Drunken Sailor with new name and icon-->
+    <Talent identifier="he-smellslikeabrewery">
+      <Description tag="talentdescription.drunkensailor">
+        <Replace tag="[stunresistance]" value="75" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.he-kegrum" color="gui.orange" />
+      </Description>
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="0,1" sheetelementsize="128,128" />
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="drunk" replacewith="drunknodebuffs" />
+        </Abilities>
+        <FallbackAbilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="drunk" replacewith="drunknodebuffs" />
+        </FallbackAbilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval>
+        <Conditions>
+          <AbilityConditionHasAffliction afflictionidentifier="drunknodebuffs" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyResistance resistanceid="stun" multiplier="0.25" />
+          <CharacterAbilityModifyResistance resistanceid="nausea" multiplier="0" />
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="he-kegrum" />
+    </Talent>
+    <!--Lazy Gardener | Unlock Sprinkler-->
+    <Talent identifier="he-lazygardener">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="1,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-lazygardener" />
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.he-sprinkler" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-sprinkler" />
+      <!-- I tried making lazy gardener reduce mood/fatigue when sleeping near grown plants but it's possible as conditional tries to do a double check on both targets -->
+      <!-- <AbilityGroupInterval effectdelay="2">
+        <Conditions>
+          <AbilityConditionRagdolled />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="NearbyItems" range="500" >
+                <Conditional FullyGrown="true" targetitemcomponent="Growable" />
+                <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/SnoringMale.ogg" loop="true" range="200" volume="2" />
+                <ReduceAffliction identifier="mood" strength="27.7"/>
+                <ReduceAffliction identifier="fatigue" strength="27.7"/>
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="he-lazygardener" amount="1.0"/>
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval> -->
+    </Talent>
+    <!--Gain a commendation when cooking a gourmet meal TODO: make it clear what is gourmet, make sure to add gourmetfood tag to advanced meals so this triggers -->
+    <Talent identifier="he-culinaryschool">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="3,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-culinaryschool">
+        <Replace tag="[selfxpgain]" value="275" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnItemFabricatedAmount">
+        <Conditions>
+          <AbilityConditionItem tags="gourmetfood" />
+          <AbilityConditionHasPermanentStat statidentifier="culinaryschool_cooked" min="1" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="culinaryschool_cooked" value="1" setvalue="true" />
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <SpawnItem identifiers="coalitioncommendation" spawnposition="ThisInventory" spawnifcantbecontained="true" SpawnIfInventoryFull="true" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAnyMissionCompleted">
+        <Abilities>
+          <CharacterAbilityResetPermanentStat statidentifier="culinaryschool_cooked" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--BUTCHER TREE-->
+    <!--Increase Damage with Butcher Knives + faster cutting board -->
+    <Talent identifier="he-frenzy">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="4,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-frenzy">
+        <Replace tag="[powerincrease]" value="50" color="gui.green" />
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="butcheritem" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveItemStatToTags tags="cuttingboard" stattype="FabricationSpeed" value="1.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Chance not to consume raw meat when cooking-->
+    <Talent identifier="he-thinnerslices">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="5,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-thinnerslices">
+        <Replace tag="[chance]" value="20" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnItemFabricatedIngredients">
+        <Conditions>
+          <AbilityConditionServerRandom randomChance="0.20" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityRemoveRandomIngredient>
+            <AbilityConditionItem tags="meat" />
+          </CharacterAbilityRemoveRandomIngredient>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Disable meat rotting in inventory + 20% burn resistance -->
+    <Talent identifier="he-coldblood">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="6,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-coldblood"></Description>
+      <Description tag="talentdescription.additionalresistanceself">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[affliction]" value="afflictionname.burn" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.8">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" tags="activecooling" setvalue="true" duration="0.9" />
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveResistance resistanceid="burn" multiplier="0.8" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Recover from bleeding faster and resistance to infection-->
+    <Talent identifier="he-dryaging">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="7,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.crustyseaman" />
+      <Description tag="talentdescription.additionalresistanceself">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+        <Replace tag="[affliction]" value="afflictionname.infection" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <!-- currently 5x bleeding recovery compared to normal -->
+                <ReduceAffliction identifier="bleeding" strength="0.5" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveResistance resistanceid="infection" multiplier="0.5" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--UNUSED - Increases bleed damage & add Butcher Saw when implimented-->
+    <Talent identifier="he-slaughterhouse">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="0,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.firemanscarry" />
+      <Description tag="talentdescription.extrableedingdamage">
+        <Replace tag="[amount]" value="100" color="gui.green" />
+      </Description>
+      <!--
+	  <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.butchersaw" color="gui.orange"/>
+      </Description>
+	  -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveFlag flagtype="MoveNormallyWhileDragging" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAddDamageAffliction">
+        <Abilities>
+          <CharacterAbilityModifyAffliction afflictionidentifiers="bleeding" addedmultiplier="1.0" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- 	<AddedRecipe itemidentifier="butchersaw"/> -->
+    </Talent>
+    <!--Increase swim speed by 20% and increase melee damage by 20%-->
+    <Talent identifier="he-seafoodsamurai">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="1,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.additionalstattypeself">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.swimmingspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.he-seafoodsamurai">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.meleeattackmultiplier" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveStat stattype="SwimmingSpeed" value="0.2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionInHull invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.20" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--UNUSED - Increase Sell Prices of Raw Meat by 50%-->
+    <Talent identifier="he-butchershop">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <!--<Description tag="talentdescription.blackmarketgenes"/>-->
+      <Description tag="talentdescription.he-butchershop">
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="meat" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="meat" stattype="StoreSellMultiplier" value="0.5" targetallies="true" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--<AddedStoreItem itemtag="blackmarketgenes" />-->
+    </Talent>
+    <!--ENTERTAINER TREE-->
+    <!--Apprenticeship but reskinned-->
+    <Talent identifier="he-parttimejob">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="2,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.apprenticeshipbase" />
+    </Talent>
+    <!--Buff allies for the duration of your bagpipe playing-->
+    <Talent identifier="he-piper">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="3,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-piper">
+        <Replace tag="[duration]" value="10" color="gui.green" />
+        <Replace tag="[buffamount]" value="100" color="gui.green" />
+        <Replace tag="[buffname]" value="afflictionname.psychosisresistance" color="gui.orange" />
+        <Replace tag="[buffduration]" value="60" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character">
+                <Affliction identifier="he-battlemusic" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true">
+                <Affliction identifier="he-battlemusic" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--"Leading By Example" bonus if allies are fed, bigger bonus if stuffed -->
+    <Talent identifier="he-tastyfood">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="5,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-tastyfood" />
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="20" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.repairtoolstructurerepairmultiplier" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.additionalstattype">
+        <Replace tag="[amount]" value="5" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.movementspeed" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="true" requiresalive="true" allowclientsimulation="false">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" comparison="and">
+                <Conditional hunger="gt 0" />
+                <Conditional hunger="lt 30" />
+                <Conditional he-stuffed="gte 35" />
+                <Affliction identifier="excellentmorale" amount="10.0" />
+                <ReduceAffliction identifier="highmorale" strength="10.0" />
+              </StatusEffect>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" comparison="and">
+                <Conditional hunger="gt 0" />
+                <Conditional hunger="lt 30" />
+                <Conditional he-stuffed="lt 35" />
+                <Affliction identifier="highmorale" amount="10.0" />
+                <ReduceAffliction identifier="excellentmorale" strength="10.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!-- TODO: Make sure to add ALL foodbuffs to dinnertheater talent -->
+    <!--Increases food buffs with bagpipes - Insanely long because it lists every food buff-->
+    <Talent identifier="he-dinnertheater">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="4,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-dinnertheater" />
+      <!-- Generic food buffs -->
+      <!--Calcium Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-calciumrich="gt 0" />
+                <Affliction identifier="he-calciumrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-calciumrich="gt 0" />
+                <Affliction identifier="he-calciumrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Fat Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-fatrich="gt 0" />
+                <Affliction identifier="he-fatrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-fatrich="gt 0" />
+                <Affliction identifier="he-fatrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Protein Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-proteinrich="gt 0" />
+                <Affliction identifier="he-proteinrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-proteinrich="gt 0" />
+                <Affliction identifier="he-proteinrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--vitamin Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-vitaminrich="gt 0" />
+                <Affliction identifier="he-vitaminrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-vitaminrich="gt 0" />
+                <Affliction identifier="he-vitaminrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Sugar Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-sugarrich="gt 0" />
+                <Affliction identifier="he-sugarrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-sugarrich="gt 0" />
+                <Affliction identifier="he-sugarrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Fiber Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-fiberrich="gt 0" />
+                <Affliction identifier="he-fiberrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-fiberrich="gt 0" />
+                <Affliction identifier="he-fiberrich" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- Other buffs: -->
+      <!--Husk Food Buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-disguisedashusk="gt 0" />
+                <Affliction identifier="he-disguisedashusk" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-disguisedashusk="gt 0" />
+                <Affliction identifier="he-disguisedashusk" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Watcher food buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-watchermindsense="gt 0" />
+                <Affliction identifier="he-watchermindsense" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-watchermindsense="gt 0" />
+                <Affliction identifier="he-watchermindsense" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Pressure food buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-pressureresistance="gt 0" />
+                <Affliction identifier="he-pressureresistance" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-pressureresistance="gt 0" />
+                <Affliction identifier="he-pressureresistance" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Clownjuice drink buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-clownjuice="gt 0" />
+                <Affliction identifier="he-clownjuice" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-clownjuice="gt 0" />
+                <Affliction identifier="he-clownjuice" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Coalition Premium drink buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-coalitionpremium="gt 0" />
+                <Affliction identifier="he-coalitionpremium" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-coalitionpremium="gt 0" />
+                <Affliction identifier="he-coalitionpremium" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Jovian Force drink buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-jovianforce="gt 0" />
+                <Affliction identifier="he-jovianforce" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional he-jovianforce="gt 0" />
+                <Affliction identifier="he-jovianforce" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+      <!--Caffeinated drink buff-->
+      <AbilityGroupEffect abilityeffecttype="OnUseRangedWeapon">
+        <Conditions>
+          <AbilityConditionItem identifiers="bagpipes" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies range="1000">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional caffeinated="gt 0" />
+                <Affliction identifier="caffeinated" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" interval="1" disabledeltatime="true" targetlimb="Torso">
+                <Conditional caffeinated="gt 0" />
+                <Affliction identifier="caffeinated" amount="1" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--When you gain a cooking or butchery skill allies do as well-->
+    <Talent identifier="he-teppanyaki">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="5,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-teppanyaki">
+        <Replace tag="[skillname1]" value="skillname.cooking" color="gui.orange" />
+        <Replace tag="[skillname2]" value="skillname.butchery" color="gui.orange" />
+        <Replace tag="[powerincrease]" value="200" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnGainSkillPoint">
+        <Conditions>
+          <AbilityConditionSkill skillidentifier="cooking" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGainSimultaneousSkill skillidentifier="inherit" targetallies="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnGainSkillPoint">
+        <Conditions>
+          <AbilityConditionSkill skillidentifier="butchery" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGainSimultaneousSkill skillidentifier="inherit" targetallies="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionAttackData tags="pan" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Graduation Ceremony reskinned-->
+    <Talent identifier="he-workpromotion">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="6,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.unlockapprenticeshiptalents" />
+      <!-- <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.ceremonialsword" color="gui.orange"/>
+      </Description>
+      <AddedRecipe itemidentifier="ceremonialsword"/> -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="workpromotion" min="1" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityUnlockApprenticeshipTalentTree />
+          <CharacterAbilityGivePermanentStat statidentifier="workpromotion" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- ATTEMPT TO MAKE THE TALENT UNLOCK CERTAIN ITEMS BASED ON CLASS INSTEAD OF GIVING A FULL TALENT TREE -->
+      <!--       <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasTalent identifier="apprenticeship_captain" />
+          <AbilityConditionHasPermanentStat statidentifier="workpromotion" min="1" invert="true"/>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="revolver" oneshot="true" />
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="revolverround" oneshot="true"/>
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="cigar" oneshot="true"/>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityGivePermanentStat statidentifier="workpromotion" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasTalent identifier="apprenticeship_doctor" />
+          <AbilityConditionHasPermanentStat statidentifier="workpromotion" min="1" invert="true"/>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="autoinjectorheadset" oneshot="true" />
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="pressurestabilizer" oneshot="true"/>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityGivePermanentStat statidentifier="workpromotion" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasTalent identifier="apprenticeship_security" />
+          <AbilityConditionHasPermanentStat statidentifier="workpromotion" min="1" invert="true"/>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="shotgun" oneshot="true" />
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="shotgunshell" oneshot="true"/>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityGivePermanentStat statidentifier="workpromotion" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasTalent identifier="apprenticeship_engineer" />
+          <AbilityConditionHasPermanentStat statidentifier="workpromotion" min="1" invert="true"/>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="reactorpda" oneshot="true" />
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="cargoscooter" oneshot="true"/>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityGivePermanentStat statidentifier="workpromotion" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+      
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasTalent identifier="apprenticeship_mechanic" />
+          <AbilityConditionHasPermanentStat statidentifier="workpromotion" min="1" invert="true"/>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="safetyharness" oneshot="true" />
+              <StatusEffect type="OnAbility" target="Character" unlockrecipe="repairpack" oneshot="true"/>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityGivePermanentStat statidentifier="workpromotion" value="1" />
+        </Abilities>
+      </AbilityGroupEffect> -->
+    </Talent>
+    <!-- Reskinned Family - Currently Unused-->
+    <Talent identifier="he-favorite">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-IconsAtlas.png" sourcerect="905,905,119,119" origin="0.5,0.5" />
+      <Description tag="talentdescription.family" />
+      <Description tag="talentdescription.family2" />
+      <Description tag="talentdescription.assistantsdontcount" />
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="family" min="1" invert="true" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveTalentPointsToAllies amount="1" />
+          <CharacterAbilityGivePermanentStat statidentifier="family" value="1" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--CHEF TREE-->
+    <!--Unlock Master Chef Attire Crafting Recipes and Give Allies in Same Room Cooking Skill Boost-->
+    <Talent identifier="he-headchef">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="7,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-headchef">
+        <Replace tag="[amount]" value="25" color="gui.green" />
+        <Replace tag="[stattype]" value="stattypenames.skillgainspeed" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.he-chefattire">
+        <Replace tag="[itemname1]" value="entityname.he-chefscapmaster1" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-chefsuniformmaster1" color="gui.orange" />
+      </Description>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffectsToAllies allowself="false" insameroom="true">
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+                <Affliction identifier="he-apprenticechef" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffectsToAllies>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AddedRecipe itemidentifier="he-chefscapmaster1" />
+      <AddedRecipe itemidentifier="he-chefsuniformmaster1" />
+    </Talent>
+    <!--Loot extra husk eggs from husks and unlock husk food recipes-->
+    <Talent identifier="he-huskegghunt">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="0,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-huskegghunt">
+        <Replace tag="[item]" value="entityname.huskeggsbasic" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.he-huskfood">
+        <Replace tag="[itemname1]" value="character.husk" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnLootCharacter">
+        <Conditions>
+          <AbilityConditionServerRandom randomChance="0.5" />
+          <AbilityConditionCharacter targettype="Monster">
+            <Conditional IsMachine="false" />
+            <Conditional IsHusk="true" />
+          </AbilityConditionCharacter>
+          <AbilityConditionCharacterNotLooted identifier="huskegghunt" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="UseTarget" spawnitemrandomly="true">
+                <SpawnItem identifiers="huskeggsbasic" spawnposition="ThisInventory" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+          <CharacterAbilityMarkAsLooted identifier="huskegghunt" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AddedRecipe itemidentifier="he-rawhuskmeat" />
+      <AddedRecipe itemidentifier="he-rawhuskfilets" />
+      <AddedRecipe itemidentifier="he-cookedhuskfilet" />
+      <AddedRecipe itemidentifier="he-huskcaviarnori" />
+    </Talent>
+    <!--Unlock food recipes-->
+    <Talent identifier="he-delicacies">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="1,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-delicacies">
+        <Replace tag="[itemname1]" value="entityname.he-cookedhammerheadspawnpickled" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-molochsushi" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-cookedhammerheadspawnpickled" />
+      <AddedRecipe itemidentifier="he-molochsushi" />
+    </Talent>
+    <!--Unlock brewing recipes-->
+    <Talent identifier="he-masterbrewer">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="2,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-masterbrewer">
+        <Replace tag="[itemname1]" value="entityname.he-kegpiraterum" color="gui.orange" />
+        <Replace tag="[itemname2]" value="entityname.he-kegwhiskey" color="gui.orange" />
+        <Replace tag="[itemname3]" value="entityname.he-keghalucinova" color="gui.orange" />
+      </Description>
+      <AddedRecipe itemidentifier="he-kegpiraterum" />
+      <AddedRecipe itemidentifier="he-kegwhiskey" />
+      <AddedRecipe itemidentifier="he-keghalucinova" />
+    </Talent>
+    <!--Chance not to consume milk when crafting food-->
+    <Talent identifier="he-creamery">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="3,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-creamery">
+        <Replace tag="[chance]" value="30" color="gui.green" />
+        <Replace tag="[item]" value="entityname.he-milk" color="gui.orange" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnItemFabricatedIngredients">
+        <Conditions>
+          <AbilityConditionServerRandom randomChance="0.30" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityRemoveRandomIngredient>
+            <AbilityConditionItem tags="milk" />
+          </CharacterAbilityRemoveRandomIngredient>
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupInterval interval="0.8">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" tags="molochbaby" setvalue="true" duration="0.9" />
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+      <AbilityGroupInterval interval="0.9">
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" disabledeltatime="true" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="he-friendofmolochs" amount="1.0" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupInterval>
+    </Talent>
+    <!--20% chance to duplicate a cooked hotdog or burger-->
+    <Talent identifier="he-shortorderchef">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="4,3" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-shortorderchef">
+        <Replace tag="[chance]" value="20" color="gui.green" />
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnItemFabricatedAmount">
+        <Conditions>
+          <AbilityConditionItem tags="fingerfood" />
+          <AbilityConditionServerRandom randomChance="0.20" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyValue multiplyvalue="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <AbilityGroupEffect abilityeffecttype="OnItemFabricatedAmount">
+        <Conditions>
+          <AbilityConditionItem tags="fingerfood" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityApplyStatusEffects>
+            <StatusEffects>
+              <StatusEffect type="OnAbility" target="Character" multiplyafflictionsbymaxvitality="true">
+                <Affliction identifier="he-shortorderflow" amount="10" />
+              </StatusEffect>
+            </StatusEffects>
+          </CharacterAbilityApplyStatusEffects>
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Essentially a placeholder (like assistant) that lets you choose which creature you want a damage buff against
+      The talent isn't great, wish I could give butchery and cooking skills instead of medical but stattype is hardcoded -->
+    <Talent identifier="he-dietarypreference">
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="2,1" sheetelementsize="128,128" />
+      <Description tag="talentdescription.he-dietarypreferencebase">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+        <Replace tag="[percent]" value="100" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGiveResistance resistanceid="foodbuff" multiplier="2" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Damage against Mudraptors talent-->
+    <Talent identifier="he-mudraptorpreference" nameidentifier="character.mudraptor" coloroverride="0.22,0.20,0.40">
+      <Icon texture="Content/Map/MapAtlas.png" sourcerect="796,665,76,76" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-dietarypreferencemudraptor">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacter>
+            <Conditional group="eq mudraptor" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Damage against Crawlers talent-->
+    <Talent identifier="he-crawlerpreference" nameidentifier="character.crawler" coloroverride="0.54,0.45,0.34">
+      <Icon texture="Content/Map/MapAtlas.png" sourcerect="796,665,76,76" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-dietarypreferencecrawler">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacter>
+            <Conditional group="eq crawler" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Damage against Threshers talent-->
+    <Talent identifier="he-thresherpreference" nameidentifier="character.tigerthresher" coloroverride="0.55,0.48,0.12">
+      <Icon texture="Content/Map/MapAtlas.png" sourcerect="796,665,76,76" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-dietarypreferencethresher">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacter>
+            <Conditional group="eq thresher" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Damage against Spinelings talent-->
+    <Talent identifier="he-spinelingpreference" nameidentifier="character.spineling" coloroverride="0.14,0.20,0.26">
+      <Icon texture="Content/Map/MapAtlas.png" sourcerect="796,665,76,76" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-dietarypreferencespineling">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacter>
+            <Conditional group="eq spineling" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--Damage against Husks talent-->
+    <Talent identifier="he-huskpreference" nameidentifier="character.husk" coloroverride="0.33,0.22,0.20">
+      <Icon texture="Content/Map/MapAtlas.png" sourcerect="796,665,76,76" origin="0.5,0.5" />
+      <Description tag="talentdescription.he-dietarypreferencehusk">
+        <Replace tag="[amount]" value="35" color="gui.green" />
+      </Description>
+      <AbilityGroupEffect abilityeffecttype="OnAttack">
+        <Conditions>
+          <AbilityConditionCharacter>
+            <Conditional group="eq husk" />
+          </AbilityConditionCharacter>
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityModifyAttackData addeddamagemultiplier="0.35" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!-- TODO: WIP GRADUATION TALENT, make it a starter quest type where you have to reach milestones to unlock extra skill/recipes... 
+             I don't like this being a carbon copy of assistant graduation-->
+    <Talent identifier="parttimejobmechanic" trackedstat="parttimemechanic_weld_counter" trackedmax="100">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="3,2" sheetelementsize="128,128" />
+      <Description tag="talentdescription.machinemaniac">
+        <Replace tag="[bonus]" value="80" color="gui.green" />
+        <Replace tag="[amount]" value="3" color="gui.orange" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac.30">
+        <Replace tag="[requirement]" value="12" color="gui.green" />
+        <Replace tag="[amount]" value="10" color="gui.green" />
+        <Replace tag="[skill]" value="stattypenames.mechanicalskillbonus" color="gui.orange" />
+        <Replace tag="[xpamount]" value="500" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac.50">
+        <Replace tag="[requirement]" value="20" color="gui.green" />
+        <Replace tag="[level]" value="1" color="gui.green" />
+      </Description>
+      <Description tag="talentdescription.machinemaniac.100">
+        <Replace tag="[requirement]" value="40" color="gui.green" />
+        <Replace tag="[amount]" value="50" color="gui.green" />
+      </Description>
+      <!-- When you reach a target objective, reset these so the effect only applies once -->
+      <AbilityGroupEffect abilityeffecttype="None">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="parttimemechanic_repair_check" value="1" maxvalue="1" setvalue="true" />
+          <CharacterAbilityGivePermanentStat statidentifier="parttimemechanic_weld_check" value="1" maxvalue="1" setvalue="true" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- +1 to weld counter -->
+      <AbilityGroupEffect abilityeffecttype="OnRepairedOutsideLeak">
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="parttimemechanic_weld_counter" value="1" removeondeath="false" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- +1 to repair counter -->
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionItem tags="fabricator,door,engine,oxygengenerator,pump,turretammosource,deconstructor,medicalfabricator,ductblock,kitchenfabricator" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGivePermanentStat statidentifier="parttimemechanic_repair_counter" value="1" removeondeath="false" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- reward for X leaks welded -->
+      <AbilityGroupEffect abilityeffecttype="OnRepairedOutsideLeak">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="parttimemechanic_weld_check" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="parttimemechanic_weld_counter" min="20" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="500" />
+          <CharacterAbilityGivePermanentStat stattype="MechanicalSkillBonus" statidentifier="starterquest" value="10" setvalue="true" removeondeath="false" />
+          <CharacterAbilityResetPermanentStat statidentifier="parttimemechanic_weld_check" />
+        </Abilities>
+      </AbilityGroupEffect>
+      <!-- reward for X items repaired welded -->
+      <AbilityGroupEffect abilityeffecttype="OnRepairComplete">
+        <Conditions>
+          <AbilityConditionHasPermanentStat statidentifier="parttimemechanic_repair_check" min="1" />
+          <AbilityConditionHasPermanentStat statidentifier="parttimemechanic_repair_counter" min="10" />
+        </Conditions>
+        <Abilities>
+          <CharacterAbilityGiveExperience amount="500" />
+          <CharacterAbilityGivePermanentStat stattype="MechanicalSkillBonus" statidentifier="machinemaniac" value="10" setvalue="true" removeondeath="false" />
+          <CharacterAbilityResetPermanentStat statidentifier="parttimemechanic_repair_check" />
+        </Abilities>
+      </AbilityGroupEffect>
+    </Talent>
+    <!--   
+    <AbilityGroupEffect abilityeffecttype="OnGainSkillPoint">
+      <Conditions>
+        <AbilityConditionSkill skillidentifier="mechanical" />
+      </Conditions>
+      <Abilities>
+        <CharacterAbilityGivePermanentStat statidentifier="parttimemechanic_counter" value="1" removeondeath="false" />
+      </Abilities>
+    </AbilityGroupEffect> -->
+  </Talents>
+</Override>

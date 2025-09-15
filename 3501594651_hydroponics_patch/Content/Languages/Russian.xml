@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="false" translatedname="Русский">
+  <entityname.stabiloseed>Семя стабилоцвета</entityname.stabiloseed>
+  <entitydescription.stabiloseed>Мягко светящееся семечко стабилоцвета, подготовленное к выращиванию в искусственных условиях.</entitydescription.stabiloseed>
+  <entityname.stabilobloomwild>Дикий стабилоцвет</entityname.stabilobloomwild>
+  <entitydescription.stabilobloomwild>Плод дикорастущего стабилоцвета. Содержит немного стабилоцина. Не приспособлен к лабораторным условиям, однако обладающий некоторыми медицинскими познаниями может попытаться вывести сорт, пригодный для дальнейшей культивации.</entitydescription.stabilobloomwild>
+  <entityname.stabilobloom>Стабилоцвет</entityname.stabilobloom>
+  <entitydescription.stabilobloom>Крупная ягода-костянка, более всего напоминающая земную морошку. Вкусная и питательная для простого обывателя и богатый источник стабилоцина для человека, занимающегося медициной.</entitydescription.stabilobloom>
+  <entityname.stabilobloombad>Мутировавший стабилоцвет</entityname.stabilobloombad>
+  <entitydescription.stabilobloombad>Мутация стабилоцвета вызывает интенсивное брожение сока уже на стадии созревания, что приводит к накоплению этанола и определенных психоактивных веществ в плодах. Только дурак посчитал бы это минусом... Не так ли?</entitydescription.stabilobloombad>
+</infotexts>

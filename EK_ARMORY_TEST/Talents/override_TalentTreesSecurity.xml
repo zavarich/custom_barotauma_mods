@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <TalentTrees>
+      <TalentTree jobidentifier="securityofficer">
+      <SubTree identifier="security_primary" nameidentifier="talenttree.primary" type="primary">
+        <TalentOptions requiredtalents="2" maxchosentalents="6">
+          <TalentOption identifier="protectandserve"/>
+          <TalentOption identifier="warstories"/>
+          <TalentOption identifier="firstaidtraining"/>
+          <TalentOption identifier="physicalconditioning"/>
+          <TalentOption identifier="swole"/>
+          <TalentOption identifier="buff"/>
+        </TalentOptions>
+        <TalentOptions requiredtalents="2" maxchosentalents="5">
+          <TalentOption identifier="weaponsmith"/>
+          <TalentOption identifier="bythebook"/>
+          <TalentOption identifier="dontpushit"/>
+          <TalentOption identifier="bootcamp"/>
+          <TalentOption identifier="munitionsexpertise"/>
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="frogman" type="specialization" requires="security_primary" blocks="enforcer,gunner">
+        <TalentOptions>
+          <TalentOption identifier="boardingparty"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="scavenger"/>
+          <TalentOption identifier="slayer"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="easyturtle"/>
+          <TalentOption identifier="daringdolphin"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="specops"/>
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="enforcer" type="specialization" requires="security_primary" blocks="frogman,gunner">
+        <TalentOptions>
+          <TalentOption identifier="pacificationkit"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="beatcop"/>
+          <TalentOption identifier="stonewall"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="crustyseaman"/>
+          <TalentOption identifier="inordinateexsanguination"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="implacable"/>
+        </TalentOptions>
+      </SubTree>
+      <SubTree identifier="gunner" type="specialization" requires="security_primary" blocks="frogman,enforcer">
+        <TalentOptions>
+          <TalentOption identifier="rifleman"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="tandemfire"/>
+          <TalentOption identifier="commando"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="gunrunner"/>
+          <TalentOption identifier="extrapowder"/>
+        </TalentOptions>
+        <TalentOptions>
+          <TalentOption identifier="warlord"/>
+          <TalentOption identifier="GaussRifleCraft"/>
+        </TalentOptions>
+      </SubTree>
+    </TalentTree>
+  </TalentTrees>
+</Override>

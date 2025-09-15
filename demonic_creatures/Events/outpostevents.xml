@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <EventPrefabs>
+    <!--RANDOM NPC MISSIONS-->
+    <ScriptedEvent identifier="missionevent_killmonster" commonness="100">
+      <SpawnAction npcsetidentifier="outpostnpcs1" npcidentifier="commoner" targettag="missionnpc" spawnlocation="Outpost" spawnpointtype="Path" />
+      <ConversationAction text="EventText.missionevent_killmonster.c1" speakertag="missionnpc" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killmonster_set1" />
+    </ScriptedEvent>
+    <!--MANAGER MISSIONS-->
+    <ScriptedEvent identifier="missionevent_killswarm_set1" commonness="100">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killswarm.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killswarm_set1" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killswarm_set2" commonness="100">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killswarm.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killswarm_set2" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killswarm_set3" commonness="100">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killswarm.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killswarm_set3" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killswarm_set4" commonness="100">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killswarm.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killswarm_set4" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killswarm_set5" commonness="100">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killswarm.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killswarm_set5" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killmonster_set1" commonness="85">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killmonstercommon.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killmonster_set1" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killmonster_set2" commonness="85">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killmonstercommon.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killmonster_set2" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killmonster_set3" commonness="85">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killmonsterrare.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killmonster_set3" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="missionevent_killmonster_set4" commonness="85">
+      <NPCWaitAction npctag="outpostmanager" wait="true" />
+      <ConversationAction text="EventText.missionevent_killmonsterrare.c1" speakertag="outpostmanager" endeventifinterrupted="false" dialogtype="Small" />
+      <MissionAction missiontag="killmonster_set4" />
+      <NPCWaitAction npctag="outpostmanager" wait="false" />
+    </ScriptedEvent>
+  </EventPrefabs>
+</Randomevents>

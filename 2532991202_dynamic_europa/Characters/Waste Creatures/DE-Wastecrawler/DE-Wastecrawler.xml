@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Character inherit="Crawler" speciesname="DE-Wastecrawler" speciestranslationoverride="Crawler" texture="%ModDir:2532991202%/Characters/Waste Creatures/DE-Wastecrawler/wastecrawler.png">
+  <health vitality="100" poisonvulnerability="1" />
+  <StatusEffect type="OnDeath" target="Character">
+    <SpawnItem identifier="toxicgasemitter" spawnposition="ThisInventory" />
+  </StatusEffect>
+</Character>

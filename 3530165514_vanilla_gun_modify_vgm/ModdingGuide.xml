@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- I'm writting this guide mainly on Chinese, you can translate it to your mother language with Gemini or ChatGPT -->
+  <!-- 写在前面 -->
+  <!-- 这个文档为那些希望将此 mod 的机制延展至其他武器 mod 所写 -->
+  <!-- 请不要把这个xml加入到filelist当中直接测试 -->
+  <!-- 假设我们这里有把（差不多）原版的步枪 -->
+  <Item identifier="tacAssaultRifleVGMtest" name="测试步枪" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,provocativetohumanai" category="Weapon" interactdistance="50" interactpriority="1.0" interactthroughwalls="false" focusonselected="false" offsetonselected="0" showcontentsintooltip="false" scale="0.5" spritecolor="1.0,1.0,1.0,1.0" health="100" indestructible="false" fireproof="false" waterproof="false" impacttolerance="10.0" maxstacksize="1" allowasextracargo="false" allowrotatingineditor="true" linkable="false">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <Sprite texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="94,498,160,60" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="94,498,160,60" origin="0.5,0.5" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="55,-20" aimpos="70,-5" handle1="-60,2" handle2="24,-10" holdangle="-35" msg="ItemMsgPickUpSelect" SpeedMultiplier="0.9" />
+    <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+      <sprite name="Tac Assault Rifle Worn" texture="%ModDir%/Guns/guns_alphadev.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="94,8,161,59" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
+    </Wearable>
+    <Price baseprice="666" sold="false" />
+    <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
+      <RequiredSkill identifier="weapons" level="70" />
+      <RequiredItem identifier="assaultrifle" amount="1" />
+      <RequiredItem identifier="steel" amount="3" />
+    </Fabricate>
+    <Deconstruct time="10"></Deconstruct>
+    <Body width="160" height="60" density="25" />
+    <RangedWeapon reload="0.24" weapondamagemodifier="1.0" holdtrigger="true" barrelpos="75,12" spread="6" unskilledspread="20" combatpriority="80" drawhudwhenequipped="true" crosshairscale="0.5">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,200" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+      <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems items="assaultrifleammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="assaultrifleammo" hide="false" itempos="-10,-10" rotation="0" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+    <SkillRequirementHint identifier="weapons" level="60" />
+    <aitarget sightrange="3000" soundrange="4000" fadeouttime="2">
+      <StatusEffect type="OnActive" target="This" sightrange="3000" soundrange="4000" stackable="false" setvalue="true" />
+    </aitarget>
+  </Item>
+  <!-- 呃，细节上可能会有点区别，但是差不多大多数武器都是这样的模板，如果你的mod存在一些和原版逻辑有较大出入的地方也没问题，只要它们和后面要添加的东西不存在逻辑冲突就行 -->
+  <!-- 为了让武器适配VGM，你需要做以下几件事： -->
+  <!-- 
+         1 给所有武器添加武器自身名字的标签
+         2 添加子容器和对应的贴图
+         3 添加消音和枪托机制（无托或没法消音的武器可以跳过这个环节）
+         4 修改贴图
+         5 微调插件位置、调整子容器的onremoved事件内容，并且确保有枪托的武器生成对应的枪托
+         6 检查数据，重复流程
+         7 追加插件的数据
+    -->
+  <!-- 让我们开始吧 -->
+  <!-- 1 给所有武器添加武器自身名字的标签 -->
+  <!-- 我给所有的插件都加上了只有在读取到对应tag时才会相应相关内容，所以你要在tags里面先添加与identifier同名的tag -->
+  <Item identifier="tacAssaultRifleVGMtest" name="测试步枪" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,provocativetohumanai" />
+  <Item identifier="tacAssaultRifleVGMtest" name="测试步枪" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,provocativetohumanai,tacAssaultRifleVGMtest" />
+  <!-- 后来才想到这其实是个冗余操作，考虑到它对性能应该造成不了什么不良影响，干脆就加进去得了 -->
+  <!-- 2 添加子容器和对应的贴图 -->
+  <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <Containable items="assaultrifleammo" hide="false" itempos="-10,-10" rotation="0" />
+    <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+    <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+    <SubContainer>
+      <RequiredItems items="flashlight" type="Contained" msg="ItemMsgAmmoRequired" />
+    </SubContainer>
+  </ItemContainer>
+  <!-- 一般来讲ItemContainer都长这样，本身是弹匣的容器，子容器里可以装手电筒。 -->
+  <!-- 你需要把以下内容复制黏贴进去： -->
+  <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
+  <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
+  <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
+  <SlotIcon slotindex="5" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+  <SubContainer capacity="1" maxstacksize="1">
+    <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="30,4" setactive="true">
+      <StatusEffect type="OnRemoved" target="This" holdangle="-30" setvalue="true" disabledeltatime="true" />
+    </Containable>
+  </SubContainer>
+  <SubContainer capacity="1" maxstacksize="1">
+    <Containable items="bigStockVGM,assaultRifleStockVGM" hideitems="false" itempos="-15,2" setactive="true">
+      <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" SpeedMultiplier="1.0" setvaslue="true" disabledeltatime="true" />
+    </Containable>
+  </SubContainer>
+  <SubContainer capacity="1" maxstacksize="1">
+    <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="47,9" setactive="true">
+      <StatusEffect type="OnRemoved" target="This" barrelpos="100,20" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+    </Containable>
+  </SubContainer>
+  <SubContainer capacity="1" maxstacksize="1">
+    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="-4,12" setactive="true">
+      <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+    </Containable>
+  </SubContainer>
+  <SubContainer capacity="1" maxstacksize="1">
+    <Containable items="scannerVGM" hide="false" itempos="10,12" setactive="true"></Containable>
+  </SubContainer>
+  <!-- 我们来看一眼这些都是啥： -->
+  <!-- smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM，这是下挂件的逻辑，目前只有bigAccessoryVGM，smallAccessoryVGM 我暂时还么有使用上，剩下的是手电筒和各色照明用具-->
+  <!-- bigStockVGM,assaultRifleStockVGM bigStockVGM和smallStockVGM，它们俩分别代表了突击步枪、重机枪这类需要挂在背上的重型武器枪托，和霰弹枪、步枪这种的轻型武器枪托，我选择这种分类方式主要是因为：这两类枪托特征相同，做贴图时可以统一风格：重型枪托可以直接选用各种战术枪托产品；而轻型枪托更多的像是固定式木枪托，你在选取素材的时候应该也考虑以固定式枪托为主。最好只让一个武器支持一种枪托，以防止贴图上太过突兀。此外assaultRifleStockVGM是这个武器的原装枪托，它干嘛用我们后续在 3 会提到-->
+  <!-- smallMuzzleVGM,bigMuzzleVGM，轻型武器枪口和重型武器枪口，这两位的贴图可以通用，在各色武器上混用它们不成问题。重型武器枪口建议使用鱼鹰消音器这类巨TM大的消音器作为贴图，轻型枪口就随意了。哦，对了，枪口配件会是最让你抓狂的东西，因为枪口配件涉及barrelpos的修改，其他数据也许各种武器会通用，但是barrelpos是绝对不会通用的 -->
+  <!-- smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM，bigScopeVGM，smallScopeVGM与前面差不多相同，轻型瞄具和重型瞄具，可混用，剩下的是手电筒和各色照明用具-->
+  <!-- scannerVGM，扫描仪，对的我的朋友，就是《使命召唤：现代战争2》的枪挂式心跳扫描仪 -->
+  <!-- 最后差不多长这个样子 -->
+  <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <Containable items="assaultrifleammo" hide="false" itempos="-10,-10" rotation="0" />
+    <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+    <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+    <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
+    <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
+    <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
+    <SlotIcon slotindex="5" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="30,4" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" holdangle="-30" setvalue="true" disabledeltatime="true" />
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="bigStockVGM,assaultRifleStockVGM" hideitems="false" itempos="-15,2" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" SpeedMultiplier="1.0" setvaslue="true" disabledeltatime="true" />
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="47,9" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" barrelpos="100,20" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="-4,12" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="scannerVGM" hide="false" itempos="10,12" setactive="true"></Containable>
+    </SubContainer>
+  </ItemContainer>
+  <!-- 复制完以后，在这里就确认一下你的这把枪准备能够安装什么插件。这里是写全的，你打算不让它装什么玩意就删对应的tag，另外，有删Subcontainer的话别忘了SlotIcon也要删，注意一下，对于步枪这种可以发射双弹药的武器，它们的逻辑可能和这里的不太一样，你可以直接去betaDev里确认我是怎么写的 -->
+  <!-- itemcontainer和subcontainer算是这个mod的核心之一，一开始我有试过性能最优的OnInserted和OnRemoved，并且把所有的插件效果写在里面，但是很遗憾，只使用这两个会导致地图重置之后所有枪都得重新装一遍插件才能使用，另外还得考虑到其他mod的兼容工作，所以我还是选择了将枪械的插件和分离分为两部分。 -->
+  <!-- 好像这种写法叫OOP来着？我也不太清楚其中是否符合OOP，但是写起来确实顺手些，就是坏消息是你得同时调整插件的代码了 -->
+  <!-- 当然了，你依旧可以选择把所有的插件效果写在枪里面：如果其他mod覆写修改了插件，你的mod不会和这类mod发生冲突（因为直接把效果写枪里面了，参考Guns/guns_alphadev），顺带，九州武库差不多也是这样写的 -->
+  <!-- 至于选择哪一个，个人意见是：如果你的mod里武器不超过10把，直接写枪里即可，如果超过10把，我建议你考虑一下覆写插件，因为有些逻辑其实是复制黏贴，频繁地复制黏贴并且确保每把武器不会出意外是我整个开发过程中最痛苦的环节，其痛苦程度超过了一开始测试架构可行性的时候——我就是TM的痛恨机械劳动，尤其写代码时，我想你也和我一样。 -->
+  <!-- 把逻辑写哪里这个话题我们会在 6 再次讨论 -->
+  <!-- 3 添加消音和枪托 -->
+  <!-- 如果你设定的武器没有枪托和枪口改装，那就可以跳过这一环节 -->
+  <!-- 请把原枪的Holdable标签 -->
+  <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="55,-20" aimpos="70,-5" handle1="-60,2" handle2="24,-10" holdangle="-35" msg="ItemMsgPickUpSelect" SpeedMultiplier="0.9" />
+  <!-- 改成这种形式：（你可以复制黏贴） -->
+  <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30" SpeedMultiplier="1.0">
+    <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.5" interval="0.4">
+      <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+    </StatusEffect>
+    <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.5" interval="0.4">
+      <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+    </StatusEffect>
+    <!-- 扫描器逻辑 -->
+    <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+      <RequiredItem items="healthScannerVGM" type="Contained" />
+    </StatusEffect>
+    <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" thermalgoggles="true" showdeadcharacters="false" showtexts="false" overlaycolor="176,0,0,120" range="3000" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+      <RequiredItem items="thermalScannerVGM" type="Contained" />
+    </StatusEffect>
+    <StatusEffect type="OnActive" target="This" drawhudwhenequipped="false" showdeadcharacters="false" showtexts="false" setvalue="true" interval="1.0" TargetItemComponent="StatusHUD">
+      <Conditional HasStatusTag="neq aiming" />
+    </StatusEffect>
+  </Holdable>
+  <!-- 前两个StatusEffect是枪管的tag，因为消声器的效果同时涉及数值、声效、AI声音检测，所以对于枪管配件，只能用检测到时添加tag来实现（这也是为啥我在前面说枪管配件会是你最头疼的一部分） -->
+  <!-- 后面的则是扫描器逻辑，确实有必要在举枪时用标签将其开启/关闭，否则你会发现背在背上的时候也会触发。。。 -->
+  <!-- 还没完呢：第三部分是最长的一部分，接下来我们修改消音器声效，把原武器的枪械开火声效全改成这样： -->
+  <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+    <Conditional HasStatusTag="neq suppressed" />
+  </StatusEffect>
+  <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_1.ogg" type="OnUse" range="1000" selectionmode="Random" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_2.ogg" type="OnUse" range="1000" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_3.ogg" type="OnUse" range="1000" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_4.ogg" type="OnUse" range="1000" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="1000" />
+    <Conditional HasStatusTag="suppressed" />
+  </StatusEffect>
+  <!-- 开火声效似乎你得从VGM里复制一份，不过不用担心，不是很大。顺带，这个声效的来源是《大灾变：黑暗之日》的Otopack500音效包，你可以在Github找到，里面枪械声效很全，而且是按口径来分的，在此推荐一下 -->
+  <!-- AI -->
+  <aitarget sightrange="3000" soundrange="4000" fadeouttime="2">
+    <StatusEffect type="OnActive" target="This" sightrange="30" soundrange="40" stackable="false" setvalue="true" interval="1.0">
+      <Conditional HasStatusTag="suppressed" />
+    </StatusEffect>
+    <StatusEffect type="OnActive" target="This" sightrange="3000" soundrange="4000" stackable="false" setvalue="true" interval="1.0">
+      <Conditional HasStatusTag="neq suppressed" />
+    </StatusEffect>
+  </aitarget>
+  <!-- 我总觉得这个没有必要加上去，所以在Beta阶段我就没写了，因为再怎么说这游戏的交战距离大多是CQB，又不是ArmA那种300m起步的野外步战 -->
+  <!-- 枪托逻辑 -->
+  <!-- 首先，把Holdable的SpeedMultiplier设置为1.1，这个是无托状态的速度，对于重机枪这种天生自带0.75的可以改成0.85 -->
+  <!-- 剩下的暂时不用动，因为接下来我们要写个原版武器的枪托。 -->
+  <Item name="" identifier="assaultRifleStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" depth="0.55" origin="1.0,0.5" />
+    <Body width="78" height="46" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="16" SpeedMultiplier="1.00" setvalue="true" interval="1">
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <!-- 我想应该不用提醒你把原武器的贴图修改一下：枪托去掉，被去掉的枪托做成一个新贴图。枪托的核心逻辑在Holdable的StatusEffect当中：被插上时，它在被激活时会影响父容器（也就是突击步枪）的数据，对于原装枪托，我们只需要把速度和散布还原为正常值就可以了，顺带一提，其他大部分插件也是遵照这个逻辑去影响武器：通过给subcontainer增加“setactive”激活它们，然后插件被激活时会影响父容器的某些属性，顺带一提，这种影响你是可以指定哪个xml父标签的，具体请看官方文档。 -->
+  <!-- 这个环节给枪托先设置默认值就行了（因为后面我们会给枪托写个默认原装枪托，用它来将武器的数值调整为原版数值） -->
+  <!-- 4 修改贴图 -->
+  <!-- 这一部分我建议你使用我之前做的XML快速生成器，里面的贴图功能是我专门为这个环节做的，能让你省事情不少 -->
+  <!-- https://steamcommunity.com/sharedfiles/filedetails/?id=3529593079 -->
+  <!-- 用法非常直观，我就在这里不过多赘述了 -->
+  <!-- 5  微调插件位置、调整子容器的onremoved事件内容，并且确保有枪托的武器生成对应的枪托 -->
+  <!-- 回到之前的Subcontainer里面 -->
+  <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56" SpawnWithId="assaultRifleStockVGM">
+    <!-- 如果你的武器有枪托改装选项，并且你确实打算做无托改造（建议只要做枪托就顺带做无托化），在ItemContainer里面加 SpawnWithId="枪托的id"，是的，你得顺带写个枪托，不过这个是很简单的，你可以直接参考gunmods_betaDev.xml的内容-->
+    <Containable items="assaultrifleammo" hide="false" itempos="-10,-10" rotation="0" />
+    <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+    <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+    <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
+    <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
+    <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
+    <SlotIcon slotindex="5" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="30,4" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" holdangle="-30" setvalue="true" disabledeltatime="true" />
+        <!-- 请确认武器默认holdangle -->
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="bigStockVGM,assaultRifleStockVGM" hideitems="false" itempos="-15,2" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" SpeedMultiplier="1.0" setvaslue="true" disabledeltatime="true" />
+        <!-- 修改为武器的默认spread值，注意这里的“默认”指的是无托状态，无托状态默认为SpeedMultiplier="1.1"，散射比原版武器多2点或更多，无托武器请无视 -->
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="47,9" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" barrelpos="100,20" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+        <!-- 请确认武器默认barrelpos，weapondamagemodifier="1.0"，以及穿甲值（没有设定的话默认为0.0） -->
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="-4,12" setactive="true">
+        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+        <!-- 请确认默认crosshairscale，不同的武器可能有不同的crosshairscale，cameraaimoffset不需要修改，保持为0即可，除非你的默认cameraaimoffset不是0 -->
+      </Containable>
+    </SubContainer>
+    <SubContainer capacity="1" maxstacksize="1">
+      <Containable items="scannerVGM" hide="false" itempos="10,12" setactive="true"></Containable>
+    </SubContainer>
+  </ItemContainer>
+  <!-- 你需要按照我做出的每个步骤指示去修改Subcontainer里面的内容，另外，还得修改itempos的数值，以确保瞄准镜不会插在弹匣里、枪管不会接在枪托上 -->
+  <!-- 这是魔鬼出细节的一环，慢慢来，不着急 -->
+  <!-- 哦，回到之前说的把插件效果写在枪里面的话题，如果你确实打算这么做，应该差不多是这个样子： -->
+  <SubContainer capacity="1" maxstacksize="1">
+    <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
+    <Containable items="bigStockVGM" hideitems="false" itempos="-20,2" setactive="true">
+      <StatusEffect type="OnContaining" target="This" spread="6" unskilledspread="20" setvalue="true" disabledeltatime="true" interval="0.5" />
+    </Containable>
+  </SubContainer>
+  <!-- 你要做的是给每个SubContainer写多个Containable，这个栏里面你打算设定它能用多少个配件你就写多少个 Containable，以及一个还原用的StatusEffect type="OnRemoved"。-->
+  <!-- 这种写法其实是官方文档的最佳实践，两种都可以，供你参考 -->
+  <!-- 如果你打算不使用官方文档的方案，选择我的，那还需要 最后一步： -->
+  <!-- 7 追加插件属性 -->
+  <!-- 我的枪械插件其实差不多长这个样子： -->
+  <Item name="" identifier="shortSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" depth="0.55" origin="0.0,0.5" />
+    <Body width="36" height="12" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="94,9" setvalue="true" interval="1">
+        <Conditional HasTag="smg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="110,0" setvalue="true" interval="1">
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.85" barrelpos="84,9" setvalue="true" interval="1">
+        <Conditional HasTag="machinepistol" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="75,-20" setvalue="true" interval="1">
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="130,20" setvalue="true" interval="1">
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="60" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+  </Item>
+  <!-- 如你所见，本质其实是识别其tag然后释放对应的修改效果，一秒检测一次。如果你没有在枪里面写，那么就得覆写VGM的配件，这可能会导致你的mod和其他会覆写VGM配件的mod发生冲突，假鱼的modOverride还没有聪明到能整合代码 -->
+  <!-- 你所需要做的，就是复制黏贴个同样的结构上去，然后，就差不多大功告成了 -->
+</Items>
+<!-- 我把我之前的测试代码全留在mod里了，里面也有对应的注释，同样值得供你参考，就是写得没这个Guide这么有条理就是 ；） -->
+<!-- 希望这个工作流程能帮到你，至少少受点罪，如果喜欢这个mod的话，别忘了点赞+收藏！ -->

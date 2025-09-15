@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <Override>
+    <Affliction identifier="he-apprenticechef" type="talentbuff" isbuff="true" hideiconafterdelay="true" limbspecific="false" maxstrength="1" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="600">
+        <StatValue stattype="SkillGainSpeed" value="0.25" />
+      </Effect>
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="5,6" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <!-- WIP - not working, trying to make chef lose stress ragdolled near plants -->
+    <!-- <Affliction
+    identifier="he-lazygardener"
+    type="talentbuff"
+    isbuff="true"
+    limbspecific="false"
+    hideiconafterdelay="true"
+    maxstrength="1"
+    duration="1"
+    treatmentthreshold="1000"
+    iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+    <Effect minstrength="0" maxstrength="1" >
+      <StatusEffect target="Character,NearbyItems" range="250" >
+        <Conditional FullyGrown="true" targetitemcomponent="Growable" />
+        <Sound file="%ModDir:2954998725%/Content/Sounds/Afflictions/Misc/SnoringMale.ogg" loop="true" range="200" volume="2" />
+        <ReduceAffliction identifier="mood" strength="27.7"/>
+        <ReduceAffliction identifier="fatigue" strength="27.7"/>
+      </StatusEffect>    
+    </Effect>
+    <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="2,6" sheetelementsize="128,128" color="10,193,114,255" origin="0,0"/>
+  </Affliction>  -->
+    <Affliction identifier="he-steadyhands" type="talentbuff" isbuff="true" limbspecific="false" hideiconafterdelay="true" maxstrength="1" duration="1" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="stun" minresistance="0.20" maxresistance="0.20" />
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="2,6" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="he-battlemusic" description="This music get's you going. You feel tougher, stronger, faster and more skilled with weapons. You're ready for battle!" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="1" duration="1.1" hideiconafterdelay="true" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="1" resistancefor="damage" minresistance="0.25" maxresistance="0.25">
+        <StatValue stattype="WeaponsSkillBonus" value="20" />
+        <StatValue stattype="WalkingSpeed" minvalue="0.2" maxvalue="0.2" />
+        <StatValue stattype="MeleeAttackMultiplier" minvalue="0.25" maxvalue="0.25" />
+      </Effect>
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,7" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="he-friendofmolochs" type="talentbuff" isbuff="true" hideiconafterdelay="true" limbspecific="false" maxstrength="1" duration="1" treatmentthreshold="1000" showiconthreshold="1000" showicontoothersthreshold="1000" showinhealthscannerthreshold="1000">
+      <Effect minstrength="0" maxstrength="1" tag="MolochBaby"></Effect>
+      <Icon texture="%ModDir:2954998725%/Content/UI/HE-TalentsIcons.png" sheetindex="5,6" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+    <Affliction identifier="he-shortorderflow" type="talentbuff" isbuff="true" limbspecific="false" maxstrength="10" treatmentthreshold="1000" iconcolors="33,75,78;126,211,224;126,211,224;227,247,249">
+      <Effect minstrength="0" maxstrength="10" strengthchange="-1" resistancefor="damage,burn,stun" minresistance="0.5" maxresistance="0.5">
+        <StatusEffect target="Character" interval="1" disabledeltatime="true">
+          <ReduceAffliction type="stun" amount="30" />
+        </StatusEffect>
+        <StatusEffect target="Character">
+          <TriggerAnimation Type="Walk" filename="VigorousWalk" priority="4" ExpectedSpecies="Human" />
+        </StatusEffect>
+        <AbilityFlag flagtype="AlwaysStayConscious" />
+        <StatValue stattype="FlowResistance" value="0.50" />
+      </Effect>
+      <!-- TODO: shortorder buff icon -->
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,6" sheetelementsize="128,128" color="10,193,114,255" origin="0,0" />
+    </Affliction>
+  </Override>
+</Afflictions>

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="" identifier="shotgun" HideConditionBar="true" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+      <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+      <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+      <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.2" />
+      <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.03" />
+      <PreferredContainer secondary="armcab" />
+      <Price baseprice="500" minleveldifficulty="30">
+        <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+        <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+        <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+        <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+        <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+      </Price>
+      <Deconstruct time="10">
+        <Item identifier="steel" />
+        <Item identifier="titaniumaluminiumalloy" />
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="55" />
+        <RequiredItem identifier="steel" amount="2" />
+        <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+        <RequiredItem identifier="plastic" amount="2" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/RiotShotgun/RiotShotgun.png" sourcerect="185,0,64,64" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/RiotShotgun/RiotShotgun.png" sourcerect="0,0,185,52" depth="0.55" origin="0.45,0.25" />
+      <!-- Broken sprite used for animation via changing gun's condition. -->
+      <BrokenSprite texture="%ModDir%/RiotShotgun/RiotShotgun.png" sourcerect="0,52,185,52" depth="0.55" origin="0.45,0.25" maxcondition="50" />
+      <!-- Default sprite at 0 condition to 'break' the weapon mid reloading without making it look awful. -->
+      <BrokenSprite texture="%ModDir%/RiotShotgun/RiotShotgun.png" sourcerect="0,0,185,52" depth="0.55" origin="0.45,0.25" maxcondition="0" />
+      <Body width="180" height="30" density="25" />
+      <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-15" aimpos="30,-3" handle1="-30,-17" handle2="70,-4" holdangle="-40" msg="ItemMsgPickUpSelect" />
+      <RangedWeapon barrelpos="100,5" spread="0.1" unskilledspread="3" combatPriority="80" reload="1" drawhudwhenequipped="true" crosshairscale="0.2">
+        <!-- Crosshairs. -->
+        <Crosshair texture="%ModDir%/Crosshairs.png" sourcerect="256,512,256,256" />
+        <CrosshairPointer texture="%ModDir%/Crosshairs.png" sourcerect="0,512,256,256" />
+        <!-- Particles. -->
+        <!-- Visible only on air. -->
+        <ParticleEmitter particle="largemuzzleflash" particleamount="1" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="6,4" colormultiplier="255,255,100,175" CopyEntityAngle="true" />
+        <ParticleEmitter particle="muzzlelight" particleamount="1" scalemultiplier="16,12" colormultiplier="215,215,215,100" CopyEntityAngle="true" />
+        <ParticleEmitter particle="largegunsmoke" particleamount="1" />
+        <!-- Visible only inside water. -->
+        <ParticleEmitter particle="underwatermuzzle" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2.5,2.5" />
+        <ParticleEmitter particle="muzzlebubbles" particleamount="6" anglemin="30" anglemax="80" velocitymin="20" velocitymax="50" />
+        <ParticleEmitter particle="gunbubbles" particleamount="12" anglemin="170" anglemax="180" velocitymin="10" velocitymax="20" distancemin="0" distancemax="90" />
+        <!-- Gunfire sounds. -->
+        <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/Weapons/ShotgunShot4.ogg" type="OnUse" range="3000" />
+        <!-- On fire, sets the light component's transparency to 255 and then back to 0.
+      Why? Simply turning the light on and off is too slow. -->
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,255" setvalue="true" />
+        <StatusEffect type="OnUse" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" delay="0.115" />
+        <!-- Unskilled high recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="lt 50" />
+          <Explosion range="50.0" force="5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" applyfireeffects="false" camerashake="25.0" />
+        </StatusEffect>
+        <!-- Skilled low recoil. -->
+        <StatusEffect type="OnUse" target="This" offset="0,-5">
+          <Conditional targetcontainer="true" skillrequirement="true" weapons="gte 50" />
+          <Explosion range="150.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" flash="false" applyfireeffects="false" camerashake="10.0" />
+        </StatusEffect>
+        <!-- Animation status effects.
+	  First activates condition to 51 that is later checked during reloading. Stays like this if the last shell was fired.
+      The rest activate when any shell that is not the last one is fired, causing normal pumping animation. -->
+        <StatusEffect type="OnUse" target="This" delay="0.01" condition="51" setvalue="true" />
+        <!-- Sets the position of a gun. -->
+        <StatusEffect type="OnUse" target="This" delay="0.3" holdpos="30,-5" holdangle="30" aimpos="10,-15" aimangle="30" forceplaysounds="true" setvalue="true">
+          <RequiredItems items="shotgunammo" type="Contained" />
+          <Sound file="%ModDir%/RiotShotgun/RiotShotgunPumpIn.ogg" type="OnUse" range="500" />
+        </StatusEffect>
+        <!-- Sets the hand position. -->
+        <StatusEffect type="OnUse" target="This" delay="0.4" handle2="40,-10" setvalue="true">
+          <RequiredItems items="shotgunammo" type="Contained" />
+        </StatusEffect>
+        <!-- Pump animation frame and particle. -->
+        <StatusEffect type="OnUse" target="This" delay="0.6" condition="50" setvalue="true">
+          <RequiredItems items="shotgunammo" type="Contained" />
+          <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-15" distancemax="15" />
+          <ParticleEmitter particle="shotgunshellcasing" particleamount="1" anglemin="170" anglemax="190" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+        </StatusEffect>
+        <!-- Sound. -->
+        <StatusEffect type="OnUse" target="This" delay="0.7" forceplaysounds="true">
+          <RequiredItems items="shotgunammo" type="Contained" />
+          <Sound file="%ModDir%/RiotShotgun/RiotShotgunPumpOut.ogg" type="OnUse" range="500" />
+        </StatusEffect>
+        <!-- Pump back and hand position set to default. -->
+        <StatusEffect type="OnUse" target="This" delay="0.8" handle2="70,-4" condition="100" setvalue="true">
+          <RequiredItems items="shotgunammo" type="Contained" />
+        </StatusEffect>
+        <!-- End of animation. Position is set to default. -->
+        <StatusEffect type="OnUse" target="This" delay="0.9" holdpos="45,-15" holdangle="-40" aimpos="30,-3" aimangle="0" setvalue="true">
+          <RequiredItems items="shotgunammo" type="Contained" />
+        </StatusEffect>
+        <!-- OnBroken (when condition is set to 0 from OnInserted status effects in Containable intended for reloading animation),
+      Proxy item's condition will be set to 0 and back to 100 after a delay. -->
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="riotreloading" delay="0.01" condition="0" setvalue="true" />
+        <StatusEffect type="OnBroken" target="Contained" targetidentifiers="riotreloading" delay="0.7" condition="100" setvalue="true" />
+        <!-- Fail safe if the players save and quit during the reloading or shooting. Sets the gun's values to default. -->
+        <StatusEffect Type="Always" OneShot="True" target="Contained" targetidentifiers="riotreloading" condition="100" setvalue="true" />
+        <StatusEffect Type="Always" OneShot="True" target="This" holdpos="45,-15" aimpos="30,-3" handle1="-30,-17" handle2="70,-4" holdangle="-40" aimangle="0" condition="100" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="LightComponent" target="This" lightcolor="255,255,75,0" setvalue="true" />
+        <StatusEffect type="Always" OneShot="True" targetitemcomponent="ItemContainer" target="This" AllowAccess="true" setvalue="true" />
+        <!-- Gun requires ammo to use. -->
+        <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <!-- Gun requires proxy item to use. During the reloading, the proxy item's condition is set to 0, preventing the item from firing. -->
+        <RequiredItems items="riotreloading" type="Contained" />
+        <RequiredSkill identifier="weapons" level="50" />
+      </RangedWeapon>
+      <!-- Gun's muzzle which works like a light component. -->
+      <LightComponent range="49.0" lightcolor="255,255,75,0" IsOn="true">
+        <LightTexture texture="%ModDir%/RiotShotgun/RiotShotgunMuzzle.png" origin="0.46,0.565" size="1.0,1.0" />
+      </LightComponent>
+      <ItemContainer capacity="1" maxstacksize="6" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+        <Containable items="shotgunammo" hide="true">
+          <!-- Hides the slots, preventing the person from adding more or removing. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="false" delay="0.01" setvalue="true" />
+          <!-- Unlocks the ammunition, allowing the person to add more or remove. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="0.7" setvalue="true">
+            <Conditional condition="neq 51" />
+          </StatusEffect>
+          <!-- Unlocks the ammunition, allowing the person to add more or remove. -->
+          <StatusEffect type="OnInserted" target="This" AllowAccess="true" delay="1.5" setvalue="true">
+            <Conditional condition="eq 51" />
+          </StatusEffect>
+          <!-- Upon reloading, sets the condition to 0, triggering OnBroken status effect.
+        On top of that, triggers reload animations and blah blah blah.
+        Condition=0 is set with a delay to not cause any issues with some condition-conditional status effects. -->
+          <!-- Sets shotgun's position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.05" holdpos="30,0" aimpos="20,-10" aimangle="-10" condition="0" setvalue="true" />
+          <!-- Sets hand's position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.2" handle2="20,-10" setvalue="true" />
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.3" forceplaysounds="true">
+            <ParticleEmitter particle="gunbubbles" particleamount="2" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-15" distancemax="15" />
+            <Sound file="%ModDir%/RiotShotgun/RiotShotgunShellInsert.ogg" type="OnUse" range="500" volume="1.5" />
+          </StatusEffect>
+          <!-- Sets hand's position to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.56" handle2="70,-7" setvalue="true" />
+          <!-- Sets everything to default numbers. Does not trigger for extended animation. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.7" holdpos="45,-15" aimpos="30,-3" aimangle="0" condition="100" setvalue="true">
+            <Conditional condition="neq 51" />
+          </StatusEffect>
+          <!-- If the condition at the start of reloading (before set to 0) is 51, then these status effects are triggered.
+        Causes the same pump animation. -->
+          <!-- Breaks the gun to trigger proxy item. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.71" condition="0" setvalue="true">
+            <Conditional condition="eq 51" />
+          </StatusEffect>
+          <!-- Sets the position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.8" holdpos="30,-5" holdangle="30" aimpos="20,-15" aimangle="30" forceplaysounds="true" setvalue="true">
+            <Conditional condition="eq 51" />
+            <Sound file="%ModDir%/RiotShotgun/RiotShotgunPumpIn.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+          <!-- Sets hand position. -->
+          <StatusEffect type="OnInserted" target="This" delay="0.9" handle2="40,-10" stackable="false">
+            <Conditional condition="eq 51" />
+          </StatusEffect>
+          <!-- Pump frame animation and particle. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.1" condition="50" setvalue="true" stackable="false">
+            <Conditional condition="eq 51" />
+            <ParticleEmitter particle="gunbubbles" particleamount="3" anglemin="180" anglemax="200" velocitymin="10" velocitymax="20" distancemin="-15" distancemax="15" />
+            <ParticleEmitter particle="shotgunshellcasing" particleamount="1" anglemin="170" anglemax="190" velocitymin="150" velocitymax="200" CopyEntityAngle="true" />
+          </StatusEffect>
+          <!-- Sound. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.2" forceplaysounds="true">
+            <Conditional condition="eq 51" />
+            <Sound file="%ModDir%/RiotShotgun/RiotShotgunPumpOut.ogg" type="OnUse" range="500" />
+          </StatusEffect>
+          <!-- Pump and hand back to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.3" handle2="70,-7" condition="100" setvalue="true">
+            <Conditional condition="eq 51" />
+          </StatusEffect>
+          <!-- Positions to default. -->
+          <StatusEffect type="OnInserted" target="This" delay="1.4" holdpos="45,-15" holdangle="-40" aimpos="30,-3" aimangle="0" setvalue="true">
+            <Conditional condition="eq 51" />
+          </StatusEffect>
+        </Containable>
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+        <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+        <SubContainer capacity="1" maxstacksize="1">
+          <Containable items="flashlight" hide="false" itempos="35,8" setactive="true" />
+        </SubContainer>
+      </ItemContainer>
+      <!-- Where proxy item is located. -->
+      <ItemContainer capacity="1" maxstacksize="1" hideitems="true" drawinventory="false" spawnwithid="riotreloading" removecontaineditemsondeconstruct="true">
+        <!-- RemoveContainedItemsOnDeconstruct removes proxy on deconstruction. -->
+        <Containable items="riotreloading" hide="true" />
+      </ItemContainer>
+      <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+      <Quality>
+        <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="weapons" level="50" />
+    </Item>
+    <!-- Proxy item. -->
+    <Item name=" " identifier="riotreloading" maxstacksize="1" scale="0.5" category="Weapon" NonInteractable="True" hideinmenus="true" tags="smallitem,riotreloading">
+      <InventoryIcon texture="%ModDir%/Ammunition.png" sourcerect="308,64,64,64" origin="0.5,0.5" />
+      <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
+      <Body width="5" height="5" density="25" />
+      <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    </Item>
+  </Items>
+</Override>

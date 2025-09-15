@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- 再做一个轻型枪托 -->
+  <Item name="" identifier="deadeyeStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="3,2,34,24" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="3,2,34,24" depth="0.55" origin="1.0,0.5" />
+    <Body width="34" height="24" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="8" PickingTime="0.0" setvalue="true" interval="1">
+        <Conditional HasTag="smgunique" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="boomStickStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,30,50,39" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,30,50,39" depth="0.55" origin="1.0,0.5" />
+    <Body width="50" height="39" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="1" unskilledspread="4" PickingTime="0.0" setvalue="true" interval="1">
+        <Conditional HasTag="shotgununique" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="rifleStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="2,76,58,39" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="2,76,58,39" depth="0.55" origin="1.0,0.5" />
+    <Body width="58" height="39" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="0" unskilledspread="2" PickingTime="0.0" setvalue="true" interval="1">
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="shotgunStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="0,127,59,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="0,127,59,40" depth="0.55" origin="1.0,0.5" />
+    <Body width="59" height="40" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="0.1" unskilledspread="3" PickingTime="0.0" setvalue="true" interval="1">
+        <Conditional HasTag="shotgun" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="assaultRifleStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" depth="0.55" origin="1.0,0.5" />
+    <Body width="78" height="46" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="16" PickingTime="0.0" setvalue="true" interval="1">
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="hmgStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,228,85,52" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,228,85,52" depth="0.55" origin="1.0,0.5" />
+    <Body width="85" height="52" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="6" unskilledspread="50" SpeedMultiplier="0.80" setvalue="true" interval="1">
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="nuclearGunStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,126,63,41" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,126,63,41" depth="0.55" origin="1.0,0.5" />
+    <Body width="63" height="41" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="0" unskilledspread="10" SpeedMultiplier="1.0" setvalue="true" interval="1">
+        <Conditional HasTag="nucleargun" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <Item name="" identifier="scrapCannonStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,79,64,44" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,79,64,44" depth="0.55" origin="1.0,0.5" />
+    <Body width="64" height="44" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="0" unskilledspread="4" PickingTime="0.0" setvalue="true" interval="1">
+        <Conditional HasTag="scrapcannon" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+  </Item>
+  <!-- Mags -->
+  <Item name="" identifier="assaultrifleLongMagVGM" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo,longMagVGM" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="assaultrifle" minamount="1" maxamount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" secondary="secarmcab" />
+    <Price baseprice="500" sold="false" minleveldifficulty="60" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+    </Price>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" amount="2" />
+      <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" amount="2" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="2" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="2" />
+      <RequiredItem identifier="assaultriflemagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35" displayname="recycleitem">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" amount="2" />
+      <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" amount="2" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="2" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="2" />
+      <RequiredItem identifier="assaultrifleLongMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/GunMods/mags_betadev.png" sourcerect="9,1,36,63" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/mags_betadev.png" sourcerect="9,1,36,63" depth="0.55" origin="0.5,0.5" />
+    <Body width="28" height="60" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="assaultrifleround" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="assaultrifleround" />
+      <StatusEffect type="OnUse" target="This" condition="-1.6" disabledeltatime="true">
+        <SpawnItem identifiers="assaultrifleround" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="assaultrifleDrumMagVGM" maxstacksize="8" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo,drumMagVGM" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="assaultrifle" minamount="1" maxamount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" secondary="secarmcab" />
+    <Price baseprice="750" sold="false" minleveldifficulty="60" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+    </Price>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" amount="3" />
+      <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" amount="3" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="3" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="3" />
+      <RequiredItem identifier="assaultriflemagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35" displayname="recycleitem">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" amount="3" />
+      <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" amount="3" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="3" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="3" />
+      <RequiredItem identifier="assaultrifleLongMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/GunMods/mags_betadev.png" sourcerect="62,1,40,68" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/mags_betadev.png" sourcerect="62,1,40,68" depth="0.55" origin="0.5,0.5" />
+    <Body width="28" height="68" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="assaultrifleround" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="assaultrifleround" />
+      <StatusEffect type="OnUse" target="This" condition="-1.1" disabledeltatime="true">
+        <SpawnItem identifiers="assaultrifleround" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="hmgDrumMagVGM" maxstacksize="4" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,hmgammo,handheldammo" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" secondary="secarmcab" />
+    <Price baseprice="666" sold="true" minleveldifficulty="65" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+    </Price>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="2" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="2" />
+      <RequiredItem identifier="hmgmagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35" displayname="recycleitem">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="2" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="2" />
+      <RequiredItem identifier="hmgDrumMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite texture="%ModDir%/GunMods/mags_betadev.png" sourcerect="118,2,47,71" depth="0.55" origin="0.3,0.5" />
+    <Body width="47" height="71" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="hmground" />
+      <StatusEffect type="OnUse" target="This" condition="-0.4" disabledeltatime="true">
+        <SpawnItem identifiers="hmground" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="" identifier="healthScannerVGM" scale="0.5" category="Equipment" tags="smallitem,scannerVGM" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" />
+    <Deconstruct time="20">
+      <Item identifier="healthscanner" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="healthscanner" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="0,22,27,20" origin="0.5,0.5" />
+    <Sprite name="Health Scanner" texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="0,22,27,20" depth="0.6" origin="0.5,0.5" />
+    <Body width="27" height="20" density="15" />
+  </Item>
+  <Item name="" identifier="thermalScannerVGM" scale="0.5" category="Equipment" tags="smallitem,scannerVGM" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" />
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredSkill identifier="medical" level="50" />
+      <RequiredItem identifier="thermalgoggles" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="20">
+      <Item identifier="thermalgoggles" />
+    </Deconstruct>
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="0,0,27,20" origin="0.5,0.5" />
+    <Sprite name="Health Scanner" texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="0,0,27,20" depth="0.6" origin="0.5,0.5" />
+    <Body width="27" height="20" density="15" />
+  </Item>
+  <Item name="" identifier="lightSniperStockVGM" category="Equipment" Tags="smallitem,tool,smallStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="0,45,59,30" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="0,45,59,30" depth="0.55" origin="1.0,0.5" />
+    <Body width="59" height="30" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Parent" spread="0.05" unskilledspread="1" setvalue="true" interval="1">
+        <Conditional HasTag="shotgun" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="0" unskilledspread="1" setvalue="true" interval="1">
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="1" unskilledspread="6" setvalue="true" interval="1">
+        <Conditional HasTag="smgunique" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="0.1" unskilledspread="2" setvalue="true" interval="1">
+        <Conditional HasTag="shotgununique" />
+      </StatusEffect>
+    </Holdable>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="70" />
+      <RequiredItem identifier="aluminium" amount="2" />
+      <RequiredItem identifier="steel" amount="2" />
+    </Fabricate>
+  </Item>
+</Items>

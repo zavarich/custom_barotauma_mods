@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items itemtype="misc">
+  <Item name="Take Item" identifier="invisibleholder" description="An invisible item holder that deletes itself when interacted with. Good for making items hold in place without using platforms" SpriteColor="195,136,60,100" IntentoryIconColor="255,255,255,255" category="misc" tags="holder" canflipx="true" canflipy="true" scale="0.5" noninteractable="False">
+    <Sprite texture="Content/UI/Focusindicator.png" sourcerect="228,124,105,89" depth="0.85" origin="0.5,0.5" />
+    <Controller direction="None" canbepicked="true" msg="">
+      <!-- Uses the itemcontainer, bug proofing, see reason why below -->
+      <Statuseffect type="OnPicked" target="This" targetitemcomponent="ItemContainer" delay="0.1" duration="1">
+        <Use />
+      </Statuseffect>
+    </Controller>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="1" itempos="40,-40" containedspritedepth="0.831" canbeselected="True" autointeractwithcontained="true" msg="">
+      <Containable items="smallitem,mediumitem,bigitem,crate" />
+      <!-- makes itself invisible + you can't see inside inventory on startup. Needed to make this useable in subeditor -->
+      <Statuseffect type="Always" target="This" oneshot="true" spritecolor="0,0,0,0" drawinventory="false" setvalue="True" />
+      <!-- makes the item delete itself IF ACTUALLY EMPTY, not just when interacting with it. Needed to prevent items from being deleted if inventory is full -->
+      <Statuseffect type="OnUse" target="This">
+        <RequiredItem items="emptyitem" type="Contained" matchonempty="true" />
+        <Remove />
+      </Statuseffect>
+    </ItemContainer>
+  </Item>
+  <Item name="Spawner" nameidentifier="spawner" identifier="spawner" description="A simple item/creature spawner that can be wired" width="128" height="192" texturescale="0.5,0.5" scale="0.5" category="misc" noninteractable="true" spritecolor="255,255,150,255">
+    <sprite texture="Content/Map/MapAtlas.png" sourcerect="784,526,100,100" depth="0.800" premultiplyalpha="false" origin="0.5,0.5" />
+    <EntitySpawnerComponent ItemIdentifier="" SpeciesName="" OnlySpawnWhenCrewInRange="False" CrewAreaShape="Rectangle" CrewAreaBounds="500,500" CrewAreaRadius="500" CrewAreaOffset="0,0" SpawnAreaShape="Rectangle" SpawnAreaBounds="200,200" SpawnAreaRadius="200" SpawnAreaOffset="0,0" SpawnTimerRange="-1,-1" SpawnAmountRange="1,1" MaximumAmount="0" MaximumAmountInArea="0" MaximumAmountRangePadding="0" PreloadCharacter="False" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <output name="state_out" displayname="connection.stateout" fallbackdisplayname="connection.signalout" />
+    </ConnectionPanel>
+    <CustomInterface canbeselected="true" pickkey="Use" drawhudwhenequipped="true" allowuioverlap="false">
+      <GuiFrame style="ItemUI" absoluteoffset="0,0" anchor="BottomCenter" relativesize="0.2,0.13" />
+      <TextBox text="Item Identifier" propertyname="ItemIdentifier" maxtextlength="50" />
+      <TextBox text="Species Name" propertyname="Speciesname" maxtextlength="50" />
+    </CustomInterface>
+  </Item>
+</Items>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sounds>
+  <footstep_heavy file="%ModDir%/CustomSounds/footstep_heavy1.ogg" range="600" />
+  <footstep_heavy file="%ModDir%/CustomSounds/footstep_heavy2.ogg" range="600" />
+  <footstep_heavy file="%ModDir%/CustomSounds/footstep_heavy3.ogg" range="600" />
+  <footstep_heavy file="%ModDir%/CustomSounds/footstep_heavy4.ogg" range="600" />
+  <footstep_brute file="%ModDir%/CustomSounds/brute_step1.ogg" range="600" />
+  <footstep_brute file="%ModDir%/CustomSounds/brute_step2.ogg" range="600" />
+  <footstep_brute file="%ModDir%/CustomSounds/brute_step3.ogg" range="600" />
+  <footstep_brute file="%ModDir%/CustomSounds/brute_step4.ogg" range="600" />
+  <footstep_brute file="%ModDir%/CustomSounds/brute_step5.ogg" range="600" />
+  <footstep_brute file="%ModDir%/CustomSounds/brute_step6.ogg" range="600" />
+</sounds>

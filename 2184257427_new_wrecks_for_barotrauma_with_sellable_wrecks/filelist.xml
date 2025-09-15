@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<contentpackage name="New Wrecks For Barotrauma (With sellable wrecks)" modversion="3.7" corepackage="False" steamworkshopid="2184257427" gameversion="1.8.8.1" expectedhash="51171B84CFABF113EB76904AA229FEA8">
+  <Item file="%ModDir%/wreckeditems.xml" />
+  <Item file="%ModDir%/specialitems.xml" />
+  <Item file="%ModDir%/thalamusitems.xml" />
+  <WreckAIConfig file="%ModDir%/ThalamusAI.xml" />
+  <Structure file="%ModDir%/thalamusstructures.xml" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/Dugong_Wrecked1.2.sub" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/Naval Mine.sub" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/Orca_Wrecked1.2.sub" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/Typhon_Wrecked1.2.sub" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/Wrecktraps.sub" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/BeaconRYR05_1.2.sub" />
+  <Submarine file="%ModDir%/Wrecks/WreckShuttles/SpinelingBall.sub" />
+  <Wreck file="%ModDir%/Wrecks/Venture_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/BeaconRYR05_1.1.sub" />
+  <Wreck file="%ModDir%/Wrecks/50L1-TUD3_Wrecked.sub" />
+  <Wreck file="%ModDir%/Wrecks/Azimuth_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Barsuk_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Berilia_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Camel_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Herja_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Humpback_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Luoti-S_Wrecked.sub" />
+  <Wreck file="%ModDir%/Wrecks/Orca_Wrecked1.1.sub" />
+  <Wreck file="%ModDir%/Wrecks/R-29_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Typhon2_Wrecked2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Winterhalter_Wrecked.sub" />
+  <Wreck file="%ModDir%/Wrecks/Winterhalter_Shuttle_Wrecked.sub" />
+  <Wreck file="%ModDir%/Wrecks/MinelayerPod_WreckedM.sub" />
+  <Wreck file="%ModDir%/Wrecks/Remora_WreckedM.sub" />
+  <Wreck file="%ModDir%/Wrecks/Typhon_Wrecked1.1.sub" />
+  <Wreck file="%ModDir%/Wrecks/Structure_Wrecked.sub" />
+  <Wreck file="%ModDir%/Wrecks/Orca2_WreckedM.sub" />
+  <Wreck file="%ModDir%/Wrecks/WreckShuttles/Dugong_Wrecked1.2.sub" />
+  <Wreck file="%ModDir%/Wrecks/Dugong_Wrecked1.1.sub" />
+</contentpackage>

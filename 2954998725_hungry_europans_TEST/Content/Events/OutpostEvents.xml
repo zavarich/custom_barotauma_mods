@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Randomevents>
+  <!-- SCRIPTED EVENTS -->
+  <EventPrefabs>
+    <ScriptedEvent identifier="enablecafeteria">
+      <TagAction criteria="player" tag="player" />
+      <TagAction criteria="itemidentifier:op_cafeteriawindow" tag="cafeteria" SubmarineType="Outpost" />
+      <!--<TagAction criteria="itemidentifier:op_cafeteriachair" tag="cafeteria" sub="Outpost" />-->
+      <TriggerAction target1tag="player" target2tag="cafeteria" radius="1000" disableincombat="false" disableiftargetincapacitated="false" waitforinteraction="false" allowmultipletargets="true" />
+      <StatusEffectAction targettag="cafeteria">
+        <StatusEffect target="This" noninteractable="false" setvalue="true" />
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="he-hirechef">
+      <TagAction criteria="jobidentifier:he-chef" team="team1" tag="playerchef" ContinueIfNoTargetsFound="true" />
+      <!-- do not trigger the event if you already have a chef on your crew -->
+      <CountTargetsAction targettag="playerchef" MinAmount="1">
+        <Success>
+          <Goto name="end" />
+        </Success>
+      </CountTargetsAction>
+      <SpawnAction npcsetidentifier="he-hirablenpcs" npcidentifier="regularchef" targettag="hirablechef" spawnlocation="Outpost" spawnpointtype="Path" targetmoduletags="crewmodule" />
+      <TagAction criteria="player" tag="player" />
+      <RNGAction chance="0.5">
+        <!--Free chef-->
+        <Success>
+          <Label name="restart_free" />
+          <ClearTagAction tag="hc_player" />
+          <WaitAction time="1" />
+          <ConversationAction speakertag="hirablechef" invokertag="hc_player" text="eventtext.he-hirechef.freechef">
+            <Option text="eventtext.he-hirechef.howmuch">
+              <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.joinfree" waitforinteraction="false">
+                <Option text="eventtext.he-hirechef.welcome">
+                  <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.chefhired" waitforinteraction="false" />
+                  <NPCChangeTeamAction npctag="hirablechef" teamtag="Team1" addtocrew="true" />
+                  <GoTo name="end" />
+                </Option>
+                <Option text="eventtext.he-hirechef.thinkaboutit">
+                  <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.changeyourmind" waitforinteraction="false" />
+                  <GoTo name="restart_free" />
+                </Option>
+              </ConversationAction>
+            </Option>
+            <Option text="eventtext.he-hirechef.nothiring">
+              <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.changeyourmind" waitforinteraction="false" />
+              <GoTo name="restart_free" />
+            </Option>
+            <Option text="eventtext.he-hirechef.nokitchen">
+              <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.buykitchen" waitforinteraction="false" />
+              <GoTo name="restart_free" />
+            </Option>
+          </ConversationAction>
+        </Success>
+        <!--Expensive chef-->
+        <Failure>
+          <Label name="restart_expensive" />
+          <ClearTagAction tag="hc_player" />
+          <WaitAction time="1" />
+          <ConversationAction speakertag="hirablechef" invokertag="hc_player" text="eventtext.he-hirechef.expensivechef">
+            <Option text="eventtext.he-hirechef.howmuch">
+              <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.joinexpensive" waitforinteraction="false">
+                <Option text="eventtext.he-hirechef.welcome">
+                  <CheckMoneyAction targettag="hc_player" amount="1250">
+                    <Success>
+                      <MoneyAction targettag="hc_player" amount="-1250" />
+                      <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.chefhired" waitforinteraction="false" />
+                      <NPCChangeTeamAction npctag="hirablechef" teamtag="Team1" addtocrew="true" />
+                      <GoTo name="end" />
+                    </Success>
+                    <Failure>
+                      <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.nomoney" waitforinteraction="false" />
+                      <GoTo name="restart_expensive" />
+                    </Failure>
+                  </CheckMoneyAction>
+                </Option>
+                <Option text="eventtext.he-hirechef.thinkaboutit">
+                  <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.changeyourmind" waitforinteraction="false" />
+                  <GoTo name="restart_expensive" />
+                </Option>
+              </ConversationAction>
+            </Option>
+            <Option text="eventtext.he-hirechef.nothiring">
+              <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.changeyourmind" waitforinteraction="false" />
+              <GoTo name="restart_expensive" />
+            </Option>
+            <Option text="eventtext.he-hirechef.nokitchen">
+              <ConversationAction targettag="hc_player" text="eventtext.he-hirechef.buykitchen" waitforinteraction="false" />
+              <GoTo name="restart_expensive" />
+            </Option>
+          </ConversationAction>
+        </Failure>
+      </RNGAction>
+      <!--end the event-->
+      <Label name="end" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="manualenforceinfo">
+      <TagAction criteria="player" tag="player" />
+      <ConversationAction targettag="player" invokertag="hc_player" text="eventtext.manualenforceinfo" endconversation="true" />
+    </ScriptedEvent>
+    <ScriptedEvent identifier="manualenforcehungry">
+      <TagAction criteria="player" tag="player" />
+      <StatusEffectAction targettag="player">
+        <StatusEffect target="Character" oneshot="true">
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-hungryeuropan" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="manualenforcefilthy">
+      <TagAction criteria="player" tag="player" />
+      <StatusEffectAction targettag="player">
+        <StatusEffect target="Character" oneshot="true">
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-filthyeuropan" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="manualenforcesleepy">
+      <TagAction criteria="player" tag="player" />
+      <StatusEffectAction targettag="player">
+        <StatusEffect target="Character" oneshot="true">
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-sleepyeuropan" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="manualenforcemoody">
+      <TagAction criteria="player" tag="player" />
+      <StatusEffectAction targettag="player">
+        <StatusEffect target="Character" oneshot="true">
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-moodyeuropan" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+    <ScriptedEvent identifier="manualenforceallneeds">
+      <TagAction criteria="player" tag="player" />
+      <StatusEffectAction targettag="player">
+        <StatusEffect target="Character" oneshot="true">
+          <GiveTalentInfo giverandom="false" talentidentifiers="he-hungryeuropan,he-moodyeuropan,he-filthyeuropan,he-sleepyeuropan" />
+        </StatusEffect>
+      </StatusEffectAction>
+    </ScriptedEvent>
+  </EventPrefabs>
+  <!-- EVENT TRIGGERS -->
+  <!-- I added chef as hireable in DE locations, do we need to trigger the hireable chef event? Disable event if DE is enabled (how?) -->
+  <EventSet identifier="he-outpostevent.hirechef" leveltype="outpost" locationtype="outpost,settlement,colony,city" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" SelectAlways="true">
+    <ScriptedEvent identifier="he-hirechef" commonness="50" probability="0.5" />
+  </EventSet>
+  <EventSet identifier="he-outpostevent.hirechef.hydroponics" leveltype="outpost" locationtype="hydroponics" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" SelectAlways="true">
+    <ScriptedEvent identifier="he-hirechef" commonness="50" probability="1.0" />
+  </EventSet>
+  <EventSet identifier="he-outpostevent.cafeteria" leveltype="outpost" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" SelectAlways="true">
+    <ScriptedEvent identifier="enablecafeteria" commonness="100" probability="1.0" />
+  </EventSet>
+  <!--<EventSet identifier="he-loadalways" leveltype="Any" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" SelectAlways="true">
+    <ScriptedEvent identifier="he-config" commonness="100" probability="1.0"/>
+  </EventSet>-->
+  <!--All DE Locations:
+      locationtype="outpost,city,research,military,mine,colony,settlement,construction,camp,base,blockade,survey,study,lab,clinic,hospital,hydroponics,factory,shipyard,huskchurch,sinkingcircus,PirateOutpost"
+      
+      Technically outposts, but not permanent or without NPCs:
+      locationtypes="lair,lairmudraptor,lairthresher,huskgroundsde,militaryforces"
+  -->
+</Randomevents>

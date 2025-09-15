@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Talents>
+    <Talent identifier="FabricatorsFabric">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,4" sheetelementsize="128,128"/>
+      <Description tag="talentdescription.fabricators"/>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.fabricator,entityname.medicalfabricator,entityname.deconstructor,entityname.op_researchterminal" color="gui.orange"/>      </Description>
+      <AddedRecipe itemidentifier="fabricator"/>
+      <AddedRecipe itemidentifier="medicalfabricator"/>
+      <AddedRecipe itemidentifier="deconstructor"/>
+      <AddedRecipe itemidentifier="op_researchterminal"/>
+      <AddedRecipe itemidentifier="ekutility_placeablemedicalfabricator"/>
+      <AddedRecipe itemidentifier="ekutility_placeablefabricator"/>
+      <AddedRecipe itemidentifier="ekutility_placeabledeconstructor"/>
+    </Talent>
+  </Talents>
+  <Talents>
+    <Talent identifier="FabricatorsFabricAdvanced">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,4" sheetelementsize="128,128"/>
+      <Description tag="talentdescription.fabricatorsAdvanced"/>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.ekdockyard_fabricator_adaptive" color="gui.orange"/>      </Description>
+        <AddedRecipe itemidentifier="ekdockyard_fabricator_adaptive"/>      
+        <AddedRecipe itemidentifier="nuclearmaterialprocessor"/>
+        <AddedRecipe itemidentifier="fissiledeconstructor"/>      
+    </Talent>
+    <Talent identifier="FabricatorsNuclear">
+      <Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,4" sheetelementsize="128,128"/>
+      <Description tag="talentdescription.FabricatorsNuclear"/>
+      <Description tag="talentdescription.unlockrecipe">
+        <Replace tag="[itemname]" value="entityname.nuclearmaterialprocessor,entityname.fissiledeconstructor" color="gui.orange"/>      </Description>
+        <AddedRecipe itemidentifier="nuclearmaterialprocessor"/>
+        <AddedRecipe itemidentifier="fissiledeconstructor"/>      
+    </Talent>
+  </Talents>
+</Override>

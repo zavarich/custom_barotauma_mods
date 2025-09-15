@@ -1,0 +1,712 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Items>
+    <Item name="Meat Cleaver" identifier="he-cleaver" category="Weapon" Tags="smallitem,weapon,gunsmith,mountableweapon,butcheritem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <PreferredContainer secondary="wreckarmcab,abandonedarmcab" amount="1" spawnprobability="0.25" />
+      <PreferredContainer secondary="abandonedstoragecab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer secondary="beaconsupplycab" amount="1" spawnprobability="0.05" />
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <Fabricate suitablefabricators="fabricator" requiredtime="10">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="plastic" amount="1" />
+        <RequiredItem identifier="steel" amount="1" />
+      </Fabricate>
+      <InventoryIcon texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="1,1,75,26" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="1,1,75,26" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-16,5" holdangle="30" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="false">
+        <RequiredSkill identifier="butchery" level="100" />
+        <Attack targetimpulse="2" severlimbsprobability="0.8" itemdamage="10" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="10" />
+          <Affliction identifier="bleeding" strength="20" />
+          <Affliction identifier="stun" strength="0.2" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+        <!-- BLOOD SPLATTER DECAL -->
+        <StatusEffect tags="butchery" type="OnFailure" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="1.8" shockwave="false" underwaterbubble="false" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="1.8" shockwave="false" underwaterbubble="false" />
+        </StatusEffect>
+        <!-- INCREASE BUTCHERY SKILL -->
+        <StatusEffect tags="butchery" type="OnFailure" target="Character" comparison="Or">
+          <Conditional group="eq crawler" />
+          <Conditional group="eq mudraptor" />
+          <Conditional group="eq moloch" />
+          <Conditional group="eq thresher" />
+          <Conditional group="eq spineling" />
+          <Conditional group="eq human" />
+          <Conditional group="eq husk" />
+          <Conditional group="eq hammerhead" />
+          <Conditional group="eq abyss" />
+          <GiveSkill skillidentifier="butchery" amount="0.05" triggertalents="false" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="Character" comparison="Or">
+          <Conditional group="eq crawler" />
+          <Conditional group="eq mudraptor" />
+          <Conditional group="eq moloch" />
+          <Conditional group="eq thresher" />
+          <Conditional group="eq spineling" />
+          <Conditional group="eq human" />
+          <Conditional group="eq husk" />
+          <Conditional group="eq hammerhead" />
+          <Conditional group="eq abyss" />
+          <GiveSkill skillidentifier="butchery" amount="0.05" triggertalents="false" />
+        </StatusEffect>
+        <!--OLD <StatusEffect tags="butchery" type="OnFailure" target="Character" comparison="Or">
+            <Conditional speciesname="eq crawler" />
+          <Conditional speciesname="eq crawler_large" />
+          <Conditional speciesname="eq DE-Laircrawler" />
+          <Conditional speciesname="eq DE-Laircrawler_large" />
+          <Conditional speciesname="eq mudraptor" />
+          <Conditional speciesname="eq mudraptor_unarmored" />
+          <Conditional speciesname="eq mudraptor_pet" />
+          <Conditional speciesname="eq mudraptor_veteran" />
+          <Conditional speciesname="eq mudraptor_passive" />
+          <Conditional speciesname="eq hammerhead" />
+          <Conditional speciesname="eq hammerheadgold" />
+          <Conditional speciesname="eq hammerheadmatriarch" />
+          <Conditional speciesname="eq hammerhead_m" />
+          <Conditional speciesname="eq hammerhead_mnamed" />
+          <Conditional speciesname="eq hammerheadgold_m" />
+          <Conditional speciesname="eq hammerheadspawn" />
+          <Conditional speciesname="eq human" />
+          <Conditional speciesname="eq tigerthresher" />
+          <Conditional speciesname="eq bonethresher" />
+          <Conditional speciesname="eq endworm" />
+          <GiveSkill skillidentifier="butchery" amount="0.05" triggertalents="false" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="Character" comparison="Or">
+            <Conditional speciesname="eq crawler" />
+          <Conditional speciesname="eq crawler_large" />
+          <Conditional speciesname="eq DE-Laircrawler" />
+          <Conditional speciesname="eq DE-Laircrawler_large" />
+          <Conditional speciesname="eq mudraptor" />
+          <Conditional speciesname="eq mudraptor_unarmored" />
+          <Conditional speciesname="eq mudraptor_pet" />
+          <Conditional speciesname="eq mudraptor_veteran" />
+          <Conditional speciesname="eq mudraptor_passive" />
+          <Conditional speciesname="eq hammerhead" />
+          <Conditional speciesname="eq hammerheadgold" />
+          <Conditional speciesname="eq hammerheadmatriarch" />
+          <Conditional speciesname="eq hammerhead_m" />
+          <Conditional speciesname="eq hammerhead_mnamed" />
+          <Conditional speciesname="eq hammerheadgold_m" />
+          <Conditional speciesname="eq hammerheadspawn" />
+          <Conditional speciesname="eq human" />
+          <Conditional speciesname="eq tigerthresher" />
+          <Conditional speciesname="eq bonethresher" />
+          <Conditional speciesname="eq endworm" />
+          <GiveSkill skillidentifier="butchery" amount="0.05" triggertalents="false" />
+        </StatusEffect>-->
+        <!-- GET MEAT -->
+        <!--crawler-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq crawler" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq Crawlerbroodmother" />
+          <Conditional speciesname="neq Crawler_hatchling" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-crawlermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq Crawlerbroodmother" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="10" />
+          <SpawnItem identifier="he-crawlermeatchunkspecial" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq Crawler_hatchling" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="100" />
+          <SpawnItem identifier="he-crawlermeatchunkspecial" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--mudraptor-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq mudraptor" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq mudraptor_veteran" />
+          <Conditional speciesname="neq mudraptor_hatchling" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_pet" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_veteran" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="30" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_passive" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_hatchling" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="100" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--hammerhead-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq hammerhead" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq hammerheadmatriarch" />
+          <Conditional speciesname="neq hammerheadspawn" />
+          <Conditional speciesname="neq hammerhead" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" spawnitemrandomly="true">
+          <Conditional speciesname="eq hammerhead" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="hammerheadribs" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerheadmatriarch" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="15" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerheadspawn" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="100" />
+          <SpawnItem identifier="he-hammerheadspawnmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--human-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq human" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-humanmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--husk-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq husk" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-huskmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq humanhusk" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-huskmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq husk" />
+          <Conditional speciesname="neq husk" />
+          <Conditional speciesname="neq humanhusk" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-huskmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--spineling-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq spineling" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq spineling" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-spinelingmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" spawnitemrandomly="true">
+          <Conditional speciesname="eq spineling" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-spinelingmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-spinelingmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="he-spinelingmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+          <SpawnItem identifier="spinelingspikeloot" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--thresher-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq thresher" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq bonethresher" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-threshermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq bonethresher" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="30" />
+          <SpawnItem identifier="he-threshermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--watcher-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq watcher" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq watcher" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-watchermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" spawnitemrandomly="true">
+          <Conditional speciesname="eq watcher" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-watchermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--moloch-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq moloch" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq moloch" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-molochmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true" spawnitemrandomly="true">
+          <Conditional speciesname="eq moloch" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-molochmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--endworm-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq endworm" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-endwormmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional group="eq abyss" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Conditional speciesname="neq endworm" />
+          <Conditional speciesname="neq latcher" />
+          <Conditional speciesname="neq charybdis" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <!--<SpawnItem identifier="he-abyssalmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />-->
+        </StatusEffect>
+        <!--Skillissue-->
+        <StatusEffect tags="butchery" type="OnFailure" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="5" />
+        </StatusEffect>
+        <!-- CORPSE REMOVAL -->
+        <StatusEffect tags="butchery" type="OnFailure" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="eq 100" />
+          <DropContainedItems />
+          <RemoveCharacter />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="eq 100" />
+          <DropContainedItems />
+          <RemoveCharacter />
+        </StatusEffect>
+      </MeleeWeapon>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="butchery" level="100" />
+    </Item>
+    <Item name="WIP - Butcher's Saw" identifier="he-butchersaw" category="Weapon" Tags="mediumitem,weapon,gunsmith,mountableweapon,butcheritem" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+      <PreferredContainer primary="secarmcab" secondary="armcab" />
+      <Deconstruct time="10">
+        <Item identifier="plastic" />
+      </Deconstruct>
+      <!--
+      <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
+        <RequiredSkill identifier="weapons" level="30" />
+        <RequiredItem identifier="plastic" amount="1" />
+        <RequiredItem identifier="steel" amount="1"/>
+      </Fabricate>-->
+      <InventoryIcon texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="1,1,75,26" origin="0.5,0.5" />
+      <Sprite texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="1,1,75,26" depth="0.55" origin="0.5,0.5" />
+      <Body width="65" height="15" density="25" />
+      <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
+        <sprite name="Butcher's Saw" texture="%ModDir%/Content/Items/Tools/Tools.png" sourcerect="256,102,112,54" limb="Torso" inherittexturescale="true" origin="0.5,-0.2" />
+      </Wearable>
+      <RepairTool slots="RightHand+LeftHand" handle1="-16,5" holdangle="30" reload="0.75" range="50" combatPriority="25" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <RequiredSkill identifier="butchery" level="100" />
+        <!-- BLOOD SPLATTER DECAL -->
+        <StatusEffect tags="butchery" type="OnFailure" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="1.8" shockwave="false" underwaterbubble="false" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Explosion range="0.0" structuredamage="0" itemdamage="0" force="0.0" severlimbsprobability="0.0" decal="blood" decalsize="1.8" shockwave="false" underwaterbubble="false" />
+        </StatusEffect>
+        <!-- INCREASE BUTCHERY SKILL -->
+        <StatusEffect tags="butchery" type="OnFailure" target="Character" comparison="Or">
+          <Conditional speciesname="eq crawler" />
+          <Conditional speciesname="eq crawler_large" />
+          <Conditional speciesname="eq DE-Laircrawler" />
+          <Conditional speciesname="eq DE-Laircrawler_large" />
+          <Conditional speciesname="eq crawlerbroodmother" />
+          <Conditional speciesname="eq DE-Lairbroodmother" />
+          <Conditional speciesname="eq mudraptor" />
+          <Conditional speciesname="eq mudraptor_unarmored" />
+          <Conditional speciesname="eq mudraptor_pet" />
+          <Conditional speciesname="eq mudraptor_veteran" />
+          <Conditional speciesname="eq mudraptor_passive" />
+          <Conditional speciesname="eq hammerhead" />
+          <Conditional speciesname="eq hammerheadgold" />
+          <Conditional speciesname="eq hammerheadmatriarch" />
+          <Conditional speciesname="eq hammerhead_m" />
+          <Conditional speciesname="eq hammerhead_mnamed" />
+          <Conditional speciesname="eq hammerheadgold_m" />
+          <Conditional speciesname="eq hammerheadspawn" />
+          <Conditional speciesname="eq human" />
+          <Conditional speciesname="eq tigerthresher" />
+          <Conditional speciesname="eq bonethresher" />
+          <Conditional speciesname="eq endworm" />
+          <Conditional speciesname="eq moloch" />
+          <Conditional speciesname="eq molochblack" />
+          <Conditional speciesname="eq molochbaby" />
+          <Conditional speciesname="eq watcher" />
+          <Conditional speciesname="eq spineling" />
+          <Conditional speciesname="eq spineling_giant" />
+          <GiveSkill skillidentifier="butchery" amount="0.05" triggertalents="false" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="Character" comparison="Or">
+          <Conditional speciesname="eq crawler" />
+          <Conditional speciesname="eq crawler_large" />
+          <Conditional speciesname="eq DE-Laircrawler" />
+          <Conditional speciesname="eq DE-Laircrawler_large" />
+          <Conditional speciesname="eq crawlerbroodmother" />
+          <Conditional speciesname="eq DE-Lairbroodmother" />
+          <Conditional speciesname="eq mudraptor" />
+          <Conditional speciesname="eq mudraptor_unarmored" />
+          <Conditional speciesname="eq mudraptor_pet" />
+          <Conditional speciesname="eq mudraptor_veteran" />
+          <Conditional speciesname="eq mudraptor_passive" />
+          <Conditional speciesname="eq hammerhead" />
+          <Conditional speciesname="eq hammerheadgold" />
+          <Conditional speciesname="eq hammerheadmatriarch" />
+          <Conditional speciesname="eq hammerhead_m" />
+          <Conditional speciesname="eq hammerhead_mnamed" />
+          <Conditional speciesname="eq hammerheadgold_m" />
+          <Conditional speciesname="eq hammerheadspawn" />
+          <Conditional speciesname="eq human" />
+          <Conditional speciesname="eq tigerthresher" />
+          <Conditional speciesname="eq bonethresher" />
+          <Conditional speciesname="eq endworm" />
+          <Conditional speciesname="eq moloch" />
+          <Conditional speciesname="eq molochblack" />
+          <Conditional speciesname="eq molochbaby" />
+          <Conditional speciesname="eq watcher" />
+          <Conditional speciesname="eq spineling" />
+          <Conditional speciesname="eq spineling_giant" />
+          <GiveSkill skillidentifier="butchery" amount="0.05" triggertalents="false" />
+        </StatusEffect>
+        <!-- GET MEAT -->
+        <!--crawler-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq crawler" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-crawlermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq crawler_large" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-crawlermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq DE-Laircrawler" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-crawlermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq DE-Laircrawler_large" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-crawlermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq crawlerbroodmother" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-crawlermothermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq DE-Lairbroodmother" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-crawlermothermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--mudraptor-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_unarmored" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_pet" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_veteran" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="30" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_passive" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq mudraptor_hatchling" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="100" />
+          <SpawnItem identifier="he-mudraptormeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--hammerhead-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerhead" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerheadgold" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerheadmatriarch" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="15" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerhead_m" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerhead_mnamed" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerheadgold_m" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-hammerheadmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq hammerheadspawn" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="100" />
+          <SpawnItem identifier="he-hammerheadspawnmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--human-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq human" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-humanmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--thresher-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq tigerthresher" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="50" />
+          <SpawnItem identifier="he-threshermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq bonethresher" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="30" />
+          <SpawnItem identifier="he-threshermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--endworm-->
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq endworm" />
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-endwormmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <!--moloch-->
+        <!--
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq moloch" />
+          <Conditional isdead="true"/>
+          <Conditional he-butchered="lt 100"/>
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-molochmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq molochblack" />
+          <Conditional isdead="true"/>
+          <Conditional he-butchered="lt 100"/>
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-molochmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        -->
+        <!--watcher-->
+        <!--
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq watcher" />
+          <Conditional isdead="true"/>
+          <Conditional he-butchered="lt 100"/>
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-watchermeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        -->
+        <!--spineling-->
+        <!--
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq spineling" />
+          <Conditional isdead="true"/>
+          <Conditional he-butchered="lt 100"/>
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-spinelingmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And" multiplyafflictionsbymaxvitality="true">
+          <Conditional speciesname="eq spineling_giant" />
+          <Conditional isdead="true"/>
+          <Conditional he-butchered="lt 100"/>
+          <Affliction identifier="he-butchered" strength="25" />
+          <SpawnItem identifier="he-spinelingmeatchunk" spawnposition="SameInventory" SpawnIfInventoryFull="true" />
+        </StatusEffect>
+        -->
+        <!--Skillissue-->
+        <StatusEffect tags="butchery" type="OnFailure" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="lt 100" />
+          <Affliction identifier="he-butchered" strength="5" />
+        </StatusEffect>
+        <!-- CORPSE REMOVAL -->
+        <StatusEffect tags="butchery" type="OnFailure" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="eq 100" />
+          <DropContainedItems />
+          <RemoveCharacter />
+        </StatusEffect>
+        <StatusEffect tags="butchery" type="OnSuccess" target="UseTarget" comparison="And">
+          <Conditional isdead="true" />
+          <Conditional he-butchered="eq 100" />
+          <DropContainedItems />
+          <RemoveCharacter />
+        </StatusEffect>
+        <Attack targetimpulse="2" severlimbsprobability="0.8" itemdamage="3" structuredamage="0" structuresoundtype="StructureSlash">
+          <Affliction identifier="lacerations" strength="15" />
+          <Affliction identifier="bleeding" strength="15" />
+          <Affliction identifier="stun" strength="0.4" />
+          <StatusEffect type="OnUse" target="UseTarget">
+            <Conditional entitytype="eq Character" />
+            <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="200" />
+            <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="200" />
+          </StatusEffect>
+        </Attack>
+      </RepairTool>
+      <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+      <Quality>
+        <QualityStat stattype="DamageMultiplier" value="0.1" />
+      </Quality>
+      <Upgrade gameversion="0.10.0.0" scale="0.5" />
+      <SkillRequirementHint identifier="butchery" level="100" />
+    </Item>
+  </Items>
+</Override>

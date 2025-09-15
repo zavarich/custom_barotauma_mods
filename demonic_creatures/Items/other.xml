@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="" identifier="auraemitter" Scale="1" sonarsize="0" hideinmenus="true" health="3" depth="0.1" noninteractable="true">
+    <!--Use this for debugging: sourcerect="185,159,41,17"-->
+    <Sprite texture="%ModDir%/Characters/Stalker/aura.png" sourcerect="0,0,64,64" depth="0.55" origin="0.5,0.5" />
+    <!--Needs a body or doesn't stay inside the sub.-->
+    <Body width="38" height="15" bodytype="kinematic" />
+    <ItemComponent>
+      <StatusEffect type="OnSpawn" target="This" duration="3.0" condition="-0.5" disabledeltatime="false">
+        <ParticleEmitter particle="blood" copyentityangle="false" anglemin="-180" anglemax="180" particlespersecond="20" velocitymin="10" velocitymax="30" scalemin="0.6" scalemax="1.2" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="NearbyCharacters" range="150" delay="0.5" stackable="false" disabledeltatime="true">
+        <Affliction identifier="acidburn" strength="0.04" />
+        <Affliction identifier="nausea" strength="2" />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+</Items>

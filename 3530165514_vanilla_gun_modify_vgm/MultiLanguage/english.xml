@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="true" translatedname="English">
+  <entityname.fabricatorVGM>Weapon Modification Fabricator</entityname.fabricatorVGM>
+  <entitydescription.fabricatorVGM>An old, self-assembling fabrication table once found everywhere. While outdated for most production tasks, it can still be modified to provide weapon attachments. Requires power to function.\nDisassemble with a Crowbar. Press and hold RMB, then press "E" to place.</entitydescription.fabricatorVGM>
+  <entityname.flashHiderMuzzleVGM>Flash Hider</entityname.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>Effectively reduces recoil during sustained fire and provides a minor damage increase. Often the preferred choice for automatic weapons. Compatible with most weapons and multiple calibers.</entitydescription.flashHiderMuzzleVGM>
+  <entityname.longBarrelMuzzleVGM>Extended Barrel</entityname.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>Increases muzzle velocity, enhancing damage potential and armor penetration. Not suitable for compact weapons. Note: Excessively long barrels are impractical for close-quarters combat.</entitydescription.longBarrelMuzzleVGM>
+  <entityname.longSilencerMuzzleVGM>Lancer Suppressor</entityname.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>This suppressor, crafted from alien materials with natural magnetism, reduces firing noise while significantly increasing muzzle velocity for a notable damage boost. Not suitable for compact weapons.</entitydescription.longSilencerMuzzleVGM>
+  <entityname.shortSilencerMuzzleVGM>Compact Suppressor</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>A basic suppressor that reduces firing noise, provides a minor damage increase, and slightly reduces recoil. Compatible with most weapons.</entitydescription.shortSilencerMuzzleVGM>
+  <!-- Original Stock Descriptions (Common Pattern) -->
+  <entityname.deadeyeStockVGM>DeadEye Rifle Stock</entityname.deadeyeStockVGM>
+  <entitydescription.deadeyeStockVGM>The standard stock for the DeadEye Rifle. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but granting a 10% movement speed bonus.</entitydescription.deadeyeStockVGM>
+  <entityname.boomStickStockVGM>Boomstick Stock</entityname.boomStickStockVGM>
+  <entitydescription.boomStickStockVGM>The standard stock for the Boom Stick. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but granting a 10% movement speed bonus.</entitydescription.boomStickStockVGM>
+  <entityname.rifleStockVGM>Rifle Stock</entityname.rifleStockVGM>
+  <entitydescription.rifleStockVGM>The standard rifle stock. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but granting a 10% movement speed bonus.</entitydescription.rifleStockVGM>
+  <entityname.shotgunStockVGM>Riot Shotgun Stock</entityname.shotgunStockVGM>
+  <entitydescription.shotgunStockVGM>The standard stock for the Riot Shotgun. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but granting a 10% movement speed bonus.</entitydescription.shotgunStockVGM>
+  <entityname.assaultRifleStockVGM>Assault Rifle Stock</entityname.assaultRifleStockVGM>
+  <entitydescription.assaultRifleStockVGM>The standard stock for the Assault Rifle. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but removing the default movement speed penalty.</entitydescription.assaultRifleStockVGM>
+  <entityname.hmgStockVGM>HMG Stock</entityname.hmgStockVGM>
+  <entitydescription.hmgStockVGM>The standard stock for the Heavy Machine Gun. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but offsetting 50% of the default movement speed penalty.</entitydescription.hmgStockVGM>
+  <entityname.nuclearGunStockVGM>Fission Accelerator Stock</entityname.nuclearGunStockVGM>
+  <entitydescription.nuclearGunStockVGM>The standard stock for the Fission Accelerator. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but granting a 10% movement speed bonus.</entitydescription.nuclearGunStockVGM>
+  <entityname.scrapCannonStockVGM>Scrap Cannon Stock</entityname.scrapCannonStockVGM>
+  <entitydescription.scrapCannonStockVGM>The standard stock for the Scrap Cannon. Leaving the stock slot empty converts the weapon to a bullpup configuration, increasing spread but granting a 10% movement speed bonus.</entitydescription.scrapCannonStockVGM>
+  <!-- <entityname.highPressureMuzzleVGM>High-Pressure Barrel</entityname.highPressureMuzzleVGM>
+       <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
+  <!-- I don't actually have a "High-Pressure Barrel" item, purr-fectly confused. -->
+  <!-- (Note: Translated the playful comment "哈吉米哈气了" idiomatically) -->
+  <entityname.lightStockVGM>Light Stock</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>A stock crafted from pipes, installable on most light weapons. Improves mobility but hinders precise aiming, though it's still better than no stock.</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>Heavy Stock</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>A heavy stock with adjustable weights, only suitable for Assault Rifles and HMGs. Effectively reduces aim spread but impacts mobility.</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>Heavy Ergonomic Stock</entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>An ergonomically designed heavy stock, only suitable for Assault Rifles and HMGs. Minimizes aim spread to the greatest extent but significantly impacts weapon mobility.</entitydescription.sniperStockVGM>
+  <entityname.holoGraphicScopeVGM>Compact Holographic Sight</entityname.holoGraphicScopeVGM>
+  <entitydescription.holoGraphicScopeVGM>A compact holographic sight that extends the weapon's effective visual range. Suitable for most weapons.</entitydescription.holoGraphicScopeVGM>
+  <entityname.dotScopeVGM>Compact Red Dot Sight</entityname.dotScopeVGM>
+  <entitydescription.dotScopeVGM>A compact red dot sight that extends the weapon's effective visual range. Suitable for most weapons.</entitydescription.dotScopeVGM>
+  <entityname.acogScopeVGM>ACOG 4x Scope</entityname.acogScopeVGM>
+  <entitydescription.acogScopeVGM>An ACOG 4x scope. Some designs never go out of style, even in the space colonization era. Effectively extends the weapon's visual range. Suitable for most weapons.</entitydescription.acogScopeVGM>
+  <entityname.sniperScopeVGM>Sniper Scope</entityname.sniperScopeVGM>
+  <entitydescription.sniperScopeVGM>An 8x sniper scope that maximizes the weapon's visual range. Not suitable for compact weapons. Note: High magnification can hinder close-quarters performance.</entitydescription.sniperScopeVGM>
+  <entitydescription.scope>6x Rifle Scope, not suitable for compact weapons.</entitydescription.scope>
+  <!-- Assuming this is a generic scope description -->
+  <entityname.verticalGripVGM>Vertical Foregrip</entityname.verticalGripVGM>
+  <entitydescription.verticalGripVGM>A vertical foregrip helps maintain tactical posture for extended periods and reduces aim-down-sights time.</entitydescription.verticalGripVGM>
+  <entityname.angleGripVGM>Angled Foregrip</entityname.angleGripVGM>
+  <entitydescription.angleGripVGM>An angled foregrip helps maintain a muzzle-up tactical posture for extended periods, reducing aim-down-sights time.</entitydescription.angleGripVGM>
+  <entityname.smgDrummagVGM>SMG Drum Magazine</entityname.smgDrummagVGM>
+  <entitydescription.smgDrummagVGM>Triple ammo capacity, harder to carry.</entitydescription.smgDrummagVGM>
+  <entityname.smgLongmagVGM>SMG Extended Magazine</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Double ammo capacity.</entitydescription.smgLongmagVGM>
+  <!-- Note: Duplicate entry for smgLongmagVGM in source. Kept once. -->
+  <entityname.smgDFuelLongMagVGM>SMG Extended Depleted Fuel Magazine</entityname.smgDFuelLongMagVGM>
+  <entitydescription.smgDFuelLongMagVGM></entitydescription.smgDFuelLongMagVGM>
+  <!-- Empty Description -->
+  <entityname.smgDFuelDrumMagVGM>SMG Depleted Fuel Drum Magazine</entityname.smgDFuelDrumMagVGM>
+  <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
+  <!-- Empty Description -->
+  <entityname.assaultrifleLongmagVGM>Assault Rifle Extended Magazine</entityname.assaultrifleLongmagVGM>
+  <entitydescription.assaultrifleLongmagVGM>Double ammo capacity.</entitydescription.assaultrifleLongmagVGM>
+  <entityname.assaultrifleDrumMagVGM>Assault Rifle Drum Magazine</entityname.assaultrifleDrumMagVGM>
+  <entitydescription.assaultrifleDrumMagVGM>Triple ammo capacity, harder to carry.</entitydescription.assaultrifleDrumMagVGM>
+  <entityname.hmgDrumMagVGM>HMG Drum Magazine</entityname.hmgDrumMagVGM>
+  <entitydescription.hmgDrumMagVGM>This massive drum magazine holds over 200 rounds of 5.56 ammunition, ensuring sustained firepower.</entitydescription.hmgDrumMagVGM>
+  <entityname.redLazerVGM>Prismatic Laser Sight</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>A laser sight with customizable color. To change color: Press and hold RMB + E to place it on a wall, then interact with LMB.\nRecommended Colors: Sci-Fi Blue (23,150,214); Proton Purple (138,43,226); Plastic Pink (255,20,147); Classic Red (255,0,0); Radioactive Green (0,255,5)</entitydescription.redLazerVGM>
+  <!-- <entityname.tacticalLightVGM>Tactical Flashlight</entityname.tacticalLightVGM>
+       <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
+  <!-- Empty Description -->
+  <!-- Commented Tactical Weapons Section (Skipped as per source)
+       <entityname.tacAssaultRifleVGM>Tactical Assault Rifle</entityname.tacAssaultRifleVGM>
+       <entitydescription.tacAssaultRifleVGM>A staple of millennium pop culture</entitydescription.tacAssaultRifleVGM>
+       ... (Other tac weapon entries)
+  -->
+  <entityname.healthScannerVGM>Compact Health Scanner</entityname.healthScannerVGM>
+  <entitydescription.healthScannerVGM>A health scanner that can be mounted on firearms. Requires aiming down sights (RMB) to activate.</entitydescription.healthScannerVGM>
+  <entityname.thermalScannerVGM>Compact Thermal Imager</entityname.thermalScannerVGM>
+  <entitydescription.thermalScannerVGM>A thermal imager that can be mounted on firearms. Requires aiming down sights (RMB) to activate.</entitydescription.thermalScannerVGM>
+  <entityname.lightSniperStockVGM>Light Marksman Stock</entityname.lightSniperStockVGM>
+  <entitydescription.lightSniperStockVGM>A marksman stock designed for light weapons. Reduces aim spread at the cost of slightly reduced mobility. Not suitable for heavy weapons.</entitydescription.lightSniperStockVGM>
+</infotexts>
